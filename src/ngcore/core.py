@@ -1,134 +1,46 @@
+"""
+Public API for loading NGCore skills and combining them with user prompts.
+"""
+
 from .loader import load
 
 
-def think(prompt: str):
-    return {
-        "skill": load("think"),
-        "prompt": prompt,
-    }
+def create_skill(name: str):
+    """Create a wrapper that loads a named skill and attaches a prompt."""
+
+    def wrapper(prompt: str) -> dict[str, str]:
+        """Load the skill markdown and return it with the user's prompt.
+
+        Args:
+            prompt: User request.
+
+        Returns:
+            Dictionary containing the skill markdown and user prompt.
+        """
+        return {
+            "skill": load(name),
+            "prompt": prompt,
+        }
+
+    return wrapper
 
 
-def research(prompt: str):
-    return {
-        "skill": load("research"),
-        "prompt": prompt,
-    }
-
-
-def plan(prompt: str):
-    return {
-        "skill": load("plan"),
-        "prompt": prompt,
-    }
-
-
-def architect(prompt: str):
-    return {
-        "skill": load("architect"),
-        "prompt": prompt,
-    }
-
-
-def design(prompt: str):
-    return {
-        "skill": load("design"),
-        "prompt": prompt,
-    }
-
-
-def scaffold(prompt: str):
-    return {
-        "skill": load("scaffold"),
-        "prompt": prompt,
-    }
-
-
-def build(prompt: str):
-    return {
-        "skill": load("build"),
-        "prompt": prompt,
-    }
-
-
-def integrate(prompt: str):
-    return {
-        "skill": load("integrate"),
-        "prompt": prompt,
-    }
-
-
-def review(prompt: str):
-    return {
-        "skill": load("review"),
-        "prompt": prompt,
-    }
-
-
-def security(prompt: str):
-    return {
-        "skill": load("security"),
-        "prompt": prompt,
-    }
-
-
-def performance(prompt: str):
-    return {
-        "skill": load("performance"),
-        "prompt": prompt,
-    }
-
-
-def accessibility(prompt: str):
-    return {
-        "skill": load("accessibility"),
-        "prompt": prompt,
-    }
-
-
-def test(prompt: str):
-    return {
-        "skill": load("test"),
-        "prompt": prompt,
-    }
-
-
-def debug(prompt: str):
-    return {
-        "skill": load("debug"),
-        "prompt": prompt,
-    }
-
-
-def refactor(prompt: str):
-    return {
-        "skill": load("refactor"),
-        "prompt": prompt,
-    }
-
-
-def document(prompt: str):
-    return {
-        "skill": load("document"),
-        "prompt": prompt,
-    }
-
-
-def deploy(prompt: str):
-    return {
-        "skill": load("deploy"),
-        "prompt": prompt,
-    }
-
-
-def verify(prompt: str):
-    return {
-        "skill": load("verify"),
-        "prompt": prompt,
-    }
-
-
-def git(prompt: str):
-    return {
-        "skill": load("git"),
-        "prompt": prompt,
-    }
+think = create_skill("think")
+research = create_skill("research")
+plan = create_skill("plan")
+architect = create_skill("architect")
+design = create_skill("design")
+scaffold = create_skill("scaffold")
+build = create_skill("build")
+integrate = create_skill("integrate")
+review = create_skill("review")
+security = create_skill("security")
+performance = create_skill("performance")
+accessibility = create_skill("accessibility")
+test = create_skill("test")
+debug = create_skill("debug")
+refactor = create_skill("refactor")
+document = create_skill("document")
+deploy = create_skill("deploy")
+verify = create_skill("verify")
+git = create_skill("git")

@@ -1,0 +1,14 @@
+# Minimal markdownlint config for website-builder-elite.
+# Disables rules that would fire constantly on this repo's intentional style
+# (long table rows, inline HTML-free but wide lines, code fences without a
+# language tag in a couple of diagram blocks) without catching anything a
+# contributor would actually want flagged (broken links, bad heading nesting,
+# duplicate headings, trailing whitespace).
+
+default: true
+
+MD013: false   # line-length — tables and prose lines here are intentionally long
+MD033: false   # no-inline-html — not used, but avoids false positives on stray angle brackets in pipeline diagrams
+MD041: false   # first-line-heading — some files intentionally open with frontmatter, not an H1
+MD024:
+  siblings_only: true  # allow repeated headings like "## Handoff" across different skill files

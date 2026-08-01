@@ -1,0 +1,8 @@
+include LICENSE
+include README.md
+recursive-include src/ngcore *.py *.md
+recursive-include src/ngcore/agents *
+recursive-include src/ngcore/context *
+recursive-include src/ngcore/skills *
+recursive-include src/ngcore/templates *
+recursive-include .markdownlint.yml

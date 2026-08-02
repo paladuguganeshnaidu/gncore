@@ -3,11 +3,11 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ngcore"
+name = "gncore"
 version = "0.1.1"
 description = "Dynamic AI Skill Orchestration Framework for markdown-driven agents, contexts, skills, and templates."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [
     { name = "Ganesh Naidu", email = "ganesh.naidu@example.com" }
@@ -29,13 +29,15 @@ classifiers = [
     "Topic :: Software Development :: Libraries",
     "Topic :: Software Development :: Build Tools",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 dependencies = []
+
+[project.scripts]
+gncore = "gncore.cli.app:main"
 
 [project.optional-dependencies]
 test = ["pytest>=8.0", "pytest-cov>=4.0"]
@@ -52,3 +54,6 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
+[tool.setuptools.package-data]
+gncore = ["py.typed"]
+ngcore = ["skills/*.md"]

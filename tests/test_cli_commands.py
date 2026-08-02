@@ -31,6 +31,34 @@ def test_run_command_executes_full_workflow(tmp_path: Path, capsys) -> None:
     assert (tmp_path / ".gncore" / "outputs" / "deployment.md").is_file()
 
 
+def test_dashboard_command_shows_stage_menu_without_entering_interactive_loop(tmp_path: Path, capsys) -> None:
+    cli = GncoreCli()
+    cli.run(["init", str(tmp_path), "--provider", "mock"])
+    capsys.readouterr()
+
+    cli.run(["dashboard", str(tmp_path)])
+
+    output = capsys.readouterr().out
+    assert "Choose Stage" in output
+    assert "1 Planning" in output
+    assert "0 Exit" in output
+
+
+def test_top_level_help_includes_modern_subcommands(capsys) -> None:
+    cli = GncoreCli()
+
+    try:
+        cli.run(["--help"])
+    except SystemExit as exc:
+        assert exc.code == 0
+
+    output = capsys.readouterr().out
+    assert "run" in output
+    assert "resume" in output
+    assert "dashboard" in output
+    assert "stage" in output
+
+
 def test_resume_command_continues_from_existing_state(tmp_path: Path, capsys) -> None:
     manager = ProjectStateManager(tmp_path)
     manager.initialize("ResumeProject", "mock")

@@ -47,6 +47,12 @@ This entry documents every substantive change made in the pass that closed the g
 - Add provider discovery tests and deterministic provider test harness (`tests/test_providers_api.py`).
 - CI/test improvements and packaging updates in support of the 2.1.0 release.
 
+## 2.1.1 - 2026-08-02
+
+- Expose the existing interactive stage dashboard as explicit `dashboard` and `stage` CLI subcommands.
+- Add regression coverage for the updated CLI help surface and dashboard entry point.
+- Bump the package version for the 2.1.1 release.
+
 
 ### Known limitations (deliberately not solved by assertion)
 

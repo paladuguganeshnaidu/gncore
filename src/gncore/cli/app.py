@@ -132,6 +132,14 @@ class GncoreCli:
         results = self.runtime.run(project_dir)
         self._print_run_results(results, project_dir)
 
+    def _cmd_dashboard(self, args: argparse.Namespace) -> None:
+        project_dir = self._project_dir(args)
+        self._run_dashboard(project_dir)
+
+    def _cmd_stage(self, args: argparse.Namespace) -> None:
+        project_dir = self._project_dir(args)
+        self._run_dashboard(project_dir)
+
     def _cmd_resume(self, args: argparse.Namespace) -> None:
         project_dir = self._project_dir(args)
         results = self.runtime.resume(project_dir)
@@ -322,6 +330,12 @@ class GncoreCli:
 
         run_parser = subparsers.add_parser("run", help="Run the workflow from the current project state")
         run_parser.add_argument("project_directory", nargs="?", type=Path)
+
+        dashboard_parser = subparsers.add_parser("dashboard", help="Open the interactive stage dashboard")
+        dashboard_parser.add_argument("project_directory", nargs="?", type=Path)
+
+        stage_parser = subparsers.add_parser("stage", help="Open the interactive stage dashboard")
+        stage_parser.add_argument("project_directory", nargs="?", type=Path)
 
         resume_parser = subparsers.add_parser("resume", help="Resume an interrupted workflow")
         resume_parser.add_argument("project_directory", nargs="?", type=Path)

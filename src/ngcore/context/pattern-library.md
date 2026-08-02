@@ -13,7 +13,7 @@ A reference, not a per-build artifact — owned by no single stage, read by `04-
 A visual direction is a *character*, not a hex code. Map the requested (or inferred-from-audience) theme to a character description, then let `05-design.md` derive actual tokens from that character plus current-as-of-project design conventions:
 
 | Theme character | Palette tendency | Type tendency | Motion tendency | Density |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Minimal | Low saturation, high contrast, 1–2 accent colors max | Restrained type scale, generous whitespace-driven hierarchy | Subtle, short-duration, easing-forward only | Low — few simultaneous elements |
 | Corporate/professional | Desaturated primary + one confident accent, high legibility | Conservative scale, strong hierarchy via weight not size | Minimal, functional only (state changes, not decoration) | Medium |
 | Vibrant/consumer | Higher saturation, multi-color palettes intentional not accidental | Larger type scale, more expressive weight/size contrast | More visible, playful, still purposeful (not gratuitous) | Medium-high |

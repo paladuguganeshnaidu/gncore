@@ -4,12 +4,14 @@ Three near-identical builds of the same 11-file framework were supplied (sonnet4
 
 ## Cross-cutting findings
 
-**Strengths**
+### Strengths
+
 - Checklist-driven, imperative prompt style ("Mark PASS or FAIL. Do not skip lines.") — this is good prompt engineering and is preserved in this framework's gate design.
 - Plain-language framing for non-technical users is a real product decision worth keeping, not a weakness — this framework keeps it in `00-orchestrator.md` and `01-think.md`.
 - `03-scaffold-it`, `04-build-it`, `05-connect-it` are already close to production quality in their checklists (dependency pinning, file structure conventions, env var handling).
 
-**Structural weaknesses (the reason this is a redesign, not a patch)**
+### Structural weaknesses (the reason this is a redesign, not a patch)
+
 1. **Linear script, not a pipeline.** Phases hand off with "user approves" as the only gate. There is no binary, checkable stopping condition anywhere in the baseline — approval is vibes, not verification.
 2. **No requirements-clarification budget.** `01-dream-it` asks open questions but nothing bounds ambiguity resolution, so downstream stages inherit unstated assumptions silently.
 3. **No research stage.** Framework/library choices in `02-design-it` and `03-scaffold-it` are asserted from the model's priors with no verification step, which is a hallucination risk for anything version-specific (deprecated APIs, renamed packages, changed defaults).
@@ -27,7 +29,7 @@ Three near-identical builds of the same 11-file framework were supplied (sonnet4
 Scored on: Architecture, Reasoning, Prompt Design, Reliability, Scalability, Maintainability, Output Quality, Extensibility, Production Readiness.
 
 | Skill | Arch | Reason | Prompt | Reliab | Scale | Maint | Output | Extend | Prod-Ready | Notes |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 00-orchestrator | 5 | 5 | 6 | 5 | 4 | 6 | 6 | 4 | 5 | Clear phase list, but "approval" is the only gate; no recovery/rollback logic |
 | 01-dream-it | 6 | 6 | 7 | 6 | 6 | 7 | 7 | 6 | 6 | Good extraction checklist; no ambiguity/clarification budget |
 | 02-design-it | 6 | 5 | 6 | 5 | 5 | 5 | 7 | 4 | 5 | Strong content, wrong scope — mixes UX and architecture |

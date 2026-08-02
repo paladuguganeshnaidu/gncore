@@ -1,6 +1,7 @@
 # Migration guide: baseline `website-builder-skills` → `website-builder-elite`
 
 ## If you have no in-flight project
+
 Just start using `skills/00-orchestrator.md`. There's nothing to migrate.
 
 ## If you have an in-flight project built with the baseline framework
@@ -8,7 +9,7 @@ Just start using `skills/00-orchestrator.md`. There's nothing to migrate.
 The baseline's phases map onto this framework's stages roughly as follows. Use this to figure out where to re-enter the pipeline — you do not need to restart from `01-think`.
 
 | Baseline phase | Roughly maps to | What to do |
-|---|---|---|
+| --- | --- | --- |
 | Phase 1 (dream-it, Requirements Document) | `01-think` + `03-plan` | Copy the existing Requirements Document into `context/requirements.md`, reformatted to `templates/requirements-template.md`. Add explicit non-functional requirements (performance/accessibility/security/coverage) — the baseline doc almost certainly doesn't have concrete numbers for these; set them now, don't skip it. |
 | Phase 2 (design-it, Technical Specification) | `04-architect` + `05-design` | Split the old Technical Specification: tech stack/data model/API shape → `context/architecture.md` (write ADRs retroactively for the decisions that mattered); visual/UX content → `context/design-system.md`. This split is the most valuable single migration step — do it even if you do nothing else. |
 | Phase 3 (build-it, Codebase) | `06-scaffold` + `07-build` | If the codebase already exists, treat it as already scaffolded/built. Immediately run `09-review.md` against it before doing anything else — the baseline had no independent review step, so this is very likely the first real review the code has had. |

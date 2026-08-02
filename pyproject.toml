@@ -57,3 +57,6 @@ where = ["src"]
 [tool.setuptools.package-data]
 gncore = ["py.typed"]
 ngcore = ["skills/*.md"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

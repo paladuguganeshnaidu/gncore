@@ -7,7 +7,7 @@ This is a ground-up redesign of the `website-builder-skills` baseline (see `AUDI
 ## What changed, and why
 
 | Baseline gap | Fix in this framework |
-|---|---|
+| --- | --- |
 | No requirements-clarification loop before planning — ambiguity got silently resolved by guessing | New `01-think.md` stage: forces explicit assumption-surfacing and a single clarifying-question budget before any doc is written |
 | No research stage — library/pattern choices came from training-data priors, which go stale | New `02-research.md`: web-verifies framework versions, library choices, and platform constraints before they're locked into the architecture |
 | "Design" conflated visual design with technical architecture in one skill | Split into `04-architect.md` (system/tech decisions) and `05-design.md` (visual/UX design system) — different failure modes, different reviewers |
@@ -22,7 +22,7 @@ This is a ground-up redesign of the `website-builder-skills` baseline (see `AUDI
 
 ## Pipeline
 
-```
+```text
 THINK → RESEARCH → PLAN → ARCHITECT → DESIGN → SCAFFOLD → BUILD → INTEGRATE
    → REVIEW → SECURITY → PERFORMANCE → ACCESSIBILITY → TEST → DEBUG → REFACTOR
    → DOCUMENT → DEPLOY → VERIFY
@@ -32,7 +32,7 @@ GIT (`19-git.md`) is not a phase — it runs continuously (a commit at the close
 
 ## Directory structure
 
-```
+```text
 website-builder-elite/
 ├── README.md                 ← you are here
 ├── ARCHITECTURE.md           ← pipeline diagram, stage contracts, quality gates

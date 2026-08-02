@@ -7,7 +7,7 @@ This framework replaces conversational replay with a **ledger**: a small set of 
 ## The ledger
 
 | File | Owner (writes) | Readers | Contains |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `clarify.md` | 01-think | 03-plan | Resolved ambiguities, explicit assumptions and their risk level |
 | `research-notes.md` | 02-research | 04-architect | Verified current facts (library versions, platform limits) with source and date checked |
 | `pattern-library.md` | none (static reference, not written per-build) | 04-architect, 05-design | Durable, framework-agnostic decision structure (theme-to-token character, component-state checklist, data-model and deployment-topology decision trees) — never a source of a specific package name; that's always `research-notes.md` |

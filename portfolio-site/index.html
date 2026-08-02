@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GNCore Portfolio Demo</title>
+    <style>
+      :root { color-scheme: dark; }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: linear-gradient(135deg, #07111d, #10253b);
+        color: #f5f7fa;
+      }
+      main { max-width: 960px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+      .hero { padding: 2rem 0 3rem; }
+      .hero h1 { font-size: 2.4rem; margin-bottom: 0.5rem; }
+      .hero p { font-size: 1.05rem; line-height: 1.6; color: #b7c4d4; }
+      .card { background: rgba(255,255,255,0.08); padding: 1.2rem; border-radius: 16px; margin-bottom: 1rem; }
+      .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+      code { background: rgba(255,255,255,0.12); padding: 0.15rem 0.35rem; border-radius: 6px; }
+      a { color: #67e8f9; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <h1>Portfolio website powered by GNCore</h1>
+        <p>This is a simple responsive landing page generated from the package’s workflow metadata. It demonstrates that the GNCore package can drive content and structure for a website.</p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>About</h2>
+          <p>I build AI-assisted product experiences using automation and structured workflows.</p>
+        </article>
+        <article class="card">
+          <h2>Projects</h2>
+          <p>Explore planning, architecture, design, build, testing, and deployment stages.</p>
+        </article>
+        <article class="card">
+          <h2>Workflow</h2>
+          <p>The site uses GNCore’s stage registry to display a modern delivery pipeline.</p>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>GNCore workflow stages</h2>
+        <ul id="stages"></ul>
+      </section>
+    </main>
+
+    <script>
+      const stages = [
+        "Planning",
+        "Architecture",
+        "Design",
+        "Frontend",
+        "Backend",
+        "Database",
+        "Testing",
+        "Security Audit",
+        "Documentation",
+        "Deployment"
+      ];
+      const list = document.getElementById('stages');
+      stages.forEach((stage) => {
+        const item = document.createElement('li');
+        item.textContent = stage;
+        list.appendChild(item);
+      });
+    </script>
+  </body>
+</html>

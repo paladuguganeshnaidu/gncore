@@ -16,6 +16,10 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+SKILLS_ROOT = REPO_ROOT / "src" / "ngcore" / "skills"
+AGENTS_ROOT = REPO_ROOT / "src" / "ngcore" / "agents"
+CONTEXT_ROOT = REPO_ROOT / "src" / "ngcore" / "context"
+TEMPLATES_ROOT = REPO_ROOT / "src" / "ngcore" / "templates"
 FAILURES: list[str] = []
 
 
@@ -25,7 +29,7 @@ def fail(msg: str) -> None:
 
 def check_frontmatter_name_matches_filename() -> None:
     """Every skills/*.md file's frontmatter `name:` must match its filename stem."""
-    for path in sorted((REPO_ROOT / "skills").glob("*.md")):
+    for path in sorted(SKILLS_ROOT.glob("*.md")):
         text = path.read_text(encoding="utf-8")
         m = re.search(r"^---\n(.*?)\n---", text, re.DOTALL)
         if not m:
@@ -58,8 +62,8 @@ def check_next_targets_resolve() -> None:
     """Every NEXT: target in every skill's Handoff block must resolve to a real
     skills/<name>.md file, be the literal DONE, or be an allow-listed
     documented exception (see NO_NEXT_ALLOWED / NEXT_DYNAMIC_ALLOWLIST)."""
-    skill_stems = {p.stem for p in (REPO_ROOT / "skills").glob("*.md")}
-    for path in sorted((REPO_ROOT / "skills").glob("*.md")):
+    skill_stems = {p.stem for p in SKILLS_ROOT.glob("*.md")}
+    for path in sorted(SKILLS_ROOT.glob("*.md")):
         stem = path.stem
         text = path.read_text(encoding="utf-8")
         next_m = re.search(r"^NEXT:\s*(.+)$", text, re.MULTILINE)
@@ -95,7 +99,7 @@ def get_ledger_artifact_names() -> set[str]:
     runtime outputs (requirements.md, architecture.md, etc.) — these live under
     a project's own context/ directory once a build runs, not in this template
     repo itself, so their absence here is correct, not a broken reference."""
-    text = (REPO_ROOT / "context" / "CONTEXT-ENGINEERING.md").read_text(encoding="utf-8")
+    text = (CONTEXT_ROOT / "CONTEXT-ENGINEERING.md").read_text(encoding="utf-8")
     names = set()
     for m in re.finditer(r"^\|\s*`([A-Za-z0-9_\-./*]+\.md)`", text, re.MULTILINE):
         names.add(m.group(1).split("/")[-1])
@@ -106,7 +110,7 @@ def check_referenced_filenames_exist() -> None:
     """Every backtick-quoted *.md filename referenced in README.md, ARCHITECTURE.md,
     and agents/AGENTS.md must exist somewhere in the repo, UNLESS it's a declared
     runtime ledger artifact (see get_ledger_artifact_names)."""
-    docs = ["README.md", "ARCHITECTURE.md", "agents/AGENTS.md"]
+    docs = ["README.md", "ARCHITECTURE.md", "src/ngcore/agents/AGENTS.md"]
     all_md_files = {p.name for p in REPO_ROOT.rglob("*.md")}
     ledger_artifacts = get_ledger_artifact_names()
     for doc in docs:
@@ -126,7 +130,7 @@ def check_referenced_filenames_exist() -> None:
 def check_countable_claims() -> None:
     """Any numeric claim about a countable table (e.g. 'N named roles') must match
     the actual row count of the table it describes."""
-    agents_path = REPO_ROOT / "agents" / "AGENTS.md"
+    agents_path = AGENTS_ROOT / "AGENTS.md"
     agents_text = agents_path.read_text(encoding="utf-8")
     role_rows = re.findall(r"^\| \*\*[^*]+\*\* \|", agents_text, re.MULTILINE)
     actual_role_count = len(role_rows)
@@ -147,7 +151,7 @@ def check_countable_claims() -> None:
     # Pipeline stage count: ARCHITECTURE.md's diagram should have as many
     # numbered stages as there are skills/NN-*.md files (excluding 00-orchestrator,
     # which is the entry point, not a pipeline stage with a gate of its own).
-    skill_files = sorted((REPO_ROOT / "skills").glob("[0-9][0-9]-*.md"))
+    skill_files = sorted(SKILLS_ROOT.glob("[0-9][0-9]-*.md"))
     numbered_stage_count = len(skill_files)
     arch_text = (REPO_ROOT / "ARCHITECTURE.md").read_text(encoding="utf-8")
     diagram_stage_ids = set(re.findall(r"^\s*(\d{2})-[A-Z]+", arch_text, re.MULTILINE))
@@ -169,11 +173,11 @@ def check_templates_are_referenced() -> None:
     under skills/ (or ARCHITECTURE.md, since that's where the shape-level
     reference to quality-gate-checklist.md lives) — catches future orphan templates."""
     skills_text = "\n".join(
-        p.read_text(encoding="utf-8") for p in (REPO_ROOT / "skills").glob("*.md")
+        p.read_text(encoding="utf-8") for p in SKILLS_ROOT.glob("*.md")
     )
     arch_text = (REPO_ROOT / "ARCHITECTURE.md").read_text(encoding="utf-8")
     haystack = skills_text + "\n" + arch_text
-    for tmpl in sorted((REPO_ROOT / "templates").glob("*.md")):
+    for tmpl in sorted(TEMPLATES_ROOT.glob("*.md")):
         if tmpl.name not in haystack:
             fail(f"templates/{tmpl.name} is not referenced by name anywhere in skills/*.md or ARCHITECTURE.md")
 

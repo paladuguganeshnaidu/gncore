@@ -7,7 +7,7 @@ Role-switching is sequential by default, full stop. `ARCHITECTURE.md`'s "Non-lin
 **The core rule: the role that builds something is never the role whose sign-off gates it.** Builder writes, Reviewer/Security/Performance/Accessibility/QA gate. This is why `09-review.md` through `13-test.md` are assigned to different roles than `07-build.md`/`08-integrate.md`.
 
 | Role | Owns stages | Responsibilities | Decision boundary (what it CANNOT decide) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Orchestrator** | 00 | Pipeline state, stage sequencing, gate enforcement, user-facing communication | Cannot write feature code or override a failed gate |
 | **Product Planner** | 01, 03 | Requirement extraction, scope, ambiguity resolution | Cannot choose tech stack or design system |
 | **Researcher** | 02 | Verifies current library versions, platform constraints, prior art | Cannot make the final architecture call — only supplies verified facts to the Architect |
@@ -31,7 +31,7 @@ Role-switching is sequential by default, full stop. `ARCHITECTURE.md`'s "Non-lin
 
 Every stage ends by writing a handoff block to the orchestrator, in this exact shape:
 
-```
+```text
 STAGE: <number>-<name>
 ROLE: <agent role>
 STATUS: pass | pass (reasoned, not executed) | fail | blocked

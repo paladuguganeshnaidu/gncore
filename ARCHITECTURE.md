@@ -2,7 +2,7 @@
 
 ## Pipeline diagram
 
-```
+```text
  00-ORCHESTRATOR (state machine, never does the work itself)
         │
         ▼
@@ -90,7 +90,7 @@ Each stage skill file declares:
 ## Recovery rules
 
 | Failure at stage | Action |
-|---|---|
+| --- | --- |
 | 01-THINK, 03-PLAN | Ask the user the specific blocking question; do not proceed on an assumption for anything that changes scope, cost, or data handling. |
 | 02-RESEARCH | Mark the unverified claim explicitly as an assumption in `requirements.md`/`architecture.md` and flag it for re-check before 10-SECURITY. |
 | 04-ARCHITECT, 05-DESIGN | Loop back within the same stage — these are pre-code, so iteration is cheap. Max 3 internal iterations before escalating the tradeoff to the user. |

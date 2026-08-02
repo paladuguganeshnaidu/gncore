@@ -1,2 +1,0 @@
-[console_scripts]
-gncore = gncore.cli.app:main

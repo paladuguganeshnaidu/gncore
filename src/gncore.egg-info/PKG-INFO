@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: gncore
-Version: 0.1.1
+Version: 0.2.1
 Summary: Dynamic AI Skill Orchestration Framework for markdown-driven agents, contexts, skills, and templates.
 Author-email: Ganesh Naidu <ganesh.naidu@example.com>
 License: MIT
@@ -26,7 +26,7 @@ Requires-Dist: pytest>=8.0; extra == "test"
 Requires-Dist: pytest-cov>=4.0; extra == "test"
 Dynamic: license-file
 
-# Website Builder Elite
+# GNCore
 
 A production-grade autonomous software delivery framework for Claude. Given a plain-language idea, it plans, architects, designs, builds, integrates, reviews (security / performance / accessibility), tests, debugs, refactors, documents, deploys, and verifies a real website or web app — with explicit quality gates between every stage.
 

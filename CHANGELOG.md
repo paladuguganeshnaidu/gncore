@@ -40,6 +40,14 @@ This entry documents every substantive change made in the pass that closed the g
 - Grepped every filename referenced in `README.md`, `ARCHITECTURE.md`, `agents/AGENTS.md`, and `context/CONTEXT-ENGINEERING.md`; every reference resolves to a real file or a declared runtime ledger artifact.
 - Re-scored the framework against the original audit rubric — see the re-score in this pass's closing summary. One dimension is deliberately left below 9.9 with a named reason, per this task's instruction not to claim a flawless score.
 
+## 2.1.0 - 2026-08-02
+
+- Add Verified-mode E2E scaffolding: `scripts/verified_mode_run.py` and `VERIFIED_MODE.md` documentation.
+- Implement API-backed provider adapters with safe test stubs (`src/gncore/providers/api.py`).
+- Add provider discovery tests and deterministic provider test harness (`tests/test_providers_api.py`).
+- CI/test improvements and packaging updates in support of the 2.1.0 release.
+
+
 ### Known limitations (deliberately not solved by assertion)
 
 - **Role separation is prompt-discipline, not sandboxed.** Naming a role changes what Claude treats as its own prior work versus work to scrutinize, and that's a real, measurable prompt-engineering lever — but it is not a technical guarantee. A single model instance in the "Reviewer" role can still be influenced by having just written the code as "Builder" in the same session, in a way a genuinely separate reviewer (human or model) could not be. This framework does not claim otherwise, and no wording change in this pass makes that claim true — it's structural to running one model across all named roles.

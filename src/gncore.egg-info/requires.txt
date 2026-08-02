@@ -1,3 +1,4 @@
+keyring>=25.0
 
 [test]
 pytest>=8.0

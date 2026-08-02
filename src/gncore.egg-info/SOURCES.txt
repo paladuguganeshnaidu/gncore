@@ -3,7 +3,9 @@ MANIFEST.in
 README.md
 pyproject.toml
 src/gncore/__init__.py
+src/gncore/config.py
 src/gncore/py.typed
+src/gncore/runtime.py
 src/gncore.egg-info/PKG-INFO
 src/gncore.egg-info/SOURCES.txt
 src/gncore.egg-info/dependency_links.txt
@@ -18,7 +20,11 @@ src/gncore/core/prompt.py
 src/gncore/core/stages.py
 src/gncore/core/workflow.py
 src/gncore/providers/__init__.py
+src/gncore/providers/api.py
 src/gncore/providers/base.py
+src/gncore/providers/catalog.py
+src/gncore/providers/copilot.py
+src/gncore/providers/credentials.py
 src/gncore/providers/external.py
 src/gncore/providers/factory.py
 src/gncore/providers/mock.py
@@ -61,7 +67,9 @@ src/ngcore/templates/pull-request-template.md
 src/ngcore/templates/quality-gate-checklist.md
 src/ngcore/templates/requirements-template.md
 tests/test_api.py
+tests/test_cli_commands.py
 tests/test_execution_engine.py
 tests/test_gncore_architecture.py
 tests/test_import.py
 tests/test_providers.py
+tests/test_providers_api.py

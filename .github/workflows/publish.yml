@@ -16,11 +16,27 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install build tools
+      - name: Install build and test tools
         run: |
           python -m pip install --upgrade pip
-          pip install build twine
+          pip install -e .[test] build twine
+      - name: Run tests
+        run: pytest -q
+      - name: Run consistency validator
+        run: python scripts/validate_consistency.py
+      - name: Run CLI smoke test
+        run: |
+          mkdir -p /tmp/gncore-smoke
+          cd /tmp/gncore-smoke
+          gncore init --provider mock
+          gncore run
       - name: Build distributions
         run: python -m build
+      - name: Verify distributions
+        run: twine check dist/*
+      - name: Verify installed wheel
+        run: |
+          python -m pip install --force-reinstall --no-deps dist/gncore-*.whl
+          gncore version
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

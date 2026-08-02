@@ -97,6 +97,49 @@ This framework supports two explicit modes, and every affected stage's Quality G
 
 Reasoned-mode results are not treated as equivalent to Verified-mode results everywhere: `17-deploy.md` specifically requires an explicit, logged user acknowledgment before deploying on a Reasoned-mode `10-security.md` or `13-test.md` result, because deploying on an untested claim is a materially higher-risk action than deploying on an actually-verified one. See that skill file for the exact rule.
 
+## Public CLI
+
+The supported user workflow is intentionally small:
+
+```powershell
+pip install gncore
+mkdir myproject
+cd myproject
+gncore init
+gncore run
+```
+
+`gncore init` creates `.gncore/`, writes `prompt.md`, writes configuration, and auto-detects an available provider. `gncore run` validates the project and then executes the workflow automatically. If execution stops partway through, `gncore resume` continues from the saved state.
+
+Other public commands:
+
+| Command | Purpose |
+| --- | --- |
+| `gncore doctor` | Validate the project, config, provider availability, Git, and secure credential storage |
+| `gncore provider list` | Show discovered providers and their availability |
+| `gncore provider use <name>` | Select a provider and persist it in the project config |
+| `gncore provider detect` | Re-detect the best available provider and save it |
+| `gncore provider health [name]` | Check provider health for the selected provider or a named one |
+| `gncore config show` | Print the current project config |
+| `gncore config set --provider <name>` | Update the selected provider |
+| `gncore config validate` | Validate the on-disk project config |
+| `gncore auth login <provider>` | Store a provider token securely in the platform credential store |
+| `gncore auth logout <provider>` | Remove the stored provider token |
+| `gncore auth status <provider>` | Check whether a token is available |
+| `gncore version` | Print the installed gncore version |
+| `gncore update` | Upgrade gncore with pip |
+
+Examples:
+
+```powershell
+gncore provider list
+gncore provider use mock
+gncore auth login openai-api --token %OPENAI_API_KEY%
+gncore doctor
+```
+
+Stages remain internal implementation details. Users should work through `init`, `run`, and `resume` rather than invoking stage numbers directly during normal usage.
+
 ## Design principles this framework holds itself to
 
 - **A gate is binary.** "Looks good" is not a gate. Every gate in this repo is phrased as a checklist item that resolves to pass/fail, because ambiguous gates are the #1 way agent pipelines silently ship broken work.

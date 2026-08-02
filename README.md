@@ -1,4 +1,4 @@
-# Website Builder Elite
+# GNCore
 
 A production-grade autonomous software delivery framework for Claude. Given a plain-language idea, it plans, architects, designs, builds, integrates, reviews (security / performance / accessibility), tests, debugs, refactors, documents, deploys, and verifies a real website or web app — with explicit quality gates between every stage.
 

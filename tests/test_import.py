@@ -1,35 +1,10 @@
-import importlib
-import os
-import pathlib
-import sys
+from __future__ import annotations
 
-import pytest
-
-from ngcore import NgCore, Loader
+from gncore import __version__, GncoreCli, get_adapter_registry
 
 
-def test_import_ngcore():
-    core = NgCore()
-    assert core.hello() == "Hello from gncore"
-
-
-def test_loader_list_files(tmp_path):
-    sample = tmp_path / "sample.txt"
-    sample.write_text("hello")
-
-    loader = Loader(tmp_path)
-    files = loader.list_files()
-
-    assert sample in files
-
-
-def test_repository_root_does_not_shadow_package_import():
-    repo_root = pathlib.Path(__file__).resolve().parents[1]
-    sys.path.insert(0, str(repo_root))
-    try:
-        imported = importlib.import_module("gncore")
-    finally:
-        sys.path.pop(0)
-
-    assert imported.__file__ is not None
-    assert "gncore.py" not in imported.__file__
+def test_public_api_exports() -> None:
+    assert __version__ == "3.0.0"
+    assert isinstance(GncoreCli(), GncoreCli)
+    registry = get_adapter_registry()
+    assert len(registry.adapters) == 9

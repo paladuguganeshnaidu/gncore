@@ -1,125 +1,51 @@
 from __future__ import annotations
 
-import json
 from pathlib import Path
 
-from gncore import GncoreCli, ProjectStateManager
-from gncore.runtime import GncoreRuntime
+from gncore import GncoreCli
 
 
-def test_init_command_creates_config_and_prompt(tmp_path: Path, capsys) -> None:
+def test_list_skills_and_apps(capsys) -> None:
     cli = GncoreCli()
 
-    cli.run(["init", str(tmp_path), "--provider", "mock"])
-
+    assert cli.run(["list", "skills"]) == 0
     output = capsys.readouterr().out
-    assert "Initialized GNCore project" in output
-    assert (tmp_path / ".gncore" / "config.json").is_file()
-    assert (tmp_path / "prompt.md").is_file()
+    assert "requirements" in output
+    assert "release" in output
+
+    assert cli.run(["list", "apps"]) == 0
+    output = capsys.readouterr().out
+    assert "VS Code Chat" in output
+    assert "Cursor" in output
 
 
-def test_run_command_executes_full_workflow(tmp_path: Path, capsys) -> None:
+def test_activate_validate_backup_and_restore(tmp_path: Path, capsys) -> None:
     cli = GncoreCli()
-    cli.run(["init", str(tmp_path), "--provider", "mock"])
+
+    assert cli.run(["activate", "--apps", "cursor", "--skills", "requirements", "architecture"]) == 0
+    output = capsys.readouterr().out
+    assert "Activated Cursor" in output
+
+    config_root = cli.adapter_manager.by_key("cursor").discover(Path.cwd()).config_root
+    manifest = config_root / "manifest.json"
+    assert manifest.is_file()
+    assert (config_root / "gncore" / "skills" / "requirements" / "metadata.json").is_file()
+
+    assert cli.run(["validate", "--apps", "cursor"]) == 0
+    validation_output = capsys.readouterr().out
+    assert "Cursor: valid" in validation_output
+
+    archive = tmp_path / "backup.zip"
+    assert cli.run(["backup", "--output", str(archive)]) == 0
+    backup_output = capsys.readouterr().out
+    assert archive.is_file()
+    assert "Backup created" in backup_output
+
+    assert cli.run(["uninstall", "--apps", "cursor"]) == 0
     capsys.readouterr()
+    assert not manifest.exists()
 
-    cli.run(["run", str(tmp_path)])
-
-    output = capsys.readouterr().out
-    assert "Workflow complete." in output
-    assert (tmp_path / ".gncore" / "outputs" / "planning.md").is_file()
-    assert (tmp_path / ".gncore" / "outputs" / "deployment.md").is_file()
-
-
-def test_dashboard_command_shows_stage_menu_without_entering_interactive_loop(tmp_path: Path, capsys) -> None:
-    cli = GncoreCli()
-    cli.run(["init", str(tmp_path), "--provider", "mock"])
-    capsys.readouterr()
-
-    cli.run(["dashboard", str(tmp_path)])
-
-    output = capsys.readouterr().out
-    assert "Choose Stage" in output
-    assert "1 Planning" in output
-    assert "0 Exit" in output
-
-
-def test_top_level_help_includes_modern_subcommands(capsys) -> None:
-    cli = GncoreCli()
-
-    try:
-        cli.run(["--help"])
-    except SystemExit as exc:
-        assert exc.code == 0
-
-    output = capsys.readouterr().out
-    assert "run" in output
-    assert "resume" in output
-    assert "dashboard" in output
-    assert "stage" in output
-
-
-def test_resume_command_continues_from_existing_state(tmp_path: Path, capsys) -> None:
-    manager = ProjectStateManager(tmp_path)
-    manager.initialize("ResumeProject", "mock")
-    manager.write_prompt("# Build a product")
-    manager.output_file("planning.md").write_text("planning artifact", encoding="utf-8")
-    manager.complete_stage(1)
-    capsys.readouterr()
-
-    GncoreCli().run(["resume", str(tmp_path)])
-
-    output = capsys.readouterr().out
-    assert "Architecture" in output
-    assert (tmp_path / ".gncore" / "outputs" / "architecture.md").is_file()
-
-
-def test_doctor_reports_healthy_project(tmp_path: Path, capsys) -> None:
-    cli = GncoreCli()
-    cli.run(["init", str(tmp_path), "--provider", "mock"])
-    capsys.readouterr()
-
-    cli.run(["doctor", str(tmp_path)])
-
-    output = capsys.readouterr().out
-    assert "OK" in output
-
-
-def test_provider_and_config_commands_update_selection(tmp_path: Path, capsys) -> None:
-    cli = GncoreCli()
-    cli.run(["init", str(tmp_path), "--provider", "mock"])
-    capsys.readouterr()
-
-    cli.run(["provider", str(tmp_path), "use", "mock"])
-    capsys.readouterr()
-    cli.run(["config", str(tmp_path), "show"])
-    output = capsys.readouterr().out
-    config = json.loads(output)
-    assert config["selected_provider"] == "mock"
-
-
-def test_auth_and_version_and_update_commands(monkeypatch, capsys) -> None:
-    runtime = GncoreRuntime()
-    store: dict[str, str] = {}
-
-    monkeypatch.setattr(runtime, "auth_set", lambda provider, token: store.__setitem__(provider, token))
-    monkeypatch.setattr(runtime, "auth_get", lambda provider: store.get(provider))
-    monkeypatch.setattr(runtime, "auth_delete", lambda provider: store.pop(provider, None))
-    monkeypatch.setattr(runtime, "update", lambda dry_run=False: None)
-
-    cli = GncoreCli()
-    cli.runtime = runtime
-
-    cli.run(["auth", "login", "mock", "--token", "secret-token"])
-    cli.run(["auth", "status", "mock"])
-    cli.run(["auth", "logout", "mock"])
-    cli.run(["version"])
-    cli.run(["update", "--dry-run"])
-
-    output = capsys.readouterr().out
-    assert "Stored credential for mock" in output
-    assert "mock: credential available" in output
-    assert "Removed credential for mock" in output
-    from gncore import __version__
-    assert __version__ in output
-    assert "Would run:" in output
+    assert cli.run(["restore", str(archive)]) == 0
+    restore_output = capsys.readouterr().out
+    assert "Restored" in restore_output
+    assert manifest.is_file()

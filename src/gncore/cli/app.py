@@ -3,413 +3,213 @@
 from __future__ import annotations
 
 import argparse
-import json
-import sys
-from dataclasses import dataclass
 from pathlib import Path
+import sys
 
-from gncore.config import ConfigError
-from gncore.core.executor import ExecutionEngine, ExecutionResult
-from gncore.core.prompt import PromptBuilder
-from gncore.core.stages import StageDefinition, StageRegistry, default_stage_registry
-from gncore.core.workflow import StagePreparation, StageWorkflow
-from gncore.providers.catalog import discover_providers, provider_by_name
-from gncore.providers.credentials import CredentialError
-from gncore.providers.factory import ProviderFactory
-from gncore.runtime import GncoreRuntime, ProjectValidationError
-from gncore.skills.loader import SkillLoader
-from gncore.state.manager import ProjectStateManager
-from gncore.state.models import ProjectState
-from gncore.utils.logging import LoggerFactory
-
-
-class Ansi:
-    """ANSI colors used by the terminal interface."""
-
-    GREEN = "\033[32m"
-    RED = "\033[31m"
-    CYAN = "\033[36m"
-    YELLOW = "\033[33m"
-    BOLD = "\033[1m"
-    RESET = "\033[0m"
-
-
-@dataclass(frozen=True, slots=True)
-class CliConfig:
-    """User-provided CLI startup values."""
-
-    project_name: str
-    project_directory: Path
-    provider: str
-
-
-@dataclass(frozen=True, slots=True)
-class CliSelection:
-    """A selected stage and project prompt from CLI input."""
-
-    stage_id: int
-    user_prompt: str = ""
+from gncore.core.managers import AdapterManager, BackupManager, ConfigurationManager, DiagnosticsManager, Installer, RollbackManager, SkillManager, Validator, VersionManager
+from gncore.utilities.logging import setup_logging
 
 
 class GncoreCli:
-    """Render and execute GNCore terminal workflows."""
+    def __init__(self) -> None:
+        self.adapter_manager = AdapterManager()
+        self.skill_manager = SkillManager()
+        self.configuration_manager = ConfigurationManager()
+        self.validator = Validator(self.adapter_manager)
+        self.installer = Installer(self.adapter_manager, self.skill_manager, self.configuration_manager, self.validator)
+        self.backup_manager = BackupManager(self.adapter_manager)
+        self.rollback_manager = RollbackManager(self.adapter_manager)
+        self.diagnostics_manager = DiagnosticsManager(self.adapter_manager, self.validator)
+        self.version_manager = VersionManager()
 
-    def __init__(self, registry: StageRegistry | None = None) -> None:
-        self.registry = registry or default_stage_registry()
-        self.provider_factory = ProviderFactory()
-        self.runtime = GncoreRuntime(self.registry)
+    def run(self, argv: list[str] | None = None) -> int:
+        setup_logging()
+        parser = self._build_parser()
+        args = parser.parse_args(argv)
+        if not hasattr(args, "handler"):
+            parser.print_help()
+            return 0
+        return args.handler(args)
 
-    def banner(self) -> str:
-        """Return the product banner and stage menu."""
-        lines = [
-            "=================================================",
-            f"{Ansi.BOLD}{Ansi.CYAN}GNCore{Ansi.RESET}",
-            "AI Software Engineering Framework",
-            "=================================================",
-            "Project Name:",
-            "Project Directory:",
-            "Provider:",
-            "Choose Stage",
-            *self.registry.menu_lines(),
-        ]
-        return "\n".join(lines)
-
-    def init_project(self, project_dir: Path, project_name: str, provider: str) -> ProjectStateManager:
-        """Initialize GNCore files in a project directory."""
-        self.runtime.init(project_dir, project_name, provider)
-        manager = ProjectStateManager(project_dir)
-        LoggerFactory().create(manager.gncore_dir / "logs").info("Initialized GNCore project '%s'", project_name)
-        return manager
-
-    def initialize(self, config: CliConfig) -> ProjectStateManager:
-        """Initialize the project state directory and log startup."""
-        return self.init_project(config.project_directory, config.project_name, config.provider)
-
-    def prepare_stage(self, config: CliConfig, selection: CliSelection) -> StagePreparation:
-        """Initialize a project, select a stage, and assemble its prompt."""
-        manager = self.initialize(config)
-        if selection.user_prompt:
-            manager.write_prompt(selection.user_prompt)
-        workflow = StageWorkflow(self.registry, manager, SkillLoader(), PromptBuilder())
-        return workflow.prepare_stage(selection.stage_id, manager.prompt())
-
-    def execute_stage(self, config: CliConfig, selection: CliSelection) -> ExecutionResult:
-        """Initialize a project and execute one stage with the configured provider."""
-        manager = self.initialize(config)
-        if selection.user_prompt:
-            manager.write_prompt(selection.user_prompt)
-        provider = self.provider_factory.create(config.provider)
-        engine = ExecutionEngine(self.registry, manager, SkillLoader(), PromptBuilder(), provider)
-        return engine.execute(selection.stage_id)
-
-    def run(self, argv: list[str] | None = None) -> None:
-        """Run the CLI, dispatching to modern subcommands or legacy stage flags."""
-        args = self._parse_args(argv)
-        try:
-            if args.command is None:
-                if self._has_legacy_stage_args(args):
-                    result = self.execute_stage(self._legacy_config_from_args(args), self._legacy_selection_from_args(args))
-                    self._print_execution_result(result)
-                    return
-                args.parser.print_help()
-                return
-            handler = getattr(self, f"_cmd_{args.command.replace('-', '_')}")
-            handler(args)
-        except (ConfigError, CredentialError, ProjectValidationError, ValueError, RuntimeError) as exc:
-            print(f"{Ansi.RED}Error:{Ansi.RESET} {exc}", file=sys.stderr)
-            raise SystemExit(1) from exc
-
-    def _cmd_init(self, args: argparse.Namespace) -> None:
-        project_dir = self._project_dir(args)
-        project_name = args.project_name or project_dir.name
-        config = self.runtime.init(project_dir, project_name, args.provider)
-        print(f"{Ansi.GREEN}Initialized GNCore project at {project_dir / '.gncore'}{Ansi.RESET}")
-        print(f"Provider: {config.selected_provider} ({config.provider_kind})")
-        print(f"Write requirements in {project_dir / 'prompt.md'}")
-
-    def _cmd_run(self, args: argparse.Namespace) -> None:
-        project_dir = self._project_dir(args)
-        results = self.runtime.run(project_dir)
-        self._print_run_results(results, project_dir)
-
-    def _cmd_dashboard(self, args: argparse.Namespace) -> None:
-        project_dir = self._project_dir(args)
-        self._run_dashboard(project_dir)
-
-    def _cmd_stage(self, args: argparse.Namespace) -> None:
-        project_dir = self._project_dir(args)
-        self._run_dashboard(project_dir)
-
-    def _cmd_resume(self, args: argparse.Namespace) -> None:
-        project_dir = self._project_dir(args)
-        results = self.runtime.resume(project_dir)
-        self._print_run_results(results, project_dir)
-
-    def _cmd_doctor(self, args: argparse.Namespace) -> None:
-        project_dir = self._project_dir(args)
-        issues = self.runtime.doctor(project_dir)
-        if not issues:
-            print(f"{Ansi.GREEN}OK{Ansi.RESET}: project, config, provider, git, and credentials checks passed")
-            return
-        print(f"{Ansi.RED}Problems found:{Ansi.RESET}")
-        for issue in issues:
-            print(f"- {issue.field}: {issue.message}")
-        raise SystemExit(1)
-
-    def _cmd_provider(self, args: argparse.Namespace) -> None:
-        project_dir = self._project_dir(args)
-        command = args.provider_command
-        if command == "list":
-            self._print_provider_list(project_dir)
-            return
-        if command == "use":
-            config = self.runtime.provider_select(project_dir, args.name)
-            print(f"Selected provider: {config.selected_provider} ({config.provider_kind})")
-            return
-        if command == "detect":
-            config = self.runtime.provider_detect(project_dir)
-            print(f"Detected provider: {config.selected_provider} ({config.provider_kind})")
-            return
-        if command == "health":
-            name = args.name
-            if name is None:
-                name = self.runtime.load_config(project_dir).selected_provider
-            provider = provider_by_name(name)
-            status = provider.create().health()
-            print(f"{provider.name}: {status.health.value} - {status.message}")
-            return
-        raise SystemExit("provider subcommand required")
-
-    def _cmd_config(self, args: argparse.Namespace) -> None:
-        project_dir = self._project_dir(args)
-        command = args.config_command
-        if command == "show":
-            config = self.runtime.config_show(project_dir)
-            print(json.dumps(config.to_dict(), indent=2, sort_keys=True))
-            return
-        if command == "set":
-            config = self.runtime.load_config(project_dir)
-            if args.provider:
-                config.update_provider(provider_by_name(args.provider))
-            if args.project_name:
-                config.project_name = args.project_name
-            self.runtime.write_config(project_dir, config)
-            print(json.dumps(config.to_dict(), indent=2, sort_keys=True))
-            return
-        if command == "validate":
-            issues = self.runtime.config_validate(project_dir)
-            if not issues:
-                print(f"{Ansi.GREEN}OK{Ansi.RESET}: config is valid")
-                return
-            for issue in issues:
-                print(f"- {issue.field}: {issue.message}")
-            raise SystemExit(1)
-        raise SystemExit("config subcommand required")
-
-    def _cmd_auth(self, args: argparse.Namespace) -> None:
-        command = args.auth_command
-        if command == "login":
-            token = args.token or input("Token: ").strip()
-            self.runtime.auth_set(args.provider, token)
-            print(f"Stored credential for {args.provider}")
-            return
-        if command == "logout":
-            self.runtime.auth_delete(args.provider)
-            print(f"Removed credential for {args.provider}")
-            return
-        if command == "status":
-            token = self.runtime.auth_get(args.provider)
-            if token:
-                print(f"{args.provider}: credential available")
-            else:
-                print(f"{args.provider}: no credential found")
-                raise SystemExit(1)
-            return
-        raise SystemExit("auth subcommand required")
-
-    def _cmd_version(self, args: argparse.Namespace) -> None:
-        print(self.runtime.version())
-
-    def _cmd_update(self, args: argparse.Namespace) -> None:
-        if args.dry_run:
-            print(f"Would run: {sys.executable} -m pip install --upgrade gncore")
-            return
-        result = self.runtime.update()
-        if result is not None:
-            print(result.stdout or "Updated gncore")
-
-    def _print_provider_list(self, project_dir: Path) -> None:
-        try:
-            selected = self.runtime.load_config(project_dir).selected_provider
-        except Exception:
-            selected = None
-        for provider in discover_providers():
-            status = provider.create().health()
-            marker = "*" if provider.name == selected else " "
-            print(f"{marker} {provider.name:14} {provider.kind.value:5} {status.health.value:11} {status.message}")
-
-    def _print_run_results(self, results: list[ExecutionResult], project_dir: Path) -> None:
-        if not results:
-            print(f"{Ansi.YELLOW}No remaining stages to run.{Ansi.RESET}")
-            return
-        for result in results:
-            print(f"{Ansi.GREEN}Success{Ansi.RESET}: {result.stage}")
-            print(f"Provider: {result.provider}")
-            print(f"Output File: {result.output_file}")
-            print(f"Duration: {result.duration:.6f}s")
-        final_state = ProjectStateManager(project_dir).load()
-        if not final_state.current_stage:
-            print(f"{Ansi.GREEN}Workflow complete.{Ansi.RESET}")
-
-    def _run_dashboard(self, project_dir: Path) -> None:
-        manager = ProjectStateManager(project_dir)
-        if not manager.gncore_dir.exists():
-            print(f"{Ansi.YELLOW}GNCore project not initialized. Run: gncore init{Ansi.RESET}")
-            return
-        state = manager.load()
-        print(self.dashboard(state, manager))
-        if sys.stdin.isatty():
-            self._interactive_loop(manager, state)
-
-    def dashboard(self, state: ProjectState, manager: ProjectStateManager) -> str:
-        """Return a colored dashboard with provider and stage progress."""
-        provider = self.provider_factory.create(state.provider)
-        status = provider.health()
-        lines = [
-            "=================================================",
-            f"{Ansi.BOLD}{Ansi.CYAN}GNCore{Ansi.RESET}",
-            "AI Software Engineering Framework",
-            "=================================================",
-            "Project",
-            state.project_name,
-            "Provider",
-            f"{state.provider} ({status.health.value})",
-            "Current Progress",
-            *self._progress_lines(state),
-            "-------------------------------------------------",
-            "Choose Stage",
-            *self.registry.menu_lines(),
-            "0 Exit",
-        ]
-        return "\n".join(lines)
-
-    def _interactive_loop(self, manager: ProjectStateManager, state: ProjectState) -> None:
-        while True:
-            choice = input("Stage: ").strip()
-            if choice == "0":
-                return
-            result = self.execute_stage(
-                CliConfig(state.project_name, manager.project_dir, state.provider),
-                CliSelection(int(choice)),
-            )
-            self._print_execution_result(result)
-            state = manager.load()
-            print(self.dashboard(state, manager))
-
-    def _progress_lines(self, state: ProjectState) -> list[str]:
-        return [self._progress_line(stage, state) for stage in self.registry.all()]
-
-    @staticmethod
-    def _progress_line(stage: StageDefinition, state: ProjectState) -> str:
-        if stage.id in state.completed_stages:
-            return f"{stage.name}\n{Ansi.GREEN}Completed{Ansi.RESET}"
-        if stage.id in state.failed_stages:
-            return f"{stage.name}\n{Ansi.RED}Failed{Ansi.RESET}"
-        return f"{stage.name}\n{Ansi.YELLOW}Pending{Ansi.RESET}"
-
-    @staticmethod
-    def _parse_args(argv: list[str] | None) -> argparse.Namespace:
-        parser = argparse.ArgumentParser(prog="gncore", add_help=True)
-        parser.set_defaults(parser=parser)
+    def _build_parser(self) -> argparse.ArgumentParser:
+        parser = argparse.ArgumentParser(prog="gncore", description="Universal AI Skill Installer")
         subparsers = parser.add_subparsers(dest="command")
 
-        init_parser = subparsers.add_parser("init", help="Initialize a GNCore project")
-        init_parser.add_argument("project_directory", nargs="?", type=Path)
-        init_parser.add_argument("--project-name")
-        init_parser.add_argument("--provider")
+        activate = subparsers.add_parser("activate", help="Install GNCore skills into selected applications")
+        self._add_application_selection(activate)
+        activate.add_argument("--skills", nargs="*", default=None)
+        activate.set_defaults(handler=self._cmd_activate)
 
-        run_parser = subparsers.add_parser("run", help="Run the workflow from the current project state")
-        run_parser.add_argument("project_directory", nargs="?", type=Path)
+        deactivate = subparsers.add_parser("deactivate", help="Remove GNCore from selected applications")
+        self._add_application_selection(deactivate)
+        deactivate.set_defaults(handler=self._cmd_deactivate)
 
-        dashboard_parser = subparsers.add_parser("dashboard", help="Open the interactive stage dashboard")
-        dashboard_parser.add_argument("project_directory", nargs="?", type=Path)
+        update = subparsers.add_parser("update", help="Reinstall the current GNCore bundle")
+        self._add_application_selection(update)
+        update.add_argument("--skills", nargs="*", default=None)
+        update.set_defaults(handler=self._cmd_update)
 
-        stage_parser = subparsers.add_parser("stage", help="Open the interactive stage dashboard")
-        stage_parser.add_argument("project_directory", nargs="?", type=Path)
+        doctor = subparsers.add_parser("doctor", help="Check environment and installation health")
+        doctor.set_defaults(handler=self._cmd_doctor)
 
-        resume_parser = subparsers.add_parser("resume", help="Resume an interrupted workflow")
-        resume_parser.add_argument("project_directory", nargs="?", type=Path)
+        list_cmd = subparsers.add_parser("list", help="List supported applications or built-in skills")
+        list_cmd.add_argument("what", nargs="?", default="apps", choices=["apps", "skills", "installed"])
+        list_cmd.set_defaults(handler=self._cmd_list)
 
-        doctor_parser = subparsers.add_parser("doctor", help="Check project health and prerequisites")
-        doctor_parser.add_argument("project_directory", nargs="?", type=Path)
+        install = subparsers.add_parser("install", help="Install a single skill or a skill set")
+        install.add_argument("skill_ids", nargs="*", default=None)
+        self._add_application_selection(install)
+        install.set_defaults(handler=self._cmd_install)
 
-        provider_parser = subparsers.add_parser("provider", help="Inspect and select providers")
-        provider_parser.add_argument("project_directory", nargs="?", type=Path)
-        provider_sub = provider_parser.add_subparsers(dest="provider_command", required=True)
-        provider_sub.add_parser("list", help="List discovered providers")
-        provider_use = provider_sub.add_parser("use", help="Select a provider")
-        provider_use.add_argument("name")
-        provider_detect = provider_sub.add_parser("detect", help="Auto-detect the best available provider")
-        provider_detect.add_argument("project_directory", nargs="?", type=Path)
-        provider_health = provider_sub.add_parser("health", help="Show provider health")
-        provider_health.add_argument("name", nargs="?")
+        uninstall = subparsers.add_parser("uninstall", help="Uninstall from selected applications")
+        self._add_application_selection(uninstall)
+        uninstall.set_defaults(handler=self._cmd_uninstall)
 
-        config_parser = subparsers.add_parser("config", help="Inspect or edit project config")
-        config_parser.add_argument("project_directory", nargs="?", type=Path)
-        config_sub = config_parser.add_subparsers(dest="config_command", required=True)
-        config_sub.add_parser("show", help="Print config as JSON")
-        config_set = config_sub.add_parser("set", help="Update config values")
-        config_set.add_argument("--provider")
-        config_set.add_argument("--project-name")
-        config_sub.add_parser("validate", help="Validate project config")
+        backup = subparsers.add_parser("backup", help="Create a zip archive of installed GNCore bundles")
+        backup.add_argument("--output", type=Path, default=None)
+        backup.set_defaults(handler=self._cmd_backup)
 
-        auth_parser = subparsers.add_parser("auth", help="Manage provider credentials")
-        auth_sub = auth_parser.add_subparsers(dest="auth_command", required=True)
-        auth_login = auth_sub.add_parser("login", help="Store a provider token securely")
-        auth_login.add_argument("provider")
-        auth_login.add_argument("--token")
-        auth_logout = auth_sub.add_parser("logout", help="Remove a stored provider token")
-        auth_logout.add_argument("provider")
-        auth_status = auth_sub.add_parser("status", help="Check whether a provider token is available")
-        auth_status.add_argument("provider")
+        restore = subparsers.add_parser("restore", help="Restore a GNCore backup archive")
+        restore.add_argument("archive", type=Path)
+        restore.set_defaults(handler=self._cmd_restore)
 
-        subparsers.add_parser("version", help="Print the installed gncore version")
-        update_parser = subparsers.add_parser("update", help="Upgrade gncore with pip")
-        update_parser.add_argument("--dry-run", action="store_true")
+        validate = subparsers.add_parser("validate", help="Validate installed application bundles")
+        self._add_application_selection(validate)
+        validate.set_defaults(handler=self._cmd_validate)
 
-        parser.add_argument("--project-name")
-        parser.add_argument("--project-directory", type=Path)
-        parser.add_argument("--provider", default="mock")
-        parser.add_argument("--stage", type=int)
-        parser.add_argument("--prompt", default="")
-        return parser.parse_args(argv)
+        version = subparsers.add_parser("version", help="Print the installed GNCore version")
+        version.set_defaults(handler=self._cmd_version)
 
-    @staticmethod
-    def _project_dir(args: argparse.Namespace) -> Path:
-        return getattr(args, "project_directory", None) or Path.cwd()
+        return parser
 
-    @staticmethod
-    def _has_legacy_stage_args(args: argparse.Namespace) -> bool:
-        return args.project_name is not None or args.project_directory is not None or args.stage is not None
+    def _add_application_selection(self, parser: argparse.ArgumentParser) -> None:
+        parser.add_argument("--all", action="store_true", help="Target all supported applications")
+        parser.add_argument("--apps", nargs="*", default=None, help="Explicit application keys to target")
 
-    @staticmethod
-    def _legacy_config_from_args(args: argparse.Namespace) -> CliConfig:
-        if args.project_name is None or args.project_directory is None or args.stage is None:
-            raise SystemExit("--project-name, --project-directory, and --stage are required together")
-        return CliConfig(args.project_name, args.project_directory, args.provider)
+    def _select_applications(self, args: argparse.Namespace) -> tuple[str, ...]:
+        if args.apps:
+            return tuple(args.apps)
+        if args.all:
+            return tuple(adapter.key for adapter in self.adapter_manager.adapters)
 
-    @staticmethod
-    def _legacy_selection_from_args(args: argparse.Namespace) -> CliSelection:
-        return CliSelection(stage_id=args.stage, user_prompt=args.prompt)
+        detected = self.adapter_manager.detected(Path.cwd())
+        if not detected:
+            return tuple(adapter.key for adapter in self.adapter_manager.adapters)
 
-    @staticmethod
-    def _print_execution_result(result: ExecutionResult) -> None:
-        print(f"{Ansi.GREEN}Success{Ansi.RESET}: {result.stage}")
-        print(f"Provider: {result.provider}")
-        print(f"Output File: {result.output_file}")
-        print(f"Duration: {result.duration:.6f}s")
+        print("Detected Applications")
+        for index, adapter in enumerate(detected, start=1):
+            print(f"{index}. {adapter.name}")
+        print(f"{len(detected) + 1}. Install Everywhere")
+
+        if not sys.stdin.isatty():
+            return tuple(adapter.key for adapter in detected)
+
+        choice = input("Select applications: ").strip()
+        if not choice or choice == str(len(detected) + 1):
+            return tuple(adapter.key for adapter in self.adapter_manager.adapters)
+
+        selected_keys: list[str] = []
+        for raw_index in choice.replace(",", " ").split():
+            index = int(raw_index)
+            if 1 <= index <= len(detected):
+                selected_keys.append(detected[index - 1].key)
+        return tuple(dict.fromkeys(selected_keys))
+
+    def _cmd_activate(self, args: argparse.Namespace) -> int:
+        application_keys = self._select_applications(args)
+        reports = self.installer.activate(application_keys, Path.cwd(), args.skills)
+        self._print_reports("Activated", reports)
+        return 0
+
+    def _cmd_deactivate(self, args: argparse.Namespace) -> int:
+        application_keys = self._select_applications(args)
+        self.installer.uninstall(application_keys, Path.cwd())
+        print("Deactivated GNCore for:")
+        for key in application_keys:
+            print(f"- {key}")
+        return 0
+
+    def _cmd_update(self, args: argparse.Namespace) -> int:
+        application_keys = self._select_applications(args)
+        reports = self.installer.update(application_keys, Path.cwd(), args.skills)
+        self._print_reports("Updated", reports)
+        return 0
+
+    def _cmd_doctor(self, args: argparse.Namespace) -> int:
+        report = self.diagnostics_manager.report(Path.cwd())
+        print("GNCore Diagnostics")
+        for application in report["applications"]:
+            status = "detected" if application["detected"] else "missing"
+            writable = "writable" if application["writable"] else "read-only"
+            print(f"- {application['name']}: {status}, {writable}, root={application['config_root']}")
+        return 0
+
+    def _cmd_list(self, args: argparse.Namespace) -> int:
+        if args.what == "skills":
+            for skill in self.skill_manager.skills:
+                print(f"- {skill.metadata.skill_id}: {skill.metadata.name} ({skill.metadata.version})")
+            return 0
+        if args.what == "installed":
+            config = self.configuration_manager.load()
+            print("Installed Applications:")
+            for key in config.selected_applications:
+                print(f"- {key}")
+            return 0
+
+        for summary in self.adapter_manager.summaries(Path.cwd()):
+            state = "detected" if summary.detected else "not detected"
+            print(f"- {summary.name}: {state} at {summary.config_root}")
+        return 0
+
+    def _cmd_install(self, args: argparse.Namespace) -> int:
+        application_keys = self._select_applications(args)
+        skill_ids = tuple(args.skill_ids) if args.skill_ids else None
+        reports = self.installer.install(application_keys, skill_ids, Path.cwd())
+        self._print_reports("Installed", reports)
+        return 0
+
+    def _cmd_uninstall(self, args: argparse.Namespace) -> int:
+        application_keys = self._select_applications(args)
+        self.installer.uninstall(application_keys, Path.cwd())
+        print("Uninstalled GNCore from:")
+        for key in application_keys:
+            print(f"- {key}")
+        return 0
+
+    def _cmd_backup(self, args: argparse.Namespace) -> int:
+        archive = self.backup_manager.create(args.output, Path.cwd())
+        print(f"Backup created: {archive.path}")
+        return 0
+
+    def _cmd_restore(self, args: argparse.Namespace) -> int:
+        self.rollback_manager.restore(args.archive, Path.cwd())
+        print(f"Restored: {args.archive}")
+        return 0
+
+    def _cmd_validate(self, args: argparse.Namespace) -> int:
+        application_keys = self._select_applications(args)
+        reports = self.validator.validate(application_keys, Path.cwd())
+        for report in reports:
+            print(f"{report.application}: {'valid' if report.valid else 'invalid'}")
+            for issue in report.issues:
+                print(f"- {issue.severity}: {issue.message}")
+        if any(not report.valid for report in reports):
+            return 1
+        return 0
+
+    def _cmd_version(self, args: argparse.Namespace) -> int:
+        print(self.version_manager.show())
+        return 0
+
+    def _print_reports(self, label: str, reports) -> None:
+        for report in reports:
+            status = "verified" if report.verified else "pending"
+            print(f"{label} {report.application} ({status})")
+            for skill_id in report.installed:
+                print(f"- {skill_id}")
+            for issue in report.details:
+                print(f"! {issue}")
 
 
-def main() -> None:
-    """Console-script entry point."""
-    GncoreCli().run(sys.argv[1:])
+def main(argv: list[str] | None = None) -> int:
+    return GncoreCli().run(argv)

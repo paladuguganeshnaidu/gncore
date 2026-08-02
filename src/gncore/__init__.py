@@ -26,7 +26,7 @@ from gncore.skills.loader import SkillLoader
 from gncore.state.manager import ProjectStateManager
 from gncore.state.models import ProjectState
 
-__version__ = "0.2.1"
+__version__ = "1.0.0"
 
 __all__ = [
     "CliConfig",

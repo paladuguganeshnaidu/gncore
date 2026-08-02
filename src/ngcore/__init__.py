@@ -31,6 +31,7 @@ from .loader import (
     list_skills,
     search,
 )
+from .compat import Loader, NgCore
 
 __version__ = "0.1.1"
 
@@ -56,4 +57,6 @@ __all__ = [
     "git",
     "list_skills",
     "search",
+    "Loader",
+    "NgCore",
 ]

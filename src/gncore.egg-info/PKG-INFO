@@ -1,6 +1,10 @@
 Metadata-Version: 2.4
 Name: gncore
+<<<<<<< HEAD
 Version: 0.2.1
+=======
+Version: 1.0.0
+>>>>>>> c24fe83 (Refresh build artifacts for 1.0.0)
 Summary: Dynamic AI Skill Orchestration Framework for markdown-driven agents, contexts, skills, and templates.
 Author-email: Ganesh Naidu <ganesh.naidu@example.com>
 License: MIT

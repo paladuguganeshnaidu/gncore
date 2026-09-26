@@ -1,81 +1,65 @@
 # GNCore
 
-GNCore is a universal AI Skill Installer for coding assistants.
+GNCore is a Python CLI for installing and managing reusable AI skills across coding assistants.
 
-Install it once:
+Project version: 3.0.0
+Package name: gncore
+License: MIT
 
-```bash
-pip install gncore
-```
+## Why it exists
 
-Then activate the skills you want:
+AI coding assistants use different locations and formats for prompts, skills, commands and configuration. GNCore provides a common skill representation plus application adapters for installation, validation, backup, restore and updates.
 
-```bash
-gncore activate
-```
+## Supported assistants
 
-GNCore detects supported applications, installs the bundled skills into the right adapter-specific locations, writes prompt and command bundles, configures MCP where supported, verifies the installation, and stores a manifest so updates, validation, backup, and rollback are safe.
+The current project documentation targets VS Code Chat, GitHub Copilot Chat, Claude Desktop, Claude Code, Cursor, Windsurf, Continue.dev, Gemini CLI and OpenAI Codex CLI.
 
-## Supported applications
+## Core commands
 
-- VS Code Chat
-- GitHub Copilot Chat
-- Claude Desktop
-- Claude Code
-- Cursor
-- Windsurf
-- Continue.dev
-- Gemini CLI
-- OpenAI Codex CLI
+- gncore activate
+- gncore deactivate
+- gncore update
+- gncore doctor
+- gncore list
+- gncore install
+- gncore uninstall
+- gncore backup
+- gncore restore
+- gncore validate
+- gncore version
 
-## Commands
+Useful first checks are gncore list apps, gncore validate --apps cursor and gncore doctor.
 
-```bash
-gncore activate
-gncore deactivate
-gncore update
-gncore doctor
-gncore list
-gncore install
-gncore uninstall
-gncore backup
-gncore restore
-gncore validate
-gncore version
-```
+## Skill model
 
-## Quick start
+A skill can contain metadata, a description, system prompt, examples, commands, configuration, version, dependencies and permissions.
 
-```bash
-pip install gncore
-gncore list apps
-gncore activate --apps cursor
-gncore validate --apps cursor
-gncore backup --output gncore-backup.zip
-```
+The core pipeline is:
 
-## What GNCore installs
+Skill Definition → Validation / Manifest → Adapter Selection → Application Installation → Verification → Backup / Restore / Update.
 
-Each bundled skill includes:
-
-- metadata
-- description
-- system prompt
-- examples
-- commands
-- configuration
-- version
-- dependencies
-- permissions
-
-GNCore serializes those skills into application-compatible bundles through adapters. Every adapter has the same core contract, so adding a new application only requires a new adapter class.
+The main engineering idea is adapter isolation: adding another assistant should not require rewriting the central skill model.
 
 ## Documentation
 
-- [Usage Guide](docs/USAGE.md)
-- [Architecture](ARCHITECTURE.md)
-- [Developer Guide](docs/DEVELOPER.md)
-- [API Reference](docs/API.md)
-- [Contributing](CONTRIBUTING.md)
-- [Release Workflow](docs/RELEASE.md)
-- [Security](SECURITY.md)
+- docs/USAGE.md
+- ARCHITECTURE.md
+- docs/DEVELOPER.md
+- docs/API.md
+- CONTRIBUTING.md
+- docs/RELEASE.md
+- SECURITY.md
+
+## Project status
+
+GNCore is a real Python package and CLI under active iteration. Adapter behavior can differ between assistant versions and operating systems, so support should always be verified with the installed build.
+
+## License
+
+MIT License. See LICENSE.
+
+## Author
+
+Paladugu Ganesh Naidu
+
+Repository: https://github.com/paladuguganeshnaidu/gncore

@@ -15,7 +15,7 @@ Create one adapter class, point it at the target application's config roots, and
 
 ## Adding a new skill
 
-Add a new `SkillDefinition` to `builtin_skills()`. Provide metadata, prompt text, examples, commands, configuration, dependencies, and permissions.
+Add a focused `SkillDefinition` to the catalog in `skills/library.py`. Use a stable lowercase hyphenated ID, a short discovery description, category and searchable tags, and task-specific instructions. The shared quality contract requires evidence-based claims, scoped edits, and honest verification reports. Run `validate_skill_definition()` before installing custom definitions.
 
 ## Validation strategy
 

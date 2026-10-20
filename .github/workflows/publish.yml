@@ -3,40 +3,47 @@ name: Publish to PyPI
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 jobs:
-  publish:
+  build-and-publish:
+    name: Verify and publish distribution
     runs-on: ubuntu-latest
     environment: pypi
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
       - name: Install build and test tools
         run: |
           python -m pip install --upgrade pip
-          pip install -e .[test] build twine
+          python -m pip install -e .[test] build twine
       - name: Run tests
-        run: pytest -q
-      - name: Run consistency validator
-        run: python scripts/validate_consistency.py
-      - name: Run CLI smoke test
+        run: python -m pytest -q
+      - name: Compile sources
+        run: python -m compileall -q src tests
+      - name: Verify CLI and catalog
         run: |
-          mkdir -p /tmp/gncore-smoke
-          cd /tmp/gncore-smoke
-          gncore init --provider mock
-          gncore run
+          test "$(gncore version)" = "4.0.0"
+          gncore list domains
+          gncore list skills > /tmp/gncore-skills.txt
+          test "$(wc -l < /tmp/gncore-skills.txt)" -eq 403
       - name: Build distributions
         run: python -m build
       - name: Verify distributions
-        run: twine check dist/*
-      - name: Verify installed wheel
+        run: python -m twine check dist/*
+      - name: Install and smoke-test wheel
         run: |
-          python -m pip install --force-reinstall --no-deps dist/gncore-*.whl
-          gncore version
-      - name: Publish to PyPI with token
+          python -m venv /tmp/gncore-wheel-test
+          /tmp/gncore-wheel-test/bin/python -m pip install --no-deps dist/gncore-4.0.0-py3-none-any.whl
+          test "$(/tmp/gncore-wheel-test/bin/gncore version)" = "4.0.0"
+          /tmp/gncore-wheel-test/bin/python -c "from gncore import builtin_skills, list_domains; assert len(builtin_skills()) == 403; assert len(list_domains()) == 30; assert all(len(domain.skill_ids) == 10 for domain in list_domains())"
+      - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__

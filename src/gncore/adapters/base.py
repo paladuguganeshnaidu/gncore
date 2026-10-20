@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
+import json
 from pathlib import Path
+import re
 import shutil
 from typing import Iterable, Sequence
 
@@ -101,7 +103,7 @@ class ApplicationAdapter:
         except OSError:
             return False
 
-    def install(self, skills: Sequence[SkillDefinition] | None = None, workspace_root: Path | None = None) -> InstallReport:
+    def install(self, skills: Sequence[SkillDefinition] | None = None, workspace_root: Path | None = None, scope: str = "user") -> InstallReport:
         selected_skills = tuple(skills or builtin_skills())
         root = self.resolve_config_root(workspace_root)
         root.mkdir(parents=True, exist_ok=True)
@@ -139,7 +141,7 @@ class ApplicationAdapter:
             details=tuple(issue.message for issue in report.issues),
         )
 
-    def uninstall(self, workspace_root: Path | None = None) -> None:
+    def uninstall(self, workspace_root: Path | None = None, scope: str = "user") -> None:
         root = self.resolve_config_root(workspace_root)
         bundle_root = root / "gncore"
         manifest_path = root / "manifest.json"
@@ -148,7 +150,7 @@ class ApplicationAdapter:
         if manifest_path.exists():
             manifest_path.unlink()
 
-    def validate(self, root: Path | None = None) -> ValidationReport:
+    def validate(self, root: Path | None = None, scope: str = "user", workspace_root: Path | None = None) -> ValidationReport:
         root = root or self.resolve_config_root(None)
         manifest_path = root / "manifest.json"
         issues: list[ValidationIssue] = []
@@ -235,6 +237,144 @@ class ApplicationAdapter:
                     ]
                 },
             )
+
+
+class NativeSkillAdapter(ApplicationAdapter):
+    """Install skills in the standard SKILL.md folder layout used by agent clients."""
+
+    workspace_relative_dir: Path
+    user_relative_dir: Path
+
+    def __init__(self, template: AdapterTemplate, workspace_relative_dir: Path, user_relative_dir: Path) -> None:
+        super().__init__(template)
+        self.workspace_relative_dir = workspace_relative_dir
+        self.user_relative_dir = user_relative_dir
+
+    def skill_root(self, workspace_root: Path | None = None, scope: str = "user") -> Path:
+        if scope not in {"workspace", "user"}:
+            raise ValueError("scope must be 'workspace' or 'user'")
+        if scope == "workspace":
+            if workspace_root is None:
+                raise ValueError("workspace scope requires a workspace root")
+            return (workspace_root / self.workspace_relative_dir).resolve()
+        return (Path.home() / self.user_relative_dir).resolve()
+
+    def manifest_path(self, skill_root: Path) -> Path:
+        return skill_root.parent / ".gncore" / f"{self.key}-skills.json"
+
+    def _is_managed(self, marker: Path, skill_id: str) -> bool:
+        if not marker.is_file():
+            return False
+        try:
+            data = read_json(marker)
+        except (OSError, ValueError):
+            return False
+        if not isinstance(data, dict):
+            return False
+        return data.get("managed_by") == "gncore" and data.get("skill_id") == skill_id
+
+    def install(self, skills: Sequence[SkillDefinition] | None = None, workspace_root: Path | None = None, scope: str = "user") -> InstallReport:
+        selected = tuple(skills or builtin_skills())
+        root = self.skill_root(workspace_root, scope)
+        root.mkdir(parents=True, exist_ok=True)
+        manifest_path = self.manifest_path(root)
+        installed: list[str] = []
+        skipped: list[str] = []
+        details: list[str] = []
+        records: list[dict[str, str]] = []
+
+        for skill in selected:
+            skill_id = skill.metadata.skill_id
+            if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", skill_id):
+                raise ValueError(f"invalid skill id: {skill_id}")
+            skill_dir = root / skill_id
+            marker = skill_dir / ".gncore-managed.json"
+            if skill_dir.exists() and not self._is_managed(marker, skill_id):
+                skipped.append(skill_id)
+                details.append(f"Skipped {skill_id}: {skill_dir} already exists and is not GNCore-managed")
+                continue
+            skill_dir.mkdir(parents=True, exist_ok=True)
+            frontmatter = "---\n" + f"name: {skill_id}\n" + f"description: {json.dumps(skill.metadata.description, ensure_ascii=False)}\n" + "---\n\n"
+            atomic_write_text(skill_dir / "SKILL.md", frontmatter + skill.prompt.strip() + "\n")
+            old_marker = read_json(marker) if marker.is_file() else {}
+            owners = set(old_marker.get("managed_apps", []))
+            if old_marker.get("managed_by") == "gncore" and isinstance(old_marker.get("application"), str):
+                owners.add(old_marker["application"])
+            owners.add(self.key)
+            write_json(marker, {"managed_by": "gncore", "application": self.key, "managed_apps": sorted(owners), "skill_id": skill_id, "version": skill.metadata.version})
+            installed.append(skill_id)
+            records.append({"skill_id": skill_id, "version": skill.metadata.version})
+
+        # Preserve other GNCore-managed skills already installed in this target.
+        previous = read_json(manifest_path) if manifest_path.exists() else {}
+        by_id = {
+            entry["skill_id"]: entry
+            for entry in previous.get("skills", [])
+            if re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", entry.get("skill_id", ""))
+            and self._is_managed(root / entry["skill_id"] / ".gncore-managed.json", entry["skill_id"])
+        }
+        by_id.update({entry["skill_id"]: entry for entry in records})
+        write_json(manifest_path, {"application": self.key, "scope": scope, "skills": list(by_id.values())})
+
+        report = self.validate(root, scope=scope)
+        return InstallReport(self.name, tuple(installed), tuple(skipped), report.valid, tuple(details + [issue.message for issue in report.issues]))
+
+    def uninstall(self, workspace_root: Path | None = None, scope: str = "user") -> None:
+        root = self.skill_root(workspace_root, scope)
+        manifest_path = self.manifest_path(root)
+        if not manifest_path.is_file():
+            return
+        manifest = read_json(manifest_path)
+        for entry in manifest.get("skills", []):
+            skill_id = entry.get("skill_id", "")
+            if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", skill_id):
+                continue
+            skill_dir = root / skill_id
+            marker = skill_dir / ".gncore-managed.json"
+            if self._is_managed(marker, skill_id):
+                marker_data = read_json(marker)
+                owners = set(marker_data.get("managed_apps", []))
+                if not owners:
+                    owners.add(marker_data.get("application", self.key))
+                owners.discard(self.key)
+                if owners:
+                    marker_data["managed_apps"] = sorted(owners)
+                    marker_data["application"] = sorted(owners)[0]
+                    write_json(marker, marker_data)
+                else:
+                    (skill_dir / "SKILL.md").unlink(missing_ok=True)
+                    marker.unlink(missing_ok=True)
+                    for child in sorted(skill_dir.rglob("*"), reverse=True):
+                        if child.is_dir():
+                            try:
+                                child.rmdir()
+                            except OSError:
+                                pass
+                    try:
+                        skill_dir.rmdir()
+                    except OSError:
+                        pass
+        manifest_path.unlink(missing_ok=True)
+
+    def validate(self, root: Path | None = None, scope: str = "user", workspace_root: Path | None = None) -> ValidationReport:
+        skill_root = root or self.skill_root(workspace_root, scope)
+        manifest_path = self.manifest_path(skill_root)
+        issues: list[ValidationIssue] = []
+        if not manifest_path.is_file():
+            issues.append(ValidationIssue("error", "GNCore skills manifest is missing", manifest_path))
+            return ValidationReport(self.name, False, tuple(issues))
+        manifest = read_json(manifest_path)
+        for entry in manifest.get("skills", []):
+            skill_id = entry.get("skill_id", "")
+            if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", skill_id):
+                issues.append(ValidationIssue("error", f"invalid skill id in manifest: {skill_id}", manifest_path))
+                continue
+            skill_dir = skill_root / skill_id
+            if not (skill_dir / "SKILL.md").is_file():
+                issues.append(ValidationIssue("error", f"SKILL.md is missing for {skill_id}", skill_dir / "SKILL.md"))
+            if not self._is_managed(skill_dir / ".gncore-managed.json", skill_id):
+                issues.append(ValidationIssue("error", f"GNCore ownership marker is missing for {skill_id}", skill_dir))
+        return ValidationReport(self.name, not issues, tuple(issues))
 
 
 class AdapterRegistry:

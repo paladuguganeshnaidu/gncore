@@ -30,7 +30,7 @@ The CLI parses user input and dispatches to managers. It never writes applicatio
 
 The core layer coordinates skill selection, adapter discovery, installation, rollback, backup, diagnostics, and version reporting.
 
-The adapter layer contains one class per supported application. Each adapter resolves its own config root, discovers executables or config roots, and knows how to serialize GNCore bundles for that application.
+The adapter layer contains one class per supported application. Each adapter resolves its own config root, discovers executables or config roots, and serializes skills in the format its application can load. Generic adapters write GNCore-managed bundles. Native skill adapters write `SKILL.md` folders to the target's documented workspace or user skill directory.
 
 The skill layer contains the internal skill catalog. Skills are versioned, independently installable, and serializable into multiple output formats.
 
@@ -60,7 +60,11 @@ GNCore writes a managed `gncore/` bundle under each target application's config 
 - `prompts/<skill-id>.md`
 - `commands/<skill-id>/<command>.md`
 
-The manifest makes update, backup, restore, and validation deterministic.
+The generic bundle manifest makes update, backup, restore, and validation deterministic. Native skill adapters keep a separate GNCore manifest beside their target skill directory and add an ownership marker to each managed skill. They skip unmarked existing skill folders and remove only marked folders during uninstall.
+
+## Native skills
+
+Native skills use a directory named after the skill ID with a `SKILL.md` file containing YAML frontmatter (`name` and `description`) followed by the instructions. VS Code Copilot workspace skills use `.github/skills/`; VS Code Codex and Antigravity use `.agents/skills/`; VS Code Claude and Claude Code use `.claude/skills/`; Gemini CLI uses `.gemini/skills/`. User scope installs into each harness's supported home-directory location. Shared target directories track multiple GNCore owners so uninstalling one harness preserves skills still installed for another.
 
 ## Validation and rollback
 

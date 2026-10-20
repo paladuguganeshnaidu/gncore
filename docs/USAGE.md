@@ -4,6 +4,14 @@ This guide covers every public GNCore command, the supported flags, and practica
 
 ## Installation
 
+To use the current checkout while developing GNCore:
+
+```bash
+python -m pip install -e .
+```
+
+After a release containing these changes is published, users can install the packaged CLI with:
+
 ```bash
 pip install gncore
 ```
@@ -22,8 +30,10 @@ gncore version
 | `gncore deactivate` | Remove the managed GNCore bundle from selected applications |
 | `gncore update` | Reinstall the selected bundle and refresh managed files |
 | `gncore doctor` | Check detected applications and installation health |
-| `gncore list` | List applications, skills, or installed selections |
+| `gncore list` | List applications, skills, domains, categories, or installed selections |
 | `gncore install` | Install one or more named skills into selected applications |
+| `gncore export` | Package skills as a ZIP for upload to ChatGPT Skills |
+| `gncore search` | Search skills by name, description, category, or tag |
 | `gncore uninstall` | Remove GNCore from selected applications |
 | `gncore backup` | Create a backup archive of installed GNCore bundles |
 | `gncore restore` | Restore GNCore bundles from a backup archive |
@@ -41,6 +51,9 @@ Most install-related commands accept the same application-selection flags:
 The supported application keys are:
 
 - `vscode-chat`
+- `vscode-codex`
+- `vscode-claude-code`
+- `antigravity`
 - `github-copilot-chat`
 - `claude-desktop`
 - `claude-code`
@@ -52,18 +65,60 @@ The supported application keys are:
 
 ## Skill selection
 
-The bundled skills can be installed individually with `gncore install` or refreshed with `gncore update --skills ...`.
+The bundled skills can be installed individually with `gncore install` or refreshed with `gncore update --skills ...`. Use `gncore list domains`, `gncore list skills`, and `gncore list categories` to browse the catalog. GNCore 4.0.0 includes 30 domain packs with 10 focused workflows each (300 domain workflows), alongside its existing specialist skills.
 
-Current built-in skills:
+Domain packs (each contains 10 slash-invoked workflows):
 
-- `requirements`
-- `architecture`
-- `implementation`
-- `review`
-- `testing`
-- `security`
-- `documentation`
-- `release`
+| Area | Domain packs |
+| --- | --- |
+| Company and business | Company leadership (CEO, CFO, COO, CTO, CPO, CMO, CHRO, CISO, board, executive team), business strategy, product management, project/program management, business operations, sales/revenue, marketing/growth, finance/accounting, people/HR, customer success/support, legal/compliance, procurement/vendor, entrepreneurship |
+| Technology | Software engineering, data analytics, AI/machine learning, cybersecurity, cloud/DevOps/SRE, quality engineering, design/UX |
+| Documents and presentations | Word documents, PDF documents, PowerPoint presentations, spreadsheets |
+| Specialist operations | Research/market intelligence, education/learning, healthcare operations, e-commerce/retail, business communications, supply chain/logistics |
+
+Find a workflow by intent, then install its exact ID:
+
+```bash
+gncore list domains
+gncore search "CEO strategy"
+gncore search "clean data"
+gncore install company-ceo train preprocess clean-data evaluate improve analyze word-draft pdf-extract ppt-create --apps vscode-codex --scope workspace
+```
+
+For the complete catalog of all 403 skill IDs, slash names, use cases, and one-skill install examples, see [ALL_SKILLS.md](ALL_SKILLS.md).
+
+The shared skill contract guides the assistant through inspect → plan → implement → test → fix → retest → report. It requires evidence for checks, preserves unrelated work, reruns regressions after fixes, and stops when acceptance checks pass or a genuine blocker remains. For Word/PDF/PowerPoint artifacts, skills ask the assistant to reopen and inspect final saved output where tools permit; review quality depends on the target assistant's available capabilities.
+
+### Search and install native agent skills
+
+Search the catalog, then install selected skills into the current project:
+
+```bash
+gncore search model training
+gncore search pytorch --category machine-learning
+gncore install train preprocess clean-data evaluate improve analyze --apps antigravity --scope workspace
+gncore install web-development machine-learning --apps vscode-chat --scope workspace
+gncore install train evaluate --apps vscode-codex --scope workspace
+gncore install web-security --apps vscode-claude-code --scope workspace
+```
+
+VS Code Copilot workspace skills are written under `.github/skills/<skill-id>/SKILL.md`; VS Code Codex and Antigravity use `.agents/skills/<skill-id>/SKILL.md`; VS Code Claude and Claude Code use `.claude/skills/<skill-id>/SKILL.md`. Codex CLI uses `.agents/skills`, and Gemini CLI uses `.gemini/skills`. These native skill folders expose slash invocation such as `/train` when supported by the selected agent harness.
+
+For user-wide installation across workspaces:
+
+```bash
+gncore install web-development --apps vscode-chat --scope user
+gncore install train --apps vscode-codex --scope user
+gncore install web-security --apps claude-code --scope user
+```
+
+GNCore skips an existing skill folder unless it has GNCore's ownership marker. Uninstall removes only GNCore-managed skill folders. Skills provide instructions to the assistant; they do not run independently or authorize broad unrelated changes.
+
+ChatGPT Skills are managed in the ChatGPT workspace UI rather than synchronized from a local skill folder. Export a ZIP and upload it through Skills > Create > Upload from your computer:
+
+```bash
+gncore export --app chatgpt --skills train --output chatgpt-train.zip
+```
 
 ## Each command
 
@@ -136,6 +191,14 @@ Examples:
 gncore install requirements --apps cursor
 gncore install requirements architecture --apps cursor windsurf
 gncore install review testing security --all
+```
+
+### `gncore export`
+
+Packages one selected skill into a ZIP compatible with ChatGPT's skill upload flow. ChatGPT expects one skill bundle per ZIP. The command does not log into or modify a ChatGPT workspace.
+
+```bash
+gncore export --app chatgpt --skills train --output chatgpt-train.zip
 ```
 
 ### `gncore uninstall`

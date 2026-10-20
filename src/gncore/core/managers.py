@@ -9,26 +9,33 @@ from pathlib import Path
 from typing import Iterable, Sequence
 from zipfile import ZIP_DEFLATED, ZipFile
 
-from gncore.adapters.base import AdapterRegistry, ApplicationAdapter, get_adapter_registry
+from gncore.adapters.base import AdapterRegistry, ApplicationAdapter, NativeSkillAdapter, get_adapter_registry
 from gncore.config import GncoreConfig, GncoreConfigManager, default_config_root
 from gncore.core.models import ApplicationDiscovery, ApplicationSummary, BackupArchive, InstallReport, SkillDefinition, ValidationIssue, ValidationReport
-from gncore.skills.library import builtin_skills
+from gncore.skills.library import builtin_skills, search_skills, validate_skill_definition
 from gncore.version import __version__
 
 
 class SkillManager:
     def __init__(self, skills: Sequence[SkillDefinition] | None = None) -> None:
-        self._skills = tuple(skills or builtin_skills())
+        self._skills = tuple(skills if skills is not None else builtin_skills())
+        self._by_id = {skill.metadata.skill_id: skill for skill in self._skills}
+        if len(self._by_id) != len(self._skills):
+            raise ValueError("skill IDs must be unique")
+        for skill in self._skills:
+            issues = validate_skill_definition(skill)
+            if issues:
+                raise ValueError(f"invalid skill {skill.metadata.skill_id}: {'; '.join(issues)}")
 
     @property
     def skills(self) -> tuple[SkillDefinition, ...]:
         return self._skills
 
     def by_id(self, skill_id: str) -> SkillDefinition:
-        for skill in self._skills:
-            if skill.metadata.skill_id == skill_id:
-                return skill
-        raise KeyError(skill_id)
+        try:
+            return self._by_id[skill_id]
+        except KeyError:
+            raise KeyError(skill_id) from None
 
     def select(self, skill_ids: Iterable[str] | None = None) -> tuple[SkillDefinition, ...]:
         if skill_ids is None:
@@ -37,6 +44,13 @@ class SkillManager:
         for skill_id in skill_ids:
             selected.append(self.by_id(skill_id))
         return tuple(selected)
+
+    def search(self, query: str, category: str | None = None) -> tuple[SkillDefinition, ...]:
+        return search_skills(query, category=category, skills=self.skills)
+
+    @property
+    def categories(self) -> tuple[str, ...]:
+        return tuple(sorted({skill.metadata.category for skill in self.skills}))
 
 
 class AdapterManager:
@@ -84,9 +98,9 @@ class Validator:
     def __init__(self, adapter_manager: AdapterManager | None = None) -> None:
         self.adapter_manager = adapter_manager or AdapterManager()
 
-    def validate(self, application_keys: Sequence[str] | None = None, workspace_root: Path | None = None) -> tuple[ValidationReport, ...]:
+    def validate(self, application_keys: Sequence[str] | None = None, workspace_root: Path | None = None, scope: str = "user") -> tuple[ValidationReport, ...]:
         adapters = self._resolve_adapters(application_keys)
-        return tuple(adapter.validate() for adapter in adapters)
+        return tuple(adapter.validate(scope=scope, workspace_root=workspace_root) for adapter in adapters)
 
     def _resolve_adapters(self, application_keys: Sequence[str] | None) -> tuple[ApplicationAdapter, ...]:
         if application_keys is None:
@@ -101,21 +115,27 @@ class Installer:
         self.configuration_manager = configuration_manager or ConfigurationManager()
         self.validator = validator or Validator(self.adapter_manager)
 
-    def install(self, application_keys: Sequence[str], skill_ids: Sequence[str] | None = None, workspace_root: Path | None = None) -> tuple[InstallReport, ...]:
+    def install(self, application_keys: Sequence[str], skill_ids: Sequence[str] | None = None, workspace_root: Path | None = None, scope: str = "user") -> tuple[InstallReport, ...]:
         skills = self.skill_manager.select(skill_ids)
-        reports = tuple(self.adapter_manager.by_key(key).install(skills, workspace_root) for key in application_keys)
+        adapters = tuple(self.adapter_manager.by_key(key) for key in application_keys)
+        if scope == "workspace" and any(not isinstance(adapter, NativeSkillAdapter) for adapter in adapters):
+            raise ValueError("workspace scope is supported only for native skill adapters (vscode-chat and antigravity)")
+        reports = tuple(adapter.install(skills, workspace_root, scope=scope) for adapter in adapters)
         self.configuration_manager.update(applications=application_keys, skills=tuple(skill.metadata.skill_id for skill in skills))
         return reports
 
-    def uninstall(self, application_keys: Sequence[str], workspace_root: Path | None = None) -> None:
-        for key in application_keys:
-            self.adapter_manager.by_key(key).uninstall(workspace_root)
+    def uninstall(self, application_keys: Sequence[str], workspace_root: Path | None = None, scope: str = "user") -> None:
+        adapters = tuple(self.adapter_manager.by_key(key) for key in application_keys)
+        if scope == "workspace" and any(not isinstance(adapter, NativeSkillAdapter) for adapter in adapters):
+            raise ValueError("workspace scope is supported only for native skill adapters (vscode-chat and antigravity)")
+        for adapter in adapters:
+            adapter.uninstall(workspace_root, scope=scope)
 
-    def activate(self, application_keys: Sequence[str], workspace_root: Path | None = None, skill_ids: Sequence[str] | None = None) -> tuple[InstallReport, ...]:
-        return self.install(application_keys, skill_ids=skill_ids, workspace_root=workspace_root)
+    def activate(self, application_keys: Sequence[str], workspace_root: Path | None = None, skill_ids: Sequence[str] | None = None, scope: str = "user") -> tuple[InstallReport, ...]:
+        return self.install(application_keys, skill_ids=skill_ids, workspace_root=workspace_root, scope=scope)
 
-    def update(self, application_keys: Sequence[str], workspace_root: Path | None = None, skill_ids: Sequence[str] | None = None) -> tuple[InstallReport, ...]:
-        return self.install(application_keys, skill_ids=skill_ids, workspace_root=workspace_root)
+    def update(self, application_keys: Sequence[str], workspace_root: Path | None = None, skill_ids: Sequence[str] | None = None, scope: str = "user") -> tuple[InstallReport, ...]:
+        return self.install(application_keys, skill_ids=skill_ids, workspace_root=workspace_root, scope=scope)
 
 
 class BackupManager:

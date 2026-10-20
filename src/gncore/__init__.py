@@ -7,6 +7,7 @@ from gncore.cli.app import GncoreCli, main
 from gncore.config import GncoreConfig, GncoreConfigManager, default_config_root, platform_config_dir
 from gncore.core.managers import AdapterManager, BackupManager, ConfigurationManager, DiagnosticsManager, Installer, RollbackManager, SkillManager, Validator, VersionManager
 from gncore.core.models import ApplicationDiscovery, ApplicationSummary, BackupArchive, InstallReport, InstalledApplication, InstalledSkill, SkillCommand, SkillDefinition, SkillExample, SkillMetadata, ValidationIssue, ValidationReport
+from gncore.skills import builtin_skills, get_skill, list_categories, list_domains, search_skills, validate_skill_definition, SkillDomain
 from gncore.version import __version__
 
 __all__ = [
@@ -30,6 +31,7 @@ __all__ = [
     "RollbackManager",
     "SkillCommand",
     "SkillDefinition",
+    "SkillDomain",
     "SkillExample",
     "SkillManager",
     "SkillMetadata",
@@ -38,8 +40,14 @@ __all__ = [
     "Validator",
     "VersionManager",
     "builtin_adapters",
+    "builtin_skills",
     "default_config_root",
     "get_adapter_registry",
+    "get_skill",
+    "list_categories",
+    "list_domains",
     "main",
     "platform_config_dir",
+    "search_skills",
+    "validate_skill_definition",
 ]

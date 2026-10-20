@@ -20,6 +20,8 @@ class SkillMetadata:
     version: str
     dependencies: tuple[str, ...] = field(default_factory=tuple)
     permissions: tuple[str, ...] = field(default_factory=tuple)
+    category: str = "general"
+    tags: tuple[str, ...] = field(default_factory=tuple)
 
 
 @dataclass(frozen=True, slots=True)

@@ -1,5 +1,23 @@
 # Changelog
 
+## 4.0.0
+
+- Added 30 curated company and professional domain packs with 10 focused workflows each (300 added skills), including C-suite roles, Word, PDF, PowerPoint, spreadsheets, and broad business/technical operations.
+- Added public `list_domains()` API and `gncore list domains` discovery command.
+- Applied a shared inspect, plan, implement, test, fix, retest, and report contract with bounded completion criteria and evidence-based reporting.
+- Added domain catalog integrity and CLI discovery coverage.
+- Prepared package metadata and documentation for 4.0.0.
+
+## 3.1.0
+
+- Added focused skill collections for web engineering and design, machine learning, Python, data work, and testing.
+- Added searchable skill catalog functions to the Python API and category browsing to the CLI.
+- Added native VS Code Copilot and Google Antigravity skill installation with user and workspace scopes.
+- Added native VS Code Codex/Claude, Claude Code, Codex CLI, and Gemini CLI skill targets plus ChatGPT upload ZIP export.
+- Expanded the catalog with slash-invoked ML workflows and specialist skills across AI, data, cloud, security, mobile, product, research, and QA.
+- Added shared native-folder ownership so uninstalling one agent target preserves skills still managed for another target.
+- Added managed-file ownership checks and task-focused accuracy rules to the skill prompts.
+
 ## 3.0.0
 
 - Replaced the workflow-engine design with a universal AI Skill Installer.

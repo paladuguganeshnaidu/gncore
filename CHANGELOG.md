@@ -1,5 +1,13 @@
 # Changelog
 
+## 5.0.0
+
+- Reframed GNCore as a portable skill catalog and prompt export tool.
+- Removed application detection, adapters, installation and removal, MCP setup, persistent configuration, diagnostics, and backup/restore orchestration.
+- Replaced application-target commands with focused catalog commands: list, search, show, export, and version.
+- Added portable `SKILL.md` ZIP export for selected skills or the full catalog.
+- This is a breaking change from 4.x: application-management APIs and commands are removed.
+
 ## 4.0.0
 
 - Added 30 curated company and professional domain packs with 10 focused workflows each (300 added skills), including C-suite roles, Word, PDF, PowerPoint, spreadsheets, and broad business/technical operations.

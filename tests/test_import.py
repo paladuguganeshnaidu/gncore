@@ -1,10 +1,15 @@
 from __future__ import annotations
 
-from gncore import __version__, GncoreCli, get_adapter_registry
+import gncore
+from gncore import SkillDefinition, SkillDomain, get_skill, list_domains
 
 
-def test_public_api_exports() -> None:
-    assert __version__ == "4.0.0"
-    assert isinstance(GncoreCli(), GncoreCli)
-    registry = get_adapter_registry()
-    assert len(registry.adapters) == 12
+def test_public_api_is_skill_catalog_only() -> None:
+    assert gncore.__version__ == "5.0.0"
+    assert isinstance(get_skill("train"), SkillDefinition)
+    assert all(isinstance(domain, SkillDomain) for domain in list_domains())
+    forbidden_exports = {
+        "AdapterManager", "ApplicationAdapter", "Installer", "BackupManager",
+        "RollbackManager", "DiagnosticsManager", "GncoreConfigManager",
+    }
+    assert forbidden_exports.isdisjoint(gncore.__all__)

@@ -1,77 +1,63 @@
 # GNCore
 
-GNCore is a Python CLI and curated library for installing reusable AI agent skills into coding assistants.
+GNCore is a portable Python library of reusable AI skills. Search the catalog, inspect a skill's instructions, or export one or more standard `SKILL.md` folders for use with an AI assistant.
 
-Project version: 4.0.0
-Package name: gncore
-License: MIT
+**GNCore is a skills tool, not an orchestration or application-management tool.** It does not scan for AI apps, install or remove files in their configuration folders, configure MCP, run models, or trigger assistant actions. The host assistant loads a skill and provides its reasoning and tools.
 
-## Why it exists
-
-AI coding assistants use different locations and formats for prompts, skills, commands and configuration. GNCore provides a common skill representation plus application adapters for installation, validation, backup, restore and updates.
-
-## Supported assistants
-
-The current project documentation targets VS Code Copilot, Codex, and Claude harnesses, Google Antigravity, Claude Code, Gemini CLI, and OpenAI Codex CLI. Generic adapters for Claude Desktop, Cursor, Windsurf, and Continue.dev remain available for managed bundles. Hosted ChatGPT Skills can be exported as ZIP files for upload in the ChatGPT Skills UI.
-
-## Core commands
-
-- gncore activate
-- gncore deactivate
-- gncore update
-- gncore doctor
-- gncore list
-- gncore search
-- gncore install
-- gncore export
-- gncore uninstall
-- gncore backup
-- gncore restore
-- gncore validate
-- gncore version
-
-Useful first checks are gncore list apps, gncore validate --apps cursor and gncore doctor.
-
-## Skill model
-
-A skill can contain metadata, a description, system prompt, examples, commands, configuration, version, dependencies and permissions.
-
-The core pipeline is:
-
-Skill Definition → Validation / Manifest → Adapter Selection → Application Installation → Verification → Backup / Restore / Update.
-
-The main engineering idea is adapter isolation: adding another assistant should not require rewriting the central skill model. Native skill adapters install standard `SKILL.md` folders. For example:
+## Install
 
 ```bash
-gncore search model training
-gncore install train preprocess clean-data evaluate improve analyze --apps antigravity --scope workspace
+python -m pip install gncore
 ```
 
-Install focused workflows such as `/company-ceo`, `/train`, `/word-draft`, `/pdf-extract`, or `/ppt-create`, then describe the task. Each skill guides the assistant; it does not independently execute code. GNCore installs instructions for the assistant; it does not autonomously rewrite a project. The included skills demand evidence, scoped work, data-leakage controls, and honest reporting of checks and model results.
+## Discover and use skills
 
-The catalog contains 403 skills: 103 established specialist workflows plus 30 curated domain packs with 10 focused slash-invoked workflows each. Packs cover company leadership and business functions; software, data, machine learning, cloud, security, quality, and design; Word, PDF, PowerPoint, and spreadsheets; research, education, healthcare operations, retail, communications, and supply chain. Run `gncore list domains`, `gncore list skills`, or `gncore search <terms>` to discover workflows. Every skill carries an evidence-based inspect → plan → implement → test → fix → retest → report loop with bounded stopping criteria and honest test reporting.
+```bash
+gncore list domains
+gncore search "machine learning training"
+gncore show train
+gncore export --skills train evaluate --output ml-skills.zip
+```
 
-## Documentation
+The ZIP contains a `SKILL.md` directory for each selected skill. Copy the skill folders to the skills directory documented by your assistant, then invoke them using the slash name when supported, such as `/train`. GNCore never writes to assistant directories.
 
-- docs/USAGE.md
-- docs/ALL_SKILLS.md — all skills, use cases, slash names, and install examples
-- ARCHITECTURE.md
-- docs/DEVELOPER.md
-- docs/API.md
-- CONTRIBUTING.md
-- docs/RELEASE.md
-- SECURITY.md
+Export the complete catalog if desired:
 
-## Project status
+```bash
+gncore export --all --output gncore-skills.zip
+```
 
-GNCore is a real Python package and CLI under active iteration. Adapter behavior can differ between assistant versions and operating systems, so support should always be verified with the installed build.
+The Python API can be used directly:
+
+```python
+from gncore import get_skill, list_domains, search_skills
+
+skill = get_skill("train")
+print(skill.prompt)
+print([domain.name for domain in list_domains()])
+print([item.metadata.skill_id for item in search_skills("clean data")])
+```
+
+GNCore 5.0.0 includes 403 skills across 30 domain packs, with ten focused workflows per pack plus specialist skills. Browse the [complete skill catalog](docs/ALL_SKILLS.md).
+
+## CLI
+
+- `gncore list [skills|domains|categories]`
+- `gncore search <terms> [--category <name>]`
+- `gncore show <skill-id>`
+- `gncore export (--skills <id>... | --all) --output <file.zip>`
+- `gncore version`
+
+## Development
+
+```bash
+python -m pip install -e ".[test]"
+python -m pytest -q
+python scripts/generate_skill_catalog.py
+```
+
+See [Architecture](ARCHITECTURE.md), [Usage](docs/USAGE.md), [API](docs/API.md), and [Developer Guide](docs/DEVELOPER.md).
 
 ## License
 
-MIT License. See LICENSE.
-
-## Author
-
-Paladugu Ganesh Naidu
-
-Repository: [GNCore on GitHub](https://github.com/paladuguganeshnaidu/gncore)
+MIT. See [LICENSE](LICENSE).

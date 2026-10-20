@@ -1,20 +1,14 @@
 # Security Policy
 
-GNCore writes files into application config directories and workspace locations. Report issues that could lead to unsafe path handling, unexpected overwrites, secret leakage, or permission escalation.
+GNCore is an offline skill catalog and explicit ZIP exporter. It does not make network requests, execute skill prompts, or scan or modify AI application directories.
 
 ## Reporting a vulnerability
 
-Use a private security disclosure channel for anything that could affect end users or their local files. Include:
-
-- affected command
-- operating system
-- application target
-- exact file path involved
-- reproduction steps
+Use a private security disclosure channel for issues that could affect users. Include the affected version, command or API, operating system, reproduction steps, and any relevant output. Do not include credentials or personal data.
 
 ## Security expectations
 
-- All file writes must go through validated paths.
-- Backup and restore must preserve application boundaries.
-- Validators must fail closed when manifests are missing or inconsistent.
-- No bundled skill may contain secrets or credentials.
+- Catalog commands read bundled skill definitions only.
+- Export writes only to the caller-selected ZIP path and includes catalog text files.
+- Skill content must not contain secrets, credentials, deceptive claims, or unsafe instructions.
+- Skill text is guidance for the host assistant; it does not grant permissions or guarantee that actions are safe.

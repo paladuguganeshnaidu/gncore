@@ -1,22 +1,28 @@
 # Developer Guide
 
-GNCore is organized around a small set of modules:
+GNCore contains a curated skill catalog and tools for searching and exporting it. It intentionally does not include integrations that scan or modify assistant applications.
 
-- `src/gncore/cli/` contains the command-line interface.
-- `src/gncore/core/` contains managers and typed data models.
-- `src/gncore/adapters/` contains the adapter base class and the built-in application adapters.
-- `src/gncore/skills/` contains the bundled skill catalog.
-- `src/gncore/utilities/` contains atomic file and logging helpers.
-- `src/gncore/config.py` handles persistent GNCore configuration and platform paths.
+## Add or edit a skill
 
-## Adding a new application
+Add specialist definitions in `src/gncore/skills/library.py` or a domain workflow in `src/gncore/skills/domains.py`. Keep IDs stable, descriptions concise, and instructions scoped to one task. Use `validate_skill_definition()` and preserve the shared requirements for evidence, clear assumptions, safe boundaries, verification, and honest reporting.
 
-Create one adapter class, point it at the target application's config roots, and register it in `builtin_adapters()`. The shared adapter base will take care of the rest.
+Regenerate the full catalog after changing definitions:
 
-## Adding a new skill
+```bash
+python scripts/generate_skill_catalog.py
+```
 
-Add a focused `SkillDefinition` to the catalog in `skills/library.py`. Use a stable lowercase hyphenated ID, a short discovery description, category and searchable tags, and task-specific instructions. The shared quality contract requires evidence-based claims, scoped edits, and honest verification reports. Run `validate_skill_definition()` before installing custom definitions.
+## CLI changes
 
-## Validation strategy
+The CLI is limited to `list`, `search`, `show`, `export`, and `version`. Listing, searching, and showing are read-only. `export` writes only the ZIP explicitly named by the caller. Do not add application detection, installation, MCP configuration, model calls, hidden network access, or persistent state.
 
-The repository uses tests that exercise the public CLI and adapter registry. Keep any new behavior covered by tests that observe files on disk instead of internal implementation details.
+## Verify changes
+
+```bash
+python -m pip install -e ".[test]"
+python -m pytest -q
+python -m compileall -q src tests
+git diff --check
+```
+
+Keep tests focused on public API behavior, catalog integrity, portable output format, and the guarantee that catalog commands do not create application configuration.

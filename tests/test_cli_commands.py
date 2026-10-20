@@ -6,68 +6,67 @@ from zipfile import ZipFile
 from gncore import GncoreCli
 
 
-def test_list_skills_and_apps(capsys) -> None:
+def test_list_search_and_show_skills(tmp_path: Path, monkeypatch, capsys) -> None:
+    monkeypatch.chdir(tmp_path)
     cli = GncoreCli()
 
     assert cli.run(["list", "skills"]) == 0
-    output = capsys.readouterr().out
-    assert "requirements" in output
-    assert "release" in output
-
-    assert cli.run(["list", "domains"]) == 0
-    domain_output = capsys.readouterr().out
-    assert "Company Leadership" in domain_output and "Microsoft Word and DOCX Documents" in domain_output
-    assert "PDF Documents" in domain_output and "Presentations and PowerPoint" in domain_output
-
-    assert cli.run(["search", "train"]) == 0
     assert "train: Train a Machine Learning Model" in capsys.readouterr().out
 
-    assert cli.run(["list", "apps"]) == 0
-    output = capsys.readouterr().out
-    assert "VS Code Chat" in output
-    assert "Cursor" in output
+    assert cli.run(["list", "domains"]) == 0
+    domains = capsys.readouterr().out
+    assert "Company Leadership" in domains
+    assert "Microsoft Word and DOCX Documents" in domains
+    assert "PDF Documents" in domains
+
+    assert cli.run(["search", "train", "model"]) == 0
+    assert "train: Train a Machine Learning Model" in capsys.readouterr().out
+
+    assert cli.run(["show", "train"]) == 0
+    shown = capsys.readouterr().out
+    assert "name: train" in shown
+    assert "held-out evaluation" in shown
+    assert list(tmp_path.iterdir()) == []
 
 
-def test_export_chatgpt_skill_bundle(tmp_path: Path, capsys) -> None:
-    output = tmp_path / "chatgpt-skills.zip"
+def test_export_writes_only_portable_skill_folders(tmp_path: Path, capsys) -> None:
+    output = tmp_path / "nested" / "skills.zip"
     cli = GncoreCli()
 
-    assert cli.run(["export", "--app", "chatgpt", "--skills", "train", "--output", str(output)]) == 0
-
-    assert "Upload the ZIP in ChatGPT" in capsys.readouterr().out
+    assert cli.run(["export", "--skills", "train", "evaluate", "--output", str(output)]) == 0
+    assert "Exported 2 skill(s)" in capsys.readouterr().out
     with ZipFile(output) as archive:
         names = set(archive.namelist())
-        assert "train/SKILL.md" in names
-        assert "name: train" in archive.read("train/SKILL.md").decode("utf-8")
+        assert names == {"README.md", "train/SKILL.md", "evaluate/SKILL.md"}
+        skill_md = archive.read("train/SKILL.md").decode("utf-8")
+        assert "name: train" in skill_md
+        assert "Establish a simple baseline" in skill_md
 
 
-def test_activate_validate_backup_and_restore(tmp_path: Path, capsys) -> None:
+def test_all_export_and_unknown_skill_error(tmp_path: Path, capsys) -> None:
+    output = tmp_path / "all.zip"
     cli = GncoreCli()
+    assert cli.run(["export", "--all", "--output", str(output)]) == 0
+    with ZipFile(output) as archive:
+        assert len([name for name in archive.namelist() if name.endswith("/SKILL.md")]) == 403
 
-    assert cli.run(["activate", "--apps", "cursor", "--skills", "requirements", "architecture"]) == 0
-    output = capsys.readouterr().out
-    assert "Activated Cursor" in output
+    assert cli.run(["show", "not-a-skill"]) == 2
+    assert "not-a-skill" in capsys.readouterr().err
 
-    config_root = cli.adapter_manager.by_key("cursor").discover(Path.cwd()).config_root
-    manifest = config_root / "manifest.json"
-    assert manifest.is_file()
-    assert (config_root / "gncore" / "skills" / "requirements" / "metadata.json").is_file()
 
-    assert cli.run(["validate", "--apps", "cursor"]) == 0
-    validation_output = capsys.readouterr().out
-    assert "Cursor: valid" in validation_output
+def test_cli_has_no_application_or_orchestration_commands(capsys) -> None:
+    cli = GncoreCli()
+    assert cli.run([]) == 0
+    help_text = capsys.readouterr().out
+    assert all(command in help_text for command in ("list", "search", "show", "export", "version"))
+    for removed_command in ("activate", "install", "uninstall", "backup", "restore", "doctor", "validate"):
+        assert cli.run([removed_command]) == 2
+        capsys.readouterr()
 
-    archive = tmp_path / "backup.zip"
-    assert cli.run(["backup", "--output", str(archive)]) == 0
-    backup_output = capsys.readouterr().out
-    assert archive.is_file()
-    assert "Backup created" in backup_output
-
-    assert cli.run(["uninstall", "--apps", "cursor"]) == 0
+    assert cli.run(["list", "apps"]) == 2
     capsys.readouterr()
-    assert not manifest.exists()
 
-    assert cli.run(["restore", str(archive)]) == 0
-    restore_output = capsys.readouterr().out
-    assert "Restored" in restore_output
-    assert manifest.is_file()
+
+def test_version(capsys) -> None:
+    assert GncoreCli().run(["version"]) == 0
+    assert capsys.readouterr().out.strip() == "5.0.0"

@@ -2,13 +2,12 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 from functools import lru_cache
 import re
 
 from gncore.skills.domains import DOMAIN_SPECS
 
-from gncore.core.models import SkillCommand, SkillDefinition, SkillExample, SkillMetadata
+from gncore.skills.models import SkillCommand, SkillDefinition, SkillDomain, SkillExample, SkillMetadata
 
 
 def _skill(
@@ -89,7 +88,7 @@ Choose the simplest design that can be extended without duplicating logic.
 """,
             examples=(
                 SkillExample(
-                    title="Installer redesign",
+                    title="Skill catalog redesign",
                     instruction="Split a monolith into clear modules with typed boundaries.",
                     output="An architecture outline with components, responsibilities, and interfaces.",
                 ),
@@ -117,7 +116,7 @@ Make the smallest change that satisfies the contract, then verify it with target
             examples=(
                 SkillExample(
                     title="Core rewrite",
-                    instruction="Implement the new adapter-driven installer.",
+                    instruction="Implement a portable skill catalog and command-line exporter.",
                     output="A focused code change with working tests.",
                 ),
             ),
@@ -144,7 +143,7 @@ State concrete findings first, then give a short summary of residual risk.
             examples=(
                 SkillExample(
                     title="Pull request review",
-                    instruction="Review the installer for regressions and unsafe file writes.",
+                    instruction="Review skill ZIP export for path traversal, unsafe archives, and catalog regressions.",
                     output="Ranked findings with file references and severity.",
                 ),
             ),
@@ -171,7 +170,7 @@ Prefer clear fixture setup and assertions that verify the observable behavior, n
             examples=(
                 SkillExample(
                     title="CLI validation",
-                    instruction="Write tests for the activate and list commands.",
+                    instruction="Write tests for the skill search, display, and export commands.",
                     output="Focused tests that cover the public contract.",
                 ),
             ),
@@ -197,8 +196,8 @@ Treat file-system code as hostile-input code and require explicit validation.
 """,
             examples=(
                 SkillExample(
-                    title="Installer audit",
-                    instruction="Check whether backup and restore can overwrite arbitrary files.",
+                    title="Portable export audit",
+                    instruction="Check whether a skill bundle export can write beyond the chosen ZIP output path.",
                     output="Concrete security findings with mitigation guidance.",
                 ),
             ),
@@ -226,7 +225,7 @@ Avoid marketing language and keep examples runnable.
                 SkillCommand(
                     name="docs",
                     description="Write or update project documentation.",
-                    body="Document how the installer works and how to use it.",
+                    body="Document the skill catalog, search commands, and portable export format.",
                 ),
             ),
             permissions=("read", "write"),
@@ -300,16 +299,6 @@ Execution loop:
 5. For every failure, use the observed evidence to find the cause, make a focused fix, and rerun that check plus relevant regressions. Repeat until checks pass or a real blocker remains; do not loop indefinitely or weaken a check to manufacture success.
 6. Report artifacts, exact checks and outcomes, remaining uncertainty, and any check not run. Never invent facts, citations, metrics, or test results.
 """
-
-
-@dataclass(frozen=True, slots=True)
-class SkillDomain:
-    """A discoverable collection of related built-in workflows."""
-
-    domain_id: str
-    name: str
-    description: str
-    skill_ids: tuple[str, ...]
 
 
 @lru_cache(maxsize=1)

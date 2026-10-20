@@ -1,12 +1,17 @@
-# Migration
+# Migration to GNCore 5.0
 
-GNCore 3.0 is a new product line. It no longer exposes the old workflow-engine stages or provider abstraction.
+GNCore 5.0 is a breaking simplification to a skill catalog and portable export tool.
 
-If you are upgrading from an earlier repository snapshot:
+Removed APIs and commands include application adapters, detection, `activate`, `deactivate`, `install`, `uninstall`, `update`, `doctor`, `validate`, `backup`, and `restore`. The remaining CLI commands are `list`, `search`, `show`, `export`, and `version`.
 
-1. Remove any old `.gncore/` workflow state directories from your projects.
-2. Install the new package with `pip install gncore`.
-3. Run `gncore list apps` to inspect detected applications.
-4. Run `gncore activate` to install the bundled skills into the selected applications.
+Update code to use the skill catalog API:
 
-The new repo stores its own installer manifest inside each target application's config directory, so old workflow artifacts are not reused.
+```python
+from gncore import get_skill, list_domains, search_skills
+
+skill = get_skill("train")
+matches = search_skills("training evaluation")
+domains = list_domains()
+```
+
+Use `gncore show <skill-id>` to print one portable `SKILL.md`, or `gncore export --skills <id>... --output skills.zip` to create a portable archive. GNCore 5.0 does not read or modify files created by older application-management releases. Manage any old installation files using the host application's normal documentation and controls.

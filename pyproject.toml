@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "gncore"
-version = "4.0.0"
-description = "Curated Python library and CLI for installing focused AI agent skills."
+version = "5.0.0"
+description = "A searchable Python catalog of portable AI agent skills."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -16,13 +16,7 @@ keywords = [
     "ai",
     "skills",
     "assistant",
-    "installer",
-    "claude",
-    "copilot",
-    "cursor",
-    "windsurf",
-    "continue",
-    "antigravity",
+    "skill-library",
     "machine-learning",
     "agent-skills",
 ]

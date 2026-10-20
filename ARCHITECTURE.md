@@ -1,71 +1,31 @@
 # Architecture
 
-GNCore uses clean architecture boundaries:
-
-- CLI
-- Core services
-- Adapters
-- Skills
-- Installer and backup services
-- Validators
-- Utilities
-- Configuration
-
-## Core flow
+GNCore is a Python skill catalog and portable content tool. Its runtime does not orchestrate AI models or interact with assistant applications.
 
 ```mermaid
-flowchart TD
-    A[gncore activate] --> B[Detect installed applications]
-    B --> C[Interactive selection]
-    C --> D[Select skills]
-    D --> E[Adapter-specific install]
-    E --> F[Write prompt, command, MCP, settings bundles]
-    F --> G[Validate installation]
-    G --> H[Print success report]
+flowchart LR
+    A[Skill definitions] --> B[Catalog API]
+    B --> C[CLI discovery and search]
+    B --> D[SKILL.md renderer]
+    D --> E[User-selected ZIP output]
+    E --> F[User copies skills into an assistant]
+    F --> G[Host assistant interprets instructions]
 ```
 
-## Layer responsibilities
+## Package boundaries
 
-The CLI parses user input and dispatches to managers. It never writes application files directly.
+- `skills/domains.py` defines the curated 30 domain packs.
+- `skills/library.py` builds the built-in catalog, search index, and validation behavior.
+- `skills/models.py` contains the immutable skill and domain data types.
+- `cli/app.py` implements catalog listing, search, inspection, version display, and explicit ZIP export.
+- `scripts/generate_skill_catalog.py` derives the human-readable catalog from the Python definitions.
 
-The core layer coordinates skill selection, adapter discovery, installation, rollback, backup, diagnostics, and version reporting.
+The CLI has no application adapters, application path detection, persistent settings, install/uninstall routines, backups, MCP configuration, subprocess integrations, or model orchestration. Export is the only command that writes a file, and it writes only to the output path given by the caller.
 
-The adapter layer contains one class per supported application. Each adapter resolves its own config root, discovers executables or config roots, and serializes skills in the format its application can load. Generic adapters write GNCore-managed bundles. Native skill adapters write `SKILL.md` folders to the target's documented workspace or user skill directory.
+## Portable skill format
 
-The skill layer contains the internal skill catalog. Skills are versioned, independently installable, and serializable into multiple output formats.
+Each exported skill is a standard directory containing one `SKILL.md` file. The document starts with `name` and `description` YAML frontmatter, then contains the skill title, goal, and instructions. The folder name and `name` field use the stable skill ID, which also serves as the slash-invocation name in assistants that support it.
 
-The utilities layer handles JSON and atomic file writing so the installer never leaves partial files behind.
+## Adding a skill
 
-## Adapter contract
-
-Every adapter must implement the same behavior:
-
-- detect the application
-- resolve a writable config root
-- install a selected skill set
-- uninstall the managed bundle
-- validate the installation
-
-That keeps the application surface extensible without duplicating installer logic.
-
-## Bundle shape
-
-GNCore writes a managed `gncore/` bundle under each target application's config directory. The bundle includes:
-
-- `manifest.json`
-- `bundle.json`
-- `settings.json`
-- `mcp.json`
-- `skills/<skill-id>/...`
-- `prompts/<skill-id>.md`
-- `commands/<skill-id>/<command>.md`
-
-The generic bundle manifest makes update, backup, restore, and validation deterministic. Native skill adapters keep a separate GNCore manifest beside their target skill directory and add an ownership marker to each managed skill. They skip unmarked existing skill folders and remove only marked folders during uninstall.
-
-## Native skills
-
-Native skills use a directory named after the skill ID with a `SKILL.md` file containing YAML frontmatter (`name` and `description`) followed by the instructions. VS Code Copilot workspace skills use `.github/skills/`; VS Code Codex and Antigravity use `.agents/skills/`; VS Code Claude and Claude Code use `.claude/skills/`; Gemini CLI uses `.gemini/skills/`. User scope installs into each harness's supported home-directory location. Shared target directories track multiple GNCore owners so uninstalling one harness preserves skills still installed for another.
-
-## Validation and rollback
-
-Validation checks that the manifest exists and that every recorded skill file is still present. Backup writes a zip archive with a backup manifest, and restore replays the archive back into the recorded application roots.
+Add a validated definition to the catalog or a ten-workflow domain pack in `skills/domains.py`. Use a stable lowercase hyphenated ID, concise discovery description, relevant tags, and instructions specific to the workflow. Regenerate the catalog and run the tests. Skills describe work for a host assistant; they do not execute code on their own.

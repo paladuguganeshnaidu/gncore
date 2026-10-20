@@ -1,30 +1,37 @@
-# Verified-mode E2E (scaffold)
+# Verification Guide
 
-This document explains how to run GNCore in Verified-mode end-to-end. Verified-mode is intended for controlled environments or CI where real provider credentials are available.
+GNCore installs reusable skill instructions into supported assistant applications. It does not run model training, call AI providers, or execute skills by itself. Use the checks below to verify the library and an installation.
 
-Providers and token environment variables
-- OpenAI API: provider name `openai-api`, env var `OPENAI_API_KEY`
-- OpenRouter: provider name `openrouter`, env var `OPENROUTER_API_KEY`
-- Anthropic: provider name `anthropic-api`, env var `ANTHROPIC_API_KEY`
-- Google Gemini: provider name `gemini-api`, env var `GEMINI_API_KEY`
-- Ollama (local): provider name `ollama`, env var `OLLAMA_API_KEY` (optional for local socket)
+## Verify the source checkout
 
-Quick start (developer machine)
-1. Install dependencies and activate your virtualenv (see `test-env` usage in this repo).
-2. Ensure `git` is available on PATH.
-3. Initialize a GNCore project (if not already):
+From the repository root, install the test extra and run the test suite:
+
 ```bash
-python -m gncore.cli init --project .
-```
-4. Run the Verified-mode script with your provider and token:
-```bash
-python scripts/verified_mode_run.py --project . --provider openai-api --token-file /path/to/openai.token
+python -m pip install -e ".[test]"
+python -m pytest -q
+python -m compileall -q src tests
 ```
 
-CI usage
-- Store provider tokens as repository secrets and write them to a file or pass via environment variable to the runner.
-- Use the runner as part of a workflow step and fail the job if the runner exits non-zero.
+Check the catalog and CLI:
 
-Security notes
-- Prefer storing credentials in the platform keyring via `gncore auth set <provider> <token>` or via your CI secret mechanism. The runner will call `GncoreRuntime.auth_set` to persist keys into the configured credential store.
-- Avoid hardcoding tokens into scripts or source control.
+```bash
+python -m gncore version
+python -m gncore list domains
+python -m gncore list skills
+python -m gncore search "clean data"
+```
+
+The catalog integrity tests verify that skill IDs are unique, definitions validate, the 30 domain packs each contain ten skills, and the expected workflows are discoverable.
+
+## Verify an installed assistant target
+
+Install a small selection to a project workspace, then validate the managed output. Replace `vscode-codex` with a key shown by `gncore list apps`.
+
+```bash
+gncore install company-ceo train word-draft pdf-extract ppt-create --apps vscode-codex --scope workspace
+gncore validate --apps vscode-codex --scope workspace
+```
+
+Open the target assistant in that workspace and invoke one installed skill if the assistant supports native skill commands. Review its output and checks yourself. Filesystem validation confirms GNCore wrote its managed skill files; it does not confirm every assistant UI loads them or that an AI response is correct.
+
+For release checks, see [docs/RELEASE.md](docs/RELEASE.md).

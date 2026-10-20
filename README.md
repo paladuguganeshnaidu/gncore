@@ -74,4 +74,4 @@ MIT License. See LICENSE.
 
 Paladugu Ganesh Naidu
 
-Repository: https://github.com/paladuguganeshnaidu/gncore
+Repository: [GNCore on GitHub](https://github.com/paladuguganeshnaidu/gncore)

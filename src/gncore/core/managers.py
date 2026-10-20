@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 import json
 from pathlib import Path
 from typing import Iterable, Sequence
@@ -143,7 +143,7 @@ class BackupManager:
         self.adapter_manager = adapter_manager or AdapterManager()
 
     def create(self, output_path: Path | None = None, workspace_root: Path | None = None) -> BackupArchive:
-        timestamp = datetime.now(UTC)
+        timestamp = datetime.now(timezone.utc)
         archive_path = output_path or (default_config_root() / f"backup-{timestamp:%Y%m%d-%H%M%S}.zip")
         archive_path.parent.mkdir(parents=True, exist_ok=True)
 

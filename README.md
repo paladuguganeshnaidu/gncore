@@ -1,8 +1,6 @@
 # GNCore
 
-GNCore is a portable Python library of reusable AI skills. Search the catalog, inspect a skill's instructions, or export one or more standard `SKILL.md` folders for use with an AI assistant.
-
-**GNCore is a skills tool, not an orchestration or application-management tool.** It does not scan for AI apps, install or remove files in their configuration folders, configure MCP, run models, or trigger assistant actions. The host assistant loads a skill and provides its reasoning and tools.
+GNCore is a Python library and CLI for discovering and installing reusable AI agent skills. Its 403 skills cover 30 domain packs and are distributed as standard `SKILL.md` folders.
 
 ## Install
 
@@ -16,15 +14,23 @@ python -m pip install gncore
 gncore list domains
 gncore search "machine learning training"
 gncore show train
-gncore export --skills train evaluate --output ml-skills.zip
+gncore export --skills train evaluate
 ```
 
-The ZIP contains a `SKILL.md` directory for each selected skill. Copy the skill folders to the skills directory documented by your assistant, then invoke them using the slash name when supported, such as `/train`. GNCore never writes to assistant directories.
+By default, `export` installs the selected skills into `.agents/skills/<skill-id>/SKILL.md` in the current project. Agent tools that discover `.agents/skills/` can load the instructions, examples, and commands from these folders.
 
-Export the complete catalog if desired:
+Install one skill by its exact ID, install the full catalog, or choose another destination:
 
 ```bash
-gncore export --all --output gncore-skills.zip
+gncore export --specific design-ux-audit
+gncore export --all
+gncore export --skills train --directory ./my-agent/skills
+```
+
+To retain the portable ZIP workflow, pass `--output` explicitly:
+
+```bash
+gncore export --skills train evaluate --output ml-skills.zip
 ```
 
 The Python API can be used directly:
@@ -38,14 +44,14 @@ print([domain.name for domain in list_domains()])
 print([item.metadata.skill_id for item in search_skills("clean data")])
 ```
 
-GNCore 5.0.0 includes 403 skills across 30 domain packs, with ten focused workflows per pack plus specialist skills. Browse the [complete skill catalog](docs/ALL_SKILLS.md).
+Browse the [complete skill catalog](docs/ALL_SKILLS.md).
 
 ## CLI
 
 - `gncore list [skills|domains|categories]`
 - `gncore search <terms> [--category <name>]`
 - `gncore show <skill-id>`
-- `gncore export (--skills <id>... | --all) --output <file.zip>`
+- `gncore export (--skills <id>... | --specific <id> | --all) [--directory <path> | --output <file.zip>]`
 - `gncore version`
 
 ## Development

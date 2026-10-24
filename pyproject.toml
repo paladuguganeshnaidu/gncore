@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "gncore"
-version = "5.0.0"
+version = "5.1.0"
 description = "A searchable Python catalog of portable AI agent skills."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -60,6 +60,7 @@ include = [
     "/MIGRATION.md",
     "/SECURITY.md",
     "/VERIFIED_MODE.md",
+    "/website-commands.txt",
     "/pyproject.toml",
     "/scripts/generate_skill_catalog.py",
     "/src/gncore",

@@ -1,8 +1,8 @@
 # GNCore Skill Catalog
 
-GNCore 5.0.0 contains **403 portable skills** across **30 domain packs**. Each domain pack contains ten focused workflows.
+GNCore 5.1.0 contains **403 portable skills** across **30 domain packs**. Each domain pack contains ten focused workflows.
 
-GNCore is a skill library and export tool. It does not detect, configure, install into, or orchestrate AI applications. Export standard `SKILL.md` folders and copy them to an assistant's documented skills directory, or use `gncore show <skill-id>` to inspect a skill.
+GNCore is a skill library and installer. It writes standard skill folders to `.agents/skills/` by default; use `--output` to create a ZIP archive, or `--directory` to choose another install location.
 
 ## Domain packs
 
@@ -768,7 +768,8 @@ These complement the domain packs and are grouped by category.
 ```bash
 gncore search "clean data"
 gncore show train
-gncore export --skills train evaluate --output ml-skills.zip
+gncore export --specific design-ux-audit
+gncore export --skills train evaluate
 gncore export --all --output all-gncore-skills.zip
 ```
 

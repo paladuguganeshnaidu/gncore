@@ -6,7 +6,7 @@ Install GNCore into a Python environment:
 python -m pip install gncore
 ```
 
-GNCore searches and exports skill content. It does not discover or edit VS Code, Codex, Claude, Antigravity, or other application settings. The examples below write only the ZIP path you provide.
+GNCore searches and installs skill content into a project-local `.agents/skills/` directory by default. It does not change application settings.
 
 ## Find a skill
 
@@ -26,23 +26,40 @@ Search uses the skill ID, title, description, category, and tags. It returns cat
 gncore show train
 ```
 
-The output is a complete portable `SKILL.md` document. In a compatible assistant, place the folder in that assistant's documented skills directory and call the skill by its slash name, such as `/train`. The host assistant decides how to execute the instructions using its own tools.
+The output is a complete portable `SKILL.md` document. In a compatible assistant, place it at `.agents/skills/<skill-id>/SKILL.md`; the host assistant discovers the skill and decides how to execute it using its own tools.
 
 ## Export selected skills
 
 ```bash
-gncore export --skills train preprocess clean-data evaluate improve analyze --output ml-skills.zip
+gncore export --skills train preprocess clean-data evaluate improve analyze
 ```
 
-Each skill is exported as `<skill-id>/SKILL.md`, plus a bundle README. Copy only the skill folders you want into your assistant's documented skills location.
+Each skill is installed as `.agents/skills/<skill-id>/SKILL.md` in the current directory.
+
+Install one specific skill by exact ID or choose a different install directory:
+
+```bash
+gncore export --specific design-ux-audit
+gncore export --skills train --directory ./my-agent/skills
+```
 
 ## Export the complete catalog
 
 ```bash
-gncore export --all --output gncore-skills.zip
+gncore export --all
 ```
 
-The archive contains 403 skills across 30 domains. It can be large; start with selected skills when you only need a few.
+This installs every catalog skill under `.agents/skills/`.
+
+## Create a ZIP archive
+
+Pass `--output` to create an archive instead of installing directly:
+
+```bash
+gncore export --skills train evaluate --output ml-skills.zip
+```
+
+Each archive skill folder contains a complete `SKILL.md`. Extract the folders under `.agents/skills/` to make them discoverable.
 
 ## Python API
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 5.1.0
+
+- Make `gncore export` install complete skills to `.agents/skills/` by default.
+- Add `--specific` for selecting one skill and `--directory` for a custom install path.
+- Keep ZIP export available through an explicit `--output` option.
+- Include commands, examples, and permission guidance in generated `SKILL.md` files.
+
 ## 5.0.0
 
 - Reframed GNCore as a portable skill catalog and prompt export tool.

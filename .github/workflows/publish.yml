@@ -30,7 +30,7 @@ jobs:
         run: python -m compileall -q src tests
       - name: Verify CLI and catalog
         run: |
-          test "$(gncore version)" = "5.0.0"
+          test "$(gncore version)" = "5.1.0"
           gncore list domains
           gncore list skills > /tmp/gncore-skills.txt
           test "$(wc -l < /tmp/gncore-skills.txt)" -eq 403
@@ -41,8 +41,8 @@ jobs:
       - name: Install and smoke-test wheel
         run: |
           python -m venv /tmp/gncore-wheel-test
-          /tmp/gncore-wheel-test/bin/python -m pip install --no-deps dist/gncore-5.0.0-py3-none-any.whl
-          test "$(/tmp/gncore-wheel-test/bin/gncore version)" = "5.0.0"
+          /tmp/gncore-wheel-test/bin/python -m pip install --no-deps dist/gncore-5.1.0-py3-none-any.whl
+          test "$(/tmp/gncore-wheel-test/bin/gncore version)" = "5.1.0"
           /tmp/gncore-wheel-test/bin/python -c "from gncore import builtin_skills, list_domains; assert len(builtin_skills()) == 403; assert len(list_domains()) == 30; assert all(len(domain.skill_ids) == 10 for domain in list_domains())"
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

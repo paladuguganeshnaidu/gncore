@@ -1,0 +1,52 @@
+GNCore website command reference
+================================
+
+Install or update GNCore
+------------------------
+python -m pip install --upgrade gncore
+
+Show the installed version
+--------------------------
+gncore version
+
+Browse skills and categories
+----------------------------
+gncore list skills
+gncore list domains
+gncore list categories
+
+Search for a skill
+------------------
+gncore search "<task or topic>"
+gncore search "<task or topic>" --category <category>
+
+Read a skill
+------------
+gncore show <skill-id>
+
+Install a specific skill into .agents/skills/
+---------------------------------------------
+gncore export --specific <skill-id>
+
+Install one or more selected skills into .agents/skills/
+-------------------------------------------------------
+gncore export --skills <skill-id>
+gncore export --skills <skill-id-1> <skill-id-2>
+
+Install the complete catalog into .agents/skills/
+-------------------------------------------------
+gncore export --all
+
+Install skills into a custom directory
+--------------------------------------
+gncore export --skills <skill-id> --directory <path>
+gncore export --all --directory <path>
+
+Create a ZIP archive instead of installing directly
+---------------------------------------------------
+gncore export --skills <skill-id-1> <skill-id-2> --output <archive.zip>
+gncore export --all --output <archive.zip>
+
+Default install location
+------------------------
+.agents/skills/<skill-id>/SKILL.md

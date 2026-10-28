@@ -2,6 +2,11 @@
 
 ## 6.0.0 — source branch
 
+- Fix excluded-theme fallbacks, multiword style matching, the `britalisim` spelling, natural negative motion constraints, and contradictory theme handling.
+- Replace in-place directory writes and word-based migration detection with digest-based preflight, staged verified installation, recoverable backups, dry runs, and read-only installed-file verification.
+- Add a 36-case, 12-category offline evaluation pilot with separate structural results, pending human review, and unexecuted tool checks.
+- Exercise migration collisions, customization preservation, staging/switch failures, actual process interruption, recovery, corruption, and Unicode paths.
+
 - Consolidate 553 workflows into 60 adaptive category skills with one discoverable entrypoint per category.
 - Add frontend direction inference, explicit theme and brand preservation, complete interaction-state guidance, and a local planning aid.
 - Retain legacy IDs as CLI/API aliases and expose the complete workflow map through `list workflows` and `list_workflows()`.

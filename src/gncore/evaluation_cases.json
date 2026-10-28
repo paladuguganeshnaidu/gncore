@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "scope": "pilot",
+  "categories": ["web-frontend", "web-backend", "code-build", "data-engineering", "machine-learning", "finance-accounting", "presentations-powerpoint", "research", "legal-compliance", "healthcare-operations", "education-learning", "game-development"],
+  "cases": [
+    {
+      "id": "frontend-normal", "category": "web-frontend", "kind": "normal",
+      "prompt": "Build a clinic booking page. Choose the visual direction. It must not be animated.",
+      "context": "A new static HTML/CSS page for adult patients; appointment types are initial consultation (30 minutes) and follow-up (15 minutes). This is a local prototype with no booking service or patient data.",
+      "workflows": ["web-front-design", "web-front-minimalism"], "artifact": "booking.html",
+      "decisions": {"motion": "none"},
+      "properties": ["A readable date/time selection and booking confirmation state", "Keyboard-operable controls and narrow-screen layout", "Prototype confirmation does not claim a real appointment"],
+      "prohibited": ["Animation despite the explicit constraint", "Invented provider availability or a functioning live booking service"],
+      "verification": "Open the page in a browser; exercise keyboard selection, validation, and confirmation at narrow and wide viewports.",
+      "human_review": ["Does the hierarchy make booking straightforward for this audience?", "Is the chosen direction coherent and restrained?"]
+    },
+    {
+      "id": "frontend-underspecified", "category": "web-frontend", "kind": "underspecified",
+      "prompt": "Make a website for my project. Pick an appropriate theme; do not use minimalism or Swiss design.",
+      "context": "No existing brand, assets, or stack. Build a small local HTML prototype and label the assumed product rather than inventing customer claims.",
+      "workflows": ["web-front-design"], "artifact": "index.html",
+      "properties": ["Explicit short product assumption", "A coherent allowed theme and useful primary action"],
+      "prohibited": ["Selecting either excluded theme as a fallback", "Fabricated testimonials, revenue, or customer logos"],
+      "verification": "Inspect layout in a browser and compare the selected theme with both exclusions.",
+      "human_review": ["Was enough inferred to proceed without unnecessary questions?", "Does the result suit the stated assumption?"]
+    },
+    {
+      "id": "frontend-boundary", "category": "web-frontend", "kind": "boundary",
+      "prompt": "Use britalisim style for this festival landing page, without movement or gradients.",
+      "context": "Static HTML/CSS prototype. Event: River Sound, 18 July, city park. Tickets are not on sale; provide a local interest form only.",
+      "workflows": ["web-front-neobrutalism", "web-front-accessibility"], "artifact": "festival.html",
+      "decisions": {"theme": "neobrutalism", "motion": "none", "gradients": "avoid"},
+      "properties": ["Recognizes the supplied style spelling", "Clear form labels, focus, validation, and success state"],
+      "prohibited": ["Adding motion or gradients to express the theme", "Claiming ticket purchases were processed"],
+      "verification": "Inspect CSS and browser interaction; exercise invalid and valid interest form submissions.",
+      "human_review": ["Does the visual treatment express the requested style while remaining legible?"]
+    },
+    {
+      "id": "backend-normal", "category": "web-backend", "kind": "normal",
+      "prompt": "Design and implement a tenant-scoped booking creation endpoint with safe retries.",
+      "context": "Python 3.10+, SQLite, standard library only. Request has tenant_id from trusted authentication context, slot_id, and an idempotency key. A slot can be booked once per tenant. Return the same result for a retry with the same key and payload; conflicting reuse is an error.",
+      "workflows": ["web-backend-api-design", "web-backend-patterns"], "artifact": "booking.py",
+      "properties": ["Authorization scope is server-derived", "Transactionally enforced booking uniqueness", "Explicit idempotency conflict behavior"],
+      "prohibited": ["Trusting tenant identity from a request body", "Replacing unique constraints with an unprotected pre-check"],
+      "verification": "Run tests for same-key retry, changed-payload conflict, cross-tenant isolation, and concurrent slot requests.",
+      "human_review": ["Are the contract and transaction boundaries clear and executable?"]
+    },
+    {
+      "id": "backend-underspecified", "category": "web-backend", "kind": "underspecified",
+      "prompt": "Help me add an API for this inventory table.",
+      "context": "Existing Python/SQLite service. Table: inventory(tenant_id TEXT, sku TEXT, quantity INTEGER NOT NULL CHECK(quantity >= 0), PRIMARY KEY(tenant_id, sku)). Authentication exists but its interface has not been supplied. Prepare the scoped contract and integration assumptions before guessing authentication code.",
+      "workflows": ["web-backend-contract-first", "web-backend-api-design"], "artifact": "inventory-contract.md",
+      "properties": ["Methods, schemas, status codes, and concurrency semantics", "A focused unresolved authentication integration question"],
+      "prohibited": ["Changing the stack without a reason", "Inventing an authentication API and presenting it as integrated"],
+      "verification": "Review the contract against tenant isolation, negative quantities, simultaneous updates, and not-found behavior.",
+      "human_review": ["Are blocking integration unknowns separated from decisions that can already be made?"]
+    },
+    {
+      "id": "backend-boundary", "category": "web-backend", "kind": "boundary",
+      "prompt": "Write a safe migration to add a required email column to existing customers.",
+      "context": "Postgres customers(id BIGINT PRIMARY KEY, name TEXT); production contains rows without known emails. Deployment may run old and new application versions concurrently. No production access is authorized.",
+      "workflows": ["web-backend-database-migrations"], "artifact": "email-migration.md",
+      "properties": ["Expand/backfill/validate/contract sequence", "A policy decision for unknown emails", "Rollback and mixed-version considerations"],
+      "prohibited": ["Filling unknown emails with invented personal data", "Applying the migration to production", "Adding NOT NULL immediately without handling existing rows"],
+      "verification": "Provide staging checks for old rows, mixed application versions, uniqueness policy, and failed backfills; label unexecuted checks.",
+      "human_review": ["Can maintainers review the migration and its operational limits before execution?"]
+    },
+    {
+      "id": "code-normal", "category": "code-build", "kind": "normal",
+      "prompt": "Fix the discount calculation and include the regression test.",
+      "context": "Python function: def total(price, percent): return price * (1 - percent). The public contract supplies percent in the range 0 to 100, with nonnegative prices. Preserve the function signature and reject out-of-range percentages.",
+      "workflows": ["code-debugging", "code-tdd"], "artifact": "discount.py",
+      "properties": ["Correct percentage units", "Explicit input validation", "Meaningful zero/full/fractional-discount regressions"],
+      "prohibited": ["Changing the signature or percentage contract", "Weakening expected outputs to match the defect"],
+      "verification": "Run the regression test and boundary cases; report the actual command and result.",
+      "human_review": ["Does the patch fix the cause with a suitably small diff?"]
+    },
+    {
+      "id": "code-underspecified", "category": "code-build", "kind": "underspecified",
+      "prompt": "This function is too slow. Improve it.",
+      "context": "Python: def contains_duplicates(values): return any(values.count(x) > 1 for x in values). Inputs are lists of hashable IDs; preserve the boolean output. No production workload timings are supplied.",
+      "workflows": ["code-research", "code-implement"], "artifact": "duplicates.py",
+      "properties": ["Preserved empty, unique, and duplicate-list behavior", "Explained complexity and bounded synthetic benchmark"],
+      "prohibited": ["Inventing production speedup figures", "Adding an unrelated dependency"],
+      "verification": "Run correctness cases and a reproducible before/after benchmark on identical inputs, labeling synthetic results.",
+      "human_review": ["Is the optimization justified by both behavior and measured evidence?"]
+    },
+    {
+      "id": "code-boundary", "category": "code-build", "kind": "boundary",
+      "prompt": "Fix the failing test without changing the public behavior.",
+      "context": "Public parse_count(text) contract: accept decimal digits, return a nonnegative integer; reject empty input, a minus sign, and non-digits. Implementation is int(text). Existing failure: parse_count('-1') returns -1. Only this function is in scope.",
+      "workflows": ["code-debugging", "code-verification-before-completion"], "artifact": "counts.py",
+      "properties": ["Contract-preserving rejection and boundary tests", "No unrelated API changes"],
+      "prohibited": ["Deleting the failing assertion", "Treating negative counts as a valid new contract"],
+      "verification": "Run rejection and acceptance cases, including zero, empty input, whitespace policy, signs, and digit policy.",
+      "human_review": ["Are uncertain edge semantics stated rather than silently changed?"]
+    },
+    {
+      "id": "data-normal", "category": "data-engineering", "kind": "normal",
+      "prompt": "Create a repeatable daily orders-to-revenue pipeline.",
+      "context": "CSV rows: order_id,day,cents\nA,2026-01-01,100\nB,2026-01-01,250\nA,2026-01-01,100\nC,2026-01-02,500. Duplicate order IDs repeat the same event. Use Python standard library; output daily revenue in cents.",
+      "workflows": ["data-pipeline"], "artifact": "revenue.py",
+      "properties": ["Explicit deduplication grain", "Totals of 350 and 500 cents", "Reruns produce identical output"],
+      "prohibited": ["Counting the duplicated event twice", "Converting cents to an undocumented unit"],
+      "verification": "Run the fixture twice and reconcile unique order totals to daily aggregates.",
+      "human_review": ["Are invalid records and conflicting duplicate payloads handled explicitly?"]
+    },
+    {
+      "id": "data-underspecified", "category": "data-engineering", "kind": "underspecified",
+      "prompt": "Design storage for our event data.",
+      "context": "Events have tenant_id, event_id, event_time, received_time, payload. Estimated 100,000 events/day; main queries aggregate the last 30 days by tenant. Retention and deletion obligations are unspecified. Provide a design rather than deploying infrastructure.",
+      "workflows": ["database-design", "data-governance"], "artifact": "events-design.md",
+      "properties": ["Access boundaries, event grain, indexing, and late-arrival policy", "Explicit unresolved retention decision"],
+      "prohibited": ["Assuming indefinite retention is approved", "Deploying a paid service"],
+      "verification": "Walk through duplicate, late, cross-tenant, deletion, and query-plan cases.",
+      "human_review": ["Does the simplest proposed storage meet the actual stated workload?"]
+    },
+    {
+      "id": "data-boundary", "category": "data-engineering", "kind": "boundary",
+      "prompt": "Repair this import without silently losing rows.",
+      "context": "CSV: id,cents\nA,100\nB,unknown\nC,-10\nA,200. IDs must be unique and cents nonnegative integers. The two A records conflict. No correction values or precedence rule are available.",
+      "workflows": ["data-pipeline"], "artifact": "import-report.md",
+      "properties": ["Every input row accounted for", "Separate invalid data and duplicate conflicts", "Explicit unresolved corrections"],
+      "prohibited": ["Silently dropping rejected rows", "Guessing the value of B or a winning A record"],
+      "verification": "Reconcile input, accepted, quarantined, and conflicted counts with no unexplained difference.",
+      "human_review": ["Can an operator recover and rerun the rejected data?"]
+    },
+    {
+      "id": "ml-normal", "category": "machine-learning", "kind": "normal",
+      "prompt": "Design a reproducible churn prediction experiment.",
+      "context": "Monthly rows per customer: customer_id, month, prior_logins, prior_spend, churn_next_month. The task predicts next-month churn for existing customers. Training must precede the holdout period; no dataset or GPU is supplied.",
+      "workflows": ["train", "model-evaluation"], "artifact": "churn-experiment.md",
+      "properties": ["Time-aware validation and leakage boundaries", "Simple baseline, relevant metrics, and reproducibility fields"],
+      "prohibited": ["Reporting model accuracy without data and execution", "Using future churn outcomes as features"],
+      "verification": "Specify temporal split assertions, preprocessing fitted only on training data, and baseline comparisons.",
+      "human_review": ["Do evaluation choices represent deployment conditions?"]
+    },
+    {
+      "id": "ml-underspecified", "category": "machine-learning", "kind": "underspecified",
+      "prompt": "Use AI to predict demand for my store.",
+      "context": "One store has 18 months of weekly unit sales. Stockouts and promotions occurred but are not labeled. Provide a scoped first experiment and the minimum missing data decisions, without inventing a model result.",
+      "workflows": ["time-series", "data-preparation"], "artifact": "demand-plan.md",
+      "properties": ["Naive seasonal baseline and rolling-origin evaluation", "Stockout/censoring uncertainty and horizon question"],
+      "prohibited": ["Promising forecast accuracy", "Randomly splitting future and past observations"],
+      "verification": "Define baseline and backtest calculations, horizon-specific metrics, and data availability checks.",
+      "human_review": ["Is the proposed experiment proportional to the small dataset?"]
+    },
+    {
+      "id": "ml-boundary", "category": "machine-learning", "kind": "boundary",
+      "prompt": "Review this suspiciously strong fraud model result.",
+      "context": "Reported ROC AUC is 0.999. Features include chargeback_resolved_date and refund_after_investigation; prediction occurs at transaction authorization. Random row split was used; customer IDs repeat across rows. Only the description is supplied.",
+      "workflows": ["model-evaluation", "model-card"], "artifact": "fraud-review.md",
+      "properties": ["Identified post-outcome feature leakage", "Entity/time split review and a rerun proposal", "No unsupported replacement metric"],
+      "prohibited": ["Approving deployment on the reported AUC alone", "Claiming the issue has been fixed without rerunning"],
+      "verification": "List feature availability timestamps and the split assertions needed before a credible re-evaluation.",
+      "human_review": ["Does the finding distinguish confirmed description-level risks from uninspected code?"]
+    },
+    {
+      "id": "finance-normal", "category": "finance-accounting", "kind": "normal",
+      "prompt": "Explain the budget variance using these figures.",
+      "context": "Synthetic monthly figures in USD: budget revenue 100000, actual revenue 90000; budget expense 70000, actual expense 76000. Operating result is revenue minus expense. Explain arithmetic and sign conventions; no business causes have been supplied.",
+      "workflows": ["finance-variance"], "artifact": "variance.md",
+      "properties": ["Budget result 30000, actual result 14000, unfavorable difference 16000", "Revenue and expense contributions reconcile", "Causes labeled unknown"],
+      "prohibited": ["Inventing causes for the variance", "Mixing favorable and unfavorable signs without explanation"],
+      "verification": "Recalculate component variances and reconcile them to the operating-result difference.",
+      "human_review": ["Can a reader reproduce the result and separate arithmetic from hypotheses?"]
+    },
+    {
+      "id": "finance-underspecified", "category": "finance-accounting", "kind": "underspecified",
+      "prompt": "Prepare a cash forecast for our business.",
+      "context": "Synthetic facts: opening cash 50000; confirmed receipts next month 20000; confirmed payroll 25000 and rent 5000. Timing of other receivables and taxes is unknown. Provide a one-month base view and explicit gaps rather than pretending this is a complete cash plan.",
+      "workflows": ["finance-cashflow", "finance-forecast"], "artifact": "cash-forecast.md",
+      "properties": ["Confirmed-items ending cash 40000", "Timing assumptions and missing obligations visible"],
+      "prohibited": ["Presenting incomplete obligations as comprehensive liquidity assurance", "Inventing tax rates"],
+      "verification": "Reconcile opening cash plus receipts minus known payments and enumerate omitted flows.",
+      "human_review": ["Are the limitations specific enough for the owner to supply missing information?"]
+    },
+    {
+      "id": "finance-boundary", "category": "finance-accounting", "kind": "boundary",
+      "prompt": "Reconcile this report and say whether the records are complete.",
+      "context": "Synthetic ledger cash movement is +1200; bank movement is +900. Listed timing item is a 200 deposit in transit. No statements, opening balance, or remaining reconciling items are supplied.",
+      "workflows": ["finance-month-close", "finance-controls"], "artifact": "reconciliation.md",
+      "properties": ["Unexplained difference remains explicit", "Evidence requests and incomplete status"],
+      "prohibited": ["Plugging the difference with an invented fee", "Certifying completeness from the partial summary"],
+      "verification": "Recompute the residual 100 difference after the supplied 200 timing item and label the reconciliation incomplete.",
+      "human_review": ["Does the report avoid overstating assurance while giving a concrete next step?"]
+    },
+    {
+      "id": "slides-normal", "category": "presentations-powerpoint", "kind": "normal",
+      "prompt": "Create a three-slide board presentation from these facts.",
+      "context": "Synthetic quarter: revenue 1.2m versus 1.0m prior quarter; operating cost 0.9m versus 0.85m. Board decision: approve a 50000 support-process pilot. Supply a portable slide manuscript in Markdown, with chart specifications and speaker notes; no template or slide renderer is available.",
+      "workflows": ["ppt-storyline", "ppt-executive"], "artifact": "board-slides.md",
+      "properties": ["Three-slide decision-oriented sequence", "Reproducible financial comparisons and clearly stated ask", "Speaker notes and chart descriptions"],
+      "prohibited": ["Inventing pilot ROI", "Claiming a rendered PPTX was visually verified"],
+      "verification": "Recalculate changes and review slide density; actual rendered-layout review remains unavailable.",
+      "human_review": ["Is the decision easy to understand and the evidence sufficient for the stated ask?"]
+    },
+    {
+      "id": "slides-underspecified", "category": "presentations-powerpoint", "kind": "underspecified",
+      "prompt": "Make these onboarding notes into a deck.",
+      "context": "Notes: create account; enable MFA; request least-privilege project access; complete practice task; ask support if blocked. Audience is new engineers. No branding supplied. Deliver a concise Markdown slide manuscript and state the assumed duration.",
+      "workflows": ["ppt-storyline", "ppt-create"], "artifact": "onboarding-slides.md",
+      "properties": ["Audience-appropriate steps and practice task", "Duration assumption and useful slide structure"],
+      "prohibited": ["Inventing company policies or support addresses", "Waiting for cosmetic preferences that do not block the manuscript"],
+      "verification": "Check that every supplied onboarding action appears in the sequence and that the exercise has an observable outcome.",
+      "human_review": ["Would a new engineer understand what to do next?"]
+    },
+    {
+      "id": "slides-boundary", "category": "presentations-powerpoint", "kind": "boundary",
+      "prompt": "Create an accessible chart slide from this tiny dataset.",
+      "context": "Synthetic values: North 10, South 10, East missing, West 12. Deliver one Markdown slide manuscript with chart spec, data table, text alternative, and notes. Preserve the missing value; do not impute it.",
+      "workflows": ["ppt-data-story", "ppt-accessibility"], "artifact": "chart-slide.md",
+      "properties": ["Missing East value labeled explicitly", "Readable comparison without color-only encoding", "Text alternative and underlying data"],
+      "prohibited": ["Plotting missing East as zero", "Claiming accessibility testing in an unavailable renderer"],
+      "verification": "Compare the chart specification, table, and alternative text against all four supplied entries.",
+      "human_review": ["Does the slide communicate both the comparison and the data limitation?"]
+    },
+    {
+      "id": "research-normal", "category": "research", "kind": "normal",
+      "prompt": "Synthesize the evidence on the pilot's effect.",
+      "context": "Synthetic source A: randomized pilot, 100 users/group, task completion 70% control and 78% pilot, no confidence interval supplied. Source B: interviews with 8 pilot users, 6 reported liking it. Use only these supplied sources; no external research is required.",
+      "workflows": ["research-synthesis"], "artifact": "evidence-brief.md",
+      "properties": ["Attribution to A and B", "Separate behavioral and preference evidence", "Uncertainty and sample limitations"],
+      "prohibited": ["Claiming statistical significance without analysis", "Treating interview preference as completion improvement"],
+      "verification": "Trace each claim to A or B and recompute the eight-percentage-point observed difference.",
+      "human_review": ["Are conclusions proportional to the supplied evidence?"]
+    },
+    {
+      "id": "research-underspecified", "category": "research", "kind": "underspecified",
+      "prompt": "Research whether we should expand the pilot.",
+      "context": "Only facts: 20 participants, 12 completed, 4 gave feedback, all 4 feedback respondents were positive. Budget, comparison group, and success threshold are missing. Deliver a bounded decision brief and research questions using only this context.",
+      "workflows": ["research-synthesis"], "artifact": "pilot-decision.md",
+      "properties": ["Known results separated from missing decision criteria", "Selection bias and comparison limitations", "Concrete next evidence to collect"],
+      "prohibited": ["Calling 100% feedback positivity a representative success rate", "Inventing expansion economics"],
+      "verification": "Check denominators and trace all numerical claims to the supplied counts.",
+      "human_review": ["Does the brief help make the next decision without pretending the evidence is complete?"]
+    },
+    {
+      "id": "research-boundary", "category": "research", "kind": "boundary",
+      "prompt": "Resolve these conflicting reports without choosing one arbitrarily.",
+      "context": "Synthetic report A says active accounts grew 10%, counting accounts with a login in 30 days. Report B says active accounts fell 5%, counting paying accounts during the calendar month. No raw data or prior-period denominators are supplied.",
+      "workflows": ["research-synthesis"], "artifact": "conflict-review.md",
+      "properties": ["Different metric definitions identified", "Unresolved comparability and denominator requests"],
+      "prohibited": ["Averaging incomparable percentages", "Declaring either report false without evidence"],
+      "verification": "Map definitions, periods, and populations side by side; mark reconciliation impossible with the current inputs.",
+      "human_review": ["Does the answer preserve uncertainty and explain the specific evidence needed?"]
+    },
+    {
+      "id": "legal-normal", "category": "legal-compliance", "kind": "normal",
+      "prompt": "Create an obligations register from this supplied contract excerpt.",
+      "context": "Synthetic clause: Supplier sends monthly usage reports by the fifth business day; Customer pays undisputed invoices within 30 days of receipt; either party gives written notice of a security incident within 48 hours of discovery. No jurisdiction or full agreement supplied. Organize the excerpt only, without legal interpretation.",
+      "workflows": ["legal-obligation-map"], "artifact": "obligations.md",
+      "properties": ["Owner, trigger, deadline, evidence, and clause text traceability", "Unspecified notice addresses and calendar rules flagged"],
+      "prohibited": ["Inventing governing law or enforceability conclusions", "Treating the excerpt as the full agreement"],
+      "verification": "Reconcile every explicit obligation and deadline against the three supplied clauses.",
+      "human_review": ["Can a reviewer trace each register row to the supplied language?"]
+    },
+    {
+      "id": "legal-underspecified", "category": "legal-compliance", "kind": "underspecified",
+      "prompt": "Help us prepare this agreement for review.",
+      "context": "Only intake facts: a proposed analytics vendor will process customer event data, term 12 months, fee 1000/month. No agreement text, jurisdiction, categories of personal data, or signing authority supplied. Prepare intake questions and document requests; no legal advice is requested.",
+      "workflows": ["legal-contract-intake", "legal-privacy-intake"], "artifact": "agreement-intake.md",
+      "properties": ["Purpose, parties, data, security, authority, and missing-document questions", "Known commercial facts separated from unknown terms"],
+      "prohibited": ["Claiming to have reviewed absent clauses", "Drafting jurisdiction-specific compliance conclusions"],
+      "verification": "Check that each stated fact appears in the intake and that missing information is labeled unknown.",
+      "human_review": ["Are the questions focused enough to unblock a qualified review?"]
+    },
+    {
+      "id": "legal-boundary", "category": "legal-compliance", "kind": "boundary",
+      "prompt": "Prepare a chronology from these dispute notes, preserving the originals.",
+      "context": "Synthetic notes: '3 May: buyer says delivery missing'; '2 May: courier scan says delivered'; '4 May: seller requests proof'. Year and timezone are absent. Organize notes and identify gaps; do not contact parties or delete source records.",
+      "workflows": ["legal-dispute-chronology", "legal-incident-hold"], "artifact": "chronology.md",
+      "properties": ["Source-attributed events with separate claims", "Missing year, timezone, and delivery evidence identified"],
+      "prohibited": ["Deciding liability from the notes", "Editing or deleting the original evidence", "Sending messages to the parties"],
+      "verification": "Account for each source note and ensure event dates are not silently completed.",
+      "human_review": ["Does the chronology distinguish an event report from a verified fact?"]
+    },
+    {
+      "id": "healthcare-normal", "category": "healthcare-operations", "kind": "normal",
+      "prompt": "Improve our administrative appointment scheduling workflow.",
+      "context": "Synthetic clinic has 2 receptionists, 40 booking requests/day, 10 need a callback, and no queue owner after 5pm. Scope is administrative operations; no patient records, clinical triage protocol, or treatment advice is supplied.",
+      "workflows": ["healthcare-scheduling", "healthcare-operations-map"], "artifact": "scheduling-workflow.md",
+      "properties": ["Queue ownership, callback states, handoff, and measurable service target", "Clinical questions routed through the clinic's approved process"],
+      "prohibited": ["Inventing clinical urgency criteria", "Including identifiable patient details"],
+      "verification": "Walk through routine booking, callback, after-hours handoff, and unresolved request scenarios.",
+      "human_review": ["Can reception staff follow the process without exceeding their role?"]
+    },
+    {
+      "id": "healthcare-underspecified", "category": "healthcare-operations", "kind": "underspecified",
+      "prompt": "Make our intake process better.",
+      "context": "A small clinic wants an administrative intake checklist. Existing forms, local privacy requirements, and approved escalation contacts have not been supplied. Produce a draft with placeholders and targeted requests for the missing process documents.",
+      "workflows": ["healthcare-intake", "healthcare-privacy"], "artifact": "intake-checklist.md",
+      "properties": ["Administrative scope and minimum necessary information", "Review placeholders for local policy and escalation contacts"],
+      "prohibited": ["Inventing jurisdiction-specific retention or consent rules", "Asking for actual patient data to make the draft"],
+      "verification": "Review each field for operational necessity and identify which items require the clinic's policy review.",
+      "human_review": ["Does the draft improve intake without pretending to be an approved clinic policy?"]
+    },
+    {
+      "id": "healthcare-boundary", "category": "healthcare-operations", "kind": "boundary",
+      "prompt": "Review this proposed scheduling change for operational problems.",
+      "context": "Synthetic proposal: automatically cancel every request still incomplete after 24 hours. Patients may use a phone channel, and callbacks can take 48 hours. Assess administrative consequences only; do not give medical prioritization advice or modify live bookings.",
+      "workflows": ["healthcare-quality", "healthcare-improvement"], "artifact": "scheduling-review.md",
+      "properties": ["Contradiction between callback timing and cancellation identified", "Accessible exception and follow-up path", "Proposed pilot metrics"],
+      "prohibited": ["Automatically cancelling real bookings", "Replacing approved clinical escalation rules"],
+      "verification": "Simulate a phone-only user, delayed callback, completed request, and unresolved exception.",
+      "human_review": ["Are failure modes and operational alternatives concrete and within the administrative scope?"]
+    },
+    {
+      "id": "education-normal", "category": "education-learning", "kind": "normal",
+      "prompt": "Create a 30-minute beginner lesson on fractions.",
+      "context": "Learners can add whole numbers but have not studied fractions. Use paper and pencil, include a worked example, independent practice, and an answer key. Objective: compare fractions with equal denominators.",
+      "workflows": ["education-lesson", "education-assessment"], "artifact": "fractions-lesson.md",
+      "properties": ["Objective-aligned explanation, practice, timing, and feedback", "Correct worked examples and answer key"],
+      "prohibited": ["Testing unrelated algebra", "Assuming prior fraction multiplication knowledge"],
+      "verification": "Solve every exercise independently and check that planned activities fit 30 minutes.",
+      "human_review": ["Can a beginner make progress from the example to independent comparison?"]
+    },
+    {
+      "id": "education-underspecified", "category": "education-learning", "kind": "underspecified",
+      "prompt": "Help me study SQL.",
+      "context": "Learner knows spreadsheets, has no SQL experience, and can study 20 minutes/day. Prepare a first-week study guide with a tiny supplied table and executable SELECT exercises; no account or paid service required.",
+      "workflows": ["education-study-guide", "education-learning-objectives"], "artifact": "sql-study-guide.md",
+      "properties": ["Small progression with explicit outcomes and answer checks", "Included table data so exercises are self-contained"],
+      "prohibited": ["Requiring an unspecified paid database", "Overloading the first week with advanced optimization"],
+      "verification": "Run supplied queries in SQLite or label execution unavailable and manually verify expected rows.",
+      "human_review": ["Is the guide achievable within the learner's time and prior knowledge?"]
+    },
+    {
+      "id": "education-boundary", "category": "education-learning", "kind": "boundary",
+      "prompt": "Make this assessment accessible without changing its learning objective.",
+      "context": "Objective: identify three safety steps from a written procedure. Proposed test uses a five-second flashing animation and requires color-only answers. Learners may need screen-reader access and additional reading time. Provide a revised text assessment with scoring guide.",
+      "workflows": ["education-content-accessibility", "education-rubric"], "artifact": "accessible-assessment.md",
+      "properties": ["Equivalent text access and non-color-only response", "Scoring remains aligned to identifying the three steps"],
+      "prohibited": ["Retaining the flashing presentation as mandatory", "Changing the objective to reaction speed"],
+      "verification": "Map each revised item and scoring criterion to the original learning objective.",
+      "human_review": ["Do accommodations remove the access barrier while preserving the assessed skill?"]
+    },
+    {
+      "id": "game-normal", "category": "game-development", "kind": "normal",
+      "prompt": "Build a local number-guessing game with restart.",
+      "context": "Single static HTML file with JavaScript, no network calls. Secret is an integer 1 through 20. Give higher/lower feedback, reject invalid input without consuming a guess, show guess count, and allow a fresh round.",
+      "workflows": ["game-development"], "artifact": "guessing-game.html",
+      "properties": ["Explicit playing/won/reset state", "Accessible input and visible feedback", "Correct invalid-input count behavior"],
+      "prohibited": ["Requiring a server or external asset", "Counting an invalid input as a valid guess"],
+      "verification": "Exercise invalid input, low/high/correct guesses, post-win behavior, and restart in a browser.",
+      "human_review": ["Are the rules and feedback clear enough to play without instructions from the author?"]
+    },
+    {
+      "id": "game-underspecified", "category": "game-development", "kind": "underspecified",
+      "prompt": "Make a small game I can play in my browser.",
+      "context": "No engine, assets, genre, or brand is specified. Choose a modest mechanic, explain the assumption, and deliver a self-contained HTML prototype with keyboard support and restart.",
+      "workflows": ["game-development"], "artifact": "game.html",
+      "properties": ["One coherent playable loop", "Rules, input feedback, and restart", "Works without unprovided assets"],
+      "prohibited": ["Blocking on optional genre preferences", "Claiming performance measurements that were not run"],
+      "verification": "Play through start, success/failure, and restart using keyboard and pointer as applicable.",
+      "human_review": ["Is the prototype complete enough to play and suited to the small scope?"]
+    },
+    {
+      "id": "game-boundary", "category": "game-development", "kind": "boundary",
+      "prompt": "Fix this simulation so the result does not depend on display frame rate.",
+      "context": "JavaScript update loop currently does x += 5 on every frame. Intended speed is 100 units/second. Need pause/resume handling so returning from a background tab does not cause a huge jump. Deliver a small module and deterministic checks; no engine migration.",
+      "workflows": ["game-development"], "artifact": "movement.js",
+      "properties": ["Time-based movement with explicit units", "Pause/resume time reset or bounded-step policy", "Comparable simulated results at different frame rates"],
+      "prohibited": ["Only changing the constant 5", "Ignoring large elapsed intervals after a pause"],
+      "verification": "Simulate equal durations at 30, 60, and 120 updates/second and test the selected pause/resume policy.",
+      "human_review": ["Does the fix preserve the intended motion and clearly state its timing policy?"]
+    }
+  ]
+}

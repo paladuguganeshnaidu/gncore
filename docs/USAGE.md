@@ -41,6 +41,17 @@ gncore export --all --output gncore-categories.zip
 
 Use GNCore export when exact resource preservation matters. Some external skill installers omit files named `metadata.json`; GNCore preserves every declared resource, including provenance and notices.
 
+Directory exports are staged with a digest inventory and recovery backup. Preview with `gncore export --all --dry-run`; check installed files without changing them using `gncore verify`. Modified managed files and unmanaged collisions stop the update. See [installation and recovery](INSTALLATION.md) for migration and recovery commands.
+
+## Evaluate a category
+
+```bash
+gncore evaluate --validate
+gncore evaluate --list
+```
+
+The offline pilot supplies 36 scenarios across 12 categories. A recorded response can be checked against real artifact files, while human review and unavailable tool checks remain explicitly pending. See [evaluation format](EVALUATION.md).
+
 ## Existing projects
 
 Legacy IDs such as `train`, `web-front-minimalism`, and `web-backend-fastapi` remain CLI/API aliases. Exporting them writes their canonical category folders. Existing old folders in other projects are not deleted automatically. Back up custom edits before retiring older installations; see [Migration](../MIGRATION.md).

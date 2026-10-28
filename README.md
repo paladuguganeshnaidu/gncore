@@ -45,6 +45,8 @@ gncore search "machine learning training"
 gncore show web-frontend
 gncore export --skills web-frontend web-backend code-build
 gncore export --all
+gncore export --all --dry-run
+gncore verify
 gncore export --all --output gncore-categories.zip
 ```
 
@@ -59,7 +61,16 @@ gncore plan "An analytics dashboard" --theme minimalism
 
 The host AI makes the contextual design decisions and performs the work. The planning aid is a useful local check, not a guarantee of aesthetic quality.
 
-For this checkout's managed older installations, `python scripts/install_categories.py --migrate-managed` backs up recognized GNCore folders under `.work/skill-install-backups/` before installing the new catalog. Unmanaged category-name collisions are reported rather than overwritten.
+Directory exports now preflight the whole selection, stage and verify content, and retain a recoverable backup. Customized and unmanaged files are preserved. `gncore verify` compares installed files with their recorded hashes. For exact known older exports, `python scripts/install_categories.py --migrate-managed` retires only byte-identical legacy folders. See [installation and recovery](docs/INSTALLATION.md).
+
+The [offline evaluation pilot](docs/EVALUATION.md) includes 36 scenarios across 12 categories:
+
+```bash
+gncore evaluate --validate
+gncore evaluate --list
+```
+
+Its runner separates structural artifact checks from pending human review and unexecuted tool checks; it does not certify the quality of an AI output.
 
 ## Python API
 
@@ -76,7 +87,7 @@ print([s.metadata.skill_id for s in search_skills("fastapi")])
 
 Browse the [complete catalog](docs/ALL_SKILLS.md), [source research](docs/SOURCE_RESEARCH.md), [frontend guide](docs/FRONTEND_SKILLS.md), [backend guide](docs/BACKEND_SKILLS.md), [migration notes](MIGRATION.md), and [API documentation](docs/API.md).
 
-The [next upgrade plan](docs/UPGRADE_PLAN.md) prioritizes planning reliability, installation recovery, category evaluations, deeper procedures, explainable routing, and reproducible source maintenance.
+The [upgrade plan](docs/UPGRADE_PLAN.md) tracks the implemented reliability foundation and the remaining category, routing, and source-maintenance work.
 
 ## Quality and development
 

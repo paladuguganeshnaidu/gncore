@@ -21,6 +21,8 @@ A new primary category name takes precedence over an older generic workflow with
 
 Back up customized old skill folders, then install the desired category entrypoints with `gncore export`. Old folders in other projects are not deleted automatically. Fresh exports use `.agents/skills/<category>/SKILL.md` and include supporting resources and notices.
 
+Directory exports now preflight all selected destinations and use a digest inventory with staged installation and retained backups. Existing matching exports can be adopted; modified or unmanaged conflicting content stops the update without overwriting it. Use `--dry-run` to preview and `gncore verify` for a read-only integrity report. The optional migration script retires only exact known legacy exports and preserves differing older versions. Recovery details are in [installation and recovery](docs/INSTALLATION.md).
+
 Only primary category entrypoints are exposed as `SKILL.md` in the source distribution. Retired source entrypoints and nested source skills are reference guides, preventing duplicate automatic discovery.
 
 ## API changes

@@ -8,6 +8,8 @@ The local verification suite covers:
 - Category search, workflow aliases, canonical-name precedence, and professional-domain coverage.
 - Frontend direction inference, explicit theme precedence, common spellings, existing brand preservation, and negative constraints.
 - Directory and ZIP exports, supporting resource bytes, source provenance, share-alike notices, and path boundaries.
+- Whole-selection installation preflight, digest inventories, retained backups, failed stages/switches, interrupted-process recovery, and customized-file preservation.
+- Pilot evaluation schema and artifact checks, with human review and external-tool execution explicitly pending.
 - GNCore runtime compilation, package metadata, and clean wheel installation.
 
 Skill format validation checks frontmatter and structure. Reference review checks source identity, file preservation, relevance, and supplied license terms. These checks do not independently validate every upstream tool or certify expert decisions in every domain.

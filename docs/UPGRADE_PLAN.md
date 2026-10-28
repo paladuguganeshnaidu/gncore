@@ -1,6 +1,20 @@
 # GNCore next upgrade plan
 
-Prepared on 2026-10-28 against commit `6321d72`. This is an implementation roadmap; items below are planned, not completed upgrades.
+Prepared on 2026-10-28 against commit `6321d72`. This roadmap now tracks a completed first implementation batch and the remaining upgrades. The detailed requirements below remain the targets; a pilot or partial implementation does not satisfy an entire later round.
+
+## Implementation status
+
+| Item | Current state |
+| --- | --- |
+| GN-01 | Implemented: constraint-filtered selection, multiword/spelling normalization, motion negation, documented precedence, and contradiction errors |
+| GN-02 | Implemented: digest-based preflight, staged verified installs, preserved custom files, backups, dry runs, automatic rollback, and interrupted-process recovery |
+| GN-03 | Pilot implemented: 36 scenarios across 12 categories and an offline structural runner; extension to all 60 and complete task executions remain |
+| GN-04–GN-12 | Planned; no claim of comparative output reviews, complete mode rewrites, global routing, source locking, offline rebuilding, or profiles |
+| GN-13 | Installed-file verification implemented; dependency reports and storage deduplication remain |
+| GN-14 | Installation failure-path tests added, including actual process exit; expanded platform evidence and performance baselines remain |
+| GN-15–GN-16 | Planned; source push and package checks do not constitute public release or automated source refresh |
+
+See [installation and recovery](INSTALLATION.md), [evaluation format](EVALUATION.md), and the [local evidence](LOCAL_VERIFICATION.md). This first batch does not alter or relicense the 60 category playbooks.
 
 ## Outcome
 

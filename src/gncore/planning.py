@@ -7,7 +7,7 @@ import re
 THEME_ALIASES = {
     "minimal": "minimalism", "minimalist": "minimalism", "minimalism": "minimalism",
     "maximal": "maximalism", "maximalizm": "maximalism", "maximalist": "maximalism", "maximalism": "maximalism",
-    "brutalism": "neobrutalism", "brutalisim": "neobrutalism", "neo-brutalism": "neobrutalism", "neobrutalism": "neobrutalism",
+    "brutalism": "neobrutalism", "brutalisim": "neobrutalism", "britalisim": "neobrutalism", "neo-brutalism": "neobrutalism", "neobrutalism": "neobrutalism",
     "industrial": "industrial", "industrial-brutalism": "industrial", "swiss": "swiss",
     "editorial": "editorial", "luxury": "luxury", "premium": "luxury", "agentic": "agentic",
     "futuristic": "futuristic", "y2k": "futuristic", "retro": "retro", "collage": "collage", "paper": "collage",
@@ -15,6 +15,7 @@ THEME_ALIASES = {
     "neumorphism": "neumorphism", "clay": "claymorphism", "claymorphism": "claymorphism",
     "aurora": "aurora", "gradient": "aurora", "neon": "cyberpunk", "cyberpunk": "cyberpunk",
     "3d": "immersive-3d", "immersive-3d": "immersive-3d", "organic": "organic", "terracotta": "organic",
+    "liquid-glass": "glass", "international-design": "swiss", "retro-futurism": "futuristic",
 }
 
 SIGNALS = {
@@ -31,39 +32,79 @@ SIGNALS = {
 }
 
 
+def _normalize(text: str) -> str:
+    return re.sub(r"[\s_\-\u2010-\u2015]+", " ", text.casefold()).strip()
+
+
+def _theme(text: str) -> str | None:
+    normalized = _normalize(text)
+    return next((canonical for alias, canonical in THEME_ALIASES.items() if _normalize(alias) == normalized), None)
+
+
+def _negative_spans(text: str) -> list[tuple[int, int]]:
+    # Deliberately bounded grammar, not a general natural-language interpreter.
+    # Carry negation through lists, stopping at punctuation or a positive clause.
+    pattern = r"\b(?:no|not(?! only\b)|without|avoid|disable|exclude|excluding|do not|don't)\b[^,.;!?\n]*"
+    spans = []
+    for match in re.finditer(pattern, text):
+        lead = re.match(r"(?:do not|don't|no|not|without|avoid|disable|exclude|excluding)\s*(?:use\s+)?", match.group()).end()
+        boundary = re.search(r"\b(?:but|instead|however|use|choose|prefer|with)\b", match.group()[lead:])
+        spans.append((match.start(), match.start() + lead + boundary.start() if boundary else match.end()))
+    return spans
+
+
+def _theme_mentions(text: str) -> list[tuple[int, int, str, str]]:
+    aliases = sorted({_normalize(alias): canonical for alias, canonical in THEME_ALIASES.items()}.items(), key=lambda pair: -len(pair[0]))
+    pattern = r"\b(?:" + "|".join(re.escape(alias) for alias, _ in aliases) + r")\b"
+    lookup = dict(aliases)
+    return [(m.start(), m.end(), lookup[m.group()], m.group()) for m in re.finditer(pattern, text)]
+
+
 def frontend_plan(brief: str, *, theme: str | None = None, existing_theme: str | None = None) -> dict[str, object]:
     """Recommend a starting direction without pretending to replace design review."""
     if not brief.strip():
         raise ValueError("a product brief is required")
-    words = set(re.findall(r"[a-z0-9]+", brief.casefold()))
-    lowered = brief.casefold()
-    avoid_motion = bool(re.search(r"\b(no|without|avoid|disable)\s+(animation|animations|motion)\b", lowered))
-    avoid_gradients = bool(re.search(r"\b(no|without|avoid)\s+gradients?\b", lowered))
-    excluded = {
-        canonical for alias, canonical in THEME_ALIASES.items()
-        if re.search(r"\b(?:no|not|without|avoid)\s+(?:a\s+)?" + re.escape(alias) + r"\b", lowered)
-    }
+    lowered = _normalize(brief)
+    spans = _negative_spans(lowered)
+    negative = lambda start: any(left <= start < right for left, right in spans)
+    negative_text = " ".join(lowered[left:right] for left, right in spans)
+    avoid_motion = bool(re.search(r"\b(?:animated|animations?|motion|movement)\b", negative_text))
+    avoid_gradients = bool(re.search(r"\bgradients?\b", negative_text))
+    mentions = _theme_mentions(lowered)
+    excluded = {canonical for start, _, canonical, _ in mentions if negative(start)}
+    if avoid_gradients:
+        excluded.add("aurora")
+    # Excluded words must not contribute positive product signals either.
+    positive_text = lowered
+    for left, right in reversed(spans):
+        positive_text = positive_text[:left] + " " * (right - left) + positive_text[right:]
+    words = set(re.findall(r"[a-z0-9]+", positive_text))
     selected = None
     source = "inferred"
-    if theme:
-        selected = THEME_ALIASES.get(theme.casefold().strip())
+    if theme is not None:
+        selected = _theme(theme)
         if not selected:
             raise ValueError(f"unknown theme: {theme}")
         source = "explicit"
     else:
-        requested = re.search(r"\b(?:style|theme|aesthetic)\s*(?:is|:|=|of)?\s*([a-z0-9-]+)", lowered)
+        distinctive = {"minimalist", "maximalist", "maximalism", "maximalizm", "neobrutalism", "neo brutalism", "brutalism", "brutalisim", "britalisim", "glassmorphism", "neumorphism", "claymorphism", "cyberpunk"}
+        requested = set()
+        for start, end, canonical, alias in mentions:
+            if negative(start):
+                continue
+            prefix, suffix = lowered[:start], lowered[end:]
+            has_label = re.search(r"\b(?:style|theme|aesthetic)\s*(?:(?:is|of)\s*|[:=]\s*)?(?:an?\s+)?$", prefix) or re.match(r"\s+(?:style|theme|aesthetic)\b", suffix)
+            if has_label or alias in distinctive:
+                requested.add(canonical)
+        if len(requested) > 1:
+            raise ValueError("conflicting theme requests; choose one primary theme or supply --theme")
         if requested:
-            selected = THEME_ALIASES.get(requested.group(1))
-            source = "explicit" if selected else "inferred"
-        if not selected:
-            for word in ("minimalist", "maximalist", "maximalism", "maximalizm", "neobrutalism", "neo-brutalism", "brutalism", "brutalisim", "glassmorphism", "neumorphism", "claymorphism", "cyberpunk"):
-                match = re.search(r"\b" + re.escape(word) + r"\b", lowered)
-                if match and THEME_ALIASES[word] not in excluded:
-                    selected = THEME_ALIASES[word]
-                    source = "explicit"
-                    break
-        if not selected and existing_theme:
-            selected = THEME_ALIASES.get(existing_theme.casefold().strip(), existing_theme.strip())
+            selected = requested.pop()
+            source = "explicit"
+        if not selected and existing_theme is not None:
+            selected = _theme(existing_theme) or existing_theme.strip()
+            if not selected:
+                raise ValueError("existing theme must not be blank")
             source = "existing"
     if avoid_gradients and selected == "aurora":
         raise ValueError("the requested gradient theme conflicts with the no-gradients constraint")
@@ -71,7 +112,10 @@ def frontend_plan(brief: str, *, theme: str | None = None, existing_theme: str |
         raise ValueError("the selected theme conflicts with an explicit style constraint")
     scores = {name: sum(weight for signal, weight in weights.items() if signal in words) for name, weights in SIGNALS.items() if name not in excluded}
     if not selected:
-        fallback = "minimalism" if "minimalism" not in excluded else "swiss"
+        allowed = [name for name in dict.fromkeys(["minimalism", "swiss", *THEME_ALIASES.values()]) if name not in excluded]
+        if not allowed:
+            raise ValueError("conflicting constraints exclude every available theme; choose an allowed direction")
+        fallback = allowed[0]
         selected = max(scores, key=scores.get) if any(scores.values()) else fallback
     return {
         "skill_id": "web-frontend", "theme": selected, "selection": source,

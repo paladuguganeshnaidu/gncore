@@ -14,6 +14,8 @@ from gncore.skills.bundles import packaged_resources
 from gncore.version import __version__
 from gncore.planning import frontend_plan
 from gncore.skills.unified import list_workflows, workflow_aliases
+from gncore.installation import install_skills, recover_installation, verify_installation
+from gncore.evaluation import evaluate_response, load_corpus
 
 
 def render_skill(skill: SkillDefinition) -> str:
@@ -109,7 +111,27 @@ class GncoreCli:
         destination = export.add_mutually_exclusive_group()
         destination.add_argument("--output", type=Path, help="Write a portable .zip archive instead of installing")
         destination.add_argument("--directory", type=Path, help="Install under this directory (default: .agents/skills)")
+        export.add_argument("--dry-run", action="store_true", help="Preflight a directory installation without writing files")
         export.set_defaults(handler=self._cmd_export)
+
+        verify = subparsers.add_parser("verify", help="Read-only comparison with the installed file inventory")
+        verify.add_argument("--directory", type=Path, default=Path(".agents/skills"))
+        verify.set_defaults(handler=self._cmd_verify)
+
+        recover = subparsers.add_parser("recover", help="Recover an interrupted installation after its writer has stopped")
+        recover.add_argument("--directory", type=Path, default=Path(".agents/skills"))
+        recover.add_argument("--journal", type=Path, required=True)
+        recover.set_defaults(handler=self._cmd_recover)
+
+        evaluate = subparsers.add_parser("evaluate", help="Inspect offline scenarios or check a recorded response and artifact")
+        operation = evaluate.add_mutually_exclusive_group(required=True)
+        operation.add_argument("--validate", action="store_true", help="Validate corpus coverage and workflow references")
+        operation.add_argument("--list", action="store_true", help="List the available scenarios")
+        operation.add_argument("--case", help="Scenario ID to evaluate")
+        evaluate.add_argument("--corpus", type=Path, help="Use a custom corpus in the documented format")
+        evaluate.add_argument("--response", type=Path, help="Recorded response metadata JSON")
+        evaluate.add_argument("--artifacts", type=Path, help="Directory containing the generated artifacts")
+        evaluate.set_defaults(handler=self._cmd_evaluate)
 
         version = subparsers.add_parser("version", help="Print the installed GNCore version")
         version.set_defaults(handler=lambda _args: self._cmd_version())
@@ -166,6 +188,8 @@ class GncoreCli:
         # Multiple workflow aliases can intentionally resolve to the same module.
         skills = tuple({skill.metadata.skill_id: skill for skill in skills}.values())
         if args.output:
+            if args.dry_run:
+                raise ValueError("--dry-run applies to directory installations")
             output = args.output.expanduser().resolve()
             if output.suffix.casefold() != ".zip":
                 raise ValueError("output must use a .zip extension")
@@ -183,16 +207,47 @@ class GncoreCli:
             print(f"Exported {len(skills)} skill(s) to archive: {output}")
             return 0
 
-        install_root = (args.directory or Path(".agents/skills")).expanduser().resolve()
-        for skill in skills:
-            skill_dir = install_root / skill.metadata.skill_id
-            skill_dir.mkdir(parents=True, exist_ok=True)
-            (skill_dir / "SKILL.md").write_text(render_skill(skill), encoding="utf-8", newline="\n")
-            for name, content in packaged_resources(skill.metadata.skill_id).items():
-                target = skill_dir / name
-                target.parent.mkdir(parents=True, exist_ok=True)
-                target.write_bytes(content)
-        print(f"Installed {len(skills)} skill(s) in: {install_root}")
+        install_root = args.directory or Path(".agents/skills")
+        payloads = {skill.metadata.skill_id: {"SKILL.md": render_skill(skill).encode("utf-8"), **packaged_resources(skill.metadata.skill_id)} for skill in skills}
+        report = install_skills(install_root, payloads, version=__version__, dry_run=args.dry_run)
+        if args.dry_run:
+            print(json.dumps(report, indent=2))
+        else:
+            print(f"Installed {len(skills)} skill(s) in: {report['directory']}")
+            print(f"Recovery journal: {report['journal']}")
+        return 0
+
+    @staticmethod
+    def _cmd_verify(args: argparse.Namespace) -> int:
+        report = verify_installation(args.directory)
+        print(json.dumps(report, indent=2))
+        return 0 if report["ok"] else 1
+
+    @staticmethod
+    def _cmd_recover(args: argparse.Namespace) -> int:
+        print(json.dumps(recover_installation(args.directory, args.journal), indent=2))
+        return 0
+
+    @staticmethod
+    def _cmd_evaluate(args: argparse.Namespace) -> int:
+        corpus = load_corpus(args.corpus)
+        if args.case:
+            if args.response is None or args.artifacts is None:
+                raise ValueError("--case requires --response and --artifacts")
+            case = next((case for case in corpus["cases"] if case["id"] == args.case), None)
+            if case is None:
+                raise ValueError(f"unknown evaluation case: {args.case}")
+            response = json.loads(args.response.read_text(encoding="utf-8"))
+            report = evaluate_response(case, response, args.artifacts)
+            print(json.dumps(report, indent=2))
+            return 0 if report["objective_passed"] else 1
+        if args.response is not None or args.artifacts is not None:
+            raise ValueError("--response and --artifacts require --case")
+        if args.list:
+            print(json.dumps(corpus["cases"], indent=2))
+        else:
+            print(json.dumps({"schema_version": corpus["schema_version"], "scope": corpus.get("scope", "custom"),
+                              "categories": len(corpus["categories"]), "cases": len(corpus["cases"]), "valid": True}, indent=2))
         return 0
 
     @staticmethod

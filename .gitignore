@@ -5,3 +5,5 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .agents/
+.gncore-*-transactions/
+.gncore-*.lock

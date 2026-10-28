@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from gncore.planning import frontend_plan
+from gncore.planning import THEME_ALIASES, frontend_plan
 
 
 @pytest.mark.parametrize(("brief", "expected"), [
@@ -54,3 +54,48 @@ def test_attributed_r3f_helper_fix_survives_reference_migration():
     assert 'onClick={(e) => console.log("click", e)}' in code
     assert 'onFocus={(e) => console.log("focus", e)}' in code
     assert "{/* Lighting */}" in module.R3FComponentGenerator("scene").generate()
+
+
+@pytest.mark.parametrize("brief", [
+    "A website, no minimalism and no swiss",
+    "A website, avoid minimalism and swiss",
+    "A dashboard without a swiss theme",
+    "A website, no minimalism, no swiss, no editorial and no luxury",
+    "A website, avoid gradients",
+])
+def test_every_fallback_respects_exclusions(brief):
+    plan = frontend_plan(brief)
+    assert plan["theme"] not in plan["excluded_styles"]
+
+
+@pytest.mark.parametrize("phrase", ["not animated", "without movement", "do not use animation", "no motion or gradients", "avoid all animations", "disable motion"])
+def test_motion_constraints(phrase):
+    assert frontend_plan(f"A website, {phrase}")["motion"] == "none"
+
+
+@pytest.mark.parametrize(("phrase", "expected"), [
+    ("in britalisim style", "neobrutalism"),
+    ("in neo brutalism style", "neobrutalism"),
+    ("with theme: liquid glass", "glass"),
+    ("in industrial brutalism style", "industrial"),
+    ("with aesthetic of retro futurism", "futuristic"),
+])
+def test_multiword_and_documented_spelling(phrase, expected):
+    plan = frontend_plan(f"A landing page {phrase}")
+    assert plan["theme"] == expected and plan["selection"] == "explicit"
+
+
+def test_precedence_and_contradictions_are_explicit():
+    assert frontend_plan("A maximalist site", theme="neo brutalism", existing_theme="Acme")["theme"] == "neobrutalism"
+    assert frontend_plan("A maximalist site", existing_theme="Acme")["theme"] == "maximalism"
+    assert frontend_plan("A dashboard", existing_theme="Acme")["theme"] == "Acme"
+    assert frontend_plan("No minimalism, but use maximalist style")["theme"] == "maximalism"
+    assert frontend_plan("Not only animated, also colorful")["motion"] != "none"
+    with pytest.raises(ValueError, match="conflict"):
+        frontend_plan("A maximalist and minimalist site")
+    with pytest.raises(ValueError, match="conflict"):
+        frontend_plan("No minimalism", existing_theme="minimal")
+    with pytest.raises(ValueError, match="conflict"):
+        frontend_plan("No " + " or ".join(sorted(set(THEME_ALIASES.values()))))
+    with pytest.raises(ValueError, match="unknown"):
+        frontend_plan("A site", theme="")

@@ -1,5 +1,23 @@
 # Local verification — 2026-10-28
 
+## Reliability upgrade batch
+
+The first implementation batch completes GN-01 and GN-02 and supplies the GN-03 pilot format and cases. The remaining roadmap items are tracked separately in [UPGRADE_PLAN.md](UPGRADE_PLAN.md).
+
+| Check | Result |
+| --- | --- |
+| Full automated suite | 90 passed, 1 skipped |
+| Installation tests after the final path-scanning refinement | 27 passed, 1 skipped |
+| Pilot coverage and workflow references | 36 cases across 12 categories validated |
+| Actual project installation | All 60 categories adopted with a retained backup; 5,716 tracked files intact, no missing, modified, or unmanaged files |
+| Documentation lint | 23 files, zero issues |
+| Planner regressions | Excluded fallbacks, negative motion, multiword styles, documented misspellings, precedence, and contradictions checked |
+| Installation failure coverage | Unmanaged collisions, customized files, temporary-looking user filenames, stale resources, staging/switch failures, corrupt state, Unicode paths, actual process exit, concurrent edits, and recovery checked |
+
+The skipped test requires creating a symlink, which is unavailable to this Windows account. The existing CI matrix remains responsible for runtime checks on supported Python versions and platforms. The evaluation corpus's complete agent tasks, browser/renderer checks, and subjective quality reviews have not been executed by the structural runner; they remain explicitly pending.
+
+## Initial category rewrite
+
 The GNCore 6 category rewrite was checked locally on Windows with Python 3.14.7.
 
 | Check | Result |

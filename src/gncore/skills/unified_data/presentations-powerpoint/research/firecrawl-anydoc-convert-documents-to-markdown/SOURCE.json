@@ -1,0 +1,14 @@
+{
+  "category": "presentations-powerpoint",
+  "repository": "firecrawl/anydoc",
+  "name": "convert-documents-to-markdown",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "e7178e099b6bf9171e2c52b832cbdb4134b69112",
+  "source_url": "https://github.com/firecrawl/anydoc/blob/e7178e099b6bf9171e2c52b832cbdb4134b69112/skills/convert-documents-to-markdown/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

@@ -1,0 +1,14 @@
+{
+  "category": "software-engineering",
+  "repository": "paramchoudhary/resumeskills",
+  "name": "tech-resume-optimizer",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+  "source_url": "https://github.com/paramchoudhary/resumeskills/blob/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/tech-resume-optimizer/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

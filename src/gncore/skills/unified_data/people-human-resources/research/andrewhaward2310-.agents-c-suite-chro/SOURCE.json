@@ -1,0 +1,14 @@
+{
+  "category": "people-human-resources",
+  "repository": "andrewhaward2310/.agents",
+  "name": "c-suite-chro",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "77e68dd5c0e9fbcf6f418c5cbcddcf46bbbd1a42",
+  "source_url": "https://github.com/andrewhaward2310/.agents/blob/77e68dd5c0e9fbcf6f418c5cbcddcf46bbbd1a42/skills/business/c-suite-chro/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

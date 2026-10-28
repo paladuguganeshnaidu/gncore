@@ -1,0 +1,14 @@
+{
+  "category": "backend-engineering",
+  "repository": "wshobson/agents",
+  "name": "dotnet-backend-patterns",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "9c3e3a366fffa3829943011355cc72afa362648b462a07e6294c36b8ede7c1bc",
+  "revision": null,
+  "source_url": "https://github.com/wshobson/agents",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 5
+}

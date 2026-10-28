@@ -1,0 +1,14 @@
+{
+  "category": "education-learning",
+  "repository": "dylantarre/animation-principles",
+  "name": "education-learning",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "83597134ba8ff59838270f94d7ac7282ffa3b54d",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/83597134ba8ff59838270f94d7ac7282ffa3b54d/skills/08-by-industry/education-learning/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

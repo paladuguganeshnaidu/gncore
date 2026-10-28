@@ -1,0 +1,121 @@
+{
+  "category": "ai-machine-learning",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "ai-machine-learning",
+      "repository": "ljagiello/ctf-skills",
+      "name": "ctf-ai-ml",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "0df66f2ab2c4a5fd6a8fe746daed010b3685eea3f12b0aaac45f94f557050447",
+      "revision": null,
+      "source_url": "https://github.com/ljagiello/ctf-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 4
+    },
+    {
+      "category": "ai-machine-learning",
+      "repository": "affaan-m/ecc",
+      "name": "ml-adoption-playbook",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "c7d33efdf096e31117cfd9f9f9bc751e4e68579127ccbaf61924c675f2837d36",
+      "revision": null,
+      "source_url": "https://github.com/affaan-m/ecc",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "ai-machine-learning",
+      "repository": "dotnet/skills",
+      "name": "technology-selection",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "9fd95c38b48be85e6f573f221b99c56502ef4278a641520d6233ca7e9385bd2f",
+      "revision": null,
+      "source_url": "https://github.com/dotnet/skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 8
+    },
+    {
+      "category": "ai-machine-learning",
+      "repository": "actionbook/rust-skills",
+      "name": "domain-ml",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "ef3460b75803488dc549c4630b5baf42a3af7abdf9d7f9de15817db266a3c7b1",
+      "revision": null,
+      "source_url": "https://github.com/actionbook/rust-skills",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "ai-machine-learning",
+      "repository": "k-dense-ai/scientific-agent-skills",
+      "name": "scikit-learn",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "144c23d4ae3b334166ff804157cb7c9c323e1df87a5722971d2a0565114757df",
+      "revision": null,
+      "source_url": "https://github.com/k-dense-ai/scientific-agent-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 11
+    },
+    {
+      "category": "ai-machine-learning",
+      "repository": "k-dense-ai/scientific-agent-skills",
+      "name": "aeon",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "658fdd7a94c2b0f20b42d1bae275769b79df41b1eda44736e8d8b633f36faa64",
+      "revision": null,
+      "source_url": "https://github.com/k-dense-ai/scientific-agent-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 12
+    },
+    {
+      "category": "ai-machine-learning",
+      "repository": "k-dense-ai/scientific-agent-skills",
+      "name": "shap",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "19943bb609836bc302efd65a66a18bfa8ab6d65f06198e38a4ab50e60a89db15",
+      "revision": null,
+      "source_url": "https://github.com/k-dense-ai/scientific-agent-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 10
+    },
+    {
+      "category": "ai-machine-learning",
+      "repository": "langchain-ai/deepagents",
+      "name": "cuml-machine-learning",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "1524ff634904dcd86a1e889f3cdf17b1fcb2a77bced6af5f392bc856966ee0e9",
+      "revision": null,
+      "source_url": "https://github.com/langchain-ai/deepagents",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

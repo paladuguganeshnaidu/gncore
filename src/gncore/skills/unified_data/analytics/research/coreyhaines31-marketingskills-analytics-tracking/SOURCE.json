@@ -1,0 +1,14 @@
+{
+  "category": "analytics",
+  "repository": "coreyhaines31/marketingskills",
+  "name": "analytics-tracking",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "757d45338d686b7717a4bd66f24f78167e0cc81ea32ff58d8487afd6a3519e0b",
+  "revision": null,
+  "source_url": "https://github.com/coreyhaines31/marketingskills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 5
+}

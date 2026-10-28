@@ -1,0 +1,14 @@
+{
+  "category": "procurement-vendor",
+  "repository": "anthropics/knowledge-work-plugins",
+  "name": "vendor-review",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "2574e29377c7173d0cecffef29a6ecbd7f8ccb5d",
+  "source_url": "https://github.com/anthropics/knowledge-work-plugins/blob/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/operations/skills/vendor-review/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "Apache-2.0"
+  ],
+  "file_count": 1
+}

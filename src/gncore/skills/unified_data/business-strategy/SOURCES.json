@@ -1,0 +1,120 @@
+{
+  "category": "business-strategy",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "business-strategy",
+      "repository": "anthropics/knowledge-work-plugins",
+      "name": "review-contract",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "6e3c198a19e6669fea164cfa9ec530e45d6e03b5d9f7622f3fac20c0c7882b71",
+      "revision": null,
+      "source_url": "https://github.com/anthropics/knowledge-work-plugins",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "business-strategy",
+      "repository": "samber/developer-relations-skills",
+      "name": "devtools-pricing-strategy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "d0cde0ebb3a109166747dbc03425857bdab5f8374452b15c6e3376590791c56e",
+      "revision": null,
+      "source_url": "https://github.com/samber/developer-relations-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 8
+    },
+    {
+      "category": "business-strategy",
+      "repository": "samber/developer-relations-skills",
+      "name": "developer-relations-kickoff",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "416c713dbd1bbdca3033089053613370d41d3c3a0658973521d7c2ce56a7b9bb",
+      "revision": null,
+      "source_url": "https://github.com/samber/developer-relations-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 5
+    },
+    {
+      "category": "business-strategy",
+      "repository": "samber/developer-relations-skills",
+      "name": "devrel-strategy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "5e30ea3be6f5058adcf1cc758b0c9058d30179ed33ed14ffa9bec1d39f2972a3",
+      "revision": null,
+      "source_url": "https://github.com/samber/developer-relations-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 5
+    },
+    {
+      "category": "business-strategy",
+      "repository": "samber/developer-relations-skills",
+      "name": "developer-ecosystem-strategy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "8c58656af0373a8dcfbd8ad2312e5269e294eb72940c82795a143a075271cc06",
+      "revision": null,
+      "source_url": "https://github.com/samber/developer-relations-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 5
+    },
+    {
+      "category": "business-strategy",
+      "repository": "samber/developer-relations-skills",
+      "name": "devtools-business-model",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "2a7f296d0a18c4e221ae408817f6fce492aaa3740993ee838b7c14ebb3c9c4ef",
+      "revision": null,
+      "source_url": "https://github.com/samber/developer-relations-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 5
+    },
+    {
+      "category": "business-strategy",
+      "repository": "travisjneuman/.claude",
+      "name": "business-strategy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "80adced2f6fc0cb54fadb0fd6f0d7429d1f84bd7",
+      "source_url": "https://github.com/travisjneuman/.claude/blob/80adced2f6fc0cb54fadb0fd6f0d7429d1f84bd7/skills/business-strategy/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 2
+    },
+    {
+      "category": "business-strategy",
+      "repository": "robdtaylor/personal-ai-infrastructure",
+      "name": "businessstrategy",
+      "download_status": "source-unavailable",
+      "snapshot_hash": null,
+      "revision": null,
+      "source_url": "https://github.com/robdtaylor/personal-ai-infrastructure",
+      "review_status": "not-redistributed: download unavailable"
+    }
+  ],
+  "legacy_reference_ids": []
+}

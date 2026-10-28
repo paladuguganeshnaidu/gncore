@@ -1,0 +1,14 @@
+{
+  "category": "finance-accounting",
+  "repository": "peterbamuhigire/chwezi-dev-engine",
+  "name": "accounting-finance-controller",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "22b8e7d0a9db642a0714c09c1716cdb21e6a5ae9",
+  "source_url": "https://github.com/peterbamuhigire/chwezi-dev-engine/blob/22b8e7d0a9db642a0714c09c1716cdb21e6a5ae9/skills/finance-accounting/accounting-finance-controller/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 2
+}

@@ -1,0 +1,14 @@
+{
+  "category": "quality-assurance",
+  "repository": "schneidenbach/skills",
+  "name": "relentless-quality-assurance-and-fixes",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "c025c83cc8a0202aaab2774f4b3c2cc3f3b4b0ac",
+  "source_url": "https://github.com/schneidenbach/skills/blob/c025c83cc8a0202aaab2774f4b3c2cc3f3b4b0ac/skills/relentless-quality-assurance-and-fixes/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 2
+}

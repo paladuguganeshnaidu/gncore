@@ -1,0 +1,14 @@
+{
+  "category": "spreadsheets",
+  "repository": "davila7/claude-code-templates",
+  "name": "excel-analysis",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "f57964ebda91cdfb31755661ecea9395f30020f1",
+  "source_url": "https://github.com/davila7/claude-code-templates/blob/f57964ebda91cdfb31755661ecea9395f30020f1/cli-tool/components/skills/enterprise-communication/excel-analysis/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

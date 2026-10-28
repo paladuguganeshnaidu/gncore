@@ -1,0 +1,14 @@
+{
+  "category": "machine-learning",
+  "repository": "huggingface/skills",
+  "name": "transformers-js",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "fabc634a893f62ad5c2039830397efa35fa62715",
+  "source_url": "https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/transformers-js/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "Apache-2.0"
+  ],
+  "file_count": 8
+}

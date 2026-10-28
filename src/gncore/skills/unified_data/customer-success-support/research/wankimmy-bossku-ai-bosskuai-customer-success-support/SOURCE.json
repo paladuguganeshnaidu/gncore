@@ -1,0 +1,14 @@
+{
+  "category": "customer-success-support",
+  "repository": "wankimmy/bossku-ai",
+  "name": "bosskuai-customer-success-support",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "fd4d52486e6800cdb7cfc62ce75f08e47c4519b3",
+  "source_url": "https://github.com/wankimmy/bossku-ai/blob/fd4d52486e6800cdb7cfc62ce75f08e47c4519b3/skills/bosskuai-customer-success-support/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

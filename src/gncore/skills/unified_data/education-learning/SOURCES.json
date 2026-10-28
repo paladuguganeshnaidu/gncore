@@ -1,0 +1,100 @@
+{
+  "category": "education-learning",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "CC-BY-SA-4.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "education-learning",
+      "repository": "samber/developer-relations-skills",
+      "name": "developer-education-strategy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "a12240a5a8a15a460ab17aa870df37f14814bf7d",
+      "source_url": "https://github.com/samber/developer-relations-skills/blob/a12240a5a8a15a460ab17aa870df37f14814bf7d/skills/developer-education-strategy/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "education-learning",
+      "repository": "minimax-ai/minimax-h3",
+      "name": "papercraft-stop-motion-explainer",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "199b7d0e1fd95e7b3eafa8c15eca692534142427",
+      "source_url": "https://github.com/minimax-ai/minimax-h3/blob/199b7d0e1fd95e7b3eafa8c15eca692534142427/skills/papercraft-stop-motion-explainer/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 3
+    },
+    {
+      "category": "education-learning",
+      "repository": "dylantarre/animation-principles",
+      "name": "education-learning",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "83597134ba8ff59838270f94d7ac7282ffa3b54d",
+      "source_url": "https://github.com/dylantarre/animation-principles/blob/83597134ba8ff59838270f94d7ac7282ffa3b54d/skills/08-by-industry/education-learning/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "education-learning",
+      "repository": "jorgealves/agent_skills",
+      "name": "module-learning-path-generator",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "6c1c26145aca886b3d94731faea7776db24dbd17",
+      "source_url": "https://github.com/jorgealves/agent_skills",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "education-learning",
+      "repository": "garethmanning/education-agent-skills",
+      "name": "learning-progression-builder",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "135d6275e7db0657d70b147f46d3191c5430677d",
+      "source_url": "https://github.com/garethmanning/education-agent-skills/blob/135d6275e7db0657d70b147f46d3191c5430677d/skills/curriculum-assessment/learning-progression-builder/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "CC-BY-SA-4.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "education-learning",
+      "repository": "wentorai/research-plugins",
+      "name": "education-skills",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "bf44b3cd617fa94c8a1b254c5d1987142ca3d631",
+      "source_url": "https://github.com/wentorai/research-plugins",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "education-learning",
+      "repository": "garethmanning/education-agent-skills",
+      "name": "learning-analytics-interpretation-guide",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "135d6275e7db0657d70b147f46d3191c5430677d",
+      "source_url": "https://github.com/garethmanning/education-agent-skills/blob/135d6275e7db0657d70b147f46d3191c5430677d/skills/ai-learning-science/learning-analytics-interpretation-guide/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "CC-BY-SA-4.0"
+      ],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

@@ -1,0 +1,14 @@
+{
+  "category": "web-development",
+  "repository": "github/awesome-copilot",
+  "name": "azure-static-web-apps",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "0fe6545b950671641b2b14b44eb56678fea6c6b4",
+  "source_url": "https://github.com/github/awesome-copilot/blob/0fe6545b950671641b2b14b44eb56678fea6c6b4/skills/azure-static-web-apps/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

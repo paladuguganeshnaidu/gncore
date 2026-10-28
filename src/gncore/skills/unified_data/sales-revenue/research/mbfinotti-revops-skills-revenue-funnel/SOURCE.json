@@ -1,0 +1,14 @@
+{
+  "category": "sales-revenue",
+  "repository": "mbfinotti/revops-skills",
+  "name": "revenue-funnel",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "12fd9f5537bbc6c23bff6222bc774685245a110b",
+  "source_url": "https://github.com/mbfinotti/revops-skills/blob/12fd9f5537bbc6c23bff6222bc774685245a110b/skills/revenue-funnel/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 6
+}

@@ -27,13 +27,13 @@ jobs:
       - name: Run tests
         run: python -m pytest -q
       - name: Compile sources
-        run: python -m compileall -q src tests
+        run: python -m compileall -q -x '(frontend_data|backend_data|unified_data)' src tests
       - name: Verify CLI and catalog
         run: |
-          test "$(gncore version)" = "5.1.0"
+          test "$(gncore version)" = "6.0.0"
           gncore list domains
           gncore list skills > /tmp/gncore-skills.txt
-          test "$(wc -l < /tmp/gncore-skills.txt)" -eq 403
+          test "$(wc -l < /tmp/gncore-skills.txt)" -eq 60
       - name: Build distributions
         run: python -m build
       - name: Verify distributions
@@ -41,9 +41,9 @@ jobs:
       - name: Install and smoke-test wheel
         run: |
           python -m venv /tmp/gncore-wheel-test
-          /tmp/gncore-wheel-test/bin/python -m pip install --no-deps dist/gncore-5.1.0-py3-none-any.whl
-          test "$(/tmp/gncore-wheel-test/bin/gncore version)" = "5.1.0"
-          /tmp/gncore-wheel-test/bin/python -c "from gncore import builtin_skills, list_domains; assert len(builtin_skills()) == 403; assert len(list_domains()) == 30; assert all(len(domain.skill_ids) == 10 for domain in list_domains())"
+          /tmp/gncore-wheel-test/bin/python -m pip install --no-deps dist/gncore-6.0.0-py3-none-any.whl
+          test "$(/tmp/gncore-wheel-test/bin/gncore version)" = "6.0.0"
+          /tmp/gncore-wheel-test/bin/python -c "from gncore import builtin_skills, list_domains, list_workflows; assert len(builtin_skills()) == 60; assert len(list_workflows()) == 553; assert len(list_domains()) == 30; assert all(len(d.skill_ids) == 1 and len(d.workflow_ids) == 10 for d in list_domains())"
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:

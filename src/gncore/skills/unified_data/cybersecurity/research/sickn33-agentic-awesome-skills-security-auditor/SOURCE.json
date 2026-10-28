@@ -1,0 +1,14 @@
+{
+  "category": "cybersecurity",
+  "repository": "sickn33/agentic-awesome-skills",
+  "name": "security-auditor",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "e9809578fd426a284af017c5db99f8eb6628e6ca",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/e9809578fd426a284af017c5db99f8eb6628e6ca/skills/security-auditor/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

@@ -1,0 +1,14 @@
+{
+  "category": "devops",
+  "repository": "forcedotcom/sf-skills",
+  "name": "dx-devops-test-failures-analyze",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "985407c7f7896030759d3310fe47d652265916b3",
+  "source_url": "https://github.com/forcedotcom/sf-skills/blob/985407c7f7896030759d3310fe47d652265916b3/skills/dx-devops-test-failures-analyze/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "Apache-2.0"
+  ],
+  "file_count": 5
+}

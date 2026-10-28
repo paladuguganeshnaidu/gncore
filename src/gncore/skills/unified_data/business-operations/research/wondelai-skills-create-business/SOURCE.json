@@ -1,0 +1,14 @@
+{
+  "category": "business-operations",
+  "repository": "wondelai/skills",
+  "name": "create-business",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "5250a978d5507f7454a1005074e037e8e0fa93ec5d3a59f788a23bc937be6ee2",
+  "revision": null,
+  "source_url": "https://github.com/wondelai/skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 2
+}

@@ -1,0 +1,14 @@
+{
+  "category": "quality-assurance",
+  "repository": "daffy0208/ai-dev-standards",
+  "name": "quality-assurance",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "32c3241e48f9fe2c3de611ad9168503ea41f28fd",
+  "source_url": "https://github.com/daffy0208/ai-dev-standards/blob/32c3241e48f9fe2c3de611ad9168503ea41f28fd/skills/quality-assurance/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 2
+}

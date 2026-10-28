@@ -1,0 +1,14 @@
+{
+  "category": "product-management",
+  "repository": "freshtechbro/claudedesignskills",
+  "name": "react-three-fiber",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "1da73febff0c3e1dfefc07f8a5ef8f7d1dfdb6cd",
+  "source_url": "https://github.com/freshtechbro/claudedesignskills/blob/1da73febff0c3e1dfefc07f8a5ef8f7d1dfdb6cd/.claude/skills/react-three-fiber/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 14
+}

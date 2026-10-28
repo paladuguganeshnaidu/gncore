@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "gncore"
-version = "5.1.0"
+version = "6.0.0"
 description = "A searchable Python catalog of portable AI agent skills."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = { text = "MIT AND Apache-2.0 AND CC-BY-4.0 AND CC-BY-SA-4.0" }
 authors = [
-    { name = "Ganesh Naidu", email = "ganesh.naidu@example.com" }
+    { name = "Ganesh Naidu" }
 ]
 keywords = [
     "ai",
@@ -39,6 +39,7 @@ gncore = "gncore.cli.app:main"
 
 [project.optional-dependencies]
 test = ["pytest>=8.2"]
+skills = ["PyYAML>=6"]
 
 [project.urls]
 Homepage = "https://github.com/paladuguganeshnaidu/gncore"
@@ -63,9 +64,23 @@ include = [
     "/website-commands.txt",
     "/pyproject.toml",
     "/scripts/generate_skill_catalog.py",
+    "/scripts/inspect_frontend_sources.py",
+    "/scripts/stage_frontend_sources.py",
+    "/scripts/build_frontend_suite.py",
+    "/scripts/backend_requests.py",
+    "/scripts/import_backend_sources.py",
+    "/scripts/build_backend_suite.py",
+    "/scripts/category_blueprints.py",
+    "/scripts/frontend_playbook.md",
+    "/scripts/research_categories.py",
+    "/scripts/download_category_candidates.py",
+    "/scripts/recover_category_sources.py",
+    "/scripts/build_unified_categories.py",
+    "/scripts/install_categories.py",
     "/src/gncore",
     "/tests",
 ]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
+testpaths = ["tests"]

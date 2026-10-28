@@ -1,35 +1,52 @@
-from __future__ import annotations
-
 from collections import Counter
 
-from gncore.skills.library import builtin_skills, list_categories, list_domains, search_skills, validate_skill_definition
+from gncore import builtin_skills, get_skill, list_categories, list_domains, list_workflows, search_skills, validate_skill_definition
+from gncore.skills.library import legacy_skills
+from gncore.skills.unified import unified_manifest, workflow_aliases
 
 
-def test_catalog_has_unique_valid_definitions_and_ml_slash_workflows() -> None:
-    skills = builtin_skills()
-    ids = [skill.metadata.skill_id for skill in skills]
-    assert len(skills) >= 100
-    assert not [skill_id for skill_id, count in Counter(ids).items() if count > 1]
-    assert all(not validate_skill_definition(skill) for skill in skills)
-    assert {"train", "preprocess", "clean-data", "evaluate", "improve", "analyze"} <= set(ids)
+def test_one_primary_skill_per_category_preserves_every_existing_workflow():
+    primary = builtin_skills()
+    assert len(primary) == len(list_categories()) == 60
+    assert len({s.metadata.skill_id for s in primary}) == 60
+    assert all(not validate_skill_definition(s) for s in primary)
+    assert {s.metadata.version for s in primary} == {"6.0.0"}
+    old_ids = {s.metadata.skill_id for s in legacy_skills()}
+    workflows = list_workflows()
+    assert len(workflows) == len(old_ids) == 553
+    assert {w.skill_id for w in workflows} == old_ids
+    assert not [i for i, n in Counter(w.skill_id for w in workflows).items() if n != 1]
+    assert {"web-frontend", "web-backend", "code-build", "word-documents", "finance-accounting"} <= {s.metadata.skill_id for s in primary}
+    for old_id, target in workflow_aliases().items():
+        assert get_skill(old_id).metadata.skill_id == target
+    assert get_skill("frontend-engineering").metadata.skill_id == "web-frontend"
+    assert get_skill("backend-api").metadata.skill_id == "web-backend"
 
 
-def test_catalog_domains_and_search_are_discoverable() -> None:
-    skills = builtin_skills()
-    categories = list_categories(skills=skills)
-    assert {"machine-learning", "web-development", "security", "cloud", "quality-assurance"} <= set(categories)
-    assert "train" in {skill.metadata.skill_id for skill in search_skills("train", skills=skills)}
-    assert "clean-data" in {skill.metadata.skill_id for skill in search_skills("clean data", skills=skills)}
-
-
-def test_thirty_domain_packs_have_ten_unique_workflows_each() -> None:
+def test_thirty_professional_domains_keep_their_ten_workflows_in_one_entrypoint():
     domains = list_domains()
-    skills = builtin_skills()
     assert len(domains) == 30
-    assert all(len(domain.skill_ids) == 10 for domain in domains)
-    domain_skill_ids = [skill_id for domain in domains for skill_id in domain.skill_ids]
-    assert len(domain_skill_ids) == len(set(domain_skill_ids)) == 300
-    assert set(domain_skill_ids) <= {skill.metadata.skill_id for skill in skills}
-    assert {"company-ceo", "company-cfo", "word-draft", "pdf-extract", "ppt-create", "train", "preprocess", "clean-data", "evaluate", "improve", "analyze"} <= set(domain_skill_ids) | {skill.metadata.skill_id for skill in skills}
-    assert all(not validate_skill_definition(skill) for skill in skills if skill.metadata.skill_id in set(domain_skill_ids))
-    assert all("Execution loop:" in next(skill.prompt for skill in skills if skill.metadata.skill_id == domain.skill_ids[0]) for domain in domains)
+    assert all(len(d.skill_ids) == 1 and len(d.workflow_ids) == 10 for d in domains)
+    ids = [i for d in domains for i in d.workflow_ids]
+    assert len(ids) == len(set(ids)) == 300
+    for domain in domains:
+        entrypoint = get_skill(domain.skill_ids[0])
+        assert all(get_skill(i) == entrypoint for i in domain.workflow_ids)
+
+
+def test_search_finds_category_from_legacy_workflow_terms():
+    assert "machine-learning" in {s.metadata.skill_id for s in search_skills("train model")}
+    assert "data-science" in {s.metadata.skill_id for s in search_skills("clean data")}
+    assert "web-frontend" in {s.metadata.skill_id for s in search_skills("minimalism")}
+    assert "web-backend" in {s.metadata.skill_id for s in search_skills("fastapi")}
+    assert len(list_workflows("web-frontend")) == 40
+    assert len(list_workflows("backend-engineering")) == 61
+    assert len(list_workflows("code-engineering")) == 66
+
+
+def test_single_file_entrypoints_contain_all_declared_workflow_procedures():
+    for entry in unified_manifest():
+        prompt = get_skill(entry["id"]).prompt
+        for workflow in entry["workflows"]:
+            assert workflow["id"] in prompt
+            assert workflow["procedure"].strip() in prompt

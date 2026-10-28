@@ -1,0 +1,12 @@
+{
+  "globs": ["**/*.md"],
+  "ignores": [
+    ".venv/**",
+    ".work/**",
+    ".agents/**",
+    "dist/**",
+    "src/gncore/skills/frontend_data/**",
+    "src/gncore/skills/backend_data/**",
+    "src/gncore/skills/unified_data/**"
+  ]
+}

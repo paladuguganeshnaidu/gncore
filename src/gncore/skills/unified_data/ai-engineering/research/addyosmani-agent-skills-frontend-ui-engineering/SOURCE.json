@@ -1,0 +1,14 @@
+{
+  "category": "ai-engineering",
+  "repository": "addyosmani/agent-skills",
+  "name": "frontend-ui-engineering",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "657534f12775d9a679bb15a07ed3b3f1fc6f49a0a5244e05fa0ac21ee30aecd9",
+  "revision": null,
+  "source_url": "https://github.com/addyosmani/agent-skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

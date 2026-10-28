@@ -1,0 +1,123 @@
+{
+  "category": "education",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "education",
+      "repository": "jimliu/baoyu-skills",
+      "name": "baoyu-comic",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+      "source_url": "https://github.com/jimliu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-comic/SKILL.md",
+      "review_status": "research-only: category relevance not established",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 39
+    },
+    {
+      "category": "education",
+      "repository": "mbfinotti/partnerships-skills",
+      "name": "partner-enablement",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "5764ab1dae47cdf00598c0abfcdb64c03c3c4560",
+      "source_url": "https://github.com/mbfinotti/partnerships-skills/blob/5764ab1dae47cdf00598c0abfcdb64c03c3c4560/skills/partner-enablement/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 7
+    },
+    {
+      "category": "education",
+      "repository": "samber/developer-relations-skills",
+      "name": "devrel-budget-allocation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "a12240a5a8a15a460ab17aa870df37f14814bf7d",
+      "source_url": "https://github.com/samber/developer-relations-skills/blob/a12240a5a8a15a460ab17aa870df37f14814bf7d/skills/devrel-budget-allocation/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "education",
+      "repository": "samber/developer-relations-skills",
+      "name": "developer-education-strategy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "a12240a5a8a15a460ab17aa870df37f14814bf7d",
+      "source_url": "https://github.com/samber/developer-relations-skills/blob/a12240a5a8a15a460ab17aa870df37f14814bf7d/skills/developer-education-strategy/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "education",
+      "repository": "samber/developer-relations-skills",
+      "name": "devrel-team-structure",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "a12240a5a8a15a460ab17aa870df37f14814bf7d",
+      "source_url": "https://github.com/samber/developer-relations-skills/blob/a12240a5a8a15a460ab17aa870df37f14814bf7d/skills/devrel-team-structure/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "education",
+      "repository": "github/awesome-copilot",
+      "name": "ai-prompt-engineering-safety-review",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "8dd5b8a6e9bc18d04bb3e02dc8a9205ad7a5ee90993b47d83b65a02df6165c22",
+      "revision": null,
+      "source_url": "https://github.com/github/awesome-copilot",
+      "review_status": "research-only: category relevance not established",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "education",
+      "repository": "github/awesome-copilot",
+      "name": "add-educational-comments",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "0fe6545b950671641b2b14b44eb56678fea6c6b4",
+      "source_url": "https://github.com/github/awesome-copilot/blob/0fe6545b950671641b2b14b44eb56678fea6c6b4/skills/add-educational-comments/SKILL.md",
+      "review_status": "research-only: category relevance not established",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "education",
+      "repository": "samber/developer-platform-skills",
+      "name": "partner-app-onboarding",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "e262cfeabab5f38710334540f8ca5d67b24753c2",
+      "source_url": "https://github.com/samber/developer-platform-skills/blob/e262cfeabab5f38710334540f8ca5d67b24753c2/skills/partner-app-onboarding/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 4
+    }
+  ],
+  "legacy_reference_ids": []
+}

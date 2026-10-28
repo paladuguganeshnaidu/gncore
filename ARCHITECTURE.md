@@ -1,31 +1,31 @@
 # Architecture
 
-GNCore is a Python skill catalog and portable content tool. Its runtime does not orchestrate AI models or interact with assistant applications.
+GNCore is a local catalog and portable skill exporter. It does not orchestrate models, install application integrations, or run downloaded source scripts automatically.
 
-```mermaid
-flowchart LR
-    A[Skill definitions] --> B[Catalog API]
-    B --> C[CLI discovery and search]
-    B --> D[SKILL.md renderer]
-    D --> E[User-selected ZIP output]
-    E --> F[User copies skills into an assistant]
-    F --> G[Host assistant interprets instructions]
-```
+## Category model
 
-## Package boundaries
+- `skills/unified_data/<skill-id>/SKILL.md` is the single discoverable entrypoint for a category.
+- `skills/unified_data/manifest.json` records the 60 entrypoints, all 553 workflow procedures, resource paths, versions, and license expressions.
+- `skills/unified.py` loads categories, exposes workflow metadata, and resolves compatibility aliases.
+- `skills/bundles.py` validates declared relative paths and loads portable resource bytes.
+- `skills/library.py` implements discovery, search, domain metadata, and legacy workflow reconstruction for maintenance.
+- `planning.py` provides a deterministic frontend planning aid; the host AI retains contextual judgment.
+- `cli/app.py` lists, searches, inspects, plans, and exports. Export is the command that writes skill files or ZIPs.
 
-- `skills/domains.py` defines the curated 30 domain packs.
-- `skills/library.py` builds the built-in catalog, search index, and validation behavior.
-- `skills/models.py` contains the immutable skill and domain data types.
-- `cli/app.py` implements catalog listing, search, inspection, version display, and explicit ZIP export.
-- `scripts/generate_skill_catalog.py` derives the human-readable catalog from the Python definitions.
+## One entrypoint, relevant detail
 
-The CLI has no application adapters, application path detection, persistent settings, install/uninstall routines, backups, MCP configuration, subprocess integrations, or model orchestration. Export is the only command that writes a file, and it writes only to the output path given by the caller.
+Each category entrypoint merges intent selection, execution guidance, category quality criteria, a workflow map, and focused procedures. Frontend includes visual-direction inference and theme-specific implementation guidance. Existing source guides and approved new references remain supporting material, read only when needed.
 
-## Portable skill format
+Source `SKILL.md` files inside reference folders are renamed as guides so they cannot accidentally create hundreds of additional discoverable skills. Relocations are recorded when needed. Retired frontend/backend collection entrypoints are maintained as `GUIDE.md` files for provenance and reproducible builds.
 
-Each exported skill is a standard directory containing one `SKILL.md` file. The document starts with `name` and `description` YAML frontmatter, then contains the skill title, goal, and instructions. The folder name and `name` field use the stable skill ID, which also serves as the slash-invocation name in assistants that support it.
+## Compatibility and search
 
-## Adding a skill
+The primary catalog has one skill per category. Workflow aliases resolve to the owning category. A primary category name takes precedence if it collides with an old generic workflow name, such as `testing` or `security`. Search also considers workflow IDs, titles, and descriptions.
 
-Add a validated definition to the catalog or a ten-workflow domain pack in `skills/domains.py`. Use a stable lowercase hyphenated ID, concise discovery description, relevant tags, and instructions specific to the workflow. Regenerate the catalog and run the tests. Skills describe work for a host assistant; they do not execute code on their own.
+The 30 professional domains each expose one primary skill ID plus their ten retained `workflow_ids`. This preserves capability coverage while changing the primary catalog structure.
+
+## Research and licensing
+
+The research pipeline records queries for every category, downloads registry snapshots, falls back to pinned public GitHub sources, and keeps failures distinct from successful downloads. License and relevance decisions determine which references enter the distribution. Restricted or unclear material remains in ignored local research storage. Included content retains provenance and supplied notices.
+
+The runtime has no network dependency. Research and rebuilding are explicit developer operations requiring source access. Downloaded source executables are not run by the import pipeline.

@@ -1,0 +1,14 @@
+{
+  "category": "research",
+  "repository": "lllllllama/rigorpilot-skills",
+  "name": "ai-research-reproduction",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "fb3ccdf5aa64b1fa5b1d0463e666a8bc8bc26e01",
+  "source_url": "https://github.com/lllllllama/rigorpilot-skills/blob/fb3ccdf5aa64b1fa5b1d0463e666a8bc8bc26e01/skills/ai-research-reproduction/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 48
+}

@@ -1,0 +1,118 @@
+{
+  "category": "python",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "python",
+      "repository": "microsoft/azure-skills",
+      "name": "python-appservice-deploy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "6e889d5603fed6b741308a184d0b72b8fbe3bdb7",
+      "source_url": "https://github.com/microsoft/azure-skills/blob/6e889d5603fed6b741308a184d0b72b8fbe3bdb7/skills/python-appservice-deploy/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 13
+    },
+    {
+      "category": "python",
+      "repository": "inference-sh/skills",
+      "name": "python-executor",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "0cbf91c26ada28702c79962406286f0c14292150",
+      "source_url": "https://github.com/inference-sh/skills/blob/0cbf91c26ada28702c79962406286f0c14292150/tools/utilities/python-executor/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "python",
+      "repository": "microsoft/azure-skills",
+      "name": "azure-prepare",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "6e889d5603fed6b741308a184d0b72b8fbe3bdb7",
+      "source_url": "https://github.com/microsoft/azure-skills/blob/6e889d5603fed6b741308a184d0b72b8fbe3bdb7/skills/azure-prepare/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 166
+    },
+    {
+      "category": "python",
+      "repository": "microsoft/azure-skills",
+      "name": "azure-messaging",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "6e889d5603fed6b741308a184d0b72b8fbe3bdb7",
+      "source_url": "https://github.com/microsoft/azure-skills/blob/6e889d5603fed6b741308a184d0b72b8fbe3bdb7/skills/azure-messaging/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "python",
+      "repository": "anthropics/skills",
+      "name": "xlsx",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "source_url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/xlsx/SKILL.md",
+      "review_status": "research-only: restrictive or noncommercial declaration",
+      "licenses": [],
+      "file_count": 53
+    },
+    {
+      "category": "python",
+      "repository": "anthropics/skills",
+      "name": "mcp-builder",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "source_url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/mcp-builder/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 10
+    },
+    {
+      "category": "python",
+      "repository": "antibrow/anti-detect-browser-skills",
+      "name": "anti-detect-browser",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "b800e3a54d8d4f93ae5ee23c59d13b43df5d4462",
+      "source_url": "https://github.com/antibrow/anti-detect-browser-skills/blob/b800e3a54d8d4f93ae5ee23c59d13b43df5d4462/anti-detect-browser/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 3
+    },
+    {
+      "category": "python",
+      "repository": "101-skills/superpowers",
+      "name": "python-executor",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/101-skills/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/tools/utilities/python-executor/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

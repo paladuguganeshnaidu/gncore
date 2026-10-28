@@ -11,6 +11,7 @@ from gncore.skills import (
     get_skill,
     list_categories,
     list_domains,
+    list_workflows,
     search_skills,
     validate_skill_definition,
 )
@@ -28,6 +29,7 @@ __all__ = [
     "get_skill",
     "list_categories",
     "list_domains",
+    "list_workflows",
     "main",
     "render_skill",
     "search_skills",

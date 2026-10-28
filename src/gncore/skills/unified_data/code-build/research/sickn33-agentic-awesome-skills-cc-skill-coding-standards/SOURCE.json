@@ -1,0 +1,14 @@
+{
+  "category": "code-engineering",
+  "repository": "sickn33/agentic-awesome-skills",
+  "name": "cc-skill-coding-standards",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "e9809578fd426a284af017c5db99f8eb6628e6ca",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/e9809578fd426a284af017c5db99f8eb6628e6ca/skills/cc-skill-coding-standards/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 2
+}

@@ -1,0 +1,116 @@
+{
+  "category": "word-documents",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "word-documents",
+      "repository": "anthropics/skills",
+      "name": "docx",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "source_url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/docx/SKILL.md",
+      "review_status": "research-only: restrictive or noncommercial declaration",
+      "licenses": [],
+      "file_count": 61
+    },
+    {
+      "category": "word-documents",
+      "repository": "claude-office-skills/skills",
+      "name": "docx-manipulation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "9c4c7d5cd2813a8936bf2c9fdb174ea883b85a11",
+      "source_url": "https://github.com/claude-office-skills/skills/blob/9c4c7d5cd2813a8936bf2c9fdb174ea883b85a11/docx-manipulation/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "word-documents",
+      "repository": "nexu-io/open-design",
+      "name": "docx",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "046d5e496b5e2824388e2a81482436a234326377",
+      "source_url": "https://github.com/nexu-io/open-design/blob/046d5e496b5e2824388e2a81482436a234326377/skills/docx/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "word-documents",
+      "repository": "claude-office-skills/skills",
+      "name": "pdf-to-docx",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "9c4c7d5cd2813a8936bf2c9fdb174ea883b85a11",
+      "source_url": "https://github.com/claude-office-skills/skills/blob/9c4c7d5cd2813a8936bf2c9fdb174ea883b85a11/pdf-to-docx/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "word-documents",
+      "repository": "minimax-ai/skills",
+      "name": "minimax-docx",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "60aaae52bb2af8162732751a4332f62a5fef518b",
+      "source_url": "https://github.com/minimax-ai/skills/blob/60aaae52bb2af8162732751a4332f62a5fef518b/skills/minimax-docx/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 75
+    },
+    {
+      "category": "word-documents",
+      "repository": "tfriedel/claude-office-skills",
+      "name": "docx",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "d4241e43b60e8f96b0a80c3b1eb75fe8858437c0",
+      "source_url": "https://github.com/tfriedel/claude-office-skills/blob/d4241e43b60e8f96b0a80c3b1eb75fe8858437c0/public/docx/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 58
+    },
+    {
+      "category": "word-documents",
+      "repository": "nexu-io/open-design",
+      "name": "minimax-docx",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "046d5e496b5e2824388e2a81482436a234326377",
+      "source_url": "https://github.com/nexu-io/open-design/blob/046d5e496b5e2824388e2a81482436a234326377/skills/minimax-docx/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "word-documents",
+      "repository": "open.feishu.cn",
+      "name": "lark-doc",
+      "download_status": "invalid-source-identifier",
+      "snapshot_hash": null,
+      "revision": null,
+      "source_url": "https://github.com/open.feishu.cn",
+      "review_status": "not-redistributed: download unavailable"
+    }
+  ],
+  "legacy_reference_ids": []
+}

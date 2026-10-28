@@ -1,0 +1,14 @@
+{
+  "category": "release-engineering",
+  "repository": "magnus919/agent-skills",
+  "name": "release-engineering",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "86ba31bea9976a1da79c8eafe59a54cec63eaa94",
+  "source_url": "https://github.com/magnus919/agent-skills/blob/86ba31bea9976a1da79c8eafe59a54cec63eaa94/release-engineering/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 39
+}

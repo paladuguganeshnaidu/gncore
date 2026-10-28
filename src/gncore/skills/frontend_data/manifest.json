@@ -1,0 +1,1435 @@
+[
+  {
+    "id": "web-front-design",
+    "title": "GNCore Design",
+    "description": "Build or restyle a web interface with a deliberate visual identity and complete interaction states.",
+    "tags": [
+      "frontend",
+      "design",
+      "frontend-design"
+    ],
+    "requested": "frontend-design",
+    "requested_repository": "anthropics/skills",
+    "kind": "adapted",
+    "repository": "anthropics/skills",
+    "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+    "source_path": "skills/frontend-design/SKILL.md",
+    "upstream_metadata": {
+      "name": "frontend-design",
+      "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
+      "license": "Complete terms in LICENSE.txt"
+    },
+    "resources": [
+      "LICENSE.txt",
+      "SOURCE.md",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-ui-ux",
+    "title": "GNCore Ui Ux",
+    "description": "Choose evidence-based UI patterns, palettes, typography, and layouts using a searchable local design library.",
+    "tags": [
+      "frontend",
+      "ui-ux",
+      "ui-ux-pro-max"
+    ],
+    "requested": "ui-ux-pro-max",
+    "requested_repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "kind": "adapted",
+    "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "revision": "28b3b8dee8c976df4fa3e94aed4e092ad43fcb03",
+    "source_path": ".claude/skills/ui-ux-pro-max/SKILL.md",
+    "upstream_metadata": {
+      "name": "ui-ux-pro-max",
+      "description": "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 79 searchable styles (50 active), 192 product palettes and reasoning profiles, 74 font pairings, 119 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks."
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md",
+      "data/app-interface.csv",
+      "data/catalog-summary.json",
+      "data/charts.csv",
+      "data/colors.csv",
+      "data/data-provenance.json",
+      "data/google-font-licenses.json",
+      "data/google-fonts.csv",
+      "data/icons.csv",
+      "data/landing.csv",
+      "data/motion.csv",
+      "data/phosphor-icons-upstream.json",
+      "data/products.csv",
+      "data/react-performance.csv",
+      "data/stacks/angular.csv",
+      "data/stacks/astro.csv",
+      "data/stacks/avalonia.csv",
+      "data/stacks/flutter.csv",
+      "data/stacks/html-tailwind.csv",
+      "data/stacks/javafx.csv",
+      "data/stacks/jetpack-compose.csv",
+      "data/stacks/laravel.csv",
+      "data/stacks/nextjs.csv",
+      "data/stacks/nuxt-ui.csv",
+      "data/stacks/nuxtjs.csv",
+      "data/stacks/react-native.csv",
+      "data/stacks/react.csv",
+      "data/stacks/shadcn.csv",
+      "data/stacks/svelte.csv",
+      "data/stacks/swiftui.csv",
+      "data/stacks/threejs.csv",
+      "data/stacks/uno.csv",
+      "data/stacks/uwp.csv",
+      "data/stacks/vue.csv",
+      "data/stacks/winui.csv",
+      "data/stacks/wpf.csv",
+      "data/styles.csv",
+      "data/typography.csv",
+      "data/ui-reasoning.csv",
+      "data/ux-guidelines.csv",
+      "references/pro-rules.md",
+      "references/quick-reference.md",
+      "scripts/core.py",
+      "scripts/design_system.py",
+      "scripts/reasoning_contract.py",
+      "scripts/search.py",
+      "scripts/tests/fixtures/catalogs/google-api.json",
+      "scripts/tests/fixtures/catalogs/google-catalog.json",
+      "scripts/tests/fixtures/catalogs/google-existing.csv",
+      "scripts/tests/fixtures/catalogs/google-metadata.json",
+      "scripts/tests/fixtures/catalogs/google-overrides.json",
+      "scripts/tests/fixtures/catalogs/icons-curated.csv",
+      "scripts/tests/fixtures/catalogs/phosphor-core.json",
+      "scripts/tests/fixtures/catalogs/phosphor-package.json",
+      "scripts/tests/fixtures/catalogs/phosphor-react-exports.json",
+      "scripts/tests/fixtures/catalogs/phosphor-react-package.json",
+      "scripts/tests/fixtures/relevance-baseline.json",
+      "scripts/tests/fixtures/relevance-cases.json",
+      "scripts/tests/fixtures/relevance-thresholds.json",
+      "scripts/tests/test_catalog_refresh.py",
+      "scripts/tests/test_catalog_summary_line_endings.py",
+      "scripts/tests/test_core.py",
+      "scripts/tests/test_core_data_quality.py",
+      "scripts/tests/test_data_contracts.py",
+      "scripts/tests/test_design_system_mode.py",
+      "scripts/tests/test_design_system_stack.py",
+      "scripts/tests/test_native_desktop_stack_freshness.py",
+      "scripts/tests/test_relevance_evaluator.py",
+      "scripts/tests/test_skill_script_paths.py",
+      "scripts/tests/test_style_taxonomy.py",
+      "scripts/tests/test_text_layout_resilience.py",
+      "scripts/tests/test_web_stack_freshness.py",
+      "scripts/validate_data.py"
+    ]
+  },
+  {
+    "id": "web-front-react",
+    "title": "GNCore React",
+    "description": "Improve React and Next.js rendering, data fetching, and bundle performance using measured bottlenecks.",
+    "tags": [
+      "frontend",
+      "react",
+      "vercel-react-best-practices"
+    ],
+    "requested": "vercel-react-best-practices",
+    "requested_repository": "vercel-labs/agent-skills",
+    "kind": "adapted",
+    "repository": "vercel-labs/agent-skills",
+    "revision": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+    "source_path": "skills/react-best-practices/SKILL.md",
+    "upstream_metadata": {
+      "name": "vercel-react-best-practices",
+      "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.",
+      "license": "MIT",
+      "metadata": {
+        "author": "vercel",
+        "version": "1.0.0"
+      }
+    },
+    "resources": [
+      "AGENTS.md",
+      "SOURCE.md",
+      "UPSTREAM-REPOSITORY-README.md",
+      "UPSTREAM.md",
+      "metadata.json",
+      "rules/_sections.md",
+      "rules/_template.md",
+      "rules/advanced-effect-event-deps.md",
+      "rules/advanced-event-handler-refs.md",
+      "rules/advanced-init-once.md",
+      "rules/advanced-use-latest.md",
+      "rules/async-api-routes.md",
+      "rules/async-cheap-condition-before-await.md",
+      "rules/async-defer-await.md",
+      "rules/async-dependencies.md",
+      "rules/async-parallel.md",
+      "rules/async-suspense-boundaries.md",
+      "rules/bundle-analyzable-paths.md",
+      "rules/bundle-barrel-imports.md",
+      "rules/bundle-conditional.md",
+      "rules/bundle-defer-third-party.md",
+      "rules/bundle-dynamic-imports.md",
+      "rules/bundle-preload.md",
+      "rules/client-event-listeners.md",
+      "rules/client-localstorage-schema.md",
+      "rules/client-passive-event-listeners.md",
+      "rules/client-swr-dedup.md",
+      "rules/js-batch-dom-css.md",
+      "rules/js-cache-function-results.md",
+      "rules/js-cache-property-access.md",
+      "rules/js-cache-storage.md",
+      "rules/js-combine-iterations.md",
+      "rules/js-early-exit.md",
+      "rules/js-flatmap-filter.md",
+      "rules/js-hoist-regexp.md",
+      "rules/js-index-maps.md",
+      "rules/js-length-check-first.md",
+      "rules/js-min-max-loop.md",
+      "rules/js-request-idle-callback.md",
+      "rules/js-set-map-lookups.md",
+      "rules/js-tosorted-immutable.md",
+      "rules/rendering-activity.md",
+      "rules/rendering-animate-svg-wrapper.md",
+      "rules/rendering-conditional-render.md",
+      "rules/rendering-content-visibility.md",
+      "rules/rendering-hoist-jsx.md",
+      "rules/rendering-hydration-no-flicker.md",
+      "rules/rendering-hydration-suppress-warning.md",
+      "rules/rendering-resource-hints.md",
+      "rules/rendering-script-defer-async.md",
+      "rules/rendering-svg-precision.md",
+      "rules/rendering-usetransition-loading.md",
+      "rules/rerender-defer-reads.md",
+      "rules/rerender-dependencies.md",
+      "rules/rerender-derived-state-no-effect.md",
+      "rules/rerender-derived-state.md",
+      "rules/rerender-functional-setstate.md",
+      "rules/rerender-lazy-state-init.md",
+      "rules/rerender-memo-with-default-value.md",
+      "rules/rerender-memo.md",
+      "rules/rerender-move-effect-to-event.md",
+      "rules/rerender-no-inline-components.md",
+      "rules/rerender-simple-expression-in-memo.md",
+      "rules/rerender-split-combined-hooks.md",
+      "rules/rerender-transitions.md",
+      "rules/rerender-use-deferred-value.md",
+      "rules/rerender-use-ref-transient-values.md",
+      "rules/server-after-nonblocking.md",
+      "rules/server-auth-actions.md",
+      "rules/server-cache-lru.md",
+      "rules/server-cache-react.md",
+      "rules/server-dedup-props.md",
+      "rules/server-hoist-static-io.md",
+      "rules/server-no-shared-module-state.md",
+      "rules/server-parallel-fetching.md",
+      "rules/server-parallel-nested-fetching.md",
+      "rules/server-serialization.md"
+    ]
+  },
+  {
+    "id": "web-front-guidelines",
+    "title": "GNCore Guidelines",
+    "description": "Review a web interface against current interface guidelines and report actionable file and line findings.",
+    "tags": [
+      "frontend",
+      "guidelines",
+      "web-design-guidelines"
+    ],
+    "requested": "web-design-guidelines",
+    "requested_repository": "vercel-labs/agent-skills",
+    "kind": "adapted",
+    "repository": "vercel-labs/agent-skills",
+    "revision": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+    "source_path": "skills/web-design-guidelines/SKILL.md",
+    "upstream_metadata": {
+      "name": "web-design-guidelines",
+      "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\".",
+      "metadata": {
+        "author": "vercel",
+        "version": "1.0.0",
+        "argument-hint": "<file-or-pattern>"
+      }
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-REPOSITORY-README.md",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-shadcn",
+    "title": "GNCore Shadcn",
+    "description": "Add and customize shadcn/ui components within an existing React application and theme.",
+    "tags": [
+      "frontend",
+      "shadcn",
+      "shadcn"
+    ],
+    "requested": "shadcn",
+    "requested_repository": "shadcn/ui",
+    "kind": "adapted",
+    "repository": "shadcn/ui",
+    "revision": "96da9cc7f1aa10580a3741664e2a77c721206c00",
+    "source_path": "skills/shadcn/SKILL.md",
+    "upstream_metadata": {
+      "name": "shadcn",
+      "description": "Manages shadcn components and projects — adding, searching, fixing, debugging, styling, and composing UI, including chat interfaces. Provides project context, component docs, and usage examples. Applies when working with shadcn/ui, component registries, presets, --preset codes, or any project with a components.json file. Also triggers for \"shadcn init\", \"create an app with --preset\", \"switch to --preset\", and for building a design system or applying a DESIGN.md or brand spec to shadcn/ui.",
+      "user-invocable": false,
+      "allowed-tools": "Bash(npx shadcn@latest *), Bash(pnpm dlx shadcn@latest *), Bash(bunx --bun shadcn@latest *)"
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE.md",
+      "UPSTREAM.md",
+      "assets/shadcn-small.png",
+      "assets/shadcn.png",
+      "assets/showcase/color-pair.tsx",
+      "assets/showcase/preview-states.css",
+      "assets/showcase/state-matrix.tsx",
+      "cli.md",
+      "customization.md",
+      "design-system-page.md",
+      "design-system.md",
+      "mcp.md",
+      "registry.md",
+      "rules/base-vs-radix.md",
+      "rules/chat.md",
+      "rules/composition.md",
+      "rules/forms.md",
+      "rules/icons.md",
+      "rules/styling.md",
+      "scripts/showcase-coverage.mjs"
+    ]
+  },
+  {
+    "id": "web-front-minimalism",
+    "title": "GNCore Minimalism",
+    "description": "Create restrained web interfaces with clear hierarchy, deliberate whitespace, and essential controls.",
+    "tags": [
+      "frontend",
+      "minimalism",
+      "minimalist-ui"
+    ],
+    "requested": "minimalist-ui",
+    "requested_repository": "leonxlnx/taste-skill",
+    "kind": "original",
+    "reason": "The requested upstream skill name is absent from the verified source revision.",
+    "verified_revision": "12af471f627f866411b4bd785b19646d3672784c",
+    "resources": [
+      "LICENSE",
+      "SOURCE.md"
+    ]
+  },
+  {
+    "id": "web-front-swiss",
+    "title": "GNCore Swiss",
+    "description": "Build Swiss and International Style web layouts using typographic hierarchy and disciplined grids.",
+    "tags": [
+      "frontend",
+      "swiss",
+      "swiss-design"
+    ],
+    "requested": "swiss-design",
+    "requested_repository": "zeke/swiss-design-skill",
+    "kind": "adapted",
+    "repository": "zeke/swiss-design-skill",
+    "revision": "285009f3dc4ba311f59bb757973274de2c9446c3",
+    "source_path": "swiss-design/SKILL.md",
+    "upstream_metadata": {
+      "name": "swiss-design",
+      "description": "Apply a Swiss International Style design system using Tailwind CSS. Use when asked to style a webpage, clean up a UI, apply a design system, make something look great, or when the user references Swiss design, grotesque fonts, Helvetica, grid systems, modernist typography, or 1960s/1950s design aesthetics. Implements IBM Plex Sans typography, stone color palette, opacity-based hierarchy, generous whitespace, and structured grid layouts.",
+      "license": "MIT",
+      "metadata": {
+        "author": "zeke",
+        "version": "1.0"
+      }
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md",
+      "references/components.md",
+      "references/design-system.md",
+      "references/prompting.md",
+      "references/tailwind-config.md"
+    ]
+  },
+  {
+    "id": "web-front-editorial",
+    "title": "GNCore Editorial",
+    "description": "Design magazine and editorial web experiences with strong reading rhythm, type, and image relationships.",
+    "tags": [
+      "frontend",
+      "editorial",
+      "editorial"
+    ],
+    "requested": "editorial",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/editorial/SKILL.md",
+    "upstream_metadata": {
+      "name": "editorial",
+      "description": "Magazine-inspired editorial layout with refined serif typography, structured grids, and elegant reading experiences.",
+      "license": "MIT",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-luxury",
+    "title": "GNCore Luxury",
+    "description": "Create premium web experiences through typography, art direction, restrained detail, and polished interaction.",
+    "tags": [
+      "frontend",
+      "luxury",
+      "high-end-visual-design"
+    ],
+    "requested": "high-end-visual-design",
+    "requested_repository": "leonxlnx/taste-skill",
+    "kind": "original",
+    "reason": "The requested upstream skill name is absent from the verified source revision.",
+    "verified_revision": "12af471f627f866411b4bd785b19646d3672784c",
+    "resources": [
+      "LICENSE",
+      "SOURCE.md"
+    ]
+  },
+  {
+    "id": "web-front-agentic",
+    "title": "GNCore Agentic",
+    "description": "Design AI task interfaces that expose progress, editable intent, results, and recovery controls.",
+    "tags": [
+      "frontend",
+      "agentic",
+      "agentic"
+    ],
+    "requested": "agentic",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/agentic/SKILL.md",
+    "upstream_metadata": {
+      "name": "agentic",
+      "description": "Conversational AI-first interface with minimal controls, clear outcomes, and delegated task flows for agentic workflows.",
+      "license": "MIT",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-maximalism",
+    "title": "GNCore Maximalism",
+    "description": "Build expressive maximalist web interfaces with rich layers and a readable visual hierarchy.",
+    "tags": [
+      "frontend",
+      "maximalism",
+      "expressive"
+    ],
+    "requested": "expressive",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/expressive/SKILL.md",
+    "upstream_metadata": {
+      "name": "expressive",
+      "description": "Vibrant, personality-driven design with bold colors, playful graphics, and dynamic layouts that balance creativity with structure.",
+      "license": "MIT",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-taste",
+    "title": "GNCore Taste",
+    "description": "Art-direct a distinctive frontend using researched compositions and iterative browser inspection.",
+    "tags": [
+      "frontend",
+      "taste",
+      "design-taste-frontend"
+    ],
+    "requested": "design-taste-frontend",
+    "requested_repository": "leonxlnx/taste-skill",
+    "kind": "adapted",
+    "repository": "leonxlnx/taste-skill",
+    "revision": "12af471f627f866411b4bd785b19646d3672784c",
+    "source_path": "skills/taste-skill/SKILL.md",
+    "upstream_metadata": {
+      "name": "design-taste-frontend",
+      "description": "tasteskill v2, the anti-slop frontend skill. Art direction for websites, distilled from a study of 247 curated gallery sites (One Page Love, Awwwards Sites of the Day). Deals researched directions (idea, composition, type, palette, photographs, section blueprints) from a library, enforces a strict no-slop house style with a real-browser inspector, and runs a look-and-fix loop on screenshots. Use this whenever you build, design, redesign, restyle, polish or review a landing page, marketing site, portfolio, product page, one-pager, hero or any public-facing web page, in any stack (HTML/CSS, React, Next.js, Vue, Svelte, Astro, Tailwind) — also when the user says a page looks generic, templated, \"AI-made\", sloppy, or asks to make it look designed, premium, award-level or less like every other site. Also for app screens: dashboards, admin and analytics views, settings, inboxes and other screens people work in, with their own run and rules."
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md",
+      "assets/app.css",
+      "assets/base.css",
+      "assets/base.js",
+      "assets/charts.js",
+      "assets/scenes/stage.css",
+      "assets/scenes/stage.js",
+      "library/app.json",
+      "library/directions.json",
+      "library/heroes.json",
+      "library/motions.json",
+      "library/palettes.json",
+      "library/photos.json",
+      "library/sections.json",
+      "library/sites.json",
+      "library/type.json",
+      "references/app-screens.md",
+      "references/colour.md",
+      "references/copy.md",
+      "references/critique.md",
+      "references/imagery.md",
+      "references/layout.md",
+      "references/motion.md",
+      "references/research.md",
+      "references/scenes.md",
+      "references/tells.md",
+      "references/type.md",
+      "scripts/assets.mjs",
+      "scripts/draw.mjs",
+      "scripts/inspect.mjs",
+      "scripts/lib/app-draw.mjs",
+      "scripts/lib/cdp.mjs",
+      "scripts/lib/inspection-files.mjs",
+      "scripts/lib/probe.mjs",
+      "scripts/lib/rules.mjs",
+      "scripts/lint.mjs",
+      "scripts/scenes.mjs"
+    ]
+  },
+  {
+    "id": "web-front-neobrutalism",
+    "title": "GNCore Neobrutalism",
+    "description": "Create neo-brutalist web UI with bold borders, flat color, and direct, usable controls.",
+    "tags": [
+      "frontend",
+      "neobrutalism",
+      "neobrutalism"
+    ],
+    "requested": "neobrutalism",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/neobrutalism/SKILL.md",
+    "upstream_metadata": {
+      "name": "neobrutalism",
+      "description": "Modern take on brutalism with bold borders, vivid accent colors, and raw, high-contrast layouts on warm surfaces.",
+      "license": "MIT",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-industrial",
+    "title": "GNCore Industrial",
+    "description": "Build industrial brutalist web interfaces with structural grids, utility typography, and exposed function.",
+    "tags": [
+      "frontend",
+      "industrial",
+      "industrial-brutalist-ui"
+    ],
+    "requested": "industrial-brutalist-ui",
+    "requested_repository": "leonxlnx/taste-skill",
+    "kind": "original",
+    "reason": "The requested upstream skill name is absent from the verified source revision.",
+    "verified_revision": "12af471f627f866411b4bd785b19646d3672784c",
+    "resources": [
+      "LICENSE",
+      "SOURCE.md"
+    ]
+  },
+  {
+    "id": "web-front-futuristic",
+    "title": "GNCore Futuristic",
+    "description": "Create futuristic and Y2K-inspired interfaces with deliberate technical typography and spatial depth.",
+    "tags": [
+      "frontend",
+      "futuristic",
+      "futuristic"
+    ],
+    "requested": "futuristic",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/futuristic/SKILL.md",
+    "upstream_metadata": {
+      "name": "futuristic",
+      "description": "Forward-looking design with tech-inspired typography, modern layouts, and a sleek, innovation-driven aesthetic.",
+      "license": "MIT",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-retro",
+    "title": "GNCore Retro",
+    "description": "Create nostalgic web interfaces with era-specific typography, palettes, and graphic treatments.",
+    "tags": [
+      "frontend",
+      "retro",
+      "retro"
+    ],
+    "requested": "retro",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/retro/SKILL.md",
+    "upstream_metadata": {
+      "name": "retro",
+      "description": "Throwback design with vintage-inspired typography, high-contrast retro palettes, and nostalgic visual elements.",
+      "license": "MIT",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-collage",
+    "title": "GNCore Collage",
+    "description": "Build paper and scrapbook web compositions with tactile layers and coherent reading order.",
+    "tags": [
+      "frontend",
+      "collage",
+      "paper"
+    ],
+    "requested": "paper",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/paper/SKILL.md",
+    "upstream_metadata": {
+      "name": "paper",
+      "description": "Paper-textured, print-inspired design with minimal colors, clean serif/sans typography, and tactile surface qualities.",
+      "license": "MIT",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-doodle",
+    "title": "GNCore Doodle",
+    "description": "Create playful hand-drawn web interfaces with readable type and controlled visual irregularity.",
+    "tags": [
+      "frontend",
+      "doodle",
+      "doodle"
+    ],
+    "requested": "doodle",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/doodle/SKILL.md",
+    "upstream_metadata": {
+      "name": "doodle",
+      "description": "Hand-drawn, sketch-like style with doodles, handwritten fonts, and imperfect lines for a playful, informal feel.",
+      "license": "MIT",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-bento",
+    "title": "GNCore Bento",
+    "description": "Organize web content in a responsive bento grid with purposeful card sizes and hierarchy.",
+    "tags": [
+      "frontend",
+      "bento",
+      "bento"
+    ],
+    "requested": "bento",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/bento/SKILL.md",
+    "upstream_metadata": {
+      "name": "bento",
+      "description": "Modular grid layout with card-like blocks, clear hierarchy, soft spacing, and subtle visual contrast for organized, scannable interfaces.",
+      "license": "MIT",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-glass",
+    "title": "GNCore Glass",
+    "description": "Build glass and translucent web surfaces with readable contrast and affordable rendering costs.",
+    "tags": [
+      "frontend",
+      "glass",
+      "glassmorphism"
+    ],
+    "requested": "glassmorphism",
+    "requested_repository": "iart-ai/web-animation-skills",
+    "kind": "adapted",
+    "repository": "iart-ai/web-animation-skills",
+    "revision": "b6dba3eb759726845a44163ff0bad70dd9e7fbb6",
+    "source_path": "skills/glassmorphism/SKILL.md",
+    "upstream_metadata": {
+      "name": "glassmorphism",
+      "description": "This skill should be used when the user asks to \"add a glassmorphism effect\", \"frosted glass UI\", \"Apple liquid glass style\", \"frosted blur card\", \"translucent glass panel animation\", \"make a frosted nav bar\", \"build a glass modal/dialog\", \"animate a glass card on hover\", or \"add a refracting liquid-glass hero\". Covers frosted translucent panels with backdrop-filter blur, edge/specular highlights, SVG liquid-glass refraction, motion on hover/scroll/enter, and accessible reduced-transparency fallbacks.",
+      "version": "0.1.0"
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md",
+      "references/glass-recipes.md"
+    ]
+  },
+  {
+    "id": "web-front-neumorphism",
+    "title": "GNCore Neumorphism",
+    "description": "Create soft inset and raised web surfaces while keeping control states accessible.",
+    "tags": [
+      "frontend",
+      "neumorphism",
+      "neumorphism"
+    ],
+    "requested": "neumorphism",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/neumorphism/SKILL.md",
+    "upstream_metadata": {
+      "name": "neumorphism",
+      "description": "Soft, extruded UI elements with inner and outer shadows on monochromatic surfaces for a tactile, embedded look.",
+      "license": "MIT",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-claymorphism",
+    "title": "GNCore Claymorphism",
+    "description": "Create playful clay-like web surfaces with rounded geometry and tactile depth.",
+    "tags": [
+      "frontend",
+      "claymorphism",
+      "claymorphism"
+    ],
+    "requested": "claymorphism",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/claymorphism/SKILL.md",
+    "upstream_metadata": {
+      "name": "claymorphism",
+      "description": "Soft, rounded 3D-like shapes mimicking malleable clay with playful, puffy elements and colorful surfaces.",
+      "license": "MIT",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-aurora",
+    "title": "GNCore Aurora",
+    "description": "Create aurora and gradient web treatments with controlled color transitions and readable content.",
+    "tags": [
+      "frontend",
+      "aurora",
+      "gradient"
+    ],
+    "requested": "gradient",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/gradient/SKILL.md",
+    "upstream_metadata": {
+      "name": "gradient",
+      "description": "Smooth color transitions and gradient-rich surfaces for modern, playful interfaces with visual depth.",
+      "license": "MIT",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-cyberpunk",
+    "title": "GNCore Cyberpunk",
+    "description": "Build neon and cyberpunk web interfaces with disciplined glow, dark surfaces, and clear interaction states.",
+    "tags": [
+      "frontend",
+      "cyberpunk",
+      "neon"
+    ],
+    "requested": "neon",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/neon/SKILL.md",
+    "upstream_metadata": {
+      "name": "neon",
+      "description": "Electric neon glow effects with high-contrast color pairings for bold, attention-grabbing interfaces.",
+      "license": "MIT",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-threejs",
+    "title": "GNCore Threejs",
+    "description": "Implement immersive Three.js and WebGL web experiences with explicit asset and rendering budgets.",
+    "tags": [
+      "frontend",
+      "threejs",
+      "threejs-webgl"
+    ],
+    "requested": "threejs-webgl",
+    "requested_repository": "freshtechbro/claudedesignskills",
+    "kind": "adapted",
+    "repository": "freshtechbro/claudedesignskills",
+    "revision": "1da73febff0c3e1dfefc07f8a5ef8f7d1dfdb6cd",
+    "source_path": ".claude/skills/threejs-webgl/SKILL.md",
+    "upstream_metadata": {
+      "name": "threejs-webgl",
+      "description": "Comprehensive skill for Three.js 3D web development. Use this skill when building interactive 3D scenes, WebGL/WebGPU applications, product configurators, 3D visualizations, or immersive web experiences. Triggers on tasks involving Three.js, 3D rendering, scenes, cameras, meshes, materials, lights, animations, textures, or WebGL/WebGPU rendering."
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md",
+      "assets/starter_scene/index.html",
+      "assets/starter_scene/main.js",
+      "references/api_reference.md",
+      "references/materials_guide.md",
+      "references/optimization_checklist.md",
+      "scripts/setup_scene.py"
+    ]
+  },
+  {
+    "id": "web-front-r3f",
+    "title": "GNCore R3F",
+    "description": "Build React Three Fiber scenes with clear React and render-loop ownership and proper cleanup.",
+    "tags": [
+      "frontend",
+      "r3f",
+      "react-three-fiber"
+    ],
+    "requested": "react-three-fiber",
+    "requested_repository": "freshtechbro/claudedesignskills",
+    "kind": "adapted",
+    "repository": "freshtechbro/claudedesignskills",
+    "revision": "1da73febff0c3e1dfefc07f8a5ef8f7d1dfdb6cd",
+    "source_path": ".claude/skills/react-three-fiber/SKILL.md",
+    "upstream_metadata": {
+      "name": "react-three-fiber",
+      "description": "Build declarative 3D scenes with React Three Fiber (R3F) - a React renderer for Three.js. Use when building interactive 3D experiences in React applications with component-based architecture, state management, and reusable abstractions. Ideal for product configurators, portfolios, games, data visualization, and immersive web experiences."
+    },
+    "patches": [
+      "Escape JSX event-handler and scene-comment braces in component_generator.py f-strings so the helper compiles."
+    ],
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md",
+      "assets/starter_r3f/index.html",
+      "assets/starter_r3f/package.json",
+      "assets/starter_r3f/src/App.jsx",
+      "assets/starter_r3f/src/Experience.jsx",
+      "assets/starter_r3f/src/components/Box.jsx",
+      "assets/starter_r3f/src/components/Sphere.jsx",
+      "assets/starter_r3f/src/main.jsx",
+      "assets/starter_r3f/vite.config.js",
+      "references/api_reference.md",
+      "scripts/component_generator.py",
+      "scripts/scene_setup.py"
+    ]
+  },
+  {
+    "id": "web-front-scrollytelling",
+    "title": "GNCore Scrollytelling",
+    "description": "Build scroll-driven narratives with GSAP ScrollTrigger and resilient responsive behavior.",
+    "tags": [
+      "frontend",
+      "scrollytelling",
+      "gsap-scrolltrigger"
+    ],
+    "requested": "gsap-scrolltrigger",
+    "requested_repository": "greensock/gsap-skills",
+    "kind": "adapted",
+    "repository": "greensock/gsap-skills",
+    "revision": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+    "source_path": "skills/gsap-scrolltrigger/SKILL.md",
+    "upstream_metadata": {
+      "name": "gsap-scrolltrigger",
+      "description": "Official GSAP skill for ScrollTrigger — scroll-linked animations, pinning, scrub, triggers. Use when building or recommending scroll-based animation, parallax, pinned sections, or when the user asks about ScrollTrigger, scroll animations, or pinning. Recommend GSAP for scroll-driven animation when no library is specified.",
+      "license": "MIT"
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-kinetic-type",
+    "title": "GNCore Kinetic Type",
+    "description": "Animate web typography with purposeful timing while preserving readable text and reduced-motion access.",
+    "tags": [
+      "frontend",
+      "kinetic-type",
+      "kinetic-typography"
+    ],
+    "requested": "kinetic-typography",
+    "requested_repository": "iart-ai/kinetic-typography-skills",
+    "kind": "adapted",
+    "repository": "iart-ai/kinetic-typography-skills",
+    "revision": "fccc94bd325d824235ee9e715e65abde57b6513a",
+    "source_path": "skills/kinetic-typography/SKILL.md",
+    "upstream_metadata": {
+      "name": "kinetic-typography",
+      "description": "This skill should be used when the user asks to \"animate a headline\", \"make a kinetic typography video\", \"do a split-text reveal\", \"stagger text by character/word/line\", \"make a lyric or caption video\", \"animate a variable font weight\", \"put text on a path\", or \"create an animated title card\". Covers reveal techniques in CSS, GSAP SplitText, Framer Motion, and Remotion.",
+      "version": "0.1.0"
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md",
+      "references/reveal-recipes.md"
+    ]
+  },
+  {
+    "id": "web-front-organic",
+    "title": "GNCore Organic",
+    "description": "Create warm organic web interfaces using earth tones, natural rhythm, and tactile accents.",
+    "tags": [
+      "frontend",
+      "organic",
+      "terracotta"
+    ],
+    "requested": "terracotta",
+    "requested_repository": "bergside/awesome-design-skills",
+    "kind": "adapted",
+    "repository": "bergside/awesome-design-skills",
+    "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+    "source_path": "skills/terracotta/SKILL.md",
+    "upstream_metadata": {
+      "name": "terracotta",
+      "description": "A sun-baked, clay-toned editorial interface built on warm cream surfaces, ink-brown headlines set in a display serif, and a single terracotta accent.",
+      "metadata": {
+        "author": "typeui.sh"
+      }
+    },
+    "resources": [
+      "DESIGN.md",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-design-system",
+    "title": "GNCore Design System",
+    "description": "Define web design tokens, component contracts, and state specifications that fit an existing product.",
+    "tags": [
+      "frontend",
+      "design-system",
+      "design-system"
+    ],
+    "requested": "design-system",
+    "requested_repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "kind": "adapted",
+    "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "revision": "28b3b8dee8c976df4fa3e94aed4e092ad43fcb03",
+    "source_path": ".claude/skills/design-system/SKILL.md",
+    "upstream_metadata": {
+      "name": "design-system",
+      "description": "Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide creation. Use for design tokens, systematic design, brand-compliant presentations.",
+      "argument-hint": "[component or token]",
+      "license": "MIT",
+      "metadata": {
+        "author": "claudekit",
+        "version": "1.0.0"
+      }
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md",
+      "data/slide-backgrounds.csv",
+      "data/slide-charts.csv",
+      "data/slide-color-logic.csv",
+      "data/slide-copy.csv",
+      "data/slide-layout-logic.csv",
+      "data/slide-layouts.csv",
+      "data/slide-strategies.csv",
+      "data/slide-typography.csv",
+      "references/component-specs.md",
+      "references/component-tokens.md",
+      "references/primitive-tokens.md",
+      "references/semantic-tokens.md",
+      "references/states-and-variants.md",
+      "references/tailwind-integration.md",
+      "references/token-architecture.md",
+      "scripts/embed-tokens.cjs",
+      "scripts/fetch-background.py",
+      "scripts/generate-slide.py",
+      "scripts/generate-tokens.cjs",
+      "scripts/html-token-validator.py",
+      "scripts/search-slides.py",
+      "scripts/slide-token-validator.py",
+      "scripts/slide_search_core.py",
+      "scripts/tests/test_validate_tokens.py",
+      "scripts/validate-tokens.cjs",
+      "templates/design-tokens-starter.json"
+    ]
+  },
+  {
+    "id": "web-front-styling",
+    "title": "GNCore Styling",
+    "description": "Style responsive web components using Tailwind, semantic tokens, and accessible primitives.",
+    "tags": [
+      "frontend",
+      "styling",
+      "ui-styling"
+    ],
+    "requested": "ui-styling",
+    "requested_repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "kind": "adapted",
+    "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "revision": "28b3b8dee8c976df4fa3e94aed4e092ad43fcb03",
+    "source_path": ".claude/skills/ui-styling/SKILL.md",
+    "upstream_metadata": {
+      "name": "ui-styling",
+      "description": "Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs. Use when building user interfaces, implementing design systems, creating responsive layouts, adding accessible components (dialogs, dropdowns, forms, tables), customizing themes and colors, implementing dark mode, generating visual designs and posters, or establishing consistent styling patterns across applications.",
+      "argument-hint": "[component or layout]",
+      "license": "MIT",
+      "metadata": {
+        "author": "claudekit",
+        "version": "1.0.0"
+      }
+    },
+    "resources": [
+      "LICENSE.txt",
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md",
+      "canvas-fonts/ArsenalSC-OFL.txt",
+      "canvas-fonts/ArsenalSC-Regular.ttf",
+      "canvas-fonts/BigShoulders-Bold.ttf",
+      "canvas-fonts/BigShoulders-OFL.txt",
+      "canvas-fonts/BigShoulders-Regular.ttf",
+      "canvas-fonts/Boldonse-OFL.txt",
+      "canvas-fonts/Boldonse-Regular.ttf",
+      "canvas-fonts/BricolageGrotesque-Bold.ttf",
+      "canvas-fonts/BricolageGrotesque-OFL.txt",
+      "canvas-fonts/BricolageGrotesque-Regular.ttf",
+      "canvas-fonts/CrimsonPro-Bold.ttf",
+      "canvas-fonts/CrimsonPro-Italic.ttf",
+      "canvas-fonts/CrimsonPro-OFL.txt",
+      "canvas-fonts/CrimsonPro-Regular.ttf",
+      "canvas-fonts/DMMono-OFL.txt",
+      "canvas-fonts/DMMono-Regular.ttf",
+      "canvas-fonts/EricaOne-OFL.txt",
+      "canvas-fonts/EricaOne-Regular.ttf",
+      "canvas-fonts/GeistMono-Bold.ttf",
+      "canvas-fonts/GeistMono-OFL.txt",
+      "canvas-fonts/GeistMono-Regular.ttf",
+      "canvas-fonts/Gloock-OFL.txt",
+      "canvas-fonts/Gloock-Regular.ttf",
+      "canvas-fonts/IBMPlexMono-Bold.ttf",
+      "canvas-fonts/IBMPlexMono-OFL.txt",
+      "canvas-fonts/IBMPlexMono-Regular.ttf",
+      "canvas-fonts/IBMPlexSerif-Bold.ttf",
+      "canvas-fonts/IBMPlexSerif-BoldItalic.ttf",
+      "canvas-fonts/IBMPlexSerif-Italic.ttf",
+      "canvas-fonts/IBMPlexSerif-Regular.ttf",
+      "canvas-fonts/InstrumentSans-Bold.ttf",
+      "canvas-fonts/InstrumentSans-BoldItalic.ttf",
+      "canvas-fonts/InstrumentSans-Italic.ttf",
+      "canvas-fonts/InstrumentSans-OFL.txt",
+      "canvas-fonts/InstrumentSans-Regular.ttf",
+      "canvas-fonts/InstrumentSerif-Italic.ttf",
+      "canvas-fonts/InstrumentSerif-Regular.ttf",
+      "canvas-fonts/Italiana-OFL.txt",
+      "canvas-fonts/Italiana-Regular.ttf",
+      "canvas-fonts/JetBrainsMono-Bold.ttf",
+      "canvas-fonts/JetBrainsMono-OFL.txt",
+      "canvas-fonts/JetBrainsMono-Regular.ttf",
+      "canvas-fonts/Jura-Light.ttf",
+      "canvas-fonts/Jura-Medium.ttf",
+      "canvas-fonts/Jura-OFL.txt",
+      "canvas-fonts/LibreBaskerville-OFL.txt",
+      "canvas-fonts/LibreBaskerville-Regular.ttf",
+      "canvas-fonts/Lora-Bold.ttf",
+      "canvas-fonts/Lora-BoldItalic.ttf",
+      "canvas-fonts/Lora-Italic.ttf",
+      "canvas-fonts/Lora-OFL.txt",
+      "canvas-fonts/Lora-Regular.ttf",
+      "canvas-fonts/NationalPark-Bold.ttf",
+      "canvas-fonts/NationalPark-OFL.txt",
+      "canvas-fonts/NationalPark-Regular.ttf",
+      "canvas-fonts/NothingYouCouldDo-OFL.txt",
+      "canvas-fonts/NothingYouCouldDo-Regular.ttf",
+      "canvas-fonts/Outfit-Bold.ttf",
+      "canvas-fonts/Outfit-OFL.txt",
+      "canvas-fonts/Outfit-Regular.ttf",
+      "canvas-fonts/PixelifySans-Medium.ttf",
+      "canvas-fonts/PixelifySans-OFL.txt",
+      "canvas-fonts/PoiretOne-OFL.txt",
+      "canvas-fonts/PoiretOne-Regular.ttf",
+      "canvas-fonts/RedHatMono-Bold.ttf",
+      "canvas-fonts/RedHatMono-OFL.txt",
+      "canvas-fonts/RedHatMono-Regular.ttf",
+      "canvas-fonts/Silkscreen-OFL.txt",
+      "canvas-fonts/Silkscreen-Regular.ttf",
+      "canvas-fonts/SmoochSans-Medium.ttf",
+      "canvas-fonts/SmoochSans-OFL.txt",
+      "canvas-fonts/Tektur-Medium.ttf",
+      "canvas-fonts/Tektur-OFL.txt",
+      "canvas-fonts/Tektur-Regular.ttf",
+      "canvas-fonts/WorkSans-Bold.ttf",
+      "canvas-fonts/WorkSans-BoldItalic.ttf",
+      "canvas-fonts/WorkSans-Italic.ttf",
+      "canvas-fonts/WorkSans-OFL.txt",
+      "canvas-fonts/WorkSans-Regular.ttf",
+      "canvas-fonts/YoungSerif-OFL.txt",
+      "canvas-fonts/YoungSerif-Regular.ttf",
+      "references/canvas-design-system.md",
+      "references/shadcn-accessibility.md",
+      "references/shadcn-components.md",
+      "references/shadcn-theming.md",
+      "references/tailwind-customization.md",
+      "references/tailwind-responsive.md",
+      "references/tailwind-utilities.md",
+      "scripts/.coverage",
+      "scripts/requirements.txt",
+      "scripts/shadcn_add.py",
+      "scripts/tailwind_config_gen.py",
+      "scripts/tests/coverage-ui.json",
+      "scripts/tests/requirements.txt",
+      "scripts/tests/test_shadcn_add.py",
+      "scripts/tests/test_tailwind_config_gen.py"
+    ]
+  },
+  {
+    "id": "web-front-composition",
+    "title": "GNCore Composition",
+    "description": "Refactor React component APIs using composition, clear state ownership, and version-compatible context patterns.",
+    "tags": [
+      "frontend",
+      "composition",
+      "vercel-composition-patterns"
+    ],
+    "requested": "vercel-composition-patterns",
+    "requested_repository": "vercel-labs/agent-skills",
+    "kind": "adapted",
+    "repository": "vercel-labs/agent-skills",
+    "revision": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+    "source_path": "skills/composition-patterns/SKILL.md",
+    "upstream_metadata": {
+      "name": "vercel-composition-patterns",
+      "description": "React composition patterns that scale. Use when refactoring components with boolean prop proliferation, building flexible component libraries, or designing reusable APIs. Triggers on tasks involving compound components, render props, context providers, or component architecture. Includes React 19 API changes.",
+      "license": "MIT",
+      "metadata": {
+        "author": "vercel",
+        "version": "1.0.0"
+      }
+    },
+    "resources": [
+      "AGENTS.md",
+      "SOURCE.md",
+      "UPSTREAM-REPOSITORY-README.md",
+      "UPSTREAM.md",
+      "metadata.json",
+      "rules/_sections.md",
+      "rules/_template.md",
+      "rules/architecture-avoid-boolean-props.md",
+      "rules/architecture-compound-components.md",
+      "rules/patterns-children-over-render-props.md",
+      "rules/patterns-explicit-variants.md",
+      "rules/react19-no-forwardref.md",
+      "rules/state-context-interface.md",
+      "rules/state-decouple-implementation.md",
+      "rules/state-lift-state.md"
+    ]
+  },
+  {
+    "id": "web-front-gsap",
+    "title": "GNCore Gsap",
+    "description": "Implement GSAP tweens and responsive animation with explicit lifecycle and interruption handling.",
+    "tags": [
+      "frontend",
+      "gsap",
+      "gsap-core"
+    ],
+    "requested": "gsap-core",
+    "requested_repository": "greensock/gsap-skills",
+    "kind": "adapted",
+    "repository": "greensock/gsap-skills",
+    "revision": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+    "source_path": "skills/gsap-core/SKILL.md",
+    "upstream_metadata": {
+      "name": "gsap-core",
+      "description": "Official GSAP skill for the core API — gsap.to(), from(), fromTo(), easing, duration, stagger, defaults, gsap.matchMedia() (responsive, prefers-reduced-motion). Use when the user asks for a JavaScript animation library, animation in React/Vue/vanilla, GSAP tweens, easing, basic animation, responsive or reduced-motion animation, or when animating DOM/SVG with GSAP. Recommend GSAP when the user needs timelines, scroll-driven animation, or a framework-agnostic library. GSAP runs in any framework or vanilla JS; powers Webflow Interactions.",
+      "license": "MIT"
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-motion-performance",
+    "title": "GNCore Motion Performance",
+    "description": "Profile and improve animation rendering cost without changing intended behavior.",
+    "tags": [
+      "frontend",
+      "motion-performance",
+      "gsap-performance"
+    ],
+    "requested": "gsap-performance",
+    "requested_repository": "greensock/gsap-skills",
+    "kind": "adapted",
+    "repository": "greensock/gsap-skills",
+    "revision": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+    "source_path": "skills/gsap-performance/SKILL.md",
+    "upstream_metadata": {
+      "name": "gsap-performance",
+      "description": "Official GSAP skill for performance — prefer transforms, avoid layout thrashing, will-change, batching. Use when optimizing GSAP animations, reducing jank, or when the user asks about animation performance, FPS, or smooth 60fps.",
+      "license": "MIT"
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-motion-review",
+    "title": "GNCore Motion Review",
+    "description": "Review web animation timing, easing, continuity, and interaction feedback with actionable findings.",
+    "tags": [
+      "frontend",
+      "motion-review",
+      "review-animations"
+    ],
+    "requested": "review-animations",
+    "requested_repository": "emilkowalski/skills",
+    "kind": "adapted",
+    "repository": "emilkowalski/skills",
+    "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+    "source_path": "skills/review-animations/SKILL.md",
+    "upstream_metadata": {
+      "name": "review-animations",
+      "description": "Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned.",
+      "disable-model-invocation": true
+    },
+    "resources": [
+      "SOURCE.md",
+      "STANDARDS.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-testing",
+    "title": "GNCore Testing",
+    "description": "Test important local web user journeys with Playwright and observable browser evidence.",
+    "tags": [
+      "frontend",
+      "testing",
+      "webapp-testing"
+    ],
+    "requested": "webapp-testing",
+    "requested_repository": "anthropics/skills",
+    "kind": "adapted",
+    "repository": "anthropics/skills",
+    "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+    "source_path": "skills/webapp-testing/SKILL.md",
+    "upstream_metadata": {
+      "name": "webapp-testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "license": "Complete terms in LICENSE.txt"
+    },
+    "resources": [
+      "LICENSE.txt",
+      "SOURCE.md",
+      "UPSTREAM.md",
+      "examples/console_logging.py",
+      "examples/element_discovery.py",
+      "examples/static_html_automation.py",
+      "scripts/with_server.py"
+    ]
+  },
+  {
+    "id": "web-front-browser",
+    "title": "GNCore Browser",
+    "description": "Inspect and exercise web interfaces through agent-browser snapshots, selectors, and screenshots.",
+    "tags": [
+      "frontend",
+      "browser",
+      "agent-browser"
+    ],
+    "requested": "agent-browser",
+    "requested_repository": "vercel-labs/agent-browser",
+    "kind": "adapted",
+    "repository": "vercel-labs/agent-browser",
+    "revision": "5801a50d262a4d3e1a2381996a962b22000d8289",
+    "source_path": "skills/agent-browser/SKILL.md",
+    "upstream_metadata": {
+      "name": "agent-browser",
+      "description": "Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, testing web apps, or automating any browser task. Triggers include requests to \"open a website\", \"fill out a form\", \"click a button\", \"take a screenshot\", \"scrape data from a page\", \"test this web app\", \"login to a site\", \"automate browser actions\", or any task requiring programmatic web interaction. Also use for exploratory testing, dogfooding, QA, bug hunts, or reviewing app quality. Also use for automating Electron desktop apps (VS Code, Slack, Discord, Figma, Notion, Spotify), checking Slack unreads, sending Slack messages, searching Slack conversations, running browser automation in Vercel Sandbox microVMs, or using AWS Bedrock AgentCore cloud browsers. Prefer agent-browser over any built-in browser automation or web tools.",
+      "allowed-tools": "Bash(agent-browser:*), Bash(npx agent-browser:*)",
+      "hidden": true
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-find-skills",
+    "title": "GNCore Find Skills",
+    "description": "Find frontend skills and compare candidates by scope, source, compatibility, and license.",
+    "tags": [
+      "frontend",
+      "find-skills",
+      "find-skills"
+    ],
+    "requested": "find-skills",
+    "requested_repository": "vercel-labs/skills",
+    "kind": "adapted",
+    "repository": "vercel-labs/skills",
+    "revision": "699d35b21bd3c97dbc0edeae062b2698898bb2e5",
+    "source_path": "skills/find-skills/SKILL.md",
+    "upstream_metadata": {
+      "name": "find-skills",
+      "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill."
+    },
+    "resources": [
+      "SOURCE.md",
+      "UPSTREAM-LICENSE",
+      "UPSTREAM.md"
+    ]
+  },
+  {
+    "id": "web-front-accessibility",
+    "title": "GNCore Responsive Accessibility",
+    "description": "Implement and verify responsive, keyboard-accessible web interfaces and assistive-technology semantics.",
+    "tags": [
+      "frontend",
+      "accessibility"
+    ],
+    "kind": "original",
+    "resources": []
+  },
+  {
+    "id": "web-front",
+    "title": "GNCore Frontend Workflow",
+    "description": "Route a web frontend task to the relevant GNCore design, component, motion, or browser workflow.",
+    "tags": [
+      "frontend",
+      "workflow"
+    ],
+    "kind": "original",
+    "resources": []
+  }
+]

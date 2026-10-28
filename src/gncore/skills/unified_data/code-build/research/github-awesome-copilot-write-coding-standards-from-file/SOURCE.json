@@ -1,0 +1,14 @@
+{
+  "category": "code-engineering",
+  "repository": "github/awesome-copilot",
+  "name": "write-coding-standards-from-file",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "0fe6545b950671641b2b14b44eb56678fea6c6b4",
+  "source_url": "https://github.com/github/awesome-copilot/blob/0fe6545b950671641b2b14b44eb56678fea6c6b4/skills/write-coding-standards-from-file/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

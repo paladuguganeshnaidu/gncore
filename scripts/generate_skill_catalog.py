@@ -1,71 +1,37 @@
-"""Generate the public skill catalog from the authoritative built-in library."""
+"""Generate primary categories and the complete compatibility workflow map."""
 
-from __future__ import annotations
-
-import sys
 from pathlib import Path
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from gncore.skills import builtin_skills, list_domains  # noqa: E402
+from gncore import __version__, builtin_skills, list_domains, list_workflows
+from gncore.skills.unified import unified_manifest, workflow_aliases
 
 
-def escape(value: str) -> str:
+def escape(value):
     return value.replace("|", "\\|").replace("\n", " ").strip()
 
 
-def main() -> None:
-    skills = {skill.metadata.skill_id: skill for skill in builtin_skills()}
+def main():
+    entries = unified_manifest()
     domains = list_domains()
-    lines = [
-        "# GNCore Skill Catalog",
-        "",
-        f"GNCore 5.1.0 contains **{len(skills)} portable skills** across **{len(domains)} domain packs**. Each domain pack contains ten focused workflows.",
-        "",
-        "GNCore is a skill library and installer. It writes standard skill folders to `.agents/skills/` by default; use `--output` to create a ZIP archive, or `--directory` to choose another install location.",
-        "",
-        "## Domain packs",
-        "",
-    ]
-    domain_ids: set[str] = set()
+    lines = ["# GNCore skill catalog", "", f"GNCore {__version__} contains **{len(entries)} adaptive category skills**, preserving **{len(list_workflows())} workflows**. The **{len(domains)} professional domains** each retain ten workflows in one category entrypoint.", "", "Install a category under `.agents/skills/`, then describe the outcome to a compatible host AI. Its single entrypoint selects the relevant workflows; supporting references are loaded only when needed.", "", "## Primary categories", "", "| Category | Skill ID | Workflows | Use it for |", "| --- | --- | --- | --- |"]
+    for entry in entries:
+        lines.append(f"| `{entry['category']}` | `{entry['id']}` | {len(entry['workflows'])} | {escape(entry['description'])} |")
+    lines.extend(["", "## Professional domains", "", "| Domain | Primary skill | Retained workflows |", "| --- | --- | --- |"])
     for domain in domains:
-        lines.extend([f"### {domain.name} (`{domain.domain_id}`)", "", escape(domain.description), "", "| Skill ID | Slash name | Skill | Use it for |", "| --- | --- | --- | --- |"])
-        for skill_id in domain.skill_ids:
-            domain_ids.add(skill_id)
-            metadata = skills[skill_id].metadata
-            lines.append(f"| `{skill_id}` | `/{skill_id}` | {escape(metadata.name)} | {escape(metadata.description)} |")
-        lines.append("")
-
-    lines.extend(["## Additional specialist skills", "", "These complement the domain packs and are grouped by category.", ""])
-    specialist = [skill for skill in skills.values() if skill.metadata.skill_id not in domain_ids]
-    categories: dict[str, list] = {}
-    for skill in specialist:
-        categories.setdefault(skill.metadata.category, []).append(skill)
-    for category, members in sorted(categories.items()):
-        lines.extend([f"### {category}", "", "| Skill ID | Slash name | Skill | Use it for |", "| --- | --- | --- | --- |"])
-        for skill in sorted(members, key=lambda item: item.metadata.skill_id):
-            metadata = skill.metadata
-            lines.append(f"| `{metadata.skill_id}` | `/{metadata.skill_id}` | {escape(metadata.name)} | {escape(metadata.description)} |")
-        lines.append("")
-
-    lines.extend([
-        "## Use and export",
-        "",
-        "```bash",
-        "gncore search \"clean data\"",
-        "gncore show train",
-        "gncore export --specific design-ux-audit",
-        "gncore export --skills train evaluate",
-        "gncore export --all --output all-gncore-skills.zip",
-        "```",
-        "",
-        "Every skill guides an AI assistant through scoped, evidence-based work and asks it to report checks honestly. Skills are instructions, not executable agents; the host assistant supplies reasoning and tools.",
-        "",
-    ])
-    output = ROOT / "docs" / "ALL_SKILLS.md"
-    output.write_text("\n".join(lines), encoding="utf-8")
-    print(f"Wrote docs/ALL_SKILLS.md ({len(skills)} skills, {len(domains)} domains).")
+        lines.append(f"| {escape(domain.name)} | `{domain.skill_ids[0]}` | {len(domain.workflow_ids)} |")
+    lines.extend(["", "## Complete workflow map", "", "These IDs remain CLI/API compatibility aliases. Exporting aliases from one category produces one merged category folder. Primary category names take precedence over older generic names when they collide."])
+    aliases = workflow_aliases()
+    for entry in entries:
+        lines.extend(["", f"### {entry['title']} (`{entry['id']}`)", "", "| Workflow ID | Resolves to | Workflow | Use it for |", "| --- | --- | --- | --- |"])
+        for workflow in entry["workflows"]:
+            lines.append(f"| `{workflow['id']}` | `{aliases[workflow['id']]}` | {escape(workflow['title'])} | {escape(workflow['description'])} |")
+    lines.extend(["", "## Use", "", "```bash", "gncore export --specific web-frontend", "gncore export --skills web-backend code-build", "gncore export --all --output gncore-categories.zip", "gncore plan \"A premium hotel website, no animation\"", "```", "", "See [Source Research](SOURCE_RESEARCH.md), [Ownership](OWNERSHIP.md), and [Migration](../MIGRATION.md) for provenance, licensing, and compatibility details."])
+    (ROOT / "docs/ALL_SKILLS.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+    print(f"Catalog: {len(entries)} categories, {len(list_workflows())} workflows, {len(domains)} professional domains")
 
 
 if __name__ == "__main__":

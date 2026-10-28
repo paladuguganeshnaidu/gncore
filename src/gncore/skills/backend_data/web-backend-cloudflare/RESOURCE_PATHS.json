@@ -1,0 +1,15 @@
+{
+  "skills/nextjs-on-cloudflare/SKILL.md": "upstream-support/skills/nextjs-on-cloudflare/UPSTREAM.md",
+  "skills/gateway-workers/SKILL.md": "upstream-support/skills/gateway-workers/UPSTREAM.md",
+  "skills/workers-profiling/SKILL.md": "upstream-support/skills/workers-profiling/UPSTREAM.md",
+  "skills/workers-profiling/references/skill-feedback.md": "upstream-support/skills/workers-profiling/references/skill-feedback.md",
+  "skills/cloudflare-one/SKILL.md": "upstream-support/skills/cloudflare-one/UPSTREAM.md",
+  "skills/workers-best-practices/SKILL.md": "upstream-support/skills/workers-best-practices/UPSTREAM.md",
+  "skills/gateway-workers/references/skill-feedback.md": "upstream-support/skills/gateway-workers/references/skill-feedback.md",
+  "skills/workers-best-practices/references/configuration.md": "upstream-support/skills/workers-best-practices/references/configuration.md",
+  "skills/workers-best-practices/references/runtime-patterns.md": "upstream-support/skills/workers-best-practices/references/runtime-patterns.md",
+  "skills/workers-best-practices/references/platform-apis.md": "upstream-support/skills/workers-best-practices/references/platform-apis.md",
+  "skills/workers-best-practices/references/skill-feedback.md": "upstream-support/skills/workers-best-practices/references/skill-feedback.md",
+  "skills/cloudflare-one/references/skill-feedback.md": "upstream-support/skills/cloudflare-one/references/skill-feedback.md",
+  "skills/nextjs-on-cloudflare/references/skill-feedback.md": "upstream-support/skills/nextjs-on-cloudflare/references/skill-feedback.md"
+}

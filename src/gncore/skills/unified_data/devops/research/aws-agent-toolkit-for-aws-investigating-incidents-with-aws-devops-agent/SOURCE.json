@@ -1,0 +1,14 @@
+{
+  "category": "devops",
+  "repository": "aws/agent-toolkit-for-aws",
+  "name": "investigating-incidents-with-aws-devops-agent",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "b08b99f38098c30c0ee1a781accd8e349e5b145c",
+  "source_url": "https://github.com/aws/agent-toolkit-for-aws/blob/b08b99f38098c30c0ee1a781accd8e349e5b145c/plugins/aws-agents-for-devsecops/skills/investigating-incidents-with-aws-devops-agent/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "Apache-2.0"
+  ],
+  "file_count": 2
+}

@@ -1,0 +1,122 @@
+{
+  "category": "documentation",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "documentation",
+      "repository": "cloudflare/skills",
+      "name": "cloudflare",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "49a31e0b3229ccdffe4944be9c61bc7481d1d432",
+      "source_url": "https://github.com/cloudflare/skills/blob/49a31e0b3229ccdffe4944be9c61bc7481d1d432/skills/cloudflare/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 140
+    },
+    {
+      "category": "documentation",
+      "repository": "anthropics/skills",
+      "name": "doc-coauthoring",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "source_url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/doc-coauthoring/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "documentation",
+      "repository": "scrapegraphai/just-scrape",
+      "name": "just-scrape",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "a3d179ffe2695c5bb7aacffec2c6018d3d9f056e",
+      "source_url": "https://github.com/scrapegraphai/just-scrape/blob/a3d179ffe2695c5bb7aacffec2c6018d3d9f056e/skills/just-scrape/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "documentation",
+      "repository": "mastra-ai/skills",
+      "name": "mastra",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "34180fa43c67fe38197f30d8d975fb73454156aa",
+      "source_url": "https://github.com/mastra-ai/skills/blob/34180fa43c67fe38197f30d8d975fb73454156aa/skills/mastra/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 12
+    },
+    {
+      "category": "documentation",
+      "repository": "addyosmani/agent-skills",
+      "name": "documentation-and-adrs",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "aeac41d4d005999432bb7312f7ff06383a91d59d",
+      "source_url": "https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/documentation-and-adrs/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "documentation",
+      "repository": "samber/cc-skills-golang",
+      "name": "golang-documentation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "246b6c4c1ab3077dee114beb9ade3bb0527dfebc",
+      "source_url": "https://github.com/samber/cc-skills-golang/blob/246b6c4c1ab3077dee114beb9ade3bb0527dfebc/skills/golang-documentation/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 10
+    },
+    {
+      "category": "documentation",
+      "repository": "github/awesome-copilot",
+      "name": "documentation-writer",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "0fe6545b950671641b2b14b44eb56678fea6c6b4",
+      "source_url": "https://github.com/github/awesome-copilot/blob/0fe6545b950671641b2b14b44eb56678fea6c6b4/skills/documentation-writer/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "documentation",
+      "repository": "vercel/components.build",
+      "name": "building-components",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "ba727450437385af662810329fa19896215f76d5",
+      "source_url": "https://github.com/vercel/components.build/blob/ba727450437385af662810329fa19896215f76d5/skills/building-components/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 16
+    }
+  ],
+  "legacy_reference_ids": []
+}

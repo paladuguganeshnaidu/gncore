@@ -1,0 +1,15 @@
+{
+  "plugins/regression-hunt/docs/regression-definition.md": "upstream-support/plugins/regression-hunt/docs/regression-definition.md",
+  "plugins/regression-hunt/references/evidence.md": "upstream-support/plugins/regression-hunt/references/evidence.md",
+  "plugins/regression-hunt/scripts/registry.py": "upstream-support/plugins/regression-hunt/scripts/registry.py",
+  "plugins/regression-hunt/skills/prepare-regression/SKILL.md": "upstream-support/plugins/regression-hunt/skills/prepare-regression/UPSTREAM.md",
+  "plugins/regression-hunt/skills/hunt-regressions/SKILL.md": "upstream-support/plugins/regression-hunt/skills/hunt-regressions/UPSTREAM.md",
+  "plugins/regression-hunt/skills/reproduce-regression/SKILL.md": "upstream-support/plugins/regression-hunt/skills/reproduce-regression/UPSTREAM.md",
+  "plugins/regression-hunt/skills/replay-regression/SKILL.md": "upstream-support/plugins/regression-hunt/skills/replay-regression/UPSTREAM.md",
+  "plugins/regression-hunt/skills/adjudicate-regression/SKILL.md": "upstream-support/plugins/regression-hunt/skills/adjudicate-regression/UPSTREAM.md",
+  "plugins/regression-hunt/skills/report-regressions/SKILL.md": "upstream-support/plugins/regression-hunt/skills/report-regressions/UPSTREAM.md",
+  "plugins/regression-hunt/docs/report-definitions.md": "upstream-support/plugins/regression-hunt/docs/report-definitions.md",
+  "plugins/regression-hunt/scripts/report.py": "upstream-support/plugins/regression-hunt/scripts/report.py",
+  "plugins/regression-hunt/scripts/evidence.py": "upstream-support/plugins/regression-hunt/scripts/evidence.py",
+  "plugins/regression-hunt/scripts/snapshot.py": "upstream-support/plugins/regression-hunt/scripts/snapshot.py"
+}

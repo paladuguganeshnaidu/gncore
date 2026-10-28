@@ -1,0 +1,14 @@
+{
+  "category": "data-engineering",
+  "repository": "mastra-ai/mastra",
+  "name": "react-best-practices",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "79f8d3c229633e7ee493aaff8fd7e3edbe80fb081c89f2dd687623270140a781",
+  "revision": null,
+  "source_url": "https://github.com/mastra-ai/mastra",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "Apache-2.0"
+  ],
+  "file_count": 29
+}

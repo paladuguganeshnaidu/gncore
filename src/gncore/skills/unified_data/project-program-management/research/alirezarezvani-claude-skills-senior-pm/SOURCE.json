@@ -1,0 +1,14 @@
+{
+  "category": "project-program-management",
+  "repository": "alirezarezvani/claude-skills",
+  "name": "senior-pm",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "5434623a788ec3105d238328cfe554e1e2242ff7",
+  "source_url": "https://github.com/alirezarezvani/claude-skills/blob/5434623a788ec3105d238328cfe554e1e2242ff7/project-management/skills/senior-pm/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 12
+}

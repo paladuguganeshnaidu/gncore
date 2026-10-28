@@ -1,0 +1,14 @@
+{
+  "category": "data",
+  "repository": "prisma/skills",
+  "name": "prisma-client-api",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "c71e8ea254dbc5dba27af773b735679163395cf9",
+  "source_url": "https://github.com/prisma/skills/blob/c71e8ea254dbc5dba27af773b735679163395cf9/prisma-client-api/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 9
+}

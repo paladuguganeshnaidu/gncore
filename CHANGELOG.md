@@ -1,5 +1,27 @@
 # Changelog
 
+## 6.0.0 — source branch
+
+- Consolidate 553 workflows into 60 adaptive category skills with one discoverable entrypoint per category.
+- Add frontend direction inference, explicit theme and brand preservation, complete interaction-state guidance, and a local planning aid.
+- Retain legacy IDs as CLI/API aliases and expose the complete workflow map through `list workflows` and `list_workflows()`.
+- Research every category, download available registry and pinned GitHub candidates, preserve review outcomes, and exclude uncleared references from distribution.
+- Preserve third-party authorship and license obligations; include source hashes or revisions, notices, and resource-preserving exports.
+- Update API, migration, catalog, ownership, installation, verification, and release documentation for the new structure.
+
+## Earlier development groundwork
+
+- Add 127 backend and general coding workflows from 122 requests: 116 attributed adaptations, six original replacements for unavailable source names, and five original routing/quality/security/observability entrypoints.
+- Use `web-backend-*` for services and platforms and `code-*` for workflows across languages; retain 11 overlapping legacy backend IDs as lookup aliases.
+- Share resource-preserving exports across both collections, including explicitly linked sibling plugin resources and source-specific license notices. Trail of Bits adaptations retain CC BY-SA 4.0.
+- Expand the final catalog to 553 skills while preserving the 40-skill frontend collection and all 30 domain packs.
+
+- Replace six frontend specialist entries with a 40-skill GNCore `web-front` collection; retain legacy lookup aliases.
+- Integrate 35 attributed upstream adaptations and original minimalist, luxury, industrial, accessibility, and selection workflows. Record pinned sources and three unavailable upstream names.
+- Preserve supporting scripts, rule files, data, and license notices in directory and ZIP exports.
+- Expand the catalog from 403 to 437 skills; keep the 30 existing domain packs unchanged.
+- Prepared the earlier frontend/backend collections before the category consolidation above.
+
 ## 5.1.0
 
 - Make `gncore export` install complete skills to `.agents/skills/` by default.

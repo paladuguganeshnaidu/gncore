@@ -1,0 +1,122 @@
+{
+  "category": "presentations-powerpoint",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "presentations-powerpoint",
+      "repository": "popaiofficial/popai-presentation-slides",
+      "name": "popai-powerpoint-pptx",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "96eb9c9d3fb0bc0462bf41abfe389eb831fd2411",
+      "source_url": "https://github.com/popaiofficial/popai-presentation-slides/blob/96eb9c9d3fb0bc0462bf41abfe389eb831fd2411/skills/popai-powerpoint-pptx/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 2
+    },
+    {
+      "category": "presentations-powerpoint",
+      "repository": "firecrawl/anydoc",
+      "name": "convert-documents-to-markdown",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "e7178e099b6bf9171e2c52b832cbdb4134b69112",
+      "source_url": "https://github.com/firecrawl/anydoc/blob/e7178e099b6bf9171e2c52b832cbdb4134b69112/skills/convert-documents-to-markdown/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "presentations-powerpoint",
+      "repository": "anthropics/financial-services",
+      "name": "pptx-author",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "574ed3624aebd0418c7e96cd101262f30210ab26",
+      "source_url": "https://github.com/anthropics/financial-services/blob/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/market-researcher/skills/pptx-author/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "presentations-powerpoint",
+      "repository": "minimax-ai/skills",
+      "name": "pptx-generator",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "60aaae52bb2af8162732751a4332f62a5fef518b",
+      "source_url": "https://github.com/minimax-ai/skills/blob/60aaae52bb2af8162732751a4332f62a5fef518b/skills/pptx-generator/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "presentations-powerpoint",
+      "repository": "anthropics/financial-services",
+      "name": "ppt-template-creator",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "574ed3624aebd0418c7e96cd101262f30210ab26",
+      "source_url": "https://github.com/anthropics/financial-services/blob/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/financial-analysis/skills/ppt-template-creator/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "presentations-powerpoint",
+      "repository": "anthropics/financial-services",
+      "name": "funding-digest",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "574ed3624aebd0418c7e96cd101262f30210ab26",
+      "source_url": "https://github.com/anthropics/financial-services/blob/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/partner-built/spglobal/skills/funding-digest/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 3
+    },
+    {
+      "category": "presentations-powerpoint",
+      "repository": "yuan1z0825/nature-skills",
+      "name": "nature-image2ppt",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "4a04b953c13c57adc51e202ce296597f00d29d67",
+      "source_url": "https://github.com/yuan1z0825/nature-skills/blob/4a04b953c13c57adc51e202ce296597f00d29d67/skills/nature-image2ppt/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 91
+    },
+    {
+      "category": "presentations-powerpoint",
+      "repository": "bytedance/deer-flow",
+      "name": "ppt-generation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "f82f9b2829145bf4e0d309e683c79d39c21d72f4",
+      "source_url": "https://github.com/bytedance/deer-flow/blob/f82f9b2829145bf4e0d309e683c79d39c21d72f4/skills/public/ppt-generation/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 2
+    }
+  ],
+  "legacy_reference_ids": []
+}

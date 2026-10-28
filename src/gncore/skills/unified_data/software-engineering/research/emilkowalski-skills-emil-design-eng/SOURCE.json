@@ -1,0 +1,14 @@
+{
+  "category": "software-engineering",
+  "repository": "emilkowalski/skills",
+  "name": "emil-design-eng",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+  "source_url": "https://github.com/emilkowalski/skills/blob/2d228630ba1446365f614a108cb8252f1feda202/skills/emil-design-eng/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

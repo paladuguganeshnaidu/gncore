@@ -1,0 +1,14 @@
+{
+  "category": "company-leadership",
+  "repository": "onewave-ai/claude-skills",
+  "name": "executive-dashboard-generator",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "b2267d9171af4f56848d82992381b20b89b44056",
+  "source_url": "https://github.com/onewave-ai/claude-skills/blob/b2267d9171af4f56848d82992381b20b89b44056/executive-dashboard-generator/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 4
+}

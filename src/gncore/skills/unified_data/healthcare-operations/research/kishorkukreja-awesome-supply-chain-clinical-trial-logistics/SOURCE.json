@@ -1,0 +1,14 @@
+{
+  "category": "healthcare-operations",
+  "repository": "kishorkukreja/awesome-supply-chain",
+  "name": "clinical-trial-logistics",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "397d95172e374225574f1fb580c1a77376fff836",
+  "source_url": "https://github.com/kishorkukreja/awesome-supply-chain/blob/397d95172e374225574f1fb580c1a77376fff836/skills/clinical-trial-logistics/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

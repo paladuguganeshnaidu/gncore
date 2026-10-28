@@ -1,0 +1,14 @@
+{
+  "category": "business-operations",
+  "repository": "alirezarezvani/claude-skills",
+  "name": "business-growth-skills",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "e9689176159c1c646be64477b30470b9ade39d809db1aaeada0fea27d25ba64f",
+  "revision": null,
+  "source_url": "https://github.com/alirezarezvani/claude-skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

@@ -1,0 +1,14 @@
+{
+  "category": "business-communications",
+  "repository": "mbfinotti/revops-skills",
+  "name": "revenue-kpi-framework",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "f05e25e98ae2e818b853781f63054cf1f07c5df3501a5577cc861d4341990bf8",
+  "revision": null,
+  "source_url": "https://github.com/mbfinotti/revops-skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 5
+}

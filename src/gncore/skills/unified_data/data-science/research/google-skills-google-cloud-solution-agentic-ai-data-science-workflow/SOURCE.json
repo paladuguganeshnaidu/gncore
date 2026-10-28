@@ -1,0 +1,14 @@
+{
+  "category": "data-science",
+  "repository": "google/skills",
+  "name": "google-cloud-solution-agentic-ai-data-science-workflow",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "81b0e8f8f40513c31b3388e600506e8b48a85bc2",
+  "source_url": "https://github.com/google/skills/blob/81b0e8f8f40513c31b3388e600506e8b48a85bc2/skills/cloud/google-cloud-solution-agentic-ai-data-science-workflow/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "Apache-2.0"
+  ],
+  "file_count": 5
+}

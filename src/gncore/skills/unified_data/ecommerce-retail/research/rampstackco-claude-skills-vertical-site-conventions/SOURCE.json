@@ -1,0 +1,14 @@
+{
+  "category": "ecommerce-retail",
+  "repository": "rampstackco/claude-skills",
+  "name": "vertical-site-conventions",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "9b90db257f7395fab76ff9bfcb808456709f6af3",
+  "source_url": "https://github.com/rampstackco/claude-skills/blob/9b90db257f7395fab76ff9bfcb808456709f6af3/skills/vertical-site-conventions/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 13
+}

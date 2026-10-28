@@ -1,0 +1,14 @@
+{
+  "category": "analytics",
+  "repository": "nomadamas/k-skill",
+  "name": "lck-analytics",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "8ad68aae6701f28921d7b739a540a4b8becd90cbef6089f382dea2438a806fa4",
+  "revision": null,
+  "source_url": "https://github.com/nomadamas/k-skill",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 11
+}

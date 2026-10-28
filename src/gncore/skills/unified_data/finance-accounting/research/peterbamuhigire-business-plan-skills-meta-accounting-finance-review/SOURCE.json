@@ -1,0 +1,14 @@
+{
+  "category": "finance-accounting",
+  "repository": "peterbamuhigire/business-plan-skills",
+  "name": "meta-accounting-finance-review",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "d3d5013744b8a668e21647e45161c1c7f80fdc3d",
+  "source_url": "https://github.com/peterbamuhigire/business-plan-skills/blob/d3d5013744b8a668e21647e45161c1c7f80fdc3d/skills/meta-finance/meta-accounting-finance-review/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 2
+}

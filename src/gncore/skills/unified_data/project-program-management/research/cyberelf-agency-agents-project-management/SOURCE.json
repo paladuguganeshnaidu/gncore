@@ -1,0 +1,14 @@
+{
+  "category": "project-program-management",
+  "repository": "cyberelf/agency-agents",
+  "name": "project-management",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "27fe8a51992218be627d637b9d51b49aac8644e8",
+  "source_url": "https://github.com/cyberelf/agency-agents/blob/27fe8a51992218be627d637b9d51b49aac8644e8/skills/project-management/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 7
+}

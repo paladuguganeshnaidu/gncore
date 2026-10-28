@@ -1,0 +1,118 @@
+{
+  "category": "legal-compliance",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "legal-compliance",
+      "repository": "travisjneuman/.claude",
+      "name": "legal-compliance",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "80adced2f6fc0cb54fadb0fd6f0d7429d1f84bd7",
+      "source_url": "https://github.com/travisjneuman/.claude/blob/80adced2f6fc0cb54fadb0fd6f0d7429d1f84bd7/skills/legal-compliance/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 2
+    },
+    {
+      "category": "legal-compliance",
+      "repository": "louisblythe/sales-skills",
+      "name": "legal-compliance-phrase-avoidance",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "e0f13a6eb41be22fa1f8493b148077cdd6c6654a",
+      "source_url": "https://github.com/louisblythe/sales-skills/blob/e0f13a6eb41be22fa1f8493b148077cdd6c6654a/skills/legal-compliance-phrase-avoidance/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "legal-compliance",
+      "repository": "community-access/accessibility-agents",
+      "name": "legal-compliance-mapping",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "decf6bac7f086c19afb242797b4974671ceff597",
+      "source_url": "https://github.com/community-access/accessibility-agents",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "legal-compliance",
+      "repository": "mbfinotti/sales-skills",
+      "name": "cold-email-deliverability",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "b2ed3628695e523919af440eab77648e16c5eea8",
+      "source_url": "https://github.com/mbfinotti/sales-skills/blob/b2ed3628695e523919af440eab77648e16c5eea8/skills/cold-email-deliverability/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 7
+    },
+    {
+      "category": "legal-compliance",
+      "repository": "anthropics/knowledge-work-plugins",
+      "name": "meeting-briefing",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "2574e29377c7173d0cecffef29a6ecbd7f8ccb5d",
+      "source_url": "https://github.com/anthropics/knowledge-work-plugins/blob/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/legal/skills/meeting-briefing/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "legal-compliance",
+      "repository": "mbfinotti/partnerships-skills",
+      "name": "affiliate-program-terms",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "5764ab1dae47cdf00598c0abfcdb64c03c3c4560",
+      "source_url": "https://github.com/mbfinotti/partnerships-skills/blob/5764ab1dae47cdf00598c0abfcdb64c03c3c4560/skills/affiliate-program-terms/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 9
+    },
+    {
+      "category": "legal-compliance",
+      "repository": "samber/cc-skills",
+      "name": "site-launch-checklist",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "123cb155f5ab5751fc13c8027fbfa5eb0d3773c6",
+      "source_url": "https://github.com/samber/cc-skills/blob/123cb155f5ab5751fc13c8027fbfa5eb0d3773c6/skills/site-launch-checklist/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 15
+    },
+    {
+      "category": "legal-compliance",
+      "repository": "phuryn/pm-skills",
+      "name": "privacy-policy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "07b34f64ee828df08953f505b7f747aef85ae7c6",
+      "source_url": "https://github.com/phuryn/pm-skills/blob/07b34f64ee828df08953f505b7f747aef85ae7c6/pm-toolkit/skills/privacy-policy/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

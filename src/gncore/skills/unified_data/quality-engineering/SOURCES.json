@@ -1,0 +1,115 @@
+{
+  "category": "quality-engineering",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "quality-engineering",
+      "repository": "anthropics/knowledge-work-plugins",
+      "name": "testing-strategy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "2574e29377c7173d0cecffef29a6ecbd7f8ccb5d",
+      "source_url": "https://github.com/anthropics/knowledge-work-plugins/blob/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/engineering/skills/testing-strategy/SKILL.md",
+      "review_status": "research-only: category relevance not established",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "quality-engineering",
+      "repository": "petrkindlmann/qa-skills",
+      "name": "test-strategy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "62434253c2592f27b494609c27f224939c86346d",
+      "source_url": "https://github.com/petrkindlmann/qa-skills/blob/62434253c2592f27b494609c27f224939c86346d/skills/test-strategy/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 3
+    },
+    {
+      "category": "quality-engineering",
+      "repository": "neolabhq/context-engineering-kit",
+      "name": "design-testing-strategy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+      "source_url": "https://github.com/neolabhq/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/design-testing-strategy/SKILL.md",
+      "review_status": "research-only: copyleft scope needs separate review",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "quality-engineering",
+      "repository": "wshaddix/dotnet-skills",
+      "name": "dotnet-testing-strategy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "09da68dc1f3c06f3bde05f49a6301c75478ab123",
+      "source_url": "https://github.com/wshaddix/dotnet-skills/blob/09da68dc1f3c06f3bde05f49a6301c75478ab123/skills/dotnet-testing-strategy/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "quality-engineering",
+      "repository": "vasilyu1983/ai-agents-public",
+      "name": "qa-testing-strategy",
+      "download_status": "source-unavailable",
+      "snapshot_hash": null,
+      "revision": null,
+      "source_url": "https://github.com/vasilyu1983/ai-agents-public",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "quality-engineering",
+      "repository": "mattpocock/skills",
+      "name": "tdd",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+      "source_url": "https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/tdd/SKILL.md",
+      "review_status": "research-only: category relevance not established",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 4
+    },
+    {
+      "category": "quality-engineering",
+      "repository": "coreyhaines31/marketingskills",
+      "name": "ad-creative",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "0cd9b3a0ef4c411a1d690419ce843f2a1da32cce",
+      "source_url": "https://github.com/coreyhaines31/marketingskills/blob/0cd9b3a0ef4c411a1d690419ce843f2a1da32cce/skills/ad-creative/SKILL.md",
+      "review_status": "research-only: category relevance not established",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 14
+    },
+    {
+      "category": "quality-engineering",
+      "repository": "phuryn/pm-skills",
+      "name": "strategy-red-team",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "07b34f64ee828df08953f505b7f747aef85ae7c6",
+      "source_url": "https://github.com/phuryn/pm-skills/blob/07b34f64ee828df08953f505b7f747aef85ae7c6/pm-execution/skills/strategy-red-team/SKILL.md",
+      "review_status": "research-only: category relevance not established",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

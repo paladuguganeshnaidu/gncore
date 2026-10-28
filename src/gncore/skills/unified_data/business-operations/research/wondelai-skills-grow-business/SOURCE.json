@@ -1,0 +1,14 @@
+{
+  "category": "business-operations",
+  "repository": "wondelai/skills",
+  "name": "grow-business",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "5434b4b0266972f514fe91d417307621edeaca3551309f5ba361ffd50406f263",
+  "revision": null,
+  "source_url": "https://github.com/wondelai/skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 2
+}

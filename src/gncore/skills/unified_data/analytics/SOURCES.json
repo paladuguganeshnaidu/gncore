@@ -1,0 +1,109 @@
+{
+  "category": "analytics",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "analytics",
+      "repository": "coreyhaines31/marketingskills",
+      "name": "analytics",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "b5e7bbce6c3a79b810d4e126a3335380c46bae471e1cf89a2ddf914c994f6a5b",
+      "revision": null,
+      "source_url": "https://github.com/coreyhaines31/marketingskills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 5
+    },
+    {
+      "category": "analytics",
+      "repository": "coreyhaines31/marketingskills",
+      "name": "analytics-tracking",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "757d45338d686b7717a4bd66f24f78167e0cc81ea32ff58d8487afd6a3519e0b",
+      "revision": null,
+      "source_url": "https://github.com/coreyhaines31/marketingskills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 5
+    },
+    {
+      "category": "analytics",
+      "repository": "amplitude/mcp-marketplace",
+      "name": "discover-analytics-patterns",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "45b8234ebed4ff2306f134bbf293d6d2f149d40e65840de5c8825eb7528f7382",
+      "revision": null,
+      "source_url": "https://github.com/amplitude/mcp-marketplace",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "analytics",
+      "repository": "amplitude/mcp-marketplace",
+      "name": "add-analytics-instrumentation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "95db8d379702495b6dec3e055d632c4f692954a67010b4499e372ab38cab6419",
+      "revision": null,
+      "source_url": "https://github.com/amplitude/mcp-marketplace",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "analytics",
+      "repository": "samber/developer-relations-skills",
+      "name": "devrel-analytics",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "7759f59a509f7c44549cb368e7f2bc499c426c05cf65bcdd4f9963d651f21394",
+      "revision": null,
+      "source_url": "https://github.com/samber/developer-relations-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "analytics",
+      "repository": "getcargohq/cargo-skills",
+      "name": "cargo-analytics",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "4df958398e32fd889c1f9c2fe1c5ecac9119a0444078c2d8f252099d4623c60d",
+      "revision": null,
+      "source_url": "https://github.com/getcargohq/cargo-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "analytics",
+      "repository": "nomadamas/k-skill",
+      "name": "lck-analytics",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "8ad68aae6701f28921d7b739a540a4b8becd90cbef6089f382dea2438a806fa4",
+      "revision": null,
+      "source_url": "https://github.com/nomadamas/k-skill",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 11
+    }
+  ],
+  "legacy_reference_ids": []
+}

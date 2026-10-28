@@ -1,0 +1,14 @@
+{
+  "category": "general",
+  "repository": "software-mansion/argent",
+  "name": "argent-react-native-app-workflow",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "729823bdb8e148da24f285a1619b4c1926e9826f",
+  "source_url": "https://github.com/software-mansion/argent/blob/729823bdb8e148da24f285a1619b4c1926e9826f/packages/skills/skills/argent-react-native-app-workflow/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "Apache-2.0"
+  ],
+  "file_count": 1
+}

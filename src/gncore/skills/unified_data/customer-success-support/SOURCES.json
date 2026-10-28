@@ -1,0 +1,103 @@
+{
+  "category": "customer-success-support",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "customer-success-support",
+      "repository": "airtable/skills",
+      "name": "sales-ops",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "812ee67f1fd3d76fb45ff8df40afaa0448602ba8",
+      "source_url": "https://github.com/airtable/skills/blob/812ee67f1fd3d76fb45ff8df40afaa0448602ba8/plugins/airtable/skills/sales-ops/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "customer-success-support",
+      "repository": "sylphxai/skills",
+      "name": "help-center-architecture",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "d863a441be8acc88998111b12f34ecf9461ff911",
+      "source_url": "https://github.com/sylphxai/skills",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "customer-success-support",
+      "repository": "sylphxai/skills",
+      "name": "customer-success-health-review",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "d863a441be8acc88998111b12f34ecf9461ff911",
+      "source_url": "https://github.com/sylphxai/skills",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "customer-success-support",
+      "repository": "sylphxai/skills",
+      "name": "customer-success-playbook-review",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "d863a441be8acc88998111b12f34ecf9461ff911",
+      "source_url": "https://github.com/sylphxai/skills",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "customer-success-support",
+      "repository": "sylphxai/skills",
+      "name": "customer-onboarding-migration-runbook-review",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "d863a441be8acc88998111b12f34ecf9461ff911",
+      "source_url": "https://github.com/sylphxai/skills",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "customer-success-support",
+      "repository": "sylphxai/skills",
+      "name": "customer-escalation-war-room-review",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "d863a441be8acc88998111b12f34ecf9461ff911",
+      "source_url": "https://github.com/sylphxai/skills",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "customer-success-support",
+      "repository": "jshsakura/awesome-opencode-skills",
+      "name": "customer-success-manager",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "e2b8400ee2b23d199b902c7c3275faf390311b84",
+      "source_url": "https://github.com/jshsakura/awesome-opencode-skills/blob/e2b8400ee2b23d199b902c7c3275faf390311b84/skills/customer-success-manager/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "customer-success-support",
+      "repository": "wankimmy/bossku-ai",
+      "name": "bosskuai-customer-success-support",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "fd4d52486e6800cdb7cfc62ce75f08e47c4519b3",
+      "source_url": "https://github.com/wankimmy/bossku-ai/blob/fd4d52486e6800cdb7cfc62ce75f08e47c4519b3/skills/bosskuai-customer-success-support/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

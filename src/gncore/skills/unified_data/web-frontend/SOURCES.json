@@ -1,0 +1,157 @@
+{
+  "category": "web-frontend",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "web-frontend",
+      "repository": "anthropics/skills",
+      "name": "frontend-design",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "7e9c2af00fd5b3144f49ce6fb1b16037b392ab9c2f049423b0b6114d99381ba2",
+      "revision": null,
+      "source_url": "https://github.com/anthropics/skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 2
+    },
+    {
+      "category": "web-frontend",
+      "repository": "leonxlnx/taste-skill",
+      "name": "design-taste-frontend",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "12af471f627f866411b4bd785b19646d3672784c",
+      "source_url": "https://github.com/leonxlnx/taste-skill/blob/12af471f627f866411b4bd785b19646d3672784c/skills/taste-skill/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 39
+    },
+    {
+      "category": "web-frontend",
+      "repository": "leonxlnx/taste-skill",
+      "name": "design-taste-frontend-v1",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "12af471f627f866411b4bd785b19646d3672784c",
+      "source_url": "https://github.com/leonxlnx/taste-skill/blob/12af471f627f866411b4bd785b19646d3672784c/skills/taste-skill/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 39
+    },
+    {
+      "category": "web-frontend",
+      "repository": "pbakaus/impeccable",
+      "name": "frontend-design",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "5adaee704634e9031ec8943721c4ffa1a3c22221",
+      "source_url": "https://github.com/pbakaus/impeccable",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "web-frontend",
+      "repository": "cline/skills",
+      "name": "frontend-design",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "26378461e978f2b4e2e6d67b57121b86b2a79ba5",
+      "source_url": "https://github.com/cline/skills/blob/26378461e978f2b4e2e6d67b57121b86b2a79ba5/skills/frontend-design/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "web-frontend",
+      "repository": "smithery.ai",
+      "name": "frontend-design",
+      "download_status": "invalid-source-identifier",
+      "snapshot_hash": null,
+      "revision": null,
+      "source_url": "https://github.com/smithery.ai",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "web-frontend",
+      "repository": "julianoczkowski/designer-skills",
+      "name": "frontend-design",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "c259656c76d9758d7ead46b0d2f125cbe84f8665",
+      "source_url": "https://github.com/julianoczkowski/designer-skills/blob/c259656c76d9758d7ead46b0d2f125cbe84f8665/frontend-design/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "web-frontend",
+      "repository": "leonxlnx/taste-skill",
+      "name": "design-taste-frontend-v2-experimental",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "12af471f627f866411b4bd785b19646d3672784c",
+      "source_url": "https://github.com/leonxlnx/taste-skill/blob/12af471f627f866411b4bd785b19646d3672784c/skills/taste-skill/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 39
+    }
+  ],
+  "legacy_reference_ids": [
+    "web-front-design",
+    "web-front-ui-ux",
+    "web-front-react",
+    "web-front-guidelines",
+    "web-front-shadcn",
+    "web-front-minimalism",
+    "web-front-swiss",
+    "web-front-editorial",
+    "web-front-luxury",
+    "web-front-agentic",
+    "web-front-maximalism",
+    "web-front-taste",
+    "web-front-neobrutalism",
+    "web-front-industrial",
+    "web-front-futuristic",
+    "web-front-retro",
+    "web-front-collage",
+    "web-front-doodle",
+    "web-front-bento",
+    "web-front-glass",
+    "web-front-neumorphism",
+    "web-front-claymorphism",
+    "web-front-aurora",
+    "web-front-cyberpunk",
+    "web-front-threejs",
+    "web-front-r3f",
+    "web-front-scrollytelling",
+    "web-front-kinetic-type",
+    "web-front-organic",
+    "web-front-design-system",
+    "web-front-styling",
+    "web-front-composition",
+    "web-front-gsap",
+    "web-front-motion-performance",
+    "web-front-motion-review",
+    "web-front-testing",
+    "web-front-browser",
+    "web-front-find-skills",
+    "web-front-accessibility",
+    "web-front"
+  ]
+}

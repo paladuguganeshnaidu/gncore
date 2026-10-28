@@ -1,0 +1,14 @@
+{
+  "category": "business-communications",
+  "repository": "forcedotcom/sf-skills",
+  "name": "omnistudio-datapacks-deploy",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "c35e2a44fa199994f7533ffae5301384b7efb5eebde5aa1520d61cd9cf6bce1b",
+  "revision": null,
+  "source_url": "https://github.com/forcedotcom/sf-skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "Apache-2.0"
+  ],
+  "file_count": 8
+}

@@ -1,0 +1,14 @@
+{
+  "category": "business-communications",
+  "repository": "anthropics/knowledge-work-plugins",
+  "name": "process-doc",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "cad48a8806de8f572e61b1eb65386c5950026c3320e9318cd83d6f1a017a5866",
+  "revision": null,
+  "source_url": "https://github.com/anthropics/knowledge-work-plugins",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "Apache-2.0"
+  ],
+  "file_count": 1
+}

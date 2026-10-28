@@ -1,0 +1,14 @@
+{
+  "category": "release-engineering",
+  "repository": "callstackincubator/agent-skills",
+  "name": "writing-user-docs",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "59e9d17446a248b21d86f078fcd0bd2d36db1ca4",
+  "source_url": "https://github.com/callstackincubator/agent-skills/blob/59e9d17446a248b21d86f078fcd0bd2d36db1ca4/skills/writing-user-docs/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

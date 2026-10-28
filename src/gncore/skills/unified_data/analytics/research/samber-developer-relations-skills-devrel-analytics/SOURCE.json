@@ -1,0 +1,14 @@
+{
+  "category": "analytics",
+  "repository": "samber/developer-relations-skills",
+  "name": "devrel-analytics",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "7759f59a509f7c44549cb368e7f2bc499c426c05cf65bcdd4f9963d651f21394",
+  "revision": null,
+  "source_url": "https://github.com/samber/developer-relations-skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 6
+}

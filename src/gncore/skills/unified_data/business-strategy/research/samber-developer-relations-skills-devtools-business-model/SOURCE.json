@@ -1,0 +1,14 @@
+{
+  "category": "business-strategy",
+  "repository": "samber/developer-relations-skills",
+  "name": "devtools-business-model",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "2a7f296d0a18c4e221ae408817f6fce492aaa3740993ee838b7c14ebb3c9c4ef",
+  "revision": null,
+  "source_url": "https://github.com/samber/developer-relations-skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 5
+}

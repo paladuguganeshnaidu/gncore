@@ -1,0 +1,14 @@
+{
+  "category": "design-ux",
+  "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+  "name": "ui-ux-pro-max",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "28b3b8dee8c976df4fa3e94aed4e092ad43fcb03",
+  "source_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/28b3b8dee8c976df4fa3e94aed4e092ad43fcb03/.claude/skills/ui-ux-pro-max/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 73
+}

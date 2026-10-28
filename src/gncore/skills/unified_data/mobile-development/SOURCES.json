@@ -1,0 +1,124 @@
+{
+  "category": "mobile-development",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "mobile-development",
+      "repository": "sickn33/agentic-awesome-skills",
+      "name": "frontend-mobile-development-component-scaffold",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "e9809578fd426a284af017c5db99f8eb6628e6ca",
+      "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/e9809578fd426a284af017c5db99f8eb6628e6ca/skills/frontend-mobile-development-component-scaffold/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "mobile-development",
+      "repository": "rohitg00/awesome-claude-code-toolkit",
+      "name": "mobile-development",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "ebdf1d596d2cde5c5cceb32177e8d1cf4829e7d9",
+      "source_url": "https://github.com/rohitg00/awesome-claude-code-toolkit/blob/ebdf1d596d2cde5c5cceb32177e8d1cf4829e7d9/skills/mobile-development/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "mobile-development",
+      "repository": "jame581/godotprompter",
+      "name": "mobile-development",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6",
+      "source_url": "https://github.com/jame581/godotprompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/mobile-development/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 4
+    },
+    {
+      "category": "mobile-development",
+      "repository": "mattpocock/skills",
+      "name": "tdd",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+      "source_url": "https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/tdd/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 4
+    },
+    {
+      "category": "mobile-development",
+      "repository": "wshobson/agents",
+      "name": "react-native-design",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "0874a27b17a22e2b7c2e2bcd725768e0803cad06",
+      "source_url": "https://github.com/wshobson/agents/blob/0874a27b17a22e2b7c2e2bcd725768e0803cad06/plugins/ui-design/skills/react-native-design/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 5
+    },
+    {
+      "category": "mobile-development",
+      "repository": "solana-mobile/solana-mobile-skills",
+      "name": "solana-mobile",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "8664b5be49d16b6962129b53def20f6dfa99443d",
+      "source_url": "https://github.com/solana-mobile/solana-mobile-skills/blob/8664b5be49d16b6962129b53def20f6dfa99443d/skills/solana-mobile/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 4
+    },
+    {
+      "category": "mobile-development",
+      "repository": "tencentcloudbase/cloudbase-skills",
+      "name": "cloudbase",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "ddcee390e68b75bf5109ef208ae50726b7425d26",
+      "source_url": "https://github.com/tencentcloudbase/cloudbase-skills/blob/ddcee390e68b75bf5109ef208ae50726b7425d26/skills/cloudbase/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 177
+    },
+    {
+      "category": "mobile-development",
+      "repository": "heroui-inc/heroui",
+      "name": "heroui-native",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "70a11531fedfb39b6a0748ca49766266108362ae",
+      "source_url": "https://github.com/heroui-inc/heroui/blob/70a11531fedfb39b6a0748ca49766266108362ae/skills/heroui-native/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 6
+    }
+  ],
+  "legacy_reference_ids": []
+}

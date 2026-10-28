@@ -1,0 +1,119 @@
+{
+  "category": "company-leadership",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "company-leadership",
+      "repository": "anthropics/claude-agent-sdk-demos",
+      "name": "executive-briefing",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "826b268506a5f3707623c9e6140b200befcbebae",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-demos/blob/826b268506a5f3707623c9e6140b200befcbebae/research-agent/.claude/skills/executive-briefing/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "company-leadership",
+      "repository": "mbfinotti/advertising-skills",
+      "name": "thought-leadership-ads",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "ab1eb51a249978c9b7bd24b3d589c713a6198fd3",
+      "source_url": "https://github.com/mbfinotti/advertising-skills/blob/ab1eb51a249978c9b7bd24b3d589c713a6198fd3/skills/thought-leadership-ads/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 5
+    },
+    {
+      "category": "company-leadership",
+      "repository": "paramchoudhary/resumeskills",
+      "name": "executive-resume-writer",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source_url": "https://github.com/paramchoudhary/resumeskills/blob/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/executive-resume-writer/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "company-leadership",
+      "repository": "thananon/9arm-skills",
+      "name": "management-talk",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "a1fc303b274ed06c32d405ba5a6db00ded6e5663",
+      "source_url": "https://github.com/thananon/9arm-skills/blob/a1fc303b274ed06c32d405ba5a6db00ded6e5663/skills/productivity/management-talk/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "company-leadership",
+      "repository": "arnabbagxd/brand-building-skills",
+      "name": "personal-brand",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "4a0a8b5b7a0f64bf0fc551978a18a591670a5223",
+      "source_url": "https://github.com/arnabbagxd/brand-building-skills/blob/4a0a8b5b7a0f64bf0fc551978a18a591670a5223/skills/personal-brand/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "company-leadership",
+      "repository": "alirezarezvani/claude-skills",
+      "name": "ceo-advisor",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "5434623a788ec3105d238328cfe554e1e2242ff7",
+      "source_url": "https://github.com/alirezarezvani/claude-skills/blob/5434623a788ec3105d238328cfe554e1e2242ff7/c-level-advisor/skills/ceo-advisor/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "company-leadership",
+      "repository": "onewave-ai/claude-skills",
+      "name": "executive-dashboard-generator",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "b2267d9171af4f56848d82992381b20b89b44056",
+      "source_url": "https://github.com/onewave-ai/claude-skills/blob/b2267d9171af4f56848d82992381b20b89b44056/executive-dashboard-generator/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 4
+    },
+    {
+      "category": "company-leadership",
+      "repository": "art2url/career-agent-skills",
+      "name": "executive-leadership-resume",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "d7cce4b7eada07d08e094165aafbbb03a9928e58",
+      "source_url": "https://github.com/art2url/career-agent-skills/blob/d7cce4b7eada07d08e094165aafbbb03a9928e58/skills/executive-leadership-resume/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

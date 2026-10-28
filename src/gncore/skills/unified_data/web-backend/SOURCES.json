@@ -1,0 +1,185 @@
+{
+  "category": "backend-engineering",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "CC-BY-SA-4.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "backend-engineering",
+      "repository": "wshobson/agents",
+      "name": "nodejs-backend-patterns",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "0af1f5ca4f2fa207dbb32bd6eaf50560122f9a15619b51e4ef4469fd4d0a15fc",
+      "revision": null,
+      "source_url": "https://github.com/wshobson/agents",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 3
+    },
+    {
+      "category": "backend-engineering",
+      "repository": "wshobson/agents",
+      "name": "architecture-patterns",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "e6970147c84bd64fcdda4492201523de41eaa924244e9f56dc1cbc83d7186007",
+      "revision": null,
+      "source_url": "https://github.com/wshobson/agents",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 3
+    },
+    {
+      "category": "backend-engineering",
+      "repository": "wshobson/agents",
+      "name": "dotnet-backend-patterns",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "9c3e3a366fffa3829943011355cc72afa362648b462a07e6294c36b8ede7c1bc",
+      "revision": null,
+      "source_url": "https://github.com/wshobson/agents",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 5
+    },
+    {
+      "category": "backend-engineering",
+      "repository": "affaan-m/ecc",
+      "name": "backend-patterns",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "c45b7c112f1945703a961a521d8a796ec1fb9739dda2804b62c26df87de177af",
+      "revision": null,
+      "source_url": "https://github.com/affaan-m/ecc",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "backend-engineering",
+      "repository": "affaan-m/ecc",
+      "name": "springboot-patterns",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "9e1d7e7cbee06b668d908caf6bade0cefe6ef207e14de43a50bcab1c094886c9",
+      "revision": null,
+      "source_url": "https://github.com/affaan-m/ecc",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "backend-engineering",
+      "repository": "affaan-m/ecc",
+      "name": "nestjs-patterns",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "bf79c2542d92aa2ca3f1c33766084ba7c9df6a85385160e2bf934e2da7ab378c",
+      "revision": null,
+      "source_url": "https://github.com/affaan-m/ecc",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "backend-engineering",
+      "repository": "vercel/vercel-plugin",
+      "name": "create-a-backend",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "5f445030e9142ad062c94a674acb031881c946e7d9a0246f6579c33f46f5d47f",
+      "revision": null,
+      "source_url": "https://github.com/vercel/vercel-plugin",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 3
+    },
+    {
+      "category": "backend-engineering",
+      "repository": "rknall/claude-skills",
+      "name": "python-backend-architecture-review",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "9a585686ab2a5d0080f07fe010ff975249dfc4e3cdc9a1b9ff860b22b78fdc1d",
+      "revision": null,
+      "source_url": "https://github.com/rknall/claude-skills",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 5
+    }
+  ],
+  "legacy_reference_ids": [
+    "web-backend-patterns",
+    "web-backend-api-design",
+    "web-backend-hexagonal-architecture",
+    "web-backend-error-handling",
+    "web-backend-contract-first",
+    "web-backend-api-connector-builder",
+    "web-backend-spec-to-code-compliance",
+    "web-backend-supabase-postgres-best-practices",
+    "web-backend-postgres-patterns",
+    "web-backend-database-migrations",
+    "web-backend-benchmark",
+    "web-backend-benchmark-optimization-loop",
+    "web-backend-latency-critical-systems",
+    "web-backend-redis-patterns",
+    "web-backend-deployment-patterns",
+    "web-backend-docker",
+    "web-backend-github-ops",
+    "web-backend-sentry-instrument",
+    "web-backend-sentry-debug-issue",
+    "web-backend-production-audit",
+    "web-backend-agentic-engineering",
+    "web-backend-mcp-server-patterns",
+    "web-backend-agent-eval",
+    "web-backend-cost-aware-llm-pipeline",
+    "web-backend-mcp-builder",
+    "web-backend-agents-sdk",
+    "web-backend-building-ai-agent-on-cloudflare",
+    "web-backend-fastapi",
+    "web-backend-fastapi-patterns",
+    "web-backend-django",
+    "web-backend-django-security",
+    "web-backend-django-tdd",
+    "web-backend-django-verification",
+    "web-backend-nestjs-patterns",
+    "web-backend-springboot-patterns",
+    "web-backend-springboot-security",
+    "web-backend-springboot-tdd",
+    "web-backend-springboot-verification",
+    "web-backend-golang-patterns",
+    "web-backend-golang-testing",
+    "web-backend-laravel-patterns",
+    "web-backend-laravel-security",
+    "web-backend-laravel-tdd",
+    "web-backend-laravel-verification",
+    "web-backend-supabase",
+    "web-backend-redis-core",
+    "web-backend-redis-connections",
+    "web-backend-redis-security",
+    "web-backend-redis-observability",
+    "web-backend-redis-search",
+    "web-backend-redis-semantic-cache",
+    "web-backend-vercel-optimize",
+    "web-backend-cloudflare",
+    "web-backend-workers-best-practices",
+    "web-backend-wrangler",
+    "web-backend-durable-objects",
+    "web-backend-workers-profiling",
+    "web-backend",
+    "web-backend-codequality",
+    "web-backend-security",
+    "web-backend-observability"
+  ]
+}

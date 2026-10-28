@@ -1,0 +1,121 @@
+{
+  "category": "business-operations",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "business-operations",
+      "repository": "samber/developer-relations-skills",
+      "name": "developer-ecosystem-strategy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "8c58656af0373a8dcfbd8ad2312e5269e294eb72940c82795a143a075271cc06",
+      "revision": null,
+      "source_url": "https://github.com/samber/developer-relations-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 5
+    },
+    {
+      "category": "business-operations",
+      "repository": "samber/dev-event-organizer-skills",
+      "name": "business-event-formats",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "ffe6b1fbbe067783402fd18d9d89f1760468b72b28b1d94506df9d2dc0cbc162",
+      "revision": null,
+      "source_url": "https://github.com/samber/dev-event-organizer-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 5
+    },
+    {
+      "category": "business-operations",
+      "repository": "recoupable/skills",
+      "name": "recoup-platform-build-os",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "138844ed2ac007a0047f0a09209657ef4ae8f5c9ec6c67dffc79cb4b2fdb30a2",
+      "revision": null,
+      "source_url": "https://github.com/recoupable/skills",
+      "review_status": "research-only: copyleft scope needs separate review",
+      "licenses": [],
+      "file_count": 37
+    },
+    {
+      "category": "business-operations",
+      "repository": "jeffallan/claude-skills",
+      "name": "legacy-modernizer",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "c496ceffaf6104e1ca04780a09f17ff6cbfdc5c41fba884c792321f3fa43f225",
+      "revision": null,
+      "source_url": "https://github.com/jeffallan/claude-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "business-operations",
+      "repository": "wondelai/skills",
+      "name": "create-business",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "5250a978d5507f7454a1005074e037e8e0fa93ec5d3a59f788a23bc937be6ee2",
+      "revision": null,
+      "source_url": "https://github.com/wondelai/skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 2
+    },
+    {
+      "category": "business-operations",
+      "repository": "wondelai/skills",
+      "name": "grow-business",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "5434b4b0266972f514fe91d417307621edeaca3551309f5ba361ffd50406f263",
+      "revision": null,
+      "source_url": "https://github.com/wondelai/skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 2
+    },
+    {
+      "category": "business-operations",
+      "repository": "alirezarezvani/claude-skills",
+      "name": "business-growth-skills",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "e9689176159c1c646be64477b30470b9ade39d809db1aaeada0fea27d25ba64f",
+      "revision": null,
+      "source_url": "https://github.com/alirezarezvani/claude-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "business-operations",
+      "repository": "alirezarezvani/claude-skills",
+      "name": "business-operations-skills",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "9ff13ab8a94a6dd3e6728dcc2a2a79fa11369be1a137efb87a90c8767513b739",
+      "revision": null,
+      "source_url": "https://github.com/alirezarezvani/claude-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

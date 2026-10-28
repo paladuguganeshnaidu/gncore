@@ -1,0 +1,14 @@
+{
+  "category": "business-operations",
+  "repository": "samber/developer-relations-skills",
+  "name": "developer-ecosystem-strategy",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "8c58656af0373a8dcfbd8ad2312e5269e294eb72940c82795a143a075271cc06",
+  "revision": null,
+  "source_url": "https://github.com/samber/developer-relations-skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 5
+}

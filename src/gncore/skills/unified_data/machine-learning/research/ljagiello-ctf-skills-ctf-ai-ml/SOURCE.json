@@ -1,0 +1,14 @@
+{
+  "category": "machine-learning",
+  "repository": "ljagiello/ctf-skills",
+  "name": "ctf-ai-ml",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "0df66f2ab2c4a5fd6a8fe746daed010b3685eea3f12b0aaac45f94f557050447",
+  "revision": null,
+  "source_url": "https://github.com/ljagiello/ctf-skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 4
+}

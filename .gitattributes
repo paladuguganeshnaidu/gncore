@@ -1,0 +1,8 @@
+# Preserve supplied skill-resource bytes and the repository's existing line endings.
+* -text
+* whitespace=blank-at-eol,blank-at-eof,cr-at-eol
+# Preserve third-party Markdown hard breaks and source formatting verbatim.
+src/gncore/skills/frontend_data/** -whitespace
+src/gncore/skills/backend_data/** -whitespace
+src/gncore/skills/unified_data/*/references/** -whitespace
+src/gncore/skills/unified_data/*/research/** -whitespace

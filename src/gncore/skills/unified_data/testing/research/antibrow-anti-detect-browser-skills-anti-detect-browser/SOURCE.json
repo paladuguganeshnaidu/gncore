@@ -1,0 +1,14 @@
+{
+  "category": "testing",
+  "repository": "antibrow/anti-detect-browser-skills",
+  "name": "anti-detect-browser",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "b800e3a54d8d4f93ae5ee23c59d13b43df5d4462",
+  "source_url": "https://github.com/antibrow/anti-detect-browser-skills/blob/b800e3a54d8d4f93ae5ee23c59d13b43df5d4462/anti-detect-browser/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 3
+}

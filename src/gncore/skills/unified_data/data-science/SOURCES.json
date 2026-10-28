@@ -1,0 +1,113 @@
+{
+  "category": "data-science",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "CC-BY-4.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "data-science",
+      "repository": "google/skills",
+      "name": "google-cloud-solution-agentic-ai-data-science-workflow",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "81b0e8f8f40513c31b3388e600506e8b48a85bc2",
+      "source_url": "https://github.com/google/skills/blob/81b0e8f8f40513c31b3388e600506e8b48a85bc2/skills/cloud/google-cloud-solution-agentic-ai-data-science-workflow/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 5
+    },
+    {
+      "category": "data-science",
+      "repository": "google-deepmind/science-skills",
+      "name": "pdb-database",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "4de6786171f1479026da5d3a00f110703c8ba35e",
+      "source_url": "https://github.com/google-deepmind/science-skills/blob/4de6786171f1479026da5d3a00f110703c8ba35e/skills/pdb_database/SKILL.md",
+      "review_status": "research-only: category relevance not established",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "data-science",
+      "repository": "personamanagmentlayer/pcl",
+      "name": "data-science-expert",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "79ccaa9820486121fa33aaa696ec16fa1607bf02",
+      "source_url": "https://github.com/personamanagmentlayer/pcl/blob/79ccaa9820486121fa33aaa696ec16fa1607bf02/stdlib/ai/data-science-expert/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "data-science",
+      "repository": "vasilyu1983/ai-agents-public",
+      "name": "ai-ml-data-science",
+      "download_status": "source-unavailable",
+      "snapshot_hash": null,
+      "revision": null,
+      "source_url": "https://github.com/vasilyu1983/ai-agents-public",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "data-science",
+      "repository": "probabl-ai/skore-skills",
+      "name": "data-science-python-stack",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "d1d868744b841e00c37d611b160ced04d5626fb2",
+      "source_url": "https://github.com/probabl-ai/skore-skills",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "data-science",
+      "repository": "travisjneuman/.claude",
+      "name": "data-science",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "80adced2f6fc0cb54fadb0fd6f0d7429d1f84bd7",
+      "source_url": "https://github.com/travisjneuman/.claude/blob/80adced2f6fc0cb54fadb0fd6f0d7429d1f84bd7/skills/data-science/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 4
+    },
+    {
+      "category": "data-science",
+      "repository": "microsoftdocs/agent-skills",
+      "name": "azure-data-science-vm",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "95544200a6621ee7481b253beb115ac0be701689",
+      "source_url": "https://github.com/microsoftdocs/agent-skills/blob/95544200a6621ee7481b253beb115ac0be701689/skills/azure-data-science-vm/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "CC-BY-4.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "data-science",
+      "repository": "dhruvjainin/absolute",
+      "name": "data-science",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "11cd3841183482e1753dec81763a8be6fdd97053",
+      "source_url": "https://github.com/dhruvjainin/absolute",
+      "review_status": "not-redistributed: download unavailable"
+    }
+  ],
+  "legacy_reference_ids": []
+}

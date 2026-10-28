@@ -16,6 +16,7 @@ class SkillMetadata:
     permissions: tuple[str, ...] = field(default_factory=tuple)
     category: str = "general"
     tags: tuple[str, ...] = field(default_factory=tuple)
+    license: str = "MIT"
 
 
 @dataclass(frozen=True, slots=True)
@@ -58,3 +59,4 @@ class SkillDomain:
     name: str
     description: str
     skill_ids: tuple[str, ...]
+    workflow_ids: tuple[str, ...] = field(default_factory=tuple)

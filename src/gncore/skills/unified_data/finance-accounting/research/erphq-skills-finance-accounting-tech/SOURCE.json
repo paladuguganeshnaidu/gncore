@@ -1,0 +1,14 @@
+{
+  "category": "finance-accounting",
+  "repository": "erphq/skills",
+  "name": "finance-accounting-tech",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "eaa34a70a3bcd8a82aad118d10fbb084cdc1363a",
+  "source_url": "https://github.com/erphq/skills/blob/eaa34a70a3bcd8a82aad118d10fbb084cdc1363a/investment-research/sectors/finance-accounting-tech/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 2
+}

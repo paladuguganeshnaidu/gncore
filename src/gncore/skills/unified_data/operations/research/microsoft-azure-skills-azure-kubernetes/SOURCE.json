@@ -1,0 +1,14 @@
+{
+  "category": "operations",
+  "repository": "microsoft/azure-skills",
+  "name": "azure-kubernetes",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "6e889d5603fed6b741308a184d0b72b8fbe3bdb7",
+  "source_url": "https://github.com/microsoft/azure-skills/blob/6e889d5603fed6b741308a184d0b72b8fbe3bdb7/skills/azure-kubernetes/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 55
+}

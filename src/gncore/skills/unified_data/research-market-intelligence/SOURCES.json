@@ -1,0 +1,109 @@
+{
+  "category": "research-market-intelligence",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "research-market-intelligence",
+      "repository": "mattpocock/skills",
+      "name": "research",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+      "source_url": "https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/research/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 2
+    },
+    {
+      "category": "research-market-intelligence",
+      "repository": "inference-sh/skills",
+      "name": "competitor-teardown",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "0cbf91c26ada28702c79962406286f0c14292150",
+      "source_url": "https://github.com/inference-sh/skills/blob/0cbf91c26ada28702c79962406286f0c14292150/guides/product/competitor-teardown/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "research-market-intelligence",
+      "repository": "101-skills/superpowers",
+      "name": "competitor-teardown",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/101-skills/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/guides/product/competitor-teardown/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "research-market-intelligence",
+      "repository": "magentosh/superpowers",
+      "name": "competitor-teardown",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/magentosh/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/guides/product/competitor-teardown/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "research-market-intelligence",
+      "repository": "qu-skills/superpowers",
+      "name": "competitor-teardown",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/qu-skills/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/guides/product/competitor-teardown/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "research-market-intelligence",
+      "repository": "skills-shell/superpowers",
+      "name": "competitor-teardown",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/skills-shell/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/guides/product/competitor-teardown/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "research-market-intelligence",
+      "repository": "its-a-skill-issue/superpowers",
+      "name": "competitor-teardown",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/its-a-skill-issue/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/guides/product/competitor-teardown/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "research-market-intelligence",
+      "repository": "skills-101/superpowers",
+      "name": "competitor-teardown",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/skills-101/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/guides/product/competitor-teardown/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

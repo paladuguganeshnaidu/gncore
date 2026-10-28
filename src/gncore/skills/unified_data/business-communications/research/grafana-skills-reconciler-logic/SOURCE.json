@@ -1,0 +1,14 @@
+{
+  "category": "business-communications",
+  "repository": "grafana/skills",
+  "name": "reconciler-logic",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "5db23830eb9d0d11893ef139bb8f2b930a5dbf5e1092a8cebf2a6dbf2c076375",
+  "revision": null,
+  "source_url": "https://github.com/grafana/skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "Apache-2.0"
+  ],
+  "file_count": 6
+}

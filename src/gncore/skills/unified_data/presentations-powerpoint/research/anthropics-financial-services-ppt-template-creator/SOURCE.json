@@ -1,0 +1,14 @@
+{
+  "category": "presentations-powerpoint",
+  "repository": "anthropics/financial-services",
+  "name": "ppt-template-creator",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "574ed3624aebd0418c7e96cd101262f30210ab26",
+  "source_url": "https://github.com/anthropics/financial-services/blob/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/financial-analysis/skills/ppt-template-creator/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "Apache-2.0"
+  ],
+  "file_count": 1
+}

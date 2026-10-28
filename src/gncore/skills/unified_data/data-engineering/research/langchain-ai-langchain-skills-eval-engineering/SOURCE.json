@@ -1,0 +1,14 @@
+{
+  "category": "data-engineering",
+  "repository": "langchain-ai/langchain-skills",
+  "name": "eval-engineering",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "9e621bf22fd53a60c908ee504778ba192ce90cca8cc5d4fa6d08861c63b399c0",
+  "revision": null,
+  "source_url": "https://github.com/langchain-ai/langchain-skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 21
+}

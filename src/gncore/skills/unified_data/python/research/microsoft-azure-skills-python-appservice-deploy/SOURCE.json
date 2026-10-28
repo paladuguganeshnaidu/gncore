@@ -1,0 +1,14 @@
+{
+  "category": "python",
+  "repository": "microsoft/azure-skills",
+  "name": "python-appservice-deploy",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "6e889d5603fed6b741308a184d0b72b8fbe3bdb7",
+  "source_url": "https://github.com/microsoft/azure-skills/blob/6e889d5603fed6b741308a184d0b72b8fbe3bdb7/skills/python-appservice-deploy/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 13
+}

@@ -1,0 +1,122 @@
+{
+  "category": "general",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "general",
+      "repository": "software-mansion/argent",
+      "name": "argent-react-native-app-workflow",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "729823bdb8e148da24f285a1619b4c1926e9826f",
+      "source_url": "https://github.com/software-mansion/argent/blob/729823bdb8e148da24f285a1619b4c1926e9826f/packages/skills/skills/argent-react-native-app-workflow/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "general",
+      "repository": "somnio-software/somnio-ai-tools",
+      "name": "workflow-builder",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "8db3d0d57682087aebebd4526a53c72eb30246b9",
+      "source_url": "https://github.com/somnio-software/somnio-ai-tools/blob/8db3d0d57682087aebebd4526a53c72eb30246b9/skills/workflow-builder/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 3
+    },
+    {
+      "category": "general",
+      "repository": "everyinc/compound-engineering-plugin",
+      "name": "ce-plan",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "00d0a5bbf1300b2138b65ce724b325dd4dff77ba",
+      "source_url": "https://github.com/everyinc/compound-engineering-plugin/blob/00d0a5bbf1300b2138b65ce724b325dd4dff77ba/skills/ce-plan/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 36
+    },
+    {
+      "category": "general",
+      "repository": "adamlipecz/esp32-firmware-engineer-skill",
+      "name": "esp32-firmware-engineer",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "2d5737faed742c09dfe89197871b635e7608376b",
+      "source_url": "https://github.com/adamlipecz/esp32-firmware-engineer-skill/blob/2d5737faed742c09dfe89197871b635e7608376b/esp32-firmware-engineer/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 39
+    },
+    {
+      "category": "general",
+      "repository": "siviter-xyz/dot-agent",
+      "name": "software-engineer",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "33762551d4dfa2e757fa1b43417c7dab528a215f",
+      "source_url": "https://github.com/siviter-xyz/dot-agent/blob/33762551d4dfa2e757fa1b43417c7dab528a215f/skills/software-engineer/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 3
+    },
+    {
+      "category": "general",
+      "repository": "zlanqing/codex-claude-academic-skills",
+      "name": "office-academic-skill",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "7ed6377f0efb6a38951b48ef03b19d996e454b1f",
+      "source_url": "https://github.com/zlanqing/codex-claude-academic-skills/blob/7ed6377f0efb6a38951b48ef03b19d996e454b1f/office-academic-skill/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 123
+    },
+    {
+      "category": "general",
+      "repository": "smallnest/goal-workflow",
+      "name": "smell",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "b06ab3c1c147dcf7ef8dd62a8927cd506d098135",
+      "source_url": "https://github.com/smallnest/goal-workflow/blob/b06ab3c1c147dcf7ef8dd62a8927cd506d098135/skills/smell/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 3
+    },
+    {
+      "category": "general",
+      "repository": "joellewis/finance_skills",
+      "name": "financial-planning-workflow",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "5c498eacf7057e31238c4c5a8012a1afe9ec7c8a",
+      "source_url": "https://github.com/joellewis/finance_skills/blob/5c498eacf7057e31238c4c5a8012a1afe9ec7c8a/plugins/advisory-practice/skills/financial-planning-workflow/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

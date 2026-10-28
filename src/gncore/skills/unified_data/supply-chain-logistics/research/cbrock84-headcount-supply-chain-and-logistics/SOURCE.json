@@ -1,0 +1,14 @@
+{
+  "category": "supply-chain-logistics",
+  "repository": "cbrock84/headcount",
+  "name": "supply-chain-and-logistics",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "7d3ddf170a85a67565cbbdcda4e9539d32e5a2c4",
+  "source_url": "https://github.com/cbrock84/headcount/blob/7d3ddf170a85a67565cbbdcda4e9539d32e5a2c4/plugins/operations/skills/supply-chain-and-logistics/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 2
+}

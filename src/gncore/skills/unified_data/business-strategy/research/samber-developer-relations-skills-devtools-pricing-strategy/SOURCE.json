@@ -1,0 +1,14 @@
+{
+  "category": "business-strategy",
+  "repository": "samber/developer-relations-skills",
+  "name": "devtools-pricing-strategy",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "d0cde0ebb3a109166747dbc03425857bdab5f8374452b15c6e3376590791c56e",
+  "revision": null,
+  "source_url": "https://github.com/samber/developer-relations-skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 8
+}

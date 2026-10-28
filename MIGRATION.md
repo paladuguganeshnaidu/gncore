@@ -1,17 +1,31 @@
-# Migration to GNCore 5.0
+# Migration to GNCore 6
 
-GNCore 5.0 is a breaking simplification to a skill catalog and portable export tool.
+GNCore 6 replaces 553 separately listed workflow skills with **60 adaptive category entrypoints**. All 553 workflow procedures remain in their category modules. The 30 professional domain packs still contain ten workflows each.
 
-Removed APIs and commands include application adapters, detection, `activate`, `deactivate`, `install`, `uninstall`, `update`, `doctor`, `validate`, `backup`, and `restore`. The remaining CLI commands are `list`, `search`, `show`, `export`, and `version`.
+## Primary names
 
-Update code to use the skill catalog API:
+| Earlier IDs | Primary category |
+| --- | --- |
+| `web-front`, `web-front-minimalism`, `web-front-react`, other frontend modes | `web-frontend` |
+| `web-backend-fastapi`, `web-backend-codequality`, other backend modes | `web-backend` |
+| `code-quality`, `code-debugging`, other general coding modes | `code-build` |
+| `train`, `evaluate`, other ML workflows | `machine-learning` |
+| `word-draft`, `word-edit`, other Word workflows | `word-documents` |
+| `company-ceo`, `company-cfo`, other leadership workflows | `company-leadership` |
 
-```python
-from gncore import get_skill, list_domains, search_skills
+Use `gncore list workflows` for the complete mapping. Existing CLI/API lookups resolve aliases to the canonical category, so exporting multiple modes from one category creates one folder.
 
-skill = get_skill("train")
-matches = search_skills("training evaluation")
-domains = list_domains()
-```
+A new primary category name takes precedence over an older generic workflow with the same name. For example, `testing`, `security`, and `documentation` now address those full specialist categories. Their former general workflow procedures also remain inside `general`.
 
-Use `gncore show <skill-id>` to print one portable `SKILL.md`, or `gncore export --skills <id>... --output skills.zip` to create a portable archive. GNCore 5.0 does not read or modify files created by older application-management releases. Manage any old installation files using the host application's normal documentation and controls.
+## Project installations
+
+Back up customized old skill folders, then install the desired category entrypoints with `gncore export`. Old folders in other projects are not deleted automatically. Fresh exports use `.agents/skills/<category>/SKILL.md` and include supporting resources and notices.
+
+Only primary category entrypoints are exposed as `SKILL.md` in the source distribution. Retired source entrypoints and nested source skills are reference guides, preventing duplicate automatic discovery.
+
+## API changes
+
+- `builtin_skills()` returns 60 primary definitions.
+- `list_workflows()` exposes the 553 workflow metadata records.
+- Each professional `SkillDomain` contains one canonical `skill_ids` entry and ten `workflow_ids`.
+- Metadata includes license information; bundled material is not uniformly MIT-licensed.

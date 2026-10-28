@@ -1,0 +1,109 @@
+{
+  "category": "content",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "content",
+      "repository": "anthropics/skills",
+      "name": "pptx",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "source_url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/pptx/SKILL.md",
+      "review_status": "research-only: restrictive or noncommercial declaration",
+      "licenses": [],
+      "file_count": 56
+    },
+    {
+      "category": "content",
+      "repository": "microsoft/azure-skills",
+      "name": "azure-aigateway",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "6e889d5603fed6b741308a184d0b72b8fbe3bdb7",
+      "source_url": "https://github.com/microsoft/azure-skills/blob/6e889d5603fed6b741308a184d0b72b8fbe3bdb7/skills/azure-aigateway/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 9
+    },
+    {
+      "category": "content",
+      "repository": "remotion-dev/skills",
+      "name": "remotion-markup",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "fa73e347b9445cbe3d01daa6c5847f2042c33f47e38e55ce20d341d17325cae8",
+      "revision": null,
+      "source_url": "https://github.com/remotion-dev/skills",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 68
+    },
+    {
+      "category": "content",
+      "repository": "101-skills/superpowers",
+      "name": "ai-video-generation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/101-skills/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/tools/video/ai-video-generation/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "content",
+      "repository": "magentosh/superpowers",
+      "name": "ai-video-generation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/magentosh/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/tools/video/ai-video-generation/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "content",
+      "repository": "qu-skills/superpowers",
+      "name": "ai-video-generation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/qu-skills/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/tools/video/ai-video-generation/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "content",
+      "repository": "skills-shell/superpowers",
+      "name": "ai-video-generation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/skills-shell/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/tools/video/ai-video-generation/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "content",
+      "repository": "its-a-skill-issue/superpowers",
+      "name": "ai-video-generation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/its-a-skill-issue/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/tools/video/ai-video-generation/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

@@ -1,79 +1,46 @@
 # Usage
 
-Install GNCore into a Python environment:
+## Install a category in the project
 
 ```bash
-python -m pip install gncore
+gncore export --specific web-frontend
+gncore export --skills web-backend code-build
 ```
 
-GNCore searches and installs skill content into a project-local `.agents/skills/` directory by default. It does not change application settings.
+Then ask a compatible host agent to use the category:
 
-## Find a skill
+```text
+$web-frontend Build a clinic booking site with clear service and appointment flows.
+$web-frontend Build a premium hotel website with no animation.
+$web-backend Add an authenticated booking API to this repository.
+$code-build Fix the failing booking tests and verify the regression.
+```
+
+If a theme is omitted, the frontend skill chooses a coherent starting direction from the audience, task, content, and constraints. If a theme is supplied, it honors that choice. For changes to an existing product, it preserves the current design language unless a redesign is requested.
+
+Invocation syntax and automatic discovery depend on the host agent. The export location follows the `.agents/skills/<id>/SKILL.md` convention; the host must support and enable skills. GNCore itself does not start an AI session.
+
+## Inspect before use
 
 ```bash
-gncore list domains
 gncore list skills
-gncore list categories
-gncore search "model training"
-gncore search "presentation slides" --category presentations-powerpoint
+gncore list workflows
+gncore show finance-accounting
+gncore search "contract review"
 ```
 
-Search uses the skill ID, title, description, category, and tags. It returns catalog matches; it does not invoke a model.
+One category file contains its workflow selection and focused procedures. Read substantial references only for the relevant task. Supporting tools, browser runtimes, connectors, and credentials are not installed by exporting a skill.
 
-## Inspect a skill
-
-```bash
-gncore show train
-```
-
-The output is a complete portable `SKILL.md` document. In a compatible assistant, place it at `.agents/skills/<skill-id>/SKILL.md`; the host assistant discovers the skill and decides how to execute it using its own tools.
-
-## Export selected skills
-
-```bash
-gncore export --skills train preprocess clean-data evaluate improve analyze
-```
-
-Each skill is installed as `.agents/skills/<skill-id>/SKILL.md` in the current directory.
-
-Install one specific skill by exact ID or choose a different install directory:
-
-```bash
-gncore export --specific design-ux-audit
-gncore export --skills train --directory ./my-agent/skills
-```
-
-## Export the complete catalog
+## Full and portable exports
 
 ```bash
 gncore export --all
+gncore export --all --directory ./custom-skills
+gncore export --all --output gncore-categories.zip
 ```
 
-This installs every catalog skill under `.agents/skills/`.
+Use GNCore export when exact resource preservation matters. Some external skill installers omit files named `metadata.json`; GNCore preserves every declared resource, including provenance and notices.
 
-## Create a ZIP archive
+## Existing projects
 
-Pass `--output` to create an archive instead of installing directly:
-
-```bash
-gncore export --skills train evaluate --output ml-skills.zip
-```
-
-Each archive skill folder contains a complete `SKILL.md`. Extract the folders under `.agents/skills/` to make them discoverable.
-
-## Python API
-
-```python
-from gncore import get_skill, list_domains, search_skills
-
-train = get_skill("train")
-print(train.prompt)
-print(search_skills("clean data"))
-print(list_domains())
-```
-
-`get_skill` raises `KeyError` for an unknown ID. `search_skills` returns ranked matches. Skill definitions and domain records are immutable dataclasses.
-
-## Use the skill instructions well
-
-Give the host assistant your goal, relevant context, constraints, and how you will judge the result. Skills request evidence-based planning and verification, but the host's available tools and permissions determine what it can actually do. Review its output and check report.
+Legacy IDs such as `train`, `web-front-minimalism`, and `web-backend-fastapi` remain CLI/API aliases. Exporting them writes their canonical category folders. Existing old folders in other projects are not deleted automatically. Back up custom edits before retiring older installations; see [Migration](../MIGRATION.md).

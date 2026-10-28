@@ -1,18 +1,15 @@
-# Verification Guide
+# Verification scope
 
-GNCore packages skill instructions; the host assistant supplies the model and tools. Verify the catalog and exported content locally:
+GNCore reports checks it actually performed. Tests and validation establish concrete software properties; they do not guarantee every model, host agent, artifact, or creative outcome.
 
-```bash
-python -m pip install -e ".[test]"
-python -m pytest -q
-python -m compileall -q src tests
-python -m gncore version
-python -m gncore list domains
-python -m gncore search "clean data"
-python -m gncore show train
-python -m gncore export --skills train evaluate --output skills.zip
-```
+The local verification suite covers:
 
-The tests check unique valid skill definitions, 30 domains with ten workflows apiece, discovery and search, and portable ZIP contents. Inspect an exported `SKILL.md` and then use the host application's documented method to load it. GNCore does not verify whether an assistant loaded a skill or whether a model response is accurate.
+- Exactly one primary skill per category and preservation of all 553 workflow procedures.
+- Category search, workflow aliases, canonical-name precedence, and professional-domain coverage.
+- Frontend direction inference, explicit theme precedence, common spellings, existing brand preservation, and negative constraints.
+- Directory and ZIP exports, supporting resource bytes, source provenance, share-alike notices, and path boundaries.
+- GNCore runtime compilation, package metadata, and clean wheel installation.
 
-For release checks, see [docs/RELEASE.md](docs/RELEASE.md).
+Skill format validation checks frontmatter and structure. Reference review checks source identity, file preservation, relevance, and supplied license terms. These checks do not independently validate every upstream tool or certify expert decisions in every domain.
+
+The host agent must validate the requested deliverable using actual data, tests, renders, browser evidence, or other appropriate checks. It must state unavailable tools and unperformed checks rather than inventing completion. Supporting scripts and optional connectors are not executed automatically when skills are installed.

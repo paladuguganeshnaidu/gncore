@@ -1,0 +1,14 @@
+{
+  "category": "analytics",
+  "repository": "getcargohq/cargo-skills",
+  "name": "cargo-analytics",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "4df958398e32fd889c1f9c2fe1c5ecac9119a0444078c2d8f252099d4623c60d",
+  "revision": null,
+  "source_url": "https://github.com/getcargohq/cargo-skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 6
+}

@@ -1,0 +1,115 @@
+{
+  "category": "supply-chain-logistics",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "supply-chain-logistics",
+      "repository": "theneoai/awesome-skills",
+      "name": "dhl-supply-chain-logistics-expert",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "61fe4f2bb47d6b61505b1b78c2b8ae5fd1ca38dd",
+      "source_url": "https://github.com/theneoai/awesome-skills",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "supply-chain-logistics",
+      "repository": "cbrock84/headcount",
+      "name": "supply-chain-and-logistics",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "7d3ddf170a85a67565cbbdcda4e9539d32e5a2c4",
+      "source_url": "https://github.com/cbrock84/headcount/blob/7d3ddf170a85a67565cbbdcda4e9539d32e5a2c4/plugins/operations/skills/supply-chain-and-logistics/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 2
+    },
+    {
+      "category": "supply-chain-logistics",
+      "repository": "hinvec/awesome-skills_lists",
+      "name": "dhl-supply-chain-logistics-expert",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "10d1e09e3907265e38ab1e9c3d6e38efd6a41611",
+      "source_url": "https://github.com/hinvec/awesome-skills_lists",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "supply-chain-logistics",
+      "repository": "travisjneuman/.claude",
+      "name": "supply-chain-optimizer",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "80adced2f6fc0cb54fadb0fd6f0d7429d1f84bd7",
+      "source_url": "https://github.com/travisjneuman/.claude/blob/80adced2f6fc0cb54fadb0fd6f0d7429d1f84bd7/skills/supply-chain-optimizer/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "supply-chain-logistics",
+      "repository": "kishorkukreja/awesome-supply-chain",
+      "name": "pharmacy-supply-chain",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "397d95172e374225574f1fb580c1a77376fff836",
+      "source_url": "https://github.com/kishorkukreja/awesome-supply-chain/blob/397d95172e374225574f1fb580c1a77376fff836/skills/pharmacy-supply-chain/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "supply-chain-logistics",
+      "repository": "kishorkukreja/awesome-supply-chain",
+      "name": "food-beverage-supply-chain",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "397d95172e374225574f1fb580c1a77376fff836",
+      "source_url": "https://github.com/kishorkukreja/awesome-supply-chain/blob/397d95172e374225574f1fb580c1a77376fff836/skills/food-beverage-supply-chain/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "supply-chain-logistics",
+      "repository": "kishorkukreja/awesome-supply-chain",
+      "name": "pharmaceutical-supply-chain",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "397d95172e374225574f1fb580c1a77376fff836",
+      "source_url": "https://github.com/kishorkukreja/awesome-supply-chain/blob/397d95172e374225574f1fb580c1a77376fff836/skills/pharmaceutical-supply-chain/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "supply-chain-logistics",
+      "repository": "kishorkukreja/awesome-supply-chain",
+      "name": "hospital-logistics",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "397d95172e374225574f1fb580c1a77376fff836",
+      "source_url": "https://github.com/kishorkukreja/awesome-supply-chain/blob/397d95172e374225574f1fb580c1a77376fff836/skills/hospital-logistics/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

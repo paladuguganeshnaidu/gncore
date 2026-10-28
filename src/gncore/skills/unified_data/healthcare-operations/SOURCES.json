@@ -1,0 +1,107 @@
+{
+  "category": "healthcare-operations",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "healthcare-operations",
+      "repository": "zwright8/openclaw-code",
+      "name": "u08084-creative-ideation-facilitation-for-healthcare-operations",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "ec1b3b08616195dbe709f116bcfc092c009bb753",
+      "source_url": "https://github.com/zwright8/openclaw-code",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "healthcare-operations",
+      "repository": "zwright8/openclaw-code",
+      "name": "u03481-plan-quality-evaluation-for-healthcare-operations",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "ec1b3b08616195dbe709f116bcfc092c009bb753",
+      "source_url": "https://github.com/zwright8/openclaw-code",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "healthcare-operations",
+      "repository": "zwright8/openclaw-code",
+      "name": "u08482-curiosity-agenda-generation-for-healthcare-operations",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "ec1b3b08616195dbe709f116bcfc092c009bb753",
+      "source_url": "https://github.com/zwright8/openclaw-code",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "healthcare-operations",
+      "repository": "selfdriven-octo/skillzeb",
+      "name": "industrial-engineer",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "f0a77a7461de4b3439345f4203083087d09a6a28",
+      "source_url": "https://github.com/selfdriven-octo/skillzeb/blob/f0a77a7461de4b3439345f4203083087d09a6a28/skills/intelligence/organic-human/human/industrial-engineer/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "healthcare-operations",
+      "repository": "kishorkukreja/awesome-supply-chain",
+      "name": "clinical-trial-logistics",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "397d95172e374225574f1fb580c1a77376fff836",
+      "source_url": "https://github.com/kishorkukreja/awesome-supply-chain/blob/397d95172e374225574f1fb580c1a77376fff836/skills/clinical-trial-logistics/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "healthcare-operations",
+      "repository": "kishorkukreja/awesome-supply-chain",
+      "name": "value-analysis",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "397d95172e374225574f1fb580c1a77376fff836",
+      "source_url": "https://github.com/kishorkukreja/awesome-supply-chain/blob/397d95172e374225574f1fb580c1a77376fff836/skills/value-analysis/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "healthcare-operations",
+      "repository": "reason-healthcare/health-skills",
+      "name": "health-fhir-api-design",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "61b270e2bb3c41b7c98646235d9eedefa7bf4734",
+      "source_url": "https://github.com/reason-healthcare/health-skills/blob/61b270e2bb3c41b7c98646235d9eedefa7bf4734/skills/.curated/health-fhir-api-design/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 4
+    },
+    {
+      "category": "healthcare-operations",
+      "repository": "jshsakura/awesome-opencode-skills",
+      "name": "healthcare-admin",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "e2b8400ee2b23d199b902c7c3275faf390311b84",
+      "source_url": "https://github.com/jshsakura/awesome-opencode-skills/blob/e2b8400ee2b23d199b902c7c3275faf390311b84/skills/healthcare-admin/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

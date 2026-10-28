@@ -1,0 +1,14 @@
+{
+  "category": "analytics",
+  "repository": "amplitude/mcp-marketplace",
+  "name": "add-analytics-instrumentation",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "95db8d379702495b6dec3e055d632c4f692954a67010b4499e372ab38cab6419",
+  "revision": null,
+  "source_url": "https://github.com/amplitude/mcp-marketplace",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

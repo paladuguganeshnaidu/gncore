@@ -1,0 +1,14 @@
+{
+  "category": "ai-machine-learning",
+  "repository": "affaan-m/ecc",
+  "name": "ml-adoption-playbook",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "c7d33efdf096e31117cfd9f9f9bc751e4e68579127ccbaf61924c675f2837d36",
+  "revision": null,
+  "source_url": "https://github.com/affaan-m/ecc",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

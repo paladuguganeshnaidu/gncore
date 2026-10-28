@@ -1,0 +1,14 @@
+{
+  "category": "product-management",
+  "repository": "zeropointrepo/youtube-skills",
+  "name": "youtube-full",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "4f7994b94e7d5e250c3b51102d609992e04d5d0d",
+  "source_url": "https://github.com/zeropointrepo/youtube-skills/blob/4f7994b94e7d5e250c3b51102d609992e04d5d0d/clawhub/youtube-full/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 2
+}

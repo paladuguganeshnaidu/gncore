@@ -1,0 +1,14 @@
+{
+  "category": "developer-tools",
+  "repository": "browserbase/skills",
+  "name": "agent-experience",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+  "source_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/agent-experience/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 6
+}

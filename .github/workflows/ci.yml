@@ -27,7 +27,7 @@ jobs:
       - name: Run test suite
         run: python -m pytest -q
       - name: Compile sources
-        run: python -m compileall -q src tests
+        run: python -m compileall -q -x '(frontend_data|backend_data|unified_data)' src tests
 
   markdownlint:
     name: Markdown lint
@@ -39,3 +39,4 @@ jobs:
         uses: DavidAnson/markdownlint-cli2-action@v17
         with:
           globs: "**/*.md"
+          config: .markdownlint-cli2.jsonc

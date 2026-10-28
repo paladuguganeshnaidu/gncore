@@ -1,6 +1,9 @@
 include LICENSE
 include README.md
 recursive-include src/gncore *.py *.md
+recursive-include src/gncore/skills/frontend_data *
+recursive-include src/gncore/skills/backend_data *
+recursive-include src/gncore/skills/unified_data *
 recursive-include docs *
 recursive-include tests *
 recursive-include .markdownlint.yml

@@ -1,0 +1,115 @@
+{
+  "category": "ecommerce-retail",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "ecommerce-retail",
+      "repository": "mbfinotti/partnerships-skills",
+      "name": "partner-marketplace-strategy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "5764ab1dae47cdf00598c0abfcdb64c03c3c4560",
+      "source_url": "https://github.com/mbfinotti/partnerships-skills/blob/5764ab1dae47cdf00598c0abfcdb64c03c3c4560/skills/partner-marketplace-strategy/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "ecommerce-retail",
+      "repository": "arnabbagxd/brand-building-skills",
+      "name": "brand-packaging",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "4a0a8b5b7a0f64bf0fc551978a18a591670a5223",
+      "source_url": "https://github.com/arnabbagxd/brand-building-skills/blob/4a0a8b5b7a0f64bf0fc551978a18a591670a5223/skills/brand-packaging/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "ecommerce-retail",
+      "repository": "arnabbagxd/brand-building-skills",
+      "name": "d2c-marketing",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "4a0a8b5b7a0f64bf0fc551978a18a591670a5223",
+      "source_url": "https://github.com/arnabbagxd/brand-building-skills/blob/4a0a8b5b7a0f64bf0fc551978a18a591670a5223/skills/d2c-marketing/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "ecommerce-retail",
+      "repository": "dylantarre/animation-principles",
+      "name": "e-commerce-retail",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "83597134ba8ff59838270f94d7ac7282ffa3b54d",
+      "source_url": "https://github.com/dylantarre/animation-principles/blob/83597134ba8ff59838270f94d7ac7282ffa3b54d/skills/08-by-industry/e-commerce-retail/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "ecommerce-retail",
+      "repository": "rampstackco/claude-skills",
+      "name": "vertical-site-conventions",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "9b90db257f7395fab76ff9bfcb808456709f6af3",
+      "source_url": "https://github.com/rampstackco/claude-skills/blob/9b90db257f7395fab76ff9bfcb808456709f6af3/skills/vertical-site-conventions/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 13
+    },
+    {
+      "category": "ecommerce-retail",
+      "repository": "eddiebe147/claude-settings",
+      "name": "e-commerce-manager",
+      "download_status": "source-unavailable",
+      "snapshot_hash": null,
+      "revision": null,
+      "source_url": "https://github.com/eddiebe147/claude-settings",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "ecommerce-retail",
+      "repository": "drjif/animation-principles",
+      "name": "e-commerce-retail",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "83597134ba8ff59838270f94d7ac7282ffa3b54d",
+      "source_url": "https://github.com/drjif/animation-principles/blob/83597134ba8ff59838270f94d7ac7282ffa3b54d/skills/08-by-industry/e-commerce-retail/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "ecommerce-retail",
+      "repository": "talsolomon/dubleslash",
+      "name": "ds-retail-ecommerce",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "f9cdeb9a36d956ce624346731298e3b79ae4c76c",
+      "source_url": "https://github.com/talsolomon/dubleslash",
+      "review_status": "not-redistributed: download unavailable"
+    }
+  ],
+  "legacy_reference_ids": []
+}

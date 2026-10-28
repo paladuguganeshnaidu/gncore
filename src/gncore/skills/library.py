@@ -6,6 +6,9 @@ from functools import lru_cache
 import re
 
 from gncore.skills.domains import DOMAIN_SPECS
+from gncore.skills.frontend import LEGACY_FRONTEND_IDS, frontend_skills
+from gncore.skills.backend import LEGACY_BACKEND_IDS, backend_skills
+from gncore.skills.unified import search_terms, unified_skills, workflow_aliases
 
 from gncore.skills.models import SkillCommand, SkillDefinition, SkillDomain, SkillExample, SkillMetadata
 
@@ -44,7 +47,7 @@ def _skill(
 
 
 @lru_cache(maxsize=1)
-def builtin_skills() -> tuple[SkillDefinition, ...]:
+def legacy_skills() -> tuple[SkillDefinition, ...]:
     return (
         _skill(
             "requirements",
@@ -286,7 +289,13 @@ Help carry out the model training task the user describes. Inspect the current t
             tags=("training", "fine-tuning", "pytorch", "tensorflow", "checkpoints"),
             permissions=("read", "write", "execute"),
         ),
-    ) + _extended_skills() + _domain_skills()
+    ) + _extended_skills() + _domain_skills() + frontend_skills() + backend_skills()
+
+
+@lru_cache(maxsize=1)
+def builtin_skills() -> tuple[SkillDefinition, ...]:
+    """Return one adaptive primary skill per category."""
+    return unified_skills()
 
 
 _QUALITY_CONTRACT = """
@@ -304,7 +313,7 @@ Execution loop:
 @lru_cache(maxsize=1)
 def list_domains() -> tuple[SkillDomain, ...]:
     """Return the curated domain packs and their skill IDs."""
-    return tuple(SkillDomain(domain_id, name, description, tuple(item[0] for item in specs)) for domain_id, name, description, specs in DOMAIN_SPECS)
+    return tuple(SkillDomain(domain_id, name, description, (domain_id,), tuple(item[0] for item in specs)) for domain_id, name, description, specs in DOMAIN_SPECS)
 
 
 def _domain_skills() -> tuple[SkillDefinition, ...]:
@@ -342,13 +351,7 @@ def _extended_skills() -> tuple[SkillDefinition, ...]:
         ("evaluate", "Evaluate a Model", "Evaluate model quality with leakage-safe splits, task-appropriate metrics, baselines, and error analysis.", "machine-learning", ("ml", "evaluation", "metrics", "model"), "Confirm the prediction target, intended use, split boundaries, class balance, and decision costs. Compare against a simple baseline using metrics suited to the task; report uncertainty or repeated-split variation where practical. Keep test data untouched during tuning. Inspect segment performance and representative errors without exposing sensitive examples. Distinguish measured results from estimates, state data and compute limits, and never claim fairness, robustness, or production readiness from one aggregate score."),
         ("improve", "Improve a Machine Learning Model", "Find evidence-based model improvements through error analysis and controlled experiments against a fixed baseline.", "machine-learning", ("ml", "optimization", "experiments", "model"), "Start from the current baseline, metric, split, and failure examples. Rank likely improvements by evidence, expected impact, and cost; change one factor per experiment where possible. Keep the evaluation set fixed and avoid tuning on test data. Track config, seed, data version, metrics, and compute. Do not run expensive experiments, replace a working model, or change serving behavior without authorization. Report wins, regressions, uncertainty, and the next best experiment."),
         ("analyze", "Analyze Data", "Answer a data question with reproducible analysis, explicit assumptions, and evidence tied to the provided data.", "data-science", ("analysis", "analytics", "statistics", "data"), "Clarify the unit of analysis and question. Inspect data definitions, missingness, time coverage, and possible selection bias before calculating. Use suitable summaries and comparisons; show denominators and uncertainty when relevant. Separate association from causation and observed facts from interpretation. Keep queries or code reproducible, avoid exposing sensitive records, and state what the data cannot establish."),
-        ("frontend-engineering", "Frontend Engineering", "Implement focused frontend features with strong state, component, and browser behavior.", "web-development", ("react", "vue", "typescript", "components"), "Choose the smallest component boundary that makes state and behavior clear. Follow local framework versions and patterns. Handle loading, empty, error, and success states where they apply. Use semantic HTML, stable keys, controlled state, and explicit types. Avoid unnecessary dependencies and speculative abstractions."),
         ("backend-api", "Backend API Engineering", "Design and implement reliable backend endpoints, validation, and service boundaries.", "web-development", ("backend", "api", "rest", "fastapi", "django"), "Trace the existing request path before editing. Define request and response contracts, validate untrusted input at the boundary, use the existing error format, and preserve authentication and authorization checks. Keep I/O and business rules testable. Add pagination or idempotency only when the use case requires it."),
-        ("ui-minimalism", "Minimalist Interface Design", "Create restrained interfaces with clear hierarchy, generous space, and only essential controls.", "web-design", ("ui", "minimal", "minimalism", "visual-design"), "Use a small, consistent type and color system; strong alignment; deliberate whitespace; and one clear primary action per view. Remove visual noise without hiding needed actions or status. Keep contrast, keyboard focus, and readable text. Make changes in the existing design system and show the key tradeoffs."),
-        ("ui-maximalism", "Maximalist Interface Design", "Create expressive, layered interfaces while preserving hierarchy, readability, and usable controls.", "web-design", ("ui", "maximal", "maximalism", "visual-design"), "Use rich color, texture, typography, and layered composition with deliberate hierarchy. Assign visual emphasis to a small number of focal points; keep body text readable, controls discoverable, contrast sufficient, and responsive behavior intact. Avoid random ornament: each expressive element must reinforce the product or content."),
-        ("responsive-accessibility", "Responsive and Accessible Web UI", "Build responsive interfaces that work with keyboard, screen readers, zoom, and touch.", "web-development", ("responsive", "accessibility", "a11y", "wcag"), "Inspect the current page structure and supported breakpoints. Use semantic elements and labels, visible focus, keyboard-operable interactions, useful error text, and reduced-motion preferences. Test narrow and wide layouts without hiding content or relying only on color. Do not claim conformance to a standard without checking its applicable criteria."),
-        ("web-performance", "Web Performance Tuning", "Find and fix measured frontend performance bottlenecks without degrading behavior.", "web-development", ("performance", "web-vitals", "bundle", "profiling"), "Establish a baseline using available profiling or build output before changing code. Identify the dominant cost, make one targeted change at a time, and compare under the same conditions. Prefer platform primitives and avoid premature caching or memoization. Report measured results separately from expected effects."),
-        ("web-testing", "Web Application Testing", "Select and implement browser-level tests for important user journeys and regressions.", "testing", ("web", "browser", "e2e", "playwright"), "Map the user journey and its failure states before writing tests. Prefer accessible role/name selectors and observable behavior. Cover one critical happy path plus high-risk errors, keep fixtures isolated, and avoid timing sleeps. Do not weaken assertions or hide flaky behavior to make a run green."),
         ("web-security", "Web Security Engineering", "Review web features for input, session, authorization, and output-handling vulnerabilities.", "security", ("web", "security", "auth", "csrf", "xss"), "Trace attacker-controlled values from entry to storage and rendering. Check authentication and object-level authorization on every sensitive operation, output encoding, CSRF protections where relevant, secret handling, and safe error responses. Tie findings to code paths and exploit conditions; do not claim a vulnerability without evidence."),
         ("data-preparation", "ML Data Preparation", "Prepare reproducible model datasets while preventing leakage and preserving provenance.", "machine-learning", ("data", "preprocessing", "splits", "leakage"), "Inspect schema, label definition, missingness, duplicates, time boundaries, and source provenance before transformation. Split data before fitting learned preprocessing; keep related users, groups, or time periods together when required. Never silently drop rows or labels. Record transformations and counts so the run can be reproduced."),
         ("feature-engineering", "Feature Engineering", "Build features that are valid at prediction time and reproducible across training and inference.", "machine-learning", ("features", "ml", "leakage", "pipelines"), "For every candidate feature, state its source, type, availability time, and transformation. Reject features unavailable at prediction time. Fit statistics only on training data, keep train/serve transformations consistent, and compare against a baseline using the same split and metric. Add complexity only when evaluation supports it."),
@@ -441,6 +444,7 @@ def _extended_skills() -> tuple[SkillDefinition, ...]:
             permissions=("read", "write", "analyze"),
         )
         for skill_id, name, description, category, tags, instructions in specs
+        if skill_id not in LEGACY_BACKEND_IDS
     )
 
 
@@ -458,7 +462,7 @@ def search_skills(
         metadata = skill.metadata
         if category and metadata.category.casefold() != category.casefold():
             continue
-        fields = (metadata.skill_id, metadata.name, metadata.description, metadata.category, *metadata.tags)
+        fields = (metadata.skill_id, metadata.name, metadata.description, metadata.category, *metadata.tags, *search_terms(metadata.skill_id))
         normalized = tuple(value.casefold() for value in fields)
         if not terms or all(any(term in value for value in normalized) for term in terms):
             rank = sum(4 if term in metadata.skill_id.casefold() else 3 if term in metadata.name.casefold() else 1 for term in terms)
@@ -470,6 +474,12 @@ def search_skills(
 def get_skill(skill_id: str, *, skills: tuple[SkillDefinition, ...] | None = None) -> SkillDefinition:
     """Return a skill by its stable ID or raise ``KeyError``."""
     if skills is None:
+        primary = _builtin_skill_index()
+        if skill_id in primary:
+            return primary[skill_id]
+        skill_id = LEGACY_FRONTEND_IDS.get(skill_id, skill_id)
+        skill_id = LEGACY_BACKEND_IDS.get(skill_id, skill_id)
+        skill_id = workflow_aliases().get(skill_id, skill_id)
         try:
             return _builtin_skill_index()[skill_id]
         except KeyError:

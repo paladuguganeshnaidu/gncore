@@ -1,0 +1,14 @@
+{
+  "category": "mobile-development",
+  "repository": "jame581/godotprompter",
+  "name": "mobile-development",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6",
+  "source_url": "https://github.com/jame581/godotprompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/mobile-development/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 4
+}

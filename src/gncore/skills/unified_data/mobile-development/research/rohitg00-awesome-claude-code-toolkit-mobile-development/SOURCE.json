@@ -1,0 +1,14 @@
+{
+  "category": "mobile-development",
+  "repository": "rohitg00/awesome-claude-code-toolkit",
+  "name": "mobile-development",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "ebdf1d596d2cde5c5cceb32177e8d1cf4829e7d9",
+  "source_url": "https://github.com/rohitg00/awesome-claude-code-toolkit/blob/ebdf1d596d2cde5c5cceb32177e8d1cf4829e7d9/skills/mobile-development/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "Apache-2.0"
+  ],
+  "file_count": 1
+}

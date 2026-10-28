@@ -1,5 +1,7 @@
 # Audit: baseline `website-builder-skills` → `website-builder-elite`
 
+This is a historical baseline audit. For GNCore 6's current architecture, test scope, and source review, see `ARCHITECTURE.md`, `VERIFIED_MODE.md`, and `docs/SOURCE_RESEARCH.md`.
+
 Three near-identical builds of the same 11-file framework were supplied (sonnet4.6, kimi, sonnet5 variants). They converge on the same 8-phase design, so this audit treats them as one baseline and notes where the packaging diverged.
 
 ## Cross-cutting findings

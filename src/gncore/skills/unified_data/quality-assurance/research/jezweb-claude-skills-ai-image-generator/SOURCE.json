@@ -1,0 +1,14 @@
+{
+  "category": "quality-assurance",
+  "repository": "jezweb/claude-skills",
+  "name": "ai-image-generator",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "1260fa7439b36b18dbf16648ccc7fb44783f6c23",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/1260fa7439b36b18dbf16648ccc7fb44783f6c23/plugins/design-assets/skills/ai-image-generator/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 2
+}

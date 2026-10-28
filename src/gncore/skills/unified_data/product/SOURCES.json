@@ -1,0 +1,105 @@
+{
+  "category": "product",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "product",
+      "repository": "heygen-com/hyperframes",
+      "name": "product-launch-video",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "4db1214e7df8bb56328da5db75e60eac3f57020c",
+      "source_url": "https://github.com/heygen-com/hyperframes",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "product",
+      "repository": "microsoft/azure-skills",
+      "name": "azure-diagnostics",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "6e889d5603fed6b741308a184d0b72b8fbe3bdb7",
+      "source_url": "https://github.com/microsoft/azure-skills/blob/6e889d5603fed6b741308a184d0b72b8fbe3bdb7/skills/azure-diagnostics/SKILL.md",
+      "review_status": "research-only: category relevance not established",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 54
+    },
+    {
+      "category": "product",
+      "repository": "microsoft/azure-skills",
+      "name": "azure-deploy",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "6e889d5603fed6b741308a184d0b72b8fbe3bdb7",
+      "source_url": "https://github.com/microsoft/azure-skills/blob/6e889d5603fed6b741308a184d0b72b8fbe3bdb7/skills/azure-deploy/SKILL.md",
+      "review_status": "research-only: category relevance not established",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 41
+    },
+    {
+      "category": "product",
+      "repository": "101-skills/superpowers",
+      "name": "ai-video-generation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/101-skills/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/tools/video/ai-video-generation/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "product",
+      "repository": "uizze.sh",
+      "name": "ui-taste",
+      "download_status": "invalid-source-identifier",
+      "snapshot_hash": null,
+      "revision": null,
+      "source_url": "https://github.com/uizze.sh",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "product",
+      "repository": "magentosh/superpowers",
+      "name": "ai-video-generation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/magentosh/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/tools/video/ai-video-generation/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "product",
+      "repository": "qu-skills/superpowers",
+      "name": "ai-video-generation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "becc25649700d5457772a00e5143e28ccf9e5afa",
+      "source_url": "https://github.com/qu-skills/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/tools/video/ai-video-generation/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "product",
+      "repository": "heygen-com/hyperframes",
+      "name": "faceless-explainer",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "4db1214e7df8bb56328da5db75e60eac3f57020c",
+      "source_url": "https://github.com/heygen-com/hyperframes",
+      "review_status": "not-redistributed: download unavailable"
+    }
+  ],
+  "legacy_reference_ids": []
+}

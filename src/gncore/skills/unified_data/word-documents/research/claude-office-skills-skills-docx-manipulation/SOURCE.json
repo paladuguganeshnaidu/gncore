@@ -1,0 +1,14 @@
+{
+  "category": "word-documents",
+  "repository": "claude-office-skills/skills",
+  "name": "docx-manipulation",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "9c4c7d5cd2813a8936bf2c9fdb174ea883b85a11",
+  "source_url": "https://github.com/claude-office-skills/skills/blob/9c4c7d5cd2813a8936bf2c9fdb174ea883b85a11/docx-manipulation/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

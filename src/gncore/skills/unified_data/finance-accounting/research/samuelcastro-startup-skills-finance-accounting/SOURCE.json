@@ -1,0 +1,14 @@
+{
+  "category": "finance-accounting",
+  "repository": "samuelcastro/startup-skills",
+  "name": "finance-accounting",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "cea4ddfb2434038e896e7b738d6f51f7f34922a6",
+  "source_url": "https://github.com/samuelcastro/startup-skills/blob/cea4ddfb2434038e896e7b738d6f51f7f34922a6/finance-accounting/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 9
+}

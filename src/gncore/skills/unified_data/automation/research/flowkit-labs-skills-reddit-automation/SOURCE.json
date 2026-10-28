@@ -1,0 +1,14 @@
+{
+  "category": "automation",
+  "repository": "flowkit-labs/skills",
+  "name": "reddit-automation",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "278abced163b5721c6fec6996f73d521c8901b905b4b2fca45757d1ff0ebbfc6",
+  "revision": null,
+  "source_url": "https://github.com/flowkit-labs/skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

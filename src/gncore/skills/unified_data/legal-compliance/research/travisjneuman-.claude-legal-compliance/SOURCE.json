@@ -1,0 +1,14 @@
+{
+  "category": "legal-compliance",
+  "repository": "travisjneuman/.claude",
+  "name": "legal-compliance",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "80adced2f6fc0cb54fadb0fd6f0d7429d1f84bd7",
+  "source_url": "https://github.com/travisjneuman/.claude/blob/80adced2f6fc0cb54fadb0fd6f0d7429d1f84bd7/skills/legal-compliance/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 2
+}

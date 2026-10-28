@@ -1,0 +1,14 @@
+{
+  "category": "people-human-resources",
+  "repository": "pollow/c-suite-skills",
+  "name": "chro",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "577d5d595758f43d2d3a08f1d85f1a66976665db",
+  "source_url": "https://github.com/pollow/c-suite-skills/blob/577d5d595758f43d2d3a08f1d85f1a66976665db/skills/chro/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "Apache-2.0"
+  ],
+  "file_count": 1
+}

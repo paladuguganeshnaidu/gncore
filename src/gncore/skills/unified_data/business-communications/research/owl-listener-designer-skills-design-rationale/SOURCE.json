@@ -1,0 +1,14 @@
+{
+  "category": "business-communications",
+  "repository": "owl-listener/designer-skills",
+  "name": "design-rationale",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": "b123b7b02a7a1a926c26a853586194eefb5249bb9ea42417d2b8a1f07757b441",
+  "revision": null,
+  "source_url": "https://github.com/owl-listener/designer-skills",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 1
+}

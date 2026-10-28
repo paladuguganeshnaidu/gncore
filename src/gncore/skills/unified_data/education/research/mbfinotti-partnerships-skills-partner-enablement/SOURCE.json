@@ -1,0 +1,14 @@
+{
+  "category": "education",
+  "repository": "mbfinotti/partnerships-skills",
+  "name": "partner-enablement",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "5764ab1dae47cdf00598c0abfcdb64c03c3c4560",
+  "source_url": "https://github.com/mbfinotti/partnerships-skills/blob/5764ab1dae47cdf00598c0abfcdb64c03c3c4560/skills/partner-enablement/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 7
+}

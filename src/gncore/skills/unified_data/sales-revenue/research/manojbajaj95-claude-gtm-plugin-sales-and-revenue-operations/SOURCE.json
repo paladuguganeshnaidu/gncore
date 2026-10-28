@@ -1,0 +1,14 @@
+{
+  "category": "sales-revenue",
+  "repository": "manojbajaj95/claude-gtm-plugin",
+  "name": "sales-and-revenue-operations",
+  "download_status": "downloaded-for-review",
+  "snapshot_hash": null,
+  "revision": "0830a46f4cfbbc8642c07b5c3748afd8efd24571",
+  "source_url": "https://github.com/manojbajaj95/claude-gtm-plugin/blob/0830a46f4cfbbc8642c07b5c3748afd8efd24571/skills/sales-and-revenue-operations/SKILL.md",
+  "review_status": "licensed-reference",
+  "licenses": [
+    "MIT"
+  ],
+  "file_count": 7
+}

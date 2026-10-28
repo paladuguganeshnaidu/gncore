@@ -1,0 +1,112 @@
+{
+  "category": "automation",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "automation",
+      "repository": "vercel-labs/agent-browser",
+      "name": "agent-browser",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "80161e6836b3b40f4e83730a290deb40ac14d877d38c97ad5f6d71be37ce74c3",
+      "revision": null,
+      "source_url": "https://github.com/vercel-labs/agent-browser",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "automation",
+      "repository": "flowkit-labs/skills",
+      "name": "reddit-automation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "278abced163b5721c6fec6996f73d521c8901b905b4b2fca45757d1ff0ebbfc6",
+      "revision": null,
+      "source_url": "https://github.com/flowkit-labs/skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 1
+    },
+    {
+      "category": "automation",
+      "repository": "101-skills/superpowers",
+      "name": "twitter-automation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "730ab5370b839e0e339d5e7894fd8c414380529be3c42f63983e0fa6f0789061",
+      "revision": null,
+      "source_url": "https://github.com/101-skills/superpowers",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "automation",
+      "repository": "magentosh/superpowers",
+      "name": "twitter-automation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "730ab5370b839e0e339d5e7894fd8c414380529be3c42f63983e0fa6f0789061",
+      "revision": null,
+      "source_url": "https://github.com/magentosh/superpowers",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "automation",
+      "repository": "qu-skills/superpowers",
+      "name": "twitter-automation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "730ab5370b839e0e339d5e7894fd8c414380529be3c42f63983e0fa6f0789061",
+      "revision": null,
+      "source_url": "https://github.com/qu-skills/superpowers",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "automation",
+      "repository": "skills-shell/superpowers",
+      "name": "twitter-automation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "730ab5370b839e0e339d5e7894fd8c414380529be3c42f63983e0fa6f0789061",
+      "revision": null,
+      "source_url": "https://github.com/skills-shell/superpowers",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "automation",
+      "repository": "inference-sh/skills",
+      "name": "twitter-automation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "192c7ab9159c3429f0e6c334363f69b682cae16e68d0680ee7641596a48fbc01",
+      "revision": null,
+      "source_url": "https://github.com/inference-sh/skills",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    },
+    {
+      "category": "automation",
+      "repository": "skills-101/superpowers",
+      "name": "twitter-automation",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "730ab5370b839e0e339d5e7894fd8c414380529be3c42f63983e0fa6f0789061",
+      "revision": null,
+      "source_url": "https://github.com/skills-101/superpowers",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 1
+    }
+  ],
+  "legacy_reference_ids": []
+}

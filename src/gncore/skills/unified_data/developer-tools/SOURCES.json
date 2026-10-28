@@ -1,0 +1,118 @@
+{
+  "category": "developer-tools",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "entrypoint_original_text_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "MIT"
+  ],
+  "research": [
+    {
+      "category": "developer-tools",
+      "repository": "samber/developer-relations-skills",
+      "name": "devrel-analytics",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": "7759f59a509f7c44549cb368e7f2bc499c426c05cf65bcdd4f9963d651f21394",
+      "revision": null,
+      "source_url": "https://github.com/samber/developer-relations-skills",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "developer-tools",
+      "repository": "emblemcompany/agent-skills",
+      "name": "emblem-ai",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3",
+      "source_url": "https://github.com/emblemcompany/agent-skills/blob/9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3/skills/emblem-ai/SKILL.md",
+      "review_status": "research-only: category relevance not established",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 11
+    },
+    {
+      "category": "developer-tools",
+      "repository": "firecrawl/skills",
+      "name": "firecrawl-developer-index",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "2bf714d9f45e85085036a533ceb943c8577aef2b",
+      "source_url": "https://github.com/firecrawl/skills/blob/2bf714d9f45e85085036a533ceb943c8577aef2b/skills/core/firecrawl-developer-index/SKILL.md",
+      "review_status": "research-only: redistribution license not verified",
+      "licenses": [],
+      "file_count": 2
+    },
+    {
+      "category": "developer-tools",
+      "repository": "okx/onchainos-skills",
+      "name": "okx-dex-trenches",
+      "download_status": "not-found-in-source-tree",
+      "snapshot_hash": null,
+      "revision": "35a8c41cc6516844ae7dbedf02616bf4ea97d6ed",
+      "source_url": "https://github.com/okx/onchainos-skills",
+      "review_status": "not-redistributed: download unavailable"
+    },
+    {
+      "category": "developer-tools",
+      "repository": "jeffallan/claude-skills",
+      "name": "cli-developer",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "190e05a380b624187f5770451e1f41b9187cb63c",
+      "source_url": "https://github.com/jeffallan/claude-skills/blob/190e05a380b624187f5770451e1f41b9187cb63c/skills/cli-developer/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "developer-tools",
+      "repository": "jeffallan/claude-skills",
+      "name": "mcp-developer",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "190e05a380b624187f5770451e1f41b9187cb63c",
+      "source_url": "https://github.com/jeffallan/claude-skills/blob/190e05a380b624187f5770451e1f41b9187cb63c/skills/mcp-developer/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    },
+    {
+      "category": "developer-tools",
+      "repository": "openai/skills",
+      "name": "chatgpt-apps",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "49f948faa9258a0c61caceaf225e179651397431",
+      "source_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/chatgpt-apps/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "file_count": 11
+    },
+    {
+      "category": "developer-tools",
+      "repository": "browserbase/skills",
+      "name": "agent-experience",
+      "download_status": "downloaded-for-review",
+      "snapshot_hash": null,
+      "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+      "source_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/agent-experience/SKILL.md",
+      "review_status": "licensed-reference",
+      "licenses": [
+        "MIT"
+      ],
+      "file_count": 6
+    }
+  ],
+  "legacy_reference_ids": []
+}

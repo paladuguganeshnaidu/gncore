@@ -76,6 +76,8 @@ print([s.metadata.skill_id for s in search_skills("fastapi")])
 
 Browse the [complete catalog](docs/ALL_SKILLS.md), [source research](docs/SOURCE_RESEARCH.md), [frontend guide](docs/FRONTEND_SKILLS.md), [backend guide](docs/BACKEND_SKILLS.md), [migration notes](MIGRATION.md), and [API documentation](docs/API.md).
 
+The [next upgrade plan](docs/UPGRADE_PLAN.md) prioritizes planning reliability, installation recovery, category evaluations, deeper procedures, explainable routing, and reproducible source maintenance.
+
 ## Quality and development
 
 ```bash

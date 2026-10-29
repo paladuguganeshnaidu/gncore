@@ -1,0 +1,123 @@
+# Original guidance additions
+
+All30 entrypoints preserve existing workflows, resources and licenses. These text additions are implemented; task outcome gains remain limited to the recorded pilot.
+
+## ai-engineering
+
+Treat retrieved text and tool output as untrusted evidence, even when it contains instructions. Give each tool a validated input/output contract, a minimal capability set, time/iteration/output limits and an explicit empty, malformed or conflicting-evidence fallback. Keep claim-to-source links and redact sensitive traces. Evaluate grounded correctness and unauthorized-action resistance separately; a valid JSON response is not proof of either.
+
+## automation
+
+Define durable operation identity before adding retries. Commit progress with the effect when one transactional boundary permits it; otherwise use an idempotent remote contract, ledger and reconciliation for unknown outcomes. Separate malformed/permanent failures from transient errors, cap retries with backoff and jitter, and leave a recoverable record. Test interruption immediately before and after the durable boundary, including replay of already accepted work.
+
+## cloud-devops-sre
+
+Infer compatibility, secret handling and recovery needs even when the brief mentions only deployment. Stage additive schema/config changes before switching consumers; bound backfill and exposure, and gate promotion on workload-specific errors, latency, lag and resource limits over a defined window. Use least-privilege identities and keep credentials out of images and logs. Application rollback does not reverse changed data; retain a compatible path and rehearse recovery before destructive contraction.
+
+## code-build
+
+Turn the behavior contract into a small counterexample before patching. Preserve API, exception types, units and mutation behavior; check language-specific type traps and exact arithmetic where totals matter. Keep the change local, then verify ordinary, zero, extreme and invalid inputs with an independent oracle. A passing example or explanation is insufficient evidence for general correctness. When a repair allocates or ranks quantities, test mixed exact and fractional shares as well as ties; conservation or a passing happy path alone does not prove the ordering rule.
+
+## computer-vision
+
+Choose split groups from the deployment population: adjacent frames or multiple views of the same object cannot be independent test evidence. Transform images and annotations together, audit coordinate conventions and overlay representative boxes/masks after each geometric stage. Check dimensions, bounds, degenerate/empty labels and corrupt inputs. Keep a simple baseline, tune on validation only and report task-specific metrics and group counts on the untouched evaluation set.
+
+## cybersecurity
+
+For each finding, trace attacker-controlled input through the relevant boundary to an observable impact, then propose a repair that preserves authorized behavior. Distinguish finding recall, false alarms and repair correctness. Path containment requires canonical component-aware checks and a symlink/race policy, not a string prefix or filename sanitizer alone. Retest the exploit path and safe neighboring cases; do not call an entire application secure from a small fixture.
+
+## data-engineering
+
+State record grain, event identity, business timezone and value constraints before aggregation. Identical replays, conflicting payloads and legitimate revisions need separate policies; keep-first deduplication must not silently hide corrections. Quarantine invalid rows with lineage, publish atomically/idempotently, and reconcile accepted, duplicate, rejected and emitted counts and amounts. Test late events, changed revisions and restart at publication boundaries.
+
+## data-science
+
+Define the estimand, population, observational unit and denominator before calculating a percentage. Reconcile joins and counts; unequal weighting alone is not Simpson's paradox. Inspect missingness, selection and plausible confounding, and separate descriptive association from a supported causal conclusion. Quantify uncertainty at the right independent unit. Do not quote a p-value or significance result that was not calculated and checked; preserve the exact calculation and its assumptions.
+
+## databases
+
+Plan migration behavior for old and new writers as well as readers. Use additive expansion, explicit null/collision resolution, resumable bounded backfill and validated contraction. Check the actual engine/version rules for concurrent indexes, constraints, transaction restrictions and locks; concurrent does not mean lock-free. A populated column cannot be dropped as a harmless rollback. Identify the last reversible step, backup/mapping needs and forward-recovery plan before removing data or compatibility.
+
+## deep-learning
+
+Checkpoint a compatible training state, not just parameters: optimizer, schedule, precision scaler, RNG, sampler/data position, progress and environment/data identity. For gradient accumulation, save partial gradient state deliberately or checkpoint at a completed optimizer-step boundary. Compare an uninterrupted and resumed short trajectory with the same batches and configuration; use justified numerical tolerances and report device/distributed nondeterminism rather than promising bitwise equality without evidence.
+
+## design-ux
+
+Translate aesthetic intent into concrete task hierarchy and behavior. Specify the narrow-screen ordering, reflow, control names, keyboard path, visible and restored focus, persistent error/success feedback and destructive-action recovery. Infer consequential omissions from the primary journey without adding unrelated features. A proposed specification is not a tested interface: verify the implemented flow with keyboard, zoom and representative assistive technology when available.
+
+## developer-research
+
+Rank supplied evidence by provenance, version and direct relevance; keep primary evidence separate from secondary assertions and inference. Check units, defaults and compatibility contracts, not merely renamed symbols. Design the smallest experiment that distinguishes competing explanations, with bounded deadlines and realistic tolerances. Record assumptions, unavailable evidence and observations that would change the recommendation. Never describe a planned reproduction as completed.
+
+## developer-tools
+
+Preflight repository ownership, dirty state, path/branch collisions and the intended base before creating workspaces or files. Use argument arrays or correctly quoted explicit paths rather than generated shell strings. Make partial creation and interruption recoverable: detect owned incomplete state, preserve unrelated edits, and explain safe retry/cleanup. Define exit codes and diagnostics that distinguish invalid input, conflicts and environmental failure; verify paths containing spaces and concurrent invocations.
+
+## distributed-systems
+
+Write down the interleaving and commit boundaries before claiming serialization or exactly-once behavior. Use durable operation/payload identity and atomic state transitions; external lost replies require idempotency/status lookup or reconciliation. An expiring claim needs an ownership generation or fencing/CAS so an old worker cannot complete after takeover. Specify retry/retention limits and test crash, overlap, expiry and stale-owner schedules against the actual storage semantics.
+
+## documentation
+
+Derive examples from the real help/API contract, including prerequisites, changed defaults and compatibility boundaries. Make examples copyable without inventing flags or endpoints. Include a realistic failure and safe recovery route, such as an existing output collision, while preserving user data. Label untested examples explicitly and verify commands, links and migration behavior when execution is available.
+
+## embedded-systems
+
+Keep interrupt work bounded and nonblocking; use preallocated storage with an explicit ISR/task ownership and synchronization protocol. Define queue-full behavior, dropped-event visibility, timeout and watchdog recovery rather than only testing for overflow. Document timer width, modular elapsed-time assumptions and the maximum observation interval. Separate host arithmetic/concurrency simulations from measured target latency, memory and peripheral evidence.
+
+## game-development
+
+Confirm the engine's movement API and units before introducing delta: some velocity APIs already integrate time. Separate action edges/input state from physics updates, validate direction/normalization and preserve intended mechanics. Bound pause/resume and large-timestep behavior instead of applying an uncontrolled jump. Compare displacement, collisions and action counts under different render and physics schedules; proposed engine tests are not measured gameplay results.
+
+## machine-learning
+
+Start from the prediction moment, horizon and deployment population. Audit every feature for point-in-time availability, then choose entity/time split boundaries that match that population. Fit preprocessing and selection within training folds, tune on validation and leave final evaluation sealed. Compare a simple baseline and report imbalance-aware, calibrated operating-point metrics with sample/group counts; avoid inferring generalization from a leaky split or one favorable score.
+
+## mlops
+
+Promote an immutable compatible bundle of model, preprocessor, feature contract, data/code identity and runtime. Verify serving parity and wrong/missing/reordered-input behavior before exposure. Gate promotion on both labeled quality and operational constraints, then stage rollout with a compatible rollback target. Feature or prediction drift is a diagnostic signal, not measured accuracy loss; track delayed labels and quality slices separately and define action thresholds for each.
+
+## mobile-development
+
+Use stable identities and virtualization for long collections, then measure expensive row work and rerenders before tuning. Own subscriptions and async tasks across navigation, background/resume and unmount; cancel or ignore stale results. Preserve versioned offline state with loading/stale/error/retry behavior. For mutations, use durable operation identity and a conflict policy; read-only caches should not invent write workflows. Test lifecycle transitions and representative devices separately from desktop reasoning.
+
+## natural-language-processing
+
+Make the supervision unit explicit before tokenization: document word/subtoken alignment, special-token and padding masks, and reconstruction for task-level metrics. Define truncation and long-input behavior so labels/spans do not silently shift or disappear. When fitting/evaluating a model, group correlated documents, authors or conversations appropriately. Check short, empty, Unicode, padded and truncated examples; token accuracy dominated by padding is not entity or conversation quality.
+
+## neural-networks
+
+Specify shapes, axes, label semantics, reductions and dtype before choosing a loss or layer. Use numerically stable logit-space operations and verify that gradient scale matches the reported reduction. Reject invalid/nonfinite inputs according to the API. Check a tiny hand-calculated case, central differences away from nonsmooth points, extreme finite values and a tiny-batch learning diagnostic when training is available. Separate mathematical checks from accelerator or convergence claims.
+
+## observability
+
+Carry or link trace context across queues, retries and asynchronous jobs. Bound metric cardinality with stable dimensions; put correlation IDs in redacted logs/traces instead of metric labels. Measure service outcomes, latency, throughput, queue age and failure/retry signals. Define sustained user-impact/SLO alerts with an owner, recovery condition and runbook. Exercise a controlled failure and inspect emitted telemetry; instrumented code alone does not prove an alert works.
+
+## performance-engineering
+
+Verify equivalent outputs before timing. Keep raw distributions, errors and timeouts; compare matched inputs, environment, warmup, load and cold/warm conditions with repeated or interleaved trials. Report median and tails as well as mean, throughput and memory against a user-relevant operating objective. A tiny sample or warm function timing cannot support a universal speedup. State which measurements were actually collected and which follow-up experiments remain proposed. Recompute quoted statistics from the retained raw values with trusted arithmetic, and postpone rounding until after comparisons.
+
+## python
+
+Verify the built wheel/sdist in clean environments outside the source checkout, including resources and entrypoints from unrelated working directories. Declare runtime/dependency and interpreter constraints, and check syntax/APIs on the oldest supported interpreter. Use package-resource lookup and explicit build-backend inclusion rules; a source-archive include rule alone may not include a wheel resource. Retain archive contents, install logs and compatibility evidence before release.
+
+## release-engineering
+
+Link the accepted source revision, version, CI evidence and exact artifact hashes in one release record. Build once and promote those verified bytes to each destination; do not rebuild separately and assume equivalence. Inspect metadata/contents and install outside the checkout. Keep website/download claims pending until destination availability is verified. Plan partial-publication recovery and registry-specific yank/supersede behavior, retaining explicit preparation-only boundaries until publication is authorized.
+
+## systems-programming
+
+Make the owner, storage stability, borrow/retention interval and destruction order explicit at every native/FFI boundary. Pair allocation and deallocation through a documented compatible ABI and enforce exactly-once destruction after the foreign user has finished. Specify null/length/NUL, error/unwind and allowed concurrency behavior. Inspect small unsafe boundaries and use appropriate native/sanitizer/stress checks; a plausible ownership sketch is not runtime memory-safety proof.
+
+## testing
+
+Derive assertions from independent observable contracts rather than the implementation's wording. Check that the suite accepts a known-correct implementation before measuring deliberate mutants, and distinguish caught defects from false rejections. Cover meaningful boundaries, exception semantics and state transitions with deterministic setup/cleanup. Report actual passed/failed/skipped cases and unexecuted integration coverage; do not turn an always-failing test into a high bug-catching score.
+
+## web-backend
+
+Choose one internally consistent idempotency protocol. Scope durable keys to the authenticated tenant and canonical request identity. In one-transaction designs, a competing unique insert may block; uncommitted status is not externally visible and rollback removes its FAILED update. In separately committed claim designs, define leases/generations, takeover and stale-owner fencing. Commit job/command, outbox and replay outcome at the required atomic boundary. Reconcile unknown commits and remote outcomes with stable keys; test overlap, payload mismatch, abandoned claims and lost replies before claiming recovery guarantees.
+
+## web-frontend
+
+Infer one coherent visual direction from audience, content and primary action when the user omits a style; preserve explicit brand choices. Implement the full journey before polish: named controls, validation, loading/error/empty/success states and selected-value confirmation. Hidden custom controls still need a visible focus indicator on their visible wrapper. Use a focusable status target deliberately if moving focus. Render and exercise keyboard and narrow layouts; CSS inspection or a proposed checklist is not browser evidence, and visual taste has no objective percentage score. Prototype feedback must describe only the action actually implemented: do not say an email, calendar invite or external booking was sent when the page only updates local state.

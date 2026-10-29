@@ -1,0 +1,189 @@
+{
+  "host": "vscode",
+  "run_id": "reference-holdout",
+  "raw_sha256": "dc6bf030c3e33276aa68912591be85175a4099d1321e8c13f7d9836231d5b7ca",
+  "cases": 30,
+  "schema_status": "case identities and basic types valid; semantic review pending",
+  "answers": [
+    {
+      "id": "H01",
+      "category": "ai-engineering",
+      "artifact": null,
+      "answer_characters": 752
+    },
+    {
+      "id": "H02",
+      "category": "automation",
+      "artifact": null,
+      "answer_characters": 833
+    },
+    {
+      "id": "H03",
+      "category": "cloud-devops-sre",
+      "artifact": null,
+      "answer_characters": 850
+    },
+    {
+      "id": "H04",
+      "category": "code-build",
+      "artifact": "H04.py",
+      "answer_characters": 383
+    },
+    {
+      "id": "H05",
+      "category": "computer-vision",
+      "artifact": null,
+      "answer_characters": 910
+    },
+    {
+      "id": "H06",
+      "category": "cybersecurity",
+      "artifact": null,
+      "answer_characters": 942
+    },
+    {
+      "id": "H07",
+      "category": "data-engineering",
+      "artifact": null,
+      "answer_characters": 936
+    },
+    {
+      "id": "H08",
+      "category": "data-science",
+      "artifact": null,
+      "answer_characters": 869
+    },
+    {
+      "id": "H09",
+      "category": "databases",
+      "artifact": null,
+      "answer_characters": 967
+    },
+    {
+      "id": "H10",
+      "category": "deep-learning",
+      "artifact": null,
+      "answer_characters": 980
+    },
+    {
+      "id": "H11",
+      "category": "design-ux",
+      "artifact": null,
+      "answer_characters": 903
+    },
+    {
+      "id": "H12",
+      "category": "developer-research",
+      "artifact": null,
+      "answer_characters": 865
+    },
+    {
+      "id": "H13",
+      "category": "developer-tools",
+      "artifact": null,
+      "answer_characters": 1039
+    },
+    {
+      "id": "H14",
+      "category": "distributed-systems",
+      "artifact": null,
+      "answer_characters": 909
+    },
+    {
+      "id": "H15",
+      "category": "documentation",
+      "artifact": null,
+      "answer_characters": 1021
+    },
+    {
+      "id": "H16",
+      "category": "embedded-systems",
+      "artifact": null,
+      "answer_characters": 958
+    },
+    {
+      "id": "H17",
+      "category": "game-development",
+      "artifact": null,
+      "answer_characters": 932
+    },
+    {
+      "id": "H18",
+      "category": "machine-learning",
+      "artifact": null,
+      "answer_characters": 1019
+    },
+    {
+      "id": "H19",
+      "category": "mlops",
+      "artifact": null,
+      "answer_characters": 946
+    },
+    {
+      "id": "H20",
+      "category": "mobile-development",
+      "artifact": null,
+      "answer_characters": 1010
+    },
+    {
+      "id": "H21",
+      "category": "natural-language-processing",
+      "artifact": null,
+      "answer_characters": 989
+    },
+    {
+      "id": "H22",
+      "category": "neural-networks",
+      "artifact": "H22.py",
+      "answer_characters": 536
+    },
+    {
+      "id": "H23",
+      "category": "observability",
+      "artifact": null,
+      "answer_characters": 939
+    },
+    {
+      "id": "H24",
+      "category": "performance-engineering",
+      "artifact": null,
+      "answer_characters": 863
+    },
+    {
+      "id": "H25",
+      "category": "python",
+      "artifact": null,
+      "answer_characters": 984
+    },
+    {
+      "id": "H26",
+      "category": "release-engineering",
+      "artifact": null,
+      "answer_characters": 945
+    },
+    {
+      "id": "H27",
+      "category": "systems-programming",
+      "artifact": null,
+      "answer_characters": 949
+    },
+    {
+      "id": "H28",
+      "category": "testing",
+      "artifact": "H28.py",
+      "answer_characters": 271
+    },
+    {
+      "id": "H29",
+      "category": "web-backend",
+      "artifact": null,
+      "answer_characters": 891
+    },
+    {
+      "id": "H30",
+      "category": "web-frontend",
+      "artifact": "H30.html",
+      "answer_characters": 528
+    }
+  ]
+}

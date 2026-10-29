@@ -24,6 +24,10 @@ Test split disjointness and feature availability, preprocessing parity and basel
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
+## Anticipate failure and verify the boundary
+
+Start from the prediction moment, horizon and deployment population. Audit every feature for point-in-time availability, then choose entity/time split boundaries that match that population. Fit preprocessing and selection within training folds, tune on validation and leave final evaluation sealed. Compare a simple baseline and report imbalance-aware, calibrated operating-point metrics with sample/group counts; avoid inferring generalization from a leaky split or one favorable score.
+
 ## Workflow map
 
 | Workflow | Use it for |

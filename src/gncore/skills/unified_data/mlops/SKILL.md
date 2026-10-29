@@ -24,6 +24,10 @@ Round-trip the artifact in a clean environment, compare prediction parity, test 
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
+## Anticipate failure and verify the boundary
+
+Promote an immutable compatible bundle of model, preprocessor, feature contract, data/code identity and runtime. Verify serving parity and wrong/missing/reordered-input behavior before exposure. Gate promotion on both labeled quality and operational constraints, then stage rollout with a compatible rollback target. Feature or prediction drift is a diagnostic signal, not measured accuracy loss; track delayed labels and quality slices separately and define action thresholds for each.
+
 ## Workflow map
 
 | Workflow | Use it for |

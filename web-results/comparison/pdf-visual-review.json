@@ -1,0 +1,43 @@
+{
+  "method": "Rendered every PDF page to PNG; visually reviewed contact sheets and detailed report pages",
+  "pages_reviewed": 17,
+  "files": [
+    {
+      "file": "web-results/comparison/EXECUTIVE-REPORT.pdf",
+      "pages": 7,
+      "landscape": true,
+      "sha256": "ebb90882318d5904d182a17a912b4fc3afae659a3e73b148abb1fb39f1a4c141"
+    },
+    {
+      "file": "web-results/comparison/TECHNICAL-REPORT.pdf",
+      "pages": 6,
+      "landscape": true,
+      "sha256": "12d95c02e5724f936e13dde6267ae80350ff4a18457a132c96ca9c7ccc851df0"
+    },
+    {
+      "file": "web-results/comparison/charts/antigravity-development-landscape.pdf",
+      "pages": 1,
+      "landscape": true,
+      "sha256": "87f65cfe9d978066387062219d90082f483b560058fd09d810c7157804896295"
+    },
+    {
+      "file": "web-results/comparison/charts/antigravity-holdout-landscape.pdf",
+      "pages": 1,
+      "landscape": true,
+      "sha256": "1f4aef947615a1fc4e97de533b9638da92f7b61d6be6b721ed2ee91042cc8274"
+    },
+    {
+      "file": "web-results/comparison/charts/vscode-development-landscape.pdf",
+      "pages": 1,
+      "landscape": true,
+      "sha256": "b6cbc5fc27f3624339998901923c4836411b8d27966944642c65cb3e7f1a33b3"
+    },
+    {
+      "file": "web-results/comparison/charts/vscode-holdout-landscape.pdf",
+      "pages": 1,
+      "landscape": true,
+      "sha256": "1a4bd049d2ca5e170481c3f6ba7ff59f7c122f893c9d319e0dd897a1909a7bad"
+    }
+  ],
+  "layout": "All landscape; headings kept with their first paragraph; no observed clipping or overlapping content"
+}

@@ -24,6 +24,10 @@ Execute practical examples in an isolated environment, check local links and com
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
+## Anticipate failure and verify the boundary
+
+Derive examples from the real help/API contract, including prerequisites, changed defaults and compatibility boundaries. Make examples copyable without inventing flags or endpoints. Include a realistic failure and safe recovery route, such as an existing output collision, while preserving user data. Label untested examples explicitly and verify commands, links and migration behavior when execution is available.
+
 ## Workflow map
 
 | Workflow | Use it for |

@@ -7,6 +7,9 @@
 - Add focused neural networks, deep learning, vision, NLP, MLOps, databases, native/embedded/distributed systems, performance, observability and technical research.
 - Add complete active-category scenario coverage, source/resource digests, offline reproducible authoring, explainable routing and safe managed retirement.
 - Fix transient Windows rename locks while retaining bounded permanent-failure behavior and recovery.
+- Add bounded atomic-journal replacement retries for transient Windows locks, preserving the previous recovery journal on permanent failure.
+- Add original failure-prevention guidance to all 30 category entrypoints while retaining every existing workflow, supporting resource and source license.
+- Record a comparative IDE pilot against 30 pinned published references, including raw answers, executable fixtures, manual review, exploratory failures and landscape Matplotlib reports. Report missing UI evidence and single-trial limitations explicitly.
 - Synchronize the existing Cloudflare website with the candidate catalog and migration routes; preserve source attribution and licenses.
 
 ## 6.0.0 — source branch

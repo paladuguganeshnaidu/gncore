@@ -24,6 +24,10 @@ Test invalid input, tenant/owner isolation, duplicate requests, transaction roll
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
+## Anticipate failure and verify the boundary
+
+Choose one internally consistent idempotency protocol. Scope durable keys to the authenticated tenant and canonical request identity. In one-transaction designs, a competing unique insert may block; uncommitted status is not externally visible and rollback removes its FAILED update. In separately committed claim designs, define leases/generations, takeover and stale-owner fencing. Commit job/command, outbox and replay outcome at the required atomic boundary. Reconcile unknown commits and remote outcomes with stable keys; test overlap, payload mismatch, abandoned claims and lost replies before claiming recovery guarantees.
+
 ## Workflow map
 
 | Workflow | Use it for |

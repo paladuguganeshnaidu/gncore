@@ -93,6 +93,10 @@ Deliver the implemented artifact, the chosen direction and why it fits, and the 
 - “A premium hotel site, no animation.” Use an appropriate luxury/editorial direction with art-directed images and calm typography; keep the no-animation constraint.
 - “Add settings to this existing app.” Preserve its existing theme, component system, and navigation; implement the complete settings behavior.
 
+## Anticipate failure and verify the boundary
+
+Infer one coherent visual direction from audience, content and primary action when the user omits a style; preserve explicit brand choices. Implement the full journey before polish: named controls, validation, loading/error/empty/success states and selected-value confirmation. Hidden custom controls still need a visible focus indicator on their visible wrapper. Use a focusable status target deliberately if moving focus. Render and exercise keyboard and narrow layouts; CSS inspection or a proposed checklist is not browser evidence, and visual taste has no objective percentage score. Prototype feedback must describe only the action actually implemented: do not say an email, calendar invite or external booking was sent when the page only updates local state.
+
 ## Workflow map
 
 | Workflow | Use it for |

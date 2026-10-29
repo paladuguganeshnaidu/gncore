@@ -98,7 +98,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "a81b01cd37d37c7ff1cc4da0e1f8efc880b7dceb4169edfa902f2da6b95ea293"
     },
-    "entrypoint_sha256": "fa8584630b824393e99473a8d6bea40890d6c159e57aed59840cc14c4a5bbd0b",
+    "entrypoint_sha256": "083aa617d3c42a76bbb5f212013e812b4ce6fbc245cb2c61ac083529b18051d8",
     "research_references": []
   },
   {
@@ -150,7 +150,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "0eec523fd6259b928c6fb02bdf161083c1984f72f2a3548bc71407236e954792"
     },
-    "entrypoint_sha256": "5d04f6676217354940f9098b09645c62a6499f5ec68f2b0c584b99b78545ab92",
+    "entrypoint_sha256": "a7a8a926f32407357b46351e1fe1d237ad85bf80ff0b0c79110dc59d5aad3013",
     "research_references": []
   },
   {
@@ -363,7 +363,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "4e1f84c4ee60620196f5b451aca1b999c6740d339d06b5484cc3db062c98da16"
     },
-    "entrypoint_sha256": "a3f1363784de078c7d3a8fc39ee906d408ee01a0deabea0ff55563b2dad0afb1",
+    "entrypoint_sha256": "fba32c5a4794a0b03fce0b3f4afcc8a367fe3dc9e3f12aa05a3dbb43be630207",
     "research_references": []
   },
   {
@@ -2150,7 +2150,7 @@
       "references/code-writing-plans/UPSTREAM.md": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a",
       "references/code-writing-plans/notices/1-LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
     },
-    "entrypoint_sha256": "7105b704d77fb085e4cb22702b9d75f28a41512c9c9be378e008238adda04789",
+    "entrypoint_sha256": "50c9ac95efd6e854ea538d2eba29cf253c22769ca74b5141e15f9decbdb50745",
     "research_references": []
   },
   {
@@ -2237,7 +2237,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "fbcdd50d0d94b2c63d5739894d2f16773992a5b95824abf46cf5163177dafed8"
     },
-    "entrypoint_sha256": "1b7e990f68986a5b496a379e85f9bb4dc51cebab795b040cad34a2fdd11d0610",
+    "entrypoint_sha256": "dc4da06ec08120b6287b21685c7155b5885fba826f24d0c17477116970ba4160",
     "research_references": []
   },
   {
@@ -2413,7 +2413,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "958325f37204631a6f18e95bf1fbba749afec4b49c725fb2685677bcbbaaf4a3"
     },
-    "entrypoint_sha256": "fdf4475f97c0879fe5f1d4a3c0ba920194be7ec5497dc179f148a5d970dd0af9",
+    "entrypoint_sha256": "abb51665cda94e9a0fd082af32a59cedc5f3552169a88299a9c7e762dc7bf60a",
     "research_references": []
   },
   {
@@ -2493,7 +2493,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "1fa2a08189a2afe18d914a0afc961a06ca5ec28a5e5a5aab1bf7ca9c34727c87"
     },
-    "entrypoint_sha256": "22647435f82f0636155d60097e9270ad74d1610bede6e07cc7368000155a1636",
+    "entrypoint_sha256": "fcc49369388a207a1ca8641307aa471612bb083b1d302dca9a74b25fdf081ef8",
     "research_references": []
   },
   {
@@ -2741,7 +2741,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "08fdaab609e159ee4fc60f54af333af0dbb14697ca79c82b0b5ae3fff3d88d04"
     },
-    "entrypoint_sha256": "2ccd506354c4df9af34d851c20d8aa4611c783a38e1b894ba8aa79be0d19c798",
+    "entrypoint_sha256": "0260af87c93e87af54f50b78810986a865a21c0982f3577bafc717c3756d71f1",
     "research_references": []
   },
   {
@@ -2829,7 +2829,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "daa9666eb4ad316c04bf970d9722dca48caf064c005256e73c32ea70f90140ed"
     },
-    "entrypoint_sha256": "05e1d71e1dfc124d14765f7d3a560d1c167c1555213d6e4a1b2611148fc42567",
+    "entrypoint_sha256": "0e1660586c134f2a183e8afbdc9d8f093faa33ff1d0f1129ac0c7537e8e15a5e",
     "research_references": []
   },
   {
@@ -2964,7 +2964,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "87bc86062a81dc2bf3b474cf33e291d4661624075ec704032fac17eee518928b"
     },
-    "entrypoint_sha256": "1a27f098e5c329bf02d56f59e59c2019b91ec0e5e6bf7fd5bc3d16ccd9582d67",
+    "entrypoint_sha256": "99cfc50eb9901649ac2a1bbff1a92afc7431170843b55bf8c4b04e3829062a40",
     "research_references": []
   },
   {
@@ -3139,7 +3139,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "40f8b10e6a3e3ef1b0a5a13c2a0f7817b4f564de37d7b05fb4e25105f6fff430"
     },
-    "entrypoint_sha256": "2a76528b4020af89f0953a4cf88ece195ec4365377677464a3761d1e68a0e057",
+    "entrypoint_sha256": "b8625bcb7bb4a49220fe04b667dfebafcfe9fa068939dc904c6dcc3d665b659b",
     "research_references": []
   },
   {
@@ -3214,7 +3214,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "767e990e695f2acc6391e89a8665b79dd3facc9ce8645b4dd129612f79b07ccb"
     },
-    "entrypoint_sha256": "908bad6d24060d9046d54c9801a3cf6e5d6beaffb7feccd40b174e7271702321",
+    "entrypoint_sha256": "00261f1eafe64be3ec042bc21b672584f06537833e989c5c89983fd1ce1810aa",
     "research_references": []
   },
   {
@@ -3267,7 +3267,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "a82d51ab4a4338d7a0eff3447a2b3545263b6a52d7b5c0660d1848305393b094"
     },
-    "entrypoint_sha256": "b1823e51113596d5c360ce751e9a6ac62357551940921dbb21d8c68877ef0118",
+    "entrypoint_sha256": "fbda518997c5ab02f014ddd82c03b819b9bd2bfbc3283256f1ad1f4da6d82dbb",
     "research_references": []
   },
   {
@@ -3343,7 +3343,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "9d863e3780c3f0f4e6ce502208a22c6618f786b508f7eccbc387ce8ff3fa1325"
     },
-    "entrypoint_sha256": "9b9386e6d8913adaf80ffe2ad7d19d8ad4488a7c3b2c63e26618e255d3806915",
+    "entrypoint_sha256": "1832b70a5bcd88fb750db478d796a4b43e09ad2cfc87e333cb46e675a1e6dd54",
     "research_references": []
   },
   {
@@ -3408,7 +3408,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "67d18cc9ac4e434faccda03508d6dbd28b2e92fa7b881ac3f62d3d3ff42cd350"
     },
-    "entrypoint_sha256": "ede283d2e8830e642fc7c99e7a2f72b485c0ffafd97abe912138d88a8bd6ae39",
+    "entrypoint_sha256": "fd4a37e0ea9e211725fe8801cfbae25ab30bac852a90cebd52f871d854b1eb38",
     "research_references": []
   },
   {
@@ -3485,7 +3485,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "555c00e5d5de5fe7059236c5b4f25461eaa91a7538f562e4ae74c66ab07dd33c"
     },
-    "entrypoint_sha256": "17fd3655d80fdfd2a07a50cb6e5b9fcb0d5b9cd34dafc2c02f0648a5648bd037",
+    "entrypoint_sha256": "e00ac885285efb18948d4c4be81b2fc197189c60d6d303fe6ecb6165340a5571",
     "research_references": []
   },
   {
@@ -3528,7 +3528,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "5a893382ff23d0c95d0281916b942c257388b87e6d9592124872d5cea121590d"
     },
-    "entrypoint_sha256": "91b370c67e4a7c62b205a17e81d1de54fae6b844030eb74f72e8171a71774d5f",
+    "entrypoint_sha256": "fae9080f87fa5b3d3de6d58a25c4726a01b6e25dfe0c53c43e70005cde1f6ee0",
     "research_references": []
   },
   {
@@ -3813,7 +3813,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "bae9ff90cc48fc99d2fcd8d600f0242191b9a0bc25640fe14d2f91378f3c9029"
     },
-    "entrypoint_sha256": "594025ba7fbd0f757bec10db4c71f2f1f076ada94ba9cac7122dc72a3033788b",
+    "entrypoint_sha256": "3fb1a5073fb96f3da5d13933acb07456437ff4a69b5dbdac0141b4abbbb48475",
     "research_references": []
   },
   {
@@ -3959,7 +3959,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "058503231c9e38652732ebab443dc68a799828a50f61b60f63f54f66da6c4daf"
     },
-    "entrypoint_sha256": "f92b6fcd22e031082f9dde3a85df94f6d22d93761ba96d5361086ab9f32992e9",
+    "entrypoint_sha256": "76290906a50b1d87b9057a61987a6be094d0225e8511e824fca562b2ce9e42eb",
     "research_references": []
   },
   {
@@ -4002,7 +4002,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "2fffb91c95448402b8af35f59d69a52b329861415e8ac2e8609610bf8dd516e4"
     },
-    "entrypoint_sha256": "7bafcde9f830085a6b1eb9702d0eaaea6854789e3d5fb087eefc670aa18987c0",
+    "entrypoint_sha256": "0467cc4812ae8abfd77a0883fb8ac56354c4907cc07914769862a8d3b8cf2d93",
     "research_references": []
   },
   {
@@ -4089,7 +4089,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "a5c01918053320ee3628d98168593eb19de857d7d1dfc64330fca1bcb58b32a2"
     },
-    "entrypoint_sha256": "f0091c8a1c1e066363f107bc08913204e952490e6d9b965e12d139f242858410",
+    "entrypoint_sha256": "b41e747a6d46037adfcff0dc22e810a7e0fb53f9b06cd001b4380fcda59d8659",
     "research_references": []
   },
   {
@@ -4188,7 +4188,7 @@
       "SOURCES.json": "759faac1724f4a9149d74d8b1262f51797c0c8cf99c19483d681e5277997722b",
       "scripts/gradient_probe.py": "7184adffaa6b4120443c35e17c14fe4ae5c909de9447559b249fbacf3946f775"
     },
-    "entrypoint_sha256": "9031dd9b9e417554d0ab255c709b0977fadfc8422ae6f4fa34d56a719debb8d3",
+    "entrypoint_sha256": "e8aae3030f3f52a1aad07efc4468220ad1a987b3220a99f4f26355e4e3297a5a",
     "research_references": []
   },
   {
@@ -4527,7 +4527,7 @@
       "references/web-backend-sentry-instrument/references/semantics/vercel.md": "77ea1d2d41b645524c22a8fc14ac687e899f8f073748157c33c970a4abca0a96",
       "references/web-backend-sentry-instrument/references/setup-verification.md": "1eabba5b0c28afe5fb806bf736e4d7f7c851d55fdb0bd9126434e4b95c8373e4"
     },
-    "entrypoint_sha256": "fac40545a9f885bd5068f0d563438c48f9a007768deb98453e86c488302d3946",
+    "entrypoint_sha256": "d63a7463b72653089d0f4e090bf60d650d8163ef2f3f3cecae2dd771da778841",
     "research_references": []
   },
   {
@@ -4614,7 +4614,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "2cdfe07e1f3c324dac4360eecc3b4140f430e8a4dc33020cc4b9c4d93a6b9f25"
     },
-    "entrypoint_sha256": "f6c999771017717a242137306ef02c54ef781e55abc4613d9c8de8445c107161",
+    "entrypoint_sha256": "f2d4fdae30153b7b5545e7ff70b7c77ba2b50829f78299e94b73f377a77d3332",
     "research_references": []
   },
   {
@@ -4680,7 +4680,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "b8878b9ae2046f3a2188a98a2a712cc3ce77788867118e6bf8bd506c618878b2"
     },
-    "entrypoint_sha256": "f1f9c2b017c4cce5b3ed9e63c885d88969c7506a4baf98a0da0b1732b9b55b14",
+    "entrypoint_sha256": "1aa95e94a837f4e26a673a1e2f9a418279432430bcb7249548c2b51aa83243da",
     "research_references": []
   },
   {
@@ -4733,7 +4733,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "5056b80e263841c9047524fd160f8945cbb99ff8ef46d8943327d273ab2e7c89"
     },
-    "entrypoint_sha256": "1045ab2cf01f5b81978ee3b8f93cefa2ffaa30a1b8eafda0c650cb1488624529",
+    "entrypoint_sha256": "fb6989535b82792b4e4ec2c12bcb810ae88453bbbd298227c9e6a3ca70ff3c6b",
     "research_references": []
   },
   {
@@ -4809,7 +4809,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "c54e705cf8af97413681f0a37a2580b5f427cbc4c7f0c7ff70beaf56b98cc42f"
     },
-    "entrypoint_sha256": "c2ce2e6a261d05b54e94821d4236e51fddd1cb3bcfa462167278391dc5130701",
+    "entrypoint_sha256": "db8d701f2a5a0918c6fbfa57a322e56a4c50041775f535162f94c4bf5f78cc17",
     "research_references": []
   },
   {
@@ -5069,7 +5069,7 @@
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "80bc997c426e119279f1d3cab6b31bdeac487026e2f849f098acfaafc9b82cf7"
     },
-    "entrypoint_sha256": "44c7dc377de402370ff8f6d29227c282016e682ef73ad049ca3a19bcde45646d",
+    "entrypoint_sha256": "4147bb344782c7aa65776629e695bf692645840b38f1581016ef0de8c4862b0f",
     "research_references": []
   },
   {
@@ -7020,7 +7020,7 @@
       "references/web-backend-wrangler/notices/1-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "references/web-backend-wrangler/references/skill-feedback.md": "f24d02c8beebbc7484c7c9d42e957e7b58c92bcf80798e8b86111b850913a57a"
     },
-    "entrypoint_sha256": "84056f65dfd404d2c2171b033c47cc92c386effac619bdc5ff0819a0a8e7f9f7",
+    "entrypoint_sha256": "dded1055ec21a656f379833ea88066a5f94af6e453ecc99887614ff4462ead2e",
     "research_references": []
   },
   {
@@ -8508,7 +8508,7 @@
       "references/web-front-ui-ux/scripts/tests/test_web_stack_freshness.py": "cba3dd79b3bd7ed9479e8cd0e7efb0594d998160bc712f9865fb0ab6e29dda5a",
       "references/web-front-ui-ux/scripts/validate_data.py": "a599aa256049cf30954d1f164721b99e453eb7e4cb8241bcab2d5573e6cf58b8"
     },
-    "entrypoint_sha256": "6da6b21cf6212299d3fadde8f2e924d9ae0ff92c0bc48b79d2761f4cda2fed45",
+    "entrypoint_sha256": "22c79330d4dbeb2cc6559f7120c2944e8e648054dade3c604bc5dc264ba7b76b",
     "research_references": []
   }
 ]

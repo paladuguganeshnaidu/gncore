@@ -1,0 +1,10 @@
+Installed 30 skill(s) in: C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\.work\benchmark-v2\release\clean-project\.agents\skills
+Traceback (most recent call last):
+Recovery journal: C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\.work\benchmark-v2\release\clean-project\.agents\.gncore-skills-transactions\f30df936ee1143ec963cd2eb1d158d2b\journal.json
+Exported 30 skill(s) to archive: C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\.work\benchmark-v2\release\gncore-7.0.0rc1-skills.zip
+  File "C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\scripts\verify_comparison_release.py", line 78, in <module>
+    main()
+  File "C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\scripts\verify_comparison_release.py", line 58, in main
+    assert (ROOT / "src/gncore/skills/unified_data" / category / "SKILL.md").read_bytes() == content
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

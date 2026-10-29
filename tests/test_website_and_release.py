@@ -26,7 +26,7 @@ def test_website_rebuild_has_complete_internal_links_anchors_and_migration_targe
     assert result.returncode == 0, result.stdout + result.stderr
     report = load_script("check_website").check(destination)
     assert report["ok"], report["issues"]
-    assert report["html_pages"] == 41 and report["categories"] == 30 and report["workflows"] == 374
+    assert report["html_pages"] == 42 and report["categories"] == 30 and report["workflows"] == 374
     assert report["redirects_checked"] > 500 and report["local_links_checked"] > 1000
     catalog = json.loads((destination / "assets/catalog.json").read_text(encoding="utf-8"))
     assert catalog["status"] == "candidate-preview"

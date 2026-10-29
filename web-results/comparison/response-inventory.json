@@ -1,0 +1,67 @@
+{
+  "full_runs": [
+    {
+      "run": "antigravity-gncore-before-holdout",
+      "sha256": "23cb8d64b9bbe25011abb2214c18321c17792fece55bb50281c0e693c5287a2a",
+      "answers": 30
+    },
+    {
+      "run": "antigravity-reference-holdout",
+      "sha256": "8f2e353ff5367ed05d27850cdc299049318f5250983e372ecef19b5aa994661e",
+      "answers": 30
+    },
+    {
+      "run": "antigravity-gncore-before-development",
+      "sha256": "e6cf0d5d45dfce06e5240bcc5250224a4acac804a5b28ab2a1ca0cf6a22ac36c",
+      "answers": 30
+    },
+    {
+      "run": "vscode-gncore-before-development",
+      "sha256": "b93e47fab9d7089ed68a37ac31edfac0ce1cfb450c645c3d8ece3e1bf9283e33",
+      "answers": 30
+    },
+    {
+      "run": "antigravity-gncore-after-holdout",
+      "sha256": "48d0da5900c6c9d9ea356f93311e21780d2b4dbfd7a9749b20b0b8a1206d086d",
+      "answers": 30
+    },
+    {
+      "run": "vscode-reference-development",
+      "sha256": "1e54905bf082958b1df605b0bd8f22b412c2738fc8cd63d713085ce9404c581a",
+      "answers": 30
+    },
+    {
+      "run": "antigravity-reference-development",
+      "sha256": "70c766bd22646ef9727e23c24b34530eda21605a0f8eafef5648c27b7433f64c",
+      "answers": 30
+    },
+    {
+      "run": "vscode-gncore-before-holdout",
+      "sha256": "68801e7319e65f0081e8db3e780dc29ba7e3c5a5770f567c7410e743b9a16af0",
+      "answers": 30
+    },
+    {
+      "run": "vscode-gncore-after-holdout",
+      "sha256": "622afacfb09c801501dafcc78a83e9cc5e357f36aa301efb3ee80ec92c2495f7",
+      "answers": 30
+    },
+    {
+      "run": "vscode-reference-holdout",
+      "sha256": "f0117c6fd937206e05c14121c75d1a9cf72080f96a186bd6c917885682218d61",
+      "answers": 30
+    }
+  ],
+  "adaptive_runs": [
+    {
+      "run": "antigravity-gncore-final-followup-holdout",
+      "sha256": "05dd8525ec1243e61e7740c778f5f9427c018bdd774d26fa4bfb9d3854d9dc7e",
+      "answers": 3
+    },
+    {
+      "run": "vscode-gncore-final-followup-holdout",
+      "sha256": "09aad0be6390caff183ba3665a2e42ab4a2b9115e34ccdda5c8c83303723e805",
+      "answers": 3
+    }
+  ],
+  "review_sha256": "e19c84e5de45707e39de4e84c2f4c87ddac923c7aa6aed97de4620a268fbd48b"
+}

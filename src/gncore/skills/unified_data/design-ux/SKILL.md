@@ -24,6 +24,10 @@ Walk through a complete task, error recovery, keyboard access, long labels and n
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
+## Anticipate failure and verify the boundary
+
+Translate aesthetic intent into concrete task hierarchy and behavior. Specify the narrow-screen ordering, reflow, control names, keyboard path, visible and restored focus, persistent error/success feedback and destructive-action recovery. Infer consequential omissions from the primary journey without adding unrelated features. A proposed specification is not a tested interface: verify the implemented flow with keyboard, zoom and representative assistive technology when available.
+
 ## Workflow map
 
 | Workflow | Use it for |

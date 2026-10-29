@@ -1,0 +1,52 @@
+[
+  {
+    "run": "antigravity-gncore-before-holdout",
+    "reviewed": 30,
+    "complete": 29
+  },
+  {
+    "run": "antigravity-reference-holdout",
+    "reviewed": 30,
+    "complete": 29
+  },
+  {
+    "run": "antigravity-gncore-before-development",
+    "reviewed": 30,
+    "complete": 30
+  },
+  {
+    "run": "vscode-gncore-before-development",
+    "reviewed": 30,
+    "complete": 30
+  },
+  {
+    "run": "antigravity-gncore-after-holdout",
+    "reviewed": 30,
+    "complete": 29
+  },
+  {
+    "run": "vscode-reference-development",
+    "reviewed": 30,
+    "complete": 30
+  },
+  {
+    "run": "antigravity-reference-development",
+    "reviewed": 30,
+    "complete": 30
+  },
+  {
+    "run": "vscode-gncore-before-holdout",
+    "reviewed": 30,
+    "complete": 29
+  },
+  {
+    "run": "vscode-gncore-after-holdout",
+    "reviewed": 30,
+    "complete": 29
+  },
+  {
+    "run": "vscode-reference-holdout",
+    "reviewed": 30,
+    "complete": 29
+  }
+]

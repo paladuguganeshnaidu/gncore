@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "categories": 30,
+  "variants": 2,
+  "cases": 60,
+  "checks_per_case": 6,
+  "sha256": {
+    "tasks.json": "c71be44f9f6f92c7382a885d98aea00d745748f913e01ca979ffb90c5ec2ca5b",
+    "rubrics.json": "9edac981e0cd0b7defbe71308b923a5cdc007f1c315de1d95ebe0a48778e7068"
+  }
+}

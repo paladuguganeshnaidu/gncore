@@ -24,6 +24,10 @@ Use a local database to test constraints, nulls, concurrent/lost updates, rollba
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
+## Anticipate failure and verify the boundary
+
+Plan migration behavior for old and new writers as well as readers. Use additive expansion, explicit null/collision resolution, resumable bounded backfill and validated contraction. Check the actual engine/version rules for concurrent indexes, constraints, transaction restrictions and locks; concurrent does not mean lock-free. A populated column cannot be dropped as a harmless rollback. Identify the last reversible step, backup/mapping needs and forward-recovery plan before removing data or compatibility.
+
 ## Workflow map
 
 | Workflow | Use it for |

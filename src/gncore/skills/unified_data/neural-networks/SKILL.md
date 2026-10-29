@@ -24,6 +24,10 @@ Compare analytic gradients with finite differences on a tiny case, check finite 
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
+## Anticipate failure and verify the boundary
+
+Specify shapes, axes, label semantics, reductions and dtype before choosing a loss or layer. Use numerically stable logit-space operations and verify that gradient scale matches the reported reduction. Reject invalid/nonfinite inputs according to the API. Check a tiny hand-calculated case, central differences away from nonsmooth points, extreme finite values and a tiny-batch learning diagnostic when training is available. Separate mathematical checks from accelerator or convergence claims.
+
 ## Workflow map
 
 | Workflow | Use it for |

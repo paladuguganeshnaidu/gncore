@@ -1,0 +1,117 @@
+{
+  "category": "neural-networks",
+  "split": "holdout",
+  "passed": 14,
+  "total": 14,
+  "tests": [
+    {
+      "test": "zeros",
+      "passed": true,
+      "expected": "(0.6931471805599453, [[0.25, -0.25], [-0.25, 0.25]])",
+      "actual": "(0.6931471805599453, [[0.25, -0.25], [-0.25, 0.25]])",
+      "error": null
+    },
+    {
+      "test": "normal",
+      "passed": true,
+      "expected": "(4.1429316284999, [[0.8668133321973349, 0.11731042782619838, -0.9841237600235332]])",
+      "actual": "(4.1429316284999, [[0.8668133321973349, 0.11731042782619838, -0.9841237600235332]])",
+      "error": null
+    },
+    {
+      "test": "extreme_correct",
+      "passed": true,
+      "expected": "(0.0, [[0.0, 0.0], [0.0, 0.0]])",
+      "actual": "(0.0, [[0.0, 0.0], [0.0, 0.0]])",
+      "error": null
+    },
+    {
+      "test": "extreme_wrong",
+      "passed": true,
+      "expected": "(2000.0, [[0.5, -0.5], [-0.5, 0.5]])",
+      "actual": "(2000.0, [[0.5, -0.5], [-0.5, 0.5]])",
+      "error": null
+    },
+    {
+      "test": "unequal_batch",
+      "passed": true,
+      "expected": "(0.6871675779751933, [[0.12473759117439295, 0.0684574414948464, -0.19319503266923937], [-0.2938366572102108, 0.1687922688993582, 0.1250443883108526]])",
+      "actual": "(0.6871675779751933, [[0.12473759117439295, 0.0684574414948464, -0.19319503266923937], [-0.2938366572102108, 0.1687922688993582, 0.1250443883108526]])",
+      "error": null
+    },
+    {
+      "test": "invalid_input_0",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_input_1",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_input_2",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_input_3",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_input_4",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_input_5",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_input_6",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_input_7",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "central_difference_gradients",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    }
+  ],
+  "inspection": {
+    "imports": [
+      "import math"
+    ],
+    "functions": [
+      "categorical_loss_grad"
+    ]
+  },
+  "compute_seconds": 0.014681499917060137,
+  "scope": "Actual generated pure-function/test code executed in an isolated child; no IDE execution or production claim.",
+  "child_wall_seconds": 1.921000000089407
+}

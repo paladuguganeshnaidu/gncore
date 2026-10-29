@@ -1,0 +1,628 @@
+Read , lines 1 to 1000
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    1,
+    1000
+  ]
+}
+
+Read , lines 1001 to 2000
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    1001,
+    2000
+  ]
+}
+
+Read , lines 2001 to 3000
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    2001,
+    3000
+  ]
+}
+
+Read , lines 3001 to 4000
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    3001,
+    4000
+  ]
+}
+
+Read , lines 1 to 300
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    1,
+    300
+  ]
+}
+
+Read , lines 301 to 600
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    301,
+    600
+  ]
+}
+
+Read , lines 601 to 900
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    601,
+    900
+  ]
+}
+
+Read , lines 901 to 1200
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    901,
+    1200
+  ]
+}
+
+Search for `^## Task `
+
+Read , lines 33 to 300
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    33,
+    300
+  ]
+}
+
+Read , lines 301 to 430
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    301,
+    430
+  ]
+}
+
+Read , lines 431 to 668
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    431,
+    668
+  ]
+}
+
+Read , lines 669 to 967
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    669,
+    967
+  ]
+}
+
+Search for `^### User request|^### Applicable reference guidance|^## Task `
+
+Read , lines 1577 to 1600
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    1577,
+    1600
+  ]
+}
+
+Read , lines 2104 to 2130
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    2104,
+    2130
+  ]
+}
+
+Read , lines 2557 to 2585
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    2557,
+    2585
+  ]
+}
+
+Read , lines 3026 to 3128
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    3026,
+    3128
+  ]
+}
+
+Read , lines 3330 to 3360
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    3330,
+    3360
+  ]
+}
+
+Read , lines 3484 to 3515
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    3484,
+    3515
+  ]
+}
+
+Read , lines 3735 to 3770
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    3735,
+    3770
+  ]
+}
+
+Read , lines 4467 to 4505
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    4467,
+    4505
+  ]
+}
+
+Read , lines 4667 to 4705
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    4667,
+    4705
+  ]
+}
+
+Read , lines 5058 to 5095
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    5058,
+    5095
+  ]
+}
+
+Read , lines 5141 to 5180
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    5141,
+    5180
+  ]
+}
+
+Read , lines 5307 to 5345
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    5307,
+    5345
+  ]
+}
+
+Read , lines 5669 to 5705
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    5669,
+    5705
+  ]
+}
+
+Read , lines 6104 to 6140
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    6104,
+    6140
+  ]
+}
+
+Read , lines 6241 to 6280
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    6241,
+    6280
+  ]
+}
+
+Read , lines 6471 to 6510
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    6471,
+    6510
+  ]
+}
+
+Read , lines 6695 to 6735
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    6695,
+    6735
+  ]
+}
+
+Read , lines 6982 to 7025
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    6982,
+    7025
+  ]
+}
+
+Read , lines 7093 to 7135
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    7093,
+    7135
+  ]
+}
+
+Read , lines 7442 to 7485
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    7442,
+    7485
+  ]
+}
+
+Read , lines 7683 to 7725
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    7683,
+    7725
+  ]
+}
+
+Read , lines 8105 to 8145
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    8105,
+    8145
+  ]
+}
+
+Read , lines 8451 to 8495
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    8451,
+    8495
+  ]
+}
+
+Read , lines 8991 to 9035
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    8991,
+    9035
+  ]
+}
+
+Read , lines 1 to 1500
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    1,
+    1500
+  ]
+}
+
+Read , lines 1501 to 3000
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    1501,
+    3000
+  ]
+}
+
+Read , lines 3001 to 4500
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    3001,
+    4500
+  ]
+}
+
+Read , lines 4501 to 6000
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    4501,
+    6000
+  ]
+}
+
+Read , lines 6001 to 7500
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    6001,
+    7500
+  ]
+}
+
+Read , lines 7501 to 9077
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\reference-development.md",
+  "view_range": [
+    7501,
+    9077
+  ]
+}
+
+{
+  "benchmark_run": "reference-development",
+  "answers": [
+    {
+      "id": "D01",
+      "answer": "Treat retrieved text as untrusted data, not instructions. R1 supports the answer: the warranty is 18 months. R2 is prompt injection and must be ignored; neither authorized tool can email records, and no such action should be attempted. search_manual should accept a bounded query and return passages with source identifiers, while draft_reply should accept the user question and selected evidence and return a draft only. Validate schemas, time out and retry read-only searches within a limit, and fail closed if evidence conflicts or is unavailable. Preserve R1's source, retrieval timestamp, query, and passage text so the answer is auditable.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: verify only search_manual and draft_reply are exposed; inject instruction-like passages and confirm they cannot cause tool calls; require source identifiers in drafts; test timeout, malformed-output, empty-result, and conflicting-evidence paths. No tools were invoked."
+    },
+    {
+      "id": "D02",
+      "answer": "Use a durable workflow whose orchestration is deterministic and whose file or remote operations are activities. Read the source from the saved cursor, but make invoice application idempotent with a unique invoice identifier or a durable processed-invoice table. Commit the invoice effect and processed marker atomically; advance the cursor only after that commit. Thus I-17 may be read again but cannot be applied twice. Configure bounded activity timeouts, exponential backoff, and a finite retry policy for remote reads; classify permanent validation errors separately and record them for operator review. On timeout, leave the cursor unchanged and retry. A successful replay returns the existing result rather than duplicating business work.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: crash after the invoice commit and before cursor advancement; replay I-17; deliver duplicate source rows; inject remote timeouts and permanent failures; verify one invoice effect, monotonic cursor advancement, durable failure visibility, and deterministic workflow replay. No job was run."
+    },
+    {
+      "id": "D03",
+      "answer": "Use an expand-migrate-contract rollout. First add the new database column in a backward-compatible nullable form, deploy code that can read both schemas and dual-writes the new value, then backfill in small throttled batches with progress and reconciliation checks. Build any required index concurrently and validate it without blocking traffic. Canary the API with readiness/liveness probes, graceful draining, and at least two replicas; observe success rate, error rate, latency, saturation, database locks, and migration lag. At 200 requests/s, the 99.9% SLO permits at most 0.2 failed requests per second over the measurement window, subject to the existing error budget. Abort on a statistically meaningful regression. Roll back application code first while retaining the additive schema; enforce NOT NULL or remove compatibility only after all readers are upgraded and verified.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: rehearse the migration on a production-sized copy, measure lock duration and backfill load, exercise old and new binaries against both schemas, run a small canary, compare SLO and database metrics with baseline, and rehearse application rollback. No cloud operation was performed."
+    },
+    {
+      "id": "D04",
+      "answer": "The original implementation loses fractional cents through binary floating-point arithmetic and does not enforce the stated type and range contract. Compute the discounted amount as an integer numerator over 100 and apply half-up rounding by adding 50 before integer division. Reject non-lists, non-integer or boolean entries, and non-integer or boolean discounts with TypeError. Reject negative prices and discounts outside 0 through 100 with ValueError. The implementation below has no imports, mutation, I/O, or other side effects.",
+      "artifact_code": "def total_cents(prices, discount_percent):\n    if not isinstance(prices, list):\n        raise TypeError(\"prices must be a list\")\n    if isinstance(discount_percent, bool) or not isinstance(discount_percent, int):\n        raise TypeError(\"discount_percent must be an integer\")\n    if discount_percent < 0 or discount_percent > 100:\n        raise ValueError(\"discount_percent must be between 0 and 100\")\n\n    total = 0\n    for price in prices:\n        if isinstance(price, bool) or not isinstance(price, int):\n            raise TypeError(\"prices must contain integers\")\n        if price < 0:\n            raise ValueError(\"prices must be nonnegative\")\n        total += price\n\n    numerator = total * (100 - discount_percent)\n    return (numerator + 50) // 100",
+      "findings": [],
+      "verification": "Proposed checks: test empty and ordinary lists, exact half-cent boundaries, zero and full discounts, very large integers, booleans, floats, strings, non-lists, negative prices, and out-of-range discounts. Confirm invalid types and ranges raise the specified exception classes. The artifact was not executed."
+    },
+    {
+      "id": "D05",
+      "answer": "Split by physical product, not by photo: keep all five adjacent views of a product in exactly one partition, with product-disjoint train, validation, and test sets. The test set should represent unseen products and be reported separately from any within-product diagnostic split. Correct the resize transform by scaling boxes with x by 400/800 and y by 300/600, or transform images and boxes together through one geometry-aware augmentation pipeline; clip and validate boxes afterward. Audit a rendered sample with boxes overlaid before training. Report class-wise precision/recall and mAP at the chosen IoU thresholds, plus counts per product, and use fixed seeds and augmentation settings. No training or download is required for this plan.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: assert product IDs do not cross splits, render original and resized annotations, verify box coordinates and dimensions, test degenerate/out-of-frame boxes, and evaluate the final model only on held-out products. No model was trained."
+    },
+    {
+      "id": "D06",
+      "answer": "The snippets are independent. S1 is SQL injection: an attacker controls id and can alter the query; use a parameterized predicate and validated identifier. S2 is broken tenant authorization/IDOR: a user can request another tenant's order; query by authenticated tenant and order ID, as in C1. S3 is arbitrary file read/path traversal: encoded dot segments or absolute paths can escape the intended directory; resolve against a fixed root, reject escapes, and authorize the file. S4 is shell command injection through name; use an argument array and shell=False with fixed or validated paths, as in C3. S5 leaks bearer credentials into logs; redact Authorization before logging and restrict access. S6 is reflected XSS; HTML-escape the value in its text context, as in C4.",
+      "artifact_code": null,
+      "findings": [
+        {
+          "id": "S1",
+          "issue": "SQL injection through request.args['id'] concatenated into the SQL statement; an attacker can change predicates or extract data.",
+          "repair": "Use a parameterized query with the authenticated tenant and a validated order_id, for example the structure shown in C1."
+        },
+        {
+          "id": "S2",
+          "issue": "Missing tenant scope permits an authenticated user to retrieve another tenant's private order by changing order_id.",
+          "repair": "Constrain the lookup by authenticated_tenant and order_id in the same authorization-aware query; return not found or forbidden according to the API policy."
+        },
+        {
+          "id": "S3",
+          "issue": "User-controlled path is joined into a server path without containment validation, enabling path traversal and arbitrary file disclosure.",
+          "repair": "Map an opaque authorized file identifier to a server-side path, or canonicalize beneath a fixed root and reject any path outside that root; enforce authorization."
+        },
+        {
+          "id": "S4",
+          "issue": "shell=True with concatenated user input enables command injection and arbitrary command execution.",
+          "repair": "Pass a list of fixed executable and validated arguments with shell=False, matching C3; reject unexpected argument forms."
+        },
+        {
+          "id": "S5",
+          "issue": "Logging all request headers records bearer credentials, exposing tokens through log storage and downstream access.",
+          "repair": "Remove or redact Authorization and other secrets before logging, and restrict and retain logs only as needed."
+        },
+        {
+          "id": "S6",
+          "issue": "Unescaped query content is reflected into HTML, enabling stored or reflected cross-site scripting.",
+          "repair": "HTML-escape the value for the exact text context, use a safe templating auto-escape mode, and add an appropriate CSP."
+        }
+      ],
+      "verification": "Proposed checks: use harmless injection test strings for S1 and S4, cross-tenant IDs for S2, traversal encodings for S3, log inspection for token absence in S5, and inert XSS payloads for S6. Do not execute production snippets."
+    },
+    {
+      "id": "D07",
+      "answer": "Use an explicit schema: event_id as a non-null string with a uniqueness constraint, amount_cents as a non-null signed integer after validation, occurred_at parsed as an offset-aware datetime, and business_day derived after conversion to UTC. The two a rows represent the same event and deduplicate by event_id; their timestamp is 2026-04-03 01:30 UTC. b is also on 2026-04-03, so the valid April 3 total is 350 cents. c is malformed and must be quarantined with the raw row and validation error, not coerced to zero. Publish through a durable ledger keyed by event_id and a run/reconciliation record; retries upsert or no-op by that key. Reconcile source counts, accepted/rejected counts, unique events, and published totals before marking the run complete.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: validate schema and timezone conversion, assert duplicate event_id behavior, quarantine malformed amounts, rerun after publication, compare ledger totals with an independent grouped calculation, and verify that a restarted run cannot publish a second amount. No import was run."
+    },
+    {
+      "id": "D08",
+      "answer": "The reported 70% is an unweighted average of group percentages and is not the combined user-level rate. The pooled rate is 10 successes out of 12 users, or 83.3%; the groups contribute unequal denominators. That pooled value is descriptive, not evidence that the product change caused improvement: there was no randomization and the groups may differ in baseline risk, time, selection, or exposure. Define the estimand and unit first, then report each group's successes, denominators, absolute difference (90% minus 50% = 40 percentage points), and uncertainty. With these small counts, use an exact or appropriately adjusted binomial comparison and confidence intervals, while acknowledging low power. For causal inference, use randomized assignment; otherwise adjust prespecified confounders with a suitable regression and label conclusions associative.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: reproduce pooled and group rates from row-level data, inspect independence and missingness, calculate confidence intervals and an effect size, prespecify any adjustment variables, and run a sensitivity analysis for unmeasured confounding. No statistical test was run."
+    },
+    {
+      "id": "D09",
+      "answer": "Use an expand/backfill/contract migration. Add external_key as nullable, and change writers first so new rows always generate a collision-resistant key and updates preserve it. Detect and resolve proposed-key collisions explicitly with a deterministic reassignment policy; do not silently overwrite. Backfill in small committed batches, recording progress and rechecking uniqueness. Create a unique index concurrently on external_key while it remains nullable, investigate any duplicate or null failures, then attach it as a NOT VALID or validated constraint where appropriate and validate separately. Only after every row is populated and all readers tolerate the column should the column become NOT NULL, preferably with a staged constraint validation. Roll back application behavior to the old code while leaving additive schema objects; reverse schema changes only after confirming no dependent traffic. Do not execute SQL during preparation.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: inventory nulls and collisions, test concurrent writers, measure batch locks and replication lag, validate the index and constraint on a production-sized copy, run old and new application versions together, and rehearse rollback. No SQL was executed."
+    },
+    {
+      "id": "D10",
+      "answer": "Use Lightning's full checkpoint/resume path rather than loading only state_dict weights. Save model parameters, Adam moments and step, scheduler state and last learning rate, AMP GradScaler state, epoch/global batch counters, callback state, and any accumulated metrics. Make data order reproducible by checkpointing sampler or dataloader position where supported, using a fixed generator seed and deterministic worker seeding; record dataset/version, batch size, world size, precision, and deterministic settings. Resume with the same code and configuration, and preserve the checkpoint atomically. A decisive experiment runs a fixed uninterrupted job and a second job that checkpoints at a batch boundary, stops, then resumes from that checkpoint; compare the next batch indices, learning rate, scaler state, loss, gradients, and parameters. Weight-only loading should intentionally fail that equivalence.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: compare serialized optimizer, scheduler, scaler, RNG, and sampler states; compare uninterrupted and resumed trajectories from the first post-resume batch; repeat on CPU and the target accelerator if relevant. No training was run."
+    },
+    {
+      "id": "D11",
+      "answer": "Give each setting a visible text label and a native checkbox or switch with an accessible name, description, state, and keyboard operation; never rely on icons or red alone. Group related controls with a legend, preserve a clear tab order, show inline text errors adjacent to fields, associate them with aria-describedby and aria-invalid, and keep focus on the first invalid field. Separate Delete Account from Save Changes, style it as destructive, require a deliberate confirmation dialog with consequences, reauthentication if required, and a final explicit action. After saving, keep focus on a status region or heading and announce success through a polite live region; preserve the user's scroll position. Also specify loading, disabled, retry, unsaved-change, permission, responsive, localization, contrast, reduced-motion, and screen-reader behavior. The owner must approve these behavioral and content decisions, not just colors.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: keyboard-only traversal and activation, screen-reader announcements, focus after validation/save/delete, contrast and non-color error cues, narrow viewport reflow, dialog escape behavior, reduced motion, and unsaved-change recovery. No UI was tested."
+    },
+    {
+      "id": "D12",
+      "answer": "P1 establishes the new keyword name, and P2 provides the migration spelling and an example value of two seconds. Existing timeout_ms=2000 is milliseconds, so mechanically renaming only the keyword would change the intended timeout to 2000 seconds. Convert the unit: timeout_seconds=2, preferably using an explicit conversion at each call site or a typed configuration migration that rejects ambiguous values. B1 supports the keyword replacement but is insufficient to override the unit evidence and should be treated as an unverified claim. A bounded reproduction should run the old SDK with 2000 ms and SDK 2 with 2 seconds against a controllable endpoint that delays below, at, and above the deadline, recording elapsed time, exception type, and retries. Include a negative case with 2000 seconds only to demonstrate the regression; do not cite these fictional IDs as external sources.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: static-search all timeout_ms call sites, review unit conversions, run a small matrix of 1, 2, and 3 second delays with bounded client deadlines, and compare old/new outcomes. No reproduction was run."
+    },
+    {
+      "id": "D13",
+      "answer": "Do not touch the dirty checkout or discard its edits. First record its status and identify the repository root and current commit; avoid operations that require checking out the same branch in another worktree. Because the requested branch name already exists and the current worktree may be in use, create a new uniquely named fix branch from the desired base commit and add a worktree at a newly created, fully quoted path with spaces. Confirm the new worktree's branch and HEAD before editing. Perform the fix and commit only in that isolated worktree; preserve the original worktree and its uncommitted changes. If the existing branch is actually required, inspect worktree registrations and wait for its owner rather than forcibly attaching it. Use path-safe Git options and noninteractive commands, and never reset, clean, or checkout over edits.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: inspect status before and after, verify separate worktree paths and branch names, confirm the original diff is unchanged, verify the new branch's starting commit, and run the focused checks only in the isolated worktree. No commands were run."
+    },
+    {
+      "id": "D14",
+      "answer": "Route each event to one Durable Object by a deterministic event key and persist a state machine such as absent, processing, completed, or failed. Atomically claim the event in storage before external I/O, with a unique event ID and a lease or attempt record; duplicates then observe processing or completed rather than both starting work. Do not hold a concurrency-blocking initialization lock across the remote request. Use the event ID as the remote service's idempotency key and persist the remote result before marking completed. If the reply is lost, retry or query the remote operation with the same key, then reconcile before deciding. If the remote service lacks idempotency or status lookup, exactly-once external effects are impossible: at-least-once delivery can yield uncertainty, so expose a reconciliation/manual-review state and never claim stronger guarantees.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: overlap duplicate deliveries, crash after claim, crash after remote commit before local completion, retry lost replies, expire leases, and verify one remote effect when the remote API honors idempotency. No deployment was performed."
+    },
+    {
+      "id": "D15",
+      "answer": "## Migrating `gnwidget export`\n\nCLI v2 replaces `--target` with `--output`:\n\n```text\ngnwidget export --output DIR [--dry-run]\n```\n\nFor example:\n\n```text\ngnwidget export --output ./generated --dry-run\n```\n\nUpdate scripts from `gnwidget export --target DIR` to `gnwidget export --output DIR`. The `--target` option has been removed, so v1 command lines that retain it are incompatible with v2 and should fail rather than silently redirect output. v2 also no longer overwrites existing files by default; review existing output or use the documented workflow for any intentional replacement. `--dry-run` previews the operation without writing. This note is based on the supplied help output; commands were not tested.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: compare v1 and v2 help output, verify the migrated example writes only to the requested directory, confirm existing files are preserved by default, and confirm --dry-run performs no writes. No commands were run."
+    },
+    {
+      "id": "D16",
+      "answer": "Keep the ISR bounded and nonblocking: record the event and a timestamp or increment an atomic counter, then defer formatting, allocation, and logging to a worker thread or work queue. Use an ISR-safe primitive such as an atomic or semaphore according to the data-sharing needs; protect shared records with the appropriate Zephyr synchronization outside interrupt context. For a 32-bit millisecond counter, compare elapsed time with unsigned subtraction: `(uint32_t)(now - start) >= duration`. This remains correct across one wrap when duration is less than half the counter range, unlike `now >= start + duration`, whose addition can wrap. Keep duration at 500 ms and validate the stated bound. Host tests can cover arithmetic and state transitions; hardware tests must verify real ISR latency, counter source, overflow behavior, queue saturation, and logging timing.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: host-test timestamps around zero and one wrap, assert no blocking or allocation occurs in the ISR path, test queue-full behavior, then measure interrupt latency and timeout behavior on target hardware under logging load. No firmware was built or flashed."
+    },
+    {
+      "id": "D17",
+      "answer": "For a CharacterBody2D, velocity is a rate in pixels per second, so assign `velocity = direction * speed` and call the argument-less `move_and_slide()` once from `_physics_process`. Do not multiply velocity by delta; the physics engine integrates movement for the fixed timestep. Read input in `_physics_process` for deterministic movement, or capture event-driven input state and consume that state there. Keep acceleration or gravity integrations delta-scaled, because those update rates rather than velocities. If the controller is top-down, normalize the direction so diagonal speed is not larger. Measure the same input script at several render rates and physics tick settings, record displacement and collision outcomes over a fixed simulated duration, and compare against a tolerance. No game was rewritten or run.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: hold each cardinal direction and diagonals, run at multiple render frame rates with the same physics tick, measure distance per second and collision contacts, and confirm results stay within a stated tolerance. No Godot test was run."
+    },
+    {
+      "id": "D18",
+      "answer": "Define the deployment estimand first: performance on future months for customers unseen during training. Use a time-ordered, customer-disjoint split: train on earlier months, validate on later months for tuning, and reserve the latest future months and entirely unseen customers for one final test. Prevent temporal and entity leakage by ensuring no customer's later rows enter training when that customer is meant to be unseen, and fit every preprocessing step, including the scaler, only inside each training fold. Put preprocessing and the estimator in one Pipeline, and tune hyperparameters only with grouped, time-aware validation inside the training portion. Report PR-AUC or ROC-AUC as appropriate, calibration, recall/precision at an operational threshold, and confidence intervals. A useful baseline is a majority-class or historical customer-rate model, plus a simple regularized logistic model with the same leakage-safe pipeline.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: audit customer and timestamp overlap across splits, inspect fitted-transformer data ranges, compare against the majority and historical-rate baselines, freeze the final test set, and document class imbalance and missingness handling. No model was trained."
+    },
+    {
+      "id": "D19",
+      "answer": "Weights alone are not a deployable model contract. Package the exact feature schema and order, dtypes, missing-value and categorical policies, preprocessing/scaler parameters, model architecture and framework/runtime versions, tokenizer or lookup assets if any, training-data snapshot and label definition, evaluation metrics and thresholds, and a reproducible container or inference entry point. Register the immutable artifact with provenance and a compatibility version; reject requests whose schema does not match rather than silently reordering or imputing unexpectedly. Gate promotion with offline holdout metrics, calibration, data-quality and drift checks, contract tests against real request fixtures, load tests, and business-critical latency p95/p99 and error budgets. Prefer shadow traffic, then a small canary with autoscaling and alarms. Monitor latency, errors, feature drift, prediction distribution, and resource saturation. Roll back atomically to the prior immutable model/configuration, not by rebuilding.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: replay versioned fixtures, compare feature ordering and preprocessing outputs, load-test at expected concurrency, validate alarms and dashboards, shadow and canary against the prior model, and rehearse an immutable rollback. No endpoint was deployed."
+    },
+    {
+      "id": "D20",
+      "answer": "Replace ScrollView with a virtualized list such as FlatList or a more capable recycler, using stable item IDs rather than array indexes as keys. Keep only the needed window mounted, tune `initialNumToRender`, `maxToRenderPerBatch`, `windowSize`, and `updateCellsBatchingPeriod` from measurements, and memoize row components so unrelated renders do not redraw 20,000 items. Create the network subscription in an effect with a stable dependency list and return its unsubscribe cleanup; do not create it during render. Persist the feed cache locally with a versioned schema, render cached content immediately when offline, show freshness and offline status, and queue only supported refresh behavior. Add explicit loading, empty, error, retry, and pagination states. Observe scroll FPS, JS/UI thread time, memory, mount count, subscription count, cache hit rate, offline startup time, and duplicate events.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: profile a 20,000-row scroll on representative devices, trigger repeated renders and confirm one active subscription, kill network and relaunch from cache, restore connectivity, measure memory and frame drops, and verify stable row identity during updates. No app was run."
+    },
+    {
+      "id": "D21",
+      "answer": "Tokenize with word-boundary metadata such as `word_ids`, so both subtokens of playground map to the same original word. Assign the word's entity label to the first subtoken and set continuation subtokens to the loss-ignore value, or consistently repeat labels if the model and evaluation policy explicitly support that choice; first-subtoken labeling is the usual simple convention. Assign the ignore value to special and padding tokens. Attention masks must be one for real subtokens and zero for padding, so padding cannot affect attention. The label mask must also exclude padding, specials, and ignored continuation subtokens from loss and metrics. For evaluation, reconstruct word-level predictions from the selected subtoken policy, remove ignored positions, and compute entity-level precision, recall, and F1 using the same span scheme and label mapping rather than token accuracy alone.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: inspect token-to-word mappings for playground and special tokens, assert attention and loss masks differ as intended, verify padding contributes neither loss nor metrics, and compare word-level spans on hand-labeled examples. No tokenizer or model was run."
+    },
+    {
+      "id": "D22",
+      "answer": "The function below computes the mean binary cross-entropy with logits without overflow. For logit z and target y, the loss is `max(z, 0) - z*y + log(1 + exp(-abs(z)))`; the gradient of the mean with respect to z is `(sigmoid(z)-y)/n`. It accepts nonempty equal-length lists, finite numeric non-boolean logits, and targets exactly 0 or 1. Large positive and negative logits use stable branches. Invalid inputs raise ValueError. The artifact imports only math and has no side effects.",
+      "artifact_code": "import math\n\ndef binary_loss_grad(logits, targets):\n    if not isinstance(logits, list) or not isinstance(targets, list):\n        raise ValueError(\"logits and targets must be lists\")\n    if not logits or len(logits) != len(targets):\n        raise ValueError(\"lists must be nonempty and have equal lengths\")\n\n    losses = []\n    gradients = []\n    for z, y in zip(logits, targets):\n        if isinstance(z, bool) or not isinstance(z, (int, float)) or not math.isfinite(z):\n            raise ValueError(\"logits must be finite numbers\")\n        if isinstance(y, bool) or not isinstance(y, (int, float)) or y not in (0, 1):\n            raise ValueError(\"targets must be 0 or 1\")\n\n        if z >= 0:\n            exp_neg = math.exp(-z)\n            sigmoid = 1.0 / (1.0 + exp_neg)\n            loss = z - z * y + math.log1p(exp_neg)\n        else:\n            exp_pos = math.exp(z)\n            sigmoid = exp_pos / (1.0 + exp_pos)\n            loss = -z * y + math.log1p(exp_pos)\n\n        losses.append(loss)\n        gradients.append((sigmoid - y) / len(logits))\n\n    return (sum(losses) / len(logits), gradients)",
+      "findings": [],
+      "verification": "Proposed checks: compare small logits with a hand calculation, test +/-1000 for finite results, verify gradient signs and mean scaling, and use centered finite differences with a small epsilon away from overflow. Also test empty, unequal, non-list, non-finite, boolean, and invalid-target inputs. The artifact was not executed."
+    },
+    {
+      "id": "D23",
+      "answer": "Propagate W3C trace context from the inbound request into the enqueue operation, and create a producer span for enqueue plus a linked or child consumer span when the worker starts; carry a correlation/job ID in message metadata without putting it in metric labels. Metrics should use bounded dimensions such as route, operation, status class, queue name, outcome, and deployment version: request rate, error rate, enqueue latency, queue depth, age of oldest job, processing latency, retry/dead-letter counts, and end-to-end delay. Keep user_id and request_id in traces or structured logs only, with sampling and access controls. Never log full Authorization headers; redact them and other secrets. Verify alerts with synthetic failures and queue backlog, checking threshold, duration, notification, runbook, and recovery behavior without changing the service.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: inspect metric cardinality, trace parent/child relationships across enqueue and processing, confirm secret redaction, generate controlled enqueue failures and backlog, and verify alert firing and recovery against a staging or test signal. No service was changed."
+    },
+    {
+      "id": "D24",
+      "answer": "For the baseline, the mean is `(10+10+10+10+100)/5 = 28 ms`, the median is 10 ms, and nearest-rank p95 uses rank `ceil(0.95*5)=5`, giving 100 ms. For the candidate, the mean is `(6+6+6+6+150)/5 = 34.8 ms`, the median is 6 ms, and nearest-rank p95 is 150 ms. Thus the typical request improved, but the mean worsened and the tail regressed substantially; one warm request is not evidence of a 2x service-wide speedup. Follow up with randomized interleaved repetitions, cold and warm runs, representative payloads, controlled concurrency, cache and connection-state reporting, outlier policy fixed in advance, and confidence intervals for median, mean, and tail percentiles. Measure enough samples to estimate p95 reliably and report throughput, errors, and resource use.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: predefine workload and percentile method, warm up separately, randomize baseline/candidate order, collect repeated independent runs, compare distributions and confidence intervals, and verify no timing was performed beyond the supplied five values."
+    },
+    {
+      "id": "D25",
+      "answer": "The editable checkout can see repository files that are absent from the wheel, so declare the data file as package data in the build configuration and access it through importlib.resources rather than a current-working-directory or source-tree path. Keep the public requirement at Python >=3.11: replace the 3.12-only syntax with an equivalent 3.11-compatible form, update classifiers and the build environment, and avoid raising the minimum unless explicitly intended. Build in an isolated environment from a clean source tree, inspect the wheel contents and metadata, install the wheel into a fresh environment, and import and read the data file from outside the repository. Run the test suite and lint/type checks across supported 3.11 and current interpreters, then verify sdist and wheel parity and reproducible build metadata before release.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: build sdist and wheel in isolation, list wheel contents, install without the checkout on the import path, read the packaged resource, run the matrix on Python 3.11 and newer supported versions, and test both artifact types. No package was installed or published."
+    },
+    {
+      "id": "D26",
+      "answer": "Promote the already tested wheel and source artifacts as immutable release candidates; do not rebuild separately for GitHub and PyPI. Verify each file's recorded SHA-256 against the bytes to be published, confirm version metadata, provenance, signatures or attestations if used, and retain the test report and source commit association. Stage the exact files for both destinations, review names and hashes, then publish only after an explicit approval gate; GitHub release assets and PyPI uploads must reference the same bytes. Verify downloads and hashes from each destination after publication. If preparation reveals a mismatch, stop and replace the candidate rather than editing it. If publication later fails, retry the same immutable artifacts. PyPI versions cannot generally be overwritten, so a bad release is handled by yank/retraction and a corrected patch release; GitHub assets can be marked or replaced only under its rules. No publication is authorized here.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: recompute hashes, inspect wheel and sdist metadata, verify signatures and provenance, compare staged manifests for both registries, rehearse a failed upload and retry, and document a yank/corrected-release procedure. No artifact was published."
+    },
+    {
+      "id": "D27",
+      "answer": "CString::new creates an owned allocation whose pointer is valid only while the CString remains alive. In the expression shown, the temporary is dropped at the end of the statement, so C retains a dangling pointer and later use is undefined behavior. Even if the Rust allocation were kept alive, freeing it with C free is invalid because allocation and deallocation must use a compatible allocator and ownership contract. Define the FFI ABI explicitly with `extern \"C\"`, a C-compatible pointer type, and documented ownership. If C must retain the string, transfer an allocation made for C, for example with `CString::into_raw`, and provide a Rust `extern \"C\"` destructor that calls `CString::from_raw` exactly once; do not call C free on that pointer. Alternatively, copy into C-owned memory using a C allocator and let C free it. Handle interior NUL and null pointers explicitly rather than unwrap.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: review the C header and allocator contract, test pointer use only within the documented lifetime, test retained ownership and exactly-once destruction, exercise interior-NUL and null cases, and run memory tools on a controlled native test harness. No native code was run."
+    },
+    {
+      "id": "D28",
+      "answer": "The checker below tests representative lower-bound, upper-bound, in-range, negative, oversized, boolean, and non-integer inputs. It also checks returned values and requires TypeError for invalid types. Any implementation that merely returns a constant, fails to clamp, accepts booleans, or raises the wrong exception fails an assertion. It uses no imports, I/O, mutation, or side effects.",
+      "artifact_code": "def check_contract(fn):\n    assert callable(fn)\n\n    cases = [\n        (-100, 0),\n        (-1, 0),\n        (0, 0),\n        (1, 1),\n        (50, 50),\n        (99, 99),\n        (100, 100),\n        (101, 100),\n        (10**12, 100),\n    ]\n    for value, expected in cases:\n        result = fn(value)\n        assert type(result) is int\n        assert result == expected\n\n    for invalid in (True, False, 1.0, -1.0, \"50\", None, [], {}, object()):\n        try:\n            fn(invalid)\n        except TypeError:\n            pass\n        else:\n            assert False, \"invalid input did not raise TypeError\"\n\n    return None",
+      "findings": [],
+      "verification": "Proposed checks: pass correct, constant, unclamped, boolean-accepting, and wrong-exception implementations to ensure the checker rejects them; verify boundary and large-integer cases and that the checker itself returns normally for a correct implementation. The artifact was not executed."
+    },
+    {
+      "id": "D29",
+      "answer": "A claim inserted in the same transaction as the command cannot reserve work before an external or slow operation is visible to concurrent requests, and setting FAILED then rolling back removes the FAILED row. Choose an idempotency key and hash the original payload. First commit a durable claim in a short transaction with status PROCESSING; a concurrent request waits or returns a documented in-progress response, and a different payload for the same key returns 409 conflict. Perform the command and outbox work with the claim, storing the replay response in the same committing transaction; on a business failure, commit a FAILED status and safe error details in a separate transaction. If commit succeeds but the HTTP response is lost, a retry finds the stored response and replays it. For external payment effects, use the same idempotency key and reconciliation because a remote commit can precede a lost reply.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: overlap identical requests, overlap a changed payload, fail before and after claim commit, fail during command processing, lose the HTTP response after commit, and verify durable statuses, one command/outbox effect, replayed responses, and explicit uncertain-payment reconciliation. No SQL or payment call was made."
+    },
+    {
+      "id": "D30",
+      "answer": "A compact, standalone page is provided below with a warm workshop-inspired identity: charcoal ink, sawdust gold, and mint accents. It uses native labels and controls, exactly two slot radios, visible validation, a responsive layout, focus management, and a live confirmation region. The button remains disabled until a selected tool, a selected slot, and a valid email are present. The page has no external assets, scripts, fonts, images, network calls, or dependencies.",
+      "artifact_code": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<title>Neighbor Tool Library</title>\n<style>\n:root{color-scheme:light;--ink:#17231f;--paper:#f7f3e8;--gold:#e6a735;--mint:#b9dfc5;--line:#c9c4b5}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,sans-serif}main{max-width:760px;margin:auto;padding:clamp(1.2rem,5vw,4rem) 1rem}.brand{display:flex;align-items:center;gap:.7rem;font-weight:800;letter-spacing:.04em}.mark{width:2.5rem;height:2.5rem;display:grid;place-items:center;background:var(--gold);border-radius:8px;font-size:1.35rem}h1{font:800 clamp(2.2rem,7vw,4.4rem)/.98 Georgia,serif;max-width:10ch;margin:.8rem 0}.intro{max-width:52ch;margin-bottom:2rem;color:#47564e}.card{background:#fffdf7;border:1px solid var(--line);border-radius:16px;padding:clamp(1rem,4vw,2rem);box-shadow:8px 8px 0 var(--mint)}label,legend{font-weight:750}fieldset{border:0;padding:0;margin:0 0 1.3rem}select,input{width:100%;margin-top:.45rem;padding:.75rem;border:2px solid #8e958d;border-radius:8px;background:#fff;font:inherit;color:inherit}input:focus,select:focus,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}.slots{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin-top:.55rem}.slot{position:relative}.slot input{position:absolute;opacity:0}.slot label{display:block;text-align:center;padding:.8rem;border:2px solid #8e958d;border-radius:8px;cursor:pointer}.slot input:checked+label{background:var(--mint);border-color:var(--ink)}.help{font-size:.9rem;color:#536057;margin:.35rem 0 0}.error{color:#9b271d;font-weight:650;min-height:1.5em;margin:.35rem 0}.actions{display:flex;justify-content:flex-end;margin-top:1.2rem}button{border:0;border-radius:8px;padding:.8rem 1.2rem;background:var(--ink);color:white;font:700 1rem inherit;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.confirm{margin-top:1.4rem;padding:1rem;border-left:5px solid var(--gold);background:#fff4d6}@media(max-width:420px){.slots{grid-template-columns:1fr}.actions button{width:100%}}\n</style>\n</head>\n<body>\n<main>\n<div class=\"brand\"><span class=\"mark\" aria-hidden=\"true\">⌂</span><span>Neighbor Tool Library</span></div>\n<h1>Borrow well. Make things.</h1>\n<p class=\"intro\">Reserve a shared tool from the neighborhood shelf. Pick a time, bring your project, and return the tool ready for the next maker.</p>\n<section class=\"card\" aria-labelledby=\"reserve-title\">\n<h2 id=\"reserve-title\">Reserve equipment</h2>\n<form id=\"reservation\" novalidate>\n<div><label for=\"tool\">Tool</label><select id=\"tool\" name=\"tool\" required><option value=\"\">Choose a tool</option><option>Drill</option><option>Sander</option></select><p class=\"error\" id=\"tool-error\" aria-live=\"polite\"></p></div>\n<fieldset><legend>Pickup time</legend><div class=\"slots\"><div class=\"slot\"><input id=\"time-09\" name=\"time\" type=\"radio\" value=\"09:00\" required><label for=\"time-09\">09:00</label></div><div class=\"slot\"><input id=\"time-14\" name=\"time\" type=\"radio\" value=\"14:00\"><label for=\"time-14\">14:00</label></div></div><p class=\"error\" id=\"time-error\" aria-live=\"polite\"></p></fieldset>\n<div><label for=\"email\">Email</label><input id=\"email\" name=\"email\" type=\"email\" autocomplete=\"email\" required placeholder=\"[you@example.com](mailto:you@example.com)\" aria-describedby=\"email-help email-error\"><p class=\"help\" id=\"email-help\">We will send the reservation details here.</p><p class=\"error\" id=\"email-error\" aria-live=\"polite\"></p></div>\n<div class=\"actions\"><button id=\"submit\" type=\"submit\" disabled>Confirm Reservation</button></div>\n</form><div id=\"confirmation\" class=\"confirm\" role=\"status\" aria-live=\"polite\" tabindex=\"-1\" hidden></div>\n</section>\n</main>\n<script>\nconst form=document.querySelector('#reservation'),tool=document.querySelector('#tool'),email=document.querySelector('#email'),submit=document.querySelector('#submit'),confirmation=document.querySelector('#confirmation');\nfunction chosen(){return document.querySelector('input[name=\"time\"]:checked')}\nfunction valid(){return tool.value!==''&&chosen()&&email.validity.valid}\nfunction update(){submit.disabled=!valid()}\n[tool,email,...document.querySelectorAll('input[name=\"time\"]')].forEach(el=>el.addEventListener('input',update));\nform.addEventListener('submit',e=>{e.preventDefault();if(!valid()){form.reportValidity();return}const time=chosen().value;confirmation.textContent=`Reservation confirmed: ${tool.value} at ${time}. Details will be sent to ${email.value}.`;confirmation.hidden=false;confirmation.focus()});\nemail.addEventListener('blur',()=>{document.querySelector('#email-error').textContent=email.validity.valid?'':'Enter a valid email address.'});tool.addEventListener('blur',()=>{document.querySelector('#tool-error').textContent=tool.value?'':'Choose a tool.'});form.addEventListener('submit',()=>{document.querySelector('#time-error').textContent=chosen()?'':'Choose a pickup time.'});\n</script>\n</body>\n</html>",
+      "findings": [],
+      "verification": "Proposed checks: open the file offline, tab through every control, submit with missing and malformed values, confirm disabled-state transitions, select each of the two times, verify the confirmation text and focus, test narrow widths and a screen reader, and confirm no network requests. No browser test was run."
+    }
+  ]
+}

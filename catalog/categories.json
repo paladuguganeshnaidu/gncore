@@ -1000,7 +1000,7 @@
         "references/web-front-find-skills/UPSTREAM-LICENSE",
         "references/web-front-find-skills/UPSTREAM.md"
       ],
-      "extra": "## Visual direction from an idea\n\nTreat the brief as a product brief, not a request to name a theme. Identify the audience, primary task, content volume, brand constraints, device context, and intended emotion. If the user supplied enough to build, state a short design rationale and proceed. Ask only when an unknown materially changes the product, integration, or acceptance criteria.\n\nAn explicit style or reference image takes priority over defaults. Preserve the current brand and design system for a focused feature unless the user requests a redesign. Recognize common spellings such as minimal/minimalist/minimalism, maximalism/maximalizm, and brutalism/brutalisim. Interpret constraints such as “no gradients” or “no animation” as constraints, not requests for those styles.\n\nWhen no style is named, choose one primary direction using the table. Select type, palette, spacing, geometry, imagery, density, and motion as a coherent system. A layout pattern such as bento can support an editorial or minimalist direction; it does not require mixing every aesthetic.\n\n| Product evidence | Useful starting direction | Implementation consequence |\n| --- | --- | --- |\n| Dense work, analytics, settings, administration | Minimalist or Swiss | Strong alignment, compact but legible density, clear state and action hierarchy |\n| Articles, journalism, publishing, long-form stories | Editorial | Readable measure, strong headline/body contrast, captions, deliberate reading rhythm |\n| Premium hospitality, jewelry, craftsmanship, luxury goods | Luxury/editorial | Art-directed imagery, restrained palette, purposeful type contrast, calm pacing |\n| Children's products or a playful learning experience | Clay or doodle accents | Expressive shapes around a stable layout, readable body text, clear touch targets |\n| Creative studio, festival, music, expressive portfolio | Maximalist or neo-brutalist | A strong motif and focal point, controlled overlap, readable navigation |\n| Technical tools, industrial products, utilitarian control panels | Industrial or Swiss | Structured grids, clear labels, useful numerals, direct controls |\n| AI task delegation or agent workspaces | Agentic | Editable intent, progress, results, cancellation and recovery, clear action boundaries |\n| Futuristic or gaming identity | Futuristic/cyberpunk when justified | Controlled luminous accents, sharp text, predictable ordinary controls |\n| Natural materials, sustainability, wellness identity | Organic | Warm surfaces, natural rhythm, tactile accents, verified contrast |\n| No strong visual cues | Restrained product-specific direction | Let actual content, a deliberate type choice, and one characteristic motif establish identity |\n\nFor a new project, define a small token system before broad styling: semantic surfaces and text, primary/secondary actions, status colors, a readable type scale, spacing, radius, border, shadow, and motion. Use existing tokens when the project already has them. Choose licensed assets and avoid fabricated customers, ratings, awards, or product claims.\n\n## Available visual modes\n\n- Minimalism: remove competing emphasis; preserve necessary controls and feedback. Use whitespace and alignment instead of hiding functionality.\n- Swiss: use a disciplined column/baseline system, clear grotesk typography, and deliberate asymmetry. Preserve reading order when stacking.\n- Editorial: compose real text and imagery around a reading experience, with useful captions, a stable measure, and intentional section rhythm.\n- Luxury: emphasize material, imagery, typography, and small consistent details. Keep prices, navigation, and purchase actions easy to find.\n- Agentic: make intent, tools, running state, proposals, completed actions, evidence, and recovery distinguishable.\n- Maximalism: use a coherent motif, rich layers, and deliberate focal points. Keep body text and ordinary actions readable.\n- Neo-brutalism: use flat color, strong borders, offset shadows, and direct controls consistently. Maintain explicit focus and error states.\n- Industrial brutalism: use ruled structure, utility typography, restrained material tones, and functional density. Keep decoration out of control semantics.\n- Futuristic/Y2K: select a specific visual vocabulary; keep ordinary text and interaction accessible beneath spatial or metallic effects.\n- Retro: choose a coherent era through typography, palette, and graphics while preserving modern interaction behavior.\n- Collage/paper: layer tactile surfaces and cutouts without breaking reading order, text selection, pointer access, or keyboard access.\n- Doodle: use irregular marks as accents around a stable layout. Preserve labels, hit areas, and discoverable state.\n- Bento: size and group modules by content priority. Allow translated text, changing data, and narrow-screen stacking without clipping.\n- Glass: use controlled backgrounds, explicit borders and contrast, an opaque fallback, and a limited blur budget.\n- Neumorphism: add visible affordances and focus beyond subtle shadows; raised and inset effects must not be the only state signal.\n- Claymorphism: use a restrained radius/depth system and a calm text-bearing surface beneath playful dimensional accents.\n- Aurora/gradient: control stop colors and text-bearing surfaces; verify contrast across stops and keep animated gradients optional.\n- Neon/cyberpunk: use glow as emphasis, keep text sharp, avoid flashing, and distinguish state beyond hue.\n- Immersive 3D: justify the scene as part of the experience; provide loading, fallback, resize, resource disposal, and a device budget.\n- Scrollytelling: make the story readable in ordinary document flow, then add scoped pinning or scrubbing with cleanup and reduced motion.\n- Kinetic typography: preserve semantic text when splitting glyphs; handle font loading, line wrapping, interruption, and reduced motion.\n- Organic: use warm or natural surfaces and rhythms without obscuring text, controls, or predictable navigation.\n\n## Build a complete product slice\n\n1. Inspect the existing framework, runtime versions, component primitives, design tokens, routes, state ownership, and relevant APIs. Reuse the actual project structure.\n2. Build the requested user journey with real content and data contracts. Include loading, empty, error, success, validation, and permission states where applicable.\n3. Use semantic HTML and established accessible primitives. Define keyboard interaction and focus ownership for dialogs, menus, forms, and other composite controls.\n4. Design narrow and wide layouts intentionally. Check long labels, changed data, translated text, zoom, touch, and overflow rather than relying on a single screenshot size.\n5. Choose motion for purpose, frequency, and context. Support interruption and cleanup; prefer reduced movement when requested or indicated by user preferences.\n6. Profile an actual bottleneck before optimizing. Bound image weight, render work, animation cost, data waterfalls, and third-party code according to the project.\n7. Verify the main journey through the available browser or test setup. Review screenshots, console output, network failures, accessibility behavior, and responsive states when those tools are available.\n\n## Completion evidence\n\nDeliver the implemented artifact, the chosen direction and why it fits, and the checks actually run. A successful build does not prove visual quality; a screenshot does not prove behavior. Fix observed issues and rerun the relevant checks. If browser or rendering tools are unavailable, state the limit and complete the checks that are available instead of inventing visual verification.\n\n## Representative requests\n\n- “Build a dashboard for a small clinic.” Infer a clear, restrained information hierarchy with readable scheduling and task states; do not ask the user to choose a style name before building.\n- “Make a maximalist landing page for a music festival.” Follow the explicit expressive direction, use real event content, and preserve ticket and navigation usability.\n- “A premium hotel site, no animation.” Use an appropriate luxury/editorial direction with art-directed images and calm typography; keep the no-animation constraint.\n- “Add settings to this existing app.” Preserve its existing theme, component system, and navigation; implement the complete settings behavior.\n"
+      "extra": "## Visual direction from an idea\n\nTreat the brief as a product brief, not a request to name a theme. Identify the audience, primary task, content volume, brand constraints, device context, and intended emotion. If the user supplied enough to build, state a short design rationale and proceed. Ask only when an unknown materially changes the product, integration, or acceptance criteria.\n\nAn explicit style or reference image takes priority over defaults. Preserve the current brand and design system for a focused feature unless the user requests a redesign. Recognize common spellings such as minimal/minimalist/minimalism, maximalism/maximalizm, and brutalism/brutalisim. Interpret constraints such as “no gradients” or “no animation” as constraints, not requests for those styles.\n\nWhen no style is named, choose one primary direction using the table. Select type, palette, spacing, geometry, imagery, density, and motion as a coherent system. A layout pattern such as bento can support an editorial or minimalist direction; it does not require mixing every aesthetic.\n\n| Product evidence | Useful starting direction | Implementation consequence |\n| --- | --- | --- |\n| Dense work, analytics, settings, administration | Minimalist or Swiss | Strong alignment, compact but legible density, clear state and action hierarchy |\n| Articles, journalism, publishing, long-form stories | Editorial | Readable measure, strong headline/body contrast, captions, deliberate reading rhythm |\n| Premium hospitality, jewelry, craftsmanship, luxury goods | Luxury/editorial | Art-directed imagery, restrained palette, purposeful type contrast, calm pacing |\n| Children's products or a playful learning experience | Clay or doodle accents | Expressive shapes around a stable layout, readable body text, clear touch targets |\n| Creative studio, festival, music, expressive portfolio | Maximalist or neo-brutalist | A strong motif and focal point, controlled overlap, readable navigation |\n| Technical tools, industrial products, utilitarian control panels | Industrial or Swiss | Structured grids, clear labels, useful numerals, direct controls |\n| AI task delegation or agent workspaces | Agentic | Editable intent, progress, results, cancellation and recovery, clear action boundaries |\n| Futuristic or gaming identity | Futuristic/cyberpunk when justified | Controlled luminous accents, sharp text, predictable ordinary controls |\n| Natural materials, sustainability, wellness identity | Organic | Warm surfaces, natural rhythm, tactile accents, verified contrast |\n| No strong visual cues | Restrained product-specific direction | Let actual content, a deliberate type choice, and one characteristic motif establish identity |\n\nFor a new project, define a small token system before broad styling: semantic surfaces and text, primary/secondary actions, status colors, a readable type scale, spacing, radius, border, shadow, and motion. Use existing tokens when the project already has them. Choose licensed assets and avoid fabricated customers, ratings, awards, or product claims.\n\n## Available visual modes\n\n- Minimalism: remove competing emphasis; preserve necessary controls and feedback. Use whitespace and alignment instead of hiding functionality.\n- Swiss: use a disciplined column/baseline system, clear grotesk typography, and deliberate asymmetry. Preserve reading order when stacking.\n- Editorial: compose real text and imagery around a reading experience, with useful captions, a stable measure, and intentional section rhythm.\n- Luxury: emphasize material, imagery, typography, and small consistent details. Keep prices, navigation, and purchase actions easy to find.\n- Agentic: make intent, tools, running state, proposals, completed actions, evidence, and recovery distinguishable.\n- Maximalism: use a coherent motif, rich layers, and deliberate focal points. Keep body text and ordinary actions readable.\n- Neo-brutalism: use flat color, strong borders, offset shadows, and direct controls consistently. Maintain explicit focus and error states.\n- Industrial brutalism: use ruled structure, utility typography, restrained material tones, and functional density. Keep decoration out of control semantics.\n- Futuristic/Y2K: select a specific visual vocabulary; keep ordinary text and interaction accessible beneath spatial or metallic effects.\n- Retro: choose a coherent era through typography, palette, and graphics while preserving modern interaction behavior.\n- Collage/paper: layer tactile surfaces and cutouts without breaking reading order, text selection, pointer access, or keyboard access.\n- Doodle: use irregular marks as accents around a stable layout. Preserve labels, hit areas, and discoverable state.\n- Bento: size and group modules by content priority. Allow translated text, changing data, and narrow-screen stacking without clipping.\n- Glass: use controlled backgrounds, explicit borders and contrast, an opaque fallback, and a limited blur budget.\n- Neumorphism: add visible affordances and focus beyond subtle shadows; raised and inset effects must not be the only state signal.\n- Claymorphism: use a restrained radius/depth system and a calm text-bearing surface beneath playful dimensional accents.\n- Aurora/gradient: control stop colors and text-bearing surfaces; verify contrast across stops and keep animated gradients optional.\n- Neon/cyberpunk: use glow as emphasis, keep text sharp, avoid flashing, and distinguish state beyond hue.\n- Immersive 3D: justify the scene as part of the experience; provide loading, fallback, resize, resource disposal, and a device budget.\n- Scrollytelling: make the story readable in ordinary document flow, then add scoped pinning or scrubbing with cleanup and reduced motion.\n- Kinetic typography: preserve semantic text when splitting glyphs; handle font loading, line wrapping, interruption, and reduced motion.\n- Organic: use warm or natural surfaces and rhythms without obscuring text, controls, or predictable navigation.\n\n## Build a complete product slice\n\n1. Inspect the existing framework, runtime versions, component primitives, design tokens, routes, state ownership, and relevant APIs. Reuse the actual project structure.\n2. Build the requested user journey with real content and data contracts. Include loading, empty, error, success, validation, and permission states where applicable.\n3. Use semantic HTML and established accessible primitives. Define keyboard interaction and focus ownership for dialogs, menus, forms, and other composite controls.\n4. Design narrow and wide layouts intentionally. Check long labels, changed data, translated text, zoom, touch, and overflow rather than relying on a single screenshot size.\n5. Choose motion for purpose, frequency, and context. Support interruption and cleanup; prefer reduced movement when requested or indicated by user preferences.\n6. Profile an actual bottleneck before optimizing. Bound image weight, render work, animation cost, data waterfalls, and third-party code according to the project.\n7. Verify the main journey through the available browser or test setup. Review screenshots, console output, network failures, accessibility behavior, and responsive states when those tools are available.\n\n## Completion evidence\n\nDeliver the implemented artifact, the chosen direction and why it fits, and the checks actually run. A successful build does not prove visual quality; a screenshot does not prove behavior. Fix observed issues and rerun the relevant checks. If browser or rendering tools are unavailable, state the limit and complete the checks that are available instead of inventing visual verification.\n\n## Representative requests\n\n- “Build a dashboard for a small clinic.” Infer a clear, restrained information hierarchy with readable scheduling and task states; do not ask the user to choose a style name before building.\n- “Make a maximalist landing page for a music festival.” Follow the explicit expressive direction, use real event content, and preserve ticket and navigation usability.\n- “A premium hotel site, no animation.” Use an appropriate luxury/editorial direction with art-directed images and calm typography; keep the no-animation constraint.\n- “Add settings to this existing app.” Preserve its existing theme, component system, and navigation; implement the complete settings behavior.\n\n## Anticipate failure and verify the boundary\n\nInfer one coherent visual direction from audience, content and primary action when the user omits a style; preserve explicit brand choices. Implement the full journey before polish: named controls, validation, loading/error/empty/success states and selected-value confirmation. Hidden custom controls still need a visible focus indicator on their visible wrapper. Use a focusable status target deliberately if moving focus. Render and exercise keyboard and narrow layouts; CSS inspection or a proposed checklist is not browser evidence, and visual taste has no objective percentage score. Prototype feedback must describe only the action actually implemented: do not say an email, calendar invite or external booking was sent when the page only updates local state."
     },
     {
       "id": "web-backend",
@@ -2353,7 +2353,8 @@
         "references/web-backend-workers-profiling/UPSTREAM.md",
         "references/web-backend-workers-profiling/notices/1-LICENSE",
         "references/web-backend-workers-profiling/references/skill-feedback.md"
-      ]
+      ],
+      "extra": "## Anticipate failure and verify the boundary\n\nChoose one internally consistent idempotency protocol. Scope durable keys to the authenticated tenant and canonical request identity. In one-transaction designs, a competing unique insert may block; uncommitted status is not externally visible and rollback removes its FAILED update. In separately committed claim designs, define leases/generations, takeover and stale-owner fencing. Commit job/command, outbox and replay outcome at the required atomic boundary. Reconcile unknown commits and remote outcomes with stable keys; test overlap, payload mismatch, abandoned claims and lost replies before claiming recovery guarantees."
     },
     {
       "id": "code-build",
@@ -3775,7 +3776,8 @@
         "references/code-workflow-setup/issue-tracker-local.md",
         "references/code-workflow-setup/notices/1-LICENSE",
         "references/code-workflow-setup/triage-labels.md"
-      ]
+      ],
+      "extra": "## Anticipate failure and verify the boundary\n\nTurn the behavior contract into a small counterexample before patching. Preserve API, exception types, units and mutation behavior; check language-specific type traps and exact arithmetic where totals matter. Keep the change local, then verify ordinary, zero, extreme and invalid inputs with an independent oracle. A passing example or explanation is insufficient evidence for general correctness. When a repair allocates or ranks quantities, test mixed exact and fractional shares as well as ties; conservation or a passing happy path alone does not prove the ordering rule."
     },
     {
       "id": "design-ux",
@@ -3948,7 +3950,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nTranslate aesthetic intent into concrete task hierarchy and behavior. Specify the narrow-screen ordering, reflow, control names, keyboard path, visible and restored focus, persistent error/success feedback and destructive-action recovery. Infer consequential omissions from the primary journey without adding unrelated features. A proposed specification is not a tested interface: verify the implemented flow with keyboard, zoom and representative assistive technology when available."
     },
     {
       "id": "python",
@@ -4011,7 +4014,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nVerify the built wheel/sdist in clean environments outside the source checkout, including resources and entrypoints from unrelated working directories. Declare runtime/dependency and interpreter constraints, and check syntax/APIs on the oldest supported interpreter. Use package-resource lookup and explicit build-backend inclusion rules; a source-archive include rule alone may not include a wheel resource. Retain archive contents, install logs and compatibility evidence before release."
     },
     {
       "id": "developer-tools",
@@ -4061,7 +4065,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nPreflight repository ownership, dirty state, path/branch collisions and the intended base before creating workspaces or files. Use argument arrays or correctly quoted explicit paths rather than generated shell strings. Make partial creation and interruption recoverable: detect owned incomplete state, preserve unrelated edits, and explain safe retry/cleanup. Define exit codes and diagnostics that distinguish invalid input, conflicts and environmental failure; verify paths containing spaces and concurrent invocations."
     },
     {
       "id": "documentation",
@@ -4124,7 +4129,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nDerive examples from the real help/API contract, including prerequisites, changed defaults and compatibility boundaries. Make examples copyable without inventing flags or endpoints. Include a realistic failure and safe recovery route, such as an existing output collision, while preserving user data. Label untested examples explicitly and verify commands, links and migration behavior when execution is available."
     },
     {
       "id": "testing",
@@ -4383,7 +4389,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nDerive assertions from independent observable contracts rather than the implementation's wording. Check that the suite accepts a known-correct implementation before measuring deliberate mutants, and distinguish caught defects from false rejections. Cover meaningful boundaries, exception semantics and state transitions with deterministic setup/cleanup. Report actual passed/failed/skipped cases and unexecuted integration coverage; do not turn an always-failing test into a high bug-catching score."
     },
     {
       "id": "cybersecurity",
@@ -4557,7 +4564,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nFor each finding, trace attacker-controlled input through the relevant boundary to an observable impact, then propose a repair that preserves authorized behavior. Distinguish finding recall, false alarms and repair correctness. Path containment requires canonical component-aware checks and a symlink/race policy, not a string prefix or filename sanitizer alone. Retest the exploit path and safe neighboring cases; do not call an entire application secure from a small fixture."
     },
     {
       "id": "cloud-devops-sre",
@@ -4770,7 +4778,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nInfer compatibility, secret handling and recovery needs even when the brief mentions only deployment. Stage additive schema/config changes before switching consumers; bound backfill and exposure, and gate promotion on workload-specific errors, latency, lag and resource limits over a defined window. Use least-privilege identities and keep credentials out of images and logs. Application rollback does not reverse changed data; retain a compatible path and rehearse recovery before destructive contraction."
     },
     {
       "id": "release-engineering",
@@ -4820,7 +4829,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nLink the accepted source revision, version, CI evidence and exact artifact hashes in one release record. Build once and promote those verified bytes to each destination; do not rebuild separately and assume equivalence. Inspect metadata/contents and install outside the checkout. Keep website/download claims pending until destination availability is verified. Plan partial-publication recovery and registry-specific yank/supersede behavior, retaining explicit preparation-only boundaries until publication is authorized."
     },
     {
       "id": "automation",
@@ -4869,7 +4879,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nDefine durable operation identity before adding retries. Commit progress with the effect when one transactional boundary permits it; otherwise use an idempotent remote contract, ledger and reconciliation for unknown outcomes. Separate malformed/permanent failures from transient errors, cap retries with backoff and jitter, and leave a recoverable record. Test interruption immediately before and after the durable boundary, including replay of already accepted work."
     },
     {
       "id": "mobile-development",
@@ -4909,7 +4920,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nUse stable identities and virtualization for long collections, then measure expensive row work and rerenders before tuning. Own subscriptions and async tasks across navigation, background/resume and unmount; cancel or ignore stale results. Preserve versioned offline state with loading/stale/error/retry behavior. For mutations, use durable operation identity and a conflict policy; read-only caches should not invent write workflows. Test lifecycle transitions and representative devices separately from desktop reasoning."
     },
     {
       "id": "game-development",
@@ -4949,7 +4961,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nConfirm the engine's movement API and units before introducing delta: some velocity APIs already integrate time. Separate action edges/input state from physics updates, validate direction/normalization and preserve intended mechanics. Bound pause/resume and large-timestep behavior instead of applying an uncontrolled jump. Compare displacement, collisions and action counts under different render and physics schedules; proposed engine tests are not measured gameplay results."
     },
     {
       "id": "data-engineering",
@@ -5027,7 +5040,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nState record grain, event identity, business timezone and value constraints before aggregation. Identical replays, conflicting payloads and legitimate revisions need separate policies; keep-first deduplication must not silently hide corrections. Quarantine invalid rows with lineage, publish atomically/idempotently, and reconcile accepted, duplicate, rejected and emitted counts and amounts. Test late events, changed revisions and restart at publication boundaries."
     },
     {
       "id": "data-science",
@@ -5274,7 +5288,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nDefine the estimand, population, observational unit and denominator before calculating a percentage. Reconcile joins and counts; unequal weighting alone is not Simpson's paradox. Inspect missingness, selection and plausible confounding, and separate descriptive association from a supported causal conclusion. Quantify uncertainty at the right independent unit. Do not quote a p-value or significance result that was not calculated and checked; preserve the exact calculation and its assumptions."
     },
     {
       "id": "machine-learning",
@@ -5557,7 +5572,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nStart from the prediction moment, horizon and deployment population. Audit every feature for point-in-time availability, then choose entity/time split boundaries that match that population. Fit preprocessing and selection within training folds, tune on validation and leave final evaluation sealed. Compare a simple baseline and report imbalance-aware, calibrated operating-point metrics with sample/group counts; avoid inferring generalization from a leaky split or one favorable score."
     },
     {
       "id": "ai-engineering",
@@ -5656,7 +5672,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nTreat retrieved text and tool output as untrusted evidence, even when it contains instructions. Give each tool a validated input/output contract, a minimal capability set, time/iteration/output limits and an explicit empty, malformed or conflicting-evidence fallback. Keep claim-to-source links and redact sensitive traces. Evaluate grounded correctness and unauthorized-action resistance separately; a valid JSON response is not proof of either."
     },
     {
       "id": "neural-networks",
@@ -5748,7 +5765,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nSpecify shapes, axes, label semantics, reductions and dtype before choosing a loss or layer. Use numerically stable logit-space operations and verify that gradient scale matches the reported reduction. Reject invalid/nonfinite inputs according to the API. Check a tiny hand-calculated case, central differences away from nonsmooth points, extreme finite values and a tiny-batch learning diagnostic when training is available. Separate mathematical checks from accelerator or convergence claims."
     },
     {
       "id": "deep-learning",
@@ -5880,7 +5898,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nCheckpoint a compatible training state, not just parameters: optimizer, schedule, precision scaler, RNG, sampler/data position, progress and environment/data identity. For gradient accumulation, save partial gradient state deliberately or checkpoint at a completed optimizer-step boundary. Compare an uninterrupted and resumed short trajectory with the same batches and configuration; use justified numerical tolerances and report device/distributed nondeterminism rather than promising bitwise equality without evidence."
     },
     {
       "id": "computer-vision",
@@ -5964,7 +5983,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nChoose split groups from the deployment population: adjacent frames or multiple views of the same object cannot be independent test evidence. Transform images and annotations together, audit coordinate conventions and overlay representative boxes/masks after each geometric stage. Check dimensions, bounds, degenerate/empty labels and corrupt inputs. Keep a simple baseline, tune on validation only and report task-specific metrics and group counts on the untouched evaluation set."
     },
     {
       "id": "natural-language-processing",
@@ -6048,7 +6068,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nMake the supervision unit explicit before tokenization: document word/subtoken alignment, special-token and padding masks, and reconstruction for task-level metrics. Define truncation and long-input behavior so labels/spans do not silently shift or disappear. When fitting/evaluating a model, group correlated documents, authors or conversations appropriately. Check short, empty, Unicode, padded and truncated examples; token accuracy dominated by padding is not entity or conversation quality."
     },
     {
       "id": "mlops",
@@ -6191,7 +6212,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nPromote an immutable compatible bundle of model, preprocessor, feature contract, data/code identity and runtime. Verify serving parity and wrong/missing/reordered-input behavior before exposure. Gate promotion on both labeled quality and operational constraints, then stage rollout with a compatible rollback target. Feature or prediction drift is a diagnostic signal, not measured accuracy loss; track delayed labels and quality slices separately and define action thresholds for each."
     },
     {
       "id": "databases",
@@ -6276,7 +6298,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nPlan migration behavior for old and new writers as well as readers. Use additive expansion, explicit null/collision resolution, resumable bounded backfill and validated contraction. Check the actual engine/version rules for concurrent indexes, constraints, transaction restrictions and locks; concurrent does not mean lock-free. A populated column cannot be dropped as a harmless rollback. Identify the last reversible step, backup/mapping needs and forward-recovery plan before removing data or compatibility."
     },
     {
       "id": "systems-programming",
@@ -6347,7 +6370,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nMake the owner, storage stability, borrow/retention interval and destruction order explicit at every native/FFI boundary. Pair allocation and deallocation through a documented compatible ABI and enforce exactly-once destruction after the foreign user has finished. Specify null/length/NUL, error/unwind and allowed concurrency behavior. Inspect small unsafe boundaries and use appropriate native/sanitizer/stress checks; a plausible ownership sketch is not runtime memory-safety proof."
     },
     {
       "id": "embedded-systems",
@@ -6419,7 +6443,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nKeep interrupt work bounded and nonblocking; use preallocated storage with an explicit ISR/task ownership and synchronization protocol. Define queue-full behavior, dropped-event visibility, timeout and watchdog recovery rather than only testing for overflow. Document timer width, modular elapsed-time assumptions and the maximum observation interval. Separate host arithmetic/concurrency simulations from measured target latency, memory and peripheral evidence."
     },
     {
       "id": "performance-engineering",
@@ -6503,7 +6528,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nVerify equivalent outputs before timing. Keep raw distributions, errors and timeouts; compare matched inputs, environment, warmup, load and cold/warm conditions with repeated or interleaved trials. Report median and tails as well as mean, throughput and memory against a user-relevant operating objective. A tiny sample or warm function timing cannot support a universal speedup. State which measurements were actually collected and which follow-up experiments remain proposed. Recompute quoted statistics from the retained raw values with trusted arithmetic, and postpone rounding until after comparisons."
     },
     {
       "id": "observability",
@@ -6728,7 +6754,8 @@
         "references/web-backend-sentry-debug-issue/references/concepts/uptime.md",
         "references/web-backend-sentry-debug-issue/references/concepts/user-feedback.md",
         "references/web-backend-sentry-debug-issue/references/search-query-language.md"
-      ]
+      ],
+      "extra": "## Anticipate failure and verify the boundary\n\nCarry or link trace context across queues, retries and asynchronous jobs. Bound metric cardinality with stable dimensions; put correlation IDs in redacted logs/traces instead of metric labels. Measure service outcomes, latency, throughput, queue age and failure/retry signals. Define sustained user-impact/SLO alerts with an owner, recovery condition and runbook. Exercise a controlled failure and inspect emitted telemetry; instrumented code alone does not prove an alert works."
     },
     {
       "id": "developer-research",
@@ -6800,7 +6827,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nRank supplied evidence by provenance, version and direct relevance; keep primary evidence separate from secondary assertions and inference. Check units, defaults and compatibility contracts, not merely renamed symbols. Design the smallest experiment that distinguishes competing explanations, with bounded deadlines and realistic tolerances. Record assumptions, unavailable evidence and observations that would change the recommendation. Never describe a planned reproduction as completed."
     },
     {
       "id": "distributed-systems",
@@ -6871,7 +6899,8 @@
       "licenses": [
         "MIT"
       ],
-      "resources": []
+      "resources": [],
+      "extra": "## Anticipate failure and verify the boundary\n\nWrite down the interleaving and commit boundaries before claiming serialization or exactly-once behavior. Use durable operation/payload identity and atomic state transitions; external lost replies require idempotency/status lookup or reconciliation. An expiring claim needs an ownership generation or fencing/CAS so an old worker cannot complete after takeover. Specify retry/retention limits and test crash, overlap, expiry and stale-owner schedules against the actual storage semantics."
     }
   ]
 }

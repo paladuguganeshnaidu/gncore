@@ -1,0 +1,80 @@
+{
+  "scope": "Provider UI observations, not cash billing or controlled latency benchmarks. Copilot Auto was not pinned; the completed metadata identifies the actual reported model. Whole-library context and source sizes differ.",
+  "executables": {
+    "vscode": {
+      "product": "Original Microsoft Visual Studio Code",
+      "version": "1.143.1",
+      "path": "Microsoft VS Code/Code.exe"
+    },
+    "antigravity": {
+      "product": "Antigravity IDE",
+      "version": "2.5.5",
+      "path": "Antigravity IDE/Antigravity IDE.exe",
+      "visible_model": "Gemini 3.8 Flash High",
+      "reported_token_usage": null
+    }
+  },
+  "completed_ui_observations": {
+    "vscode-gncore-before-development": {
+      "model": "gpt-5.6-luna",
+      "steps": 14,
+      "elapsed_seconds": 303,
+      "credits": 3.3,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    "vscode-reference-development": {
+      "model": "gpt-5.6-luna",
+      "steps": 13,
+      "elapsed_seconds": 636,
+      "credits": 4.1,
+      "input_tokens": 567640,
+      "cached_input_tokens": 497680,
+      "output_tokens": 14710
+    },
+    "vscode-gncore-after-holdout": {
+      "model": "gpt-5.6-luna",
+      "steps": 12,
+      "elapsed_seconds": 662,
+      "credits": 4.3,
+      "input_tokens": 307211,
+      "cached_input_tokens": 202290,
+      "output_tokens": 15046
+    },
+    "vscode-reference-holdout": {
+      "model": "gpt-5.6-luna",
+      "steps": 6,
+      "elapsed_seconds": 659,
+      "credits": 3.5,
+      "input_tokens": 254963,
+      "cached_input_tokens": 182326,
+      "output_tokens": 13909
+    },
+    "vscode-gncore-before-holdout": {
+      "model": "gpt-5.6-luna",
+      "steps": 8,
+      "elapsed_seconds": 712,
+      "credits": 3.3,
+      "input_tokens": 338374,
+      "cached_input_tokens": 283112,
+      "output_tokens": 14329
+    },
+    "vscode-gncore-final-followup-holdout": {
+      "model": "gpt-5.6-luna",
+      "steps": 8,
+      "elapsed_seconds": 217,
+      "credits": 1.2,
+      "input_tokens": 98250,
+      "cached_input_tokens": 72597,
+      "output_tokens": 4866
+    }
+  },
+  "operational_events": [
+    "Antigravity server crashed after the first completed development run; existing window was reloaded. No software update was installed.",
+    "Original VS Code file-read permission requests interrupted the revised holdout; the owner handled them. No sign-in automation or security setting changes were made.",
+    "Browser use became disabled in Work settings after the four development frontend tests; held-out rendered checks remain unmeasured.",
+    "Initial restricted Windows test execution denied atomic filesystem replacement; the full suite passed with normal Windows filesystem access. This was not counted as a generated-code failure.",
+    "Two tool-free Claude CLI smoke requests returned not logged in despite an auth-status success; no benchmark scores were assigned.",
+    "Post-change full suite in synced repository:147 passed,1 failed,1 skipped due to WinError5 journal replacement despite bounded retries. Same full suite with test fixtures outside sync folder:148 passed,1 skipped. Competing process not identified; both logs retained."
+  ]
+}

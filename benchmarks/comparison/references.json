@@ -1,0 +1,272 @@
+[
+  {
+    "category": "ai-engineering",
+    "repo": "anthropics/skills",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "entrypoint": "skills/mcp-builder/SKILL.md",
+    "repository_license": null,
+    "url": "https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "automation",
+    "repo": "temporalio/skill-temporal-developer",
+    "revision": "5f5a94d448d53e0d535a7369bf9cb7248620a0bf",
+    "entrypoint": "SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/temporalio/skill-temporal-developer/blob/5f5a94d448d53e0d535a7369bf9cb7248620a0bf/SKILL.md",
+    "scope_review": "Durable workflows, retry and idempotent activities. Replaces the mismatched automation-inventory audit candidate."
+  },
+  {
+    "category": "cloud-devops-sre",
+    "repo": "google/skills",
+    "revision": "81b0e8f8f40513c31b3388e600506e8b48a85bc2",
+    "entrypoint": "skills/cloud/gke-reliability/SKILL.md",
+    "repository_license": "Apache-2.0",
+    "url": "https://github.com/google/skills/blob/81b0e8f8f40513c31b3388e600506e8b48a85bc2/skills/cloud/gke-reliability/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "code-build",
+    "repo": "obra/superpowers",
+    "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+    "entrypoint": "skills/systematic-debugging/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/systematic-debugging/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "computer-vision",
+    "repo": "huggingface/skills",
+    "revision": "fabc634a893f62ad5c2039830397efa35fa62715",
+    "entrypoint": "skills/huggingface-vision-trainer/SKILL.md",
+    "repository_license": "Apache-2.0",
+    "url": "https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-vision-trainer/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "cybersecurity",
+    "repo": "affaan-m/ecc",
+    "revision": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
+    "entrypoint": "skills/security-review/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/security-review/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "data-engineering",
+    "repo": "K-Dense-AI/scientific-agent-skills",
+    "revision": "5f2bc0341354fd5590aef76a533ada1e1e5b4e62",
+    "entrypoint": "skills/polars/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/polars/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "data-science",
+    "repo": "K-Dense-AI/scientific-agent-skills",
+    "revision": "5f2bc0341354fd5590aef76a533ada1e1e5b4e62",
+    "entrypoint": "skills/statistical-analysis/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/statistical-analysis/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "databases",
+    "repo": "supabase/agent-skills",
+    "revision": "c9be0e931b7930f7d02126d04774d904c381e7d7",
+    "entrypoint": "skills/supabase-postgres-best-practices/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/supabase/agent-skills/blob/c9be0e931b7930f7d02126d04774d904c381e7d7/skills/supabase-postgres-best-practices/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "deep-learning",
+    "repo": "K-Dense-AI/scientific-agent-skills",
+    "revision": "5f2bc0341354fd5590aef76a533ada1e1e5b4e62",
+    "entrypoint": "skills/pytorch-lightning/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/pytorch-lightning/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "design-ux",
+    "repo": "microsoft/skills",
+    "revision": "00d66a64919edca5bca2c673373444e36a4b5461",
+    "entrypoint": ".github/skills/frontend-design-review/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/microsoft/skills/blob/00d66a64919edca5bca2c673373444e36a4b5461/.github/skills/frontend-design-review/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "developer-research",
+    "repo": "K-Dense-AI/scientific-agent-skills",
+    "revision": "5f2bc0341354fd5590aef76a533ada1e1e5b4e62",
+    "entrypoint": "skills/scientific-critical-thinking/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/scientific-critical-thinking/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "developer-tools",
+    "repo": "affaan-m/ecc",
+    "revision": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
+    "entrypoint": "skills/git-workflow/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/git-workflow/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "distributed-systems",
+    "repo": "cloudflare/skills",
+    "revision": "49a31e0b3229ccdffe4944be9c61bc7481d1d432",
+    "entrypoint": "skills/durable-objects/SKILL.md",
+    "repository_license": "Apache-2.0",
+    "url": "https://github.com/cloudflare/skills/blob/49a31e0b3229ccdffe4944be9c61bc7481d1d432/skills/durable-objects/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "documentation",
+    "repo": "anthropics/skills",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "entrypoint": "skills/doc-coauthoring/SKILL.md",
+    "repository_license": null,
+    "url": "https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/doc-coauthoring/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "embedded-systems",
+    "repo": "beriberikix/zephyr-agent-skills",
+    "revision": "ed63cdfb8cdfbeb5946ea39c33f4aa6bcf3a5cce",
+    "entrypoint": "skills/zephyr-foundations/SKILL.md",
+    "repository_license": "Apache-2.0",
+    "url": "https://github.com/beriberikix/zephyr-agent-skills/blob/ed63cdfb8cdfbeb5946ea39c33f4aa6bcf3a5cce/skills/zephyr-foundations/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "game-development",
+    "repo": "minhhoit/gamedev-agent-skills",
+    "revision": "b105e1cf617adf0b68ed98790a716bbb60993179",
+    "entrypoint": "skills/godot/godot-2d-movement/SKILL.md",
+    "repository_license": "Apache-2.0",
+    "url": "https://github.com/minhhoit/gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-2d-movement/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "machine-learning",
+    "repo": "K-Dense-AI/scientific-agent-skills",
+    "revision": "5f2bc0341354fd5590aef76a533ada1e1e5b4e62",
+    "entrypoint": "skills/scikit-learn/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/scikit-learn/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "mlops",
+    "repo": "huggingface/skills",
+    "revision": "fabc634a893f62ad5c2039830397efa35fa62715",
+    "entrypoint": "skills/hf-cloud-sagemaker-production-defaults/SKILL.md",
+    "repository_license": "Apache-2.0",
+    "url": "https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/hf-cloud-sagemaker-production-defaults/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "mobile-development",
+    "repo": "vercel-labs/agent-skills",
+    "revision": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+    "entrypoint": "skills/react-native-skills/SKILL.md",
+    "repository_license": null,
+    "url": "https://github.com/vercel-labs/agent-skills/blob/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/react-native-skills/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "natural-language-processing",
+    "repo": "K-Dense-AI/scientific-agent-skills",
+    "revision": "5f2bc0341354fd5590aef76a533ada1e1e5b4e62",
+    "entrypoint": "skills/transformers/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/transformers/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "neural-networks",
+    "repo": "K-Dense-AI/scientific-agent-skills",
+    "revision": "5f2bc0341354fd5590aef76a533ada1e1e5b4e62",
+    "entrypoint": "skills/pytorch-lightning/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/pytorch-lightning/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "observability",
+    "repo": "microsoft/skills",
+    "revision": "00d66a64919edca5bca2c673373444e36a4b5461",
+    "entrypoint": ".github/plugins/azure-sdk-python/skills/azure-monitor-opentelemetry-py/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/microsoft/skills/blob/00d66a64919edca5bca2c673373444e36a4b5461/.github/plugins/azure-sdk-python/skills/azure-monitor-opentelemetry-py/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "performance-engineering",
+    "repo": "affaan-m/ecc",
+    "revision": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
+    "entrypoint": "skills/benchmark/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/benchmark/SKILL.md",
+    "scope_review": "Performance baseline and regression detection; marketing benchmark-methodology explicitly excluded after scope review."
+  },
+  {
+    "category": "python",
+    "repo": "trailofbits/skills",
+    "revision": "2be6433b39e009cd2b6fd3be1895f6b1faa5af9a",
+    "entrypoint": "plugins/modern-python/skills/modern-python/SKILL.md",
+    "repository_license": "CC-BY-SA-4.0",
+    "url": "https://github.com/trailofbits/skills/blob/2be6433b39e009cd2b6fd3be1895f6b1faa5af9a/plugins/modern-python/skills/modern-python/SKILL.md",
+    "scope_review": "Python project/tooling comparison restricted to 3.11+ because this reference explicitly excludes older versions."
+  },
+  {
+    "category": "release-engineering",
+    "repo": "obra/superpowers",
+    "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+    "entrypoint": "skills/finishing-a-development-branch/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/finishing-a-development-branch/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "systems-programming",
+    "repo": "trailofbits/skills",
+    "revision": "2be6433b39e009cd2b6fd3be1895f6b1faa5af9a",
+    "entrypoint": "plugins/rust-review/skills/rust-review/SKILL.md",
+    "repository_license": "CC-BY-SA-4.0",
+    "url": "https://github.com/trailofbits/skills/blob/2be6433b39e009cd2b6fd3be1895f6b1faa5af9a/plugins/rust-review/skills/rust-review/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "testing",
+    "repo": "obra/superpowers",
+    "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+    "entrypoint": "skills/test-driven-development/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/test-driven-development/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "web-backend",
+    "repo": "affaan-m/ecc",
+    "revision": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
+    "entrypoint": "skills/api-design/SKILL.md",
+    "repository_license": "MIT",
+    "url": "https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/api-design/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  },
+  {
+    "category": "web-frontend",
+    "repo": "anthropics/skills",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "entrypoint": "skills/frontend-design/SKILL.md",
+    "repository_license": null,
+    "url": "https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/frontend-design/SKILL.md",
+    "scope_review": "Entrypoint inspected; comparison is limited to the specified offline task decisions and generated artifacts, not the reference's complete cloud/tool/subagent workflow."
+  }
+]

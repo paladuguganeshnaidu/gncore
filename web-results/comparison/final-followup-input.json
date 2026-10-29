@@ -1,0 +1,15 @@
+{
+  "run_id": "gncore-final-followup-holdout",
+  "phase": "adaptive follow-up, not unseen holdout",
+  "case_ids": [
+    "H04",
+    "H24",
+    "H30"
+  ],
+  "pack_sha256": "2f95a72dcfab8b0b812f7009e6f5255f41a8f8333d5af66f32b85dcc8b85e918",
+  "source_sha256": {
+    "code-build": "50c9ac95efd6e854ea538d2eba29cf253c22769ca74b5141e15f9decbdb50745",
+    "performance-engineering": "f2d4fdae30153b7b5545e7ff70b7c77ba2b50829f78299e94b73f377a77d3332",
+    "web-frontend": "22c79330d4dbeb2cc6559f7120c2944e8e648054dade3c604bc5dc264ba7b76b"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "table": [
+    [
+      9,
+      1
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "method": "two-sided Fisher exact; enumerate hypergeometric outcomes with probability <= observed outcome",
+  "possible_successes_first_group": [
+    8,
+    9,
+    10
+  ],
+  "probabilities": [
+    0.6818181818181818,
+    0.30303030303030304,
+    0.015151515151515152
+  ],
+  "exact_p": 0.3181818181818182,
+  "quoted_in_original_AG_answer": 0.385,
+  "scope": "Independent arithmetic check after response review; not a model performance benchmark"
+}

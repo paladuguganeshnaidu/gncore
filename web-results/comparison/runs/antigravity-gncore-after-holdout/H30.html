@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Engineering Summit — Workshop Registration</title>
+<style>
+  :root {
+    --bg-base: #0a0f1d;
+    --bg-surface: #111827;
+    --bg-surface-elevated: #1f2937;
+    --border: #374151;
+    --border-focus: #06b6d4;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    --accent: #06b6d4;
+    --accent-hover: #0891b2;
+    --success-bg: #064e3b;
+    --success-border: #059669;
+    --success-text: #34d399;
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-stack);
+    line-height: 1.5;
+    padding: 24px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 480px;
+    padding: 28px 24px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  }
+  .badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+  }
+  .subtitle {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label, .group-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+  }
+  select, input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: var(--bg-surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+    font-family: inherit;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  select:focus-visible, input[type="email"]:focus-visible, button:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+    border-color: var(--border-focus);
+  }
+  .slots-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .slot-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background-color: var(--bg-surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all 0.15s ease;
+  }
+  .slot-label input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .slot-label:has(input[type="radio"]:focus-visible) {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+  }
+  .slot-label:has(input[type="radio"]:checked) {
+    background-color: rgba(6, 182, 212, 0.15);
+    border-color: var(--accent);
+    color: var(--text-primary);
+  }
+  .btn-submit {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 6px;
+    color: #031726;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.15s ease, opacity 0.15s ease;
+  }
+  .btn-submit:hover:not(:disabled) {
+    background-color: var(--accent-hover);
+  }
+  .btn-submit:disabled {
+    background-color: var(--border);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  .confirmation-box {
+    background-color: var(--success-bg);
+    border: 1px solid var(--success-border);
+    border-radius: 6px;
+    padding: 20px;
+    color: var(--text-primary);
+  }
+  .confirmation-box h2 {
+    font-size: 1.125rem;
+    color: var(--success-text);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .confirmation-box p {
+    font-size: 0.9375rem;
+    color: #d1fae5;
+    line-height: 1.5;
+  }
+  .hidden { display: none; }
+  @media (max-width: 390px) {
+    body { padding: 16px 8px; }
+    .card { padding: 20px 16px; }
+    h1 { font-size: 1.25rem; }
+    .slots-grid { gap: 8px; }
+    .slot-label { padding: 10px; font-size: 0.875rem; }
+  }
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="badge">SEC-OPS // SUMMIT 2026</div>
+  <h1>Technical Workshop Registration</h1>
+  <p class="subtitle">Select your masterclass track and reserved time slot.</p>
+
+  <form id="booking-form" novalidate>
+    <div class="form-group">
+      <label for="workshop">Workshop</label>
+      <select id="workshop" name="workshop" required>
+        <option value="" disabled selected>Select a workshop</option>
+        <option value="Threat Modeling">Threat Modeling</option>
+        <option value="Secure APIs">Secure APIs</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="security-lead@enterprise.com" required autocomplete="email">
+    </div>
+
+    <div class="form-group">
+      <fieldset style="border: none; padding: 0;">
+        <legend class="group-label">Slot</legend>
+        <div class="slots-grid">
+          <label class="slot-label" for="slot-1030">
+            <input type="radio" id="slot-1030" name="slot" value="10:30">
+            10:30
+          </label>
+          <label class="slot-label" for="slot-1600">
+            <input type="radio" id="slot-1600" name="slot" value="16:00">
+            16:00
+          </label>
+        </div>
+      </fieldset>
+    </div>
+
+    <button type="submit" id="submit-btn" class="btn-submit" disabled>Book Workshop</button>
+  </form>
+
+  <div id="confirmation" class="confirmation-box hidden" role="status" aria-live="polite" tabindex="-1">
+    <h2>Registration Confirmed</h2>
+    <p>Your seat has been reserved for <strong id="conf-workshop"></strong> at <strong id="conf-slot"></strong>. A calendar invite has been dispatched.</p>
+  </div>
+</main>
+
+<script>
+  (function() {
+    const form = document.getElementById('booking-form');
+    const workshopSelect = document.getElementById('workshop');
+    const emailInput = document.getElementById('email');
+    const slotRadios = document.querySelectorAll('input[name="slot"]');
+    const submitBtn = document.getElementById('submit-btn');
+    const confirmation = document.getElementById('confirmation');
+    const confWorkshop = document.getElementById('conf-workshop');
+    const confSlot = document.getElementById('conf-slot');
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function checkFormValidity() {
+      const isWorkshopSelected = workshopSelect.value !== "";
+      const isEmailValid = isValidEmail(emailInput.value.trim());
+      const isSlotSelected = Array.from(slotRadios).some(r => r.checked);
+      submitBtn.disabled = !(isWorkshopSelected && isEmailValid && isSlotSelected);
+    }
+
+    workshopSelect.addEventListener('change', checkFormValidity);
+    emailInput.addEventListener('input', checkFormValidity);
+    slotRadios.forEach(radio => radio.addEventListener('change', checkFormValidity));
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (submitBtn.disabled) return;
+
+      const selectedWorkshop = workshopSelect.value;
+      const selectedRadio = document.querySelector('input[name="slot"]:checked');
+      const selectedSlot = selectedRadio ? selectedRadio.value : '';
+
+      confWorkshop.textContent = selectedWorkshop;
+      confSlot.textContent = selectedSlot;
+
+      form.classList.add('hidden');
+      confirmation.classList.remove('hidden');
+      confirmation.focus();
+    });
+  })();
+</script>
+</body>
+</html>

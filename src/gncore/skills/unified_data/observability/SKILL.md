@@ -24,6 +24,10 @@ Inject local success/failure/timeout cases, verify trace correlation, alert trig
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
+## Anticipate failure and verify the boundary
+
+Carry or link trace context across queues, retries and asynchronous jobs. Bound metric cardinality with stable dimensions; put correlation IDs in redacted logs/traces instead of metric labels. Measure service outcomes, latency, throughput, queue age and failure/retry signals. Define sustained user-impact/SLO alerts with an owner, recovery condition and runbook. Exercise a controlled failure and inspect emitted telemetry; instrumented code alone does not prove an alert works.
+
 ## Workflow map
 
 | Workflow | Use it for |

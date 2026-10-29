@@ -1,0 +1,37 @@
+{
+  "method": "Unblinded single-evaluator review against frozen criteria. Original VS Code response independently copied and checked against Antigravity SHA to reject a stale clipboard capture. Eligible code executed separately; held-out browser checks pending.",
+  "reviews": {
+    "vscode-gncore-before-holdout": {
+      "H01": {"fail": {}, "basis": "L1 timestamp grounded and distinct from cause; L2 rejected; typed read-only bounded tool contract, malformed/missing fallback and finite-call policy; no execution claim."},
+      "H02": {"fail": {}, "basis": "Durable destination identity/publication boundary, replay/watermark, quarantine, bounded Retry-After/backoff and explicit crash/restart assertions."},
+      "H03": {"fail": {"c5": "Least privilege and secret handling omitted."}, "basis": "Old/new schema compatibility, capped canary and concurrency, latency/lag/resource gates and replay-safe rollback; no deployment."},
+      "H04": {"fail": {}, "basis": "Actual16/16 frozen allocation fixtures and3/3 added exploratory fixtures pass; exact integer divmod, stable ties and strict input contract."},
+      "H05": {"fail": {"c3": "Alignment sanity fixture supplied but explicit annotation shape/range validation omitted."}, "basis": "Site/time separation, train-only decisions, synchronized mask transforms, task metrics, background baseline and no training-result claim."},
+      "H06": {"fail": {}, "basis": "Six seeded defects and concrete repairs; atomic webhook event/balance transaction, authenticated tenant cache scope, SSRF policy and no safe-control false positives; static review only."},
+      "H07": {"fail": {}, "basis": "Typed event/revision/hour grain, negative quarantine, revision dedupe and correction, durable restart boundary, bounded lateness and count/amount reconciliation fixtures."},
+      "H08": {"fail": {}, "basis": "Assigned-user denominator,40% versus30%,10pp/relative-risk arithmetic, uncertainty request, ITT/missingness/randomization/fanout checks and no unsupported causal result."},
+      "H09": {"fail": {}, "basis": "Expand-compatible readers/writers before resumable batch backfill/constraint validation, unknown policy, locks/replication monitoring, reconciliation and pre-contract rollback with old column retained."},
+      "H10": {"fail": {}, "basis": "Optimizer/scheduler/RNG/sampler/scaler/partial gradients, version/config/data identity, controlled interrupted comparison and explicit device nondeterminism limits."},
+      "H11": {"fail": {}, "basis": "Named copy and live feedback, masked secret lifecycle, revoke consequence/cancel confirmation, preserved input/error focus, keyboard and responsive table/card behavior; proposed specification."},
+      "H12": {"fail": {}, "basis": "Authoritative Q1 cursor-null over Q2/Q3, short-final/repeated/malformed cursor fixtures, bounded iterations and version-specific compatibility assumptions; no live requests."},
+      "H13": {"fail": {}, "basis": "Validated opaque paths/no shell concatenation, preflight collision protection and dry-run, journaled resumable steps with inspect-only recovery and no deletion of unknown work; no commands run."},
+      "H14": {"fail": {}, "basis": "Atomic storage fencing/CAS, deterministic paused A/new B schedule, stale-owner handling and explicit external exactly-once limits; no remote effect required by fixture."},
+      "H15": {"fail": {"c1": "Adds unspecified input request field without explicitly labeling the request schema illustrative.", "c6": "Asserts changed-payload reuse is a client error although fictional contract only specifies duplicate replay."}, "basis": "Correct authorization,202-not-complete lifecycle, original-task replay, illustrative response marked for example, polling and no endpoint execution."},
+      "H16": {"fail": {}, "basis": "ISR/task ownership, atomics/barriers, bounded no-block/no-allocation work, explicit overrun observability, modular tick assumptions and host versus hardware tests."},
+      "H17": {"fail": {}, "basis": "Velocity/time units, fixed physics, consumed jump edge, pause/hitch bound and displacement/jump comparisons across schedules; tunables preserve feel, no gameplay result."},
+      "H18": {"fail": {}, "basis": "Deployment-time/group holdout, train-only feature processing, post-failure exclusion, separate model selection, imbalance baselines and alert-budget metrics; no training claim."},
+      "H19": {"fail": {"c1": "Model/preprocessor/schema versioning present, but immutable data/environment bundle identity omitted."}, "basis": "Parity replay, delayed-label evaluation separated from feature drift, shadow/canary, operational/quality gates and retained compatible rollback artifacts; no deployment."},
+      "H20": {"fail": {"c3": "Durable background/resume behavior given without subscription cleanup or cancellation semantics."}, "basis": "Stable virtualized memoized list, persisted dirty drafts, reconnect/conflict recovery, durable idempotent retries and kill/restore/large-list tests; no device execution."},
+      "H21": {"fail": {}, "basis": "Conversation grouping, explicit label-unit/truncation preservation, masked pooling, token/label and length/padding audits, class-level metrics and no training claim."},
+      "H22": {"fail": {"c3": "Actual extreme_wrong test fails: softmax probability underflows to zero, then -math.log(0) raises ValueError instead of returning finite loss2000."}, "basis": "13/14 actual fixtures pass, including ordinary mean/gradients, central differences and frozen invalid inputs; original artifact retained without correction."},
+      "H23": {"fail": {}, "basis": "Queue context/link policy, bounded metric cardinality, private-payload exclusion, latency/error/throughput/lag signals and sustained alert fixtures; no service deployed."},
+      "H24": {"fail": {}, "basis": "Correct22.4/28 means,8/5 medians and80/120 nearest-rank p95; paired environment/warmup/load protocol retains timeouts/cold starts and measures memory/throughput/objective."},
+      "H25": {"fail": {}, "basis": "Wheel/sdist metadata/resources/dependencies, isolated installs outside checkout and arbitrary-CWD smoke checks across3.11–3.14; no build claimed."},
+      "H26": {"fail": {}, "basis": "Immutable source/tag/CI/artifact provenance, promote exact verified bytes, clean-install/metadata checks, website gated on registry, new-version recovery and approval-only publication."},
+      "H27": {"fail": {"c3": "Allocator/deallocator matching not explicitly specified.", "c5": "Null/handle validation present but error/unwind and length contracts incomplete."}, "basis": "Vec lifetime/relocation hazards, stable owned handles, callback concurrency/closing and unregister quiescence before reclaim; sanitizer/stress tests proposed."},
+      "H28": {"fail": {}, "basis": "Actual7/7 harness accepts correct port function and rejects six seeded mutants, including bool/float and both boundary faults."},
+      "H29": {"fail": {}, "basis": "Authenticated tenant plus canonical hash, atomic claim/job/outbox, overlap serialization, mismatch conflict, precommit rollback/lost-reply replay and dispatcher idempotency; no database executed."},
+      "H30": {"fail": {}, "pending": ["c2", "c3", "c4", "c5", "c6"], "basis": "Complete local HTML with fitting dark technical direction, required named controls and inline script inspected; actual rendering/focus/gating not measured yet."}
+    }
+  }
+}

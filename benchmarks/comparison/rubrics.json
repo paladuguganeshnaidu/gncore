@@ -1,0 +1,1862 @@
+[
+  {
+    "id": "D01",
+    "category": "ai-engineering",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Uses the supplied factual passage with its identifier, without inventing missing facts"
+      },
+      {
+        "id": "c2",
+        "requirement": "Treats instructions inside retrieved material as untrusted data"
+      },
+      {
+        "id": "c3",
+        "requirement": "Does not grant or use a write/send/disable capability"
+      },
+      {
+        "id": "c4",
+        "requirement": "Validates tool inputs/outputs and handles malformed or empty results"
+      },
+      {
+        "id": "c5",
+        "requirement": "Bounds iterations/time and reports uncertainty or insufficient evidence"
+      },
+      {
+        "id": "c6",
+        "requirement": "Separates proposed behavior/evaluation from actions actually executed"
+      }
+    ]
+  },
+  {
+    "id": "H01",
+    "category": "ai-engineering",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Uses the supplied factual passage with its identifier, without inventing missing facts"
+      },
+      {
+        "id": "c2",
+        "requirement": "Treats instructions inside retrieved material as untrusted data"
+      },
+      {
+        "id": "c3",
+        "requirement": "Does not grant or use a write/send/disable capability"
+      },
+      {
+        "id": "c4",
+        "requirement": "Validates tool inputs/outputs and handles malformed or empty results"
+      },
+      {
+        "id": "c5",
+        "requirement": "Bounds iterations/time and reports uncertainty or insufficient evidence"
+      },
+      {
+        "id": "c6",
+        "requirement": "Separates proposed behavior/evaluation from actions actually executed"
+      }
+    ]
+  },
+  {
+    "id": "D02",
+    "category": "automation",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Uses durable identity/deduplication so replay does not duplicate effects"
+      },
+      {
+        "id": "c2",
+        "requirement": "Coordinates checkpoint progress with committed effects or describes reconciliation"
+      },
+      {
+        "id": "c3",
+        "requirement": "Bounds retries and backs off transient errors instead of looping forever"
+      },
+      {
+        "id": "c4",
+        "requirement": "Separates malformed/permanent failures from retryable failures"
+      },
+      {
+        "id": "c5",
+        "requirement": "Provides observable outcomes and a recoverable failure record"
+      },
+      {
+        "id": "c6",
+        "requirement": "Defines a crash/replay verification case, not merely a happy path"
+      }
+    ]
+  },
+  {
+    "id": "H02",
+    "category": "automation",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Uses durable identity/deduplication so replay does not duplicate effects"
+      },
+      {
+        "id": "c2",
+        "requirement": "Coordinates checkpoint progress with committed effects or describes reconciliation"
+      },
+      {
+        "id": "c3",
+        "requirement": "Bounds retries and backs off transient errors instead of looping forever"
+      },
+      {
+        "id": "c4",
+        "requirement": "Separates malformed/permanent failures from retryable failures"
+      },
+      {
+        "id": "c5",
+        "requirement": "Provides observable outcomes and a recoverable failure record"
+      },
+      {
+        "id": "c6",
+        "requirement": "Defines a crash/replay verification case, not merely a happy path"
+      }
+    ]
+  },
+  {
+    "id": "D03",
+    "category": "cloud-devops-sre",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Handles backward/forward compatibility before switching all traffic"
+      },
+      {
+        "id": "c2",
+        "requirement": "Uses a bounded staged rollout or equivalent risk-controlled progression"
+      },
+      {
+        "id": "c3",
+        "requirement": "Defines observable error/latency/lag/resource gates relevant to the workload"
+      },
+      {
+        "id": "c4",
+        "requirement": "Gives a feasible rollback/recovery plan that accounts for schema/data compatibility"
+      },
+      {
+        "id": "c5",
+        "requirement": "Uses least-privilege configuration and keeps secrets out of images/logs"
+      },
+      {
+        "id": "c6",
+        "requirement": "Distinguishes a proposed rollout from executed cloud verification"
+      }
+    ]
+  },
+  {
+    "id": "H03",
+    "category": "cloud-devops-sre",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Handles backward/forward compatibility before switching all traffic"
+      },
+      {
+        "id": "c2",
+        "requirement": "Uses a bounded staged rollout or equivalent risk-controlled progression"
+      },
+      {
+        "id": "c3",
+        "requirement": "Defines observable error/latency/lag/resource gates relevant to the workload"
+      },
+      {
+        "id": "c4",
+        "requirement": "Gives a feasible rollback/recovery plan that accounts for schema/data compatibility"
+      },
+      {
+        "id": "c5",
+        "requirement": "Uses least-privilege configuration and keeps secrets out of images/logs"
+      },
+      {
+        "id": "c6",
+        "requirement": "Distinguishes a proposed rollout from executed cloud verification"
+      }
+    ]
+  },
+  {
+    "id": "D04",
+    "category": "code-build",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Correct normal input/output behavior"
+      },
+      {
+        "id": "c2",
+        "requirement": "Exact arithmetic preserves the monetary total and stated rounding/allocation rule"
+      },
+      {
+        "id": "c3",
+        "requirement": "Handles zero values and stable ties/boundaries"
+      },
+      {
+        "id": "c4",
+        "requirement": "Rejects invalid types including booleans"
+      },
+      {
+        "id": "c5",
+        "requirement": "Rejects invalid ranges and invalid collections"
+      },
+      {
+        "id": "c6",
+        "requirement": "Keeps the public API and has no imports, file/network access or other side effects"
+      }
+    ]
+  },
+  {
+    "id": "H04",
+    "category": "code-build",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Correct normal input/output behavior"
+      },
+      {
+        "id": "c2",
+        "requirement": "Exact arithmetic preserves the monetary total and stated rounding/allocation rule"
+      },
+      {
+        "id": "c3",
+        "requirement": "Handles zero values and stable ties/boundaries"
+      },
+      {
+        "id": "c4",
+        "requirement": "Rejects invalid types including booleans"
+      },
+      {
+        "id": "c5",
+        "requirement": "Rejects invalid ranges and invalid collections"
+      },
+      {
+        "id": "c6",
+        "requirement": "Keeps the public API and has no imports, file/network access or other side effects"
+      }
+    ]
+  },
+  {
+    "id": "D05",
+    "category": "computer-vision",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Splits by the deployment-relevant product/site/camera group, not correlated frames"
+      },
+      {
+        "id": "c2",
+        "requirement": "Applies identical geometric transformations to annotations and images"
+      },
+      {
+        "id": "c3",
+        "requirement": "Defines annotation shape/range/alignment sanity checks"
+      },
+      {
+        "id": "c4",
+        "requirement": "Uses task-appropriate detection/segmentation metrics rather than raw accuracy alone"
+      },
+      {
+        "id": "c5",
+        "requirement": "Keeps a baseline and isolates tuning from the final evaluation set"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not claim a training run, GPU result or generalization result was executed"
+      }
+    ]
+  },
+  {
+    "id": "H05",
+    "category": "computer-vision",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Splits by the deployment-relevant product/site/camera group, not correlated frames"
+      },
+      {
+        "id": "c2",
+        "requirement": "Applies identical geometric transformations to annotations and images"
+      },
+      {
+        "id": "c3",
+        "requirement": "Defines annotation shape/range/alignment sanity checks"
+      },
+      {
+        "id": "c4",
+        "requirement": "Uses task-appropriate detection/segmentation metrics rather than raw accuracy alone"
+      },
+      {
+        "id": "c5",
+        "requirement": "Keeps a baseline and isolates tuning from the final evaluation set"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not claim a training run, GPU result or generalization result was executed"
+      }
+    ]
+  },
+  {
+    "id": "D06",
+    "category": "cybersecurity",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Identifies and repairs defect 1 with a concrete exploit path"
+      },
+      {
+        "id": "c2",
+        "requirement": "Identifies and repairs defect 2 with a concrete exploit path"
+      },
+      {
+        "id": "c3",
+        "requirement": "Identifies and repairs defect 3 with a concrete exploit path"
+      },
+      {
+        "id": "c4",
+        "requirement": "Identifies and repairs defect 4 with a concrete exploit path"
+      },
+      {
+        "id": "c5",
+        "requirement": "Identifies and repairs defect 5 with a concrete exploit path"
+      },
+      {
+        "id": "c6",
+        "requirement": "Identifies and repairs defect 6 with a concrete exploit path"
+      }
+    ]
+  },
+  {
+    "id": "H06",
+    "category": "cybersecurity",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Identifies and repairs defect 1 with a concrete exploit path"
+      },
+      {
+        "id": "c2",
+        "requirement": "Identifies and repairs defect 2 with a concrete exploit path"
+      },
+      {
+        "id": "c3",
+        "requirement": "Identifies and repairs defect 3 with a concrete exploit path"
+      },
+      {
+        "id": "c4",
+        "requirement": "Identifies and repairs defect 4 with a concrete exploit path"
+      },
+      {
+        "id": "c5",
+        "requirement": "Identifies and repairs defect 5 with a concrete exploit path"
+      },
+      {
+        "id": "c6",
+        "requirement": "Identifies and repairs defect 6 with a concrete exploit path"
+      }
+    ]
+  },
+  {
+    "id": "D07",
+    "category": "data-engineering",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Makes schema, value constraints and business time/grain explicit"
+      },
+      {
+        "id": "c2",
+        "requirement": "Deduplicates by durable event identity with an explicit correction/revision policy"
+      },
+      {
+        "id": "c3",
+        "requirement": "Quarantines or reports malformed data without silently changing aggregates"
+      },
+      {
+        "id": "c4",
+        "requirement": "Defines idempotent output publication/restart behavior"
+      },
+      {
+        "id": "c5",
+        "requirement": "Reconciles accepted, duplicate, rejected and emitted records/amounts"
+      },
+      {
+        "id": "c6",
+        "requirement": "Includes a late/replayed/corrected event test and avoids unexecuted result claims"
+      }
+    ]
+  },
+  {
+    "id": "H07",
+    "category": "data-engineering",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Makes schema, value constraints and business time/grain explicit"
+      },
+      {
+        "id": "c2",
+        "requirement": "Deduplicates by durable event identity with an explicit correction/revision policy"
+      },
+      {
+        "id": "c3",
+        "requirement": "Quarantines or reports malformed data without silently changing aggregates"
+      },
+      {
+        "id": "c4",
+        "requirement": "Defines idempotent output publication/restart behavior"
+      },
+      {
+        "id": "c5",
+        "requirement": "Reconciles accepted, duplicate, rejected and emitted records/amounts"
+      },
+      {
+        "id": "c6",
+        "requirement": "Includes a late/replayed/corrected event test and avoids unexecuted result claims"
+      }
+    ]
+  },
+  {
+    "id": "D08",
+    "category": "data-science",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Uses the right observational unit and denominator, avoiding unweighted rates/join fanout"
+      },
+      {
+        "id": "c2",
+        "requirement": "Keeps assigned/population/sample definitions explicit"
+      },
+      {
+        "id": "c3",
+        "requirement": "Quantifies or requests uncertainty rather than presenting a point estimate as certainty"
+      },
+      {
+        "id": "c4",
+        "requirement": "Does not infer causation without the needed design/assumptions"
+      },
+      {
+        "id": "c5",
+        "requirement": "Checks missingness, selection and plausible confounding"
+      },
+      {
+        "id": "c6",
+        "requirement": "Shows a reproducible calculation or specific analysis verification step"
+      }
+    ]
+  },
+  {
+    "id": "H08",
+    "category": "data-science",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Uses the right observational unit and denominator, avoiding unweighted rates/join fanout"
+      },
+      {
+        "id": "c2",
+        "requirement": "Keeps assigned/population/sample definitions explicit"
+      },
+      {
+        "id": "c3",
+        "requirement": "Quantifies or requests uncertainty rather than presenting a point estimate as certainty"
+      },
+      {
+        "id": "c4",
+        "requirement": "Does not infer causation without the needed design/assumptions"
+      },
+      {
+        "id": "c5",
+        "requirement": "Checks missingness, selection and plausible confounding"
+      },
+      {
+        "id": "c6",
+        "requirement": "Shows a reproducible calculation or specific analysis verification step"
+      }
+    ]
+  },
+  {
+    "id": "D09",
+    "category": "databases",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Uses an expand/backfill/validate/contract sequence compatible with live versions"
+      },
+      {
+        "id": "c2",
+        "requirement": "Defines a policy for invalid, duplicate or unknown existing data"
+      },
+      {
+        "id": "c3",
+        "requirement": "Accounts for locks, transaction boundaries and index/constraint behavior"
+      },
+      {
+        "id": "c4",
+        "requirement": "Makes backfill resumable/bounded with verification"
+      },
+      {
+        "id": "c5",
+        "requirement": "Gives a feasible rollback or forward-recovery plan without pretending destructive steps are reversible"
+      },
+      {
+        "id": "c6",
+        "requirement": "States execution was not performed and names concrete integrity checks"
+      }
+    ]
+  },
+  {
+    "id": "H09",
+    "category": "databases",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Uses an expand/backfill/validate/contract sequence compatible with live versions"
+      },
+      {
+        "id": "c2",
+        "requirement": "Defines a policy for invalid, duplicate or unknown existing data"
+      },
+      {
+        "id": "c3",
+        "requirement": "Accounts for locks, transaction boundaries and index/constraint behavior"
+      },
+      {
+        "id": "c4",
+        "requirement": "Makes backfill resumable/bounded with verification"
+      },
+      {
+        "id": "c5",
+        "requirement": "Gives a feasible rollback or forward-recovery plan without pretending destructive steps are reversible"
+      },
+      {
+        "id": "c6",
+        "requirement": "States execution was not performed and names concrete integrity checks"
+      }
+    ]
+  },
+  {
+    "id": "D10",
+    "category": "deep-learning",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Captures optimizer and scheduler state, not just weights"
+      },
+      {
+        "id": "c2",
+        "requirement": "Accounts for RNG and data/sampler position"
+      },
+      {
+        "id": "c3",
+        "requirement": "Accounts for AMP scaler and accumulation/global-step state or explicitly chooses a safe restart boundary"
+      },
+      {
+        "id": "c4",
+        "requirement": "Records model/data/config/environment identity and compatible checkpoint loading"
+      },
+      {
+        "id": "c5",
+        "requirement": "Compares an uninterrupted and resumed trajectory under controlled randomness"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not claim bitwise/distributed/GPU reproducibility without evidence"
+      }
+    ]
+  },
+  {
+    "id": "H10",
+    "category": "deep-learning",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Captures optimizer and scheduler state, not just weights"
+      },
+      {
+        "id": "c2",
+        "requirement": "Accounts for RNG and data/sampler position"
+      },
+      {
+        "id": "c3",
+        "requirement": "Accounts for AMP scaler and accumulation/global-step state or explicitly chooses a safe restart boundary"
+      },
+      {
+        "id": "c4",
+        "requirement": "Records model/data/config/environment identity and compatible checkpoint loading"
+      },
+      {
+        "id": "c5",
+        "requirement": "Compares an uninterrupted and resumed trajectory under controlled randomness"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not claim bitwise/distributed/GPU reproducibility without evidence"
+      }
+    ]
+  },
+  {
+    "id": "D11",
+    "category": "design-ux",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Provides programmatic names/labels and appropriate control semantics"
+      },
+      {
+        "id": "c2",
+        "requirement": "Specifies keyboard traversal and visible/restored focus"
+      },
+      {
+        "id": "c3",
+        "requirement": "Provides error/success feedback accessible beyond color or transient visuals"
+      },
+      {
+        "id": "c4",
+        "requirement": "Handles destructive/secret actions with proportionate scope and recovery expectations"
+      },
+      {
+        "id": "c5",
+        "requirement": "Provides concrete responsive hierarchy rather than purely aesthetic adjectives"
+      },
+      {
+        "id": "c6",
+        "requirement": "Distinguishes a proposed specification from a tested implementation"
+      }
+    ]
+  },
+  {
+    "id": "H11",
+    "category": "design-ux",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Provides programmatic names/labels and appropriate control semantics"
+      },
+      {
+        "id": "c2",
+        "requirement": "Specifies keyboard traversal and visible/restored focus"
+      },
+      {
+        "id": "c3",
+        "requirement": "Provides error/success feedback accessible beyond color or transient visuals"
+      },
+      {
+        "id": "c4",
+        "requirement": "Handles destructive/secret actions with proportionate scope and recovery expectations"
+      },
+      {
+        "id": "c5",
+        "requirement": "Provides concrete responsive hierarchy rather than purely aesthetic adjectives"
+      },
+      {
+        "id": "c6",
+        "requirement": "Distinguishes a proposed specification from a tested implementation"
+      }
+    ]
+  },
+  {
+    "id": "D12",
+    "category": "developer-research",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Separates primary packet evidence from secondary/unverified claims"
+      },
+      {
+        "id": "c2",
+        "requirement": "Cites supplied identifiers without inventing external citations"
+      },
+      {
+        "id": "c3",
+        "requirement": "Correctly interprets the concrete units/pagination contract"
+      },
+      {
+        "id": "c4",
+        "requirement": "Proposes a minimal discriminating experiment and expected observations"
+      },
+      {
+        "id": "c5",
+        "requirement": "Records compatibility assumptions, uncertainty and what would change the recommendation"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not claim it reproduced or verified an unavailable live API"
+      }
+    ]
+  },
+  {
+    "id": "H12",
+    "category": "developer-research",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Separates primary packet evidence from secondary/unverified claims"
+      },
+      {
+        "id": "c2",
+        "requirement": "Cites supplied identifiers without inventing external citations"
+      },
+      {
+        "id": "c3",
+        "requirement": "Correctly interprets the concrete units/pagination contract"
+      },
+      {
+        "id": "c4",
+        "requirement": "Proposes a minimal discriminating experiment and expected observations"
+      },
+      {
+        "id": "c5",
+        "requirement": "Records compatibility assumptions, uncertainty and what would change the recommendation"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not claim it reproduced or verified an unavailable live API"
+      }
+    ]
+  },
+  {
+    "id": "D13",
+    "category": "developer-tools",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Preserves existing user work and detects collisions instead of overwriting"
+      },
+      {
+        "id": "c2",
+        "requirement": "Uses explicit validated paths/arguments rather than string-built shell commands"
+      },
+      {
+        "id": "c3",
+        "requirement": "Provides an isolated/preflight or dry-run path appropriate to the task"
+      },
+      {
+        "id": "c4",
+        "requirement": "Defines interruption recovery or transactional boundaries"
+      },
+      {
+        "id": "c5",
+        "requirement": "Defines clear errors/exit behavior and actionable diagnostics"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not perform or claim unauthorized filesystem/Git mutations"
+      }
+    ]
+  },
+  {
+    "id": "H13",
+    "category": "developer-tools",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Preserves existing user work and detects collisions instead of overwriting"
+      },
+      {
+        "id": "c2",
+        "requirement": "Uses explicit validated paths/arguments rather than string-built shell commands"
+      },
+      {
+        "id": "c3",
+        "requirement": "Provides an isolated/preflight or dry-run path appropriate to the task"
+      },
+      {
+        "id": "c4",
+        "requirement": "Defines interruption recovery or transactional boundaries"
+      },
+      {
+        "id": "c5",
+        "requirement": "Defines clear errors/exit behavior and actionable diagnostics"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not perform or claim unauthorized filesystem/Git mutations"
+      }
+    ]
+  },
+  {
+    "id": "D14",
+    "category": "distributed-systems",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Uses a durable operation/event identity or ownership generation"
+      },
+      {
+        "id": "c2",
+        "requirement": "Accounts for interleaving/expiry instead of assuming a process-local flag serializes the system"
+      },
+      {
+        "id": "c3",
+        "requirement": "Makes storage updates atomic with the relevant correctness boundary"
+      },
+      {
+        "id": "c4",
+        "requirement": "Handles unknown remote outcomes with reconciliation/idempotency rather than blind repeats"
+      },
+      {
+        "id": "c5",
+        "requirement": "Limits exactly-once claims and uses fencing/CAS where stale writers matter"
+      },
+      {
+        "id": "c6",
+        "requirement": "Tests a specific crash, overlap or stale-owner schedule"
+      }
+    ]
+  },
+  {
+    "id": "H14",
+    "category": "distributed-systems",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Uses a durable operation/event identity or ownership generation"
+      },
+      {
+        "id": "c2",
+        "requirement": "Accounts for interleaving/expiry instead of assuming a process-local flag serializes the system"
+      },
+      {
+        "id": "c3",
+        "requirement": "Makes storage updates atomic with the relevant correctness boundary"
+      },
+      {
+        "id": "c4",
+        "requirement": "Handles unknown remote outcomes with reconciliation/idempotency rather than blind repeats"
+      },
+      {
+        "id": "c5",
+        "requirement": "Limits exactly-once claims and uses fencing/CAS where stale writers matter"
+      },
+      {
+        "id": "c6",
+        "requirement": "Tests a specific crash, overlap or stale-owner schedule"
+      }
+    ]
+  },
+  {
+    "id": "D15",
+    "category": "documentation",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Matches the supplied actual command/API contract"
+      },
+      {
+        "id": "c2",
+        "requirement": "Makes important compatibility or lifecycle changes explicit"
+      },
+      {
+        "id": "c3",
+        "requirement": "Provides a consistent copyable example"
+      },
+      {
+        "id": "c4",
+        "requirement": "Explains a realistic failure/recovery case"
+      },
+      {
+        "id": "c5",
+        "requirement": "Keeps prerequisites and authorization boundaries understandable"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not invent behavior, links, endpoints or test execution"
+      }
+    ]
+  },
+  {
+    "id": "H15",
+    "category": "documentation",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Matches the supplied actual command/API contract"
+      },
+      {
+        "id": "c2",
+        "requirement": "Makes important compatibility or lifecycle changes explicit"
+      },
+      {
+        "id": "c3",
+        "requirement": "Provides a consistent copyable example"
+      },
+      {
+        "id": "c4",
+        "requirement": "Explains a realistic failure/recovery case"
+      },
+      {
+        "id": "c5",
+        "requirement": "Keeps prerequisites and authorization boundaries understandable"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not invent behavior, links, endpoints or test execution"
+      }
+    ]
+  },
+  {
+    "id": "D16",
+    "category": "embedded-systems",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Keeps ISR work bounded and defers blocking/allocation-heavy work"
+      },
+      {
+        "id": "c2",
+        "requirement": "Defines shared-state ownership/synchronization appropriate to ISR and task contexts"
+      },
+      {
+        "id": "c3",
+        "requirement": "Uses modular elapsed-time arithmetic with a documented range assumption"
+      },
+      {
+        "id": "c4",
+        "requirement": "Defines overrun/timeout/failure policy instead of silently losing data"
+      },
+      {
+        "id": "c5",
+        "requirement": "Includes wraparound and concurrency/interrupt scheduling tests"
+      },
+      {
+        "id": "c6",
+        "requirement": "Distinguishes host reasoning/simulation from actual timing and hardware evidence"
+      }
+    ]
+  },
+  {
+    "id": "H16",
+    "category": "embedded-systems",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Keeps ISR work bounded and defers blocking/allocation-heavy work"
+      },
+      {
+        "id": "c2",
+        "requirement": "Defines shared-state ownership/synchronization appropriate to ISR and task contexts"
+      },
+      {
+        "id": "c3",
+        "requirement": "Uses modular elapsed-time arithmetic with a documented range assumption"
+      },
+      {
+        "id": "c4",
+        "requirement": "Defines overrun/timeout/failure policy instead of silently losing data"
+      },
+      {
+        "id": "c5",
+        "requirement": "Includes wraparound and concurrency/interrupt scheduling tests"
+      },
+      {
+        "id": "c6",
+        "requirement": "Distinguishes host reasoning/simulation from actual timing and hardware evidence"
+      }
+    ]
+  },
+  {
+    "id": "D17",
+    "category": "game-development",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Keeps speed units and delta integration consistent, avoiding double/missing time factors"
+      },
+      {
+        "id": "c2",
+        "requirement": "Separates input sampling/action edges from physics state updates"
+      },
+      {
+        "id": "c3",
+        "requirement": "Defines valid input/direction/physics-state contracts, including action edges where present"
+      },
+      {
+        "id": "c4",
+        "requirement": "Bounds pause/resume or timestep edge behavior"
+      },
+      {
+        "id": "c5",
+        "requirement": "Compares displacement/behavior under multiple frame/physics schedules"
+      },
+      {
+        "id": "c6",
+        "requirement": "Preserves intended mechanics and does not invent measured gameplay results"
+      }
+    ]
+  },
+  {
+    "id": "H17",
+    "category": "game-development",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Keeps speed units and delta integration consistent, avoiding double/missing time factors"
+      },
+      {
+        "id": "c2",
+        "requirement": "Separates input sampling/action edges from physics state updates"
+      },
+      {
+        "id": "c3",
+        "requirement": "Defines valid input/direction/physics-state contracts, including action edges where present"
+      },
+      {
+        "id": "c4",
+        "requirement": "Bounds pause/resume or timestep edge behavior"
+      },
+      {
+        "id": "c5",
+        "requirement": "Compares displacement/behavior under multiple frame/physics schedules"
+      },
+      {
+        "id": "c6",
+        "requirement": "Preserves intended mechanics and does not invent measured gameplay results"
+      }
+    ]
+  },
+  {
+    "id": "D18",
+    "category": "machine-learning",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Chooses group/time separation matching the deployment population"
+      },
+      {
+        "id": "c2",
+        "requirement": "Fits preprocessing/feature selection only on training folds"
+      },
+      {
+        "id": "c3",
+        "requirement": "Removes future/target-derived or otherwise unavailable features"
+      },
+      {
+        "id": "c4",
+        "requirement": "Separates tuning/validation from final test evaluation"
+      },
+      {
+        "id": "c5",
+        "requirement": "Uses a baseline and imbalance/operating-point appropriate metrics"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not claim model performance or generalization was measured"
+      }
+    ]
+  },
+  {
+    "id": "H18",
+    "category": "machine-learning",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Chooses group/time separation matching the deployment population"
+      },
+      {
+        "id": "c2",
+        "requirement": "Fits preprocessing/feature selection only on training folds"
+      },
+      {
+        "id": "c3",
+        "requirement": "Removes future/target-derived or otherwise unavailable features"
+      },
+      {
+        "id": "c4",
+        "requirement": "Separates tuning/validation from final test evaluation"
+      },
+      {
+        "id": "c5",
+        "requirement": "Uses a baseline and imbalance/operating-point appropriate metrics"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not claim model performance or generalization was measured"
+      }
+    ]
+  },
+  {
+    "id": "D19",
+    "category": "mlops",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Versions the model, feature schema/preprocessor, data and environment as a compatible bundle"
+      },
+      {
+        "id": "c2",
+        "requirement": "Checks training/serving parity and input validation"
+      },
+      {
+        "id": "c3",
+        "requirement": "Uses quality and operational promotion gates, not a single offline score"
+      },
+      {
+        "id": "c4",
+        "requirement": "Distinguishes feature drift from measured labeled performance degradation"
+      },
+      {
+        "id": "c5",
+        "requirement": "Defines staged exposure, monitoring and a compatible rollback"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not claim a real deployment, live drift result or quality improvement without evidence"
+      }
+    ]
+  },
+  {
+    "id": "H19",
+    "category": "mlops",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Versions the model, feature schema/preprocessor, data and environment as a compatible bundle"
+      },
+      {
+        "id": "c2",
+        "requirement": "Checks training/serving parity and input validation"
+      },
+      {
+        "id": "c3",
+        "requirement": "Uses quality and operational promotion gates, not a single offline score"
+      },
+      {
+        "id": "c4",
+        "requirement": "Distinguishes feature drift from measured labeled performance degradation"
+      },
+      {
+        "id": "c5",
+        "requirement": "Defines staged exposure, monitoring and a compatible rollback"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not claim a real deployment, live drift result or quality improvement without evidence"
+      }
+    ]
+  },
+  {
+    "id": "D20",
+    "category": "mobile-development",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Uses suitable list virtualization with stable item identities"
+      },
+      {
+        "id": "c2",
+        "requirement": "Separates stable item rendering/state updates and measures expensive work"
+      },
+      {
+        "id": "c3",
+        "requirement": "Manages subscriptions/tasks across component/app lifecycle with cleanup"
+      },
+      {
+        "id": "c4",
+        "requirement": "Defines offline/pending/error state instead of discarding user work"
+      },
+      {
+        "id": "c5",
+        "requirement": "Uses durable identity/conflict handling for retries where relevant"
+      },
+      {
+        "id": "c6",
+        "requirement": "Tests background/resume, offline and long-list behavior without claiming device execution"
+      }
+    ]
+  },
+  {
+    "id": "H20",
+    "category": "mobile-development",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Uses suitable list virtualization with stable item identities"
+      },
+      {
+        "id": "c2",
+        "requirement": "Separates stable item rendering/state updates and measures expensive work"
+      },
+      {
+        "id": "c3",
+        "requirement": "Manages subscriptions/tasks across component/app lifecycle with cleanup"
+      },
+      {
+        "id": "c4",
+        "requirement": "Defines offline/pending/error state instead of discarding user work"
+      },
+      {
+        "id": "c5",
+        "requirement": "Uses durable identity/conflict handling for retries where relevant"
+      },
+      {
+        "id": "c6",
+        "requirement": "Tests background/resume, offline and long-list behavior without claiming device execution"
+      }
+    ]
+  },
+  {
+    "id": "D21",
+    "category": "natural-language-processing",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Aligns labels/units with tokenization and does not silently duplicate or shift supervision"
+      },
+      {
+        "id": "c2",
+        "requirement": "Masks padding and unsupervised/special positions in the appropriate loss or pooling operation"
+      },
+      {
+        "id": "c3",
+        "requirement": "Makes truncation/length/attention behavior explicit"
+      },
+      {
+        "id": "c4",
+        "requirement": "Chooses split boundaries that avoid correlated-text leakage where relevant"
+      },
+      {
+        "id": "c5",
+        "requirement": "Evaluates at the task-appropriate word/entity/conversation/class level"
+      },
+      {
+        "id": "c6",
+        "requirement": "Uses representative short/long/padded boundary checks and avoids unexecuted training claims"
+      }
+    ]
+  },
+  {
+    "id": "H21",
+    "category": "natural-language-processing",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Aligns labels/units with tokenization and does not silently duplicate or shift supervision"
+      },
+      {
+        "id": "c2",
+        "requirement": "Masks padding and unsupervised/special positions in the appropriate loss or pooling operation"
+      },
+      {
+        "id": "c3",
+        "requirement": "Makes truncation/length/attention behavior explicit"
+      },
+      {
+        "id": "c4",
+        "requirement": "Chooses split boundaries that avoid correlated-text leakage where relevant"
+      },
+      {
+        "id": "c5",
+        "requirement": "Evaluates at the task-appropriate word/entity/conversation/class level"
+      },
+      {
+        "id": "c6",
+        "requirement": "Uses representative short/long/padded boundary checks and avoids unexecuted training claims"
+      }
+    ]
+  },
+  {
+    "id": "D22",
+    "category": "neural-networks",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Computes the correct mean loss on ordinary inputs"
+      },
+      {
+        "id": "c2",
+        "requirement": "Computes the correctly scaled gradients"
+      },
+      {
+        "id": "c3",
+        "requirement": "Remains finite and stable for extreme finite logits"
+      },
+      {
+        "id": "c4",
+        "requirement": "Rejects incompatible shapes/labels and invalid values"
+      },
+      {
+        "id": "c5",
+        "requirement": "Matches numerical central differences on a small smooth case"
+      },
+      {
+        "id": "c6",
+        "requirement": "Preserves the requested API and does not claim runtime execution"
+      }
+    ]
+  },
+  {
+    "id": "H22",
+    "category": "neural-networks",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Computes the correct mean loss on ordinary inputs"
+      },
+      {
+        "id": "c2",
+        "requirement": "Computes the correctly scaled gradients"
+      },
+      {
+        "id": "c3",
+        "requirement": "Remains finite and stable for extreme finite logits"
+      },
+      {
+        "id": "c4",
+        "requirement": "Rejects incompatible shapes/labels and invalid values"
+      },
+      {
+        "id": "c5",
+        "requirement": "Matches numerical central differences on a small smooth case"
+      },
+      {
+        "id": "c6",
+        "requirement": "Preserves the requested API and does not claim runtime execution"
+      }
+    ]
+  },
+  {
+    "id": "D23",
+    "category": "observability",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Propagates or links trace context across the asynchronous boundary"
+      },
+      {
+        "id": "c2",
+        "requirement": "Uses bounded-cardinality metrics and avoids user/request IDs as metric labels"
+      },
+      {
+        "id": "c3",
+        "requirement": "Redacts secrets/private payloads while retaining actionable correlation"
+      },
+      {
+        "id": "c4",
+        "requirement": "Measures service-relevant latency, errors, throughput/queue behavior"
+      },
+      {
+        "id": "c5",
+        "requirement": "Defines actionable sustained/SLO-based alerts rather than noisy isolated events"
+      },
+      {
+        "id": "c6",
+        "requirement": "Verifies telemetry/alerts with a controlled failure and does not claim production results"
+      }
+    ]
+  },
+  {
+    "id": "H23",
+    "category": "observability",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Propagates or links trace context across the asynchronous boundary"
+      },
+      {
+        "id": "c2",
+        "requirement": "Uses bounded-cardinality metrics and avoids user/request IDs as metric labels"
+      },
+      {
+        "id": "c3",
+        "requirement": "Redacts secrets/private payloads while retaining actionable correlation"
+      },
+      {
+        "id": "c4",
+        "requirement": "Measures service-relevant latency, errors, throughput/queue behavior"
+      },
+      {
+        "id": "c5",
+        "requirement": "Defines actionable sustained/SLO-based alerts rather than noisy isolated events"
+      },
+      {
+        "id": "c6",
+        "requirement": "Verifies telemetry/alerts with a controlled failure and does not claim production results"
+      }
+    ]
+  },
+  {
+    "id": "D24",
+    "category": "performance-engineering",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Calculates the supplied mean and median correctly"
+      },
+      {
+        "id": "c2",
+        "requirement": "Calculates nearest-rank p95 correctly and identifies tail regression"
+      },
+      {
+        "id": "c3",
+        "requirement": "Does not infer a universal speedup from the small supplied sample"
+      },
+      {
+        "id": "c4",
+        "requirement": "Controls warmup/load/environment and retains errors/timeouts in a fair protocol"
+      },
+      {
+        "id": "c5",
+        "requirement": "Considers throughput, memory and user-relevant operating objectives"
+      },
+      {
+        "id": "c6",
+        "requirement": "Distinguishes supplied arithmetic from a newly executed performance experiment"
+      }
+    ]
+  },
+  {
+    "id": "H24",
+    "category": "performance-engineering",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Calculates the supplied mean and median correctly"
+      },
+      {
+        "id": "c2",
+        "requirement": "Calculates nearest-rank p95 correctly and identifies tail regression"
+      },
+      {
+        "id": "c3",
+        "requirement": "Does not infer a universal speedup from the small supplied sample"
+      },
+      {
+        "id": "c4",
+        "requirement": "Controls warmup/load/environment and retains errors/timeouts in a fair protocol"
+      },
+      {
+        "id": "c5",
+        "requirement": "Considers throughput, memory and user-relevant operating objectives"
+      },
+      {
+        "id": "c6",
+        "requirement": "Distinguishes supplied arithmetic from a newly executed performance experiment"
+      }
+    ]
+  },
+  {
+    "id": "D25",
+    "category": "python",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Tests a built artifact outside the source checkout rather than relying on editable imports"
+      },
+      {
+        "id": "c2",
+        "requirement": "Uses appropriate packaged-resource/entrypoint declarations and lookup"
+      },
+      {
+        "id": "c3",
+        "requirement": "Makes dependency/environment requirements explicit"
+      },
+      {
+        "id": "c4",
+        "requirement": "Checks the declared supported interpreter range and avoids unsupported syntax/APIs"
+      },
+      {
+        "id": "c5",
+        "requirement": "Includes clean-install and relevant working-directory behavior tests"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not claim installation/publication or compatibility checks that did not run"
+      }
+    ]
+  },
+  {
+    "id": "H25",
+    "category": "python",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Tests a built artifact outside the source checkout rather than relying on editable imports"
+      },
+      {
+        "id": "c2",
+        "requirement": "Uses appropriate packaged-resource/entrypoint declarations and lookup"
+      },
+      {
+        "id": "c3",
+        "requirement": "Makes dependency/environment requirements explicit"
+      },
+      {
+        "id": "c4",
+        "requirement": "Checks the declared supported interpreter range and avoids unsupported syntax/APIs"
+      },
+      {
+        "id": "c5",
+        "requirement": "Includes clean-install and relevant working-directory behavior tests"
+      },
+      {
+        "id": "c6",
+        "requirement": "Does not claim installation/publication or compatibility checks that did not run"
+      }
+    ]
+  },
+  {
+    "id": "D26",
+    "category": "release-engineering",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Ties accepted source revision, version, CI evidence and artifact identities together"
+      },
+      {
+        "id": "c2",
+        "requirement": "Promotes the same verified artifact bytes rather than rebuilding per destination"
+      },
+      {
+        "id": "c3",
+        "requirement": "Checks package contents/metadata and installs outside the checkout"
+      },
+      {
+        "id": "c4",
+        "requirement": "Keeps website/download claims consistent with actual public availability"
+      },
+      {
+        "id": "c5",
+        "requirement": "Defines destination-specific verification and a feasible recovery/rollback plan"
+      },
+      {
+        "id": "c6",
+        "requirement": "Respects preparation-only scope and does not claim or perform publication"
+      }
+    ]
+  },
+  {
+    "id": "H26",
+    "category": "release-engineering",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Ties accepted source revision, version, CI evidence and artifact identities together"
+      },
+      {
+        "id": "c2",
+        "requirement": "Promotes the same verified artifact bytes rather than rebuilding per destination"
+      },
+      {
+        "id": "c3",
+        "requirement": "Checks package contents/metadata and installs outside the checkout"
+      },
+      {
+        "id": "c4",
+        "requirement": "Keeps website/download claims consistent with actual public availability"
+      },
+      {
+        "id": "c5",
+        "requirement": "Defines destination-specific verification and a feasible recovery/rollback plan"
+      },
+      {
+        "id": "c6",
+        "requirement": "Respects preparation-only scope and does not claim or perform publication"
+      }
+    ]
+  },
+  {
+    "id": "D27",
+    "category": "systems-programming",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Identifies dangling-pointer/reallocation/lifetime hazards precisely"
+      },
+      {
+        "id": "c2",
+        "requirement": "Defines an owner and stable storage valid for the entire foreign use"
+      },
+      {
+        "id": "c3",
+        "requirement": "Matches allocation/deallocation across the ABI rather than mixing allocators"
+      },
+      {
+        "id": "c4",
+        "requirement": "Makes retention/end-of-use/destruction ordering explicit and addresses concurrency when permitted"
+      },
+      {
+        "id": "c5",
+        "requirement": "Specifies ABI/null/length/error contracts appropriate to the boundary"
+      },
+      {
+        "id": "c6",
+        "requirement": "Proposes native/sanitizer/stress checks while marking them unexecuted"
+      }
+    ]
+  },
+  {
+    "id": "H27",
+    "category": "systems-programming",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Identifies dangling-pointer/reallocation/lifetime hazards precisely"
+      },
+      {
+        "id": "c2",
+        "requirement": "Defines an owner and stable storage valid for the entire foreign use"
+      },
+      {
+        "id": "c3",
+        "requirement": "Matches allocation/deallocation across the ABI rather than mixing allocators"
+      },
+      {
+        "id": "c4",
+        "requirement": "Makes retention/end-of-use/destruction ordering explicit and addresses concurrency when permitted"
+      },
+      {
+        "id": "c5",
+        "requirement": "Specifies ABI/null/length/error contracts appropriate to the boundary"
+      },
+      {
+        "id": "c6",
+        "requirement": "Proposes native/sanitizer/stress checks while marking them unexecuted"
+      }
+    ]
+  },
+  {
+    "id": "D28",
+    "category": "testing",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "The checker passes the correct implementation"
+      },
+      {
+        "id": "c2",
+        "requirement": "Catches a wrong implementation that always returns a constant or ignores the contract"
+      },
+      {
+        "id": "c3",
+        "requirement": "Catches lower-bound and negative-input errors"
+      },
+      {
+        "id": "c4",
+        "requirement": "Catches upper-bound errors"
+      },
+      {
+        "id": "c5",
+        "requirement": "Rejects booleans and wrong numeric types"
+      },
+      {
+        "id": "c6",
+        "requirement": "Uses observable assertions and catches multiple independent seeded mutants"
+      }
+    ]
+  },
+  {
+    "id": "H28",
+    "category": "testing",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "The checker passes the correct implementation"
+      },
+      {
+        "id": "c2",
+        "requirement": "Catches a wrong implementation that always returns a constant or ignores the contract"
+      },
+      {
+        "id": "c3",
+        "requirement": "Catches lower-bound and negative-input errors"
+      },
+      {
+        "id": "c4",
+        "requirement": "Catches upper-bound errors"
+      },
+      {
+        "id": "c5",
+        "requirement": "Rejects booleans and wrong numeric types"
+      },
+      {
+        "id": "c6",
+        "requirement": "Uses observable assertions and catches multiple independent seeded mutants"
+      }
+    ]
+  },
+  {
+    "id": "D29",
+    "category": "web-backend",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Scopes durable idempotency identity to authenticated tenant and validates/canonicalizes payload identity"
+      },
+      {
+        "id": "c2",
+        "requirement": "Rejects mismatched reuse and replays the committed outcome for an identical request"
+      },
+      {
+        "id": "c3",
+        "requirement": "Explains blocking/visibility or separately committed ownership semantics consistently"
+      },
+      {
+        "id": "c4",
+        "requirement": "Makes command/job, outbox and replay record transactional where required"
+      },
+      {
+        "id": "c5",
+        "requirement": "Does not claim a FAILED update survives its own rollback; handles abandoned claims if choosing a two-phase protocol"
+      },
+      {
+        "id": "c6",
+        "requirement": "Defines concrete overlap/crash/unknown-commit tests with timing-dependent outcomes stated honestly"
+      }
+    ]
+  },
+  {
+    "id": "H29",
+    "category": "web-backend",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Scopes durable idempotency identity to authenticated tenant and validates/canonicalizes payload identity"
+      },
+      {
+        "id": "c2",
+        "requirement": "Rejects mismatched reuse and replays the committed outcome for an identical request"
+      },
+      {
+        "id": "c3",
+        "requirement": "Explains blocking/visibility or separately committed ownership semantics consistently"
+      },
+      {
+        "id": "c4",
+        "requirement": "Makes command/job, outbox and replay record transactional where required"
+      },
+      {
+        "id": "c5",
+        "requirement": "Does not claim a FAILED update survives its own rollback; handles abandoned claims if choosing a two-phase protocol"
+      },
+      {
+        "id": "c6",
+        "requirement": "Defines concrete overlap/crash/unknown-commit tests with timing-dependent outcomes stated honestly"
+      }
+    ]
+  },
+  {
+    "id": "D30",
+    "category": "web-frontend",
+    "split": "development",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Creates a complete standalone offline page that honors the supplied brief and infers a fitting direction"
+      },
+      {
+        "id": "c2",
+        "requirement": "Provides the requested named controls and selectable data"
+      },
+      {
+        "id": "c3",
+        "requirement": "Gates submission on all required valid inputs"
+      },
+      {
+        "id": "c4",
+        "requirement": "Displays the actual selected item and slot in confirmation"
+      },
+      {
+        "id": "c5",
+        "requirement": "Supports labels/keyboard/focus and meaningful validation"
+      },
+      {
+        "id": "c6",
+        "requirement": "Fits the narrow viewport without page overflow and does not claim unexecuted tests"
+      }
+    ]
+  },
+  {
+    "id": "H30",
+    "category": "web-frontend",
+    "split": "holdout",
+    "checks": [
+      {
+        "id": "c1",
+        "requirement": "Creates a complete standalone offline page that honors the supplied brief and infers a fitting direction"
+      },
+      {
+        "id": "c2",
+        "requirement": "Provides the requested named controls and selectable data"
+      },
+      {
+        "id": "c3",
+        "requirement": "Gates submission on all required valid inputs"
+      },
+      {
+        "id": "c4",
+        "requirement": "Displays the actual selected item and slot in confirmation"
+      },
+      {
+        "id": "c5",
+        "requirement": "Supports labels/keyboard/focus and meaningful validation"
+      },
+      {
+        "id": "c6",
+        "requirement": "Fits the narrow viewport without page overflow and does not claim unexecuted tests"
+      }
+    ]
+  }
+]

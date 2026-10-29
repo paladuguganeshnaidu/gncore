@@ -1,0 +1,1 @@
+C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\.work\phase2\venv312\Scripts\python.exe: No module named twine

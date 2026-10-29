@@ -1,0 +1,32 @@
+{
+  "local_commit": "080915efbe90fb83570e8b71e882d80cdd450112",
+  "publication": "held",
+  "binary_report_bytes_verified": [
+    {
+      "file": "assets/benchmarks/antigravity-holdout-landscape.pdf",
+      "sha256": "1f4aef947615a1fc4e97de533b9638da92f7b61d6be6b721ed2ee91042cc8274"
+    },
+    {
+      "file": "assets/benchmarks/EXECUTIVE-REPORT.pdf",
+      "sha256": "ebb90882318d5904d182a17a912b4fc3afae659a3e73b148abb1fb39f1a4c141"
+    },
+    {
+      "file": "assets/benchmarks/TECHNICAL-REPORT.pdf",
+      "sha256": "12d95c02e5724f936e13dde6267ae80350ff4a18457a132c96ca9c7ccc851df0"
+    },
+    {
+      "file": "assets/benchmarks/vscode-holdout-landscape.pdf",
+      "sha256": "1a4bd049d2ca5e170481c3f6ba7ff59f7c122f893c9d319e0dd897a1909a7bad"
+    }
+  ],
+  "static_check": {
+    "ok": true,
+    "html_pages": 42,
+    "local_links_checked": 1964,
+    "redirects_checked": 672,
+    "categories": 30,
+    "workflows": 374,
+    "issues": []
+  },
+  "rendered_browser_verification": "not measured"
+}

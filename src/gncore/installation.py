@@ -44,7 +44,17 @@ def _write_json(path: Path, value: dict) -> None:
             stream.write("\n")
             stream.flush()
             os.fsync(stream.fileno())
-        os.replace(temporary, path)
+        # Indexers and sync clients can briefly hold the current journal open
+        # on Windows. Retry the atomic replacement, never an unlink-and-write
+        # fallback that would expose a missing or partially written journal.
+        for attempt in range(8):
+            try:
+                os.replace(temporary, path)
+                break
+            except PermissionError as error:
+                if getattr(error, "winerror", None) not in {5, 32, 33} or attempt == 7:
+                    raise
+                time.sleep(min(0.025 * (2 ** attempt), 0.2))
     finally:
         temporary.unlink(missing_ok=True)
 

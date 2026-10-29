@@ -2,6 +2,8 @@
 
 Candidate: **7.0.0rc1**. This is a major catalog migration and an explicit prerelease. The source, wheel/source archive, portable skill ZIP and website preview must agree on 30 categories and 374 workflows.
 
+The latest [comparative pilot and release review](COMPARATIVE_PILOT.md) adds real IDE comparisons, all-category guidance improvements and a journal-lock fix. Review its limitations and the recorded synced-folder failure before approving publication. The prepared website now includes a comparison-evidence page; no deployment is implied.
+
 ## Prepared scope
 
 Thirty developer categories replace the mixed catalog. New dedicated areas cover neural networks, deep learning, vision, NLP, MLOps, databases, native/embedded/distributed systems, performance, observability and technical research. The migration ledger accounts for 553 earlier workflows. Original references retain their authorship and terms.

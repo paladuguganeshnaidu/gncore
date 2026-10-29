@@ -1,0 +1,11 @@
+{
+  "generated_from": "e19c84e5de45707e39de4e84c2f4c87ddac923c7aa6aed97de4620a268fbd48b",
+  "scorecards": [
+    "vscode-holdout-landscape",
+    "antigravity-holdout-landscape",
+    "vscode-development-landscape",
+    "antigravity-development-landscape"
+  ],
+  "plotted_values": "category-scores.csv and review-results.json",
+  "claims": "pilot task-check percentages only"
+}

@@ -1,0 +1,7 @@
+Using CPython 3.12.13 interpreter at: .work\phase2\venv312\Scripts\python.exe
+Resolved 1 package in 26.85s
+   Building gncore @ file:///C:/Users/ganes/OneDrive/Documents/ChatGPT/GNCore/.work/benchmark-v2/accepted-release/gncore-7.0.0rc1.tar.gz
+      Built gncore @ file:///C:/Users/ganes/OneDrive/Documents/ChatGPT/GNCore/.work/benchmark-v2/accepted-release/gncore-7.0.0rc1.tar.gz
+Prepared 1 package in 47.77s
+Installed 1 package in 18.60s
+ + gncore==7.0.0rc1 (from file:///C:/Users/ganes/OneDrive/Documents/ChatGPT/GNCore/.work/benchmark-v2/accepted-release/gncore-7.0.0rc1.tar.gz)

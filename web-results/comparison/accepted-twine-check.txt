@@ -1,0 +1,2 @@
+Checking .work/benchmark-v2/accepted-release/gncore-7.0.0rc1-py3-none-any.whl: PASSED
+Checking .work/benchmark-v2/accepted-release/gncore-7.0.0rc1.tar.gz: PASSED

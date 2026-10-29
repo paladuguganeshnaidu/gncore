@@ -1,0 +1,43 @@
+........................................................................ [ 48%]
+F......................s................................................ [ 96%]
+.....                                                                    [100%]
+================================== FAILURES ===================================
+____________ test_customized_managed_install_is_preserved[delete] _____________
+
+tmp_path = WindowsPath('C:/Users/ganes/OneDrive/Documents/ChatGPT/GNCore/.work/benchmark-v2/pytest-after-lock-fix/test_customized_managed_instal1')
+change = 'delete'
+
+    @pytest.mark.parametrize("change", ["modify", "delete", "new-collision"])
+    def test_customized_managed_install_is_preserved(tmp_path, change):
+        root = tmp_path / "skills"
+>       install_skills(root, OLD, version="1")
+
+tests\test_installation.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\gncore\installation.py:256: in install_skills
+    _write_json(journal, record)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = WindowsPath('C:/Users/ganes/OneDrive/Documents/ChatGPT/GNCore/.work/benchmark-v2/pytest-after-lock-fix/test_customized_managed_instal1/.gncore-skills-transactions/0a5509784b9141bda83d77b2a2726419/journal.json')
+value = {'schema_version': 1, 'root': 'C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\pytest-after-lock-fix\\test_customized_managed_instal1\\skills', 'had_root': False, 'status': 'rolled-back'}
+
+    def _write_json(path: Path, value: dict) -> None:
+        temporary = path.with_name(f".{path.name}.{uuid4().hex}.tmp")
+        try:
+            with temporary.open("x", encoding="utf-8", newline="\n") as stream:
+                json.dump(value, stream, indent=2, sort_keys=True)
+                stream.write("\n")
+                stream.flush()
+                os.fsync(stream.fileno())
+            # Indexers and sync clients can briefly hold the current journal open
+            # on Windows. Retry the atomic replacement, never an unlink-and-write
+            # fallback that would expose a missing or partially written journal.
+            for attempt in range(8):
+                try:
+>                   os.replace(temporary, path)
+E                   PermissionError: [WinError 5] Access is denied: 'C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\pytest-after-lock-fix\\test_customized_managed_instal1\\.gncore-skills-transactions\\0a5509784b9141bda83d77b2a2726419\\.journal.json.c927dec3d312477f8dbb700a18dcf521.tmp' -> 'C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\pytest-after-lock-fix\\test_customized_managed_instal1\\.gncore-skills-transactions\\0a5509784b9141bda83d77b2a2726419\\journal.json'
+
+src\gncore\installation.py:52: PermissionError
+=========================== short test summary info ===========================
+FAILED tests/test_installation.py::test_customized_managed_install_is_preserved[delete]
+1 failed, 147 passed, 1 skipped in 667.64s (0:11:07)

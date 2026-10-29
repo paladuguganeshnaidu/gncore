@@ -36,7 +36,7 @@ def main():
     route_result = route_task("Check neural network gradients")
     route_example = json.dumps({key: route_result[key] for key in ("skill_id", "status", "workflows")}, indent=2)
     pages = {}
-    links = [('/skills/', 'Skills'), ('/domains/', 'Developer domains'), ('/docs/', 'Docs'), ('/migration/', 'Migration'), ('/creator/', 'Creator')]
+    links = [('/skills/', 'Skills'), ('/domains/', 'Developer domains'), ('/docs/', 'Docs'), ('/benchmarks/', 'Evidence'), ('/migration/', 'Migration'), ('/creator/', 'Creator')]
     nav = ''.join(f'<a href="{url}">{label}</a>' for url, label in links)
     mark = '<img src="/assets/favicon.svg" width="36" height="36" alt="">'
     banner = '' if args.published else '<div class="preview-banner">PHASE TWO PREVIEW · Release candidate prepared locally · Publication pending approval</div>'
@@ -86,6 +86,39 @@ def main():
     page('/assistants/', 'Use exported skills', 'Load portable skill folders in a compatible host agent.', intro('THE HOST DOES THE WORK', 'One category. Your project context.', 'Export a category to .agents/skills, then ask a compatible agent to use it. Automatic discovery and invocation syntax depend on that host’s settings.') + '<article class="container article-body">'+command('gncore export --specific web-frontend\n$web-frontend Build a booking site using the existing stack.')+'<p>Entry instructions select relevant modes. Substantial references are conditional. Imported tools remain inert until deliberately used, and host permissions continue to govern external actions.</p></article>')
     page('/use-cases/', 'Developer use cases', 'Practical entrypoints for web, ML, systems and delivery work.', intro('PRACTICAL STARTING POINTS', 'Choose a concrete outcome.', 'Keep the existing stack, define the critical constraint, and ask for verifiable output.') + '<article class="container article-body">'+command('$neural-networks Diagnose stalled learning on a tiny batch.\n$deep-learning Verify checkpoint resume before scaling.\n$web-backend Add a tenant-scoped idempotent endpoint.\n$embedded-systems Test timer wraparound with host fixtures.\n$release-engineering Prepare artifacts, then wait for publication approval.')+'</article>')
     page('/creator/', 'Creator', 'GNCore is created by Paladugu Ganesh Naidu.', intro('THE CREATOR', 'Made by a builder. For builders.', 'GNCore is created by Paladugu Ganesh Naidu. This phase focuses the library on practical developer work, traceable source obligations and observable verification.') + '<article class="container article-body"><p><a href="https://github.com/paladuguganeshnaidu">GitHub profile ↗</a></p><p>Original GNCore guidance and code are MIT-licensed. Retained third-party materials keep their source-specific terms. Contributors should preserve provenance and improve demonstrated behavior rather than inflate line counts.</p></article>')
+    evidence = ROOT / 'web-results/comparison'
+    review_path = evidence / 'review-results.json'
+    evidence_body = intro('PRACTICAL COMPARISON', 'See the checks behind the claims.', 'Thirty developer categories. Two IDEs. Pinned published references. One transparent pilot, with failures and missing measurements visible.')
+    evidence_body += '<article class="container article-body"><div class="notice">Percentages mean specific task checks passed. They are not universal efficiency, intelligence or security ratings. One unblinded trial per condition cannot establish statistical superiority.</div>'
+    if review_path.exists():
+        review = json.loads(review_path.read_text(encoding='utf-8'))
+        rows = []
+        labels = {'gncore-before':'Original GNCore','reference':'Published reference','gncore-after':'Revised GNCore trial'}
+        for run in review['runs']:
+            if run['split'] != 'holdout':
+                continue
+            complete = [c for c in run['cases'] if c['complete'] and c['category'] != 'web-frontend']
+            passed, count = sum(c['passed'] for c in complete), sum(c['total'] for c in complete)
+            value = f'{passed}/{count} ({100*passed/count:.1f}%)' if count else 'Not measured'
+            rows.append(f'<tr><td>{h(run["host"].title())}</td><td>{h(labels[run["profile"]])}</td><td>{h(value)}</td><td>{len(complete)}/29 non-UI categories</td></tr>')
+        evidence_body += '<h2>Same holdout tasks, separate IDEs</h2><div class="table-scroll"><table class="data-table"><thead><tr><th>IDE</th><th>Guidance</th><th>Checks passed</th><th>Coverage</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div><p>The revised trial used an initial candidate. Three entrypoints later changed and received separate known-task follow-ups; those results are not inserted into this table. Holdout browser tests are unmeasured because browser access became unavailable.</p>'
+        destination = output / 'assets/benchmarks'
+        destination.mkdir(parents=True, exist_ok=True)
+        for name in ('EXECUTIVE-REPORT.pdf','TECHNICAL-REPORT.pdf','category-scores.csv','failed-checks.csv','source-snapshots.json'):
+            source = evidence / name
+            if source.exists():
+                shutil.copyfile(source, destination / name)
+                evidence_body += f'<p><a href="/assets/benchmarks/{name}">{h(name.replace("-", " "))}</a></p>'
+        for host in ('vscode','antigravity'):
+            name = f'{host}-holdout-landscape'
+            if (evidence / 'charts' / (name+'.png')).exists():
+                for extension in ('png','pdf'):
+                    shutil.copyfile(evidence / 'charts' / (name+'.'+extension), destination / (name+'.'+extension))
+                evidence_body += f'<h2>{h(host.title())} landscape scorecard</h2><a href="/assets/benchmarks/{name}.pdf"><img class="benchmark-chart" src="/assets/benchmarks/{name}.png" alt="{h(host.title())}: six practical test panels and all thirty category scores; missing checks shown in gray"></a><p>Open the landscape PDF to zoom or print. The dashed95% line is a goal only.</p>'
+    else:
+        evidence_body += '<p>The full comparison evidence is maintained in the GNCore source repository under web-results/comparison. This source distribution does not bundle experimental answers.</p>'
+    evidence_body += '<h2>What was improved</h2><p>All thirty entrypoints gained original, domain-specific failure-prevention guidance. Existing workflows, resources and upstream notices are preserved. Final allocation follow-ups passed16 frozen and3 exploratory cases in each IDE; known-task follow-ups do not prove generalization.</p><h2>What remains</h2><p>Manual review is unblinded; Copilot Auto is not a pinned model; there are no repeated-trial estimates or no-skill controls. Cloud deployments, GPU training, hardware and production security were not certified. Raw answers, frozen criteria and failure logs remain available for review.</p><p><a href="https://github.com/paladuguganeshnaidu/gncore">GNCore source and evidence repository</a></p></article>'
+    page('/benchmarks/', 'Practical comparison evidence', 'Measured developer task checks, landscape scorecards and transparent limitations.', evidence_body)
     for path, content in pages.items():
         target = output / path.strip('/') / 'index.html'
         target.parent.mkdir(parents=True, exist_ok=True)

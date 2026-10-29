@@ -61,6 +61,8 @@ The [evaluation corpus](https://github.com/paladuguganeshnaidu/gncore/blob/v7.0.
 
 ## Develop and prepare release artifacts
 
+The [comparative pilot](web-results/comparison/EXECUTIVE-REPORT.md) records original VS Code and Antigravity answers across all 30 categories, alongside pinned published references. Landscape plots show passed checks and missing measurements; they do not certify universal efficiency or security. See the [technical report](web-results/comparison/TECHNICAL-REPORT.md) for raw evidence, scoring and limitations.
+
 ```bash
 python -m pip install -e ".[test,skills]" build twine
 python scripts/build_catalog.py --check

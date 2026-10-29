@@ -1,0 +1,94 @@
+{
+  "category": "neural-networks",
+  "split": "development",
+  "passed": 11,
+  "total": 11,
+  "tests": [
+    {
+      "test": "zeros",
+      "passed": true,
+      "expected": "(0.6931471805599453, [0.25, -0.25])",
+      "actual": "(0.6931471805599453, [0.25, -0.25])",
+      "error": null
+    },
+    {
+      "test": "normal",
+      "passed": true,
+      "expected": "(0.2200948492805977, [-0.13447071068499755, 0.05960146101105877])",
+      "actual": "(0.2200948492805977, [-0.13447071068499755, 0.05960146101105877])",
+      "error": null
+    },
+    {
+      "test": "extreme_correct",
+      "passed": true,
+      "expected": "(0.0, [0.0, 0.0])",
+      "actual": "(0.0, [0.0, 0.0])",
+      "error": null
+    },
+    {
+      "test": "extreme_wrong",
+      "passed": true,
+      "expected": "(1000.0, [0.5, -0.5])",
+      "actual": "(1000.0, [0.5, -0.5])",
+      "error": null
+    },
+    {
+      "test": "unequal_batch",
+      "passed": true,
+      "expected": "(0.4661631489656584, [-0.15005533422917403, 0.133770779962516, -0.0832466314682941])",
+      "actual": "(0.4661631489656584, [-0.15005533422917403, 0.133770779962516, -0.0832466314682941])",
+      "error": null
+    },
+    {
+      "test": "invalid_input_0",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_input_1",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_input_2",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_input_3",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_input_4",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "central_difference_gradients",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    }
+  ],
+  "inspection": {
+    "imports": [
+      "import math"
+    ],
+    "functions": [
+      "binary_loss_grad"
+    ]
+  },
+  "scope": "Actual generated pure-function/test code executed in an isolated child; no IDE execution or production claim."
+}

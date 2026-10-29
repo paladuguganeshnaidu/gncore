@@ -1,0 +1,624 @@
+I’ll read the pack in complete bounded ranges, then follow only its instructions and return the specified JSON object.
+
+Read , lines 1 to 1000
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1,
+    1000
+  ]
+}
+
+Read , lines 1001 to 2000
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1001,
+    2000
+  ]
+}
+
+Read , lines 2001 to 3000
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2001,
+    3000
+  ]
+}
+
+Read , lines 3001 to 4004
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    3001,
+    4004
+  ]
+}
+
+The initial batch hit the viewer’s output truncation, so I’m continuing with smaller ranges to cover every line and all 30 task sections before composing the JSON.
+
+Read , lines 1 to 400
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1,
+    400
+  ]
+}
+
+Read , lines 401 to 800
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    401,
+    800
+  ]
+}
+
+Read , lines 801 to 1200
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    801,
+    1200
+  ]
+}
+
+Read , lines 1201 to 1600
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1201,
+    1600
+  ]
+}
+
+Read , lines 1601 to 2000
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1601,
+    2000
+  ]
+}
+
+Read , lines 2001 to 2400
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2001,
+    2400
+  ]
+}
+
+Read , lines 2401 to 2800
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2401,
+    2800
+  ]
+}
+
+Read , lines 2801 to 3200
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2801,
+    3200
+  ]
+}
+
+Read , lines 3201 to 4004
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    3201,
+    4004
+  ]
+}
+
+Search for `^## Task`
+
+All 30 task IDs are confirmed. I’m now reading each task’s request and its applicable guidance at the section boundaries, including the final H30 section beyond the earlier 4004-line estimate.
+
+Read , lines 121 to 188
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    121,
+    188
+  ]
+}
+
+Read , lines 189 to 321
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    189,
+    321
+  ]
+}
+
+Read , lines 322 to 430
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    322,
+    430
+  ]
+}
+
+Read , lines 935 to 1025
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    935,
+    1025
+  ]
+}
+
+"Read" failed
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1026,
+    1143
+  ]
+}
+Tool execution failed: Path does not exist
+
+Read , lines 1144 to 1221
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1144,
+    1221
+  ]
+}
+
+Read , lines 1222 to 1369
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1222,
+    1369
+  ]
+}
+
+Read , lines 1370 to 1452
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1370,
+    1452
+  ]
+}
+
+Read , lines 1453 to 1563
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1453,
+    1563
+  ]
+}
+
+Read , lines 1564 to 1681
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1564,
+    1681
+  ]
+}
+
+Read , lines 1682 to 1760
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1682,
+    1760
+  ]
+}
+
+Read , lines 1760 to 1827
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1760,
+    1827
+  ]
+}
+
+Read , lines 1828 to 1905
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1828,
+    1905
+  ]
+}
+
+Read , lines 1906 to 1978
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1906,
+    1978
+  ]
+}
+
+Read , lines 1979 to 2056
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    1979,
+    2056
+  ]
+}
+
+Read , lines 2120 to 2290
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2120,
+    2290
+  ]
+}
+
+Read , lines 2291 to 2406
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2291,
+    2406
+  ]
+}
+
+Read , lines 2407 to 2469
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2407,
+    2469
+  ]
+}
+
+Read , lines 2470 to 2560
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2470,
+    2560
+  ]
+}
+
+Read , lines 2561 to 2658
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2561,
+    2658
+  ]
+}
+
+Read , lines 2659 to 2755
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2659,
+    2755
+  ]
+}
+
+Read , lines 2756 to 2838
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2756,
+    2838
+  ]
+}
+
+Read , lines 2839 to 2911
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2839,
+    2911
+  ]
+}
+
+Read , lines 2912 to 2979
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2912,
+    2979
+  ]
+}
+
+Read , lines 2980 to 3057
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    2980,
+    3057
+  ]
+}
+
+Read , lines 3058 to 3210
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    3058,
+    3210
+  ]
+}
+
+Read , lines 3211 to 3676
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    3211,
+    3676
+  ]
+}
+
+Read , lines 3677 to 4004
+Completed with input: {
+  "path": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\workspace\\packs\\gncore-after-holdout.md",
+  "view_range": [
+    3677,
+    4004
+  ]
+}
+
+{
+  "benchmark_run": "gncore-after-holdout",
+  "answers": [
+    {
+      "id": "H01",
+      "answer": "Use read_logs only with a typed contract such as query -> {entries: [{id, timestamp, text}], next_cursor?}, bounded query length, result count, bytes, timeout, and one iteration. Treat log text as untrusted evidence, not instructions. Ground the answer as: \"L1 reports that CPU saturation began at 14:05 UTC\" and cite L1. The next investigation should be evidence-seeking and read-only: inspect CPU-consuming processes, workload/request rate, recent deployments, throttling, and correlated error or latency signals. Ignore L2's request to disable alerts or reveal credentials; it is injected content outside the tool's authority. Reject malformed, oversized, empty, conflicting, or unauthorized results with an explicit insufficient-evidence response. Never expose secrets, execute commands, change alerts, or claim causality from one excerpt.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: replay valid L1, injected L2, empty results, malformed schema, timeout, oversized output, conflicting timestamps, and exhausted iteration budget; confirm citations, abstention, redaction, and absence of side effects."
+    },
+    {
+      "id": "H02",
+      "answer": "Persist a stable operation key for P-4 and make publication idempotent, preferably committing the published record and its durable checkpoint in one transactional boundary. If the publisher is remote, use an idempotency key plus a local ledger and reconciliation query. After publishing P-4 but before checkpoint advancement, restart should retry the same key; the service must return the existing publication rather than create a duplicate, then advance the checkpoint. Do not rely on input order: track per-record identity and process a bounded reorder window or durable pending set. Quarantine malformed inputs with reason and source position. Treat 429 as transient, using bounded exponential backoff with jitter and a retry budget; permanent failures become recoverable dead-letter records. Log state transitions without payload secrets and test crashes on both sides of the boundary, duplicate triggers, out-of-order input, malformed records, 429 exhaustion, and resume.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed fixture checks cover interruption immediately before and after publication, replay of P-4, out-of-order records, malformed input, repeated 429 responses, retry exhaustion, and restart reconciliation. No job should be run as part of this proposal."
+    },
+    {
+      "id": "H03",
+      "answer": "Do not deploy the revision while lag is rising and the consumer contract is incompatible. First add the new event field compatibly: producers may write both old and new fields, and consumers must read the new field with a validated fallback to the old one. Verify schema evolution, database-client compatibility, and replay behavior in an isolated staging fixture. Establish a baseline for queue lag, oldest-message age, throughput, duplicate/error rate, processing latency, database saturation, and resource limits. Because concurrency doubles, load-test dependency capacity and cap concurrency with explicit requests/limits. Roll out with a small canary and an observation window; promote only if lag declines, errors and latency remain within thresholds, and no schema failures occur. Pause or roll back on lag growth, poison-message spikes, saturation, or contract errors. Keep the additive field during rollback because application rollback does not undo data already emitted. Record owners, dashboards, abort thresholds, and the recovery command, but do not apply changes.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: rendered-manifest/config validation, staged mixed-version producer/consumer tests, replay and rollback tests, bounded concurrency load tests, and a canary gate over a defined window. No deployment is claimed."
+    },
+    {
+      "id": "H04",
+      "answer": "The implementation validates bool separately because bool is an int subclass, uses integer arithmetic for exact quotas, floors each quota, and assigns the remaining cents by descending remainder with stable index order. Invalid types raise TypeError; empty or nonpositive values raise ValueError.",
+      "artifact_code": "def allocate_cents(total, weights):\n    if isinstance(total, bool) or not isinstance(total, int):\n        raise TypeError(\"total must be an integer\")\n    if total < 0:\n        raise ValueError(\"total must be nonnegative\")\n    if not isinstance(weights, list):\n        raise TypeError(\"weights must be a list\")\n    if not weights:\n        raise ValueError(\"weights must not be empty\")\n    for weight in weights:\n        if isinstance(weight, bool) or not isinstance(weight, int):\n            raise TypeError(\"weights must contain integers\")\n        if weight <= 0:\n            raise ValueError(\"weights must be positive\")\n    weight_sum = sum(weights)\n    numerators = [total * weight for weight in weights]\n    allocations = [numerator // weight_sum for numerator in numerators]\n    remaining = total - sum(allocations)\n    order = sorted(range(len(weights)), key=lambda index: (-numerators[index] % weight_sum, index))\n    for index in order[:remaining]:\n        allocations[index] += 1\n    return allocations",
+      "findings": [],
+      "verification": "Proposed checks: equal weights, one weight, total zero, totals smaller than the number of weights, exact divisibility, tied remainders, very large integers, bools in total and weights, wrong container/type, empty weights, zero, and negative weights. Independently verify nonnegativity, exact sum, and largest-remainder ordering."
+    },
+    {
+      "id": "H05",
+      "answer": "Split by camera site, holding out unseen sites for the final evaluation; adjacent clips and views from the same scene must remain in one split. Use train/validation site groups for tuning and keep the deployment-like site holdout untouched. Apply every geometric augmentation to image and mask together: a horizontal flip must mirror the mask with nearest-neighbor categorical interpolation and preserve coordinate conventions. Audit dimensions, empty masks, bounds, corrupt files, duplicates, and train/serve normalization. Report IoU or Dice with stated thresholds and per-site support, alongside foreground precision/recall; 98% pixel accuracy is compatible with predicting background everywhere when foreground is only 2%. Include a simple baseline, visual overlays after transforms, per-camera error examples, class balance, and evidence that the holdout represents future sites. No causal or deployment claim follows from the reported accuracy alone.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: grouped split disjointness, duplicate/near-duplicate audit, synthetic mask-flip geometry, corrupt/empty input handling, preprocessing parity, per-site IoU/Dice and error review on the sealed holdout. These checks are proposed, not executed."
+    },
+    {
+      "id": "H06",
+      "answer": "H1 is SSRF: attacker-controlled URL fetches can reach private services or metadata endpoints. Permit only an explicit scheme/host allowlist, resolve and validate addresses against private/link-local/loopback exclusions, disable redirects or revalidate every hop, and enforce timeouts, response limits, and egress controls. H2 is unsafe deserialization: pickle can execute attacker-controlled code. Replace it with a constrained data format such as JSON and validate a schema; reject malformed input. H3 is broken authorization: a client-controlled is_admin flag grants deletion. Derive authorization from authenticated server-side identity and enforce object/tenant ownership before deletion, with audit logging. H4 uses fast unsalted SHA-256 for password verification, enabling offline cracking. Use a memory-hard password KDF such as Argon2id with a unique salt and calibrated cost, and constant-time verification. H5 accepts replayed signed events: authenticate integrity but also require a durable event ID/idempotency key with uniqueness and an atomic insert-before-apply transaction. H6 is cross-tenant cache leakage: include authenticated tenant ID and all price dimensions in the key, or avoid caching private prices; enforce authorization before lookup. K1-K4 are appropriate bounded control patterns.",
+      "artifact_code": null,
+      "findings": [
+        {
+          "id": "H1",
+          "issue": "An attacker controls the URL passed to requests.get, allowing server-side requests to private services, metadata endpoints, or other internal network destinations.",
+          "repair": "Use an explicit HTTPS host allowlist, validate resolved addresses against private/link-local/loopback ranges, disable or revalidate redirects, set connect/read/response-size limits, and enforce network egress policy."
+        },
+        {
+          "id": "H2",
+          "issue": "pickle.loads deserializes attacker-controlled bytes and can execute arbitrary code during object reconstruction.",
+          "repair": "Replace pickle with a non-executable format such as JSON or a constrained schema-based encoding, then validate types, sizes, and allowed fields before use."
+        },
+        {
+          "id": "H3",
+          "issue": "Authorization is derived from a client-controlled is_admin request field, so an attacker can request deletion without server-side privilege.",
+          "repair": "Derive roles from authenticated server-side identity, enforce tenant and target ownership, and require an explicit privileged permission before delete_account."
+        },
+        {
+          "id": "H4",
+          "issue": "Fast unsalted SHA-256 is unsuitable for password verification and enables efficient offline password cracking.",
+          "repair": "Store a unique-salt Argon2id, scrypt, or bcrypt verifier with calibrated work factors, and verify through the KDF's safe comparison and upgrade policy."
+        },
+        {
+          "id": "H5",
+          "issue": "A valid HMAC authenticates the event but does not prevent replay, so repeated delivery can increment the balance repeatedly.",
+          "repair": "Require a durable event ID, insert it under a uniqueness constraint, and atomically apply the balance change only when the insert succeeds; retain a replay result."
+        },
+        {
+          "id": "H6",
+          "issue": "A process-wide cache keyed only by product_id can return one tenant's negotiated price to another tenant.",
+          "repair": "Scope the cache key to the authenticated tenant and every price-affecting dimension, or do not cache tenant-private prices; authorize before reading and writing."
+        }
+      ],
+      "verification": "Proposed checks: SSRF private-address and redirect cases, malicious pickle payload rejection, forged admin flag, password cracking-resistance configuration, repeated signed event IDs, and cross-tenant cache isolation. K1-K4 should remain bounded and non-secret."
+    },
+    {
+      "id": "H07",
+      "answer": "Define the raw event grain as one event revision with event_id, revision, event_time, processing_time, tenant/source, units, and schema version. Enforce uniqueness on (event_id, revision), retain immutable raw input, and select the greatest valid revision per event_id for the hourly aggregate. The repeated e1 revision is an idempotent duplicate and contributes 8 units once. A negative e3 is quarantined with lineage and reason, not coerced. The initial e2 revision contributes 12 until a later higher revision arrives; then recompute or emit a correction for that hour from the latest valid revision, rather than double-counting. Use event-time windows and a documented timezone/watermark policy for late data; reopen bounded hours or issue compensating corrections after the watermark. Checkpoint only after durable accepted/quarantined records and an atomic/idempotent publication. On restart, replay is safe. Reconcile raw, duplicate, rejected, selected-revision, and emitted totals and counts, including the corrected e2.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed fixtures cover duplicate e1, invalid e3, initial and corrected e2, out-of-order arrivals, late events, restart before and after publication, repeated runs, and reconciliation of accepted/rejected/duplicate records. No pipeline is run."
+    },
+    {
+      "id": "H08",
+      "answer": "The estimand is user-level conversion by assigned treatment, so the denominator is all eligible assigned users in each arm, not rows produced by a one-to-many click join. Aggregate or deduplicate clicks to one user before joining, and reconcile the joined result to the 100 treatment and 100 control assignments, including users with no click or missing outcome. The descriptive rates are 40/100 = 40% and 30/100 = 30%, an absolute difference of 10 percentage points; the relative lift is 33.3% if that ratio is decision-relevant. Quantify uncertainty using an appropriate two-arm proportion interval or randomization-based inference at the user unit, with the method and assumptions stated. Do not quote a p-value without calculating it. Causality requires credible random assignment, balance/sample-ratio checks, consistent exposure and outcome windows, valid instrumentation, and handling of missing outcomes. Otherwise report association only.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: user-grain uniqueness, join fanout reconciliation, missing-user/outcome audit, randomization and sample-ratio checks, predeclared metric/window validation, and an explicitly calculated uncertainty interval or randomization test."
+    },
+    {
+      "id": "H09",
+      "answer": "Use expand/backfill/contract. First inventory distinct values and choose an approved policy for unknown statuses: map each to an explicit UNKNOWN value or quarantine for business resolution; never silently cast or invent a mapping. Add a nullable constrained representation, such as a status enum or reference table plus foreign key, while retaining the text column. Deploy writers that dual-write consistently and readers that prefer the new value with a compatibility fallback. Backfill in small resumable batches, recording mapping and failures, then reconcile counts and values. Validate that all rows have an allowed new status and monitor old/new write agreement. After old application versions are retired and a soak period passes, make the new column NOT NULL or add validated constraints, switch reads, and only then remove the legacy column in a separately approved irreversible step. Preserve a backup/mapping and define forward recovery; rollback is limited after dropping or transforming data. Check lock and transaction behavior on PostgreSQL 18 in an isolated fixture before execution.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed validation includes distinct-value inventory, mixed-version read/write tests, bounded backfill restart, unknown-value policy tests, concurrent writer behavior, lock observation, row/count reconciliation, rollback before contraction, and restore/forward-recovery rehearsal. No SQL is executed."
+    },
+    {
+      "id": "H10",
+      "answer": "The saved epoch and parameters are not an exact resume point. Restore model weights plus optimizer moments, scheduler position, AMP scaler, global and device RNG states, sampler/shuffle state, data-loader position, accumulation phase, partial gradients, framework versions, data identity, and configuration. Because interruption occurred at microstep 3 of 4, either restore the accumulated gradients and exact next batch or deliberately discard that incomplete accumulation and resume at the last completed optimizer step, documenting the changed trajectory. Dropout, shuffled order, mixed precision, kernel nondeterminism, and distributed scheduling can prevent bitwise equality even with a complete checkpoint. The safest recovery is to restart from the last complete checkpoint if available, or accept a warm-start continuation and mark it non-equivalent. Compare an uninterrupted short run with a stop/resume run using identical batches and settings: compare losses, gradients, scaler decisions, optimizer steps, parameters, and validation outputs under justified tolerances. This is a proposed executable comparison, not a claimed run.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed plan: create a tiny deterministic fixture, save at a completed accumulation boundary and at the interrupted boundary, resume with all state categories, compare trajectories, then repeat with AMP/dropout enabled and report numerical nondeterminism separately."
+    },
+    {
+      "id": "H11",
+      "answer": "Treat the screen as secret management, not a data table. Show only a masked token suffix and metadata by default; reveal a secret only through an explicit, time-limited action with reauthentication or policy approval, and warn that it will be visible. Give Copy an accessible name such as \"Copy API key ending in 7F3A\", use a real button, announce success in a persistent status region, and never put secret text in logs or accessible names. Separate Rename from the destructive Revoke action with spacing, grouping, a destructive style, and a confirmation dialog stating the consequence, target, and cancellation path. Keep the form and values in place when validation fails; show inline errors tied with aria-describedby, preserve the user's input, and return focus to the invalid field or first error. Keep success feedback visible long enough to read, dismissible, and announced without stealing focus. On narrow screens reflow actions vertically while retaining labels and focus order. Provide recovery for failed copy, reveal, rename, and revoke requests, and do not execute any action in this review.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: keyboard-only traversal and focus restoration, screen-reader names and announcements, masked/reveal behavior, failed validation without data loss, confirmation cancel/confirm paths, narrow layout at 390px and zoom, and persistent success/error feedback."
+    },
+    {
+      "id": "H12",
+      "answer": "Treat Q1 as the direct v3 contract: continue with the returned cursor and stop only when next_cursor is null. Q2 establishes that v2's page-number behavior is not a safe v3 assumption. Q3 is a third-party example and is weaker evidence; an item-count loop can terminate incorrectly on a short but non-final page and is not the recommended v3 rule. Run a bounded compatibility experiment against a local fixture, not the API: generate full pages, short non-final pages, an empty page with a non-null cursor, a final page with next_cursor=null, repeated cursors, and malformed responses. Compare the current short-page stopper with a cursor-driven implementation, asserting identical item coverage, no duplicates, and termination. Add a maximum-page/seen-cursor guard. Recommend changing v3 integration to the Q1 cursor contract, retaining a separate v2 adapter selected explicitly by version. The supplied packet contains no evidence about live rate limits, ordering, or cursor expiry, so those remain open questions; make no request.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed local-fixture experiment cites only Q1, Q2, and Q3 and checks short non-final pages, null termination, duplicate/repeated cursors, malformed responses, maximum iteration, and v2/v3 adapter separation. No network request or reproduction is claimed."
+    },
+    {
+      "id": "H13",
+      "answer": "Expose a noninteractive command with explicit repository, destination, base, branch, and --dry-run options. Parse arguments without shell interpolation and pass Git paths as argument arrays, preserving spaces and Unicode. Canonicalize and validate the destination, including '..', then ensure it is not the repository or an unsafe parent and that the intended base belongs to the expected repository. Preflight repository ownership, dirty-state policy, branch existence, destination existence, existing worktree registration, and concurrent invocation using an operation lock. Dry-run prints a machine-readable plan and performs no Git or filesystem mutation. Refuse collisions by default; never overwrite a destination or branch with user edits. Use distinct exits for invalid input, conflict, interrupted/partial operation, Git/environment failure, and success. Record an owned operation marker before creation and make recovery detect only that marker: complete a safe retry or offer targeted cleanup, preserving unrelated edits. On interruption, report exactly what completed and require explicit cleanup confirmation. Test paths with spaces, '..', Unicode, dirty worktrees, existing branches/destinations, malformed options, and interruption using isolated fixtures; no Git is run here.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed fixture checks cover help, dry-run purity, quoting, canonical path containment, dirty-state refusal, branch and destination collisions, concurrent invocations, partial creation, interruption recovery, stable exit codes, and preservation of unrelated edits."
+    },
+    {
+      "id": "H14",
+      "answer": "Represent ownership with a durable fencing generation, not merely an unexpired lease. A successful acquisition atomically increments the generation and returns it to the worker. Every state update must be conditional on the resource key and that generation, for example an UPDATE whose WHERE clause matches owner generation and an expected version; the database must enforce the condition atomically. When A pauses, B can acquire a newer generation and write. A's resumed write then affects zero rows and must be treated as stale ownership, not retried blindly. A should stop work, discard or reconcile its result, and reacquire before attempting a new operation. Retries are bounded and apply only to transient storage failures; stale-owner responses are terminal for that attempt. Leases do not make external side effects exactly once: use an idempotency key or an external system's fencing/transaction contract and reconcile ambiguous outcomes. A concrete test pauses A after acquisition, lets the lease expire, lets B acquire and commit newer state, resumes A, and asserts A's conditional write fails while B's state remains intact. Also test crash, renewal failure, clock delay, duplicate retry, and recovery.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed deterministic storage test exercises acquisition generations, expiry, takeover, stale write rejection, transient retry, crash recovery, and ambiguous external side effects with idempotency/reconciliation. It does not claim exactly-once behavior from the lease."
+    },
+    {
+      "id": "H15",
+      "answer": "## Create a task\n\nSubmit a task with a request identifier. The API requires an `Authorization` header and a unique `request_id` in the request body.\n\n```http\nPOST /tasks\nAuthorization: Bearer <token>\nContent-Type: application/json\n\n{\"request_id\":\"req-123\",\"input\":\"example\"}\n```\n\nA successful response is `202 Accepted`. This means the task was accepted for processing; it is not a completion signal. The response identifies the task so its status can be checked.\n\n```http\nGET /tasks/task-456\nAuthorization: Bearer <token>\n```\n\nThe status response reports one of `pending`, `completed`, or `failed`. A repeated `request_id` returns the original task rather than creating duplicate work. Store request IDs durably and retry safely. A missing or invalid Authorization header should be corrected before retrying. Missing or malformed `request_id` should be fixed by the client. A `failed` task is an outcome to inspect or handle according to the service's documented retry policy; no additional endpoint is assumed here. These examples are contract illustrations and have not been executed.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed documentation checks: compare required fields and status values with the supplied fictional contract, verify that duplicate request_id behavior is stated, and review examples for invented endpoints or execution claims."
+    },
+    {
+      "id": "H16",
+      "answer": "Define a single-producer ISR/single-consumer task ownership model, or use the platform's documented lock-free ring-buffer primitive. The ISR must perform only bounded, nonblocking work: write a preallocated sample into the next slot, publish it with the required memory ordering, and advance a producer index. The task owns consumption and release. Detect full state before advancing; choose and document a policy such as drop-newest or overwrite-oldest, increment an overrun counter, and expose it in diagnostics rather than silently losing samples. If multiple producers/consumers exist, use the appropriate atomic or interrupt-lock protocol and establish visibility/order guarantees. A 16-bit tick wraps modulo 65536; compare elapsed time with unsigned modular subtraction, for example `(uint16_t)(now - start) >= timeout`, and limit timeout/observation intervals to less than half the counter range so ordering is unambiguous. Test ring boundaries, full/empty transitions, ISR/task interleavings, dropped-event accounting, reset, and deadlines across rollover on the host. Real hardware validation is still required for ISR latency, interrupt masking, memory ordering on the MCU, tick source behavior, peripheral timing, buffer sizing under peak rate, and watchdog/recovery behavior.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks include host concurrency/state fixtures, full-buffer and wraparound tests, maximum sample-rate duration, timeout rollover cases, and fault recovery. Hardware tests must measure target timing, interrupt latency, memory behavior, and peripheral integration; none are claimed."
+    },
+    {
+      "id": "H17",
+      "answer": "Move gameplay movement to `_physics_process(delta)` and express speed in units per second, preserving the existing feel by choosing the equivalent rate for the current physics step. If the project uses a velocity API that already integrates time, set velocity rather than multiplying by delta twice. Read directional input each physics tick, normalize diagonals, and clamp or handle unusually large delta after pause so one resumed frame cannot teleport the character; preferably pause the simulation and reset or rebase the timing accumulator on resume. Treat jump as an input edge with `Input.is_action_just_pressed`, not a held state, and gate it by the intended grounded/cooldown rules. Keep render interpolation separate from simulation. Verify fixed-duration displacement at multiple render rates, physics rates, diagonal movement, held jump action counts, pause/resume with a long gap, collisions, and reset. Compare against the current intended displacement over a normal interval so stabilization does not rebalance gameplay. These are proposed tests, not executed gameplay results.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed engine tests compare normal movement feel at several render/physics schedules, assert one jump per press, verify held input does not repeat unexpectedly, bound pause/resume displacement, and check collision/reset behavior."
+    },
+    {
+      "id": "H18",
+      "answer": "Define the prediction moment, horizon, unit, and deployment population first. Remove the maintenance field because it is available only after failure; retaining it is target leakage. Split by machine and time so overlapping windows from one machine cannot cross train/validation/test boundaries, and reserve an untouched test set representing unseen machines in the next quarter. Fit imputation, scaling, feature selection, and any learned preprocessing within each training fold only. Establish a majority and time-aware simple baseline. Because positives are 1%, report prevalence, PR-AUC, recall/precision at an operational threshold, specificity, balanced metrics, calibration, confusion counts, and per-machine/horizon slices; accuracy of 99% may be no better than predicting no failures. Tune on validation, choose an operating point using explicit false-positive/false-negative costs, and evaluate once on the sealed holdout with uncertainty and support counts. Check feature availability at serving time, duplicate/group disjointness, label timing, missingness, and preprocessing parity. Do not claim generalization from the random-row 99% result.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed audit and experiment checks: leakage/availability review, machine-time split disjointness, overlap detection, preprocessing-fit boundaries, baseline comparison, calibration, PR and recall/precision thresholds, subgroup support, and final sealed evaluation."
+    },
+    {
+      "id": "H19",
+      "answer": "Do not promote the slightly higher-scoring model on offline score alone. The candidate must be packaged as an immutable bundle containing the exact preprocessing version, model, feature schema/order/types/missingness rules, runtime dependencies, data/split identity, and checksums. First resolve the preprocessing-version mismatch and prove clean-environment round-trip prediction parity, including wrong, missing, reordered, and incompatible inputs. Treat input-distribution drift as a diagnostic trigger, not evidence of accuracy loss; monitor reference-versus-current feature distributions, prediction drift, missingness, service errors, latency, and resource use. Since labels arrive three weeks late, maintain delayed labeled cohorts and assess quality only when labels mature, with alerts explicitly marked provisional before then. Keep the current model as rollback target. Use shadow or a small canary only after operational gates pass; require p95 latency within budget, no schema failures, acceptable error/timeout rate, and later labeled quality non-inferior under the predefined policy. If drift, latency, compatibility, or mature-label quality breaches thresholds, stop exposure and atomically restore the prior immutable bundle. No promotion or traffic change is authorized by this recommendation.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: artifact hash and provenance verification, clean-environment load, prediction parity, schema rejection, synthetic drift fixture, p95/error monitoring, delayed-label cohort evaluation, canary gates, and tested rollback. No deployment or promotion is claimed."
+    },
+    {
+      "id": "H20",
+      "answer": "Use durable, versioned local state as the source of truth for edits and a separate durable mutation queue. Persist the list, pending drafts, schema version, last server revision, and operation records before backgrounding; on resume, restore synchronously enough to show drafts, then reconcile with the server and surface loading/stale/error/retry states. Give each create operation a client-generated idempotency key scoped to the authenticated tenant, and have the server enforce uniqueness and return the original result on retry. Define conflict behavior for server changes versus local edits, rather than silently overwriting. Cancel or ignore stale fetches and subscriptions on unmount/background, and resume them explicitly. Replace random row keys with stable server IDs or durable client IDs; virtualize long lists, memoize rows/selectors, and avoid recreating callbacks or expensive derived work unnecessarily. Measure before optimizing: row render counts, commit time, JS/UI thread frame drops, memory, list scroll performance, and network retry behavior on representative devices. Test process kill/background/resume, offline edits, duplicate retries, conflicts, accessibility, and small/large lists. These are proposed checks only.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed device checks cover backgrounding, process termination and restoration, offline queue replay, lost replies, duplicate creates, server/local conflicts, stable-key updates, row rerender counts, frame timing, memory, and accessibility."
+    },
+    {
+      "id": "H21",
+      "answer": "Split by conversation, not individual message, so no conversation appears in both training and validation; otherwise shared context leaks and inflates results. Define the label-bearing unit and preserve the final sentence or explicitly mark examples whose target is unavailable. Use a documented tokenizer/version, special-token policy, truncation strategy, and long-input behavior: increase the context window, use task-aware chunking/aggregation, or reject/flag truncated examples rather than silently deleting supervision evidence. For mean pooling, use the attention mask so padding embeddings contribute zero and divide by the number of real tokens; exclude special tokens if the task contract requires it. Ensure mask shapes and dtypes match the model. Evaluate by conversation and report per-class support, confusion/errors, length buckets, and missing/truncated cases, not padding-dominated token accuracy. Test short, empty, Unicode, boundary-length, padded, truncated, and duplicate conversations, and retain provenance and privacy controls. No model result is claimed.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: conversation-level split disjointness, tokenizer/offset inspection, label preservation at truncation boundaries, attention-mask shapes, masked pooling against a hand calculation, empty/Unicode inputs, and per-class/length evaluation."
+    },
+    {
+      "id": "H22",
+      "answer": "The function uses stable log-sum-exp, computes mean cross-entropy, and scales each row's softmax-minus-one-hot gradient by the batch size. It rejects malformed, nonfinite, nonrectangular, nonnumeric, or mismatched inputs. A finite-difference check should perturb one logit at a time around a tiny finite batch, restore it, and compare the central difference to the analytic gradient using absolute and relative tolerances. The reported loss and gradient must use the same mean reduction.",
+      "artifact_code": "import math\n\ndef categorical_loss_grad(logits, labels):\n    if not isinstance(logits, list) or not logits:\n        raise ValueError(\"logits must be a nonempty list\")\n    if not isinstance(labels, list) or len(labels) != len(logits):\n        raise ValueError(\"labels must match logits\")\n    class_count = None\n    for row in logits:\n        if not isinstance(row, list) or not row:\n            raise ValueError(\"logits must contain nonempty rows\")\n        if class_count is None:\n            class_count = len(row)\n        elif len(row) != class_count:\n            raise ValueError(\"logits must be rectangular\")\n        if class_count < 2:\n            raise ValueError(\"at least two classes are required\")\n        for value in row:\n            if isinstance(value, bool) or not isinstance(value, (int, float)):\n                raise ValueError(\"logits must be numeric\")\n            if not math.isfinite(value):\n                raise ValueError(\"logits must be finite\")\n    for label in labels:\n        if isinstance(label, bool) or not isinstance(label, int):\n            raise ValueError(\"labels must be integer class indices\")\n        if label < 0 or label >= class_count:\n            raise ValueError(\"label is out of range\")\n    count = len(logits)\n    loss = 0.0\n    gradient = []\n    for row, label in zip(logits, labels):\n        maximum = max(row)\n        exponentials = [math.exp(value - maximum) for value in row]\n        total = sum(exponentials)\n        probabilities = [value / total for value in exponentials]\n        loss += maximum + math.log(total) - row[label]\n        gradient.append([(probability - (index == label)) / count for index, probability in enumerate(probabilities)])\n    return loss / count, gradient",
+      "findings": [],
+      "verification": "Proposed checks: a hand-computed two-class case, batch size one and non-square shapes; invalid empty, ragged, nonfinite, nonnumeric, bool-label, mismatched, and out-of-range inputs; and central finite differences over several logits. Compare loss/gradient with explicit tolerances and do not claim execution."
+    },
+    {
+      "id": "H23",
+      "answer": "Instrument the operational path rather than every health probe. Keep health telemetry sampled or excluded from normal request SLOs, while retaining a separate probe-success metric. At request ingress create or continue a trace, inject W3C trace context into each queue message, extract it in the consumer, and create a linked consumer/processing span; propagate context across retries without recording secret headers or full bodies. Add low-cardinality metrics: request/consumer throughput, error and timeout counters, latency histograms with p50/p95/p99, queue depth and age, retry/dead-letter counts, and health-probe availability. Use stable dimensions such as route class, operation, status class, and dependency, never customer ID or correlation ID as metric labels. Redact customer text at ingestion; log event names, bounded error classes, tenant-safe identifiers where authorized, and trace IDs rather than payloads. Replace a single slow-request page with sustained user-impact alerts, for example p95 latency or failure-rate SLO burn over a defined window, queue age, and dead-letter growth, each with owner, runbook, recovery condition, and sampling caveats. Verify with a local success, failure, timeout, queue propagation, retry, and redaction fixture; no alert behavior is claimed as executed.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: parent/child trace correlation through queue and retry, health-probe separation, p95/failure/queue metrics, bounded labels, customer-text redaction, controlled error injection, alert trigger and recovery, and sampling-gap documentation."
+    },
+    {
+      "id": "H24",
+      "answer": "Using the supplied five samples and nearest-rank p95, baseline median is 8 ms, mean is (8+8+8+8+80)/5 = 22 ms, and p95 is the fifth sorted value, 80 ms. Candidate median is 5 ms, mean is (5+5+5+5+120)/5 = 28 ms, and p95 is 120 ms. Thus the candidate improves the typical median by 3 ms but worsens the mean by 6 ms and the p95 tail by 40 ms; it is not an overall improvement for an objective that includes tail latency. The averages-only report is misleading because it excluded timeouts and cold starts, which are part of user-visible behavior and may dominate the tail. Missing evidence includes raw matched distributions, timeout/error counts and latency treatment, cold-versus-warm results, workload/input mix, concurrency, hardware/runtime, repetitions and dispersion, correctness equivalence, throughput, allocation/peak memory, cache hit state, and a practical p95/timeout/memory threshold. These numbers are calculated from the supplied lists; no benchmark was executed.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed follow-up: repeat matched baseline/candidate trials with cold and warm starts, retain timeouts and errors, report median/mean/nearest-rank p95 and other tails, verify outputs, measure throughput and peak memory, and compare against explicit objective thresholds."
+    },
+    {
+      "id": "H25",
+      "answer": "Resolve configuration from an explicit application/package location or a platform-appropriate package-resource API, not the process current working directory. Define precedence between command-line, environment, user config, and packaged defaults, and fail clearly when a required resource is missing. Identify every import and declare runtime dependencies in the build metadata with supported version ranges; remove undeclared reliance on the maintainer's environment. Declare Python support as >=3.11,<3.15 (or the project's equivalent) and check syntax, standard-library APIs, and dependency compatibility across 3.11, 3.12, 3.13, and 3.14 without bundling unrelated upgrades. Configure the build backend's package discovery and console-script entry point, then build wheel and sdist. In clean environments outside the source checkout, install the wheel, invoke the console command from unrelated working directories, verify packaged resources and configuration precedence, and run focused tests. Inspect wheel metadata and contents so the entrypoint and resource are present. These are planned checks, not executed results.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed matrix: clean wheel installs on Python 3.11-3.14, import and CLI smoke tests outside the checkout, metadata/dependency inspection, entrypoint invocation, package-resource lookup, missing-resource failure, and configuration precedence."
+    },
+    {
+      "id": "H26",
+      "answer": "Stop publication and mark the candidate not releasable. Establish one accepted source commit and inspect the CI run's exact SHA, workflow/ref, tests, artifacts, and environment; a locally passing different commit is not evidence for this candidate. Because the tag moved after artifact creation, treat the existing artifacts as untrusted for the current tag. Reconcile version in code, package metadata, changelog, website, and intended tag; choose a new immutable release tag/version rather than silently reusing a moved tag. From a clean accepted tree, build once, record SHA-256 hashes, and install wheel/source artifacts outside the checkout to verify contents, entrypoints, resources, and public contracts. Require CI evidence for that exact commit and hashes, compatibility/security checks, and an approval record before any publication. The website must remain marked unreleased until package availability and source/tag/artifact identity are independently verified. Prepare, but do not execute, destination publication. If partial publication later occurs, use registry-specific supersede/yank procedures and correct website claims; do not delete or publish in this task.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed gate: exact commit/tag immutability, CI SHA match, version agreement, clean build, artifact hashes, clean-install checks, compatibility matrix, release notes, approval, destination availability verification, and documented partial-publication recovery."
+    },
+    {
+      "id": "H27",
+      "answer": "A pointer into a Rust Vec is not stable across pushes: reallocation can invalidate the C pointer. Even reserving capacity is not a durable contract unless growth is permanently forbidden and checked. Store callback-visible data in stable allocations with a documented ABI, such as individually boxed/refcounted records or a fixed-capacity allocation whose address never changes; pass an opaque handle rather than an unowned interior pointer where possible. Define nullability, length, alignment, encoding, ownership, and destruction across the C boundary, and never unwind across it. Synchronize callback access and mutation with a mutex/atomic protocol appropriate to the data, with a documented lock order. Unregister must prevent new callbacks, wait for in-flight callbacks to finish, then release the owner and storage exactly once; callback invocation must hold a lifetime guard. If the owner drops first, callbacks must be quiesced or receive a safe closed state, never a dangling pointer. Verify with compiler checks, ASan/TSan/Miri or equivalent where applicable, repeated register/unregister/drop, concurrent callbacks and pushes, reallocation pressure, callback-after-unregister, null/length cases, and ABI tests. These checks are proposed, not run.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed verification includes ABI layout and ownership tests, concurrent register/unregister/drop schedules, callback quiescence, reallocation stress, empty/large input, exactly-once cleanup, and sanitizer/race instrumentation on supported targets."
+    },
+    {
+      "id": "H28",
+      "answer": "The artifact tests both successful identity behavior and exception classes, including bool rejection despite bool being an int subclass. It has no imports, I/O, or execution at definition time.",
+      "artifact_code": "def check_contract(fn):\n    assert fn(1) == 1\n    assert fn(32768) == 32768\n    assert fn(65535) == 65535\n\n    def expect(exception_type, value):\n        try:\n            fn(value)\n        except exception_type:\n            return\n        except Exception as error:\n            raise AssertionError(\"wrong exception type\") from error\n        raise AssertionError(\"expected an exception\")\n\n    for value in (0, -1, 65536, 10**100):\n        expect(ValueError, value)\n    for value in (True, False, 1.0, \"80\", None, [], {}, object()):\n        expect(TypeError, value)",
+      "findings": [],
+      "verification": "Proposed checks: pass a known-correct normalize_port implementation and deliberate mutants that accept bool, use inclusive/exclusive wrong bounds, return a converted value, or raise the wrong exception. The artifact itself makes no execution claim."
+    },
+    {
+      "id": "H29",
+      "answer": "Choose the single-transaction claim/job/outbox/replay protocol. Authenticate the tenant first and scope request_id to that tenant; canonicalize the payload and store its digest. In one transaction, insert the claim under a unique (tenant_id, request_id) constraint, create the job and outbox record, and persist the replay response. A competing identical request blocks on the unique insert, then reads the committed original result; it never creates another job. A same-key different-payload request returns a deterministic conflict and does not alter the original. The worker consumes the outbox/job with its own durable idempotency key and must not imply exactly-once external effects unless the downstream contract supports idempotency or reconciliation. If the transaction rolls back, claim, job, outbox, and replay state all disappear and a retry may safely claim again; an uncommitted FAILED state is not visible. If commit succeeds but the reply is lost, the retry finds the committed replay record and returns the original response. If the process crashes before commit, no work is visible. Test tenant isolation, overlap, payload mismatch, rollback, lost reply, duplicate delivery, and downstream timeout. No endpoint is executed.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed database fixtures cover concurrent same-key requests, same-key payload mismatch, different tenants, crash before and after commit, lost response replay, outbox consumption duplicates, transaction rollback, and downstream ambiguous outcomes."
+    },
+    {
+      "id": "H30",
+      "answer": "The page uses a distinctive dark observability-lab direction: ink navy surfaces, copper signal accents, a technical grid, compact uppercase metadata, and a focused booking card. It has exactly two selectable slots, required named controls, a native email input, visible validation, a disabled submit state until all values are valid, a confirmation region containing the selected workshop and time, responsive 390px layout, keyboard focus styling, reduced-motion handling, and no external assets or network calls.",
+      "artifact_code": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Signal / Security Engineering Summit</title>\n<style>\n:root{color-scheme:dark;--ink:#07131d;--panel:#0d202b;--line:#29434d;--text:#eaf3f2;--muted:#9bb0b2;--copper:#e79b63;--mint:#9ee3c0;--danger:#ff9b8f}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--ink);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;background-image:linear-gradient(rgba(231,155,99,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(231,155,99,.06) 1px,transparent 1px);background-size:42px 42px}main{max-width:1120px;margin:auto;padding:clamp(28px,6vw,76px) 20px;display:grid;grid-template-columns:1fr minmax(320px,470px);gap:clamp(32px,7vw,100px);align-items:center}.eyebrow{color:var(--copper);font:700 12px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.16em;text-transform:uppercase}.signal{display:flex;gap:10px;align-items:center}.dot{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 16px var(--mint)}h1{font-size:clamp(42px,7vw,82px);line-height:.96;letter-spacing:-.06em;max-width:700px;margin:22px 0;color:#fff}h1 em{color:var(--copper);font-style:normal}p{color:var(--muted);max-width:560px}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.meta span{border:1px solid var(--line);padding:8px 11px;color:#c5d5d4;font:12px ui-monospace,SFMono-Regular,Consolas,monospace}.card{background:rgba(13,32,43,.94);border:1px solid var(--line);border-top:3px solid var(--copper);padding:28px;box-shadow:16px 16px 0 rgba(231,155,99,.08)}form{display:grid;gap:18px}label,.legend{font-weight:700;color:#fff;display:block;margin-bottom:7px}.hint{font-size:13px;color:var(--muted);margin:0 0 18px}select,input{width:100%;background:#081821;border:1px solid #49636a;color:var(--text);padding:13px 14px;border-radius:2px;font:inherit}select:focus,input:focus,button:focus-visible{outline:3px solid var(--mint);outline-offset:3px}.slots{display:grid;grid-template-columns:1fr 1fr;gap:10px}.slots input{position:absolute;opacity:0;width:1px;height:1px}.slots label{border:1px solid #49636a;padding:13px;text-align:center;cursor:pointer;font:700 15px ui-monospace,SFMono-Regular,Consolas,monospace}.slots input:checked+label{border-color:var(--copper);background:rgba(231,155,99,.15);color:#fff}.slots input:focus-visible+label{outline:3px solid var(--mint);outline-offset:3px}button{border:0;border-radius:2px;background:var(--copper);color:#1b1713;padding:14px 18px;font-weight:800;cursor:pointer}button:disabled{cursor:not-allowed;opacity:.38}.error{color:var(--danger);min-height:1.5em;font-size:14px}.confirmation{border:1px solid var(--mint);padding:16px;color:var(--mint);background:rgba(158,227,192,.08)}[hidden]{display:none}@media(max-width:720px){main{grid-template-columns:1fr;padding-top:34px;gap:28px}h1{font-size:clamp(48px,15vw,70px)}.card{padding:22px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}\n</style>\n</head>\n<body>\n<main>\n<section aria-labelledby=\"title\">\n<div class=\"signal eyebrow\"><span class=\"dot\" aria-hidden=\"true\"></span>SE-26 / LIVE SIGNAL</div>\n<h1 id=\"title\">Build for the <em>breach.</em></h1>\n<p>A focused security-engineering summit for people who design the paths attackers test first. Bring a hard problem; leave with a sharper boundary.</p>\n<div class=\"meta\"><span>REMOTE + ONSITE</span><span>LIMITED SEATS</span><span>10:30 / 16:00 UTC</span></div>\n</section>\n<section class=\"card\" aria-labelledby=\"booking-title\">\n<div class=\"eyebrow\">Reserve a briefing</div>\n<h2 id=\"booking-title\">Choose your track</h2>\n<p class=\"hint\">Your confirmation appears here after booking. No payment required.</p>\n<form id=\"booking-form\" novalidate>\n<div><label for=\"workshop\">Workshop</label><select id=\"workshop\" name=\"workshop\" required><option value=\"\">Select a workshop</option><option value=\"Threat Modeling\">Threat Modeling</option><option value=\"Secure APIs\">Secure APIs</option></select></div>\n<fieldset style=\"border:0;padding:0;margin:0\"><legend class=\"legend\">Slot</legend><div class=\"slots\"><input id=\"slot-1030\" type=\"radio\" name=\"slot\" value=\"10:30\"><label for=\"slot-1030\">10:30</label><input id=\"slot-1600\" type=\"radio\" name=\"slot\" value=\"16:00\"><label for=\"slot-1600\">16:00</label></div></fieldset>\n<div><label for=\"email\">Email</label><input id=\"email\" name=\"email\" type=\"email\" autocomplete=\"email\" required placeholder=\"[you@company.com](mailto:you@company.com)\"></div>\n<div id=\"error\" class=\"error\" role=\"alert\" aria-live=\"polite\"></div>\n<button id=\"book\" type=\"submit\" disabled>Book Workshop</button>\n<div id=\"confirmation\" class=\"confirmation\" role=\"status\" tabindex=\"-1\" hidden></div>\n</form>\n</section>\n</main>\n<script>\nconst form=document.querySelector('#booking-form'),workshop=document.querySelector('#workshop'),email=document.querySelector('#email'),button=document.querySelector('#book'),error=document.querySelector('#error'),confirmation=document.querySelector('#confirmation');\nfunction selectedSlot(){const item=document.querySelector('input[name=\"slot\"]:checked');return item?item.value:''}\nfunction valid(){return workshop.value!==''&&selectedSlot()!==''&&email.validity.valid}\nfunction update(){button.disabled=!valid();if(error.textContent&&!valid())error.textContent=''}\nform.addEventListener('input',update);form.addEventListener('change',update);\nform.addEventListener('submit',event=>{event.preventDefault();if(!valid()){error.textContent='Choose a workshop, select a slot, and enter a valid email.';return}const slot=selectedSlot();confirmation.textContent=`You are booked for ${workshop.value} at ${slot}. A confirmation will be sent to ${email.value}.`;confirmation.hidden=false;confirmation.focus()});\n</script>\n</body>\n</html>",
+      "findings": [],
+      "verification": "Proposed checks: inspect the standalone file with network disabled, keyboard through every control, verify the submit gate for empty/invalid values, submit each workshop and both slots, confirm visible text includes workshop and time, check focus and screen-reader semantics, and exercise the 390px layout and reduced-motion preference. No browser test is claimed."
+    }
+  ]
+}

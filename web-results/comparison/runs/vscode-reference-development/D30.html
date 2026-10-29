@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Neighbor Tool Library</title>
+<style>
+:root{color-scheme:light;--ink:#17231f;--paper:#f7f3e8;--gold:#e6a735;--mint:#b9dfc5;--line:#c9c4b5}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,sans-serif}main{max-width:760px;margin:auto;padding:clamp(1.2rem,5vw,4rem) 1rem}.brand{display:flex;align-items:center;gap:.7rem;font-weight:800;letter-spacing:.04em}.mark{width:2.5rem;height:2.5rem;display:grid;place-items:center;background:var(--gold);border-radius:8px;font-size:1.35rem}h1{font:800 clamp(2.2rem,7vw,4.4rem)/.98 Georgia,serif;max-width:10ch;margin:.8rem 0}.intro{max-width:52ch;margin-bottom:2rem;color:#47564e}.card{background:#fffdf7;border:1px solid var(--line);border-radius:16px;padding:clamp(1rem,4vw,2rem);box-shadow:8px 8px 0 var(--mint)}label,legend{font-weight:750}fieldset{border:0;padding:0;margin:0 0 1.3rem}select,input{width:100%;margin-top:.45rem;padding:.75rem;border:2px solid #8e958d;border-radius:8px;background:#fff;font:inherit;color:inherit}input:focus,select:focus,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}.slots{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin-top:.55rem}.slot{position:relative}.slot input{position:absolute;opacity:0}.slot label{display:block;text-align:center;padding:.8rem;border:2px solid #8e958d;border-radius:8px;cursor:pointer}.slot input:checked+label{background:var(--mint);border-color:var(--ink)}.help{font-size:.9rem;color:#536057;margin:.35rem 0 0}.error{color:#9b271d;font-weight:650;min-height:1.5em;margin:.35rem 0}.actions{display:flex;justify-content:flex-end;margin-top:1.2rem}button{border:0;border-radius:8px;padding:.8rem 1.2rem;background:var(--ink);color:white;font:700 1rem inherit;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.confirm{margin-top:1.4rem;padding:1rem;border-left:5px solid var(--gold);background:#fff4d6}@media(max-width:420px){.slots{grid-template-columns:1fr}.actions button{width:100%}}
+</style>
+</head>
+<body>
+<main>
+<div class="brand"><span class="mark" aria-hidden="true">⌂</span><span>Neighbor Tool Library</span></div>
+<h1>Borrow well. Make things.</h1>
+<p class="intro">Reserve a shared tool from the neighborhood shelf. Pick a time, bring your project, and return the tool ready for the next maker.</p>
+<section class="card" aria-labelledby="reserve-title">
+<h2 id="reserve-title">Reserve equipment</h2>
+<form id="reservation" novalidate>
+<div><label for="tool">Tool</label><select id="tool" name="tool" required><option value="">Choose a tool</option><option>Drill</option><option>Sander</option></select><p class="error" id="tool-error" aria-live="polite"></p></div>
+<fieldset><legend>Pickup time</legend><div class="slots"><div class="slot"><input id="time-09" name="time" type="radio" value="09:00" required><label for="time-09">09:00</label></div><div class="slot"><input id="time-14" name="time" type="radio" value="14:00"><label for="time-14">14:00</label></div></div><p class="error" id="time-error" aria-live="polite"></p></fieldset>
+<div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="[you@example.com](mailto:you@example.com)" aria-describedby="email-help email-error"><p class="help" id="email-help">We will send the reservation details here.</p><p class="error" id="email-error" aria-live="polite"></p></div>
+<div class="actions"><button id="submit" type="submit" disabled>Confirm Reservation</button></div>
+</form><div id="confirmation" class="confirm" role="status" aria-live="polite" tabindex="-1" hidden></div>
+</section>
+</main>
+<script>
+const form=document.querySelector('#reservation'),tool=document.querySelector('#tool'),email=document.querySelector('#email'),submit=document.querySelector('#submit'),confirmation=document.querySelector('#confirmation');
+function chosen(){return document.querySelector('input[name="time"]:checked')}
+function valid(){return tool.value!==''&&chosen()&&email.validity.valid}
+function update(){submit.disabled=!valid()}
+[tool,email,...document.querySelectorAll('input[name="time"]')].forEach(el=>el.addEventListener('input',update));
+form.addEventListener('submit',e=>{e.preventDefault();if(!valid()){form.reportValidity();return}const time=chosen().value;confirmation.textContent=`Reservation confirmed: ${tool.value} at ${time}. Details will be sent to ${email.value}.`;confirmation.hidden=false;confirmation.focus()});
+email.addEventListener('blur',()=>{document.querySelector('#email-error').textContent=email.validity.valid?'':'Enter a valid email address.'});tool.addEventListener('blur',()=>{document.querySelector('#tool-error').textContent=tool.value?'':'Choose a tool.'});form.addEventListener('submit',()=>{document.querySelector('#time-error').textContent=chosen()?'':'Choose a pickup time.'});
+</script>
+</body>
+</html>

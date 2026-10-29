@@ -1,0 +1,2 @@
+Installed 30 skill(s) in: C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\.agents\skills
+Recovery journal: C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\.agents\.gncore-skills-transactions\61c9272089ea42ad8be6a4c851b8e1a7\journal.json

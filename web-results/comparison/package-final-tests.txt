@@ -1,0 +1,73 @@
+........................................................................ [ 50%]
+.FF....................s................................................ [100%]
+================================== FAILURES ===================================
+_________ test_customized_managed_install_is_preserved[new-collision] _________
+
+tmp_path = WindowsPath('C:/Users/ganes/OneDrive/Documents/ChatGPT/GNCore/.work/benchmark-v2/pytest-final/test_customized_managed_instal2')
+change = 'new-collision'
+
+    @pytest.mark.parametrize("change", ["modify", "delete", "new-collision"])
+    def test_customized_managed_install_is_preserved(tmp_path, change):
+        root = tmp_path / "skills"
+>       install_skills(root, OLD, version="1")
+
+tests\test_installation.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\gncore\installation.py:246: in install_skills
+    _write_json(journal, record)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = WindowsPath('C:/Users/ganes/OneDrive/Documents/ChatGPT/GNCore/.work/benchmark-v2/pytest-final/test_customized_managed_instal2/.gncore-skills-transactions/bf19bd5e690b4827a71e56680c98ca63/journal.json')
+value = {'schema_version': 1, 'root': 'C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\pytest-final\\test_customized_managed_instal2\\skills', 'had_root': False, 'status': 'rolled-back'}
+
+    def _write_json(path: Path, value: dict) -> None:
+        temporary = path.with_name(f".{path.name}.{uuid4().hex}.tmp")
+        try:
+            with temporary.open("x", encoding="utf-8", newline="\n") as stream:
+                json.dump(value, stream, indent=2, sort_keys=True)
+                stream.write("\n")
+                stream.flush()
+                os.fsync(stream.fileno())
+>           os.replace(temporary, path)
+E           PermissionError: [WinError 5] Access is denied: 'C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\pytest-final\\test_customized_managed_instal2\\.gncore-skills-transactions\\bf19bd5e690b4827a71e56680c98ca63\\.journal.json.6aead1da682e4b75a2cecd6cba3781c9.tmp' -> 'C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\pytest-final\\test_customized_managed_instal2\\.gncore-skills-transactions\\bf19bd5e690b4827a71e56680c98ca63\\journal.json'
+
+src\gncore\installation.py:47: PermissionError
+_______ test_only_exact_legacy_tree_is_migrated_and_backup_preserves_it _______
+
+tmp_path = WindowsPath('C:/Users/ganes/OneDrive/Documents/ChatGPT/GNCore/.work/benchmark-v2/pytest-final/test_only_exact_legacy_tree_is0')
+
+    def test_only_exact_legacy_tree_is_migrated_and_backup_preserves_it(tmp_path):
+        root = tmp_path / "skills"
+        for name in ["old", "custom-old"]:
+            (root / name).mkdir(parents=True)
+            (root / name / "SKILL.md").write_bytes(b"GNCore legacy")
+        (root / "custom-old/notes.txt").write_bytes(b"custom")
+        legacy = {name: {"SKILL.md": b"GNCore legacy"} for name in ["old", "custom-old"]}
+>       result = install_skills(root, OLD, version="1", legacy=legacy)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_installation.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\gncore\installation.py:246: in install_skills
+    _write_json(journal, record)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = WindowsPath('C:/Users/ganes/OneDrive/Documents/ChatGPT/GNCore/.work/benchmark-v2/pytest-final/test_only_exact_legacy_tree_is0/.gncore-skills-transactions/d5fd9e2b04df4ee08e9ee5f09d2bb3ce/journal.json')
+value = {'schema_version': 1, 'root': 'C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\pytest-final\\test_only_exact_legacy_tree_is0\\skills', 'had_root': True, 'status': 'rolled-back'}
+
+    def _write_json(path: Path, value: dict) -> None:
+        temporary = path.with_name(f".{path.name}.{uuid4().hex}.tmp")
+        try:
+            with temporary.open("x", encoding="utf-8", newline="\n") as stream:
+                json.dump(value, stream, indent=2, sort_keys=True)
+                stream.write("\n")
+                stream.flush()
+                os.fsync(stream.fileno())
+>           os.replace(temporary, path)
+E           PermissionError: [WinError 5] Access is denied: 'C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\pytest-final\\test_only_exact_legacy_tree_is0\\.gncore-skills-transactions\\d5fd9e2b04df4ee08e9ee5f09d2bb3ce\\.journal.json.a64f52132ba74d6bb54b6d0000931e20.tmp' -> 'C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\benchmark-v2\\pytest-final\\test_only_exact_legacy_tree_is0\\.gncore-skills-transactions\\d5fd9e2b04df4ee08e9ee5f09d2bb3ce\\journal.json'
+
+src\gncore\installation.py:47: PermissionError
+=========================== short test summary info ===========================
+FAILED tests/test_installation.py::test_customized_managed_install_is_preserved[new-collision]
+FAILED tests/test_installation.py::test_only_exact_legacy_tree_is_migrated_and_backup_preserves_it
+2 failed, 141 passed, 1 skipped in 301.51s (0:05:01)

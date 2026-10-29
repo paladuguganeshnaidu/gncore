@@ -1,0 +1,40 @@
+Installed 30 skill(s) in: C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\.work\benchmark-v2\release\clean-project\.agents\skills
+Recovery journal: C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\.work\benchmark-v2\release\clean-project\.agents\.gncore-skills-transactions\863b11caa89c487f8e29362fc8bdcdcf\journal.json
+Exported 30 skill(s) to archive: C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\.work\benchmark-v2\release\gncore-7.0.0rc1-skills.zip
+{
+  "version": "7.0.0rc1",
+  "categories": 30,
+  "workflows": 374,
+  "resources_compared": 1630,
+  "python_source_files_matched": 88,
+  "installed_files": 1660,
+  "installed_import_verified": true,
+  "project_entrypoints_match_final_rendered_export": true,
+  "packaged_entrypoints_match_source_bytes": true,
+  "audit": {
+    "ok": true,
+    "categories": 30,
+    "workflows": 374,
+    "resources_verified": 1630,
+    "python_helpers_parsed": 73,
+    "baseline_workflows_accounted": 553,
+    "retired_workflows": 234,
+    "issues": [],
+    "limits": "Hash/link/procedure and syntax checks; imported helpers were not executed, and arbitrary AI output quality is not certified."
+  },
+  "artifacts": {
+    "gncore-7.0.0rc1-py3-none-any.whl": {
+      "sha256": "171e6ea8de25d9f51639782b2898e22a8fdfff73902d2ea1b90ee0aaffdf45a6",
+      "bytes": 7355982
+    },
+    "gncore-7.0.0rc1.tar.gz": {
+      "sha256": "26b1151d38a0b0770711fd50b47968490df277a4e0701e02544724e83eaab277",
+      "bytes": 6745549
+    },
+    "gncore-7.0.0rc1-skills.zip": {
+      "sha256": "3144d0c1b6d96eba9b375a49067018f63ee12a491747c8fd2e74f40baa966b33",
+      "bytes": 6952431
+    }
+  },
+  "publication": "held"
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Tool Library - Equipment Reservation</title>
+  <style>
+    :root {
+      --bg: #fdfbf7;
+      --card-bg: #ffffff;
+      --text: #1c1917;
+      --text-muted: #57534e;
+      --border: #d6d3d1;
+      --primary: #b45309;
+      --primary-hover: #92400e;
+      --focus-ring: #2563eb;
+      --success-bg: #ecfdf5;
+      --success-border: #059669;
+      --success-text: #064e3b;
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 1.5rem 1rem;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .container {
+      width: 100%;
+      max-width: 480px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    header { margin-bottom: 1.75rem; border-bottom: 2px solid #f5f5f4; padding-bottom: 1rem; }
+    h1 { font-size: 1.5rem; color: var(--primary); font-weight: 700; margin-bottom: 0.25rem; }
+    .subtitle { color: var(--text-muted); font-size: 0.9rem; }
+    .field-group { margin-bottom: 1.25rem; }
+    label, legend {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+    select, input[type="email"] {
+      width: 100%;
+      padding: 0.65rem 0.75rem;
+      font-size: 1rem;
+      color: var(--text);
+      background-color: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.15s;
+    }
+    select:focus-visible, input[type="email"]:focus-visible, button:focus-visible, input[type="radio"]:focus-visible + label {
+      outline: 2px solid var(--focus-ring);
+      outline-offset: 2px;
+      border-color: var(--focus-ring);
+    }
+    fieldset {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .slot-options {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .slot-label {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-weight: 600;
+      background: #fafaf9;
+      transition: all 0.15s;
+    }
+    .slot-label:hover { background: #f5f5f4; }
+    input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    input[type="radio"]:checked + .slot-label {
+      background: #fef3c7;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    button[type="submit"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: var(--primary);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background-color 0.15s, opacity 0.15s;
+      margin-top: 0.5rem;
+    }
+    button[type="submit"]:hover:not(:disabled) {
+      background-color: var(--primary-hover);
+    }
+    button[type="submit"]:disabled {
+      background-color: #a8a29e;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+    .confirmation {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: var(--success-bg);
+      border: 1px solid var(--success-border);
+      color: var(--success-text);
+      border-radius: var(--radius);
+      display: none;
+    }
+    .confirmation h2 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+    .confirmation p { font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Community Tool Library</h1>
+      <p class="subtitle">Reserve shared woodworking & craft equipment</p>
+    </header>
+    <form id="reservation-form" novalidate>
+      <div class="field-group">
+        <label for="tool-select">Tool</label>
+        <select id="tool-select" name="tool" required>
+          <option value="">-- Select a tool --</option>
+          <option value="Drill">Drill</option>
+          <option value="Sander">Sander</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="email-input">Email</label>
+        <input type="email" id="email-input" name="email" placeholder="neighbor@example.com" required>
+      </div>
+      <fieldset>
+        <legend>Select Slot</legend>
+        <div class="slot-options">
+          <div>
+            <input type="radio" id="slot-09" name="slot" value="09:00" required>
+            <label class="slot-label" for="slot-09">09:00</label>
+          </div>
+          <div>
+            <input type="radio" id="slot-14" name="slot" value="14:00" required>
+            <label class="slot-label" for="slot-14">14:00</label>
+          </div>
+        </div>
+      </fieldset>
+      <button type="submit" id="confirm-btn" disabled>Confirm Reservation</button>
+    </form>
+    <div id="confirmation-box" class="confirmation" role="status" aria-live="polite">
+      <h2>Reservation Confirmed!</h2>
+      <p id="confirmation-details"></p>
+    </div>
+  </main>
+  <script>
+    const form = document.getElementById('reservation-form');
+    const toolSelect = document.getElementById('tool-select');
+    const emailInput = document.getElementById('email-input');
+    const slotRadios = document.getElementsByName('slot');
+    const confirmBtn = document.getElementById('confirm-btn');
+    const confirmBox = document.getElementById('confirmation-box');
+    const confirmDetails = document.getElementById('confirmation-details');
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+    }
+
+    function checkFormValidity() {
+      const toolValid = toolSelect.value !== '';
+      const emailValid = isValidEmail(emailInput.value);
+      let slotSelected = false;
+      for (const r of slotRadios) {
+        if (r.checked) { slotSelected = true; break; }
+      }
+      confirmBtn.disabled = !(toolValid && emailValid && slotSelected);
+    }
+
+    toolSelect.addEventListener('change', checkFormValidity);
+    emailInput.addEventListener('input', checkFormValidity);
+    for (const r of slotRadios) {
+      r.addEventListener('change', checkFormValidity);
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (confirmBtn.disabled) return;
+      const selectedTool = toolSelect.value;
+      let selectedSlot = '';
+      for (const r of slotRadios) {
+        if (r.checked) { selectedSlot = r.value; break; }
+      }
+      confirmDetails.textContent = 'You have reserved the ' + selectedTool + ' for ' + selectedSlot + '.';
+      confirmBox.style.display = 'block';
+      confirmBox.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

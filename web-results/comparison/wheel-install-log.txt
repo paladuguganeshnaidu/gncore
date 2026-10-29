@@ -1,0 +1,5 @@
+Using CPython 3.12.13 interpreter at: .work\phase2\venv312\Scripts\python.exe
+Resolved 1 package in 58ms
+Prepared 1 package in 8.68s
+Installed 1 package in 26.88s
+ + gncore==7.0.0rc1 (from file:///C:/Users/ganes/OneDrive/Documents/ChatGPT/GNCore/.work/benchmark-v2/release/gncore-7.0.0rc1-py3-none-any.whl)

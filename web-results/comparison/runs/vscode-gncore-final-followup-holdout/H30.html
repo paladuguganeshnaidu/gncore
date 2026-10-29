@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signal Room Summit | Workshop booking</title>
+<style>
+:root {
+  color-scheme: dark;
+  --ink: #e8f0f3;
+  --muted: #9aadb4;
+  --panel: #132127;
+  --panel-2: #182b32;
+  --line: #31505a;
+  --cyan: #62e6df;
+  --amber: #ffbf69;
+  --navy: #091419;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--navy);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+body::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background: linear-gradient(90deg, var(--cyan) 0 42%, var(--amber) 42% 54%, transparent 54%);
+}
+main { width: min(100% - 32px, 980px); margin: 0 auto; padding: 48px 0 64px; }
+header { max-width: 720px; margin-bottom: 36px; }
+.eyebrow { color: var(--cyan); font-size: .75rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+h1 { max-width: 680px; margin: 12px 0 16px; font-size: clamp(2.4rem, 8vw, 5.2rem); line-height: .96; letter-spacing: -.06em; }
+.intro { max-width: 620px; color: var(--muted); font-size: 1.08rem; }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .75fr); gap: 20px; align-items: start; }
+.panel { border: 1px solid var(--line); background: var(--panel); padding: 24px; box-shadow: 8px 8px 0 #050b0e; }
+.panel h2 { margin: 0 0 22px; font-size: 1.25rem; }
+label, legend { font-weight: 750; }
+label { display: block; margin-bottom: 8px; }
+select, input[type="email"] { width: 100%; border: 1px solid var(--line); border-radius: 2px; background: var(--panel-2); color: var(--ink); padding: 13px 12px; font: inherit; }
+.field { margin-bottom: 22px; }
+fieldset { border: 0; margin: 0 0 22px; padding: 0; }
+.slots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px; }
+.slot { position: relative; }
+.slot input { position: absolute; opacity: 0; }
+.slot label { border: 1px solid var(--line); background: var(--panel-2); padding: 13px 12px; text-align: center; cursor: pointer; }
+.slot input:checked + label { border-color: var(--cyan); color: var(--cyan); box-shadow: inset 0 -3px 0 var(--cyan); }
+.slot input:focus-visible + label, select:focus-visible, input[type="email"]:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+button { width: 100%; border: 0; border-radius: 2px; padding: 14px 16px; background: var(--cyan); color: #071114; font: 800 1rem inherit; cursor: pointer; }
+button:disabled { background: #3a4b50; color: #89979a; cursor: not-allowed; }
+.hint { color: var(--muted); font-size: .88rem; margin: -10px 0 20px; }
+.confirmation { margin-top: 18px; border-left: 4px solid var(--amber); background: #202b2d; padding: 14px 16px; }
+.confirmation strong { color: var(--amber); }
+.facts { display: grid; gap: 14px; margin: 0; }
+.fact { border-top: 1px solid var(--line); padding-top: 12px; }
+.fact dt { color: var(--cyan); font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.fact dd { margin: 4px 0 0; }
+@media (max-width: 700px) { main { padding-top: 32px; } .grid { grid-template-columns: 1fr; } .panel { padding: 20px; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Signal Room / Security Engineering Summit</div>
+    <h1>Make the invisible attack path visible.</h1>
+    <p class="intro">A focused day for engineers who design, test, and defend the systems that matter. Choose one working session for your summit pass.</p>
+  </header>
+  <div class="grid">
+    <section class="panel" aria-labelledby="booking-title">
+      <h2 id="booking-title">Reserve a workshop</h2>
+      <form id="booking-form">
+        <div class="field">
+          <label for="workshop">Workshop</label>
+          <select id="workshop" name="workshop" required>
+            <option value="">Select a workshop</option>
+            <option value="Threat Modeling">Threat Modeling</option>
+            <option value="Secure APIs">Secure APIs</option>
+          </select>
+        </div>
+        <fieldset>
+          <legend>Slot</legend>
+          <div class="slots">
+            <div class="slot"><input id="slot-1030" name="slot" type="radio" value="10:30"><label for="slot-1030">10:30</label></div>
+            <div class="slot"><input id="slot-1600" name="slot" type="radio" value="16:00"><label for="slot-1600">16:00</label></div>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required placeholder="[you@company.com](mailto:you@company.com)">
+        </div>
+        <p class="hint">Your confirmation stays in this browser; no network request is made.</p>
+        <button id="book" type="submit" disabled>Book Workshop</button>
+        <div id="confirmation" class="confirmation" role="status" aria-live="polite" hidden></div>
+      </form>
+    </section>
+    <aside class="panel" aria-labelledby="summit-title">
+      <h2 id="summit-title">The signal room</h2>
+      <dl class="facts">
+        <div class="fact"><dt>Focus</dt><dd>Practical threat discovery and resilient interfaces.</dd></div>
+        <div class="fact"><dt>Format</dt><dd>Small-group working sessions led by security engineers.</dd></div>
+        <div class="fact"><dt>Audience</dt><dd>Builders responsible for trust boundaries, data, and uptime.</dd></div>
+      </dl>
+    </aside>
+  </div>
+</main>
+<script>
+const form = document.getElementById('booking-form');
+const workshop = document.getElementById('workshop');
+const email = document.getElementById('email');
+const book = document.getElementById('book');
+const confirmation = document.getElementById('confirmation');
+const slots = Array.from(document.querySelectorAll('input[name="slot"]'));
+function selectedSlot() {
+  const selected = slots.find((slot) => slot.checked);
+  return selected ? selected.value : '';
+}
+function updateButton() {
+  book.disabled = !workshop.value || !selectedSlot() || !email.value.trim() || !email.checkValidity();
+}
+[workshop, email, ...slots].forEach((control) => control.addEventListener('input', updateButton));
+[workshop, email, ...slots].forEach((control) => control.addEventListener('change', updateButton));
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  updateButton();
+  if (book.disabled) {
+    form.reportValidity();
+    return;
+  }
+  confirmation.hidden = false;
+  confirmation.innerHTML = '<strong>Booking held.</strong> ' + workshop.value + ' at ' + selectedSlot() + ' is reserved for ' + email.value.trim() + '.';
+  confirmation.focus();
+});
+</script>
+</body>
+</html>

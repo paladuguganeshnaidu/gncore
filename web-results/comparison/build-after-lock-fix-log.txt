@@ -1,0 +1,17 @@
+WARN Retrying to persist temporary file to C:\Users\ganes\AppData\Local\Packages\sandbox.{da2db4df-ca71-4877-8433-54e8ac93efd2}\AC\uv\cache\interpreter-v4\aeaed29b691d2053\6df15c63e1360405.msgpack: failed to persist temporary file: Access is denied. (os error 5)
+WARN Retrying to persist temporary file to C:\Users\ganes\AppData\Local\Packages\sandbox.{da2db4df-ca71-4877-8433-54e8ac93efd2}\AC\uv\cache\interpreter-v4\aeaed29b691d2053\6df15c63e1360405.msgpack: failed to persist temporary file: Access is denied. (os error 5)
+WARN Retrying to persist temporary file to C:\Users\ganes\AppData\Local\Packages\sandbox.{da2db4df-ca71-4877-8433-54e8ac93efd2}\AC\uv\cache\interpreter-v4\aeaed29b691d2053\6df15c63e1360405.msgpack: failed to persist temporary file: Access is denied. (os error 5)
+WARN Retrying to persist temporary file to C:\Users\ganes\AppData\Local\Packages\sandbox.{da2db4df-ca71-4877-8433-54e8ac93efd2}\AC\uv\cache\interpreter-v4\aeaed29b691d2053\6df15c63e1360405.msgpack: failed to persist temporary file: Access is denied. (os error 5)
+WARN Retrying to persist temporary file to C:\Users\ganes\AppData\Local\Packages\sandbox.{da2db4df-ca71-4877-8433-54e8ac93efd2}\AC\uv\cache\interpreter-v4\aeaed29b691d2053\6df15c63e1360405.msgpack: failed to persist temporary file: Access is denied. (os error 5)
+WARN Retrying to persist temporary file to C:\Users\ganes\AppData\Local\Packages\sandbox.{da2db4df-ca71-4877-8433-54e8ac93efd2}\AC\uv\cache\interpreter-v4\aeaed29b691d2053\6df15c63e1360405.msgpack: failed to persist temporary file: Access is denied. (os error 5)
+WARN Retrying to persist temporary file to C:\Users\ganes\AppData\Local\Packages\sandbox.{da2db4df-ca71-4877-8433-54e8ac93efd2}\AC\uv\cache\interpreter-v4\aeaed29b691d2053\6df15c63e1360405.msgpack: failed to persist temporary file: Access is denied. (os error 5)
+WARN Retrying to persist temporary file to C:\Users\ganes\AppData\Local\Packages\sandbox.{da2db4df-ca71-4877-8433-54e8ac93efd2}\AC\uv\cache\interpreter-v4\aeaed29b691d2053\6df15c63e1360405.msgpack: failed to persist temporary file: Access is denied. (os error 5)
+WARN Retrying to persist temporary file to C:\Users\ganes\AppData\Local\Packages\sandbox.{da2db4df-ca71-4877-8433-54e8ac93efd2}\AC\uv\cache\interpreter-v4\aeaed29b691d2053\6df15c63e1360405.msgpack: failed to persist temporary file: Access is denied. (os error 5)
+WARN Retrying to persist temporary file to C:\Users\ganes\AppData\Local\Packages\sandbox.{da2db4df-ca71-4877-8433-54e8ac93efd2}\AC\uv\cache\interpreter-v4\aeaed29b691d2053\6df15c63e1360405.msgpack: failed to persist temporary file: Access is denied. (os error 5)
+  × Failed to build `C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore`
+  ├─▶ Failed to inspect Python interpreter from provided path at
+  │   `.work/phase2/venv312/Scripts/python.exe`
+  ├─▶ Failed to query Python interpreter
+  ╰─▶ Failed to persist temporary file to
+      C:\Users\ganes\AppData\Local\Packages\sandbox.{da2db4df-ca71-4877-8433-54e8ac93efd2}\AC\uv\cache\interpreter-v4\aeaed29b691d2053\6df15c63e1360405.msgpack:
+      failed to persist temporary file: Access is denied. (os error 5)

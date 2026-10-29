@@ -1,0 +1,129 @@
+{
+  "category": "code-build",
+  "split": "holdout",
+  "passed": 16,
+  "total": 16,
+  "tests": [
+    {
+      "test": "equal_tie",
+      "passed": true,
+      "expected": "[34, 33, 33]",
+      "actual": "[34, 33, 33]",
+      "error": null
+    },
+    {
+      "test": "proportional",
+      "passed": true,
+      "expected": "[2, 5]",
+      "actual": "[2, 5]",
+      "error": null
+    },
+    {
+      "test": "first_index_tie",
+      "passed": true,
+      "expected": "[1, 0]",
+      "actual": "[1, 0]",
+      "error": null
+    },
+    {
+      "test": "zero",
+      "passed": true,
+      "expected": "[0, 0]",
+      "actual": "[0, 0]",
+      "error": null
+    },
+    {
+      "test": "large_exact",
+      "passed": true,
+      "expected": "[111111111111111111, 333333333333333334, 555555555555555556]",
+      "actual": "[111111111111111111, 333333333333333334, 555555555555555556]",
+      "error": null
+    },
+    {
+      "test": "single",
+      "passed": true,
+      "expected": "[17]",
+      "actual": "[17]",
+      "error": null
+    },
+    {
+      "test": "wrong_type_0",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "wrong_type_1",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "wrong_type_2",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "wrong_type_3",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "wrong_type_4",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "wrong_type_5",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_range_0",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_range_1",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_range_2",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "invalid_range_3",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    }
+  ],
+  "inspection": {
+    "imports": [],
+    "functions": [
+      "allocate_cents"
+    ]
+  },
+  "compute_seconds": 0.0019972999580204487,
+  "scope": "Actual generated pure-function/test code executed in an isolated child; no IDE execution or production claim.",
+  "child_wall_seconds": 0.48400000017136335
+}

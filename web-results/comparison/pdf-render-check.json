@@ -1,0 +1,32 @@
+[
+  {
+    "file": "web-results/comparison/EXECUTIVE-REPORT.pdf",
+    "pages": 7,
+    "landscape": true
+  },
+  {
+    "file": "web-results/comparison/TECHNICAL-REPORT.pdf",
+    "pages": 6,
+    "landscape": true
+  },
+  {
+    "file": "web-results/comparison/charts/antigravity-development-landscape.pdf",
+    "pages": 1,
+    "landscape": true
+  },
+  {
+    "file": "web-results/comparison/charts/antigravity-holdout-landscape.pdf",
+    "pages": 1,
+    "landscape": true
+  },
+  {
+    "file": "web-results/comparison/charts/vscode-development-landscape.pdf",
+    "pages": 1,
+    "landscape": true
+  },
+  {
+    "file": "web-results/comparison/charts/vscode-holdout-landscape.pdf",
+    "pages": 1,
+    "landscape": true
+  }
+]

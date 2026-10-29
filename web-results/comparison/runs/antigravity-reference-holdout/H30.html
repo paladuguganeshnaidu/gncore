@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enterprise Security-Engineering Summit — Workshop Booking</title>
+<style>
+:root {
+  --bg-dark: #090d16;
+  --panel-bg: #111827;
+  --border-color: #1e293b;
+  --border-focus: #38bdf8;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --accent: #0284c7;
+  --accent-light: #38bdf8;
+  --btn-disabled: #1e293b;
+  --text-disabled: #475569;
+  --success-bg: rgba(16, 185, 129, 0.1);
+  --success-border: #10b981;
+  --success-text: #34d399;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  padding: 24px 16px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  max-width: 500px;
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+header {
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+}
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+h1 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+p.subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+label, legend {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+select, input[type="email"] {
+  width: 100%;
+  background: #0d131f;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-main);
+  font-size: 14px;
+  padding: 10px 12px;
+  transition: border-color 0.15s ease;
+}
+select:focus, input[type="email"]:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 1px var(--border-focus);
+}
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.slots-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.slot-option {
+  position: relative;
+}
+.slot-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slot-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0d131f;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+.slot-option input[type="radio"]:focus-visible + .slot-label {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+.slot-option input[type="radio"]:checked + .slot-label {
+  background: rgba(2, 132, 199, 0.15);
+  border-color: var(--accent-light);
+  color: var(--accent-light);
+}
+button#book-btn {
+  width: 100%;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+  margin-top: 8px;
+}
+button#book-btn:hover:not(:disabled) {
+  background: var(--accent-light);
+  color: #090d16;
+}
+button#book-btn:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+button#book-btn:disabled {
+  background: var(--btn-disabled);
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+.confirmation-box {
+  margin-top: 24px;
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+  border-radius: 6px;
+  padding: 16px;
+  color: var(--success-text);
+  font-size: 14px;
+  display: none;
+}
+.confirmation-box.active {
+  display: block;
+}
+.confirmation-box h2 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+@media (max-width: 390px) {
+  .container { padding: 20px 16px; }
+  h1 { font-size: 18px; }
+  .slots-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<main class="container">
+  <header>
+    <div class="badge">Security Summit 2026</div>
+    <h1>Engineering Session Booking</h1>
+    <p class="subtitle">Select your technical workshop and reserved session slot.</p>
+  </header>
+  <form id="booking-form" novalidate>
+    <div class="form-group">
+      <label for="workshop-select">Workshop</label>
+      <select id="workshop-select" required>
+        <option value="" disabled selected>Select a workshop</option>
+        <option value="Threat Modeling">Threat Modeling</option>
+        <option value="Secure APIs">Secure APIs</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="email-input">Email</label>
+      <input type="email" id="email-input" placeholder="engineer@enterprise.internal" required autocomplete="email">
+    </div>
+    <div class="form-group">
+      <fieldset>
+        <legend>Session Time Slot</legend>
+        <div class="slots-grid">
+          <div class="slot-option">
+            <input type="radio" name="slot" id="slot-1030" value="10:30" required>
+            <label for="slot-1030" class="slot-label">10:30</label>
+          </div>
+          <div class="slot-option">
+            <input type="radio" name="slot" id="slot-1600" value="16:00" required>
+            <label for="slot-1600" class="slot-label">16:00</label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <button type="submit" id="book-btn" disabled>Book Workshop</button>
+  </form>
+  <div id="confirmation-banner" class="confirmation-box" role="status" aria-live="polite">
+    <h2>Reservation Confirmed</h2>
+    <p id="confirmation-details"></p>
+  </div>
+</main>
+<script>
+(function() {
+  const form = document.getElementById('booking-form');
+  const workshopSelect = document.getElementById('workshop-select');
+  const emailInput = document.getElementById('email-input');
+  const slotRadios = document.querySelectorAll('input[name="slot"]');
+  const bookBtn = document.getElementById('book-btn');
+  const confirmationBanner = document.getElementById('confirmation-banner');
+  const confirmationDetails = document.getElementById('confirmation-details');
+
+  function validateEmail(val) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
+  }
+
+  function checkFormValidity() {
+    const hasWorkshop = workshopSelect.value !== '';
+    const hasValidEmail = validateEmail(emailInput.value);
+    const hasSlot = Array.from(slotRadios).some(r => r.checked);
+    bookBtn.disabled = !(hasWorkshop && hasValidEmail && hasSlot);
+  }
+
+  workshopSelect.addEventListener('change', checkFormValidity);
+  emailInput.addEventListener('input', checkFormValidity);
+  slotRadios.forEach(radio => radio.addEventListener('change', checkFormValidity));
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (bookBtn.disabled) return;
+    const chosenWorkshop = workshopSelect.value;
+    const selectedRadio = Array.from(slotRadios).find(r => r.checked);
+    const chosenSlot = selectedRadio ? selectedRadio.value : '';
+    confirmationDetails.textContent = `Confirmed reservation for ${chosenWorkshop} at ${chosenSlot}. Confirmation details sent to ${emailInput.value.trim()}.`;
+    confirmationBanner.classList.add('active');
+  });
+})();
+</script>
+</body>
+</html>

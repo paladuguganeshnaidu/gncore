@@ -24,6 +24,10 @@ Run meaningful tests, clean imports and relevant interpreter checks. Verify the 
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
+## Anticipate failure and verify the boundary
+
+Verify the built wheel/sdist in clean environments outside the source checkout, including resources and entrypoints from unrelated working directories. Declare runtime/dependency and interpreter constraints, and check syntax/APIs on the oldest supported interpreter. Use package-resource lookup and explicit build-backend inclusion rules; a source-archive include rule alone may not include a wheel resource. Retain archive contents, install logs and compatibility evidence before release.
+
 ## Workflow map
 
 | Workflow | Use it for |

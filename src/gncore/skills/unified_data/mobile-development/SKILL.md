@@ -24,6 +24,10 @@ Exercise navigation, process/lifecycle restoration, narrow/large screens, keyboa
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
+## Anticipate failure and verify the boundary
+
+Use stable identities and virtualization for long collections, then measure expensive row work and rerenders before tuning. Own subscriptions and async tasks across navigation, background/resume and unmount; cancel or ignore stale results. Preserve versioned offline state with loading/stale/error/retry behavior. For mutations, use durable operation identity and a conflict policy; read-only caches should not invent write workflows. Test lifecycle transitions and representative devices separately from desktop reasoning.
+
 ## Workflow map
 
 | Workflow | Use it for |

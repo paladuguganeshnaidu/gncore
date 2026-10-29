@@ -1,0 +1,39 @@
+{
+  "checks": [
+    {
+      "name": "initially_disabled",
+      "passed": true
+    },
+    {
+      "name": "invalid_email_disabled",
+      "passed": true
+    },
+    {
+      "name": "valid_inputs_enable",
+      "passed": true
+    },
+    {
+      "name": "selected_values_confirmation",
+      "passed": true
+    },
+    {
+      "name": "narrow_no_overflow",
+      "passed": true,
+      "observed": {
+        "viewport": 390,
+        "scrollWidth": 375
+      }
+    },
+    {
+      "name": "radio_focus_visible",
+      "passed": false,
+      "evidence": "Focused radio has opacity 0 and 1x1 box; visible label has no focus outline."
+    },
+    {
+      "name": "status_focus_moves",
+      "passed": false,
+      "evidence": "Submit calls focus on a div without tabindex; observed focus remained on submit."
+    }
+  ],
+  "method": "Actual in-app browser interactions and read-only rendered DOM inspection; no screen-reader audit."
+}

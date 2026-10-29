@@ -1,0 +1,189 @@
+{
+  "baseline": "cd77d82",
+  "categories": 30,
+  "workflows": 374,
+  "workflow_procedures_unchanged": true,
+  "resources_and_licenses_preserved": true,
+  "entrypoints": [
+    {
+      "category": "web-frontend",
+      "entrypoint_sha256": "22c79330d4dbeb2cc6559f7120c2944e8e648054dade3c604bc5dc264ba7b76b",
+      "workflow_count": 40,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "web-backend",
+      "entrypoint_sha256": "dded1055ec21a656f379833ea88066a5f94af6e453ecc99887614ff4462ead2e",
+      "workflow_count": 60,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "code-build",
+      "entrypoint_sha256": "50c9ac95efd6e854ea538d2eba29cf253c22769ca74b5141e15f9decbdb50745",
+      "workflow_count": 85,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "design-ux",
+      "entrypoint_sha256": "b8625bcb7bb4a49220fe04b667dfebafcfe9fa068939dc904c6dcc3d665b659b",
+      "workflow_count": 12,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "python",
+      "entrypoint_sha256": "1aa95e94a837f4e26a673a1e2f9a418279432430bcb7249548c2b51aa83243da",
+      "workflow_count": 3,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "developer-tools",
+      "entrypoint_sha256": "fbda518997c5ab02f014ddd82c03b819b9bd2bfbc3283256f1ad1f4da6d82dbb",
+      "workflow_count": 2,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "documentation",
+      "entrypoint_sha256": "fd4a37e0ea9e211725fe8801cfbae25ab30bac852a90cebd52f871d854b1eb38",
+      "workflow_count": 3,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "testing",
+      "entrypoint_sha256": "4147bb344782c7aa65776629e695bf692645840b38f1581016ef0de8c4862b0f",
+      "workflow_count": 19,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "cybersecurity",
+      "entrypoint_sha256": "abb51665cda94e9a0fd082af32a59cedc5f3552169a88299a9c7e762dc7bf60a",
+      "workflow_count": 12,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "cloud-devops-sre",
+      "entrypoint_sha256": "fba32c5a4794a0b03fce0b3f4afcc8a367fe3dc9e3f12aa05a3dbb43be630207",
+      "workflow_count": 15,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "release-engineering",
+      "entrypoint_sha256": "fb6989535b82792b4e4ec2c12bcb810ae88453bbbd298227c9e6a3ca70ff3c6b",
+      "workflow_count": 2,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "automation",
+      "entrypoint_sha256": "a7a8a926f32407357b46351e1fe1d237ad85bf80ff0b0c79110dc59d5aad3013",
+      "workflow_count": 2,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "mobile-development",
+      "entrypoint_sha256": "0467cc4812ae8abfd77a0883fb8ac56354c4907cc07914769862a8d3b8cf2d93",
+      "workflow_count": 1,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "game-development",
+      "entrypoint_sha256": "fae9080f87fa5b3d3de6d58a25c4726a01b6e25dfe0c53c43e70005cde1f6ee0",
+      "workflow_count": 1,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "data-engineering",
+      "entrypoint_sha256": "fcc49369388a207a1ca8641307aa471612bb083b1d302dca9a74b25fdf081ef8",
+      "workflow_count": 4,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "data-science",
+      "entrypoint_sha256": "0260af87c93e87af54f50b78810986a865a21c0982f3577bafc717c3756d71f1",
+      "workflow_count": 18,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "machine-learning",
+      "entrypoint_sha256": "3fb1a5073fb96f3da5d13933acb07456437ff4a69b5dbdac0141b4abbbb48475",
+      "workflow_count": 21,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "ai-engineering",
+      "entrypoint_sha256": "083aa617d3c42a76bbb5f212013e812b4ce6fbc245cb2c61ac083529b18051d8",
+      "workflow_count": 6,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "neural-networks",
+      "entrypoint_sha256": "e8aae3030f3f52a1aad07efc4468220ad1a987b3220a99f4f26355e4e3297a5a",
+      "workflow_count": 6,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "deep-learning",
+      "entrypoint_sha256": "99cfc50eb9901649ac2a1bbff1a92afc7431170843b55bf8c4b04e3829062a40",
+      "workflow_count": 9,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "computer-vision",
+      "entrypoint_sha256": "dc4da06ec08120b6287b21685c7155b5885fba826f24d0c17477116970ba4160",
+      "workflow_count": 5,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "natural-language-processing",
+      "entrypoint_sha256": "b41e747a6d46037adfcff0dc22e810a7e0fb53f9b06cd001b4380fcda59d8659",
+      "workflow_count": 5,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "mlops",
+      "entrypoint_sha256": "76290906a50b1d87b9057a61987a6be094d0225e8511e824fca562b2ce9e42eb",
+      "workflow_count": 10,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "databases",
+      "entrypoint_sha256": "0e1660586c134f2a183e8afbdc9d8f093faa33ff1d0f1129ac0c7537e8e15a5e",
+      "workflow_count": 5,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "systems-programming",
+      "entrypoint_sha256": "db8d701f2a5a0918c6fbfa57a322e56a4c50041775f535162f94c4bf5f78cc17",
+      "workflow_count": 4,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "embedded-systems",
+      "entrypoint_sha256": "e00ac885285efb18948d4c4be81b2fc197189c60d6d303fe6ecb6165340a5571",
+      "workflow_count": 4,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "performance-engineering",
+      "entrypoint_sha256": "f2d4fdae30153b7b5545e7ff70b7c77ba2b50829f78299e94b73f377a77d3332",
+      "workflow_count": 5,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "observability",
+      "entrypoint_sha256": "d63a7463b72653089d0f4e090bf60d650d8163ef2f3f3cecae2dd771da778841",
+      "workflow_count": 7,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "developer-research",
+      "entrypoint_sha256": "00261f1eafe64be3ec042bc21b672584f06537833e989c5c89983fd1ce1810aa",
+      "workflow_count": 4,
+      "existing_guidance_preserved": true
+    },
+    {
+      "category": "distributed-systems",
+      "entrypoint_sha256": "1832b70a5bcd88fb750db478d796a4b43e09ad2cfc87e333cb46e675a1e6dd54",
+      "workflow_count": 4,
+      "existing_guidance_preserved": true
+    }
+  ]
+}

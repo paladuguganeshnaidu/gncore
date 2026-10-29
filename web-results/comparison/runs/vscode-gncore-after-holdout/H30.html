@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signal / Security Engineering Summit</title>
+<style>
+:root{color-scheme:dark;--ink:#07131d;--panel:#0d202b;--line:#29434d;--text:#eaf3f2;--muted:#9bb0b2;--copper:#e79b63;--mint:#9ee3c0;--danger:#ff9b8f}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--ink);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;background-image:linear-gradient(rgba(231,155,99,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(231,155,99,.06) 1px,transparent 1px);background-size:42px 42px}main{max-width:1120px;margin:auto;padding:clamp(28px,6vw,76px) 20px;display:grid;grid-template-columns:1fr minmax(320px,470px);gap:clamp(32px,7vw,100px);align-items:center}.eyebrow{color:var(--copper);font:700 12px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.16em;text-transform:uppercase}.signal{display:flex;gap:10px;align-items:center}.dot{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 16px var(--mint)}h1{font-size:clamp(42px,7vw,82px);line-height:.96;letter-spacing:-.06em;max-width:700px;margin:22px 0;color:#fff}h1 em{color:var(--copper);font-style:normal}p{color:var(--muted);max-width:560px}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.meta span{border:1px solid var(--line);padding:8px 11px;color:#c5d5d4;font:12px ui-monospace,SFMono-Regular,Consolas,monospace}.card{background:rgba(13,32,43,.94);border:1px solid var(--line);border-top:3px solid var(--copper);padding:28px;box-shadow:16px 16px 0 rgba(231,155,99,.08)}form{display:grid;gap:18px}label,.legend{font-weight:700;color:#fff;display:block;margin-bottom:7px}.hint{font-size:13px;color:var(--muted);margin:0 0 18px}select,input{width:100%;background:#081821;border:1px solid #49636a;color:var(--text);padding:13px 14px;border-radius:2px;font:inherit}select:focus,input:focus,button:focus-visible{outline:3px solid var(--mint);outline-offset:3px}.slots{display:grid;grid-template-columns:1fr 1fr;gap:10px}.slots input{position:absolute;opacity:0;width:1px;height:1px}.slots label{border:1px solid #49636a;padding:13px;text-align:center;cursor:pointer;font:700 15px ui-monospace,SFMono-Regular,Consolas,monospace}.slots input:checked+label{border-color:var(--copper);background:rgba(231,155,99,.15);color:#fff}.slots input:focus-visible+label{outline:3px solid var(--mint);outline-offset:3px}button{border:0;border-radius:2px;background:var(--copper);color:#1b1713;padding:14px 18px;font-weight:800;cursor:pointer}button:disabled{cursor:not-allowed;opacity:.38}.error{color:var(--danger);min-height:1.5em;font-size:14px}.confirmation{border:1px solid var(--mint);padding:16px;color:var(--mint);background:rgba(158,227,192,.08)}[hidden]{display:none}@media(max-width:720px){main{grid-template-columns:1fr;padding-top:34px;gap:28px}h1{font-size:clamp(48px,15vw,70px)}.card{padding:22px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main>
+<section aria-labelledby="title">
+<div class="signal eyebrow"><span class="dot" aria-hidden="true"></span>SE-26 / LIVE SIGNAL</div>
+<h1 id="title">Build for the <em>breach.</em></h1>
+<p>A focused security-engineering summit for people who design the paths attackers test first. Bring a hard problem; leave with a sharper boundary.</p>
+<div class="meta"><span>REMOTE + ONSITE</span><span>LIMITED SEATS</span><span>10:30 / 16:00 UTC</span></div>
+</section>
+<section class="card" aria-labelledby="booking-title">
+<div class="eyebrow">Reserve a briefing</div>
+<h2 id="booking-title">Choose your track</h2>
+<p class="hint">Your confirmation appears here after booking. No payment required.</p>
+<form id="booking-form" novalidate>
+<div><label for="workshop">Workshop</label><select id="workshop" name="workshop" required><option value="">Select a workshop</option><option value="Threat Modeling">Threat Modeling</option><option value="Secure APIs">Secure APIs</option></select></div>
+<fieldset style="border:0;padding:0;margin:0"><legend class="legend">Slot</legend><div class="slots"><input id="slot-1030" type="radio" name="slot" value="10:30"><label for="slot-1030">10:30</label><input id="slot-1600" type="radio" name="slot" value="16:00"><label for="slot-1600">16:00</label></div></fieldset>
+<div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="[you@company.com](mailto:you@company.com)"></div>
+<div id="error" class="error" role="alert" aria-live="polite"></div>
+<button id="book" type="submit" disabled>Book Workshop</button>
+<div id="confirmation" class="confirmation" role="status" tabindex="-1" hidden></div>
+</form>
+</section>
+</main>
+<script>
+const form=document.querySelector('#booking-form'),workshop=document.querySelector('#workshop'),email=document.querySelector('#email'),button=document.querySelector('#book'),error=document.querySelector('#error'),confirmation=document.querySelector('#confirmation');
+function selectedSlot(){const item=document.querySelector('input[name="slot"]:checked');return item?item.value:''}
+function valid(){return workshop.value!==''&&selectedSlot()!==''&&email.validity.valid}
+function update(){button.disabled=!valid();if(error.textContent&&!valid())error.textContent=''}
+form.addEventListener('input',update);form.addEventListener('change',update);
+form.addEventListener('submit',event=>{event.preventDefault();if(!valid()){error.textContent='Choose a workshop, select a slot, and enter a valid email.';return}const slot=selectedSlot();confirmation.textContent=`You are booked for ${workshop.value} at ${slot}. A confirmation will be sent to ${email.value}.`;confirmation.hidden=false;confirmation.focus()});
+</script>
+</body>
+</html>

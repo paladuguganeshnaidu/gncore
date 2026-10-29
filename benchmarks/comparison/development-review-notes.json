@@ -1,0 +1,359 @@
+{
+  "method": "Unblinded manual assessment of the complete saved answers against the six frozen criteria. Empty failure maps mean the criteria were satisfied in the bounded answer, not that a production system was implemented. Code and UI criteria require separate executable/browser evidence. No publisher identity earns points.",
+  "reviews": {
+    "antigravity-gncore-before-development": {
+      "D01": {
+        "fail": {
+          "c4": "Typed signatures alone do not describe malformed-output validation.",
+          "c5": "No iteration/time limit is specified."
+        },
+        "basis": "R1 is cited; R2 is treated as injection; only search/draft are authorized; checks are explicitly proposed."
+      },
+      "D02": {
+        "fail": {
+          "c4": "Permanent failures are named but malformed input disposition is unspecified."
+        },
+        "basis": "Unique invoice identity, atomic cursor/write, bounded backoff, durable cursor and crash/replay fixture are described."
+      },
+      "D03": {
+        "fail": {
+          "c5": "Least privilege and secret handling are omitted."
+        },
+        "basis": "Expand/dual-write/backfill/canary with error and latency gates, compatible application rollback, no executed-cloud claim."
+      },
+      "D04": {
+        "fail": {},
+        "basis": "Inspected pure integer implementation; actual 18-case execution covers normal, exact rounding, boundaries, types and ranges."
+      },
+      "D05": {
+        "fail": {
+          "c3": "No annotation bounds/degeneracy checks.",
+          "c5": "Validation/test are separated but a baseline is omitted."
+        },
+        "basis": "Product-group split, matching 0.5 box transforms, held-out mAP and unexecuted-training statement are explicit."
+      },
+      "D06": {
+        "fail": {},
+        "basis": "All six defects and concrete repairs, zero safe controls flagged. For S3 the canonical fixed POSIX root includes a trailing separator, which is adequate for the stated fixture; component-aware containment is a stronger general recommendation. No exploit was executed."
+      },
+      "D07": {
+        "fail": {
+          "c2": "keep-first deduplication has no conflicting revision policy.",
+          "c6": "Tests only the provided duplicate; no late or corrected event test."
+        },
+        "basis": "Explicit schema/UTC day, quarantine, atomic partition/upsert publication and 4=2+1+1 reconciliation yielding 350 cents."
+      },
+      "D08": {
+        "fail": {
+          "c5": "Selection/confounding discussed but missingness omitted.",
+          "c3": "Quoted two-sided Fisher p=0.385 is incorrect for9/10 vs1/2; exact enumeration yields21/66=0.31818."
+        },
+        "basis": "10/12 and small-sample uncertainty are stated; causal claim rejected. Extra caveat: unequal weighting is incorrectly labeled Simpson's paradox and an unexecuted exact p-value is quoted."
+      },
+      "D09": {
+        "fail": {
+          "c1": "No mixed-version writer transition before enforcement.",
+          "c3": "Concurrent index creation reduces blocking but does not guarantee no blocking; lock assumptions are overstated.",
+          "c5": "Dropping a populated column is described as safe rollback without data-loss/recovery constraints."
+        },
+        "basis": "Collision quarantine, bounded backfill, index/check sequence and staging proposal are present; zero-downtime claims are not measurements."
+      },
+      "D10": {
+        "fail": {
+          "c3": "Scaler/global step are listed but accumulation boundary or partial gradients omitted."
+        },
+        "basis": "Optimizer/scheduler/RNG/sampler plus step counters and controlled resume comparison; tolerance appears in verification despite stronger exact wording in answer."
+      },
+      "D11": {
+        "fail": {
+          "c5": "No concrete narrow-layout hierarchy/reflow specification."
+        },
+        "basis": "Named switches, visible focus, danger-zone confirmation, linked errors and live save feedback; specification explicitly untested."
+      },
+      "D12": {
+        "fail": {
+          "c5": "No compatibility assumptions or conditions changing the recommendation."
+        },
+        "basis": "P1/P2 primary vs B1 secondary; correct 2000ms to 2s; mock delay test proposed. Exact 2.0-second assertion should allow scheduler tolerance."
+      },
+      "D13": {
+        "fail": {
+          "c4": "No interruption recovery or incomplete-worktree handling.",
+          "c5": "No actionable exit/failure diagnostics."
+        },
+        "basis": "Preserves dirty tree, checks branch/worktree collision, quotes paths, isolated workspace and unexecuted procedure."
+      },
+      "D14": {
+        "fail": {
+          "c5": "Expiring PROCESSING lease has no generation/fencing/CAS to stop a resumed stale owner."
+        },
+        "basis": "Atomic state machine, idempotency key, awaited interleaving and lost-reply retry acknowledged; overlap tests proposed."
+      },
+      "D15": {
+        "fail": {
+          "c4": "Existing-output error is described but no recovery path such as choosing another directory."
+        },
+        "basis": "Correct new flag, breaking change, copyable dry-run example and no command-execution claim."
+      },
+      "D16": {
+        "fail": {
+          "c4": "Overflow is mentioned only as a proposed test; no actual drop/backpressure/overrun policy."
+        },
+        "basis": "Bounded ISR-to-queue handoff, unsigned elapsed arithmetic and half-range assumption; wrap/concurrency tests with hardware evidence separated."
+      },
+      "D17": {
+        "fail": {
+          "c3": "No direction normalization/validity contract.",
+          "c4": "No pause/resume or large timestep policy."
+        },
+        "basis": "Correct Godot velocity integration, physics input/update loop, multi-rate displacement test, no executed engine claim."
+      },
+      "D18": {
+        "fail": {
+          "c3": "No point-in-time feature availability audit.",
+          "c5": "Baseline supplied but no imbalance/operating-point metrics."
+        },
+        "basis": "Entity/time-disjoint split, train-fold Pipeline, sealed test and simple baseline; no training claim."
+      },
+      "D19": {
+        "fail": {
+          "c1": "No training-data identity in the immutable bundle.",
+          "c4": "Feature drift is monitored without distinguishing it from labeled quality degradation."
+        },
+        "basis": "Schema/preprocessor/weights and dependency bundle, parity/load gates, canary and operational rollback; no live claims."
+      },
+      "D20": {
+        "fail": {
+          "c2": "Virtualization settings are given but no stable row rendering or measured expensive-work plan.",
+          "c5": "Cache has no durable retry/conflict identity policy."
+        },
+        "basis": "FlatList stable IDs, effect cleanup, offline cache/status and lifecycle/long-list checks; no device execution."
+      },
+      "D21": {
+        "fail": {
+          "c3": "Truncation/length policy omitted.",
+          "c4": "No correlated-text split boundary.",
+          "c6": "No representative short/long/truncated examples."
+        },
+        "basis": "First-subtoken labels, ignored special/pad positions, attention mask and entity-level F1 are correctly described."
+      },
+      "D22": {
+        "fail": {},
+        "basis": "Stable BCE and mean gradients; all 11 executed numerical/validation/central-difference tests pass; no model-run claim."
+      },
+      "D23": {
+        "fail": {},
+        "basis": "W3C queue propagation, bounded metric dimensions, header redaction, latency/errors/queue metrics, SLO alerts and controlled failure verification."
+      },
+      "D24": {
+        "fail": {
+          "c4": "No matched environment protocol or retention of errors/timeouts.",
+          "c5": "No throughput/memory/operational objectives."
+        },
+        "basis": "Means 28/34.8, medians 10/6 and p95 100/150 correctly calculated; tiny sample cannot prove 2x; no new run claimed."
+      },
+      "D25": {
+        "fail": {
+          "c3": "Environment/dependency requirements beyond interpreter version omitted."
+        },
+        "basis": "Wheel resource inclusion/lookup and isolated 3.11/3.12 install checks; no executed-install claim. flit.sdist alone is not a wheel-data declaration."
+      },
+      "D26": {
+        "fail": {
+          "c1": "Source revision/version/CI linkage omitted.",
+          "c3": "Package contents and metadata not checked.",
+          "c4": "No website/download availability sequencing."
+        },
+        "basis": "Same hashed artifact promotion, isolated smoke, immutable PyPI version/yank-patch recovery, preparation-only scope."
+      },
+      "D27": {
+        "fail": {
+          "c4": "Retention release ordering/exactly-once destruction not specified.",
+          "c5": "No interior-NUL/error contract; only a null guard and example ABI."
+        },
+        "basis": "Temporary CString lifetime and allocator mismatch identified; into_raw/from_raw owner protocol, sanitizer proposal, no native execution."
+      },
+      "D28": {
+        "fail": {},
+        "basis": "Generated checker accepts correct implementation and catches all six mutants in the actual seven-case harness."
+      },
+      "D29": {
+        "fail": {
+          "c1": "No authenticated tenant scope or canonical payload identity.",
+          "c4": "Corrected two-phase proposal does not make job/outbox/replay completion atomic.",
+          "c5": "Durable IN_PROGRESS claim has no abandoned-claim recovery/lease fencing."
+        },
+        "basis": "Correctly rejects immediate409 and rolled-back FAILED assumptions; key/hash conflict and committed-response replay acknowledged; overlap/lost-response tests proposed."
+      },
+      "D30": {
+        "fail": {},
+        "pending": [
+          "c2",
+          "c3",
+          "c4",
+          "c5",
+          "c6"
+        ],
+        "basis": "Offline complete warm community page inspected; browser interaction, keyboard and narrow-layout evidence pending."
+      }
+    },
+    "vscode-gncore-before-development": {
+      "D01": {
+        "fail": {},
+        "basis": "R1 citation, injection rejection, bounded typed tool contracts and safe uncertainty fallback; proposed-only verification."
+      },
+      "D02": {
+        "fail": {},
+        "basis": "Stable invoice identity, atomic cursor/effect or external reconciliation ledger, bounded jittered retries, quarantine and crash fixtures."
+      },
+      "D03": {
+        "fail": {
+          "c5": "Least privilege/secrets omitted."
+        },
+        "basis": "Expand/dual-write/bounded backfill/canary, workload metrics and compatible rollback; no cloud execution."
+      },
+      "D04": {
+        "fail": {},
+        "basis": "Inspected pure integer implementation; actual 18/18 contract tests."
+      },
+      "D05": {
+        "fail": {
+          "c5": "Disjoint validation/test are present; baseline omitted."
+        },
+        "basis": "Product grouping, identical transforms, clipping/positive geometry, detection/IoU metrics and no training claim."
+      },
+      "D06": {
+        "fail": {},
+        "basis": "All six seeded defects with concrete contextual repairs; no safe controls flagged. Manual review only, not exploit execution."
+      },
+      "D07": {
+        "fail": {},
+        "basis": "UTC/schema/grain, identical/conflicting duplicate policy, quarantine, idempotent publication, counts/cents and late-arrival reconciliation."
+      },
+      "D08": {
+        "fail": {},
+        "basis": "Correct 10/12 denominator, explicit population/unit, uncertainty, no causal overclaim, missingness/confounding and reproducible calculation."
+      },
+      "D09": {
+        "fail": {},
+        "basis": "Mixed-version expand-contract, explicit collisions, concurrent index/locks, restartable batches and data-aware rollback boundaries."
+      },
+      "D10": {
+        "fail": {
+          "c3": "Scaler/global step listed but accumulation boundary omitted."
+        },
+        "basis": "Optimizer/scheduler/RNG/sampler and environment identity; controlled uninterrupted/resume comparison and nondeterminism caveat."
+      },
+      "D11": {
+        "fail": {
+          "c5": "Responsive behavior is requested as a check but no concrete narrow hierarchy is specified."
+        },
+        "basis": "Labels/native semantics, keyboard/focus, persistent feedback, separated destructive action with confirmation/recovery; untested specification."
+      },
+      "D12": {
+        "fail": {},
+        "basis": "P1/P2 over B1, correct units, pinned compatibility/shim choice and discriminating delayed-operation experiment; no live claim."
+      },
+      "D13": {
+        "fail": {
+          "c4": "No interruption recovery.",
+          "c5": "No explicit error/exit behavior."
+        },
+        "basis": "Preserves edits, unique isolated branch/path and quoted arguments, read-only preflight, no mutation claim."
+      },
+      "D14": {
+        "fail": {},
+        "basis": "Serialized durable event/payload state, atomic storage, remote idempotency/status lookup, bounded reconciliation and explicit limits on exactly-once; no lease means stale-owner fencing not required for chosen protocol."
+      },
+      "D15": {
+        "fail": {},
+        "basis": "Exact new syntax, compatibility notes, copyable dry run, existing-output recovery by new directory and no invented overwrite flag."
+      },
+      "D16": {
+        "fail": {},
+        "basis": "Preallocated ring ownership/handoff, explicit overflow handling, modular timer assumption, wrap tests, hardware timing separated."
+      },
+      "D17": {
+        "fail": {
+          "c4": "Pause/resume or timestep bound omitted."
+        },
+        "basis": "Correct Godot velocity, physics schedule, normalized direction, multi-rate/collision test; no game execution."
+      },
+      "D18": {
+        "fail": {},
+        "basis": "Entity/time split, fold-local preprocessing, point-in-time features, isolated holdout, baseline and class/horizon metrics; no training claim."
+      },
+      "D19": {
+        "fail": {
+          "c4": "Does not distinguish feature drift from observed labeled degradation."
+        },
+        "basis": "Versioned model/data/schema/environment bundle, golden parity and operational gates, shadow/canary and immutable rollback."
+      },
+      "D20": {
+        "fail": {
+          "c5": "No durable retry/conflict identity policy."
+        },
+        "basis": "Virtual list/stable IDs/light rows, cleanup/stale responses, versioned offline cache with retry and lifecycle/large-list checks."
+      },
+      "D21": {
+        "fail": {
+          "c4": "Correlated-text split boundaries omitted."
+        },
+        "basis": "Explicit subtoken policy, ignored labels/masks, offsets/truncation/length tests, reconstructed word/entity metrics, no training claim."
+      },
+      "D22": {
+        "fail": {},
+        "basis": "Actual 11/11 numerical, stability, validation and gradient tests; API preserved, no executed claim in answer."
+      },
+      "D23": {
+        "fail": {},
+        "basis": "Queue trace correlation, bounded metrics, redacted logs, service/queue signals, user-impact alert/recovery checks."
+      },
+      "D24": {
+        "fail": {
+          "c5": "Resource use mentioned generically; throughput/memory and an operating objective unspecified."
+        },
+        "basis": "All arithmetic correct, small sample caveat, controlled matched warm/cold/concurrency protocol retaining errors/timeouts; no new timing claim."
+      },
+      "D25": {
+        "fail": {
+          "c3": "Dependency requirements omitted."
+        },
+        "basis": "Built wheel outside checkout, package resource APIs, compatible syntax/interpreter checks and no publication/install claim."
+      },
+      "D26": {
+        "fail": {
+          "c1": "Hashes/version/checklist do not explicitly link accepted source revision and CI.",
+          "c4": "Website/public availability order omitted."
+        },
+        "basis": "Same artifact bytes, metadata/content/isolated-install checks, partial publication recovery, explicit preparation-only scope."
+      },
+      "D27": {
+        "fail": {},
+        "basis": "Dangling owner and allocator hazards, stable transfer plus exactly-once Rust destruction, NUL/ABI/error policy, retention and sanitizer checks."
+      },
+      "D28": {
+        "fail": {},
+        "basis": "Actual checker accepts the correct function and rejects all six mutants."
+      },
+      "D29": {
+        "fail": {
+          "c1": "Tenant scoping/canonical identity omitted.",
+          "c3": "Correction mixes one committed transaction with durable PENDING/worker processing without a clear transaction boundary."
+        },
+        "basis": "Recognizes unique-key blocking and rolled-back FAILED; replay/mismatch, outbox/payment dedup and unknown outcome reconciliation with tests."
+      },
+      "D30": {
+        "fail": {},
+        "pending": [
+          "c2",
+          "c3",
+          "c4",
+          "c5",
+          "c6"
+        ],
+        "basis": "Complete offline page inspected; rendered behavior/focus/narrow width pending."
+      }
+    }
+  }
+}

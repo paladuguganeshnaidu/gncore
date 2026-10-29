@@ -1,0 +1,18 @@
+{
+  "source_inputs_matched": 1756,
+  "wheel_identical": true,
+  "artifacts": {
+    "gncore-7.0.0rc1-py3-none-any.whl": {
+      "sha256": "171e6ea8de25d9f51639782b2898e22a8fdfff73902d2ea1b90ee0aaffdf45a6",
+      "bytes": 7355982
+    },
+    "gncore-7.0.0rc1.tar.gz": {
+      "sha256": "89206ea02814aa76f04b94a7ecf2abf255b1345c558a1e89dc2a580eda6911d4",
+      "bytes": 6745591
+    },
+    "gncore-7.0.0rc1-skills.zip": {
+      "sha256": "3144d0c1b6d96eba9b375a49067018f63ee12a491747c8fd2e74f40baa966b33",
+      "bytes": 6952431
+    }
+  }
+}

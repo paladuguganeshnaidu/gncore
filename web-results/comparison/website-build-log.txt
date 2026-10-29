@@ -1,0 +1,1 @@
+{"output": "C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\phase2\\gncoresite", "pages": 41, "categories": 30, "workflows": 374, "status": "candidate-preview"}

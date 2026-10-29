@@ -1,0 +1,27 @@
+{
+  "host": "vscode",
+  "run_id": "gncore-final-followup-holdout",
+  "raw_sha256": "576f79e840482297e487d718414b9cbcefc96cf739d85ccaae388e720ca33922",
+  "cases": 3,
+  "schema_status": "case identities and basic types valid; semantic review pending",
+  "answers": [
+    {
+      "id": "H04",
+      "category": "code-build",
+      "artifact": "H04.py",
+      "answer_characters": 618
+    },
+    {
+      "id": "H24",
+      "category": "performance-engineering",
+      "artifact": null,
+      "answer_characters": 668
+    },
+    {
+      "id": "H30",
+      "category": "web-frontend",
+      "artifact": "H30.html",
+      "answer_characters": 633
+    }
+  ]
+}

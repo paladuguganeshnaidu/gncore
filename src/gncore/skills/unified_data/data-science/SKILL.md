@@ -24,6 +24,10 @@ Reconcile aggregates to source rows, test a small known fixture, inspect assumpt
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
+## Anticipate failure and verify the boundary
+
+Define the estimand, population, observational unit and denominator before calculating a percentage. Reconcile joins and counts; unequal weighting alone is not Simpson's paradox. Inspect missingness, selection and plausible confounding, and separate descriptive association from a supported causal conclusion. Quantify uncertainty at the right independent unit. Do not quote a p-value or significance result that was not calculated and checked; preserve the exact calculation and its assumptions.
+
 ## Workflow map
 
 | Workflow | Use it for |

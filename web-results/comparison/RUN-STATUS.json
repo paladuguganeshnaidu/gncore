@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "date_local": "2026-10-29",
+  "status": "Ten complete runs captured and manually reviewed; two three-case adaptive follow-ups completed; held-out UI remains unmeasured",
+  "reference_categories": 30,
+  "reference_repositories": 14,
+  "frozen_gncore_revision": "cd77d82",
+  "tasks": {
+    "categories": 30,
+    "development_cases": 30,
+    "holdout_cases": 30,
+    "rubric_checks_per_case": 6
+  },
+  "original_vscode_smoke": {
+    "outcome": "passed",
+    "request": "Without tools, workspace access, file edits, or terminal commands, reply exactly with this JSON: {\"ok\":true,\"purpose\":\"gncore-comparison-smoke\"}",
+    "response": {
+      "ok": true,
+      "purpose": "gncore-comparison-smoke"
+    },
+    "visible_selected_model": "Auto (gpt-5.6-luna)",
+    "ui_reported_input_tokens": 17030,
+    "ui_reported_output_tokens": 18,
+    "ui_reported_elapsed_seconds": 49,
+    "ui_reported_credits": 0.4,
+    "limit": "Connectivity check in the original window before moving to the isolated workbench. This is not a skill-performance score or a fixed-model guarantee."
+  },
+  "claude_cli_smoke": {
+    "installed_version": "2.1.220",
+    "attempts": 2,
+    "auth_status_reported_logged_in": true,
+    "actual_requests": "Not logged in; no model answer returned",
+    "outcome": "unavailable",
+    "scores_assigned": false,
+    "action": "Use the existing IDE sessions instead; no account settings changed and no authentication automated."
+  },
+  "publication": "held",
+  "development_completed_runs": 4,
+  "development_case_responses": 120,
+  "holdout_captured_runs": [
+    "antigravity-gncore-after-holdout",
+    "antigravity-gncore-before-holdout",
+    "antigravity-reference-holdout",
+    "vscode-gncore-after-holdout",
+    "vscode-gncore-before-holdout",
+    "vscode-reference-holdout"
+  ],
+  "browser_holdout_status": "Not measured: browser access still disabled on final recheck",
+  "package_tests": {
+    "full_suite": "148 passed,1 skipped outside sync folder",
+    "synced_folder": "147 passed,1 failed,1 skipped on WinError5",
+    "log": "package-final-outside-sync-tests.txt",
+    "skip_reason": "Windows account cannot create symlinks"
+  },
+  "candidate_correction": "Existing frontend modes restored; final code-build/performance/frontend entrypoints separately tested on known tasks; other27 hashes match initial revised trial",
+  "adaptive_followup_runs": 2,
+  "total_saved_answers": 306,
+  "release_artifacts": "Verified local wheel, source archive and portable ZIP in .work/benchmark-v2/accepted-release",
+  "website": "42-page local preview checked; commit080915e; not deployed"
+}

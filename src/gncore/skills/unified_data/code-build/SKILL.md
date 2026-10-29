@@ -24,6 +24,10 @@ Run the relevant reproduction, unit/integration checks, build or type checks. Co
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
+## Anticipate failure and verify the boundary
+
+Turn the behavior contract into a small counterexample before patching. Preserve API, exception types, units and mutation behavior; check language-specific type traps and exact arithmetic where totals matter. Keep the change local, then verify ordinary, zero, extreme and invalid inputs with an independent oracle. A passing example or explanation is insufficient evidence for general correctness. When a repair allocates or ranks quantities, test mixed exact and fractional shares as well as ties; conservation or a passing happy path alone does not prove the ordering rule.
+
 ## Workflow map
 
 | Workflow | Use it for |

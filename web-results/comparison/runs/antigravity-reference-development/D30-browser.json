@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "name": "initially_disabled",
+      "passed": true
+    },
+    {
+      "name": "invalid_email_disabled",
+      "passed": true
+    },
+    {
+      "name": "valid_inputs_enable",
+      "passed": true
+    },
+    {
+      "name": "selected_values_confirmation",
+      "passed": true
+    },
+    {
+      "name": "narrow_no_overflow",
+      "passed": true,
+      "observed": {
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "name": "radio_focus_visible",
+      "passed": true,
+      "evidence": "Keyboard tab focus produced a visible rust outline around 14:00 text and native radio focus."
+    }
+  ],
+  "method": "Actual browser interactions; no screen-reader audit.",
+  "advisory": "Offline prototype says an email has been sent, although no send capability exists."
+}

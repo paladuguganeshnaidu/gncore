@@ -1,0 +1,16 @@
+{
+  "phase": "Adaptive follow-up on known tasks, not unseen holdout",
+  "method": "Single unblinded evaluator; final three entrypoints only; frozen tests and exploratory tests remain separate",
+  "reviews": {
+    "antigravity-gncore-final-followup-holdout": {
+      "H04": {"fail": {}, "basis": "Inspected exact quotient/remainder allocation and stable tie order; actual frozen and exploratory test logs attached."},
+      "H24": {"fail": {"c5": "Memory and concurrent load included, but explicit throughput and user-facing operating objective remain incomplete."}, "basis": "Correct means22.4/28, medians8/5,p9580/120 and25%/50% regressions; matched hardware/warmup/query protocol retains timeouts/cold starts; no new benchmark claim."},
+      "H30": {"pending": ["c2", "c3", "c4", "c5", "c6"], "fail": {}, "basis": "Complete offline industrial/Swiss page with local-session confirmation, required controls and visible-focus CSS inspected. Rendered checks remain unmeasured."}
+    },
+    "vscode-gncore-final-followup-holdout": {
+      "H04": {"fail": {}, "basis": "Inspected divmod and stable descending remainder order; mixed fractional shares explicitly proposed; actual frozen and exploratory test logs attached."},
+      "H24": {"fail": {"c5": "Memory objective and tail latency included, but throughput omitted."}, "basis": "Correct means22.4/28, medians8/5,p9580/120 and25%/50% regressions; complete paired data, matched warmup/concurrency and no executed benchmark claim."},
+      "H30": {"pending": ["c2", "c3", "c4", "c5", "c6"], "fail": {}, "basis": "Complete offline signal-room page with local confirmation, native controls and focus CSS inspected. Actual layout/focus/gating still require browser measurement."}
+    }
+  }
+}

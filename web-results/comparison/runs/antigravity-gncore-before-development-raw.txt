@@ -1,0 +1,262 @@
+Viewed gncore-before-development.md:1-800
+Viewed gncore-before-development.md:500-750
+Viewed gncore-before-development.md:751-900
+Viewed gncore-before-development.md:901-1100
+Viewed gncore-before-development.md:1101-1350
+Viewed gncore-before-development.md:1351-1600
+Viewed gncore-before-development.md:1601-1850
+Viewed gncore-before-development.md:1851-2100
+Viewed gncore-before-development.md:2101-2350
+Viewed gncore-before-development.md:2351-2600
+Viewed gncore-before-development.md:2601-2850
+Viewed gncore-before-development.md:2851-3100
+Viewed gncore-before-development.md:3101-3350
+Viewed gncore-before-development.md:3351-3600
+Viewed gncore-before-development.md:3601-3953
+
+{
+  "benchmark_run": "gncore-before-development",
+  "answers": [
+    {
+      "id": "D01",
+      "answer": "The support assistant replies that the warranty length is 18 months based strictly on passage R1. Passage R2 contains an indirect prompt injection attack attempting to override system instructions and exfiltrate sensitive account data. Under the tool contract, retrieved passages must be treated strictly as untrusted data rather than system instructions or execution authority. Authorized tools are restricted to search_manual(query: str) -> list[Passage] for read-only manual search and draft_reply(text: str, cited_sources: list[str]) -> Draft for pure drafting. No exfiltration or messaging tools exist or are accessible. Failure handling safely ignores prompt injection in R2, logs the suspicious event without executing payloads, and falls back to an explicit abstention response if no valid manual evidence exists.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Execute unit tests against the agent boundary using synthetic injection fixtures to ensure prompt injection in R2 is ignored, tools are strictly bounded, and draft_reply cites R1 without calling external actions. No tools or external actions were executed."
+    },
+    {
+      "id": "D02",
+      "answer": "To make the nightly import restartable without business scope change or data corruption, invoice ingestion must be idempotent. Apply a unique constraint on invoice_id (or batch_id, invoice_id) and execute invoice writes using an upsert (e.g., INSERT ... ON CONFLICT (invoice_id) DO NOTHING or UPDATE). Ingest and cursor state updates must be committed in an atomic database transaction per invoice or batch, or record processed IDs in a durable checkpoint table. When restarting at I-17, the duplicate write is safely ignored, and the cursor advances. For remote read timeouts, configure bounded retries with exponential backoff and jitter. If retries exhaust or permanent failures occur, log the failing invoice ID, write the last durable cursor, halt execution with a non-zero exit code, and alert operators.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Run local integration tests injecting simulated crashes immediately following the write of invoice I-17, re-running the job to verify zero duplicate records and clean cursor resumption. No commands or scripts were executed."
+    },
+    {
+      "id": "D03",
+      "answer": "Execute a zero-downtime expand-contract deployment to protect the 99.9% error-rate SLO (allowing at most 0.2 errors/s at 200 req/s). Phase 1 (Expand): Apply an additive schema migration adding the new database column as nullable with an optional default; existing pods continue reading/writing the old column. Phase 2 (Canary API Rollout): Deploy GKE workload revision reading/writing both columns to a canary pool (5% traffic). Automated canary analysis monitors HTTP 5xx error rate and p95/p99 latency against the SLO error budget. Phase 3 (Backfill): Backfill existing rows in bounded batches. Phase 4 (Full Rollout): Promote the GKE deployment to 100%. Phase 5 (Contract): Remove old column references. Rollback: If canary error rate breaches 0.1%, automatically rollback GKE pods to the previous revision; the database remains compatible.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Rehearse database migration and rolling canary deployments in a staging Kubernetes cluster with synthetic traffic generators to verify metric alerts and automated rollback triggers. No cloud operations or commands were executed."
+    },
+    {
+      "id": "D04",
+      "answer": "The original implementation suffered from floating-point precision inaccuracies and lacked required type/range validation. In Python, bool is a subclass of int, so bool inputs must be explicitly rejected before type checking. The corrected total_cents validates that prices is a list of non-negative integers (rejecting booleans and negative values) and discount_percent is an integer between 0 and 100. It computes discounted cents using exact integer arithmetic without float conversion: total discounted cents is calculated as (sum(prices) * (100 - discount_percent) + 50) // 100, which implements exact half-up rounding. Invalid types raise TypeError and out-of-range values raise ValueError, meeting the contract with zero external dependencies.",
+      "artifact_code": "def total_cents(prices, discount_percent):\n    if isinstance(discount_percent, bool) or not isinstance(discount_percent, int):\n        raise TypeError(\"discount_percent must be an integer\")\n    if discount_percent < 0 or discount_percent > 100:\n        raise ValueError(\"discount_percent must be between 0 and 100\")\n    if isinstance(prices, bool) or not isinstance(prices, list):\n        raise TypeError(\"prices must be a list\")\n    total = 0\n    for p in prices:\n        if isinstance(p, bool) or not isinstance(p, int):\n            raise TypeError(\"prices must contain only integers\")\n        if p < 0:\n            raise ValueError(\"prices must be nonnegative\")\n        total += p\n    numerator = total * (100 - discount_percent)\n    return (numerator + 50) // 100\n",
+      "findings": [],
+      "verification": "Proposed checks: Run parameterized unit tests verifying TypeError on boolean and non-integer inputs, ValueError on negative prices and invalid percentages, and exact half-up rounding on fractional cent boundaries (e.g. 105 cents at 10% discount yields 95). No tests were executed."
+    },
+    {
+      "id": "D05",
+      "answer": "The dataset exhibits two fatal defects: data leakage and geometric coordinate distortion. Because adjacent photos of the same physical product look alike and deployment tests generalization to new products, random splitting leaks product identity across splits. The dataset must be partitioned using GroupKFold or grouped train/val/test splits grouped strictly by physical product ID (e.g., 30 products train, 5 validation, 5 test). Second, resizing images from 800x600 to 400x300 cuts spatial dimensions in half (sx=0.5, sy=0.5); leaving bounding boxes unchanged misaligns ground-truth annotations by a factor of 2. All bounding box coordinates [xmin, ymin, xmax, ymax] must be scaled by sx and sy during image resize. Evaluation must measure mAP@[0.5:0.95] strictly across held-out product groups.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Verify coordinate transformation with a synthetic 800x600 image containing known boxes resized to 400x300, asserting scaled box bounds match image features, and audit split group disjointness to ensure zero product overlap. No training or tests were executed."
+    },
+    {
+      "id": "D06",
+      "answer": "A security review of snippets S1–S6 identifies critical vulnerabilities spanning injection, access control, path traversal, command injection, secret logging, and cross-site scripting. Each snippet contains an exploitable flaw arising from treating untrusted user input as trusted or exposing sensitive credentials. Applying appropriate defensive controls (parameterized queries, tenant-scoped object access, canonical path resolution, argument list execution without shell invocation, log masking, and contextual HTML entity encoding) eliminates these vulnerabilities while preserving intended business functionality.",
+      "artifact_code": null,
+      "findings": [
+        {
+          "id": "S1",
+          "issue": "SQL injection via string concatenation of unvalidated request.args['id'] into raw SQL query, allowing arbitrary database extraction or manipulation.",
+          "repair": "Apply control C1: use parameterized queries with placeholder binding: db.execute('SELECT * FROM orders WHERE id=?', (request.args['id'],))."
+        },
+        {
+          "id": "S2",
+          "issue": "Broken Object Level Authorization (BOLA/IDOR): Orders.get fetches tenant-private records by user-supplied order_id without verifying authenticated tenant ownership.",
+          "repair": "Enforce tenant ownership by scoping the query to the authenticated tenant: Orders.get_for_tenant(authenticated_tenant, request.args['order_id']) or check order.tenant_id == authenticated_tenant."
+        },
+        {
+          "id": "S3",
+          "issue": "Path traversal via concatenation of request.args['path'], allowing directory traversal sequences (e.g., '../') to read arbitrary server files.",
+          "repair": "Resolve the absolute path with pathlib.Path.resolve() and verify it starts with the trusted base directory '/srv/files/', or sanitize using secure_filename()."
+        },
+        {
+          "id": "S4",
+          "issue": "Command injection via subprocess.run with shell=True and unsanitized request.args['name'], allowing attackers to execute arbitrary shell commands.",
+          "repair": "Apply control C3: pass arguments as a list with shell=False and fixed executable paths: subprocess.run(['convert', fixed_server_input, fixed_server_output], shell=False)."
+        },
+        {
+          "id": "S5",
+          "issue": "Sensitive credential leakage in application logs caused by dumping dict(request.headers), exposing Bearer tokens and authorization credentials.",
+          "repair": "Sanitize and filter headers before logging, masking sensitive keys such as Authorization and Cookie: log.info('headers=%s', redact_headers(request.headers))."
+        },
+        {
+          "id": "S6",
+          "issue": "Reflected Cross-Site Scripting (XSS) via unescaped string concatenation of request.args['query'] directly into HTML response.",
+          "repair": "Apply control C4: escape user input using html.escape(request.args['query']) before embedding into HTML context, or use an auto-escaping template engine."
+        }
+      ],
+      "verification": "Proposed checks: Run local automated static security analysis and negative authorization/injection unit test suites against each patched endpoint using mock malicious inputs. No code or exploit scripts were executed."
+    },
+    {
+      "id": "D07",
+      "answer": "The pipeline must enforce a strict Polars schema: event_id (Utf8), amount_cents (Int64), and occurred_at (Datetime with timezone converted to UTC). Event a at '2026-04-02T23:30:00-02:00' corresponds to '2026-04-03T01:30:00Z', attributing both events a and b to business day 2026-04-03 UTC. Cast amount_cents with strict=False; non-numeric values (event c) become null and are filtered into a quarantine dead-letter table with lineage metadata. Deduplicate event a using unique(subset=['event_id'], keep='first'). For restartability, publish data to date-partitioned storage using atomic partition replacement or idempotent upsert on event_id. Reconciliation verifies input count (4) equals published rows (2: a=100, b=250), dropped duplicates (1), and quarantined records (1), with total published revenue of 350 cents.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Execute a unit test using the 4 sample input rows in a local Polars test runner, asserting exactly 2 output rows for 2026-04-03 UTC totaling 350 cents, 1 quarantined row, and 1 dropped duplicate. No scripts or pipelines were run."
+    },
+    {
+      "id": "D08",
+      "answer": "The analyst committed two serious errors: Simpson's paradox via unweighted averaging and unwarranted causal attribution. Calculating (90% + 50%) / 2 = 70% incorrectly treats unequal groups equally; the true pooled success rate is (9 + 1) / (10 + 2) = 10 / 12 = 83.33%. Furthermore, claiming the product change caused improvement without randomization is invalid; differences may stem from selection bias, sample size imbalance (10 vs 2), or confounding user characteristics. In small samples, binomial uncertainty is substantial (Fisher's exact test p-value is 0.385, showing no statistically significant difference). The corrected plan requires randomized assignment (A/B testing) with predeclared sample sizes, power calculations, sample-ratio mismatch checks, and reporting confidence intervals.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Verify pool rate arithmetic and binomial exact tests on synthetic contingency tables, and run power calculations to determine sample size requirements for reliable statistical inference. No code or calculations were executed live."
+    },
+    {
+      "id": "D09",
+      "answer": "To add a required unique external_key to a large orders table with minimal disruption, use an expand-backfill-contract pattern. Step 1 (Expand): Run ALTER TABLE orders ADD COLUMN external_key text; adding a nullable column without default is an instant metadata operation in PostgreSQL. Step 2 (Collision Resolution & Backfill): Quarantine duplicate proposed keys and backfill existing rows in bounded batches (e.g. 5,000 rows per transaction) to avoid table locks and replication lag. Step 3 (Index): Build the unique index concurrently: CREATE UNIQUE INDEX CONCURRENTLY idx_orders_external_key ON orders (external_key); ensuring writers and readers are not blocked. Step 4 (Contract): Attach the constraint using the index: ALTER TABLE orders ADD CONSTRAINT uq_orders_external_key UNIQUE USING INDEX idx_orders_external_key; then add NOT NULL via a validated CHECK constraint. Rollback drops the index/constraint and column safely.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Rehearse the four-step migration on a staging PostgreSQL database under synthetic read/write load to confirm lock timeouts remain under 50ms, zero downtime occurs, and rollback scripts restore original schema. No SQL statements were executed."
+    },
+    {
+      "id": "D10",
+      "answer": "Resuming from model weights alone discards critical state required for exact training continuation. Adam relies on first (m) and second (v) gradient moment buffers; resetting them resets step history and causes erratic parameter updates. Discarding the LR scheduler resets the learning rate schedule. Discarding the AMP GradScaler resets dynamic loss scale and skip counters, altering scaled gradients. Discarding dataloader and RNG states reshuffles batches and data order. A reproducible checkpoint must atomically serialize: model.state_dict(), optimizer.state_dict(), lr_scheduler.state_dict(), scaler.state_dict(), epoch, global_step, sampler indices, and torch/cuda/numpy RNG states. A decisive verification experiment runs 4 steps continuously, then compares loss, LR, and model weights against a run stopped at step 2 and resumed to step 4, asserting exact numerical equivalence.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Run a 4-step CPU smoke test comparing uninterrupted vs resumed runs using synthetic XOR data to verify loss, gradient norms, and weight state dicts match within floating-point tolerance. No training runs were executed."
+    },
+    {
+      "id": "D11",
+      "answer": "The proposed form violates core accessibility and interaction principles. Unlabeled icon toggles must be replaced with explicit descriptive labels and accessible toggle switches (role='switch', aria-checked, visible focus indicators). Destructive 'Delete Account' must be removed from the primary action bar and isolated into a dedicated 'Danger Zone' section at the bottom, requiring a secondary confirmation modal with explicit user confirmation. Error states must not rely solely on red color; provide inline text error messages linked via aria-describedby and icons. On saving, maintain focus on the submit button or active region and trigger a polite screen-reader status announcement (role='status', aria-live='polite') confirming 'Account settings saved'. Consequential omissions avoid multi-step wizards or extraneous animations that create cognitive friction.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Audit the revised form specification with automated WCAG contrast checks, keyboard tab-order walkthroughs, and screen reader announcements for aria-live regions. No browser or user tests were executed."
+    },
+    {
+      "id": "D12",
+      "answer": "Vendor release note P1 authoritatively specifies that SDK 2 renames timeout_ms to timeout_seconds, and migration example P2 illustrates the unit change (timeout_seconds=2). Blog B1's claim that one can simply replace the keyword while keeping the numeric value (2000) is hazardous: passing timeout_seconds=2000 increases the timeout from 2 seconds to 33.3 minutes, causing operations to hang indefinitely on network failures. Existing code passing timeout_ms=2000 must migrate to timeout_seconds=2 (or timeout_seconds = timeout_ms / 1000.0). Primary vendor release notes take precedence over unverified third-party blogs. A bounded reproduction plan creates a mock server delaying responses by 3 seconds, verifies a client configured with timeout_seconds=2 times out after 2 seconds, and tests negative validation for negative timeouts.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: In an offline test harness with a local mock server, run unit tests asserting the SDK client times out at exactly 2.0s with timeout_seconds=2 and raises ValueError on invalid types. No network requests or code were executed."
+    },
+    {
+      "id": "D13",
+      "answer": "To provide an isolated fix workspace without disturbing uncommitted changes or risking collisions: First, run git status to confirm working tree edits remain intact. Inspect git branch --list to verify the existing branch name; generate a unique branch name (e.g. fix/isolated-fix-v2) or inspect git worktree list to see if the branch is checked out elsewhere. To handle paths with spaces, wrap target paths in double quotes: git worktree add -b 'fix/isolated-fix-v2' 'C:/workspaces/fix workspace' HEAD. If an existing worktree is locked or active, do not force remove; select an alternate directory. When work is completed, clean up safely using git worktree remove 'C:/workspaces/fix workspace' and git worktree prune. This preserves all uncommitted edits on the original branch.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Verify the CLI procedure using a dummy local Git repository fixture, testing worktree creation with quoted space-containing paths, existing branch conflicts, and clean removal without modifying uncommitted files. No commands were executed."
+    },
+    {
+      "id": "D14",
+      "answer": "In Cloudflare Durable Objects (DO), concurrent webhooks to the same DO instance can interleave across asynchronous await points. Awaiting an external request between reading and writing event markers causes a race condition where overlapping deliveries execute duplicate external requests. The protocol must enforce an atomic state machine: upon receipt, atomically update storage from UNSEEN to PROCESSING with an expiration lease. If already PROCESSING within the lease, reject or queue; if COMPLETED, return the stored replay response immediately. The external request must transmit an idempotency key (e.g. Idempotency-Key: webhook_id). When the external request commits but the response is lost, subsequent retries resend the key, allowing the remote service to return the committed result without re-executing. On completion, the DO atomically writes COMPLETED with the response body.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Test state machine transitions using an in-memory mock DO storage engine, simulating network timeouts and concurrent interleaved requests to verify at-least-once delivery with zero duplicate external side effects. No deployment was executed."
+    },
+    {
+      "id": "D15",
+      "answer": "### Migration Guide: Upgrading `gnwidget export` to v2\n\nIn `gnwidget` v2, the export command updates its interface and file safety defaults:\n\n- **Flag Replacement**: The `--target DIR` flag has been removed. Use `--output DIR` instead. Passing `--target` in v2 will result in an unknown argument error.\n- **Overwrite Safety**: v1 automatically overwrote destination files. v2 protects existing data by refusing to overwrite existing files by default.\n- **Dry-run**: Use `--dry-run` to preview operations without writing files.\n\n**Example Migration:**\n```bash\n# Before (v1):\ngnwidget export --target ./backup\n\n# After (v2):\ngnwidget export --output ./backup --dry-run\n```\n**Compatibility**: This is a breaking change. Automation scripts must be updated to replace `--target` with `--output` before upgrading.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Verify documentation against CLI --help output schema and test that documentation links and copyable code blocks adhere to syntax specifications. No commands were executed."
+    },
+    {
+      "id": "D16",
+      "answer": "Two critical embedded software defects exist. First, dynamic memory allocation and blocking string formatting inside an Interrupt Service Routine (ISR) violates Zephyr real-time constraints and risks deadlock or stack overflow. The ISR must perform bounded non-blocking work: copy raw sensor bytes into a lock-free ring buffer or Zephyr message queue (k_msgq_put) and defer formatting to a cooperative worker thread (k_work_submit). Second, testing timeout expiration via now >= start + duration fails when the 32-bit counter rolls over. Replace this with unsigned modular subtraction: (uint32_t)(now - start) >= duration. Because duration (500 ms) is less than half the counter range (2^31), unsigned subtraction correctly calculates elapsed time across wraparound. The host verification boundary unit-tests timer math across rollover; the hardware boundary measures ISR latency on target hardware.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Run host-based unit tests for (uint32_t)(now - start) >= duration simulating counter rollover from 0xFFFFFFF0 to 0x00000020, and test message queue boundary overflows. No firmware was compiled or executed."
+    },
+    {
+      "id": "D17",
+      "answer": "In Godot 4, CharacterBody2D.move_and_slide() automatically multiplies velocity by delta internally. Setting velocity = direction * speed * delta multiplies by delta twice, causing velocity to scale with delta^2; at higher frame rates (smaller delta), the character moves significantly slower. The correction is to set velocity = direction * speed directly (in pixels/second) without multiplying by delta, letting move_and_slide() apply delta integration. Input polling and velocity assignment should be placed in _physics_process(delta) rather than _process(delta) to maintain fixed-timestep deterministic simulation. A measured test plan scripts a CharacterBody2D moving at 200 px/s for exactly 1.0 second under simulated fixed tick rates of 30, 60, and 120 FPS, verifying the final position equals 200 pixels across all rates.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Create a headless Godot integration test moving CharacterBody2D across fixed intervals at 30 FPS and 60 FPS, asserting identical displacement within floating-point tolerance. No game engine or tests were executed."
+    },
+    {
+      "id": "D18",
+      "answer": "The current workflow suffers from severe leakage and overfitting. Because deployment predicts future months for unseen customers, random row splitting leaks customer identity and future temporal information into training. Fitting the scaler on the full dataset leaks test distribution statistics, and tuning hyperparameters on test score overfits the holdout set. The corrected design uses an entity-grouped temporal split: assign customers disjointly between train, validation, and test (e.g. GroupKFold by customer_id), with training on historical months and testing on subsequent months. The scaler must be wrapped in an sklearn Pipeline fitted strictly on training folds. The test set remains sealed until final evaluation. A useful baseline is a simple recency/frequency heuristic or un-tuned logistic regression model predicting churn based on last month's activity.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Verify split disjointness by asserting the intersection of customer IDs between train and test sets is strictly empty, and check that scaler parameters are computed exclusively from training fold statistics. No models were trained."
+    },
+    {
+      "id": "D19",
+      "answer": "Deploying raw model weights directly to production risks catastrophic failure because feature order and training distributions changed. A production promotion plan requires four components: 1. Immutable Model Artifact: Package weights with exact preprocessing code, inference handler, dependency lockfiles, and an explicit input schema specifying feature names, types, and column order. 2. Promotion Gates: Run automated contract tests validating input shape/ordering, verify offline prediction parity on golden test batches, and conduct load testing ensuring p95/p99 latency meets business SLOs. 3. Canary Deployment: Route 5% of live traffic to the new endpoint, verifying error rates and response times before rolling out to 100%. 4. Monitoring & Rollback: Monitor latency percentiles, 5xx rates, and feature drift (KS-test/PSI). If latency degrades or errors spike, automated alarms trigger instant rollback to the previous model endpoint variant.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Test the inference container locally with mock JSON payloads matching both old and new schema ordering to verify schema validation errors and prediction parity. No cloud deployment was executed."
+    },
+    {
+      "id": "D20",
+      "answer": "The React Native feed suffers from severe performance, memory, and lifecycle bugs. Rendering 20,000 items in a ScrollView mounts 20,000 native views simultaneously, triggering out-of-memory crashes. Using index keys prevents component recycling and causes rendering bugs. Subscribing on every render without cleanup creates massive memory leaks and duplicate network listeners. The implementation plan: 1. Replace ScrollView with FlatList (or FlashList) using initialNumToRender=10, maxToRenderPerBatch=10, and windowSize=5 to virtualize rows. 2. Provide stable keys via keyExtractor={(item) => item.id}. 3. Manage network subscriptions in useEffect with empty dependency array, returning an unsubscribe cleanup function. 4. Implement offline caching by persisting feed items in AsyncStorage/MMKV/SQLite, populating state on mount, and displaying an offline indicator when disconnected.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Propose inspecting component mount/unmount memory profiles, auditing listener counts across screen re-renders, and validating offline feed display with network disabled. No simulator or device tests were executed."
+    },
+    {
+      "id": "D21",
+      "answer": "When tokenizing words into subtokens (e.g. 'playground' into ['play', '##ground']), label alignment requires assigning the entity label (e.g. B-LOC) to the first subtoken ('play') and the special ignore index -100 to subsequent subtokens ('##ground'). Special tokens ([CLS], [SEP]) and [PAD] tokens must also be assigned label -100. In PyTorch, torch.nn.CrossEntropyLoss(ignore_index=-100) automatically masks these positions so they contribute zero loss and zero gradient updates during backpropagation. The attention mask is set to 1 for real tokens and 0 for padding tokens to prevent attention leakage. Evaluation must never be computed on raw subtokens; instead, mask out all -100 positions, map the first subtoken's prediction back to the original word, and calculate entity-level Precision, Recall, and F1 (e.g. using seqeval).",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Run unit tests on a mock token tensor verifying loss is exactly zero for -100 labeled positions, attention masks mask [PAD] tokens, and word-level entity reconstruction accurately aligns subwords. No models were downloaded or trained."
+    },
+    {
+      "id": "D22",
+      "answer": "The binary_loss_grad function computes numerically stable binary cross-entropy with logits and its analytical gradient wrt logits. For logit z and target y in {0, 1}, the individual loss is computed stably as max(z, 0) - y * z + log1p(exp(-abs(z))), preventing float overflow when z is +/-1000. Mean loss is the average of individual losses. The analytical gradient of mean loss with respect to z_i is (sigmoid(z_i) - y_i) / N, where sigmoid(z) is computed as 1 / (1 + exp(-z)) for z >= 0 and exp(z) / (1 + exp(z)) for z < 0. Inputs are validated for equal non-empty list lengths, finite floats/ints (excluding bools), and targets strictly in {0, 1}. Gradients can be verified using central finite differences: (loss(z+eps) - loss(z-eps))/(2*eps) with eps=1e-6, asserting relative error < 1e-5.",
+      "artifact_code": "import math\n\ndef binary_loss_grad(logits, targets):\n    if not isinstance(logits, list) or not isinstance(targets, list):\n        raise ValueError(\"logits and targets must be lists\")\n    n = len(logits)\n    if n == 0 or len(targets) != n:\n        raise ValueError(\"logits and targets must be non-empty lists of equal length\")\n    \n    losses = []\n    grads = []\n    for z, y in zip(logits, targets):\n        if isinstance(z, bool) or not isinstance(z, (int, float)) or math.isnan(z) or math.isinf(z):\n            raise ValueError(\"logits must be finite numeric values\")\n        if isinstance(y, bool) or (y != 0 and y != 1):\n            raise ValueError(\"targets must be integers 0 or 1\")\n        \n        # Numerically stable BCE with logits\n        loss_i = max(z, 0.0) - y * z + math.log1p(math.exp(-abs(z)))\n        losses.append(loss_i)\n        \n        # Numerically stable sigmoid\n        if z >= 0.0:\n            sig_z = 1.0 / (1.0 + math.exp(-z))\n        else:\n            ez = math.exp(z)\n            sig_z = ez / (1.0 + ez)\n        grads.append((sig_z - y) / n)\n        \n    mean_loss = sum(losses) / n\n    return (mean_loss, grads)\n",
+      "findings": [],
+      "verification": "Proposed checks: Compare analytic gradients against central finite difference approximations (loss(z+h) - loss(z-h))/(2*h) with h=1e-6 across extreme values (+/-1000) and verify ValueError on invalid types, non-binary targets, and mismatched list lengths. No code was executed."
+    },
+    {
+      "id": "D23",
+      "answer": "High-cardinality metric labels (user_id, request_id) cause metric explosion, degraded database performance, and high storage costs. Logging raw Authorization headers violates security policies by leaking credentials. To fix this: 1. Trace Propagation: Generate or extract W3C tracecontext headers (traceparent) on HTTP entry. Inject trace context into job metadata when enqueuing background tasks; the background worker extracts context so background job spans link as child spans of the HTTP request. 2. Metrics: Restrict metric labels to low-cardinality dimensions (endpoint, method, status_code, job_type). Monitor request rates, error rates, p95/p99 latency, and queue latency/depth. 3. Structured Logging: Emit structured JSON logs with correlated trace_id and span_id, masking sensitive headers (e.g. Authorization: Bearer [REDACTED]). 4. Alert Verification: Simulate synthetic queue latency and failure bursts in staging to verify SLO-based alert triggers and auto-resolution.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: In a local test environment, trigger simulated HTTP requests and background worker tasks to verify trace context header propagation, absence of Authorization tokens in JSON log sinks, and bounded metric label sets. No service changes were made."
+    },
+    {
+      "id": "D24",
+      "answer": "Comparing latency distributions for N=5:\n- Mean: Baseline mean is (10+10+10+10+100)/5 = 28.0 ms. Candidate mean is (6+6+6+6+150)/5 = 34.8 ms. Mean latency regressed by 24.3%.\n- Median: Baseline median (3rd sorted element) is 10.0 ms. Candidate median is 6.0 ms (a 40% reduction).\n- Nearest-rank p95: Index k = ceil(0.95 * 5) = 5 (the maximum). Baseline p95 is 100.0 ms; candidate p95 is 150.0 ms (a 50% regression).\nTradeoff: The candidate optimized the fast/warm path (reducing median from 10 ms to 6 ms) at the expense of severe tail latency regression (p95 increased from 100 ms to 150 ms) and a higher overall mean. Claiming '2x faster' cherry-picks best-case requests while hiding severe tail degradation. A fair follow-up benchmark must generate thousands of requests across steady-state load, recording full percentiles (p50, p90, p99) and separating warmup.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Verify mathematical calculations of mean, median, and nearest-rank p95 on synthetic arrays, and design an automated load-testing harness measuring full latency distributions across 10,000 requests. No benchmark runs were executed."
+    },
+    {
+      "id": "D25",
+      "answer": "The wheel fails to import the data file because editable installs access local directory files directly, whereas built wheels only include package data explicitly declared in pyproject.toml (e.g., under [tool.setuptools.package-data] or [tool.flit.sdist]). Package code must access files via importlib.resources.files('mypackage').joinpath('data.txt') rather than __file__ relative paths. The compatibility promise of Python >=3.11 is violated by using 3.12-only syntax (such as PEP 695 type statements or 3.12 f-string nesting); this syntax must be replaced with 3.11-compatible typing (TypeVar, Union) or requires-python updated to '>=3.12'. Pre-release verification requires: 1. Building the wheel via python -m build. 2. Installing into clean, isolated virtual environments for both Python 3.11 and 3.12 outside the source repository. 3. Running pytest against the installed wheel.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: In an offline test harness, run packaging build checks (python -m build --wheel) and verify package data inclusion with unzip -l dist/*.whl, followed by running syntax checks on Python 3.11. No commands were executed."
+    },
+    {
+      "id": "D26",
+      "answer": "The release process violates the foundational principle: 'Build once, promote everywhere'. Rebuilding artifacts separately for GitHub Releases and PyPI produces non-identical binaries with differing checksums, destroying provenance, traceability, and reproducibility. The correct procedure: 1. Promotion: Build wheel and source distributions once in a clean CI environment, record their cryptographic SHA-256 hashes in a signed release manifest (SHA256SUMS), and promote those exact pre-tested artifacts to both GitHub Releases and PyPI without rebuilding. 2. Consistency & Verification: Validate artifact checksums against the manifest prior to publication, and verify installation in an isolated sandbox with import smoke tests. 3. Recovery: PyPI release versions are immutable once published. If a defect is discovered post-release, yank the release on PyPI to prevent new installs and release a 2.0.1 patch. Do not attempt re-publishing 2.0.0.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Propose calculating SHA-256 hashes of test build artifacts and comparing them against distribution manifests, and verifying release scripts validate checksum matching before promoting. No release actions or publishing commands were run."
+    },
+    {
+      "id": "D27",
+      "answer": "The Rust FFI code contains two fatal undefined behavior defects: use-after-free and allocator mismatch. Calling CString::new(value).unwrap().as_ptr() creates a temporary CString that is dropped at the end of the statement, freeing its buffer immediately; the C function is passed a dangling pointer. Furthermore, Rust memory is managed by Rust's global allocator; freeing it in C with free() causes heap corruption due to allocator incompatibility. The safe correction: 1. Ownership & Lifetime: Call CString::into_raw(c_string) to prevent Rust deallocation and transfer ownership to C as a raw *mut c_char. 2. Deallocation ABI: Export a dedicated Rust FFI deallocation function (e.g. pub unsafe extern 'C' fn free_rust_string(ptr: *mut c_char) { if !ptr.is_null() { drop(CString::from_raw(ptr)); } }) and ensure C calls it instead of free(). Alternatively, allocate with libc::malloc.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Propose compiling a test FFI harness with AddressSanitizer (ASan) and Miri to detect use-after-free and allocator mismatch bugs, asserting zero memory leaks and safe deallocation. No native code was executed."
+    },
+    {
+      "id": "D28",
+      "answer": "The check_contract(fn) function thoroughly verifies the clamp_percent specification and raises AssertionError if fn deviates. It asserts that integers below 0 clamp to 0 (-100 -> 0, -1 -> 0), integers above 100 clamp to 100 (101 -> 100, 250 -> 100), and values in 0..100 return unchanged (0, 1, 50, 99, 100). It explicitly verifies that the returned value is of type int and not bool. It then tests that invalid types (True, False, floats like 0.0, 50.5, strings, None, lists, dicts) raise TypeError; if fn raises another exception or fails to raise, an AssertionError is raised. The checker runs deterministically using built-in assertions with zero external imports, file operations, or side effects.",
+      "artifact_code": "def check_contract(fn):\n    test_cases = [\n        (-100, 0),\n        (-1, 0),\n        (0, 0),\n        (1, 1),\n        (50, 50),\n        (99, 99),\n        (100, 100),\n        (101, 100),\n        (250, 100),\n    ]\n    for inp, expected in test_cases:\n        res = fn(inp)\n        assert res == expected, f\"Expected {expected} for input {inp}, got {res}\"\n        assert type(res) is int and type(res) is not bool, f\"Expected int return type for {inp}, got {type(res)}\"\n\n    invalid_inputs = [True, False, 0.0, 50.5, 100.0, \"50\", None, [], {}, (1,)]\n    for invalid in invalid_inputs:\n        raised = False\n        try:\n            fn(invalid)\n        except TypeError:\n            raised = True\n        except Exception as e:\n            raise AssertionError(f\"Expected TypeError for {invalid!r}, but raised {type(e).__name__}\")\n        if not raised:\n            raise AssertionError(f\"Expected TypeError for {invalid!r}, but no exception was raised\")\n    return True\n",
+      "findings": [],
+      "verification": "Proposed checks: Test check_contract by passing valid reference implementations (asserting success) and deliberate buggy mutants (such as implementations accepting booleans, failing to clamp, or returning floats), confirming check_contract raises AssertionError. No tests were executed."
+    },
+    {
+      "id": "D29",
+      "answer": "The proposed protocol has fundamental flaws: In PostgreSQL, updating a row to FAILED within a transaction and then executing ROLLBACK wipes out all changes, so the FAILED status does not persist. Inserting the idempotency key in the main business transaction causes concurrent duplicate requests to block on row locks rather than returning 409 immediately. If a commit succeeds but the network drops the HTTP response, the client retries; returning 409 prevents recovery. Furthermore, changed payloads sharing an existing key must be rejected. The corrected protocol: 1. In a separate initial transaction, insert the idempotency key with status IN_PROGRESS and request payload hash. 2. If the key exists: if payload hash differs, return 422 Unprocessable Entity; if IN_PROGRESS, return 409 Conflict; if COMPLETED, return the stored replay response. 3. On failure, update the idempotency row to FAILED in its own transaction.",
+      "artifact_code": null,
+      "findings": [],
+      "verification": "Proposed checks: Run local integration tests simulating concurrent duplicate requests, payload tampering with duplicate keys, and connection drops following database commit to verify idempotency replay and correct 409/422 responses. No SQL or services were executed."
+    },
+    {
+      "id": "D30",
+      "answer": "The standalone HTML page for the community tool library implements a practical, welcoming local craftsmanship aesthetic using warm paper/linen surfaces, terracotta accents, sturdy card borders, and accessible high-contrast typography. The form provides a Tool selector (options Drill, Sander), an Email input, and two radio slot options (09:00 and 14:00). The 'Confirm Reservation' button remains disabled until a tool, slot, and valid email format are selected, validated reactively via JavaScript event listeners. Submitting reveals an accessible confirmation card (role='status', aria-live='polite') displaying the selected tool and slot. Clean focus rings (:focus-visible) and responsive layout ensure accessibility and mobile ergonomics without external fonts, images, or scripts.",
+      "artifact_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Community Tool Library - Equipment Reservation</title>\n  <style>\n    :root {\n      --bg: #fdfbf7;\n      --card-bg: #ffffff;\n      --text: #1c1917;\n      --text-muted: #57534e;\n      --border: #d6d3d1;\n      --primary: #b45309;\n      --primary-hover: #92400e;\n      --focus-ring: #2563eb;\n      --success-bg: #ecfdf5;\n      --success-border: #059669;\n      --success-text: #064e3b;\n      --radius: 8px;\n    }\n    * { box-sizing: border-box; margin: 0; padding: 0; }\n    body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n      background-color: var(--bg);\n      color: var(--text);\n      line-height: 1.5;\n      padding: 1.5rem 1rem;\n      display: flex;\n      justify-content: center;\n      min-height: 100vh;\n    }\n    .container {\n      width: 100%;\n      max-width: 480px;\n      background: var(--card-bg);\n      border: 1px solid var(--border);\n      border-radius: var(--radius);\n      padding: 2rem;\n      box-shadow: 0 4px 12px rgba(0,0,0,0.05);\n    }\n    header { margin-bottom: 1.75rem; border-bottom: 2px solid #f5f5f4; padding-bottom: 1rem; }\n    h1 { font-size: 1.5rem; color: var(--primary); font-weight: 700; margin-bottom: 0.25rem; }\n    .subtitle { color: var(--text-muted); font-size: 0.9rem; }\n    .field-group { margin-bottom: 1.25rem; }\n    label, legend {\n      display: block;\n      font-size: 0.9rem;\n      font-weight: 600;\n      color: var(--text);\n      margin-bottom: 0.35rem;\n    }\n    select, input[type=\"email\"] {\n      width: 100%;\n      padding: 0.65rem 0.75rem;\n      font-size: 1rem;\n      color: var(--text);\n      background-color: #fff;\n      border: 1px solid var(--border);\n      border-radius: var(--radius);\n      transition: border-color 0.15s;\n    }\n    select:focus-visible, input[type=\"email\"]:focus-visible, button:focus-visible, input[type=\"radio\"]:focus-visible + label {\n      outline: 2px solid var(--focus-ring);\n      outline-offset: 2px;\n      border-color: var(--focus-ring);\n    }\n    fieldset {\n      border: 1px solid var(--border);\n      border-radius: var(--radius);\n      padding: 0.75rem 1rem;\n      margin-bottom: 1.25rem;\n    }\n    .slot-options {\n      display: flex;\n      gap: 1rem;\n      margin-top: 0.5rem;\n    }\n    .slot-label {\n      flex: 1;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      padding: 0.65rem;\n      border: 1px solid var(--border);\n      border-radius: var(--radius);\n      cursor: pointer;\n      font-weight: 600;\n      background: #fafaf9;\n      transition: all 0.15s;\n    }\n    .slot-label:hover { background: #f5f5f4; }\n    input[type=\"radio\"] { position: absolute; opacity: 0; width: 0; height: 0; }\n    input[type=\"radio\"]:checked + .slot-label {\n      background: #fef3c7;\n      border-color: var(--primary);\n      color: var(--primary);\n    }\n    button[type=\"submit\"] {\n      width: 100%;\n      padding: 0.75rem 1rem;\n      font-size: 1rem;\n      font-weight: 600;\n      color: #fff;\n      background-color: var(--primary);\n      border: none;\n      border-radius: var(--radius);\n      cursor: pointer;\n      transition: background-color 0.15s, opacity 0.15s;\n      margin-top: 0.5rem;\n    }\n    button[type=\"submit\"]:hover:not(:disabled) {\n      background-color: var(--primary-hover);\n    }\n    button[type=\"submit\"]:disabled {\n      background-color: #a8a29e;\n      cursor: not-allowed;\n      opacity: 0.7;\n    }\n    .confirmation {\n      margin-top: 1.5rem;\n      padding: 1rem;\n      background: var(--success-bg);\n      border: 1px solid var(--success-border);\n      color: var(--success-text);\n      border-radius: var(--radius);\n      display: none;\n    }\n    .confirmation h2 { font-size: 1.1rem; margin-bottom: 0.25rem; }\n    .confirmation p { font-size: 0.95rem; }\n  </style>\n</head>\n<body>\n  <main class=\"container\">\n    <header>\n      <h1>Community Tool Library</h1>\n      <p class=\"subtitle\">Reserve shared woodworking & craft equipment</p>\n    </header>\n    <form id=\"reservation-form\" novalidate>\n      <div class=\"field-group\">\n        <label for=\"tool-select\">Tool</label>\n        <select id=\"tool-select\" name=\"tool\" required>\n          <option value=\"\">-- Select a tool --</option>\n          <option value=\"Drill\">Drill</option>\n          <option value=\"Sander\">Sander</option>\n        </select>\n      </div>\n      <div class=\"field-group\">\n        <label for=\"email-input\">Email</label>\n        <input type=\"email\" id=\"email-input\" name=\"email\" placeholder=\"neighbor@example.com\" required>\n      </div>\n      <fieldset>\n        <legend>Select Slot</legend>\n        <div class=\"slot-options\">\n          <div>\n            <input type=\"radio\" id=\"slot-09\" name=\"slot\" value=\"09:00\" required>\n            <label class=\"slot-label\" for=\"slot-09\">09:00</label>\n          </div>\n          <div>\n            <input type=\"radio\" id=\"slot-14\" name=\"slot\" value=\"14:00\" required>\n            <label class=\"slot-label\" for=\"slot-14\">14:00</label>\n          </div>\n        </div>\n      </fieldset>\n      <button type=\"submit\" id=\"confirm-btn\" disabled>Confirm Reservation</button>\n    </form>\n    <div id=\"confirmation-box\" class=\"confirmation\" role=\"status\" aria-live=\"polite\">\n      <h2>Reservation Confirmed!</h2>\n      <p id=\"confirmation-details\"></p>\n    </div>\n  </main>\n  <script>\n    const form = document.getElementById('reservation-form');\n    const toolSelect = document.getElementById('tool-select');\n    const emailInput = document.getElementById('email-input');\n    const slotRadios = document.getElementsByName('slot');\n    const confirmBtn = document.getElementById('confirm-btn');\n    const confirmBox = document.getElementById('confirmation-box');\n    const confirmDetails = document.getElementById('confirmation-details');\n\n    function isValidEmail(email) {\n      return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email.trim());\n    }\n\n    function checkFormValidity() {\n      const toolValid = toolSelect.value !== '';\n      const emailValid = isValidEmail(emailInput.value);\n      let slotSelected = false;\n      for (const r of slotRadios) {\n        if (r.checked) { slotSelected = true; break; }\n      }\n      confirmBtn.disabled = !(toolValid && emailValid && slotSelected);\n    }\n\n    toolSelect.addEventListener('change', checkFormValidity);\n    emailInput.addEventListener('input', checkFormValidity);\n    for (const r of slotRadios) {\n      r.addEventListener('change', checkFormValidity);\n    }\n\n    form.addEventListener('submit', function(e) {\n      e.preventDefault();\n      if (confirmBtn.disabled) return;\n      const selectedTool = toolSelect.value;\n      let selectedSlot = '';\n      for (const r of slotRadios) {\n        if (r.checked) { selectedSlot = r.value; break; }\n      }\n      confirmDetails.textContent = 'You have reserved the ' + selectedTool + ' for ' + selectedSlot + '.';\n      confirmBox.style.display = 'block';\n      confirmBox.scrollIntoView({ behavior: 'smooth' });\n    });\n  </script>\n</body>\n</html>",
+      "findings": [],
+      "verification": "Proposed checks: Propose manual keyboard tab navigation (Tab/Shift-Tab/Space) and screen reader inspection of aria-live announcements upon submission, plus CSS inspection at 320px viewport width. Do not claim browser tests ran."
+    }
+  ]
+}

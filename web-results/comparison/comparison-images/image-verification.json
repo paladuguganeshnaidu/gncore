@@ -1,0 +1,11 @@
+{
+  "image_count": 4,
+  "full_hd_images": 2,
+  "four_k_images": 2,
+  "categories": 30,
+  "reference_repositories": 14,
+  "input_hash_verified": true,
+  "output_dimensions_and_hashes_verified": true,
+  "visual_review": "Both Full HD tables inspected; no observed clipped or overlapping text",
+  "new_benchmark_runs": 0
+}

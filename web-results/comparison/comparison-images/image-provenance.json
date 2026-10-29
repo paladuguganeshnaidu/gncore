@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "review_sha256": "e19c84e5de45707e39de4e84c2f4c87ddac923c7aa6aed97de4620a268fbd48b",
+  "files": [
+    {
+      "file": "web-results/comparison/comparison-images/gncore-complete-comparison-table-full-hd.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "1ee9b3e74200dfe8f57534e9b79a75f5ce153e41ab28b8399003f58473584d1c"
+    },
+    {
+      "file": "web-results/comparison/comparison-images/gncore-complete-comparison-table-4k.png",
+      "width": 3840,
+      "height": 2160,
+      "sha256": "c46e74d275418764772ee144beaf9a4a082181a32cc722599d590bff0a3051b0"
+    },
+    {
+      "file": "web-results/comparison/comparison-images/gncore-executive-comparison-table-full-hd.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "22a137c314649d611e0dc1a9233459fce3571bdfefe550aa9b20ab0627024a94"
+    },
+    {
+      "file": "web-results/comparison/comparison-images/gncore-executive-comparison-table-4k.png",
+      "width": 3840,
+      "height": 2160,
+      "sha256": "68145aa5b0fd446f54b7ad281bf4e11ef5480c66882300a3acf055748bfc5817"
+    }
+  ],
+  "categories": 30,
+  "comparison_repositories": 14,
+  "metrics": "Saved task checks and fixture results only; not universal efficiency",
+  "untested_comparisons": [
+    "Standalone OpenAI/Codex skill catalog",
+    "Plotly-specific skills"
+  ],
+  "candidate": "Initial revised trial; final three-entrypoint adaptive follow-up separately labeled",
+  "sources": [
+    "review-results.json",
+    "source-snapshots.json",
+    "runs/*/H04-exploratory.json",
+    "release-verification.json"
+  ],
+  "feature_claims": "GNCore implementation facts, not assertions that competitors lack these capabilities"
+}

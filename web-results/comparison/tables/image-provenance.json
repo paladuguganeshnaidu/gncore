@@ -1,0 +1,28 @@
+{
+  "generated_from": {
+    "review_results_sha256": "e19c84e5de45707e39de4e84c2f4c87ddac923c7aa6aed97de4620a268fbd48b",
+    "source_snapshot_sha256": "fcd4f5de149dabc168216a81cebbf60c570e49295314974fcfa9923b9493118f"
+  },
+  "full_hd_pixels": [
+    1920,
+    1080
+  ],
+  "master_pixels": [
+    3840,
+    2160
+  ],
+  "holdout_categories": 30,
+  "fully_measured_non_ui_categories": 29,
+  "reference_repositories": 14,
+  "unmeasured_comparators": [
+    "Plotly-related skills (unspecified collection)",
+    "Standalone Codex skill collection"
+  ],
+  "inference_runs_performed": 0,
+  "outputs": {
+    "gncore-all-category-comparison-4k.png": "441f77240c0fce5ed893b417ca2564138d211c7172cd0ca06913d339849a57ba",
+    "gncore-all-category-comparison-full-hd.png": "cb78756079599894020953dd0a554e1797680afe593a872b2ebfa55869950e99",
+    "gncore-executive-comparison-4k.png": "4c72d0b9b6c8d5d489bb795ca2698a3358a5bff9a83c077f6e010648d48eed13",
+    "gncore-executive-comparison-full-hd.png": "746f9d92692d5dd265c1fdcd32c86f761ad188b4aa64fc92ccdfb2be9c139da5"
+  }
+}

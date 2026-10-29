@@ -1,0 +1,21 @@
+{
+  "case_id": "ide-neural-contract",
+  "application": "Antigravity IDE",
+  "ui_model_label": "Gemini 3.8 Flash High",
+  "outcome": "passed scoped reasoning rubric",
+  "review_type": "Manual, unblinded review of one saved answer; not an independent model benchmark",
+  "response": "antigravity-neural-response.md",
+  "response_normalization": "One machine-local file URI was changed to the equivalent repository-relative source link. Mathematical and prose content is unchanged; the original clipboard capture is retained in the ignored local work directory.",
+  "checks": [
+    {"criterion": "Output and target shapes", "result": "pass", "evidence": "Derives XW+b as (2,1), matches target (2,1), and warns about vector/matrix broadcasting."},
+    {"criterion": "Binary loss semantics", "result": "pass", "evidence": "BCE with logits receives raw logits, floating binary targets and explicit batch mean; stable softplus expression is correct."},
+    {"criterion": "Finite-difference procedure", "result": "pass with numerical-policy note", "evidence": "Central plus/minus epsilon formula and parameter restoration are stated; the chosen epsilon/tolerance are proposed rather than demonstrated."},
+    {"criterion": "GNCore workflow IDs", "result": "pass", "evidence": "nn-tensor-contracts, nn-loss-semantics and nn-gradient-check exist in the installed category."},
+    {"criterion": "Honest execution boundary", "result": "pass", "evidence": "Separates hand reasoning from unexecuted runtime gradient, overfit and training probes."}
+  ],
+  "notes": [
+    "The response's proposed relative tolerance of 1e-7 is not a universal numerical policy. Real gradient tests should choose scale-aware absolute plus relative tolerances and investigate epsilon sensitivity, especially near zero gradients.",
+    "No training, gradient runtime, new code artifact or deployment was executed inside the IDE for this reasoning-only case.",
+    "The first submission was user-assisted after automation focus problems. A stale accessibility snapshot continued to say Working after a completed answer was visible; the answer was retrieved through the observed Copy response control."
+  ]
+}

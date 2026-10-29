@@ -17,7 +17,8 @@ Recorded on 29 October 2026, Asia/Calcutta. Both VS Code and Antigravity IDE wer
 | Website graph | 41 HTML pages, 1,796 local references, 672 redirects; no checker issues |
 | VS Code 1.143.1 | GNCore opens; native Skills panel reports 30 workspace skills; installed neural-network file reads correctly |
 | Antigravity IDE 2.5.5 | GNCore opens; installed neural-network file reads correctly; user handled trust prompts |
-| Agent execution in IDEs | Blocked; no agent-generated task outcome claimed |
+| Antigravity reasoning trials | Neural passed; frontend passed with caveats; backend needs revision |
+| Copilot agent execution | Blocked by sign-in/model setup; no output claimed |
 
 The full-suite skip requires Windows symlink creation unavailable to this account. A later website/release test attempt hit the sandbox's default temporary-directory permission error. Its failed log is retained; the rerun using a workspace-local temporary directory passed both tests. This was an environment setup failure, not a silently removed check.
 
@@ -33,11 +34,17 @@ The seeded CPU XOR probe passed: loss fell from approximately 0.8306874 to 0.001
 
 ## IDE evidence and remaining checks
 
-VS Code's native Skills panel reports **Workspace: 30** and shows GNCore skill paths with a Loaded state. Its editor recognizes the installed file as a Skill and offers it as chat context. Copilot still requests sign-in or a configured model, so no model task was submitted. The unrelated user customization migration notice was left unchanged.
+VS Code's native Skills panel reports **Workspace: 30** and shows GNCore skill paths with a Loaded state. Its editor recognizes the installed file as a Skill and offers it as chat context. Copilot still requests sign-in or a configured model, so no Copilot model task was submitted. The unrelated user customization migration notice was left unchanged.
 
-Antigravity's launcher and editor are separate applications; the editor was opened and the GNCore skill content observed. After the user handled workspace trust, its message input did not acquire a verifiable editable focus through the available automation. `set_value` left it empty; observed clicks and the agent-focus shortcut did not establish focus. No test prompt was submitted. Native discovery of all categories and agent execution are unverified in this IDE.
+Antigravity's launcher and editor are separate applications; the editor was opened and the GNCore skill content observed. The user handled workspace trust and helped focus the message field after automation difficulties. The selected model label was Gemini 3.8 Flash High. Three reasoning cases then completed in one conversation; frontend and backend were combined in the second message. Native discovery of all categories remains unverified because the trials explicitly referenced the installed skill files.
 
-Exact IDE observations are in [ide-results.json](ide-results.json). [Prepared reasoning cases](ide-cases.json) contain prompts and rubrics for a future available agent session; they are explicitly unexecuted. Sanitized accessibility records and correctly targeted screenshots are in [ide-evidence](ide-evidence).
+The [neural answer](ide-evidence/antigravity-neural-response.md) met its five scoped reasoning criteria: shapes, binary loss semantics, central finite differences, valid workflow IDs and honest runtime boundaries. Its proposed strict relative gradient tolerance still needs scale-aware numerical validation in a real implementation. The [review](ide-evidence/antigravity-neural-review.json) records that caveat.
+
+The [frontend/backend answer](ide-evidence/antigravity-web-response.md) selected organic minimalism from the clinic brief and gave concrete keyboard and small-screen proposals. All eight cited workflow IDs exist. This is a design proposal; its claims of analytical validation do not establish a tested DOM, focus order or rendered touch geometry.
+
+The backend answer **needs revision**. Its single-transaction claim protocol does not justify an unconditional immediate `409` for every concurrent duplicate; the competing insert can wait and then observe a completed result. It also sets `FAILED` before rolling back the same transaction, so that state would not be durable. This is a review of the proposed protocol against PostgreSQL's [Read Committed semantics](https://www.postgresql.org/docs/18/transaction-iso.html#XACT-READ-COMMITTED) and [rollback behavior](https://www.postgresql.org/docs/18/sql-rollback.html), rather than a PostgreSQL concurrency execution result. A [tiny SQLite transaction probe](ide-evidence/idempotency-rollback-probe.json) separately demonstrates the rollback issue, without claiming to reproduce PostgreSQL locking. The [detailed review](ide-evidence/antigravity-web-review.json) describes a consistent revision and needed tests.
+
+Exact IDE observations are in [ide-results.json](ide-results.json). The [reasoning cases](ide-cases.json) contain the prompts, rubrics and execution status. These are three manual, unblinded reasoning reviews; they do not replace the 90 complete artifact-generation scenarios or constitute a general agent quality score. Sanitized accessibility records and correctly targeted screenshots are in [ide-evidence](ide-evidence). One preserved snapshot is explicitly marked stale: the accessibility bridge said Working after the completed answer was already visible. The actual answers were captured through the observed Copy response controls. Machine-local file links in the copied answers were normalized to repository-relative source links; prose and mathematics were retained.
 
 ## Reusable outputs
 

@@ -10,3 +10,4 @@ src/gncore/skills/unified_data/*/research/** -whitespace
 web-results/charts/*.svg -whitespace
 web-results/logs/*.log -whitespace
 web-results/ide-evidence/*.txt -whitespace
+web-results/ide-evidence/*-response.md -whitespace

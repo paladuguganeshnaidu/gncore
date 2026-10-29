@@ -1,0 +1,12 @@
+{
+  "engine": "SQLite stdlib",
+  "scope": "Transaction rollback only; no PostgreSQL lock or concurrency execution",
+  "before_rollback": [
+    [
+      "FAILED"
+    ]
+  ],
+  "after_rollback": [],
+  "failed_state_survives_rollback": false,
+  "passed": true
+}

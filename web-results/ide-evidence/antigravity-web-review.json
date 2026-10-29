@@ -1,0 +1,39 @@
+{
+  "application": "Antigravity IDE",
+  "ui_model_label": "Gemini 3.8 Flash High",
+  "review_type": "Manual, unblinded review; two reasoning cases in one follow-up message in the neural-test conversation",
+  "response": "antigravity-web-response.md",
+  "response_normalization": "Two machine-local skill file URIs changed to equivalent repository-relative source links; prose and mathematical content unchanged. Original clipboard capture retained in the ignored local work directory.",
+  "workflow_identifiers": {"cited": 8, "unknown": 0},
+  "cases": [
+    {
+      "case_id": "ide-frontend-direction",
+      "outcome": "passed scoped reasoning rubric with implementation caveats",
+      "checks": [
+        {"criterion": "Choose visual direction from brief", "result": "pass", "evidence": "Selects quiet organic minimalism without requiring a theme name."},
+        {"criterion": "Avoid medical efficacy claims", "result": "pass", "evidence": "Describes interface tone and patient comfort; no claim that the page treats a medical condition."},
+        {"criterion": "Concrete responsive and keyboard design", "result": "pass", "evidence": "Provides a single-column booking flow, date-grid navigation, field errors and touch target sizes."},
+        {"criterion": "Real workflow identifiers", "result": "pass", "evidence": "All four cited frontend workflow IDs exist in the manifest."},
+        {"criterion": "Do not claim a built/tested UI", "result": "pass with caveat", "evidence": "Labels live browser, screen-reader and viewport checks unexecuted. Its Completed Validation phrasing is stronger than a design-only artifact warrants; actual DOM, focus and touch geometry were not tested."}
+      ],
+      "notes": ["The proposed focus ring and mobile overflow behavior still require an implementation and live interaction checks. This answer is a design proposal, not evidence that a high-quality site was built."]
+    },
+    {
+      "case_id": "ide-backend-idempotency",
+      "outcome": "needs revision",
+      "checks": [
+        {"criterion": "Tenant-scoped idempotency", "result": "pass", "evidence": "Composite primary key (tenant_id, idempotency_key); authenticated tenant and cross-tenant test stated."},
+        {"criterion": "Concurrent duplicate semantics", "result": "needs revision", "evidence": "Single-transaction claim/order/completion is described, but immediate observation of an external IN_PROGRESS row is assumed. A conflicting insert can wait for the first transaction; its final response can replay the completed result. The unconditional second-request-409 test needs an explicit scheduling/timeout contract."},
+        {"criterion": "Changed-payload replay rejection", "result": "pass at design level", "evidence": "Canonical request hash and 422 response for mismatched payload are specified."},
+        {"criterion": "Transaction and failure behavior", "result": "needs revision", "evidence": "An update to FAILED inside the transaction will not survive rolling back that transaction. State whether rollback removes the claim for retry, or choose a separately committed claim/recovery protocol. An aborted SQL transaction also cannot simply accept more updates without recovery."},
+        {"criterion": "Concrete tests and honest execution", "result": "partial", "evidence": "Lists useful replay, tenant and payload checks and states no tests ran, but its concurrency and FAILED-state expectations need correction."}
+      ],
+      "recommended_revision": "Choose one explicit protocol. For a single transaction, commit order, outbox and replay record together; a conflicting request may wait and then replay. Map an actual bounded lock timeout separately. On rollback, the new claim is removed; do not claim a durable FAILED row. If visible in-progress claims are required, use a separate committed claim with ownership/expiry and recovery semantics, and test that different protocol.",
+      "validation_limit": "Review against documented transaction semantics plus a tiny SQLite rollback demonstration. No PostgreSQL server or concurrent endpoint implementation was executed.",
+      "primary_sources": [
+        "https://www.postgresql.org/docs/18/transaction-iso.html#XACT-READ-COMMITTED",
+        "https://www.postgresql.org/docs/18/sql-rollback.html"
+      ]
+    }
+  ]
+}

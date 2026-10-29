@@ -1,24 +1,45 @@
 {
   "schema_version": 1,
-  "execution_status": "not run; pending editor access/model availability",
+  "execution_status": "All three reasoning cases executed in Antigravity; frontend and backend combined in one follow-up message. See saved answers and reviews. No IDE runtime training or generated app test was performed.",
   "cases": [
     {
       "id": "ide-neural-contract",
       "skill": "neural-networks",
       "prompt": "Use the installed GNCore neural-networks skill. Pure reasoning only: do not run terminal commands, edit files or access the network. X has shape (2,3), W has shape (3,1), b has shape (1,), and targets have shape (2,1) with values 0 and 1. State the output shape, an appropriate binary loss with its input semantics, and how to check one parameter gradient with central finite differences. Name the GNCore workflow IDs you used. Distinguish proposed checks from checks actually executed.",
-      "rubric": ["Output (2,1)", "Logits/probability loss semantics consistent", "Finite difference uses plus/minus epsilon and restores parameter", "Cites nn-tensor-contracts, nn-loss-semantics and nn-gradient-check as appropriate", "Does not claim execution"]
+      "rubric": [
+        "Output (2,1)",
+        "Logits/probability loss semantics consistent",
+        "Finite difference uses plus/minus epsilon and restores parameter",
+        "Cites nn-tensor-contracts, nn-loss-semantics and nn-gradient-check as appropriate",
+        "Does not claim execution"
+      ],
+      "status": "reasoning rubric passed with noted caveats"
     },
     {
       "id": "ide-frontend-direction",
       "skill": "web-frontend",
       "prompt": "Use the installed GNCore web-frontend skill. Pure reasoning only: no terminal commands, file edits or network. Propose an interface direction for a quiet, accessible appointment-booking page for a neighborhood physiotherapy clinic. No theme name is specified. Explain the selected visual direction, typography hierarchy, keyboard/focus behavior and a concrete small-screen layout. Identify relevant GNCore workflow IDs and separate intended validation from completed validation.",
-      "rubric": ["Chooses a direction from the brief without requiring a theme name", "Avoids implying medical efficacy", "Concrete responsive structure and keyboard focus", "Workflow IDs exist in catalog", "Does not claim built/tested UI"]
+      "rubric": [
+        "Chooses a direction from the brief without requiring a theme name",
+        "Avoids implying medical efficacy",
+        "Concrete responsive structure and keyboard focus",
+        "Workflow IDs exist in catalog",
+        "Does not claim built/tested UI"
+      ],
+      "status": "reasoning rubric passed with noted caveats"
     },
     {
       "id": "ide-backend-idempotency",
       "skill": "web-backend",
       "prompt": "Use the installed GNCore web-backend skill. Pure reasoning only: no terminal commands, file edits or network. Design a POST endpoint that creates an order and tolerates a client retry after a timeout. Define request validation, tenant-scoped idempotency keys, concurrent duplicate behavior, transaction boundaries, response replay and essential contract tests. Identify the relevant GNCore workflow IDs. State assumptions and do not claim tests ran.",
-      "rubric": ["Tenant-scoped idempotency", "Concurrent duplicates have durable single-operation semantics", "Replay rejects a changed payload for the same key", "Transaction and failure behavior explicit", "Concrete retry/authorization tests without fabricated execution"]
+      "rubric": [
+        "Tenant-scoped idempotency",
+        "Concurrent duplicates have durable single-operation semantics",
+        "Replay rejects a changed payload for the same key",
+        "Transaction and failure behavior explicit",
+        "Concrete retry/authorization tests without fabricated execution"
+      ],
+      "status": "needs revision"
     }
   ]
 }

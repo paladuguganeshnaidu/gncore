@@ -1,5 +1,7 @@
 # Local verification — 2026-10-28
 
+> Historical phase-one record. The developer-focused phase-two scope and current publication state are in [the phase-two release plan](PHASE2_RELEASE.md). This record does not describe the current active catalog.
+
 ## Reliability upgrade batch
 
 The first implementation batch completes GN-01 and GN-02 and supplies the GN-03 pilot format and cases. The remaining roadmap items are tracked separately in [UPGRADE_PLAN.md](UPGRADE_PLAN.md).

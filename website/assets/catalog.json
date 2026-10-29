@@ -1,0 +1,2186 @@
+{
+  "version": "7.0.0rc1",
+  "status": "candidate-preview",
+  "categories": 30,
+  "workflows": 374,
+  "skills": [
+    {
+      "id": "ai-engineering",
+      "name": "GNCore AI Engineering",
+      "description": "Build LLM applications, retrieval and tool-using agents with grounded outputs and measurable task outcomes.",
+      "group": "ai-and-ml",
+      "workflows": [
+        {
+          "id": "llm-evaluation",
+          "name": "Evaluate an LLM Workflow",
+          "description": "Measure an LLM feature with representative cases, explicit rubrics, failure analysis, and repeatable comparisons."
+        },
+        {
+          "id": "llm-app",
+          "name": "LLM Application Engineering",
+          "description": "Implement reliable LLM features with structured outputs, bounded tools, privacy, and graceful failure handling."
+        },
+        {
+          "id": "rag",
+          "name": "Retrieval-Augmented Generation",
+          "description": "Build a grounded retrieval workflow with traceable sources, chunking tests, and abstention on missing evidence."
+        },
+        {
+          "id": "prompt-engineering",
+          "name": "Prompt Engineering",
+          "description": "Improve prompts against explicit tasks and evaluations while preserving tool and safety boundaries."
+        },
+        {
+          "id": "ai-tool-contracts",
+          "name": "Tool contracts and bounded agents",
+          "description": "Tool contracts and bounded agents."
+        },
+        {
+          "id": "ai-retrieval-evaluation",
+          "name": "Retrieval and grounding evaluation",
+          "description": "Retrieval and grounding evaluation."
+        }
+      ]
+    },
+    {
+      "id": "automation",
+      "name": "GNCore Automation",
+      "description": "Implement restartable developer automations with bounded inputs, retries and observable failure recovery.",
+      "group": "engineering",
+      "workflows": [
+        {
+          "id": "workflow-automation",
+          "name": "Workflow Automation",
+          "description": "Automate a repetitive workflow with bounded inputs, safe retries, idempotency, and clear human checkpoints."
+        },
+        {
+          "id": "automation-resume",
+          "name": "Resume after partial execution",
+          "description": "Resume after partial execution."
+        }
+      ]
+    },
+    {
+      "id": "cloud-devops-sre",
+      "name": "GNCore Cloud, DevOps and SRE",
+      "description": "Build delivery pipelines, cloud infrastructure, containers, Kubernetes and reliable service operations.",
+      "group": "delivery",
+      "workflows": [
+        {
+          "id": "cloud-architecture",
+          "name": "Cloud Architecture",
+          "description": "Design a cloud deployment around explicit reliability, security, operations, and cost constraints."
+        },
+        {
+          "id": "cost-optimization",
+          "name": "Cloud Cost Optimization",
+          "description": "Find measurable cloud cost reductions while protecting reliability and workload correctness."
+        },
+        {
+          "id": "cloud-architecture-review",
+          "name": "Cloud Architecture Review",
+          "description": "Compare cloud designs against workload, reliability, security, cost, and operational constraints."
+        },
+        {
+          "id": "cloud-infrastructure-code",
+          "name": "Infrastructure as Code",
+          "description": "Author or review infrastructure changes with plan inspection, least privilege, and rollback."
+        },
+        {
+          "id": "cloud-ci-cd",
+          "name": "CI/CD Pipeline",
+          "description": "Improve a delivery pipeline with reproducibility, least privilege, useful gates, and rollback."
+        },
+        {
+          "id": "cloud-container",
+          "name": "Container Build and Hardening",
+          "description": "Build a reproducible container with a minimal attack surface and reliable runtime behavior."
+        },
+        {
+          "id": "cloud-kubernetes",
+          "name": "Kubernetes Workload Review",
+          "description": "Review Kubernetes workloads for availability, resource bounds, identity, health, and rollout safety."
+        },
+        {
+          "id": "cloud-slo",
+          "name": "SLO and Error Budget",
+          "description": "Define service-level indicators and objectives that reflect user-visible reliability."
+        },
+        {
+          "id": "cloud-observability",
+          "name": "Service Observability",
+          "description": "Instrument service behavior with actionable metrics, structured logs, and traces."
+        },
+        {
+          "id": "cloud-incident",
+          "name": "SRE Incident Management",
+          "description": "Manage a reliability incident through impact assessment, safe mitigation, verification, and learning."
+        },
+        {
+          "id": "cloud-capacity",
+          "name": "Capacity and Load Plan",
+          "description": "Plan service capacity using measured demand, bottleneck data, growth uncertainty, and failure headroom."
+        },
+        {
+          "id": "cloud-cost",
+          "name": "Cloud Cost Optimization",
+          "description": "Reduce measurable infrastructure spend while protecting service objectives and recovery options."
+        },
+        {
+          "id": "devops",
+          "name": "DevOps Engineering",
+          "description": "Improve build and delivery workflows with reproducible steps, safe rollout, and actionable failure signals."
+        },
+        {
+          "id": "kubernetes",
+          "name": "Kubernetes Engineering",
+          "description": "Author Kubernetes resources with least privilege, clear health behavior, and safe rollout settings."
+        },
+        {
+          "id": "incident-response",
+          "name": "Incident Response",
+          "description": "Triage incidents from evidence, reduce impact safely, and preserve a clear timeline and follow-up."
+        }
+      ]
+    },
+    {
+      "id": "code-build",
+      "name": "GNCore Software Engineering",
+      "description": "Implement, diagnose, review and refactor software across languages while preserving public behavior.",
+      "group": "engineering",
+      "workflows": [
+        {
+          "id": "code-grill-me",
+          "name": "GNCore Grill Me",
+          "description": "Clarify a coding or product request through focused questions that expose assumptions and missing decisions."
+        },
+        {
+          "id": "code-research",
+          "name": "GNCore Research",
+          "description": "Investigate a technical question using repository evidence and relevant primary sources."
+        },
+        {
+          "id": "code-prototype",
+          "name": "GNCore Prototype",
+          "description": "Build a scoped prototype that tests a specific technical or product assumption."
+        },
+        {
+          "id": "code-domain-modeling",
+          "name": "GNCore Domain Modeling",
+          "description": "Model domain concepts, invariants, ownership, and language before changing service boundaries."
+        },
+        {
+          "id": "code-decision-mapping",
+          "name": "GNCore Decision Mapping",
+          "description": "Map unresolved implementation decisions, dependencies, options, and evidence needed to choose."
+        },
+        {
+          "id": "code-search-first",
+          "name": "GNCore Search First",
+          "description": "Search the existing codebase and relevant documentation before adding dependencies or implementing duplicate functionality."
+        },
+        {
+          "id": "code-product-lens",
+          "name": "GNCore Product Lens",
+          "description": "Validate the why before building through four product diagnostics — a YC-style product diagnostic that produces PRODUCT-BRIEF.md with a go/no-go recommendation, a founder review scoring product-market-fit signals, a user journey audit measuring time-to-value, and ICE feature prioritization."
+        },
+        {
+          "id": "code-architecture-decision-records",
+          "name": "GNCore Architecture Decision Records",
+          "description": "Capture architectural decisions as numbered ADR markdown files in docs/adr/ with context, alternatives considered, consequences, and an index README."
+        },
+        {
+          "id": "code-blueprint",
+          "name": "GNCore Blueprint",
+          "description": "Turn a one-line objective into a step-by-step construction plan for multi-session, multi-agent engineering projects: one-PR-sized steps with self-contained context briefs, dependency graph with parallel-step detection, adversarial review gate, and plan mutation protocol."
+        },
+        {
+          "id": "code-architecture",
+          "name": "GNCore Architecture",
+          "description": "Shared vocabulary for designing deep modules."
+        },
+        {
+          "id": "code-improve-architecture",
+          "name": "GNCore Improve Architecture",
+          "description": "Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick."
+        },
+        {
+          "id": "code-quality",
+          "name": "GNCore Quality",
+          "description": "Baseline cross-project coding conventions for naming, readability, immutability, and code-quality review."
+        },
+        {
+          "id": "code-codebase-onboarding",
+          "name": "GNCore Codebase Onboarding",
+          "description": "Analyze an unfamiliar codebase and generate a structured onboarding guide with architecture map, key entry points, conventions, and a starter CLAUDE.md."
+        },
+        {
+          "id": "code-plankton-code-quality",
+          "name": "GNCore Plankton Code Quality",
+          "description": "Write-time code quality enforcement using Plankton — auto-formatting, linting, and Claude-powered fixes on every file edit via hooks."
+        },
+        {
+          "id": "code-code-review",
+          "name": "GNCore Code Review",
+          "description": "Review a code diff for correctness, local coding standards, and alignment with its originating specification."
+        },
+        {
+          "id": "code-request-refactor-plan",
+          "name": "GNCore Request Refactor Plan",
+          "description": "Plan a behavior-preserving refactor with explicit scope, sequencing, and regression checks."
+        },
+        {
+          "id": "code-code-improver",
+          "name": "GNCore Code Improver",
+          "description": "Run a bounded review-and-fix loop over a specified code target with evidence and scope controls."
+        },
+        {
+          "id": "code-code-maturity-assessor",
+          "name": "GNCore Code Maturity Assessor",
+          "description": "Systematic code maturity assessment using Trail of Bits' 9-category framework."
+        },
+        {
+          "id": "code-tdd",
+          "name": "GNCore Tdd",
+          "description": "Implement a behavior change through meaningful failing tests, a focused fix, and relevant regressions."
+        },
+        {
+          "id": "code-tdd-workflow",
+          "name": "GNCore Tdd Workflow",
+          "description": "Test-driven development workflow: write a failing test first, watch it fail, implement the smallest change to green, then refactor with 80%+ coverage across unit, integration, and E2E tests."
+        },
+        {
+          "id": "code-e2e-testing",
+          "name": "GNCore E2E Testing",
+          "description": "Playwright E2E testing patterns, Page Object Model, configuration, CI/CD integration, artifact management, and flaky test strategies."
+        },
+        {
+          "id": "code-ai-regression-testing",
+          "name": "GNCore Ai Regression Testing",
+          "description": "Regression testing strategies for AI-assisted development."
+        },
+        {
+          "id": "code-module-regression",
+          "name": "GNCore Module Regression",
+          "description": "Govern cross-module regression in large repositories with a REGRESSION.md ledger that records each module's downstream consumers and executable acceptance command."
+        },
+        {
+          "id": "code-property-based-testing",
+          "name": "GNCore Property Based Testing",
+          "description": "Writes, reviews, and debugs property-based tests — Hypothesis, fast-check, proptest, jqwik, rapid, and Echidna or Medusa for Solidity invariants."
+        },
+        {
+          "id": "code-coverage-analysis",
+          "name": "GNCore Coverage Analysis",
+          "description": "Measures and interprets what a fuzzing campaign actually reaches, using llvm-cov, lcov, or a fuzzer's own coverage output."
+        },
+        {
+          "id": "code-debugging",
+          "name": "GNCore Debugging",
+          "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes"
+        },
+        {
+          "id": "code-verification-before-completion",
+          "name": "GNCore Verification Before Completion",
+          "description": "Verify the requested software outcome with fresh command output before reporting completion."
+        },
+        {
+          "id": "code-diagnosing-bugs",
+          "name": "GNCore Diagnosing Bugs",
+          "description": "Diagnosis loop for hard bugs and performance regressions."
+        },
+        {
+          "id": "code-qa",
+          "name": "GNCore Qa",
+          "description": "Validate a software change against acceptance criteria and reproduce observable regressions."
+        },
+        {
+          "id": "code-verification-loop",
+          "name": "GNCore Verification Loop",
+          "description": "Run a six-phase verification of a Claude Code session's work — build, type check, lint, tests with coverage, security grep, and diff review — then produce a PASS/FAIL verification report."
+        },
+        {
+          "id": "code-security-review",
+          "name": "GNCore Security Review",
+          "description": "Use this skill when adding authentication, handling user input, working with secrets, creating API endpoints, or implementing payment/sensitive features."
+        },
+        {
+          "id": "code-agent-security-hardening",
+          "name": "GNCore Agent Security Hardening",
+          "description": "Security hardening guidance for AI agent frameworks that process untrusted content, invoke tools, write workspace files, manage runtime identifiers, or handle credentials."
+        },
+        {
+          "id": "code-sharp-edges",
+          "name": "GNCore Sharp Edges",
+          "description": "Identifies error-prone APIs, dangerous configurations, and footgun designs that enable security mistakes."
+        },
+        {
+          "id": "code-insecure-defaults",
+          "name": "GNCore Insecure Defaults",
+          "description": "Find unsafe configuration defaults and fail-open behavior in application code and deployment configuration."
+        },
+        {
+          "id": "code-differential-review",
+          "name": "GNCore Differential Review",
+          "description": "Performs security-focused differential review of code changes."
+        },
+        {
+          "id": "code-semgrep",
+          "name": "GNCore Semgrep",
+          "description": "Runs a Semgrep security scan over a codebase: detects languages, selects rulesets, presents the plan for explicit approval, then runs every approved ruleset through scripts/run-scans.sh, which batches the semgrep processes and writes scans.json, and merges the output to SARIF."
+        },
+        {
+          "id": "code-codeql",
+          "name": "GNCore Codeql",
+          "description": "Scans a codebase for security vulnerabilities using CodeQL's interprocedural data flow and taint tracking analysis."
+        },
+        {
+          "id": "code-sarif-parsing",
+          "name": "GNCore Sarif Parsing",
+          "description": "Parses and processes SARIF files from static analysis tools like CodeQL, Semgrep, or other scanners."
+        },
+        {
+          "id": "code-supply-chain-risk-auditor",
+          "name": "GNCore Supply Chain Risk Auditor",
+          "description": "Audits a project's dependencies for supply-chain risk: version-matched advisories for direct dependencies and the full lockfile tree, abandoned or archived upstreams, npm publisher concentration, and install-time script execution."
+        },
+        {
+          "id": "code-git-workflow",
+          "name": "GNCore Git Workflow",
+          "description": "Git workflow patterns including branching strategies, commit conventions, keeping history clean and readable, tidying local commits before merging, merge vs rebase, conflict resolution, and collaborative development best practices for teams of all sizes."
+        },
+        {
+          "id": "code-delivery-gate",
+          "name": "GNCore Delivery Gate",
+          "description": "Stop hook that blocks Claude from finishing until quality checks pass."
+        },
+        {
+          "id": "code-cost-tracking",
+          "name": "GNCore Cost Tracking",
+          "description": "Track and report Claude Code token usage, spending, and budgets from the local ECC cost-tracker metrics log."
+        },
+        {
+          "id": "code-post-patch-validation",
+          "name": "GNCore Post Patch Validation",
+          "description": "Validates security patches with reproducible baseline-versus-patched evidence, including original exploits, root-cause variants, behavior preservation, regressions, and newly introduced security failures."
+        },
+        {
+          "id": "code-mutation-testing",
+          "name": "GNCore Mutation Testing",
+          "description": "Configures mewt or muton campaigns, analyzes surviving mutants, and investigates bugs exposed by testing gaps."
+        },
+        {
+          "id": "code-deep-research",
+          "name": "GNCore Deep Research",
+          "description": "Produce cited research reports from multiple web sources using firecrawl and exa MCP tools — plan sub-questions, search and deep-read sources, then synthesize findings with inline citations and confidence levels."
+        },
+        {
+          "id": "code-research-ops",
+          "name": "GNCore Research Ops",
+          "description": "Evidence-first current-state research workflow for ECC."
+        },
+        {
+          "id": "code-product-capability",
+          "name": "GNCore Product Capability",
+          "description": "Translate PRD intent, roadmap asks, or product discussions into an implementation-ready capability plan that exposes constraints, invariants, interfaces, and unresolved decisions before multi-service work starts."
+        },
+        {
+          "id": "code-to-prd",
+          "name": "GNCore To Prd",
+          "description": "Turn a product idea into a scoped requirements document with user outcomes and acceptance criteria."
+        },
+        {
+          "id": "code-to-spec",
+          "name": "GNCore To Spec",
+          "description": "Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed."
+        },
+        {
+          "id": "code-to-tickets",
+          "name": "GNCore To Tickets",
+          "description": "Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker)."
+        },
+        {
+          "id": "code-writing-plans",
+          "name": "GNCore Writing Plans",
+          "description": "Use when you have a spec or requirements for a multi-step task, before touching code"
+        },
+        {
+          "id": "code-executing-plans",
+          "name": "GNCore Executing Plans",
+          "description": "Use when executing an implementation plan in the current session as the implementer yourself — your human partner chose inline execution, or no subagent tool is available"
+        },
+        {
+          "id": "code-requesting-code-review",
+          "name": "GNCore Requesting Code Review",
+          "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements"
+        },
+        {
+          "id": "code-receiving-code-review",
+          "name": "GNCore Receiving Code Review",
+          "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation"
+        },
+        {
+          "id": "code-implement",
+          "name": "GNCore Implement",
+          "description": "Implement a piece of work based on a spec or set of tickets."
+        },
+        {
+          "id": "code-implement-spec",
+          "name": "GNCore Implement Spec",
+          "description": "Implement the result of /to-spec and /to-tickets in code."
+        },
+        {
+          "id": "code-python",
+          "name": "GNCore Python",
+          "description": "Pythonic idioms, PEP 8 standards, type hints, and best practices for building robust, efficient, and maintainable Python applications."
+        },
+        {
+          "id": "code-python-testing",
+          "name": "GNCore Python Testing",
+          "description": "Python testing strategies using pytest, TDD methodology, fixtures, mocking, parametrization, and coverage requirements."
+        },
+        {
+          "id": "code-webapp-testing",
+          "name": "GNCore Webapp Testing",
+          "description": "Toolkit for interacting with and testing local web applications using Playwright."
+        },
+        {
+          "id": "code-regression-hunt",
+          "name": "GNCore Regression Hunt",
+          "description": "Use when investigating regressions in PRs or commits, coordinating a regression campaign, or resuming saved progress."
+        },
+        {
+          "id": "code-brainstorming",
+          "name": "GNCore Brainstorming",
+          "description": "Explore unresolved software design choices and agree on a practical direction when the brief needs clarification."
+        },
+        {
+          "id": "code-using-git-worktrees",
+          "name": "GNCore Using Git Worktrees",
+          "description": "Isolate concurrent coding work in Git worktrees while preserving uncommitted changes and repository conventions."
+        },
+        {
+          "id": "code-subagent-driven-development",
+          "name": "GNCore Subagent Driven Development",
+          "description": "Coordinate authorized coding subagents on separable work with explicit interfaces and integration checks."
+        },
+        {
+          "id": "code-finishing-a-development-branch",
+          "name": "GNCore Finishing A Development Branch",
+          "description": "Prepare a completed development branch for review, integration, or cleanup according to the user's chosen workflow."
+        },
+        {
+          "id": "code-workflow-setup",
+          "name": "GNCore Workflow Setup",
+          "description": "Configure the requested coding workflow's repository context, issue-tracker references, and local skill conventions."
+        },
+        {
+          "id": "code-build",
+          "name": "GNCore General Coding Workflow",
+          "description": "Plan, implement, debug, and verify a software task in its existing language and stack."
+        },
+        {
+          "id": "requirements",
+          "name": "Requirements Clarifier",
+          "description": "Collects scope, constraints, acceptance criteria, and open questions before implementation starts."
+        },
+        {
+          "id": "architecture",
+          "name": "Architecture Designer",
+          "description": "Defines system boundaries, interfaces, and implementation constraints."
+        },
+        {
+          "id": "implementation",
+          "name": "Implementation Builder",
+          "description": "Writes production-grade code with minimal duplication and explicit types."
+        },
+        {
+          "id": "review",
+          "name": "Code Reviewer",
+          "description": "Finds defects, regressions, and missing coverage before release."
+        },
+        {
+          "id": "testing",
+          "name": "Testing Specialist",
+          "description": "Designs and validates tests for the changed slice."
+        },
+        {
+          "id": "security",
+          "name": "Security Reviewer",
+          "description": "Assesses secrets handling, unsafe file access, and privilege boundaries."
+        },
+        {
+          "id": "documentation",
+          "name": "Documentation Writer",
+          "description": "Produces concise user and developer documentation that matches the implementation."
+        },
+        {
+          "id": "release",
+          "name": "Release Manager",
+          "description": "Coordinates versioning, packaging, and verification for shipping."
+        },
+        {
+          "id": "product-discovery",
+          "name": "Product Discovery",
+          "description": "Turn a product idea into a testable problem statement, user evidence plan, and scoped first release."
+        },
+        {
+          "id": "software-feature",
+          "name": "Software Feature Delivery",
+          "description": "Deliver a scoped software feature using local conventions and verifiable acceptance criteria."
+        },
+        {
+          "id": "software-architecture",
+          "name": "Software Architecture Decision",
+          "description": "Compare architecture options against constraints, operations, reversibility, and lifecycle cost."
+        },
+        {
+          "id": "software-code-review",
+          "name": "Software Code Review",
+          "description": "Review a code change for correctness, security, maintainability, and missing regression coverage."
+        },
+        {
+          "id": "software-debugging",
+          "name": "Software Debugging",
+          "description": "Diagnose a software failure from reproducible evidence and verify the smallest safe fix."
+        },
+        {
+          "id": "software-refactor",
+          "name": "Safe Refactoring",
+          "description": "Refactor a bounded code area while preserving its documented behavior and public contracts."
+        },
+        {
+          "id": "software-api-contract",
+          "name": "Software API Contract",
+          "description": "Define and verify an API contract across request, response, errors, versioning, and consumers."
+        },
+        {
+          "id": "software-dependency",
+          "name": "Dependency Change Review",
+          "description": "Assess and implement a dependency change with compatibility, security, and rollback evidence."
+        },
+        {
+          "id": "software-performance",
+          "name": "Software Performance Optimization",
+          "description": "Find a measured software bottleneck and optimize it without regressing correctness."
+        },
+        {
+          "id": "software-migration",
+          "name": "Software Migration Plan",
+          "description": "Plan a staged migration with compatibility gates, data safety, and rollback criteria."
+        },
+        {
+          "id": "software-release",
+          "name": "Software Release Candidate",
+          "description": "Prepare a software release with reproducible artifacts, verified changes, and rollback readiness."
+        }
+      ]
+    },
+    {
+      "id": "computer-vision",
+      "name": "GNCore Computer Vision",
+      "description": "Build vision datasets, augmentation, detection/segmentation and image inference with task-appropriate evaluation.",
+      "group": "ai-and-ml",
+      "workflows": [
+        {
+          "id": "computer-vision",
+          "name": "Computer Vision",
+          "description": "Build vision workflows with robust image handling, leakage-safe splits, and task-appropriate evaluation."
+        },
+        {
+          "id": "cv-dataset-audit",
+          "name": "Vision dataset integrity",
+          "description": "Vision dataset integrity."
+        },
+        {
+          "id": "cv-geometric-transforms",
+          "name": "Image and annotation transforms",
+          "description": "Image and annotation transforms."
+        },
+        {
+          "id": "cv-detection-metrics",
+          "name": "Detection and segmentation evaluation",
+          "description": "Detection and segmentation evaluation."
+        },
+        {
+          "id": "cv-inference-parity",
+          "name": "Image inference parity",
+          "description": "Image inference parity."
+        }
+      ]
+    },
+    {
+      "id": "cybersecurity",
+      "name": "GNCore Cybersecurity",
+      "description": "Review application, dependency, cloud and agent security using concrete attack paths and scoped evidence.",
+      "group": "delivery",
+      "workflows": [
+        {
+          "id": "cyber-threat-model",
+          "name": "Threat Model",
+          "description": "Map assets, trust boundaries, threats, controls, and residual risk for a bounded system."
+        },
+        {
+          "id": "cyber-secure-code",
+          "name": "Secure Code Review",
+          "description": "Review a code change for exploitable input, identity, authorization, secret, and data-flow flaws."
+        },
+        {
+          "id": "cyber-vulnerability-triage",
+          "name": "Vulnerability Triage",
+          "description": "Prioritize a reported vulnerability using affected assets, exploitability, exposure, and impact evidence."
+        },
+        {
+          "id": "cyber-incident-response",
+          "name": "Cyber Incident Response",
+          "description": "Coordinate defensive incident response with containment, evidence preservation, and recovery gates."
+        },
+        {
+          "id": "cyber-identity-access",
+          "name": "Identity and Access Review",
+          "description": "Review identities and permissions for least privilege, lifecycle, ownership, and audit evidence."
+        },
+        {
+          "id": "cyber-cloud-review",
+          "name": "Cloud Security Review",
+          "description": "Assess cloud configuration against an explicit threat model and approved security baseline."
+        },
+        {
+          "id": "cyber-security-controls",
+          "name": "Security Control Evidence",
+          "description": "Map supplied evidence to security control requirements with traceable, bounded conclusions."
+        },
+        {
+          "id": "cyber-phishing",
+          "name": "Phishing Response Triage",
+          "description": "Triage a suspected phishing report and provide safe containment and user guidance."
+        },
+        {
+          "id": "cyber-secret-response",
+          "name": "Exposed Secret Response",
+          "description": "Respond to a potentially exposed credential without echoing or spreading the secret."
+        },
+        {
+          "id": "cyber-security-test-plan",
+          "name": "Authorized Security Test Plan",
+          "description": "Define a bounded security test plan with written authorization, targets, limits, and stop conditions."
+        },
+        {
+          "id": "web-security",
+          "name": "Web Security Engineering",
+          "description": "Review web features for input, session, authorization, and output-handling vulnerabilities."
+        },
+        {
+          "id": "privacy-review",
+          "name": "Privacy Review",
+          "description": "Reduce privacy risk by tracing personal data, purpose, access, retention, and user control."
+        }
+      ]
+    },
+    {
+      "id": "data-engineering",
+      "name": "GNCore Data Engineering",
+      "description": "Build schema-aware, observable batch/streaming pipelines with restart, reconciliation and lineage.",
+      "group": "data",
+      "workflows": [
+        {
+          "id": "data-analysis",
+          "name": "Data Analysis",
+          "description": "Answer data questions with reproducible calculations, clear definitions, and honest uncertainty."
+        },
+        {
+          "id": "data-pipelines",
+          "name": "Data Pipeline Engineering",
+          "description": "Build reliable, observable data pipelines with explicit schemas, retries, and idempotency."
+        },
+        {
+          "id": "data-pipeline",
+          "name": "Data Pipeline Engineering",
+          "description": "Build observable, restartable pipelines with explicit schemas, idempotency, and data-quality checks."
+        },
+        {
+          "id": "data-governance",
+          "name": "Data Governance",
+          "description": "Define practical ownership, quality, access, lineage, and retention controls for a data asset."
+        }
+      ]
+    },
+    {
+      "id": "data-science",
+      "name": "GNCore Data Science",
+      "description": "Analyze data, statistics and experiments with correct grain, reproducibility and honest uncertainty.",
+      "group": "data",
+      "workflows": [
+        {
+          "id": "product-analytics",
+          "name": "Product Analytics",
+          "description": "Define product metrics and event instrumentation that answer a decision without collecting unnecessary data."
+        },
+        {
+          "id": "analytics-question",
+          "name": "Analytics Question Plan",
+          "description": "Translate a business question into a measurable analysis plan and data requirements."
+        },
+        {
+          "id": "analytics-data-audit",
+          "name": "Data Quality Audit",
+          "description": "Audit analytical data for missingness, duplication, validity, freshness, and grain."
+        },
+        {
+          "id": "analytics-sql",
+          "name": "Business SQL Analysis",
+          "description": "Write a traceable SQL analysis with correct grain, joins, time handling, and reconciliation."
+        },
+        {
+          "id": "analytics-dashboard",
+          "name": "Decision Dashboard",
+          "description": "Design a dashboard around a recurring decision with clear metrics, filters, and data freshness."
+        },
+        {
+          "id": "analytics-metric-tree",
+          "name": "Metric Tree",
+          "description": "Decompose a business outcome into leading drivers and measurable operational inputs."
+        },
+        {
+          "id": "analytics-cohort",
+          "name": "Cohort Analysis",
+          "description": "Compare cohort behavior with consistent definitions, exposure windows, and censoring treatment."
+        },
+        {
+          "id": "analytics-experiment",
+          "name": "Business Experiment Analysis",
+          "description": "Analyze an experiment with assignment, exposure, predeclared outcomes, and uncertainty checks."
+        },
+        {
+          "id": "analytics-forecast",
+          "name": "Business Forecast Analysis",
+          "description": "Build a business forecast from history, drivers, scenarios, and out-of-sample checks."
+        },
+        {
+          "id": "analytics-insight-brief",
+          "name": "Executive Analytics Brief",
+          "description": "Turn analysis into a concise decision brief with traceable evidence and caveats."
+        },
+        {
+          "id": "analytics-data-contract",
+          "name": "Analytics Data Contract",
+          "description": "Specify ownership, schema, quality, freshness, and change handling for an analytics dataset."
+        },
+        {
+          "id": "clean-data",
+          "name": "Clean a Dataset",
+          "description": "Audit and clean a dataset with explicit, reversible rules for missing values, duplicates, types, and outliers."
+        },
+        {
+          "id": "analyze",
+          "name": "Analyze Data",
+          "description": "Answer a data question with reproducible analysis, explicit assumptions, and evidence tied to the provided data."
+        },
+        {
+          "id": "sql-analysis",
+          "name": "SQL Analysis",
+          "description": "Write correct, reviewable SQL for analytics while guarding against join fanout and misleading aggregates."
+        },
+        {
+          "id": "data-visualization",
+          "name": "Data Visualization",
+          "description": "Create clear charts that faithfully represent the underlying data and its uncertainty."
+        },
+        {
+          "id": "statistics",
+          "name": "Statistical Analysis",
+          "description": "Choose and interpret statistical methods with assumptions, uncertainty, and practical effects stated clearly."
+        },
+        {
+          "id": "ab-testing",
+          "name": "A/B Test Analysis",
+          "description": "Analyze controlled experiments with valid assignment checks, predeclared metrics, and practical uncertainty."
+        },
+        {
+          "id": "geospatial-analysis",
+          "name": "Geospatial Analysis",
+          "description": "Analyze spatial data with explicit coordinate systems, units, geometry validity, and privacy controls."
+        }
+      ]
+    },
+    {
+      "id": "databases",
+      "name": "GNCore Databases and SQL",
+      "description": "Design relational schemas, SQL, transactions, indexes and reversible data migrations.",
+      "group": "data",
+      "workflows": [
+        {
+          "id": "database-design",
+          "name": "Database Design",
+          "description": "Design safe relational data models, queries, and migrations that preserve integrity and performance."
+        },
+        {
+          "id": "db-transaction-invariants",
+          "name": "Transaction and concurrency invariants",
+          "description": "Transaction and concurrency invariants."
+        },
+        {
+          "id": "db-query-plans",
+          "name": "Query plan and index analysis",
+          "description": "Query plan and index analysis."
+        },
+        {
+          "id": "db-expand-contract",
+          "name": "Expand/backfill/contract migration",
+          "description": "Expand/backfill/contract migration."
+        },
+        {
+          "id": "db-backup-restore",
+          "name": "Backup restoration evidence",
+          "description": "Backup restoration evidence."
+        }
+      ]
+    },
+    {
+      "id": "deep-learning",
+      "name": "GNCore Deep Learning",
+      "description": "Engineer reproducible deep-learning training, checkpointing, fine-tuning and distributed optimization.",
+      "group": "ai-and-ml",
+      "workflows": [
+        {
+          "id": "fine-tuning",
+          "name": "Model Fine-Tuning",
+          "description": "Plan or implement a parameter-efficient or full fine-tuning workflow with controlled data and cost."
+        },
+        {
+          "id": "pytorch-training",
+          "name": "PyTorch Training",
+          "description": "Implement PyTorch training loops with correct device, optimizer, checkpoint, and evaluation handling."
+        },
+        {
+          "id": "tensorflow-training",
+          "name": "TensorFlow and Keras Training",
+          "description": "Build TensorFlow/Keras training workflows with explicit data, callbacks, and evaluation behavior."
+        },
+        {
+          "id": "deep-learning",
+          "name": "Deep Learning Engineering",
+          "description": "Develop deep learning code with explicit tensor shapes, stable optimization, and reproducible evaluation."
+        },
+        {
+          "id": "dl-checkpoint-resume",
+          "name": "Checkpoint and resume equivalence",
+          "description": "Checkpoint and resume equivalence."
+        },
+        {
+          "id": "dl-mixed-precision",
+          "name": "Mixed precision correctness",
+          "description": "Mixed precision correctness."
+        },
+        {
+          "id": "dl-gradient-accumulation",
+          "name": "Gradient accumulation",
+          "description": "Gradient accumulation."
+        },
+        {
+          "id": "dl-distributed-training",
+          "name": "Distributed training correctness",
+          "description": "Distributed training correctness."
+        },
+        {
+          "id": "dl-transfer-learning",
+          "name": "Transfer learning and freezing",
+          "description": "Transfer learning and freezing."
+        }
+      ]
+    },
+    {
+      "id": "design-ux",
+      "name": "GNCore UX and Design Systems",
+      "description": "Design developer-facing and product interfaces, flows, accessible interaction and reusable component systems.",
+      "group": "web-and-apps",
+      "workflows": [
+        {
+          "id": "ux-research",
+          "name": "UX Research",
+          "description": "Plan and synthesize ethical user research that ties observations to product decisions."
+        },
+        {
+          "id": "design-system",
+          "name": "Design System Engineering",
+          "description": "Extend a design system with accessible tokens and reusable components that fit existing conventions."
+        },
+        {
+          "id": "design-ux-audit",
+          "name": "UX Usability Audit",
+          "description": "Audit a user flow for task clarity, feedback, recovery, cognitive load, and accessibility."
+        },
+        {
+          "id": "design-user-flow",
+          "name": "User Flow Design",
+          "description": "Map a user journey with entry points, decisions, states, errors, and successful completion."
+        },
+        {
+          "id": "design-wireframe",
+          "name": "Wireframe Specification",
+          "description": "Specify a wireframe around user priorities, information hierarchy, and responsive states."
+        },
+        {
+          "id": "design-minimal",
+          "name": "Minimalist UI Direction",
+          "description": "Create a restrained interface with clear hierarchy, intentional whitespace, and accessible controls."
+        },
+        {
+          "id": "design-expressive",
+          "name": "Expressive UI Direction",
+          "description": "Create a distinctive, layered interface without sacrificing navigation, readability, or accessibility."
+        },
+        {
+          "id": "design-system-component",
+          "name": "Design System Component",
+          "description": "Specify a reusable design-system component with API, states, semantics, and adoption guidance."
+        },
+        {
+          "id": "design-content",
+          "name": "UX Content Design",
+          "description": "Write interface text that helps users understand choices, status, errors, and recovery."
+        },
+        {
+          "id": "design-prototype",
+          "name": "Prototype Test Plan",
+          "description": "Create a prototype test plan that resolves a specific interaction or comprehension question."
+        },
+        {
+          "id": "design-accessibility",
+          "name": "Accessible Interaction Design",
+          "description": "Design keyboard, screen-reader, motion, contrast, and touch behavior into an interaction."
+        },
+        {
+          "id": "design-handoff",
+          "name": "Design to Engineering Handoff",
+          "description": "Prepare a design handoff with behavior, states, assets, responsive rules, and unresolved questions."
+        }
+      ]
+    },
+    {
+      "id": "developer-research",
+      "name": "GNCore Technical Research",
+      "description": "Investigate technical options, papers, APIs and reproducible engineering experiments from primary evidence.",
+      "group": "engineering",
+      "workflows": [
+        {
+          "id": "research-synthesis",
+          "name": "Research Synthesis",
+          "description": "Synthesize supplied or sourced evidence with provenance, disagreement, and uncertainty kept visible."
+        },
+        {
+          "id": "research-api-compatibility",
+          "name": "API and dependency compatibility",
+          "description": "API and dependency compatibility."
+        },
+        {
+          "id": "research-paper-reproduction",
+          "name": "Research result reproduction",
+          "description": "Research result reproduction."
+        },
+        {
+          "id": "research-technical-decision",
+          "name": "Evidence-backed technical decision",
+          "description": "Evidence-backed technical decision."
+        }
+      ]
+    },
+    {
+      "id": "developer-tools",
+      "name": "GNCore Developer Tools",
+      "description": "Build reliable CLIs, developer workflows, editor integrations and local tooling.",
+      "group": "engineering",
+      "workflows": [
+        {
+          "id": "cli-design",
+          "name": "CLI Engineering",
+          "description": "Design command-line tools with predictable arguments, clear errors, safe defaults, and scriptable output."
+        },
+        {
+          "id": "tooling-reproducible-env",
+          "name": "Reproducible developer environments",
+          "description": "Reproducible developer environments."
+        }
+      ]
+    },
+    {
+      "id": "distributed-systems",
+      "name": "GNCore Distributed Systems",
+      "description": "Design and implement concurrency, queues, replication and failure recovery across service boundaries.",
+      "group": "systems",
+      "workflows": [
+        {
+          "id": "dist-idempotency",
+          "name": "Idempotent operations",
+          "description": "Idempotent operations."
+        },
+        {
+          "id": "dist-queues",
+          "name": "Queue delivery and recovery",
+          "description": "Queue delivery and recovery."
+        },
+        {
+          "id": "dist-consistency",
+          "name": "Consistency and stale writers",
+          "description": "Consistency and stale writers."
+        },
+        {
+          "id": "dist-timeouts",
+          "name": "Timeouts, backoff and retry budgets",
+          "description": "Timeouts, backoff and retry budgets."
+        }
+      ]
+    },
+    {
+      "id": "documentation",
+      "name": "GNCore Documentation",
+      "description": "Write technical references, tutorials, API documentation and migration guides from verified software behavior.",
+      "group": "engineering",
+      "workflows": [
+        {
+          "id": "documentation-translation",
+          "name": "Technical Localization",
+          "description": "Adapt technical content across languages while preserving product meaning, UI limits, and verified terminology."
+        },
+        {
+          "id": "technical-writing",
+          "name": "Technical Writing",
+          "description": "Write accurate, task-oriented technical documentation with runnable examples and clear prerequisites."
+        },
+        {
+          "id": "documentation-api",
+          "name": "API Documentation",
+          "description": "Document API behavior from the implementation and contract, with examples users can reproduce."
+        }
+      ]
+    },
+    {
+      "id": "embedded-systems",
+      "name": "GNCore Embedded Systems",
+      "description": "Build firmware, peripheral interfaces and constrained-device software with explicit timing and hardware boundaries.",
+      "group": "systems",
+      "workflows": [
+        {
+          "id": "embedded-state-machine",
+          "name": "Firmware state machines",
+          "description": "Firmware state machines."
+        },
+        {
+          "id": "embedded-protocols",
+          "name": "Peripheral protocol integration",
+          "description": "Peripheral protocol integration."
+        },
+        {
+          "id": "embedded-timing",
+          "name": "Timers and interrupt boundaries",
+          "description": "Timers and interrupt boundaries."
+        },
+        {
+          "id": "embedded-memory",
+          "name": "Constrained memory and firmware builds",
+          "description": "Constrained memory and firmware builds."
+        }
+      ]
+    },
+    {
+      "id": "game-development",
+      "name": "GNCore Game Development",
+      "description": "Build playable game mechanics, simulation state, assets and measured runtime performance.",
+      "group": "web-and-apps",
+      "workflows": [
+        {
+          "id": "game-development",
+          "name": "Game Development",
+          "description": "Implement game features with deterministic state transitions, responsive input, and measurable performance."
+        }
+      ]
+    },
+    {
+      "id": "machine-learning",
+      "name": "GNCore Machine Learning",
+      "description": "Develop classical ML and time-series experiments with leakage-safe splits, baselines and deployment-relevant evaluation.",
+      "group": "ai-and-ml",
+      "workflows": [
+        {
+          "id": "ml-problem-framing",
+          "name": "ML Problem Framing",
+          "description": "Decide whether a machine learning approach fits the task, data, constraints, and failure costs."
+        },
+        {
+          "id": "ml-dataset-audit",
+          "name": "ML Dataset Audit",
+          "description": "Audit dataset provenance, schema, representativeness, label quality, leakage, and split strategy."
+        },
+        {
+          "id": "ml-preprocessing-pipeline",
+          "name": "ML Preprocessing Pipeline",
+          "description": "Build deterministic preprocessing that prevents leakage and preserves training-to-serving parity."
+        },
+        {
+          "id": "ml-model-train",
+          "name": "ML Model Training Run",
+          "description": "Implement a reproducible model training run with configuration, baseline, checkpoints, and evaluation."
+        },
+        {
+          "id": "ml-model-evaluation",
+          "name": "ML Model Evaluation",
+          "description": "Evaluate model quality, uncertainty, subgroup behavior, and representative errors against a baseline."
+        },
+        {
+          "id": "ml-model-improvement",
+          "name": "ML Improvement Loop",
+          "description": "Improve a model through controlled experiments with a fixed evaluation protocol and root-cause analysis."
+        },
+        {
+          "id": "ml-llm-evaluation",
+          "name": "LLM Evaluation Suite",
+          "description": "Evaluate an LLM feature with representative tasks, rubrics, adversarial cases, latency, and cost."
+        },
+        {
+          "id": "ml-rag",
+          "name": "RAG Grounding Workflow",
+          "description": "Build and evaluate retrieval-augmented answers with source access controls and abstention."
+        },
+        {
+          "id": "ml-finetuning",
+          "name": "Model Fine-Tuning Plan",
+          "description": "Assess fine-tuning suitability and prepare a controlled, leakage-safe fine-tuning workflow."
+        },
+        {
+          "id": "ml-release-monitor",
+          "name": "Model Release and Monitoring",
+          "description": "Prepare a model release with provenance, compatibility, rollback, and drift monitoring gates."
+        },
+        {
+          "id": "machine-learning",
+          "name": "Machine Learning Workflow",
+          "description": "Develop a scoped machine learning feature, from data inspection and baseline selection through evaluation."
+        },
+        {
+          "id": "model-training",
+          "name": "Model Training",
+          "description": "Set up or improve a reproducible model training run with clear configuration, checkpoints, and evaluation."
+        },
+        {
+          "id": "train",
+          "name": "Train a Machine Learning Model",
+          "description": "Build and run a reproducible model training workflow with a baseline, tracked configuration, and held-out evaluation."
+        },
+        {
+          "id": "preprocess",
+          "name": "Preprocess Machine Learning Data",
+          "description": "Design a repeatable preprocessing pipeline that preserves schema, prevents leakage, and records transformations."
+        },
+        {
+          "id": "evaluate",
+          "name": "Evaluate a Model",
+          "description": "Evaluate model quality with leakage-safe splits, task-appropriate metrics, baselines, and error analysis."
+        },
+        {
+          "id": "improve",
+          "name": "Improve a Machine Learning Model",
+          "description": "Find evidence-based model improvements through error analysis and controlled experiments against a fixed baseline."
+        },
+        {
+          "id": "data-preparation",
+          "name": "ML Data Preparation",
+          "description": "Prepare reproducible model datasets while preventing leakage and preserving provenance."
+        },
+        {
+          "id": "feature-engineering",
+          "name": "Feature Engineering",
+          "description": "Build features that are valid at prediction time and reproducible across training and inference."
+        },
+        {
+          "id": "model-evaluation",
+          "name": "Model Evaluation",
+          "description": "Evaluate model quality with valid splits, suitable metrics, uncertainty, and error analysis."
+        },
+        {
+          "id": "feature-engineering-practice",
+          "name": "Feature Engineering Practice",
+          "description": "Create leakage-safe, interpretable features that match the model's serving-time information."
+        },
+        {
+          "id": "time-series",
+          "name": "Time-Series Modeling",
+          "description": "Analyze and forecast time-indexed data with temporal splits, leakage controls, and useful uncertainty."
+        }
+      ]
+    },
+    {
+      "id": "mlops",
+      "name": "GNCore MLOps",
+      "description": "Package, serve, monitor and roll back models with reproducible artifacts and explicit promotion gates.",
+      "group": "ai-and-ml",
+      "workflows": [
+        {
+          "id": "experiment-tracking",
+          "name": "Reproducible ML Experiments",
+          "description": "Make model experiments traceable across code, data, configuration, environment, and artifacts."
+        },
+        {
+          "id": "model-serving",
+          "name": "Model Serving and Inference APIs",
+          "description": "Package model inference behind a reliable API with validation, resource limits, and observable behavior."
+        },
+        {
+          "id": "mlops",
+          "name": "MLOps and Model Release",
+          "description": "Package, register, and monitor models with reproducible artifacts and explicit release gates."
+        },
+        {
+          "id": "ml-experiment-tracking",
+          "name": "Machine Learning Experiment Tracking",
+          "description": "Make model experiments comparable with consistent splits, metrics, configuration, and artifact provenance."
+        },
+        {
+          "id": "model-card",
+          "name": "Model Documentation",
+          "description": "Document a model's intended use, data provenance, evaluation, limitations, and deployment assumptions."
+        },
+        {
+          "id": "hardware-ml",
+          "name": "Edge and Hardware-Constrained ML",
+          "description": "Adapt inference to constrained hardware using measured latency, memory, and accuracy tradeoffs."
+        },
+        {
+          "id": "mlops-artifact-contract",
+          "name": "Model artifact and provenance",
+          "description": "Model artifact and provenance."
+        },
+        {
+          "id": "mlops-serving-contract",
+          "name": "Prediction service contract",
+          "description": "Prediction service contract."
+        },
+        {
+          "id": "mlops-drift-monitoring",
+          "name": "Drift and model monitoring",
+          "description": "Drift and model monitoring."
+        },
+        {
+          "id": "mlops-promotion-rollback",
+          "name": "Model promotion and rollback",
+          "description": "Model promotion and rollback."
+        }
+      ]
+    },
+    {
+      "id": "mobile-development",
+      "name": "GNCore Mobile Development",
+      "description": "Build mobile applications with lifecycle-safe state, offline behavior and platform-appropriate interaction.",
+      "group": "web-and-apps",
+      "workflows": [
+        {
+          "id": "mobile-app",
+          "name": "Mobile App Engineering",
+          "description": "Implement mobile features with reliable navigation, offline behavior, accessibility, and platform conventions."
+        }
+      ]
+    },
+    {
+      "id": "natural-language-processing",
+      "name": "GNCore NLP and Language Pipelines",
+      "description": "Build tokenization, text classification, sequence labeling and language-model adaptation pipelines.",
+      "group": "ai-and-ml",
+      "workflows": [
+        {
+          "id": "nlp",
+          "name": "Natural Language Processing",
+          "description": "Build NLP pipelines that respect language, label quality, privacy, and task-specific evaluation."
+        },
+        {
+          "id": "nlp-token-alignment",
+          "name": "Token and label alignment",
+          "description": "Token and label alignment."
+        },
+        {
+          "id": "nlp-text-classification",
+          "name": "Text classification baseline",
+          "description": "Text classification baseline."
+        },
+        {
+          "id": "nlp-sequence-modeling",
+          "name": "Sequence masks and generation",
+          "description": "Sequence masks and generation."
+        },
+        {
+          "id": "nlp-evaluation",
+          "name": "Language and task evaluation",
+          "description": "Language and task evaluation."
+        }
+      ]
+    },
+    {
+      "id": "neural-networks",
+      "name": "GNCore Neural Networks",
+      "description": "Design and debug neural networks through tensor contracts, gradient checks, loss semantics and tiny-batch experiments.",
+      "group": "ai-and-ml",
+      "workflows": [
+        {
+          "id": "nn-tensor-contracts",
+          "name": "Tensor and target contracts",
+          "description": "Tensor and target contracts."
+        },
+        {
+          "id": "nn-gradient-check",
+          "name": "Gradient verification",
+          "description": "Gradient verification."
+        },
+        {
+          "id": "nn-training-debug",
+          "name": "Diagnose a stalled training step",
+          "description": "Diagnose a stalled training step."
+        },
+        {
+          "id": "nn-loss-semantics",
+          "name": "Loss and activation semantics",
+          "description": "Loss and activation semantics."
+        },
+        {
+          "id": "nn-initialization",
+          "name": "Initialization and signal flow",
+          "description": "Initialization and signal flow."
+        },
+        {
+          "id": "nn-evaluation-modes",
+          "name": "Evaluation and validation isolation",
+          "description": "Evaluation and validation isolation."
+        }
+      ]
+    },
+    {
+      "id": "observability",
+      "name": "GNCore Observability",
+      "description": "Instrument and diagnose services using actionable logs, metrics, traces and service objectives.",
+      "group": "delivery",
+      "workflows": [
+        {
+          "id": "web-backend-sentry-instrument",
+          "name": "GNCore Sentry Instrument",
+          "description": "Instrument an application with Sentry — detect the platform, install and initialize the SDK if needed, and wire up any signal — error monitoring, tracing/performance, logging, metrics, profiling, session replay, user feedback, cron check-ins, uptime monitors for the deployed app, and AI/LLM monitoring (agent runs, token cost, and conversations for..."
+        },
+        {
+          "id": "web-backend-sentry-debug-issue",
+          "name": "GNCore Sentry Debug Issue",
+          "description": "Debug and fix a Sentry issue — find it (by link, ID, or search), pull full context (stack trace, breadcrumbs, trace, logs), optionally run Seer root-cause / autofix, apply the code fix, and resolve it via a `Fixes PROJECT-NAME-12A` commit/PR."
+        },
+        {
+          "id": "web-backend-observability",
+          "name": "GNCore Backend Observability",
+          "description": "Design and verify useful service logs, traces, metrics, and alert signals with bounded overhead."
+        },
+        {
+          "id": "obs-structured-events",
+          "name": "Structured diagnostic events",
+          "description": "Structured diagnostic events."
+        },
+        {
+          "id": "obs-metrics-alerts",
+          "name": "Metrics and actionable alerts",
+          "description": "Metrics and actionable alerts."
+        },
+        {
+          "id": "obs-trace-context",
+          "name": "Trace propagation",
+          "description": "Trace propagation."
+        },
+        {
+          "id": "obs-incident-diagnosis",
+          "name": "Evidence-led incident diagnosis",
+          "description": "Evidence-led incident diagnosis."
+        }
+      ]
+    },
+    {
+      "id": "performance-engineering",
+      "name": "GNCore Performance Engineering",
+      "description": "Profile and optimize software using repeatable latency, throughput and memory measurements.",
+      "group": "systems",
+      "workflows": [
+        {
+          "id": "python-performance",
+          "name": "Python Performance",
+          "description": "Profile Python hotspots and improve measured runtime or memory without changing semantics."
+        },
+        {
+          "id": "perf-benchmark-design",
+          "name": "Comparable benchmark design",
+          "description": "Comparable benchmark design."
+        },
+        {
+          "id": "perf-memory-profile",
+          "name": "Memory and allocation diagnosis",
+          "description": "Memory and allocation diagnosis."
+        },
+        {
+          "id": "perf-tail-latency",
+          "name": "Tail latency and saturation",
+          "description": "Tail latency and saturation."
+        },
+        {
+          "id": "perf-regression",
+          "name": "Performance regression review",
+          "description": "Performance regression review."
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "name": "GNCore Python",
+      "description": "Build, profile, package and migrate Python applications and libraries with reproducible environments.",
+      "group": "engineering",
+      "workflows": [
+        {
+          "id": "python-library",
+          "name": "Python Library Engineering",
+          "description": "Design maintainable Python packages with stable APIs, typing, packaging, and clear examples."
+        },
+        {
+          "id": "python-packaging",
+          "name": "Python Packaging",
+          "description": "Package a Python library with clear APIs, reproducible builds, supported versions, and clean installation behavior."
+        },
+        {
+          "id": "python-migration",
+          "name": "Python Upgrade and Migration",
+          "description": "Migrate Python code or dependencies in a controlled way with compatibility evidence and a rollback path."
+        }
+      ]
+    },
+    {
+      "id": "release-engineering",
+      "name": "GNCore Release Engineering",
+      "description": "Prepare tested software releases, reproducible artifacts, migrations and approval-ready publication plans.",
+      "group": "delivery",
+      "workflows": [
+        {
+          "id": "release-readiness",
+          "name": "Release Readiness Review",
+          "description": "Check a release candidate against explicit acceptance, compatibility, security, rollback, and communication gates."
+        },
+        {
+          "id": "release-artifact-integrity",
+          "name": "Artifact integrity and promotion",
+          "description": "Artifact integrity and promotion."
+        }
+      ]
+    },
+    {
+      "id": "systems-programming",
+      "name": "GNCore Systems Programming",
+      "description": "Build Rust, C/C++ and native components with explicit ownership, ABI and resource lifetimes.",
+      "group": "systems",
+      "workflows": [
+        {
+          "id": "systems-ownership",
+          "name": "Ownership and resource lifetime",
+          "description": "Ownership and resource lifetime."
+        },
+        {
+          "id": "systems-ffi",
+          "name": "FFI and ABI boundaries",
+          "description": "FFI and ABI boundaries."
+        },
+        {
+          "id": "systems-safe-arithmetic",
+          "name": "Integer and buffer boundaries",
+          "description": "Integer and buffer boundaries."
+        },
+        {
+          "id": "systems-concurrency",
+          "name": "Native concurrency",
+          "description": "Native concurrency."
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "name": "GNCore Testing",
+      "description": "Design and implement unit, integration, contract, end-to-end and performance verification.",
+      "group": "delivery",
+      "workflows": [
+        {
+          "id": "accessibility-audit",
+          "name": "Accessibility Audit",
+          "description": "Inspect a user flow for keyboard, screen reader, visual, and cognitive accessibility barriers."
+        },
+        {
+          "id": "performance-audit",
+          "name": "Performance Audit",
+          "description": "Find and verify the largest performance bottlenecks before changing code or infrastructure."
+        },
+        {
+          "id": "test-strategy",
+          "name": "Test Strategy",
+          "description": "Choose a balanced test plan that catches important failures at the lowest practical level."
+        },
+        {
+          "id": "requirements-to-tests",
+          "name": "Requirements to Acceptance Tests",
+          "description": "Turn requirements into observable acceptance cases that cover success, failure, boundaries, and permissions."
+        },
+        {
+          "id": "qa-test-strategy",
+          "name": "Test Strategy",
+          "description": "Choose a risk-based test mix that verifies behavior at the lowest effective level."
+        },
+        {
+          "id": "qa-test-design",
+          "name": "Test Case Design",
+          "description": "Turn a behavior contract into clear positive, negative, boundary, and state-transition tests."
+        },
+        {
+          "id": "qa-automation",
+          "name": "Test Automation",
+          "description": "Build maintainable test automation with stable setup, deterministic data, and actionable failures."
+        },
+        {
+          "id": "qa-e2e",
+          "name": "End-to-End User Journey Test",
+          "description": "Verify a critical user journey across the application with realistic but isolated data."
+        },
+        {
+          "id": "qa-api-contract",
+          "name": "API Contract Testing",
+          "description": "Check API compatibility, validation, authorization, and error contracts between services."
+        },
+        {
+          "id": "qa-performance",
+          "name": "Performance Test Plan",
+          "description": "Measure a service against representative load, latency, throughput, and resource objectives."
+        },
+        {
+          "id": "qa-accessibility",
+          "name": "Accessibility Test Pass",
+          "description": "Test a flow for keyboard operation, semantics, focus, labels, zoom, and assistive technology support."
+        },
+        {
+          "id": "qa-defect-triage",
+          "name": "Defect Triage",
+          "description": "Classify and prioritize a defect using reproducibility, user impact, scope, and workaround evidence."
+        },
+        {
+          "id": "qa-release-gate",
+          "name": "Release Quality Gate",
+          "description": "Evaluate release evidence against agreed quality gates and make residual risk visible."
+        },
+        {
+          "id": "qa-flaky-test",
+          "name": "Flaky Test Investigation",
+          "description": "Find the cause of an intermittent test failure and confirm a stable correction."
+        },
+        {
+          "id": "unit-testing",
+          "name": "Unit Testing",
+          "description": "Write fast, deterministic unit tests around public behavior and edge cases."
+        },
+        {
+          "id": "integration-testing",
+          "name": "Integration Testing",
+          "description": "Verify interactions between real components while isolating external services and state."
+        },
+        {
+          "id": "end-to-end-testing",
+          "name": "End-to-End Testing",
+          "description": "Validate critical user journeys across the running application with stable, accessible assertions."
+        },
+        {
+          "id": "test-automation",
+          "name": "Test Automation Engineering",
+          "description": "Create maintainable CI test workflows with clear triggers, artifacts, and failure signals."
+        },
+        {
+          "id": "performance-testing",
+          "name": "Performance and Load Testing",
+          "description": "Design controlled load tests that measure latency, throughput, and saturation safely."
+        }
+      ]
+    },
+    {
+      "id": "web-backend",
+      "name": "GNCore Web Backend",
+      "description": "Implement backend services, APIs, integrations and framework features with explicit contracts and failure behavior.",
+      "group": "web-and-apps",
+      "workflows": [
+        {
+          "id": "web-backend-patterns",
+          "name": "GNCore Patterns",
+          "description": "Backend architecture patterns, API design, database optimization, and server-side best practices for Node.js, Express, and Next.js API routes."
+        },
+        {
+          "id": "web-backend-api-design",
+          "name": "GNCore Api Design",
+          "description": "REST API design patterns including resource naming, status codes, pagination, filtering, error responses, versioning, and rate limiting for production APIs."
+        },
+        {
+          "id": "web-backend-hexagonal-architecture",
+          "name": "GNCore Hexagonal Architecture",
+          "description": "Design, implement, and refactor Ports & Adapters systems with clear domain boundaries, dependency inversion, and testable use-case orchestration across TypeScript, Java, Kotlin, and Go services."
+        },
+        {
+          "id": "web-backend-error-handling",
+          "name": "GNCore Error Handling",
+          "description": "Patterns for robust error handling across TypeScript, Python, and Go."
+        },
+        {
+          "id": "web-backend-contract-first",
+          "name": "GNCore Contract First",
+          "description": "Coordinate frontend/backend or service-to-service work through one authoritative machine-checkable contract (OpenAPI, AsyncAPI, Protocol Buffers, or JSON Schema), with generated consumer types and contract-verified integration."
+        },
+        {
+          "id": "web-backend-api-connector-builder",
+          "name": "GNCore Api Connector Builder",
+          "description": "Build a new API connector or provider by matching the target repo's existing integration pattern exactly."
+        },
+        {
+          "id": "web-backend-spec-to-code-compliance",
+          "name": "GNCore Spec To Code Compliance",
+          "description": "Check code against the documentation that specifies it - which requirements hold, which the code contradicts, which are absent, and what the code does that no document mentions."
+        },
+        {
+          "id": "web-backend-supabase-postgres-best-practices",
+          "name": "GNCore Supabase Postgres Best Practices",
+          "description": "Postgres best practices maintained by Supabase, for Postgres running anywhere."
+        },
+        {
+          "id": "web-backend-postgres-patterns",
+          "name": "GNCore Postgres Patterns",
+          "description": "PostgreSQL database patterns for query optimization, schema design, indexing, and security."
+        },
+        {
+          "id": "web-backend-database-migrations",
+          "name": "GNCore Database Migrations",
+          "description": "Safe, reversible database migration patterns: forward-only production changes, expand-contract zero-downtime renames, concurrent indexes, batched backfills, and per-tool workflows for PostgreSQL, Prisma, Drizzle, Kysely, Django, and golang-migrate."
+        },
+        {
+          "id": "web-backend-benchmark",
+          "name": "GNCore Benchmark",
+          "description": "Measure performance baselines and detect regressions across browser Core Web Vitals (LCP, INP, CLS, page weight), API endpoint latency percentiles, and build/test feedback times, with before/after comparison stored in git-tracked .ecc/benchmarks JSON."
+        },
+        {
+          "id": "web-backend-benchmark-optimization-loop",
+          "name": "GNCore Benchmark Optimization Loop",
+          "description": "Convert 'make it faster' requests into a bounded measured optimization loop — baseline first, generate one-hypothesis variants, benchmark each against a correctness gate, and promote the fastest safe variant with reproducible commands."
+        },
+        {
+          "id": "web-backend-latency-critical-systems",
+          "name": "GNCore Latency Critical Systems",
+          "description": "Optimize and verify latency-sensitive systems — realtime dashboards, market data feeds, streaming agents, execution gateways, queues, and caches — by tracking p50/p95/p99 latency, freshness age, and queue depth, mapping hot paths, and running live readbacks."
+        },
+        {
+          "id": "web-backend-redis-patterns",
+          "name": "GNCore Redis Patterns",
+          "description": "Redis data structure patterns, caching strategies, distributed locks, rate limiting, pub/sub, and connection management for production applications."
+        },
+        {
+          "id": "web-backend-deployment-patterns",
+          "name": "GNCore Deployment Patterns",
+          "description": "Deployment workflows, CI/CD pipeline patterns, Docker containerization, health checks, rollback strategies, and production readiness checklists for web applications."
+        },
+        {
+          "id": "web-backend-docker",
+          "name": "GNCore Docker",
+          "description": "Docker and Docker Compose patterns for local development, hardened CLI installer harnesses, container security, networking, volumes, and multi-service orchestration."
+        },
+        {
+          "id": "web-backend-github-ops",
+          "name": "GNCore Github Ops",
+          "description": "GitHub repository operations, automation, and management."
+        },
+        {
+          "id": "web-backend-production-audit",
+          "name": "GNCore Production Audit",
+          "description": "Local-evidence production readiness audit for shipped apps, pre-launch reviews, post-merge checks, and \"what breaks in prod?\" questions without sending repo data to an external audit service."
+        },
+        {
+          "id": "web-backend-agentic-engineering",
+          "name": "GNCore Agentic Engineering",
+          "description": "Operate as an agentic engineer using eval-first execution, decomposition, and cost-aware model routing."
+        },
+        {
+          "id": "web-backend-mcp-server-patterns",
+          "name": "GNCore Mcp Server Patterns",
+          "description": "Build MCP servers with Node/TypeScript SDK — tools, resources, prompts, Zod validation, stdio vs Streamable HTTP."
+        },
+        {
+          "id": "web-backend-agent-eval",
+          "name": "GNCore Agent Eval",
+          "description": "Head-to-head comparison of coding agents (Claude Code, Aider, Codex, etc.) on custom tasks with pass rate, cost, time, and consistency metrics."
+        },
+        {
+          "id": "web-backend-cost-aware-llm-pipeline",
+          "name": "GNCore Cost Aware Llm Pipeline",
+          "description": "Cost optimization patterns for LLM API usage — model routing by task complexity, budget tracking, retry logic, and prompt caching."
+        },
+        {
+          "id": "web-backend-mcp-builder",
+          "name": "GNCore Mcp Builder",
+          "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools."
+        },
+        {
+          "id": "web-backend-agents-sdk",
+          "name": "GNCore Agents Sdk",
+          "description": "Build, debug, or review Cloudflare Agents SDK applications using the agents package."
+        },
+        {
+          "id": "web-backend-building-ai-agent-on-cloudflare",
+          "name": "GNCore Building Ai Agent On Cloudflare",
+          "description": "Build a scoped AI agent on Cloudflare with explicit state, tool boundaries, bindings, and evaluation cases."
+        },
+        {
+          "id": "web-backend-fastapi",
+          "name": "GNCore Fastapi",
+          "description": "Build FastAPI endpoints, Pydantic models, dependencies, and streaming responses using version-compatible APIs."
+        },
+        {
+          "id": "web-backend-fastapi-patterns",
+          "name": "GNCore Fastapi Patterns",
+          "description": "FastAPI best practices covering project structure, Pydantic v2 schemas, dependency injection, async handlers, authentication, authorization, transactional service layers, and testing with httpx and pytest."
+        },
+        {
+          "id": "web-backend-django",
+          "name": "GNCore Django",
+          "description": "Django architecture patterns, REST API design with DRF, ORM best practices, caching, signals, middleware, and production-grade Django apps."
+        },
+        {
+          "id": "web-backend-django-security",
+          "name": "GNCore Django Security",
+          "description": "Django security best practices, authentication, authorization, CSRF protection, SQL injection prevention, XSS prevention, and secure deployment configurations."
+        },
+        {
+          "id": "web-backend-django-tdd",
+          "name": "GNCore Django Tdd",
+          "description": "Django testing strategies with pytest-django, TDD methodology, factory_boy, mocking, coverage, and testing Django REST Framework APIs."
+        },
+        {
+          "id": "web-backend-django-verification",
+          "name": "GNCore Django Verification",
+          "description": "Run the full Django verification loop — environment check, mypy/ruff/black linting, migration safety, pytest with coverage targets, pip-audit and bandit security scans, settings and logging review, and diff review — producing a phased pass/fail report before release or PR."
+        },
+        {
+          "id": "web-backend-nestjs-patterns",
+          "name": "GNCore Nestjs Patterns",
+          "description": "NestJS architecture patterns for modules, controllers, providers, DTO validation, guards, interceptors, config, and production-grade TypeScript backends."
+        },
+        {
+          "id": "web-backend-springboot-patterns",
+          "name": "GNCore Springboot Patterns",
+          "description": "Spring Boot architecture patterns, REST API design, layered services, data access, caching, async processing, and logging."
+        },
+        {
+          "id": "web-backend-springboot-security",
+          "name": "GNCore Springboot Security",
+          "description": "Spring Security best practices for authn/authz, validation, CSRF, secrets, headers, rate limiting, and dependency security in Java Spring Boot services."
+        },
+        {
+          "id": "web-backend-springboot-tdd",
+          "name": "GNCore Springboot Tdd",
+          "description": "Test-driven development for Spring Boot using JUnit 5, Mockito, MockMvc, Testcontainers, and JaCoCo."
+        },
+        {
+          "id": "web-backend-springboot-verification",
+          "name": "GNCore Springboot Verification",
+          "description": "Run the full Spring Boot verification loop — Maven or Gradle build, SpotBugs, PMD, and Checkstyle static analysis, unit and Testcontainers integration tests with JaCoCo coverage, OWASP dependency and secret scans, and diff review — producing a pass/fail readiness report."
+        },
+        {
+          "id": "web-backend-golang-patterns",
+          "name": "GNCore Golang Patterns",
+          "description": "Idiomatic Go patterns, best practices, and conventions for building robust, efficient, and maintainable Go applications."
+        },
+        {
+          "id": "web-backend-golang-testing",
+          "name": "GNCore Golang Testing",
+          "description": "Go testing patterns including table-driven tests, subtests, benchmarks, fuzzing, and test coverage."
+        },
+        {
+          "id": "web-backend-laravel-patterns",
+          "name": "GNCore Laravel Patterns",
+          "description": "Laravel architecture patterns, routing/controllers, Eloquent ORM, service layers, queues, events, caching, and API resources for production apps."
+        },
+        {
+          "id": "web-backend-laravel-security",
+          "name": "GNCore Laravel Security",
+          "description": "Laravel security best practices — authentication, authorization, Eloquent safety, CSRF, XSS prevention, API security, and secure deployment configurations."
+        },
+        {
+          "id": "web-backend-laravel-tdd",
+          "name": "GNCore Laravel Tdd",
+          "description": "Laravel testing strategies with PHPUnit, Pest, model factories, HTTP tests, Sanctum authentication testing, mocking, and coverage."
+        },
+        {
+          "id": "web-backend-laravel-verification",
+          "name": "GNCore Laravel Verification",
+          "description": "Verification loop for Laravel projects: env checks, linting, static analysis, tests with coverage, security scans, and deployment readiness."
+        },
+        {
+          "id": "web-backend-supabase",
+          "name": "GNCore Supabase",
+          "description": "Implement or debug Supabase database, authentication, storage, and realtime features using current product documentation."
+        },
+        {
+          "id": "web-backend-redis-core",
+          "name": "GNCore Redis Core",
+          "description": "Core Redis modeling guidance — choose the right data structure (String, Hash, List, Set, Sorted Set, JSON, Stream, Vector Set) and use consistent colon-separated key names."
+        },
+        {
+          "id": "web-backend-redis-connections",
+          "name": "GNCore Redis Connections",
+          "description": "Redis client and connection guidance covering connection pooling, multiplexing, pipelining, client-side caching with RESP3, avoiding slow commands (KEYS, SMEMBERS, HGETALL), and tuning socket timeouts."
+        },
+        {
+          "id": "web-backend-redis-security",
+          "name": "GNCore Redis Security",
+          "description": "Redis security guidance covering authentication (requirepass and ACL users), TLS, ACL-based least-privilege access control, restricting network exposure via bind and protected-mode, firewall rules, and disabling dangerous commands."
+        },
+        {
+          "id": "web-backend-redis-observability",
+          "name": "GNCore Redis Observability",
+          "description": "Redis observability guidance — which metrics to monitor (memory, connections, hit ratio, ops/sec, rejected connections), which built-in commands to reach for during incident triage (SLOWLOG, INFO, MEMORY DOCTOR, CLIENT LIST, FT.PROFILE), and when to use the Redis Insight GUI."
+        },
+        {
+          "id": "web-backend-redis-search",
+          "name": "GNCore Redis Search",
+          "description": "Redis Search guidance covering FT.CREATE schema design, field type selection (TEXT, TAG, NUMERIC, GEO, GEOSHAPE, VECTOR, JSON path), DIALECT 2 query syntax, FT.SEARCH / FT.AGGREGATE / FT.HYBRID command selection, vector similarity with HNSW or FLAT, hybrid retrieval combining lexical and vector ranking, RAG pipelines, zero-downtime index updates via..."
+        },
+        {
+          "id": "web-backend-redis-semantic-cache",
+          "name": "GNCore Redis Semantic Cache",
+          "description": "Redis LangCache guidance for semantic caching of LLM responses on Redis Cloud — calling search/set via the SDK or REST API, tuning the similarity threshold, separating caches per task type, and filtering with custom attributes."
+        },
+        {
+          "id": "web-backend-vercel-optimize",
+          "name": "GNCore Vercel Optimize",
+          "description": "Use for Vercel cost and performance optimization on deployed projects, especially Next.js, SvelteKit, Nuxt, and limited Astro apps."
+        },
+        {
+          "id": "web-backend-cloudflare",
+          "name": "GNCore Cloudflare",
+          "description": "Discover and choose Cloudflare products for apps, APIs, AI agents, storage, networking, and security."
+        },
+        {
+          "id": "web-backend-workers-best-practices",
+          "name": "GNCore Workers Best Practices",
+          "description": "Cloudflare Workers best practices for production applications."
+        },
+        {
+          "id": "web-backend-wrangler",
+          "name": "GNCore Wrangler",
+          "description": "Run or troubleshoot Wrangler CLI commands in projects that have a wrangler.jsonc, wrangler.json, or wrangler.toml file, including local development, Previews, deployment, and resource management."
+        },
+        {
+          "id": "web-backend-durable-objects",
+          "name": "GNCore Durable Objects",
+          "description": "Build, debug, or review Cloudflare Durable Objects code for persistent state and coordination."
+        },
+        {
+          "id": "web-backend-workers-profiling",
+          "name": "GNCore Workers Profiling",
+          "description": "Profile or debug CPU usage and memory allocation in deployed Cloudflare Workers and Durable Objects."
+        },
+        {
+          "id": "web-backend",
+          "name": "GNCore Backend Workflow",
+          "description": "Route a backend task to the appropriate architecture, API, database, stack, security, or operations workflow."
+        },
+        {
+          "id": "web-backend-codequality",
+          "name": "GNCore Backend Code Quality",
+          "description": "Improve backend correctness and maintainability across boundaries, data handling, concurrency, and error paths."
+        },
+        {
+          "id": "web-backend-security",
+          "name": "GNCore Backend Security",
+          "description": "Review and repair backend authentication, object authorization, input handling, session, and secret boundaries."
+        },
+        {
+          "id": "web-development",
+          "name": "Web Development",
+          "description": "Plan and implement a focused web feature using the repository's existing framework, patterns, and tests."
+        },
+        {
+          "id": "seo-audit",
+          "name": "SEO Audit",
+          "description": "Improve technical and content discoverability using crawlable structure and verifiable search metadata."
+        }
+      ]
+    },
+    {
+      "id": "web-frontend",
+      "name": "GNCore Web Frontend",
+      "description": "Build complete responsive web interfaces and choose an appropriate visual direction from the product brief.",
+      "group": "web-and-apps",
+      "workflows": [
+        {
+          "id": "web-front-design",
+          "name": "GNCore Design",
+          "description": "Build or restyle a web interface with a deliberate visual identity and complete interaction states."
+        },
+        {
+          "id": "web-front-ui-ux",
+          "name": "GNCore Ui Ux",
+          "description": "Choose evidence-based UI patterns, palettes, typography, and layouts using a searchable local design library."
+        },
+        {
+          "id": "web-front-react",
+          "name": "GNCore React",
+          "description": "Improve React and Next.js rendering, data fetching, and bundle performance using measured bottlenecks."
+        },
+        {
+          "id": "web-front-guidelines",
+          "name": "GNCore Guidelines",
+          "description": "Review a web interface against current interface guidelines and report actionable file and line findings."
+        },
+        {
+          "id": "web-front-shadcn",
+          "name": "GNCore Shadcn",
+          "description": "Add and customize shadcn/ui components within an existing React application and theme."
+        },
+        {
+          "id": "web-front-minimalism",
+          "name": "GNCore Minimalism",
+          "description": "Create restrained web interfaces with clear hierarchy, deliberate whitespace, and essential controls."
+        },
+        {
+          "id": "web-front-swiss",
+          "name": "GNCore Swiss",
+          "description": "Build Swiss and International Style web layouts using typographic hierarchy and disciplined grids."
+        },
+        {
+          "id": "web-front-editorial",
+          "name": "GNCore Editorial",
+          "description": "Design magazine and editorial web experiences with strong reading rhythm, type, and image relationships."
+        },
+        {
+          "id": "web-front-luxury",
+          "name": "GNCore Luxury",
+          "description": "Create premium web experiences through typography, art direction, restrained detail, and polished interaction."
+        },
+        {
+          "id": "web-front-agentic",
+          "name": "GNCore Agentic",
+          "description": "Design AI task interfaces that expose progress, editable intent, results, and recovery controls."
+        },
+        {
+          "id": "web-front-maximalism",
+          "name": "GNCore Maximalism",
+          "description": "Build expressive maximalist web interfaces with rich layers and a readable visual hierarchy."
+        },
+        {
+          "id": "web-front-taste",
+          "name": "GNCore Taste",
+          "description": "Art-direct a distinctive frontend using researched compositions and iterative browser inspection."
+        },
+        {
+          "id": "web-front-neobrutalism",
+          "name": "GNCore Neobrutalism",
+          "description": "Create neo-brutalist web UI with bold borders, flat color, and direct, usable controls."
+        },
+        {
+          "id": "web-front-industrial",
+          "name": "GNCore Industrial",
+          "description": "Build industrial brutalist web interfaces with structural grids, utility typography, and exposed function."
+        },
+        {
+          "id": "web-front-futuristic",
+          "name": "GNCore Futuristic",
+          "description": "Create futuristic and Y2K-inspired interfaces with deliberate technical typography and spatial depth."
+        },
+        {
+          "id": "web-front-retro",
+          "name": "GNCore Retro",
+          "description": "Create nostalgic web interfaces with era-specific typography, palettes, and graphic treatments."
+        },
+        {
+          "id": "web-front-collage",
+          "name": "GNCore Collage",
+          "description": "Build paper and scrapbook web compositions with tactile layers and coherent reading order."
+        },
+        {
+          "id": "web-front-doodle",
+          "name": "GNCore Doodle",
+          "description": "Create playful hand-drawn web interfaces with readable type and controlled visual irregularity."
+        },
+        {
+          "id": "web-front-bento",
+          "name": "GNCore Bento",
+          "description": "Organize web content in a responsive bento grid with purposeful card sizes and hierarchy."
+        },
+        {
+          "id": "web-front-glass",
+          "name": "GNCore Glass",
+          "description": "Build glass and translucent web surfaces with readable contrast and affordable rendering costs."
+        },
+        {
+          "id": "web-front-neumorphism",
+          "name": "GNCore Neumorphism",
+          "description": "Create soft inset and raised web surfaces while keeping control states accessible."
+        },
+        {
+          "id": "web-front-claymorphism",
+          "name": "GNCore Claymorphism",
+          "description": "Create playful clay-like web surfaces with rounded geometry and tactile depth."
+        },
+        {
+          "id": "web-front-aurora",
+          "name": "GNCore Aurora",
+          "description": "Create aurora and gradient web treatments with controlled color transitions and readable content."
+        },
+        {
+          "id": "web-front-cyberpunk",
+          "name": "GNCore Cyberpunk",
+          "description": "Build neon and cyberpunk web interfaces with disciplined glow, dark surfaces, and clear interaction states."
+        },
+        {
+          "id": "web-front-threejs",
+          "name": "GNCore Threejs",
+          "description": "Implement immersive Three.js and WebGL web experiences with explicit asset and rendering budgets."
+        },
+        {
+          "id": "web-front-r3f",
+          "name": "GNCore R3F",
+          "description": "Build React Three Fiber scenes with clear React and render-loop ownership and proper cleanup."
+        },
+        {
+          "id": "web-front-scrollytelling",
+          "name": "GNCore Scrollytelling",
+          "description": "Build scroll-driven narratives with GSAP ScrollTrigger and resilient responsive behavior."
+        },
+        {
+          "id": "web-front-kinetic-type",
+          "name": "GNCore Kinetic Type",
+          "description": "Animate web typography with purposeful timing while preserving readable text and reduced-motion access."
+        },
+        {
+          "id": "web-front-organic",
+          "name": "GNCore Organic",
+          "description": "Create warm organic web interfaces using earth tones, natural rhythm, and tactile accents."
+        },
+        {
+          "id": "web-front-design-system",
+          "name": "GNCore Design System",
+          "description": "Define web design tokens, component contracts, and state specifications that fit an existing product."
+        },
+        {
+          "id": "web-front-styling",
+          "name": "GNCore Styling",
+          "description": "Style responsive web components using Tailwind, semantic tokens, and accessible primitives."
+        },
+        {
+          "id": "web-front-composition",
+          "name": "GNCore Composition",
+          "description": "Refactor React component APIs using composition, clear state ownership, and version-compatible context patterns."
+        },
+        {
+          "id": "web-front-gsap",
+          "name": "GNCore Gsap",
+          "description": "Implement GSAP tweens and responsive animation with explicit lifecycle and interruption handling."
+        },
+        {
+          "id": "web-front-motion-performance",
+          "name": "GNCore Motion Performance",
+          "description": "Profile and improve animation rendering cost without changing intended behavior."
+        },
+        {
+          "id": "web-front-motion-review",
+          "name": "GNCore Motion Review",
+          "description": "Review web animation timing, easing, continuity, and interaction feedback with actionable findings."
+        },
+        {
+          "id": "web-front-testing",
+          "name": "GNCore Testing",
+          "description": "Test important local web user journeys with Playwright and observable browser evidence."
+        },
+        {
+          "id": "web-front-browser",
+          "name": "GNCore Browser",
+          "description": "Inspect and exercise web interfaces through agent-browser snapshots, selectors, and screenshots."
+        },
+        {
+          "id": "web-front-find-skills",
+          "name": "GNCore Find Skills",
+          "description": "Find frontend skills and compare candidates by scope, source, compatibility, and license."
+        },
+        {
+          "id": "web-front-accessibility",
+          "name": "GNCore Responsive Accessibility",
+          "description": "Implement and verify responsive, keyboard-accessible web interfaces and assistive-technology semantics."
+        },
+        {
+          "id": "web-front",
+          "name": "GNCore Frontend Workflow",
+          "description": "Route a web frontend task to the relevant GNCore design, component, motion, or browser workflow."
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "web-and-apps",
+      "name": "Web and Applications",
+      "skills": [
+        "web-frontend",
+        "web-backend",
+        "design-ux",
+        "mobile-development",
+        "game-development"
+      ]
+    },
+    {
+      "id": "ai-and-ml",
+      "name": "AI and Machine Learning",
+      "skills": [
+        "machine-learning",
+        "neural-networks",
+        "deep-learning",
+        "computer-vision",
+        "natural-language-processing",
+        "mlops",
+        "ai-engineering"
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Data and Databases",
+      "skills": [
+        "data-engineering",
+        "data-science",
+        "databases"
+      ]
+    },
+    {
+      "id": "systems",
+      "name": "Systems and Performance",
+      "skills": [
+        "systems-programming",
+        "embedded-systems",
+        "distributed-systems",
+        "performance-engineering"
+      ]
+    },
+    {
+      "id": "delivery",
+      "name": "Delivery and Reliability",
+      "skills": [
+        "cloud-devops-sre",
+        "cybersecurity",
+        "observability",
+        "testing",
+        "release-engineering"
+      ]
+    },
+    {
+      "id": "engineering",
+      "name": "Developer Workflow",
+      "skills": [
+        "code-build",
+        "python",
+        "developer-tools",
+        "documentation",
+        "automation",
+        "developer-research"
+      ]
+    }
+  ]
+}

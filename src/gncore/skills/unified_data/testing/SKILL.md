@@ -1,37 +1,47 @@
 ---
 name: testing
-description: "Design and run unit, integration, end-to-end, automation, and performance tests for important software behavior."
-license: Apache-2.0 AND MIT
+description: "Design and implement unit, integration, contract, end-to-end and performance verification."
+license: MIT
 ---
 
 # GNCore Testing
 
-## Select the work from the user's intent
+Version: 7.0.0rc1
 
-Choose the test layer that can observe the requirement with the least unnecessary setup. Use representative fixtures, clear contracts, deterministic isolation, and behavior-based assertions. Include relevant boundaries, errors, permissions, concurrency, or recovery rather than aiming for a fixed test count.
+## Choose the work
 
-Infer a useful working mode from the requested outcome, inputs, existing assets, audience, constraints, and current project context. An explicit format, theme, stack, or workflow takes priority. If enough is known to proceed, state material assumptions briefly and do the work. Ask only about missing decisions that materially block a correct result.
+Choose test boundaries by failure impact. Assert observable behavior, isolate side effects and use real components where the integration itself is the contract.
 
-Use the workflow map below as capabilities within this one skill. Combine the modes that the actual task needs; do not run every mode, change the user's scope, or load every reference by default. The host agent supplies reasoning and tools; no particular model, connector, or extra skill is assumed.
+Inspect the supplied project and the requested deliverable first. Current explicit instructions take priority over saved preferences, existing conventions, then inferred defaults. Ask only about missing decisions that materially block correct work; otherwise state assumptions briefly and proceed.
 
-## Execute and verify
+Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
-1. Inspect the relevant inputs and existing conventions; preserve originals and unrelated user changes.
-2. Define the requested artifact and observable acceptance checks. Scale the plan and review depth to the actual uncertainty and risk.
-3. Produce the complete result using the selected mode guidance. Keep source facts, assumptions, estimates, interpretations, and proposals distinguishable.
-4. Validate the artifact and fix observed failures. Rerun relevant checks after a fix, and stop rather than repeat an unchanged failing approach indefinitely.
-5. Deliver the artifact or changes with actual evidence, important decisions, and remaining limitations. Do not claim unrun checks or unperformed external actions.
+## Deliver and verify
 
-## Category quality criteria
+Deterministic tests, fixtures, environment assumptions and a result report distinguishing passed, failed, skipped and unexecuted coverage.
 
-Demonstrate useful failures where appropriate, run focused regressions after fixes, and preserve failure evidence. Do not hide flaky behavior, weaken assertions, or claim checks that were not run.
+Demonstrate the test catches a meaningful failure. Verify cleanup, independence and realistic boundary cases; do not weaken assertions or silently suppress failures.
 
-Use current primary documentation for version-sensitive APIs, rules, or consequential factual claims. Use supplied sources when available. References retain their authorship and license terms; their harness-specific tools, universal activation rules, and approval scripts do not replace the current user's request or host permissions.
+Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
 ## Workflow map
 
 | Workflow | Use it for |
 | --- | --- |
+| `accessibility-audit` | Inspect a user flow for keyboard, screen reader, visual, and cognitive accessibility barriers. |
+| `performance-audit` | Find and verify the largest performance bottlenecks before changing code or infrastructure. |
+| `test-strategy` | Choose a balanced test plan that catches important failures at the lowest practical level. |
+| `requirements-to-tests` | Turn requirements into observable acceptance cases that cover success, failure, boundaries, and permissions. |
+| `qa-test-strategy` | Choose a risk-based test mix that verifies behavior at the lowest effective level. |
+| `qa-test-design` | Turn a behavior contract into clear positive, negative, boundary, and state-transition tests. |
+| `qa-automation` | Build maintainable test automation with stable setup, deterministic data, and actionable failures. |
+| `qa-e2e` | Verify a critical user journey across the application with realistic but isolated data. |
+| `qa-api-contract` | Check API compatibility, validation, authorization, and error contracts between services. |
+| `qa-performance` | Measure a service against representative load, latency, throughput, and resource objectives. |
+| `qa-accessibility` | Test a flow for keyboard operation, semantics, focus, labels, zoom, and assistive technology support. |
+| `qa-defect-triage` | Classify and prioritize a defect using reproducibility, user impact, scope, and workaround evidence. |
+| `qa-release-gate` | Evaluate release evidence against agreed quality gates and make residual risk visible. |
+| `qa-flaky-test` | Find the cause of an intermittent test failure and confirm a stable correction. |
 | `unit-testing` | Write fast, deterministic unit tests around public behavior and edge cases. |
 | `integration-testing` | Verify interactions between real components while isolating external services and state. |
 | `end-to-end-testing` | Validate critical user journeys across the running application with stable, accessible assertions. |
@@ -39,6 +49,62 @@ Use current primary documentation for version-sensitive APIs, rules, or conseque
 | `performance-testing` | Design controlled load tests that measure latency, throughput, and saturation safely. |
 
 ## Focused procedures
+
+### Accessibility Audit (`accessibility-audit`)
+
+Walk the actual flow using semantic structure, keyboard only, visible focus, zoom/reflow, labels, errors, and relevant assistive technology when available. Record reproducible steps, affected users, and evidence. Prioritize barriers by impact and task completion. Map findings to applicable criteria only when checked; do not claim full conformance from a partial audit.
+
+### Performance Audit (`performance-audit`)
+
+Capture a baseline under stated hardware, data, and load conditions. Profile before optimizing and identify the critical path. Change one bottleneck at a time, preserve correctness, and compare repeated measurements. Include tail latency and resource cost when relevant. Do not claim improvement without measured before/after evidence or scale workload beyond safe limits.
+
+### Test Strategy (`test-strategy`)
+
+Map changed behavior to risks and contracts. Prefer focused unit tests for logic, integration tests for boundaries, and a small number of end-to-end tests for critical journeys. Include failure paths, permissions, and data invariants. Avoid brittle implementation assertions and duplicated coverage. Report what is covered, what is unverified, and the exact commands run.
+
+### Requirements to Acceptance Tests (`requirements-to-tests`)
+
+Extract actors, preconditions, inputs, expected outcomes, and constraints. Rewrite vague statements as observable behaviors and identify contradictions or missing decisions. Cover normal, boundary, error, permission, and recovery paths. Link cases to requirement IDs where available. Do not treat implementation details as acceptance criteria unless they are contractual.
+
+### Test Strategy (`qa-test-strategy`)
+
+Map changed contracts and failure costs to unit, integration, end-to-end, accessibility, and performance checks. Prioritize boundary and recovery cases; report untested risk without padding coverage metrics.
+
+### Test Case Design (`qa-test-design`)
+
+Define preconditions, inputs, observable outcome, oracle, cleanup, and traceability. Use equivalence classes and realistic edge cases; avoid asserting incidental implementation details.
+
+### Test Automation (`qa-automation`)
+
+Use isolated fixtures, explicit waits, stable selectors, safe cleanup, and failure artifacts that exclude secrets. Eliminate flaky timing and rerun failures to distinguish product defects from harness defects.
+
+### End-to-End User Journey Test (`qa-e2e`)
+
+Select the highest-value journey, define checkpoints, seed deterministic state, test success and a meaningful failure path, and clean up. Avoid production accounts and fixed sleeps.
+
+### API Contract Testing (`qa-api-contract`)
+
+Use versioned schemas and representative consumers, test malformed and unauthorized requests, verify status and error bodies, and detect breaking changes before deployment.
+
+### Performance Test Plan (`qa-performance`)
+
+Set workload model, environment, warmup, duration, concurrency, percentiles, and safety limits. Compare repeatable baselines and stop before shared systems are harmed.
+
+### Accessibility Test Pass (`qa-accessibility`)
+
+Run automated checks and manual keyboard review, inspect focus and error announcements, test reflow/zoom, and record reproducible barriers. Do not claim full conformance from partial coverage.
+
+### Defect Triage (`qa-defect-triage`)
+
+Capture environment, version, steps, expected and actual result, affected users, frequency, and evidence. Separate severity from priority and avoid unsupported root-cause claims.
+
+### Release Quality Gate (`qa-release-gate`)
+
+Check required automated and manual evidence, unresolved defects, platform coverage, rollback, and known issues. Mark each gate passed, failed, skipped, or blocked; never equate a green pipeline with zero risk.
+
+### Flaky Test Investigation (`qa-flaky-test`)
+
+Collect repeated-run evidence, timestamps, ordering, shared state, network and timing dependencies. Reproduce under controlled conditions, fix the cause rather than suppressing the assertion, and demonstrate stable reruns.
 
 ### Unit Testing (`unit-testing`)
 
@@ -60,18 +126,8 @@ Inspect existing CI conventions and execution limits. Run the fastest useful che
 
 Define workload, concurrency, duration, target environment, and success thresholds before running. Use a staging or explicitly approved target and ramp traffic gradually. Capture percentiles, errors, resource saturation, and test conditions. Do not stress production or claim capacity from an uncontrolled run.
 
-## Additional reviewed references
+## Attribution and resource integrity
 
-These are optional technical references for relevant tasks, not a requirement to execute their workflows or install their host plugins.
+Original phase-two guidance is MIT-licensed GNCore writing. Retained source guides and helpers keep their original authorship, notices and applicable licenses, including share-alike obligations. Renaming or combining them does not transfer exclusive ownership.
 
-- [anthropics/skills / webapp-testing](research/anthropics-skills-webapp-testing/GUIDE.md): Apache-2.0.
-- [vercel-labs/agent-browser / agent-browser](research/vercel-labs-agent-browser-agent-browser/GUIDE.md): Apache-2.0.
-- [mattpocock/skills / setup-pre-commit](research/mattpocock-skills-setup-pre-commit/GUIDE.md): MIT.
-- [antibrow/anti-detect-browser-skills / anti-detect-browser](research/antibrow-anti-detect-browser-skills-anti-detect-browser/GUIDE.md): MIT.
-- [coreyhaines31/marketingskills / ad-creative](research/coreyhaines31-marketingskills-ad-creative/GUIDE.md): MIT.
-
-## Attribution and use
-
-GNCore's new category guidance is authored for this library. Retained source guides, tools, and assets remain attributed to their original authors and keep their supplied licenses. Modified or combined material subject to share-alike terms remains under those terms. This skill does not claim exclusive ownership of third-party content.
-
-See [SOURCES.json](SOURCES.json) for source identities, snapshot hashes or revisions, and license decisions. Read only the references relevant to the current task.
+See [SOURCES.json](SOURCES.json) and source-specific notices. GNCore exports preserve declared files and verify their content hashes. Imported helpers remain inert unless deliberately selected for an authorized task.

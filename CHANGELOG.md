@@ -1,5 +1,14 @@
 # Changelog
 
+## 7.0.0rc1 — prepared locally, publication pending approval
+
+- Focus the active catalog on 30 developer categories and 374 workflows in six groups.
+- Preserve 319 technical workflows, rewrite 116 repeated procedures, add 55 original workflows and explicitly retire 234 nondeveloper workflows.
+- Add focused neural networks, deep learning, vision, NLP, MLOps, databases, native/embedded/distributed systems, performance, observability and technical research.
+- Add complete active-category scenario coverage, source/resource digests, offline reproducible authoring, explainable routing and safe managed retirement.
+- Fix transient Windows rename locks while retaining bounded permanent-failure behavior and recovery.
+- Synchronize the existing Cloudflare website with the candidate catalog and migration routes; preserve source attribution and licenses.
+
 ## 6.0.0 — source branch
 
 - Fix excluded-theme fallbacks, multiword style matching, the `britalisim` spelling, natural negative motion constraints, and contradictory theme handling.

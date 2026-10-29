@@ -1,23 +1,13 @@
-# Adaptive backend and coding skills
+# Backend and coding skills
 
-The earlier 127 backend and general coding workflows now form two primary entrypoints:
+`web-backend` contains 60 service/platform workflows, while `code-build` consolidates 85 general software-engineering modes. Observability-specific work is also available through the focused `observability` category. Original technical IDs remain lookup aliases when active.
 
-- `web-backend`: 61 service, architecture, API, persistence, stack, platform, delivery, security, and observability workflows.
-- `code-build`: 66 language-independent requirements, design, implementation, debugging, review, testing, investigation, and verification workflows.
+Phase one contained 22 groups of repeated procedure text covering 116 backend/coding workflows. Phase two replaces them with task-specific decisions and validation for contracts, errors, migrations, caching, frameworks, testing, debugging, analysis, agent tooling and release work. The complete merge ledger records old/new procedure hashes.
+
+Original attributed source guides, helper resources and applicable share-alike notices remain with their owner skill. Heuristic-only research bundles are retired. Imported tools remain optional and inert during installation.
 
 ```bash
 gncore export --skills web-backend code-build
+gncore show web-backend
+gncore audit
 ```
-
-```text
-$web-backend Implement a booking API using this project's existing stack.
-$code-build Investigate the failing tests, fix the cause, and verify the regression.
-```
-
-Each primary `SKILL.md` selects the relevant work from the request and contains its focused workflow procedures. It does not require executing all installed workflows or changing the chosen stack. Source guides, rules, helper scripts, and notices are supporting resources loaded only for a relevant task.
-
-Earlier names such as `web-backend-codequality`, `web-backend-fastapi`, `code-quality`, and `code-debugging` remain CLI/API aliases. A fresh installation exposes the two category names for host-agent invocation.
-
-Some source procedures depend on scanners, browser runtimes, platform CLIs, authenticated services, or a particular host capability. Exporting a skill does not install those dependencies or authorize external actions. The host should use an equivalent available capability when it preserves the task and report real limitations otherwise.
-
-Attribution and applicable MIT, Apache, Creative Commons, and share-alike terms remain intact. See [Ownership](OWNERSHIP.md), [Migration](../MIGRATION.md), and [Catalog](ALL_SKILLS.md).

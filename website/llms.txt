@@ -1,0 +1,11 @@
+# GNCore 7.0.0rc1
+
+Developer-focused skill catalog: 30 categories, 374 workflows.
+Status: candidate-preview.
+Skills guide host agents; they do not independently execute projects or certify output quality.
+
+- Catalog: https://gncore.pages.dev/skills/
+- Workflow index: https://gncore.pages.dev/all-skills/
+- Migration: https://gncore.pages.dev/migration/
+- Install: https://gncore.pages.dev/download/
+- Source-specific attribution and licenses remain applicable.

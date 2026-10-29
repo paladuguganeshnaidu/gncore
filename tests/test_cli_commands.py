@@ -14,7 +14,7 @@ def test_list_search_show_and_legacy_alias_are_read_only(tmp_path, monkeypatch, 
     assert cli.run(["list", "workflows"]) == 0
     assert "train: Train a Machine Learning Model -> machine-learning" in capsys.readouterr().out
     assert cli.run(["list", "domains"]) == 0
-    assert "1 skill, 10 workflows" in capsys.readouterr().out
+    assert "AI and Machine Learning (7 skills" in capsys.readouterr().out
     assert cli.run(["search", "train", "model"]) == 0
     assert "machine-learning" in capsys.readouterr().out
     assert cli.run(["show", "train"]) == 0
@@ -47,12 +47,13 @@ def test_directory_export_installs_standard_entrypoint_and_all_resources(tmp_pat
     assert not (root.parent / "web-front-minimalism").exists()
 
 
-def test_full_catalog_archive_contains_exactly_sixty_discoverable_skills(tmp_path):
+def test_full_catalog_archive_contains_only_active_developer_skills(tmp_path):
     output = tmp_path / "all.zip"
     assert GncoreCli().run(["export", "--all", "--output", str(output)]) == 0
     with ZipFile(output) as archive:
         assert len(archive.namelist()) == len(set(archive.namelist()))
-        assert len([n for n in archive.namelist() if n.endswith("/SKILL.md")]) == 60
+        assert len([n for n in archive.namelist() if n.endswith("/SKILL.md")]) == 30
+        assert not any(name.startswith(("finance-accounting/", "company-leadership/")) for name in archive.namelist())
         for skill in builtin_skills():
             assert archive.read(f"{skill.metadata.skill_id}/SKILL.md").decode() == render_skill(skill)
 
@@ -81,7 +82,7 @@ def test_plan_command_infers_theme_and_honors_constraints(capsys):
 def test_cli_version_and_no_application_orchestration_commands(capsys):
     cli = GncoreCli()
     assert cli.run(["version"]) == 0
-    assert capsys.readouterr().out.strip() == "6.0.0"
+    assert capsys.readouterr().out.strip() == "7.0.0rc1"
     for removed in ("activate", "install", "uninstall", "backup", "restore", "doctor"):
         assert cli.run([removed]) == 2
         capsys.readouterr()

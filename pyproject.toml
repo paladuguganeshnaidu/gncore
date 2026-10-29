@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "gncore"
-version = "6.0.0"
-description = "A searchable Python catalog of portable AI agent skills."
+version = "7.0.0rc1"
+description = "Developer-focused AI skills for software, machine learning, neural networks and systems engineering."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT AND Apache-2.0 AND CC-BY-4.0 AND CC-BY-SA-4.0" }
@@ -21,7 +21,7 @@ keywords = [
     "agent-skills",
 ]
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Build Tools",
     "Topic :: Software Development :: Libraries",
@@ -29,7 +29,6 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 dependencies = []
@@ -42,9 +41,9 @@ test = ["pytest>=8.2"]
 skills = ["PyYAML>=6"]
 
 [project.urls]
-Homepage = "https://github.com/paladuguganeshnaidu/gncore"
+Homepage = "https://gncore.pages.dev"
 Repository = "https://github.com/paladuguganeshnaidu/gncore"
-Documentation = "https://github.com/paladuguganeshnaidu/gncore#readme"
+Documentation = "https://github.com/paladuguganeshnaidu/gncore/tree/v7.0.0rc1/docs"
 "Bug Tracker" = "https://github.com/paladuguganeshnaidu/gncore/issues"
 
 [tool.hatch.build.targets.wheel]
@@ -63,20 +62,9 @@ include = [
     "/VERIFIED_MODE.md",
     "/website-commands.txt",
     "/pyproject.toml",
-    "/scripts/generate_skill_catalog.py",
-    "/scripts/inspect_frontend_sources.py",
-    "/scripts/stage_frontend_sources.py",
-    "/scripts/build_frontend_suite.py",
-    "/scripts/backend_requests.py",
-    "/scripts/import_backend_sources.py",
-    "/scripts/build_backend_suite.py",
-    "/scripts/category_blueprints.py",
-    "/scripts/frontend_playbook.md",
-    "/scripts/research_categories.py",
-    "/scripts/download_category_candidates.py",
-    "/scripts/recover_category_sources.py",
-    "/scripts/build_unified_categories.py",
-    "/scripts/install_categories.py",
+    "/scripts",
+    "/catalog",
+    "/web",
     "/src/gncore",
     "/tests",
 ]

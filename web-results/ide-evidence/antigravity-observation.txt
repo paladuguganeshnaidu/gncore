@@ -1,0 +1,36 @@
+Window: "GNCore - Antigravity IDE - SKILL.md", App: Antigravity IDE.exe.
+	0 window GNCore - Antigravity IDE - SKILL.md Secondary Actions: Raise
+		2 region GNCore - Antigravity IDE - SKILL.md
+									13 document GNCore - Antigravity IDE - SKILL.md Value: vscode-file://vscode-app/c:/Users/ganes/AppData/Local/Programs/Antigravity%20IDE/resources/app/out/vs/code/electron-browser/workbench/workbench.html ID: RootWebArea
+												20 text GNCore - Antigravity IDE - SKILL.md
+													66 list item SKILL.md, .agents\skills\neural-networks ID: list_id_2_0
+														69 group <REPO>\.agents\skills\neural-networks\SKILL.md
+															71 text SKILL.md
+															94 tab item (selectable) SKILL.md
+																95 group <REPO>\.agents\skills\neural-networks\SKILL.md
+																109 group <REPO>\.agents
+																113 group <REPO>\.agents\skills
+																117 group <REPO>\.agents\skills\neural-networks
+															120 list item SKILL.md
+																121 group <REPO>\.agents\skills\neural-networks\SKILL.md
+																	123 text SKILL.md
+													124 group SKILL.md
+													132 group Restricted Mode: Some features are disabled because this folder is not trusted. ID: status.workspaceTrust
+														133 button Restricted Mode: Some features are disabled because this folder is not trusted.
+															165 text GNCore
+															166 combo box (settable, string) Message input Value: 
+															176 button MCP Error
+													188 dialog Info Do you trust the authors of the files in this folder? Secondary Actions: Raise
+														189 button Yes, I trust the authors
+														190 text Trust folder and enable all features
+														191 button No, I don't trust the authors
+														192 text Browse folder in restricted mode
+														195 text Do you trust the authors of the files in this folder?
+															199 text Antigravity IDE may cause an AI agent to take unsafe actions based on the files' content that can result in data exfiltration or data loss. If you don't trust the authors of these files, we recommend to continue in restricted mode as the files may be malicious. See
+															200 link our docs Description: https://aka.ms/vscode-workspace-trust Value: vscode-file://vscode-app/c:/Users/ganes/AppData/Local/Programs/Antigravity%20IDE/resources/app/out/vs/code/electron-browser/workbench/workbench.html
+															203 text <REPO>
+														204 check box (settable, string) Trust the authors of all files in the parent folder 'ChatGPT'
+															206 text Trust the authors of all files in the parent folder 'ChatGPT'
+# GNCore Neural Networks
+Original phase-two guidance is MIT-licensed GNCore writing. Retained source guides and helpers keep their original authorship, notices and applicable licenses, including share-alike obligations. Renaming or combining them does not transfer exclusive ownership.
+See [SOURCES.json](SOURCES.json) and source-specific notices. GNCore exports preserve declared files and verify their content hashes. Imported helpers remain inert unless deliberately selected for an authorized task.

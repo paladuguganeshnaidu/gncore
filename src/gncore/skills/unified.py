@@ -1,9 +1,12 @@
 """Adaptive category skills and compatibility aliases for their workflows."""
 
 from functools import lru_cache
+from importlib.resources import files
+import json
 
 from gncore.skills.bundles import bundle_manifest, bundle_skills
 from gncore.skills.models import SkillMetadata
+from gncore.version import __version__
 
 
 def unified_manifest() -> tuple[dict, ...]:
@@ -18,7 +21,10 @@ def unified_skills():
 def workflow_aliases() -> dict[str, str]:
     aliases = {workflow["id"]: entry["id"] for entry in unified_manifest() for workflow in entry["workflows"]}
     primary_ids = {entry["id"] for entry in unified_manifest()}
-    return {name: name if name in primary_ids else target for name, target in aliases.items()}
+    migration = json.loads(files("gncore.skills").joinpath("migration.json").read_text(encoding="utf-8"))
+    overrides = {item["id"]: item["target"] for item in migration["categories"] if item["target"]}
+    overrides.update(migration.get("aliases", {}))
+    return {name: name if name in primary_ids else overrides.get(name, target) for name, target in aliases.items()}
 
 
 @lru_cache(maxsize=None)
@@ -26,7 +32,7 @@ def list_workflows(category: str | None = None) -> tuple[SkillMetadata, ...]:
     return tuple(
         SkillMetadata(
             skill_id=workflow["id"], name=workflow["title"],
-            description=workflow["description"], version="6.0.0",
+            description=workflow["description"], version=__version__,
             category=entry["category"], tags=(entry["id"], "workflow"),
             license=entry["license"],
         )

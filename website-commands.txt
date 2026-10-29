@@ -1,52 +1,28 @@
-GNCore website command reference
-================================
+GNCore 7.0.0rc1 developer command reference
 
-Install or update GNCore
-------------------------
-python -m pip install --upgrade gncore
+Candidate publication is pending owner approval. Install this checkout with:
+python -m pip install .
 
-Show the installed version
---------------------------
-gncore version
+After approved PyPI prerelease publication:
+python -m pip install --pre gncore==7.0.0rc1
 
-Browse skills and categories
-----------------------------
+Discover and inspect:
 gncore list skills
 gncore list domains
-gncore list categories
+gncore list workflows
+gncore search "neural network"
+gncore route "Check neural network gradients"
+gncore show neural-networks
 
-Search for a skill
-------------------
-gncore search "<task or topic>"
-gncore search "<task or topic>" --category <category>
+Export and verify:
+gncore export --specific neural-networks
+gncore export --skills web-frontend web-backend
+gncore export --all --prune-retired --dry-run
+gncore export --all --prune-retired
+gncore verify
+gncore audit
+gncore evaluate --validate
+gncore export --all --output gncore-developer-skills.zip
 
-Read a skill
-------------
-gncore show <skill-id>
-
-Install a specific skill into .agents/skills/
----------------------------------------------
-gncore export --specific <skill-id>
-
-Install one or more selected skills into .agents/skills/
--------------------------------------------------------
-gncore export --skills <skill-id>
-gncore export --skills <skill-id-1> <skill-id-2>
-
-Install the complete catalog into .agents/skills/
--------------------------------------------------
-gncore export --all
-
-Install skills into a custom directory
---------------------------------------
-gncore export --skills <skill-id> --directory <path>
-gncore export --all --directory <path>
-
-Create a ZIP archive instead of installing directly
----------------------------------------------------
-gncore export --skills <skill-id-1> <skill-id-2> --output <archive.zip>
-gncore export --all --output <archive.zip>
-
-Default install location
-------------------------
-.agents/skills/<skill-id>/SKILL.md
+Default project location: .agents/skills/<category>/SKILL.md
+Compatible host agents discover and load these skills according to their settings.

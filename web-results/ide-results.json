@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "candidate": "7.0.0rc1",
+  "test_date_local": "2026-10-29",
+  "timezone": "Asia/Calcutta",
+  "workspace": "GNCore",
+  "shared_installation": {"categories": 30, "tracked_files": 1660, "verification": "benchmarks.json: installed_inventory"},
+  "ides": [
+    {
+      "name": "Visual Studio Code",
+      "installed_executable_version": "1.143.1",
+      "launch": "passed",
+      "workspace_open": "passed",
+      "installed_neural_networks_skill_read": "passed",
+      "editor_language_mode": "Skill",
+      "current_file_chat_context_suggestion": "observed",
+      "native_discovery_all_categories": "passed: native Skills panel reports Workspace, 30 items",
+      "native_discovery_evidence": "ide-evidence/vscode-workspace-skills.jpg",
+      "agent_execution": "blocked",
+      "blocker": "Copilot displayed: Sign in to use GitHub Copilot models, or add a model with your own API key. Authentication was not automated.",
+      "evidence": "ide-evidence/vscode-observation.txt"
+    },
+    {
+      "name": "Antigravity IDE",
+      "installed_executable_version": "2.5.5",
+      "launch": "passed",
+      "workspace_open": "passed",
+      "installed_neural_networks_skill_read": "passed",
+      "editor_language_mode": "Markdown",
+      "native_discovery_all_categories": "not verified",
+      "agent_execution": "blocked",
+      "workspace_trust": "User handled the prompt; subsequent observation had no trust dialog or Restricted Mode status.",
+      "blocker": "The agent input did not acquire a verifiable editable focus. set_value left the value empty; observed clicks and the agent-focus shortcut did not produce a focused message field. No prompt was sent and no model answer was inferred. An earlier MCP Error indicator was visible, but it was absent in the final observation and was not diagnosed.",
+      "evidence": "ide-evidence/antigravity-observation.txt"
+    }
+  ],
+  "automation_notes": [
+    "The Antigravity launcher and Antigravity IDE are separate applications. The editor was launched and checked.",
+    "Some window activation/click requests timed out. Window handles and state were refreshed; no success was inferred from a timeout.",
+    "An early screenshot capture included occluding windows and was discarded. Subsequent correctly targeted GNCore editor screenshots and sanitized accessibility observations were saved.",
+    "CLI benchmark timings are shared runtime measurements, not IDE or model response speed comparisons."
+  ],
+  "overall": "Editor file-read smoke checks passed in both IDEs. VS Code reports all 30 workspace skills. Full agent execution remains unverified; native automatic discovery is not verified in Antigravity."
+}

@@ -1,0 +1,75 @@
+Window: "SKILL.md - GNCore - Visual Studio Code", App: Code.exe.
+	0 window SKILL.md - GNCore - Visual Studio Code Secondary Actions: Raise
+		2 region SKILL.md - GNCore - Visual Studio Code
+									13 document SKILL.md - GNCore - Visual Studio Code Value: vscode-file://vscode-app/c:/Users/ganes/AppData/Local/Programs/Microsoft%20VS%20Code/e646868227/resources/app/out/vs/code/electron-browser/workbench/workbench.html ID: RootWebArea
+													41 button Sign In
+													107 list item SKILL.md, .agents\skills\neural-networks ID: list_id_3_0
+														110 group <REPO>\.agents\skills\neural-networks\SKILL.md
+															112 text SKILL.md
+															113 text .agents\skills\neural-networks
+												114 button Explorer Section: GNCore
+													115 heading Explorer Section: GNCore
+														118 group <REPO>\.agents
+													119 tree item (selectable) .gncore-skills-transactions ID: list_id_4_1
+														120 group <REPO>\.agents\.gncore-skills-transactions
+													121 tree item (selectable) skills ID: list_id_4_2
+														122 group <REPO>\.agents\skills
+														124 group <REPO>\.agents\skills\ai-engineering
+														126 group <REPO>\.agents\skills\automation
+														128 group <REPO>\.agents\skills\cloud-devops-sre
+														130 group <REPO>\.agents\skills\code-build
+														132 group <REPO>\.agents\skills\computer-vision
+														134 group <REPO>\.agents\skills\cybersecurity
+														136 group <REPO>\.agents\skills\data-engineering
+														138 group <REPO>\.agents\skills\data-science
+														140 group <REPO>\.agents\skills\databases
+														142 group <REPO>\.agents\skills\deep-learning
+														144 group <REPO>\.agents\skills\design-ux
+														146 group <REPO>\.agents\skills\developer-research
+														148 group <REPO>\.agents\skills\developer-tools
+														150 group <REPO>\.agents\skills\distributed-systems
+														152 group <REPO>\.agents\skills\documentation
+														154 group <REPO>\.agents\skills\embedded-systems
+														156 group <REPO>\.agents\skills\game-development
+														158 group <REPO>\.agents\skills\machine-learning
+														160 group <REPO>\.agents\skills\mlops
+														162 group <REPO>\.agents\skills\mobile-development
+														164 group <REPO>\.agents\skills\natural-language-processing
+														166 group <REPO>\.agents\skills\neural-networks
+														168 group <REPO>\.agents\skills\neural-networks\scripts
+													169 tree item (selectable) GNCORE-LICENSE ID: list_id_4_26
+														170 group <REPO>\.agents\skills\neural-networks\GNCORE-LICENSE
+													171 tree item (selectable) SKILL.md ID: list_id_4_27
+														172 group <REPO>\.agents\skills\neural-networks\SKILL.md
+														174 group <REPO>\.agents\skills\neural-networks\SOURCES.json
+														176 group <REPO>\.agents\skills\observability
+															185 tab item (selectable) SKILL.md
+																186 group <REPO>\.agents\skills\neural-networks\SKILL.md
+																202 group <REPO>\.agents
+															205 list item skills
+																206 group <REPO>\.agents\skills
+																	207 text skills
+																210 group <REPO>\.agents\skills\neural-networks
+															213 list item SKILL.md
+																214 group <REPO>\.agents\skills\neural-networks\SKILL.md
+																	216 text SKILL.md
+													217 group SKILL.md
+													254 notification Choose how you want to use Copilot.
+														255 text Choose how you want to use Copilot.
+														256 text Sign in to use GitHub Copilot models, or add a model with your own API key.
+														257 button Choose how you want to use Copilot. Add Models
+														258 button Choose how you want to use Copilot. Sign In
+														260 group Suggested context, file, SKILL.md file:///c%3A/Users/ganes/OneDrive/Documents/ChatGPT/GNCore/.agents/skills/neural-networks
+															261 button Add file:SKILL.md to context
+															262 group Enable current file context .agents\skills\neural-networks\SKILL.md
+																264 text SKILL.md
+														267 text Chat with Copilot
+																288 button Copilot
+																	290 text Copilot
+													302 group Copilot status ID: chat.statusBarEntry
+														303 button Copilot status
+													304 group Skill ID: status.editor.mode
+														305 button Skill
+													306 group Editor Language Status: $(copilot) No inline suggestion available, Inline suggestions ID: status.languageStatus
+														307 button Editor Language Status: $(copilot) No inline suggestion available, Inline suggestions
+													322 text Choose how you want to use Copilot.. Sign in to use GitHub Copilot models, or add a model with your own API key.

@@ -4,6 +4,9 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     name: Test (${{ matrix.os }}, Python ${{ matrix.python-version }})
@@ -12,12 +15,12 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: ["3.10", "3.11", "3.12"]
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install package and tests
@@ -26,6 +29,12 @@ jobs:
           python -m pip install -e .[test]
       - name: Run test suite
         run: python -m pytest -q
+      - name: Verify offline authoring and catalog integrity
+        run: |
+          python scripts/build_catalog.py --check
+          python scripts/build_evaluations.py --check
+          python -m gncore audit
+          python -m gncore evaluate --validate
       - name: Compile sources
         run: python -m compileall -q -x '(frontend_data|backend_data|unified_data)' src tests
 
@@ -34,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Run markdownlint
         uses: DavidAnson/markdownlint-cli2-action@v17
         with:

@@ -1,32 +1,28 @@
 ---
 name: cybersecurity
-description: "Assess threats, code risks, vulnerabilities, incidents, identity, cloud controls, and security validation plans."
-license: Apache-2.0 AND MIT
+description: "Review application, dependency, cloud and agent security using concrete attack paths and scoped evidence."
+license: MIT
 ---
 
 # GNCore Cybersecurity
 
-## Select the work from the user's intent
+Version: 7.0.0rc1
 
-Define assets, trust boundaries, adversary capabilities, exposure, and authorized scope. Use threat modeling, secure-code review, triage, incident response, identity, cloud review, controls, phishing analysis, secret response, or validation planning as the situation requires.
+## Choose the work
 
-Infer a useful working mode from the requested outcome, inputs, existing assets, audience, constraints, and current project context. An explicit format, theme, stack, or workflow takes priority. If enough is known to proceed, state material assumptions briefly and do the work. Ask only about missing decisions that materially block a correct result.
+Establish assets, trust boundaries, authorization and attacker capabilities. Prioritize reachable risks and distinguish observed findings from generic hardening suggestions.
 
-Use the workflow map below as capabilities within this one skill. Combine the modes that the actual task needs; do not run every mode, change the user's scope, or load every reference by default. The host agent supplies reasoning and tools; no particular model, connector, or extra skill is assumed.
+Inspect the supplied project and the requested deliverable first. Current explicit instructions take priority over saved preferences, existing conventions, then inferred defaults. Ask only about missing decisions that materially block correct work; otherwise state assumptions briefly and proceed.
 
-## Execute and verify
+Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
-1. Inspect the relevant inputs and existing conventions; preserve originals and unrelated user changes.
-2. Define the requested artifact and observable acceptance checks. Scale the plan and review depth to the actual uncertainty and risk.
-3. Produce the complete result using the selected mode guidance. Keep source facts, assumptions, estimates, interpretations, and proposals distinguishable.
-4. Validate the artifact and fix observed failures. Rerun relevant checks after a fix, and stop rather than repeat an unchanged failing approach indefinitely.
-5. Deliver the artifact or changes with actual evidence, important decisions, and remaining limitations. Do not claim unrun checks or unperformed external actions.
+## Deliver and verify
 
-## Category quality criteria
+Evidence-linked findings or a scoped security patch, abuse cases, severity rationale and practical mitigation/verification steps.
 
-Tie each finding to a reachable path, evidence, impact, and mitigation. Distinguish a scoped test from a claim that the entire system is secure.
+Reproduce safely in local or authorized targets. Check negative authorization cases, sensitive logging and dependency evidence. Do not claim absence of vulnerabilities from a scanner result alone.
 
-Use current primary documentation for version-sensitive APIs, rules, or consequential factual claims. Use supplied sources when available. References retain their authorship and license terms; their harness-specific tools, universal activation rules, and approval scripts do not replace the current user's request or host permissions.
+Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
 ## Workflow map
 
@@ -42,6 +38,8 @@ Use current primary documentation for version-sensitive APIs, rules, or conseque
 | `cyber-phishing` | Triage a suspected phishing report and provide safe containment and user guidance. |
 | `cyber-secret-response` | Respond to a potentially exposed credential without echoing or spreading the secret. |
 | `cyber-security-test-plan` | Define a bounded security test plan with written authorization, targets, limits, and stop conditions. |
+| `web-security` | Review web features for input, session, authorization, and output-handling vulnerabilities. |
+| `privacy-review` | Reduce privacy risk by tracing personal data, purpose, access, retention, and user control. |
 
 ## Focused procedures
 
@@ -85,16 +83,16 @@ Identify credential type and exposure window without printing its value, notify 
 
 Record asset owner approval, exact scope, allowed techniques, dates, rate limits, data handling, contacts, and stop rules. Keep testing non-destructive and report only verified findings to authorized recipients.
 
-## Additional reviewed references
+### Web Security Engineering (`web-security`)
 
-These are optional technical references for relevant tasks, not a requirement to execute their workflows or install their host plugins.
+Trace attacker-controlled values from entry to storage and rendering. Check authentication and object-level authorization on every sensitive operation, output encoding, CSRF protections where relevant, secret handling, and safe error responses. Tie findings to code paths and exploit conditions; do not claim a vulnerability without evidence.
 
-- [sickn33/agentic-awesome-skills / security-auditor](research/sickn33-agentic-awesome-skills-security-auditor/GUIDE.md): MIT.
-- [mindrally/skills / python-cybersecurity-tool-development](research/mindrally-skills-python-cybersecurity-tool-development/GUIDE.md): Apache-2.0.
-- [microsoft/azure-skills / azure-kusto-irql](research/microsoft-azure-skills-azure-kusto-irql/GUIDE.md): MIT.
+### Privacy Review (`privacy-review`)
 
-## Attribution and use
+Map data collected, source, purpose, recipients, storage, access, retention, deletion, and user controls. Identify data minimization and security improvements. Flag jurisdiction-specific legal questions rather than asserting compliance. Do not expose raw personal data in logs, examples, or reports; use synthetic or redacted samples.
 
-GNCore's new category guidance is authored for this library. Retained source guides, tools, and assets remain attributed to their original authors and keep their supplied licenses. Modified or combined material subject to share-alike terms remains under those terms. This skill does not claim exclusive ownership of third-party content.
+## Attribution and resource integrity
 
-See [SOURCES.json](SOURCES.json) for source identities, snapshot hashes or revisions, and license decisions. Read only the references relevant to the current task.
+Original phase-two guidance is MIT-licensed GNCore writing. Retained source guides and helpers keep their original authorship, notices and applicable licenses, including share-alike obligations. Renaming or combining them does not transfer exclusive ownership.
+
+See [SOURCES.json](SOURCES.json) and source-specific notices. GNCore exports preserve declared files and verify their content hashes. Imported helpers remain inert unless deliberately selected for an authorized task.

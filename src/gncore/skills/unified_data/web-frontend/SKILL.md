@@ -1,32 +1,28 @@
 ---
 name: web-frontend
-description: "Build or redesign a complete web interface, automatically choosing an appropriate visual direction unless the user specifies one."
+description: "Build complete responsive web interfaces and choose an appropriate visual direction from the product brief."
 license: Apache-2.0 AND MIT
 ---
 
 # GNCore Web Frontend
 
-## Select the work from the user's intent
+Version: 7.0.0rc1
 
-Inspect the app and product brief, then choose a coherent visual direction, content hierarchy, component system, density, and motion budget. Honor explicit themes and the existing brand. When the user gives only an idea, infer a suitable direction and proceed with a concise rationale.
+## Choose the work
 
-Infer a useful working mode from the requested outcome, inputs, existing assets, audience, constraints, and current project context. An explicit format, theme, stack, or workflow takes priority. If enough is known to proceed, state material assumptions briefly and do the work. Ask only about missing decisions that materially block a correct result.
+Honor explicit visual choices and preserve the existing brand. Otherwise choose one direction from audience, content density, and primary action; do not mix every installed style. Reuse the actual stack and components.
 
-Use the workflow map below as capabilities within this one skill. Combine the modes that the actual task needs; do not run every mode, change the user's scope, or load every reference by default. The host agent supplies reasoning and tools; no particular model, connector, or extra skill is assumed.
+Inspect the supplied project and the requested deliverable first. Current explicit instructions take priority over saved preferences, existing conventions, then inferred defaults. Ask only about missing decisions that materially block correct work; otherwise state assumptions briefly and proceed.
 
-## Execute and verify
+Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
-1. Inspect the relevant inputs and existing conventions; preserve originals and unrelated user changes.
-2. Define the requested artifact and observable acceptance checks. Scale the plan and review depth to the actual uncertainty and risk.
-3. Produce the complete result using the selected mode guidance. Keep source facts, assumptions, estimates, interpretations, and proposals distinguishable.
-4. Validate the artifact and fix observed failures. Rerun relevant checks after a fix, and stop rather than repeat an unchanged failing approach indefinitely.
-5. Deliver the artifact or changes with actual evidence, important decisions, and remaining limitations. Do not claim unrun checks or unperformed external actions.
+## Deliver and verify
 
-## Category quality criteria
+Working routes and components with real content, semantic design tokens, keyboard focus, responsive layouts, and relevant loading, empty, error, success and permission states.
 
-Verify the key user journey, responsive layouts, real content, keyboard operation, focus, form errors, state transitions, and loading behavior. Inspect browser screenshots where tools are available and report actual build and test evidence.
+Exercise the primary journey and invalid input. Check narrow/wide layouts, overflow, zoom, focus order and reduced motion. Run the repository build; distinguish actual browser evidence from proposed checks.
 
-Use current primary documentation for version-sensitive APIs, rules, or consequential factual claims. Use supplied sources when available. References retain their authorship and license terms; their harness-specific tools, universal activation rules, and approval scripts do not replace the current user's request or host permissions.
+Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
 ## Visual direction from an idea
 
@@ -148,31 +144,31 @@ Deliver the implemented artifact, the chosen direction and why it fits, and the 
 
 Ground the visual direction in the actual product and audience. Establish typography, layout, palette, and a primary action before implementing the requested page. Use real content and inspect the finished interface in a browser.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-design/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-design/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Ui Ux (`web-front-ui-ux`)
 
 Use the bundled search script and data to compare patterns appropriate to the product. Check accessibility and task flow before aesthetic polish. Record the selected direction and implement it in the current framework.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-ui-ux/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-ui-ux/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore React (`web-front-react`)
 
 Inspect framework versions and a baseline. Read the relevant async, bundle, server, or rendering rules rather than loading every rule. Preserve request isolation and verify that any optimization changes measured behavior without changing correctness.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-react/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-react/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Guidelines (`web-front-guidelines`)
 
 Fetch the guideline source identified in UPSTREAM.md and review the requested files. Tie findings to actual code and user impact. If the source is unavailable, state that limitation and distinguish local checks from a current guideline audit.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-guidelines/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-guidelines/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Shadcn (`web-front-shadcn`)
 
 Inspect components.json, framework, aliases, installed primitives, and Tailwind version. Choose compatible registry components, preserve local customizations, and verify controlled state, keyboard interactions, focus restoration, and theme tokens.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-shadcn/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-shadcn/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Minimalism (`web-front-minimalism`)
 
@@ -182,13 +178,13 @@ Reduce competing emphasis rather than hiding necessary actions. Use a compact ty
 
 Define column and baseline relationships, a legible grotesk type hierarchy, and deliberate asymmetric composition. Use alignment and scale to organize content. Keep reading order and interaction order coherent when the grid collapses on small screens.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-swiss/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-swiss/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Editorial (`web-front-editorial`)
 
 Choose a readable text measure, display hierarchy, captions, and image proportions around the actual story. Build responsive article and index layouts with intentional pacing and clear navigation.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-editorial/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-editorial/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Luxury (`web-front-luxury`)
 
@@ -198,25 +194,25 @@ Choose a distinct material or editorial direction appropriate to the brand. Use 
 
 Make the task goal, inputs, running state, and result visible. Separate proposals from completed actions, show meaningful progress and recoverable errors, and provide cancel or edit controls where supported. Avoid implying actions succeeded without tool evidence.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-agentic/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-agentic/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Maximalism (`web-front-maximalism`)
 
 Choose a coherent motif, palette, and focal point for each section. Use layering, oversized type, and texture to reinforce content; preserve legible body text and predictable navigation across screen sizes.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-maximalism/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-maximalism/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Taste (`web-front-taste`)
 
 Use the bundled direction library and references to select a product-specific composition. Inspect helper scripts before running them and resolve their paths from the installed skill folder. Iterate on observed screenshots without replacing the user's chosen design system.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-taste/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-taste/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Neobrutalism (`web-front-neobrutalism`)
 
 Define border, shadow, spacing, and type tokens. Use offset shadows and strong block geometry consistently, preserving distinguishable focus, disabled, and error states without using color as the only signal.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-neobrutalism/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-neobrutalism/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Industrial (`web-front-industrial`)
 
@@ -226,145 +222,145 @@ Choose a functional visual vocabulary: squared geometry, ruled divisions, strong
 
 Pick a specific visual era and use its geometry, display type, metallic or luminous surfaces, and motion consistently. Keep ordinary text, controls, and responsive navigation readable beneath the effects.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-futuristic/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-futuristic/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Retro (`web-front-retro`)
 
 Choose an era and build a coherent type, color, and illustration system around it. Keep semantic controls and modern interaction feedback; do not reproduce obsolete usability problems as decoration.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-retro/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-retro/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Collage (`web-front-collage`)
 
 Use paper surfaces, cutout imagery, and controlled overlap with a clear content hierarchy. Keep labels selectable, text contrast stable, and decorative layers outside pointer and keyboard interaction paths.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-collage/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-collage/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Doodle (`web-front-doodle`)
 
 Use sketch marks and imperfect outlines as accents around a stable layout. Keep body typography readable and ensure handmade-looking controls retain clear labels, hit areas, focus states, and disabled behavior.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-doodle/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-doodle/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Bento (`web-front-bento`)
 
 Rank content before choosing spans. Use card sizes to reflect importance, preserve useful reading order when stacked, and avoid fixed heights that clip translated text or changing data.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-bento/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-bento/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Glass (`web-front-glass`)
 
 Use translucency sparingly over controlled backgrounds. Define opaque fallbacks, borders, and focus treatments. Test changing imagery, light and dark themes, blur support, reduced transparency where available, and performance on constrained devices.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-glass/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-glass/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Neumorphism (`web-front-neumorphism`)
 
 Use paired highlights and shadows on restrained surfaces. Add borders, labels, and explicit focus indicators so controls do not depend on subtle shadows to communicate affordance or state.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-neumorphism/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-neumorphism/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Claymorphism (`web-front-claymorphism`)
 
 Define a restrained radius and shadow system, use dimensional accents for emphasis, and keep content surfaces calm. Check legibility, visual weight, and interaction state differences at small sizes.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-claymorphism/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-claymorphism/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Aurora (`web-front-aurora`)
 
 Choose gradient stops from the product palette and define a stable text-bearing surface. Check contrast across every stop and fallback; keep animated gradients optional and measure their rendering cost.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-aurora/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-aurora/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Cyberpunk (`web-front-cyberpunk`)
 
 Use luminous accents to guide attention rather than outline every element. Keep body text sharp, avoid flashing effects, and distinguish focus, errors, and active controls beyond hue alone.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-cyberpunk/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-cyberpunk/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Threejs (`web-front-threejs`)
 
 Inspect the existing renderer and dependencies. Budget draw calls, texture sizes, device pixel ratio, and asset loading; handle resize, context loss, disposal, and an accessible non-WebGL fallback.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-threejs/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-threejs/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore R3F (`web-front-r3f`)
 
 Keep React state changes outside high-frequency frame work where possible. Reuse resources, dispose owned geometry and materials, suspend expensive assets deliberately, and test loading, fallback, and reduced-motion states.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-r3f/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-r3f/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Scrollytelling (`web-front-scrollytelling`)
 
 Map the narrative to ordinary document flow before pinning or scrubbing. Register plugins, scope animation ownership, refresh after layout changes, and clean up on navigation. Preserve content access and a reduced-motion experience.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-scrollytelling/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-scrollytelling/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Kinetic Type (`web-front-kinetic-type`)
 
 Keep semantic text available to assistive technology when splitting visible glyphs. Handle font loading, line wrapping, interruption, and reduced motion. Review timing with real copy and preserve content access when animation is disabled.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-kinetic-type/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-kinetic-type/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Organic (`web-front-organic`)
 
 Use warm neutral surfaces, a terracotta accent, and a readable display/body type relationship. Let natural shapes support content without obscuring text, hit areas, or predictable navigation.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-organic/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-organic/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Design System (`web-front-design-system`)
 
 Map primitive tokens to semantic roles and component tokens. Specify themes, typography, spacing, interaction states, and migration from existing values. Use the web design references; load slide-related material only for an explicit presentation task.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-design-system/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-design-system/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Styling (`web-front-styling`)
 
 Inspect the installed styling versions and reuse the current token and component system. Compose consistent variants and responsive behavior. Validate dark mode, focus, loading, validation, and long content without importing unrelated canvas workflows.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-styling/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-styling/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Composition (`web-front-composition`)
 
 Identify the concrete source of prop proliferation or duplicated state. Read the relevant composition rules and use explicit variants or compound components only where they improve the caller API. Preserve behavior and confirm the project's React version.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-composition/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-composition/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Gsap (`web-front-gsap`)
 
 Use the installed GSAP version and scope animation ownership to the component or page. Choose tweens, timelines, and matchMedia according to the requested effect. Clean up on unmount, respect reduced motion, and preserve a library the user already chose.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-gsap/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-gsap/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Motion Performance (`web-front-motion-performance`)
 
 Capture a representative animation trace before optimizing. Identify layout, paint, compositing, or JavaScript costs; reduce the dominant cost and compare under the same conditions. Budget promoted layers and avoid claiming a frame rate without measurements.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-motion-performance/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-motion-performance/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Motion Review (`web-front-motion-review`)
 
 Observe the actual interaction and relevant implementation. Check purpose, interruption, entry and exit, perceived response, and reduced motion. Report concrete changes tied to the observed sequence and distinguish measured behavior from design judgment.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-motion-review/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-motion-review/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Testing (`web-front-testing`)
 
 Inspect the app's existing test setup and start it using the supported command. Cover the requested journey with role/name selectors, deterministic fixtures, and observable assertions. Capture failures and rerun relevant checks after fixing causes.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-testing/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-testing/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Browser (`web-front-browser`)
 
 Check whether agent-browser is available and use its documented snapshot and reference workflow. Work within the requested browser session and task. Verify the resulting UI state and report screenshots or commands as evidence; do not infer success from an attempted click.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-browser/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-browser/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Find Skills (`web-front-find-skills`)
 
 Search for the actual missing capability, inspect source entrypoints and maintenance signals, and compare relevant candidates. Distinguish discovery from installation; install only within the user's requested scope and preserve attribution when adapting.
 
-For task-specific technical depth, read [the attributed source guide](references/web-front-find-skills/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/web-front-find-skills/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Responsive Accessibility (`web-front-accessibility`)
 
@@ -374,19 +370,8 @@ Inspect semantic structure, labels, tab order, visible focus, dialog focus owner
 
 Inspect the product, existing stack, requested deliverable, and available skill folders. Choose the smallest useful set from the catalog below: typically one visual direction and the engineering or testing workflow the task needs. Read those SKILL.md files and only their task-relevant references. Implement the complete requested feature and verify the observable result. Do not load every style or change the user's chosen stack.
 
-## Additional reviewed references
+## Attribution and resource integrity
 
-These are optional technical references for relevant tasks, not a requirement to execute their workflows or install their host plugins.
+Original phase-two guidance is MIT-licensed GNCore writing. Retained source guides and helpers keep their original authorship, notices and applicable licenses, including share-alike obligations. Renaming or combining them does not transfer exclusive ownership.
 
-- [anthropics/skills / frontend-design](research/anthropics-skills-frontend-design/GUIDE.md): Apache-2.0.
-- [leonxlnx/taste-skill / design-taste-frontend](research/leonxlnx-taste-skill-design-taste-frontend/GUIDE.md): MIT.
-- [leonxlnx/taste-skill / design-taste-frontend-v1](research/leonxlnx-taste-skill-design-taste-frontend-v1/GUIDE.md): MIT.
-- [cline/skills / frontend-design](research/cline-skills-frontend-design/GUIDE.md): Apache-2.0.
-- [julianoczkowski/designer-skills / frontend-design](research/julianoczkowski-designer-skills-frontend-design/GUIDE.md): Apache-2.0.
-- [leonxlnx/taste-skill / design-taste-frontend-v2-experimental](research/leonxlnx-taste-skill-design-taste-frontend-v2-experimental/GUIDE.md): MIT.
-
-## Attribution and use
-
-GNCore's new category guidance is authored for this library. Retained source guides, tools, and assets remain attributed to their original authors and keep their supplied licenses. Modified or combined material subject to share-alike terms remains under those terms. This skill does not claim exclusive ownership of third-party content.
-
-See [SOURCES.json](SOURCES.json) for source identities, snapshot hashes or revisions, and license decisions. Read only the references relevant to the current task.
+See [SOURCES.json](SOURCES.json) and source-specific notices. GNCore exports preserve declared files and verify their content hashes. Imported helpers remain inert unless deliberately selected for an authorized task.

@@ -1,37 +1,43 @@
 ---
 name: machine-learning
-description: "Develop reproducible machine-learning workflows from data preparation and training to evaluation, optimization, and serving."
-license: Apache-2.0 AND MIT
+description: "Develop classical ML and time-series experiments with leakage-safe splits, baselines and deployment-relevant evaluation."
+license: MIT
 ---
 
 # GNCore Machine Learning
 
-## Select the work from the user's intent
+Version: 7.0.0rc1
 
-Identify target, data grain, split strategy, baseline, framework, hardware, and compute budget. Fit transforms on training data, preserve held-out evaluation, and control experiments with explicit configuration and data versions. Use error analysis to choose the next experiment.
+## Choose the work
 
-Infer a useful working mode from the requested outcome, inputs, existing assets, audience, constraints, and current project context. An explicit format, theme, stack, or workflow takes priority. If enough is known to proceed, state material assumptions briefly and do the work. Ask only about missing decisions that materially block a correct result.
+Define the prediction moment, target, unit of independence and decision cost before selecting a model. Fit learned preprocessing only on training data and keep holdout evaluation separate from tuning.
 
-Use the workflow map below as capabilities within this one skill. Combine the modes that the actual task needs; do not run every mode, change the user's scope, or load every reference by default. The host agent supplies reasoning and tools; no particular model, connector, or extra skill is assumed.
+Inspect the supplied project and the requested deliverable first. Current explicit instructions take priority over saved preferences, existing conventions, then inferred defaults. Ask only about missing decisions that materially block correct work; otherwise state assumptions briefly and proceed.
 
-## Execute and verify
+Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
-1. Inspect the relevant inputs and existing conventions; preserve originals and unrelated user changes.
-2. Define the requested artifact and observable acceptance checks. Scale the plan and review depth to the actual uncertainty and risk.
-3. Produce the complete result using the selected mode guidance. Keep source facts, assumptions, estimates, interpretations, and proposals distinguishable.
-4. Validate the artifact and fix observed failures. Rerun relevant checks after a fix, and stop rather than repeat an unchanged failing approach indefinitely.
-5. Deliver the artifact or changes with actual evidence, important decisions, and remaining limitations. Do not claim unrun checks or unperformed external actions.
+## Deliver and verify
 
-## Category quality criteria
+Reproducible data/split/preprocessing and baseline pipeline, recorded configuration, appropriate metrics and error analysis.
 
-Check leakage, tensor or schema contracts, class imbalance, metric choice, baseline comparisons, reproducibility, segment errors, and serving cost. State runs not executed and metrics not measured.
+Test split disjointness and feature availability, preprocessing parity and baseline improvement. Report per-group/horizon failures and unknowns; never infer measured accuracy from an unexecuted plan.
 
-Use current primary documentation for version-sensitive APIs, rules, or consequential factual claims. Use supplied sources when available. References retain their authorship and license terms; their harness-specific tools, universal activation rules, and approval scripts do not replace the current user's request or host permissions.
+Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
 ## Workflow map
 
 | Workflow | Use it for |
 | --- | --- |
+| `ml-problem-framing` | Decide whether a machine learning approach fits the task, data, constraints, and failure costs. |
+| `ml-dataset-audit` | Audit dataset provenance, schema, representativeness, label quality, leakage, and split strategy. |
+| `ml-preprocessing-pipeline` | Build deterministic preprocessing that prevents leakage and preserves training-to-serving parity. |
+| `ml-model-train` | Implement a reproducible model training run with configuration, baseline, checkpoints, and evaluation. |
+| `ml-model-evaluation` | Evaluate model quality, uncertainty, subgroup behavior, and representative errors against a baseline. |
+| `ml-model-improvement` | Improve a model through controlled experiments with a fixed evaluation protocol and root-cause analysis. |
+| `ml-llm-evaluation` | Evaluate an LLM feature with representative tasks, rubrics, adversarial cases, latency, and cost. |
+| `ml-rag` | Build and evaluate retrieval-augmented answers with source access controls and abstention. |
+| `ml-finetuning` | Assess fine-tuning suitability and prepare a controlled, leakage-safe fine-tuning workflow. |
+| `ml-release-monitor` | Prepare a model release with provenance, compatibility, rollback, and drift monitoring gates. |
 | `machine-learning` | Develop a scoped machine learning feature, from data inspection and baseline selection through evaluation. |
 | `model-training` | Set up or improve a reproducible model training run with clear configuration, checkpoints, and evaluation. |
 | `train` | Build and run a reproducible model training workflow with a baseline, tracked configuration, and held-out evaluation. |
@@ -40,23 +46,51 @@ Use current primary documentation for version-sensitive APIs, rules, or conseque
 | `improve` | Find evidence-based model improvements through error analysis and controlled experiments against a fixed baseline. |
 | `data-preparation` | Prepare reproducible model datasets while preventing leakage and preserving provenance. |
 | `feature-engineering` | Build features that are valid at prediction time and reproducible across training and inference. |
-| `fine-tuning` | Plan or implement a parameter-efficient or full fine-tuning workflow with controlled data and cost. |
 | `model-evaluation` | Evaluate model quality with valid splits, suitable metrics, uncertainty, and error analysis. |
-| `experiment-tracking` | Make model experiments traceable across code, data, configuration, environment, and artifacts. |
-| `model-serving` | Package model inference behind a reliable API with validation, resource limits, and observable behavior. |
-| `pytorch-training` | Implement PyTorch training loops with correct device, optimizer, checkpoint, and evaluation handling. |
-| `tensorflow-training` | Build TensorFlow/Keras training workflows with explicit data, callbacks, and evaluation behavior. |
-| `deep-learning` | Develop deep learning code with explicit tensor shapes, stable optimization, and reproducible evaluation. |
-| `nlp` | Build NLP pipelines that respect language, label quality, privacy, and task-specific evaluation. |
-| `computer-vision` | Build vision workflows with robust image handling, leakage-safe splits, and task-appropriate evaluation. |
-| `mlops` | Package, register, and monitor models with reproducible artifacts and explicit release gates. |
-| `ml-experiment-tracking` | Make model experiments comparable with consistent splits, metrics, configuration, and artifact provenance. |
 | `feature-engineering-practice` | Create leakage-safe, interpretable features that match the model's serving-time information. |
 | `time-series` | Analyze and forecast time-indexed data with temporal splits, leakage controls, and useful uncertainty. |
-| `model-card` | Document a model's intended use, data provenance, evaluation, limitations, and deployment assumptions. |
-| `hardware-ml` | Adapt inference to constrained hardware using measured latency, memory, and accuracy tradeoffs. |
 
 ## Focused procedures
+
+### ML Problem Framing (`ml-problem-framing`)
+
+Define prediction or generation target, users, action, baseline, data rights, latency/cost limits, error costs, and non-ML alternatives. Set measurable acceptance and stop criteria before choosing a model.
+
+### ML Dataset Audit (`ml-dataset-audit`)
+
+Profile source, labels, duplicates, missingness, time coverage, sensitive fields, and collection process. Group splits by user/entity/time where needed; preserve raw data and document exclusion rules.
+
+### ML Preprocessing Pipeline (`ml-preprocessing-pipeline`)
+
+Fit learned transforms only on training data, persist the pipeline, validate schema and edge cases, and compare transformed distributions across splits. Track every row or column excluded and why.
+
+### ML Model Training Run (`ml-model-train`)
+
+Inspect framework and hardware, establish baseline, lock data split and metric, set seed and run metadata, and checkpoint safely. Do not launch expensive compute or overwrite artifacts without explicit user authorization.
+
+### ML Model Evaluation (`ml-model-evaluation`)
+
+Use a held-out split untouched by tuning, task-appropriate metrics, confidence estimates where practical, and error slices. State sample limits and do not infer safety or production readiness from aggregate scores.
+
+### ML Improvement Loop (`ml-model-improvement`)
+
+Rank hypotheses from observed errors, change one factor at a time, track config and artifacts, compare against baseline, diagnose regressions, fix or revert, then rerun focused and regression evaluations until gates pass or a blocker remains.
+
+### LLM Evaluation Suite (`ml-llm-evaluation`)
+
+Create a privacy-safe eval set, use deterministic checks where possible, score subjective quality with a rubric, and record model/prompt/tool versions. Separate benchmark performance from real-world safety claims.
+
+### RAG Grounding Workflow (`ml-rag`)
+
+Preserve source identity and permissions through ingestion and retrieval; measure retrieval separately from answer quality; cite evidence; test missing, conflicting, stale, and unauthorized sources; abstain when support is insufficient.
+
+### Model Fine-Tuning Plan (`ml-finetuning`)
+
+Compare prompt, retrieval, and fine-tuning alternatives; verify dataset rights and de-identification; deduplicate and split before training; define eval and rollback. Require approval before paid training or external data upload.
+
+### Model Release and Monitoring (`ml-release-monitor`)
+
+Link code, data, config, artifact, eval, serving contract, and owner. Gate release on tested rollback and monitoring for quality, latency, cost, and drift; do not deploy without explicit authorization.
 
 ### Machine Learning Workflow (`machine-learning`)
 
@@ -90,49 +124,9 @@ Inspect schema, label definition, missingness, duplicates, time boundaries, and 
 
 For every candidate feature, state its source, type, availability time, and transformation. Reject features unavailable at prediction time. Fit statistics only on training data, keep train/serve transformations consistent, and compare against a baseline using the same split and metric. Add complexity only when evaluation supports it.
 
-### Model Fine-Tuning (`fine-tuning`)
-
-Confirm the base model, license constraints, data rights, objective, validation method, hardware, and budget. Inspect existing training code and use the least costly method that can answer the goal. Keep validation data separate, record model and tokenizer revisions, and save to a new checkpoint path. Do not launch paid or long-running jobs without explicit approval.
-
 ### Model Evaluation (`model-evaluation`)
 
 Choose metrics from the real decision and class balance, not convenience. Keep tuning data separate from final test data, report sample counts and split rules, compare with a baseline, and inspect important error slices. Quantify uncertainty when feasible. Do not present a single score as proof of generalization or fairness.
-
-### Reproducible ML Experiments (`experiment-tracking`)
-
-Capture the source revision, dataset/version, configuration, seed, dependencies, model identifier, metrics, and artifact location. Keep secrets out of logs. Make repeated runs distinguishable and avoid overwriting artifacts. Use the repository's existing tracker; add a new service only when requested.
-
-### Model Serving and Inference APIs (`model-serving`)
-
-Trace model loading and inference lifecycle, validate inputs and output shapes, set appropriate timeouts and resource limits, and preserve version identity. Handle cold starts and model errors explicitly. Do not deploy, expose endpoints, or change production configuration unless requested. Measure latency and memory before claiming capacity.
-
-### PyTorch Training (`pytorch-training`)
-
-Inspect the installed PyTorch version and existing dataset/model interfaces. Set train/eval modes correctly, move batches and model to the same device, clear gradients, and use inference mode for evaluation. Save checkpoints atomically to a new path and include enough state to resume when requested. Start with a tiny smoke run before a full run.
-
-### TensorFlow and Keras Training (`tensorflow-training`)
-
-Inspect TensorFlow/Keras version and data pipeline semantics. Keep preprocessing consistent, avoid validation leakage, configure callbacks explicitly, and save to a new artifact path. Check output shapes and a small batch first. Do not assume GPU availability or start a long training run without user approval.
-
-### Deep Learning Engineering (`deep-learning`)
-
-Inspect framework versions, model inputs/outputs, tensor shapes, precision, memory limits, and baseline. Verify loss/activation compatibility, masking, gradient flow, and train/eval modes. Keep validation data out of gradient updates and log checkpoints with configuration. Do not launch GPU-intensive jobs or replace checkpoints without approval. Diagnose with a tiny batch before scaling.
-
-### Natural Language Processing (`nlp`)
-
-Inspect languages, tokenization, labels, privacy constraints, and intended use. Establish a simple baseline and split by user/document when duplicates could leak. Evaluate per-class and per-language behavior, not only one aggregate metric. Minimize retention of raw text and redact sensitive examples. Treat generated labels as noisy; document model and data provenance. Do not claim factuality or safety from benchmark scores alone.
-
-### Computer Vision (`computer-vision`)
-
-Inspect image formats, dimensions, labels, duplicate/near-duplicate groups, and provenance. Split by source, person, or scene where needed to prevent leakage. Normalize consistently and validate augmentations preserve labels. Use task-appropriate metrics and inspect representative errors. Protect biometric and personal imagery; do not download, retain, or expose images without authorization.
-
-### MLOps and Model Release (`mlops`)
-
-Trace training data, code, dependencies, model artifact, evaluation, and serving contract. Define reproducible build metadata, compatibility checks, rollback path, and monitoring for drift and failures. Keep credentials outside artifacts. Do not deploy, promote, or alter production traffic without explicit authorization. Separate offline evidence from live performance and define an owner for alerts.
-
-### Machine Learning Experiment Tracking (`ml-experiment-tracking`)
-
-Define the question and baseline before changing code. Record data version, split, code revision, config, seed, environment, metrics, and artifact path for every run. Compare like with like and account for randomness. Keep experiments isolated and avoid overwriting outputs. Do not introduce a tracking service or upload sensitive data without approval.
 
 ### Feature Engineering Practice (`feature-engineering-practice`)
 
@@ -142,28 +136,16 @@ For each feature, define its meaning, availability time, source, missing-value s
 
 Inspect frequency, time zone, gaps, revisions, horizon, and forecast origin. Use rolling or forward-chaining evaluation, never random splits. Compare with seasonal-naive baselines and ensure every feature is available at forecast time. Report horizon-specific error and uncertainty; avoid extrapolating beyond evidence. Preserve temporal ordering in preprocessing and backtests.
 
-### Model Documentation (`model-card`)
+## Primary technical references
 
-Use only verified project evidence for training data, method, metrics, and provenance. State intended and excluded uses, evaluation setup, subgroup coverage, limitations, monitoring, and update cadence. Mark unknowns plainly. Do not infer consent, representativeness, fairness, or regulatory status without evidence.
+Use the documentation matching the installed framework. These are external reference links, not copied source or a promise that the framework is installed.
 
-### Edge and Hardware-Constrained ML (`hardware-ml`)
+- [PyTorch autograd](https://docs.pytorch.org/tutorials/beginner/basics/autogradqs_tutorial.html)
+- [PyTorch optimization](https://docs.pytorch.org/tutorials/beginner/basics/optimization_tutorial.html)
+- [scikit-learn leakage and preprocessing](https://scikit-learn.org/stable/common_pitfalls.html)
 
-Identify target processor, runtime, memory, latency, power, and accuracy requirements. Measure an unoptimized baseline on representative inputs. Compare quantization or compression with task metrics and worst-case behavior; verify supported operators and numerical drift. Keep original artifacts and provide a rollback path. Do not claim deployment readiness from desktop measurements.
+## Attribution and resource integrity
 
-## Additional reviewed references
+Original phase-two guidance is MIT-licensed GNCore writing. Retained source guides and helpers keep their original authorship, notices and applicable licenses, including share-alike obligations. Renaming or combining them does not transfer exclusive ownership.
 
-These are optional technical references for relevant tasks, not a requirement to execute their workflows or install their host plugins.
-
-- [mindrally/skills / machine-learning](research/mindrally-skills-machine-learning/GUIDE.md): Apache-2.0.
-- [sickn33/agentic-awesome-skills / machine-learning-ops-ml-pipeline](research/sickn33-agentic-awesome-skills-machine-learning-ops-ml-pipeline/GUIDE.md): MIT.
-- [microsoft/azure-skills / azure-compute](research/microsoft-azure-skills-azure-compute/GUIDE.md): MIT.
-- [huggingface/skills / transformers-js](research/huggingface-skills-transformers-js/GUIDE.md): Apache-2.0.
-- [ljagiello/ctf-skills / ctf-ai-ml](research/ljagiello-ctf-skills-ctf-ai-ml/GUIDE.md): MIT.
-- [affaan-m/ecc / mle-workflow](research/affaan-m-ecc-mle-workflow/GUIDE.md): MIT.
-- [affaan-m/ecc / ml-adoption-playbook](research/affaan-m-ecc-ml-adoption-playbook/GUIDE.md): MIT.
-
-## Attribution and use
-
-GNCore's new category guidance is authored for this library. Retained source guides, tools, and assets remain attributed to their original authors and keep their supplied licenses. Modified or combined material subject to share-alike terms remains under those terms. This skill does not claim exclusive ownership of third-party content.
-
-See [SOURCES.json](SOURCES.json) for source identities, snapshot hashes or revisions, and license decisions. Read only the references relevant to the current task.
+See [SOURCES.json](SOURCES.json) and source-specific notices. GNCore exports preserve declared files and verify their content hashes. Imported helpers remain inert unless deliberately selected for an authorized task.

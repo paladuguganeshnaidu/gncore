@@ -1,31 +1,16 @@
-# Developer guide
+# Maintainer workflow
 
-## Edit category behavior
+Use Python 3.10+ and the repository's existing environment. The catalog has no required third-party runtime dependency.
 
-Maintain the GNCore-authored category descriptions, decision guidance, and quality criteria in `scripts/category_blueprints.py`. Frontend art direction and workflow guidance live in `scripts/frontend_playbook.md`; deterministic planning cases live in `planning.py` and its tests.
+1. Edit `catalog/categories.json` for category decisions/procedures and explicit retained resource paths. This is the authoritative authoring input, not the historical phase-one import scripts.
+2. Preserve reference bytes/notices and record intentional source changes. Do not execute imported helpers to inspect their license or install a skill.
+3. Run `python scripts/build_catalog.py`; use `--check` in CI to detect drift. Hashes cover every declared resource and the generated entrypoint.
+4. Update concrete cases in `catalog/evaluation_specs.py` or `catalog/base_evaluations.json`, then run `python scripts/build_evaluations.py`.
+5. Run relevant tests, the full regression suite, `gncore audit`, format validation, package builds and clean artifact checks.
+6. Run `python scripts/generate_skill_catalog.py` and `python scripts/build_website.py` to synchronize docs and website data. The default website is a labeled noindex candidate preview.
 
-`scripts/build_unified_categories.py` merges category guidance and the legacy workflow inventory, preserves existing source references, applies license/relevance decisions to new candidates, and writes the 60 category entrypoints and manifest. The runtime reads the committed data directly; normal installation does not require a rebuild or network access.
+Normal rebuilds are offline and do not rely on `.work`. Retired importer scripts are historical records under `archive/phase-one-tools/`; they are not supported authoring commands. The phase-one Git commit records excluded research and retired professional content without shipping it to developer projects.
 
-## Research and rebuild
+Changing generated files alone will fail reproducibility checks. Helpers have independent runtime requirements; static parsing is not a claim that every dependency/device/tool is installed. Keep completed checks and unavailable evidence explicit.
 
-Install the optional Python `skills` extra for YAML parsing and use authenticated GitHub access where needed. All source downloads are treated as inert data.
-
-The research scripts record queries, candidates, snapshots or immutable revisions, file hashes, unavailable sources, and supplied notices under ignored `.work/category-research/`. `download_category_candidates.py` searches all categories and downloads all returned candidates. `recover_category_sources.py` falls back to public GitHub source trees for registry failures.
-
-Keep restricted and unclear-license material out of distribution. Preserve authorship, notices, and applicable share-alike terms for included material. The public research reports record source identities and review decisions without redistributing rejected content.
-
-```bash
-python scripts/download_category_candidates.py
-python scripts/recover_category_sources.py
-python scripts/build_unified_categories.py
-python scripts/generate_skill_catalog.py
-python -m pytest -q
-```
-
-For a fresh research workspace, capture the legacy inventory from `gncore.skills.library.legacy_skills()` or run `research_categories.py` to initialize it before the full candidate pipeline. Earlier frontend/backend builders maintain retired reference guides; they are not primary skill installers.
-
-## Validate changes
-
-Check capability preservation across all 553 workflow IDs, exactly 60 discoverable entrypoints, alias collisions, exports, resource paths, source notices, and representative planning behavior. Run the skill-creator validator when available. Build the distributions, check metadata, and install the wheel into a clean directory before release work.
-
-Upstream helper runtimes are independent from GNCore's supported Python versions. Compile and test GNCore's own code separately from vendored supporting tools, and disclose unperformed execution checks.
+Publication requires the owner's approval after the concrete artifact/checksum/website preview is available. See [release preparation](PHASE2_RELEASE.md).

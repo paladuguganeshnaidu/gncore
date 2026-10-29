@@ -1,37 +1,44 @@
 ---
 name: data-science
-description: "Clean and analyze data with reproducible SQL, statistics, experiments, visualizations, and spatial methods."
-license: Apache-2.0 AND CC-BY-4.0 AND MIT
+description: "Analyze data, statistics and experiments with correct grain, reproducibility and honest uncertainty."
+license: MIT
 ---
 
 # GNCore Data Science
 
-## Select the work from the user's intent
+Version: 7.0.0rc1
 
-Define the unit of analysis, hypothesis or question, population, period, and decision. Inspect missingness, selection, duplicates, distributions, and measurement definitions. Choose descriptive, inferential, experimental, predictive, or spatial methods appropriate to the data.
+## Choose the work
 
-Infer a useful working mode from the requested outcome, inputs, existing assets, audience, constraints, and current project context. An explicit format, theme, stack, or workflow takes priority. If enough is known to proceed, state material assumptions briefly and do the work. Ask only about missing decisions that materially block a correct result.
+Define the question, estimand, sampling/assignment mechanism, units and time period. Audit missingness and join fanout before interpreting patterns.
 
-Use the workflow map below as capabilities within this one skill. Combine the modes that the actual task needs; do not run every mode, change the user's scope, or load every reference by default. The host agent supplies reasoning and tools; no particular model, connector, or extra skill is assumed.
+Inspect the supplied project and the requested deliverable first. Current explicit instructions take priority over saved preferences, existing conventions, then inferred defaults. Ask only about missing decisions that materially block correct work; otherwise state assumptions briefly and proceed.
 
-## Execute and verify
+Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
-1. Inspect the relevant inputs and existing conventions; preserve originals and unrelated user changes.
-2. Define the requested artifact and observable acceptance checks. Scale the plan and review depth to the actual uncertainty and risk.
-3. Produce the complete result using the selected mode guidance. Keep source facts, assumptions, estimates, interpretations, and proposals distinguishable.
-4. Validate the artifact and fix observed failures. Rerun relevant checks after a fix, and stop rather than repeat an unchanged failing approach indefinitely.
-5. Deliver the artifact or changes with actual evidence, important decisions, and remaining limitations. Do not claim unrun checks or unperformed external actions.
+## Deliver and verify
 
-## Category quality criteria
+Reproducible analysis, queries or charts with source provenance, transformations, assumptions, units and decision-relevant uncertainty.
 
-Show denominators, uncertainty, assumptions, sensitivity, and limitations. Separate association from causation and use comparable groups or explicit identification assumptions for causal claims.
+Reconcile aggregates to source rows, test a small known fixture, inspect assumptions and distinguish association from causation. Do not manufacture significance or unobserved results.
 
-Use current primary documentation for version-sensitive APIs, rules, or consequential factual claims. Use supplied sources when available. References retain their authorship and license terms; their harness-specific tools, universal activation rules, and approval scripts do not replace the current user's request or host permissions.
+Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
 ## Workflow map
 
 | Workflow | Use it for |
 | --- | --- |
+| `product-analytics` | Define product metrics and event instrumentation that answer a decision without collecting unnecessary data. |
+| `analytics-question` | Translate a business question into a measurable analysis plan and data requirements. |
+| `analytics-data-audit` | Audit analytical data for missingness, duplication, validity, freshness, and grain. |
+| `analytics-sql` | Write a traceable SQL analysis with correct grain, joins, time handling, and reconciliation. |
+| `analytics-dashboard` | Design a dashboard around a recurring decision with clear metrics, filters, and data freshness. |
+| `analytics-metric-tree` | Decompose a business outcome into leading drivers and measurable operational inputs. |
+| `analytics-cohort` | Compare cohort behavior with consistent definitions, exposure windows, and censoring treatment. |
+| `analytics-experiment` | Analyze an experiment with assignment, exposure, predeclared outcomes, and uncertainty checks. |
+| `analytics-forecast` | Build a business forecast from history, drivers, scenarios, and out-of-sample checks. |
+| `analytics-insight-brief` | Turn analysis into a concise decision brief with traceable evidence and caveats. |
+| `analytics-data-contract` | Specify ownership, schema, quality, freshness, and change handling for an analytics dataset. |
 | `clean-data` | Audit and clean a dataset with explicit, reversible rules for missing values, duplicates, types, and outliers. |
 | `analyze` | Answer a data question with reproducible analysis, explicit assumptions, and evidence tied to the provided data. |
 | `sql-analysis` | Write correct, reviewable SQL for analytics while guarding against join fanout and misleading aggregates. |
@@ -41,6 +48,50 @@ Use current primary documentation for version-sensitive APIs, rules, or conseque
 | `geospatial-analysis` | Analyze spatial data with explicit coordinate systems, units, geometry validity, and privacy controls. |
 
 ## Focused procedures
+
+### Product Analytics (`product-analytics`)
+
+Start with the decision and user outcome, then define event grain, actor, timestamp, properties, denominator, and exclusions. Check identity stitching, consent, retention, and duplicate events. Prefer a small event schema with stable names and versioning. Validate counts end to end and document known blind spots. Avoid collecting sensitive attributes without a clear, approved need.
+
+### Analytics Question Plan (`analytics-question`)
+
+Define decision, population, unit of analysis, outcome, comparison, time range, data sources, and limitations before querying. Identify causal language that the available design cannot support.
+
+### Data Quality Audit (`analytics-data-audit`)
+
+Profile schema, keys, nulls, ranges, category drift, late arrivals, and row grain. Report counts and affected segments, preserve raw data, and turn material defects into owned checks.
+
+### Business SQL Analysis (`analytics-sql`)
+
+Inspect source definitions, declare expected row grain, parameterize inputs, verify join cardinality, and reconcile totals to a trusted control. Avoid expensive or mutating production queries without authorization.
+
+### Decision Dashboard (`analytics-dashboard`)
+
+Name the audience and decision, define metrics and denominators, show time window and freshness, add useful breakdowns, and check accessibility. Remove charts that do not change a decision.
+
+### Metric Tree (`analytics-metric-tree`)
+
+Define the top outcome, decompose mathematically or causally only where evidence supports it, annotate owner and source for each metric, and distinguish controllable inputs from external factors.
+
+### Cohort Analysis (`analytics-cohort`)
+
+Specify cohort entry, event, observation window, time zone, exclusions, and incomplete follow-up. Check cohort comparability and report uncertainty and survivorship bias.
+
+### Business Experiment Analysis (`analytics-experiment`)
+
+Validate randomization, sample ratio, instrumentation, metric definition, duration, and stopping rule. Estimate effect with uncertainty and guardrails; do not declare success from post-hoc slicing.
+
+### Business Forecast Analysis (`analytics-forecast`)
+
+Check data coverage and structural changes, establish a simple baseline, use time-ordered validation, and compare scenarios. Explain forecast error and avoid false precision or unsupported causal narratives.
+
+### Executive Analytics Brief (`analytics-insight-brief`)
+
+Lead with the decision and finding, show key numbers with units and denominators, link to source and method, explain alternatives and limitations, and specify next actions and owners.
+
+### Analytics Data Contract (`analytics-data-contract`)
+
+Document grain, fields, types, allowed values, null semantics, primary keys, freshness SLA, owner, consumers, and compatibility policy. Define tests and an escalation route for breaking changes.
 
 ### Clean a Dataset (`clean-data`)
 
@@ -70,17 +121,8 @@ Confirm randomization unit, exposure, experiment window, primary metric, guardra
 
 Inspect coordinate reference systems, units, geometry validity, spatial grain, and boundary versions. Reproject before distance/area calculations and validate joins for duplicates and boundary effects. Use an appropriate map scale and disclose aggregation. Protect sensitive locations and avoid implying precise location where uncertainty or privacy requires aggregation.
 
-## Additional reviewed references
+## Attribution and resource integrity
 
-These are optional technical references for relevant tasks, not a requirement to execute their workflows or install their host plugins.
+Original phase-two guidance is MIT-licensed GNCore writing. Retained source guides and helpers keep their original authorship, notices and applicable licenses, including share-alike obligations. Renaming or combining them does not transfer exclusive ownership.
 
-- [google/skills / google-cloud-solution-agentic-ai-data-science-workflow](research/google-skills-google-cloud-solution-agentic-ai-data-science-workflow/GUIDE.md): Apache-2.0.
-- [personamanagmentlayer/pcl / data-science-expert](research/personamanagmentlayer-pcl-data-science-expert/GUIDE.md): Apache-2.0.
-- [travisjneuman/.claude / data-science](research/travisjneuman-.claude-data-science/GUIDE.md): MIT.
-- [microsoftdocs/agent-skills / azure-data-science-vm](research/microsoftdocs-agent-skills-azure-data-science-vm/GUIDE.md): CC-BY-4.0.
-
-## Attribution and use
-
-GNCore's new category guidance is authored for this library. Retained source guides, tools, and assets remain attributed to their original authors and keep their supplied licenses. Modified or combined material subject to share-alike terms remains under those terms. This skill does not claim exclusive ownership of third-party content.
-
-See [SOURCES.json](SOURCES.json) for source identities, snapshot hashes or revisions, and license decisions. Read only the references relevant to the current task.
+See [SOURCES.json](SOURCES.json) and source-specific notices. GNCore exports preserve declared files and verify their content hashes. Imported helpers remain inert unless deliberately selected for an authorized task.

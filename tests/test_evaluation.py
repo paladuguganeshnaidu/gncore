@@ -7,11 +7,11 @@ from gncore import GncoreCli
 from gncore.evaluation import evaluate_response, load_corpus, validate_corpus
 
 
-def test_pilot_covers_twelve_categories_with_three_real_scenarios_each():
+def test_corpus_covers_every_developer_category_with_three_real_scenarios_each():
     corpus = load_corpus()
-    assert corpus["scope"] == "pilot"
-    assert len(corpus["categories"]) == 12 and len(corpus["cases"]) == 36
-    assert len({case["prompt"] for case in corpus["cases"]}) == 36
+    assert corpus["scope"] == "developer-catalog"
+    assert len(corpus["categories"]) == 30 and len(corpus["cases"]) == 90
+    assert len({case["prompt"] for case in corpus["cases"]}) == 90
     assert {case["kind"] for case in corpus["cases"]} == {"normal", "underspecified", "boundary"}
 
 
@@ -33,7 +33,7 @@ def test_invalid_corpus_cannot_be_reported_as_valid(mutation):
 
 
 def test_artifact_structure_pass_does_not_claim_semantic_or_tool_validation(tmp_path):
-    case = load_corpus()["cases"][0]
+    case = next(c for c in load_corpus()["cases"] if c["id"] == "frontend-normal")
     (tmp_path / case["artifact"]).write_text("A file exists; this is not a finished booking page.")
     response = {"case_id": case["id"], "categories": [case["category"]], "workflows": case["workflows"], "decisions": case["decisions"]}
     report = evaluate_response(case, response, tmp_path)
@@ -44,7 +44,7 @@ def test_artifact_structure_pass_does_not_claim_semantic_or_tool_validation(tmp_
 
 
 def test_missing_artifact_wrong_category_and_wrong_constraint_fail(tmp_path):
-    case = load_corpus()["cases"][0]
+    case = next(c for c in load_corpus()["cases"] if c["id"] == "frontend-normal")
     response = {"case_id": case["id"], "categories": ["web-backend"], "workflows": [], "decisions": {"motion": "animated"}}
     report = evaluate_response(case, response, tmp_path)
     assert not report["objective_passed"]
@@ -62,8 +62,8 @@ def test_response_mismatch_and_bad_shape_are_actionable_errors(tmp_path):
 def test_evaluation_cli_validates_and_reports_pending_reviews(tmp_path, capsys):
     cli = GncoreCli()
     assert cli.run(["evaluate", "--validate"]) == 0
-    assert json.loads(capsys.readouterr().out) == {"schema_version": 1, "scope": "pilot", "categories": 12, "cases": 36, "valid": True}
-    case = load_corpus()["cases"][0]
+    assert json.loads(capsys.readouterr().out) == {"schema_version": 1, "scope": "developer-catalog", "categories": 30, "cases": 90, "valid": True}
+    case = next(c for c in load_corpus()["cases"] if c["id"] == "frontend-normal")
     response = tmp_path / "response.json"
     response.write_text(json.dumps({"case_id": case["id"], "categories": [case["category"]], "workflows": case["workflows"], "decisions": case["decisions"]}))
     args = ["evaluate", "--case", case["id"], "--response", str(response), "--artifacts", str(tmp_path)]

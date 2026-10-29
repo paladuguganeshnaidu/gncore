@@ -1,33 +1,27 @@
-# Migration to GNCore 6
+# Migration to GNCore 7
 
-GNCore 6 replaces 553 separately listed workflow skills with **60 adaptive category entrypoints**. All 553 workflow procedures remain in their category modules. The 30 professional domain packs still contain ten workflows each.
+This major catalog revision replaces 60 mixed categories with 30 developer categories. The 30 earlier professional-domain packs are replaced by six developer capability groups; `list_domains()` now returns groups containing multiple category IDs, not ten-workflow business packs.
 
-## Primary names
+## What changed
 
-| Earlier IDs | Primary category |
-| --- | --- |
-| `web-front`, `web-front-minimalism`, `web-front-react`, other frontend modes | `web-frontend` |
-| `web-backend-fastapi`, `web-backend-codequality`, other backend modes | `web-backend` |
-| `code-quality`, `code-debugging`, other general coding modes | `code-build` |
-| `train`, `evaluate`, other ML workflows | `machine-learning` |
-| `word-draft`, `word-edit`, other Word workflows | `word-documents` |
-| `company-ceo`, `company-cfo`, other leadership workflows | `company-leadership` |
+- 319 technical workflow procedures remain; 116 shared procedures are rewritten with task-specific instructions.
+- 55 original workflows add neural-network debugging, deep-learning operations, vision/NLP, MLOps, native/embedded systems, database correctness, performance, observability and distributed-system failure handling.
+- 234 nondeveloper workflows are retired with explicit reasons. They are not silently redirected to unrelated capabilities.
+- Overlapping technical categories consolidate: `software-engineering` and `general` to `code-build`; `quality-engineering`/`quality-assurance` to `testing`; `security` to `cybersecurity`; `cloud`/`devops`/`operations` to `cloud-devops-sre`; `research` to `developer-research`.
+- ML modes move to dedicated categories: `nlp` to `natural-language-processing`, `computer-vision` to its own category, deep-learning/framework modes to `deep-learning`, and serving/artifact modes to `mlops`.
 
-Use `gncore list workflows` for the complete mapping. Existing CLI/API lookups resolve aliases to the canonical category, so exporting multiple modes from one category creates one folder.
+[migration.json](src/gncore/skills/migration.json) accounts for all 553 phase-one workflow IDs and all 60 category IDs. [The audit](docs/PHASE2_MERGE_AUDIT.json) records previous and revised procedure hashes. Historical source remains at Git commit `b9877fd`; unused heuristic-only research bundles and redundant raw collections are removed from the active distribution.
 
-A new primary category name takes precedence over an older generic workflow with the same name. For example, `testing`, `security`, and `documentation` now address those full specialist categories. Their former general workflow procedures also remain inside `general`.
+## Update a managed project
 
-## Project installations
+```bash
+gncore export --all --prune-retired --dry-run
+gncore export --all --prune-retired
+gncore verify
+```
 
-Back up customized old skill folders, then install the desired category entrypoints with `gncore export`. Old folders in other projects are not deleted automatically. Fresh exports use `.agents/skills/<category>/SKILL.md` and include supporting resources and notices.
+Preflight happens before changes. Pruning requires an inventory-managed, byte-identical old folder; customized or untracked retired folders remain in place and are reported. Selected active categories with edited managed files stop the update. Full backups and recovery journals are retained. For old installations without a recorded inventory, preserve custom work and review the old folders explicitly before a fresh install.
 
-Directory exports now preflight all selected destinations and use a digest inventory with staged installation and retained backups. Existing matching exports can be adopted; modified or unmanaged conflicting content stops the update without overwriting it. Use `--dry-run` to preview and `gncore verify` for a read-only integrity report. The optional migration script retires only exact known legacy exports and preserves differing older versions. Recovery details are in [installation and recovery](docs/INSTALLATION.md).
+Legacy technical lookups remain where their target is active. Canonical category names and historical category aliases take precedence over generic workflow IDs: `security` resolves to `cybersecurity`, while its former generic procedure is also retained inside `code-build`. `list_workflows()` describes procedure ownership; a lookup collision can therefore resolve to a broader category. Removed business IDs raise a retirement error.
 
-Only primary category entrypoints are exposed as `SKILL.md` in the source distribution. Retired source entrypoints and nested source skills are reference guides, preventing duplicate automatic discovery.
-
-## API changes
-
-- `builtin_skills()` returns 60 primary definitions.
-- `list_workflows()` exposes the 553 workflow metadata records.
-- Each professional `SkillDomain` contains one canonical `skill_ids` entry and ten `workflow_ids`.
-- Metadata includes license information; bundled material is not uniformly MIT-licensed.
+The public candidate version is `7.0.0rc1` only after publication approval and verification. Prepared local files are not evidence of a PyPI release.

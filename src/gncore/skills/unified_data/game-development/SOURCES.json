@@ -1,116 +1,13 @@
 {
   "category": "game-development",
   "entrypoint_author": "GNCore / Ganesh Naidu",
-  "entrypoint_original_text_license": "MIT",
+  "original_guidance_license": "MIT",
   "aggregate_licenses": [
-    "Apache-2.0",
     "MIT"
   ],
-  "research": [
-    {
-      "category": "game-development",
-      "repository": "wshobson/agents",
-      "name": "unity-ecs-patterns",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "0874a27b17a22e2b7c2e2bcd725768e0803cad06",
-      "source_url": "https://github.com/wshobson/agents/blob/0874a27b17a22e2b7c2e2bcd725768e0803cad06/plugins/game-development/skills/unity-ecs-patterns/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 2
-    },
-    {
-      "category": "game-development",
-      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
-      "name": "router",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9",
-      "source_url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9/router/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "Apache-2.0"
-      ],
-      "file_count": 5
-    },
-    {
-      "category": "game-development",
-      "repository": "jeffallan/claude-skills",
-      "name": "game-developer",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "190e05a380b624187f5770451e1f41b9187cb63c",
-      "source_url": "https://github.com/jeffallan/claude-skills/blob/190e05a380b624187f5770451e1f41b9187cb63c/skills/game-developer/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 6
-    },
-    {
-      "category": "game-development",
-      "repository": "greedychipmunk/agent-skills",
-      "name": "roblox-game-development",
-      "download_status": "not-found-in-source-tree",
-      "snapshot_hash": null,
-      "revision": "641ae0c15acc340c6c38730fa052453b68318e18",
-      "source_url": "https://github.com/greedychipmunk/agent-skills",
-      "review_status": "not-redistributed: download unavailable"
-    },
-    {
-      "category": "game-development",
-      "repository": "openai/skills",
-      "name": "develop-web-game",
-      "download_status": "not-found-in-source-tree",
-      "snapshot_hash": null,
-      "revision": "49f948faa9258a0c61caceaf225e179651397431",
-      "source_url": "https://github.com/openai/skills",
-      "review_status": "not-redistributed: download unavailable"
-    },
-    {
-      "category": "game-development",
-      "repository": "mindrally/skills",
-      "name": "game-development",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "7682ca77710e0971eab4e0ae5dddfa281aea0ba5",
-      "source_url": "https://github.com/mindrally/skills/blob/7682ca77710e0971eab4e0ae5dddfa281aea0ba5/game-development/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "Apache-2.0"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "game-development",
-      "repository": "dylantarre/animation-principles",
-      "name": "game-development",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "83597134ba8ff59838270f94d7ac7282ffa3b54d",
-      "source_url": "https://github.com/dylantarre/animation-principles/blob/83597134ba8ff59838270f94d7ac7282ffa3b54d/skills/01-by-domain/game-development/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "game-development",
-      "repository": "miles990/claude-software-skills",
-      "name": "game-development",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "73632f218e5b3e9d29c87b00c7955964f354833d",
-      "source_url": "https://github.com/miles990/claude-software-skills/blob/73632f218e5b3e9d29c87b00c7955964f354833d/domain-applications/game-development/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 32
-    }
+  "original_categories": [
+    "game-development"
   ],
-  "legacy_reference_ids": []
+  "legacy_reference_ids": [],
+  "review_scope": "Original workflow reference paths preserved; heuristic-only supplemental research retired in phase two. Helper syntax checked separately; installation never executes helpers."
 }

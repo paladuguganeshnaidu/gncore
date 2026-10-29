@@ -1,32 +1,28 @@
 ---
 name: game-development
-description: "Build and improve game mechanics, interactions, state, assets, and performance in the existing engine."
-license: Apache-2.0 AND MIT
+description: "Build playable game mechanics, simulation state, assets and measured runtime performance."
+license: MIT
 ---
 
 # GNCore Game Development
 
-## Select the work from the user's intent
+Version: 7.0.0rc1
 
-Inspect the engine, platform, input model, scene or entity structure, asset pipeline, and target player experience. Implement a small complete gameplay loop, define state transitions and reset behavior, and keep frame work separate from slower loading or UI operations.
+## Choose the work
 
-Infer a useful working mode from the requested outcome, inputs, existing assets, audience, constraints, and current project context. An explicit format, theme, stack, or workflow takes priority. If enough is known to proceed, state material assumptions briefly and do the work. Ask only about missing decisions that materially block a correct result.
+Choose a complete playable loop within the existing engine. Separate simulation time from rendering, make inputs/state transitions explicit and keep pause/restart behavior coherent.
 
-Use the workflow map below as capabilities within this one skill. Combine the modes that the actual task needs; do not run every mode, change the user's scope, or load every reference by default. The host agent supplies reasoning and tools; no particular model, connector, or extra skill is assumed.
+Inspect the supplied project and the requested deliverable first. Current explicit instructions take priority over saved preferences, existing conventions, then inferred defaults. Ask only about missing decisions that materially block correct work; otherwise state assumptions briefly and proceed.
 
-## Execute and verify
+Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
-1. Inspect the relevant inputs and existing conventions; preserve originals and unrelated user changes.
-2. Define the requested artifact and observable acceptance checks. Scale the plan and review depth to the actual uncertainty and risk.
-3. Produce the complete result using the selected mode guidance. Keep source facts, assumptions, estimates, interpretations, and proposals distinguishable.
-4. Validate the artifact and fix observed failures. Rerun relevant checks after a fix, and stop rather than repeat an unchanged failing approach indefinitely.
-5. Deliver the artifact or changes with actual evidence, important decisions, and remaining limitations. Do not claim unrun checks or unperformed external actions.
+## Deliver and verify
 
-## Category quality criteria
+Playable mechanics with clear rules, input feedback, success/failure and restart states, plus asset/runtime assumptions.
 
-Play the main loop and test input, pause/resume, win/loss, restart, edge collisions, resource cleanup, and target-device performance. Do not claim playtesting without running it.
+Play through complete rounds, invalid input and reset. Test fixed-duration simulation at different frame rates and profile representative scenes before optimization claims.
 
-Use current primary documentation for version-sensitive APIs, rules, or consequential factual claims. Use supplied sources when available. References retain their authorship and license terms; their harness-specific tools, universal activation rules, and approval scripts do not replace the current user's request or host permissions.
+Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
 ## Workflow map
 
@@ -40,19 +36,8 @@ Use current primary documentation for version-sensitive APIs, rules, or conseque
 
 Inspect engine version, scene/entity patterns, update loop, save format, and target platforms. Keep game state transitions explicit and input responsive; handle pause, restart, and persistence as applicable. Profile before optimizing and validate on target hardware when possible. Avoid changing unrelated gameplay balance or publishing builds without authorization.
 
-## Additional reviewed references
+## Attribution and resource integrity
 
-These are optional technical references for relevant tasks, not a requirement to execute their workflows or install their host plugins.
+Original phase-two guidance is MIT-licensed GNCore writing. Retained source guides and helpers keep their original authorship, notices and applicable licenses, including share-alike obligations. Renaming or combining them does not transfer exclusive ownership.
 
-- [wshobson/agents / unity-ecs-patterns](research/wshobson-agents-unity-ecs-patterns/GUIDE.md): MIT.
-- [gamedev-skills/awesome-gamedev-agent-skills / router](research/gamedev-skills-awesome-gamedev-agent-skills-router/GUIDE.md): Apache-2.0.
-- [jeffallan/claude-skills / game-developer](research/jeffallan-claude-skills-game-developer/GUIDE.md): MIT.
-- [mindrally/skills / game-development](research/mindrally-skills-game-development/GUIDE.md): Apache-2.0.
-- [dylantarre/animation-principles / game-development](research/dylantarre-animation-principles-game-development/GUIDE.md): MIT.
-- [miles990/claude-software-skills / game-development](research/miles990-claude-software-skills-game-development/GUIDE.md): MIT.
-
-## Attribution and use
-
-GNCore's new category guidance is authored for this library. Retained source guides, tools, and assets remain attributed to their original authors and keep their supplied licenses. Modified or combined material subject to share-alike terms remains under those terms. This skill does not claim exclusive ownership of third-party content.
-
-See [SOURCES.json](SOURCES.json) for source identities, snapshot hashes or revisions, and license decisions. Read only the references relevant to the current task.
+See [SOURCES.json](SOURCES.json) and source-specific notices. GNCore exports preserve declared files and verify their content hashes. Imported helpers remain inert unless deliberately selected for an authorized task.

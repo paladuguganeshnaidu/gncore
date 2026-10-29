@@ -1,108 +1,14 @@
 {
   "category": "design-ux",
   "entrypoint_author": "GNCore / Ganesh Naidu",
-  "entrypoint_original_text_license": "MIT",
+  "original_guidance_license": "MIT",
   "aggregate_licenses": [
-    "Apache-2.0",
     "MIT"
   ],
-  "research": [
-    {
-      "category": "design-ux",
-      "repository": "vercel-labs/agent-skills",
-      "name": "web-design-guidelines",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "f3bc47f890f42a44db1007ab390709ec368e4b8c089baee6b0007182236ac474",
-      "revision": null,
-      "source_url": "https://github.com/vercel-labs/agent-skills",
-      "review_status": "research-only: redistribution license not verified",
-      "licenses": [],
-      "file_count": 1
-    },
-    {
-      "category": "design-ux",
-      "repository": "leonxlnx/taste-skill",
-      "name": "high-end-visual-design",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "12af471f627f866411b4bd785b19646d3672784c",
-      "source_url": "https://github.com/leonxlnx/taste-skill/blob/12af471f627f866411b4bd785b19646d3672784c/skills/taste-skill/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 39
-    },
-    {
-      "category": "design-ux",
-      "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
-      "name": "ui-ux-pro-max",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "28b3b8dee8c976df4fa3e94aed4e092ad43fcb03",
-      "source_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/28b3b8dee8c976df4fa3e94aed4e092ad43fcb03/.claude/skills/ui-ux-pro-max/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 73
-    },
-    {
-      "category": "design-ux",
-      "repository": "pbakaus/impeccable",
-      "name": "impeccable",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "5adaee704634e9031ec8943721c4ffa1a3c22221",
-      "source_url": "https://github.com/pbakaus/impeccable/blob/5adaee704634e9031ec8943721c4ffa1a3c22221/.agent/skills/impeccable/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "Apache-2.0"
-      ],
-      "file_count": 58
-    },
-    {
-      "category": "design-ux",
-      "repository": "github/awesome-copilot",
-      "name": "penpot-uiux-design",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "0fe6545b950671641b2b14b44eb56678fea6c6b4",
-      "source_url": "https://github.com/github/awesome-copilot/blob/0fe6545b950671641b2b14b44eb56678fea6c6b4/skills/penpot-uiux-design/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 5
-    },
-    {
-      "category": "design-ux",
-      "repository": "bmad-code-org/bmad-method",
-      "name": "bmad-agent-ux-designer",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "61e01f82644c4bb533750cfa0d6d61ab61d2cc9b",
-      "source_url": "https://github.com/bmad-code-org/bmad-method/blob/61e01f82644c4bb533750cfa0d6d61ab61d2cc9b/skills/bmad-agent-ux-designer/SKILL.md",
-      "review_status": "research-only: category relevance not established",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 3
-    },
-    {
-      "category": "design-ux",
-      "repository": "bencium/bencium-marketplace",
-      "name": "bencium-innovative-ux-designer",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "5de46a39b4640fa419560cd0b67e4c4b50dac802",
-      "source_url": "https://github.com/bencium/bencium-marketplace/blob/5de46a39b4640fa419560cd0b67e4c4b50dac802/bencium-innovative-ux-designer/skills/bencium-innovative-ux-designer/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 5
-    }
+  "original_categories": [
+    "design",
+    "design-ux"
   ],
-  "legacy_reference_ids": []
+  "legacy_reference_ids": [],
+  "review_scope": "Original workflow reference paths preserved; heuristic-only supplemental research retired in phase two. Helper syntax checked separately; installation never executes helpers."
 }

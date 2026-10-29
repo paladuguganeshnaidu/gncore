@@ -16,6 +16,9 @@ from gncore.planning import frontend_plan
 from gncore.skills.unified import list_workflows, workflow_aliases
 from gncore.installation import install_skills, recover_installation, verify_installation
 from gncore.evaluation import evaluate_response, load_corpus
+from gncore.skills.library import migration_manifest
+from gncore.routing import route_task, context_from_file
+from gncore.audit import audit_catalog
 
 
 def render_skill(skill: SkillDefinition) -> str:
@@ -103,6 +106,15 @@ class GncoreCli:
         plan.add_argument("--existing-theme", help="Preserve an existing product theme")
         plan.set_defaults(handler=self._cmd_plan)
 
+        route = subparsers.add_parser("route", help="Suggest developer categories with explainable local hints")
+        route.add_argument("brief", nargs="+")
+        route.add_argument("--skill", help="Explicit category or workflow ID")
+        route.add_argument("--context", type=Path, help="Explicit small project brief JSON; no automatic project scanning")
+        route.set_defaults(handler=self._cmd_route)
+
+        audit = subparsers.add_parser("audit", help="Read-only merge, resource hash, link and helper syntax checks")
+        audit.set_defaults(handler=self._cmd_audit)
+
         export = subparsers.add_parser("export", help="Install skills into .agents/skills or create a ZIP archive")
         selection = export.add_mutually_exclusive_group(required=True)
         selection.add_argument("--skills", nargs="+")
@@ -112,6 +124,7 @@ class GncoreCli:
         destination.add_argument("--output", type=Path, help="Write a portable .zip archive instead of installing")
         destination.add_argument("--directory", type=Path, help="Install under this directory (default: .agents/skills)")
         export.add_argument("--dry-run", action="store_true", help="Preflight a directory installation without writing files")
+        export.add_argument("--prune-retired", action="store_true", help="With --all, retire only unchanged inventory-managed old categories; retain a backup")
         export.set_defaults(handler=self._cmd_export)
 
         verify = subparsers.add_parser("verify", help="Read-only comparison with the installed file inventory")
@@ -144,7 +157,7 @@ class GncoreCli:
             return 0
         if args.what == "domains":
             for domain in list_domains():
-                print(f"- {domain.domain_id}: {domain.name} ({len(domain.skill_ids)} skill, {len(domain.workflow_ids)} workflows)")
+                print(f"- {domain.domain_id}: {domain.name} ({len(domain.skill_ids)} skills, {len(domain.workflow_ids)} workflows)")
                 print(f"  {domain.description}")
             return 0
         if args.what == "categories":
@@ -176,7 +189,21 @@ class GncoreCli:
         print(json.dumps(frontend_plan(" ".join(args.brief), theme=args.theme, existing_theme=args.existing_theme), indent=2))
         return 0
 
+    @staticmethod
+    def _cmd_route(args: argparse.Namespace) -> int:
+        context = context_from_file(args.context) if args.context else None
+        print(json.dumps(route_task(" ".join(args.brief), skill_id=args.skill, context=context), indent=2))
+        return 0
+
+    @staticmethod
+    def _cmd_audit(args: argparse.Namespace) -> int:
+        report = audit_catalog()
+        print(json.dumps(report, indent=2))
+        return 0 if report["ok"] else 1
+
     def _cmd_export(self, args: argparse.Namespace) -> int:
+        if args.prune_retired and (not args.all or args.output):
+            raise ValueError("--prune-retired requires --all and a directory destination")
         if args.all:
             skills = builtin_skills()
         elif args.specific:
@@ -209,7 +236,8 @@ class GncoreCli:
 
         install_root = args.directory or Path(".agents/skills")
         payloads = {skill.metadata.skill_id: {"SKILL.md": render_skill(skill).encode("utf-8"), **packaged_resources(skill.metadata.skill_id)} for skill in skills}
-        report = install_skills(install_root, payloads, version=__version__, dry_run=args.dry_run)
+        retired = {e["id"] for e in migration_manifest()["categories"] if e["id"] not in payloads} if args.prune_retired else set()
+        report = install_skills(install_root, payloads, version=__version__, dry_run=args.dry_run, retire=retired)
         if args.dry_run:
             print(json.dumps(report, indent=2))
         else:

@@ -1,17 +1,13 @@
 # Verification scope
 
-GNCore reports checks it actually performed. Tests and validation establish concrete software properties; they do not guarantee every model, host agent, artifact, or creative outcome.
+GNCore reports concrete checks, not an unlimited guarantee of agent output quality.
 
-The local verification suite covers:
+The phase-two checks cover all active category definitions, unique workflow IDs/procedures, full phase-one migration accounting, exact preserved/rewritten procedure hashes, alias precedence, required resource paths/digests and entrypoint links. Python helper parsing is static; arbitrary imported executables are not run during installation or audit.
 
-- Exactly one primary skill per category and preservation of all 553 workflow procedures.
-- Category search, workflow aliases, canonical-name precedence, and professional-domain coverage.
-- Frontend direction inference, explicit theme precedence, common spellings, existing brand preservation, and negative constraints.
-- Directory and ZIP exports, supporting resource bytes, source provenance, share-alike notices, and path boundaries.
-- Whole-selection installation preflight, digest inventories, retained backups, failed stages/switches, interrupted-process recovery, and customized-file preservation.
-- Pilot evaluation schema and artifact checks, with human review and external-tool execution explicitly pending.
-- GNCore runtime compilation, package metadata, and clean wheel installation.
+The neural-network probe checks all parameter gradients against finite differences, finite loss, parameter continuation and tiny synthetic XOR learning on CPU. It does not test a real dataset, GPU, PyTorch/TensorFlow, distributed training or deployment.
 
-Skill format validation checks frontmatter and structure. Reference review checks source identity, file preservation, relevance, and supplied license terms. These checks do not independently validate every upstream tool or certify expert decisions in every domain.
+The 90 scenarios span all 30 categories. Corpus validation checks completeness and references. The response runner checks declared selection/decisions and actual file presence. Human/semantic artifact review and external browser/device/database/provider work remain separate; defining a scenario does not mean its entire agent task was executed.
 
-The host agent must validate the requested deliverable using actual data, tests, renders, browser evidence, or other appropriate checks. It must state unavailable tools and unperformed checks rather than inventing completion. Supporting scripts and optional connectors are not executed automatically when skills are installed.
+Installer checks include collision preflight, modified-file preservation, stale resources, path boundaries, permissions, actual process interruption, rollback and safe retirement. Clean artifact checks compare package/source/installed/archive bytes and validate actual import/CLI behavior outside the checkout.
+
+The static website is checked for metadata/catalog agreement, local links, redirects, search/filter/empty states and narrow/wide layouts. A local preview is not a verified Cloudflare deployment. GitHub/PyPI publication is held for the owner's requested approval.

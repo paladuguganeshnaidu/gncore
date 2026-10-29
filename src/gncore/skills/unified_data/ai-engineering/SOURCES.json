@@ -1,124 +1,13 @@
 {
   "category": "ai-engineering",
   "entrypoint_author": "GNCore / Ganesh Naidu",
-  "entrypoint_original_text_license": "MIT",
+  "original_guidance_license": "MIT",
   "aggregate_licenses": [
-    "Apache-2.0",
     "MIT"
   ],
-  "research": [
-    {
-      "category": "ai-engineering",
-      "repository": "addyosmani/agent-skills",
-      "name": "frontend-ui-engineering",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "657534f12775d9a679bb15a07ed3b3f1fc6f49a0a5244e05fa0ac21ee30aecd9",
-      "revision": null,
-      "source_url": "https://github.com/addyosmani/agent-skills",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "ai-engineering",
-      "repository": "tw93/waza",
-      "name": "health",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "5aac1f6993c641d373f3bb3dbd20aa8a796e0949219555c9b8af170208d14af7",
-      "revision": null,
-      "source_url": "https://github.com/tw93/waza",
-      "review_status": "research-only: category relevance not established",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 21
-    },
-    {
-      "category": "ai-engineering",
-      "repository": "affaan-m/ecc",
-      "name": "ai-first-engineering",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "1b8a55dc6cf88058d9bd0401064a614106c23a91d10390a805f13fe5c36b7117",
-      "revision": null,
-      "source_url": "https://github.com/affaan-m/ecc",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "ai-engineering",
-      "repository": "github/awesome-copilot",
-      "name": "ai-prompt-engineering-safety-review",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "8dd5b8a6e9bc18d04bb3e02dc8a9205ad7a5ee90993b47d83b65a02df6165c22",
-      "revision": null,
-      "source_url": "https://github.com/github/awesome-copilot",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "ai-engineering",
-      "repository": "langchain-ai/langchain-skills",
-      "name": "eval-engineering",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "9e621bf22fd53a60c908ee504778ba192ce90cca8cc5d4fa6d08861c63b399c0",
-      "revision": null,
-      "source_url": "https://github.com/langchain-ai/langchain-skills",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 21
-    },
-    {
-      "category": "ai-engineering",
-      "repository": "rohitg00/ai-engineering-from-scratch",
-      "name": "start-learning",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "db2aa3048f5bfd2909d8da5754613487d1e1f33171fde78d25efd195a7604a48",
-      "revision": null,
-      "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "ai-engineering",
-      "repository": "langchain-ai/langchain-skills",
-      "name": "langsmith-online-eval-engineering",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "3cdd35f3a9bb3eed41c22db132c2fe6246a0fdb89a219ce6043d7c63aa213755",
-      "revision": null,
-      "source_url": "https://github.com/langchain-ai/langchain-skills",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 4
-    },
-    {
-      "category": "ai-engineering",
-      "repository": "mastra-ai/mastra",
-      "name": "react-best-practices",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "79f8d3c229633e7ee493aaff8fd7e3edbe80fb081c89f2dd687623270140a781",
-      "revision": null,
-      "source_url": "https://github.com/mastra-ai/mastra",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "Apache-2.0"
-      ],
-      "file_count": 29
-    }
+  "original_categories": [
+    "ai-engineering"
   ],
-  "legacy_reference_ids": []
+  "legacy_reference_ids": [],
+  "review_scope": "Original workflow reference paths preserved; heuristic-only supplemental research retired in phase two. Helper syntax checked separately; installation never executes helpers."
 }

@@ -1,0 +1,2 @@
+# Optional chart generation only; GNCore itself has no runtime dependencies.
+matplotlib==3.11.2

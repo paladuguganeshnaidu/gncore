@@ -1,31 +1,15 @@
 # Architecture
 
-GNCore is a local catalog and portable skill exporter. It does not orchestrate models, install application integrations, or run downloaded source scripts automatically.
+GNCore is a standard-library Python catalog and portable skill exporter. Host agents supply models, tools and permissions.
 
-## Category model
+`catalog/categories.json` is the canonical authoring input for 30 developer entrypoints and 374 workflows. `scripts/build_catalog.py` deterministically renders `src/gncore/skills/unified_data/`, including per-resource SHA-256 digests and entrypoint hashes. Retained attributed references are versioned files beside their owner skill. A routine offline build performs no research and uses no hidden cache.
 
-- `skills/unified_data/<skill-id>/SKILL.md` is the single discoverable entrypoint for a category.
-- `skills/unified_data/manifest.json` records the 60 entrypoints, all 553 workflow procedures, resource paths, versions, and license expressions.
-- `skills/unified.py` loads categories, exposes workflow metadata, and resolves compatibility aliases.
-- `skills/bundles.py` validates declared relative paths and loads portable resource bytes.
-- `skills/library.py` implements discovery, search, domain metadata, and legacy workflow reconstruction for maintenance.
-- `planning.py` provides a deterministic frontend planning aid; the host AI retains contextual judgment.
-- `cli/app.py` lists, searches, inspects, plans, and exports. Export is the command that writes skill files or ZIPs.
+`skills/library.py` provides discovery, six developer domains and migration-aware lookup. `skills/unified.py` exposes workflow metadata and lookup aliases. `skills/migration.json` accounts for all phase-one IDs. Primary and historical category aliases take precedence over colliding generic workflow names.
 
-## One entrypoint, relevant detail
+`skills/bundles.py` checks packaged entrypoint/resource hashes and path boundaries before export. `installation.py` preflights, stages and verifies directory changes, records inventories, retains backups and restores interrupted switches. Retiring old categories is explicit and preserves modified/unmanaged content.
 
-Each category entrypoint merges intent selection, execution guidance, category quality criteria, a workflow map, and focused procedures. Frontend includes visual-direction inference and theme-specific implementation guidance. Existing source guides and approved new references remain supporting material, read only when needed.
+`planning.py` implements the frontend direction helper. `routing.py` provides local explainable developer hints and optional explicit context. Neither calls a model or executes an agent.
 
-Source `SKILL.md` files inside reference folders are renamed as guides so they cannot accidentally create hundreds of additional discoverable skills. Relocations are recorded when needed. Retired frontend/backend collection entrypoints are maintained as `GUIDE.md` files for provenance and reproducible builds.
+`evaluation.py` validates corpus/recorded artifacts and leaves semantic and external-tool checks pending. `catalog/evaluation_specs.py` plus `base_evaluations.json` rebuild the 90-case corpus offline. `audit.py` checks merge accounting, hashes, entrypoint links and Python helper syntax without executing imported helpers.
 
-## Compatibility and search
-
-The primary catalog has one skill per category. Workflow aliases resolve to the owning category. A primary category name takes precedence if it collides with an old generic workflow name, such as `testing` or `security`. Search also considers workflow IDs, titles, and descriptions.
-
-The 30 professional domains each expose one primary skill ID plus their ten retained `workflow_ids`. This preserves capability coverage while changing the primary catalog structure.
-
-## Research and licensing
-
-The research pipeline records queries for every category, downloads registry snapshots, falls back to pinned public GitHub sources, and keeps failures distinct from successful downloads. License and relevance decisions determine which references enter the distribution. Restricted or unclear material remains in ignored local research storage. Included content retains provenance and supplied notices.
-
-The runtime has no network dependency. Research and rebuilding are explicit developer operations requiring source access. Downloaded source executables are not run by the import pipeline.
+`scripts/build_website.py` builds a static Cloudflare Pages preview from the same accepted manifest. `web/assets/` preserves GNCore's existing brand assets. Publication is separate from generation.

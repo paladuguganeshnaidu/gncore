@@ -1,8 +1,0 @@
-{
-  "SKILL.md": "GUIDE.md",
-  "finetuning/SKILL.md": "finetuning/GUIDE.md",
-  "models/deploy-model/SKILL.md": "models/deploy-model/GUIDE.md",
-  "models/deploy-model/capacity/SKILL.md": "models/deploy-model/capacity/GUIDE.md",
-  "models/deploy-model/customize/SKILL.md": "models/deploy-model/customize/GUIDE.md",
-  "models/deploy-model/preset/SKILL.md": "models/deploy-model/preset/GUIDE.md"
-}

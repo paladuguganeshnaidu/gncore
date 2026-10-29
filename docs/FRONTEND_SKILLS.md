@@ -1,23 +1,12 @@
-# Adaptive frontend skill
+# Frontend skill
 
-Install `web-frontend` once and describe the site or interface you want:
+`web-frontend` retains all 40 original frontend workflows and their attributed technical support resources. Its single entrypoint chooses an appropriate visual direction from audience, content and primary task when no theme is supplied. Explicit visual choices and the existing brand take priority, subject to stated constraints.
+
+The direction helper supports common/multiword aliases, including `britalisim`, negative motion such as “not animated,” and exclusion-filtered fallbacks. Conflicting requests produce an error. This local parser is a starting aid; the host agent still performs design and implementation.
 
 ```bash
+gncore plan "A clinic booking website, not animated"
 gncore export --specific web-frontend
 ```
 
-```text
-$web-frontend Build a booking site for a small clinic.
-$web-frontend Create a maximalist music festival landing page.
-$web-frontend Build a premium hotel site with no animation.
-```
-
-Its single entrypoint combines the 40 earlier frontend workflows with product-context selection, theme guidance, implementation steps, and quality criteria. When the user omits a theme, it chooses a suitable direction from audience, primary task, content, and brand constraints. Explicit themes and reference images take priority. Focused changes preserve an existing design system.
-
-Visual modes include minimalism, Swiss, editorial, luxury, agentic, maximalism, neo-brutalism, industrial, futuristic/Y2K, retro, collage/paper, doodle, bento, glass, neumorphism, claymorphism, aurora, cyberpunk, immersive 3D, scrollytelling, kinetic typography, and organic design.
-
-Implementation guidance covers components, tokens, React composition and performance, shadcn, responsive accessibility, motion ownership, browser testing, and complete interaction states. Technical source guides and assets remain attributed supporting references rather than separate skill invocations.
-
-The optional `gncore plan` command makes deterministic starting recommendations for local verification. It does not replace the host AI's design judgment or visual review.
-
-All earlier `web-front-*` names remain CLI/API aliases to `web-frontend`. See [Migration](../MIGRATION.md), [Catalog](ALL_SKILLS.md), and [Source Research](SOURCE_RESEARCH.md).
+The phase-two website reuses GNCore's established cream, violet and lime brand while replacing business packs and stale counts with the developer catalog. Responsive layout, explorer search/filter/empty states and command interactions are tested locally; publication remains separate.

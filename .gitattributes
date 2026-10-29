@@ -6,3 +6,7 @@ src/gncore/skills/frontend_data/** -whitespace
 src/gncore/skills/backend_data/** -whitespace
 src/gncore/skills/unified_data/*/references/** -whitespace
 src/gncore/skills/unified_data/*/research/** -whitespace
+# Keep generated Matplotlib paths and raw test evidence byte-for-byte.
+web-results/charts/*.svg -whitespace
+web-results/logs/*.log -whitespace
+web-results/ide-evidence/*.txt -whitespace

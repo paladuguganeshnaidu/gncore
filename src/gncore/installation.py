@@ -14,6 +14,7 @@ from pathlib import Path, PurePosixPath
 import re
 import shutil
 import stat
+import time
 from uuid import uuid4
 
 STATE = ".gncore-install.json"
@@ -21,6 +22,18 @@ STATE = ".gncore-install.json"
 
 def _digest(content: bytes) -> str:
     return hashlib.sha256(content).hexdigest()
+
+
+def _rename(source: Path, destination: Path) -> None:
+    """Bound transient Windows sharing/access locks; preserve permanent failures."""
+    for attempt in range(8):
+        try:
+            source.rename(destination)
+            return
+        except PermissionError as error:
+            if getattr(error, "winerror", None) not in {5, 32, 33} or attempt == 7:
+                raise
+            time.sleep(min(0.025 * (2 ** attempt), 0.2))
 
 
 def _write_json(path: Path, value: dict) -> None:
@@ -86,12 +99,12 @@ def _files(root: Path) -> dict[str, str]:
     return {p.relative_to(root).as_posix(): _digest(p.read_bytes()) for p in sorted(root.rglob("*")) if p.is_file()}
 
 
-def _preflight(root: Path, payloads: dict[str, dict[str, bytes]], legacy: dict[str, dict[str, bytes]]) -> tuple[dict, dict]:
+def _preflight(root: Path, payloads: dict[str, dict[str, bytes]], legacy: dict[str, dict[str, bytes]], retire: set[str] | None = None) -> tuple[dict, dict]:
     _no_links(root)
     if root.exists() and not root.is_dir():
         raise ValueError(f"installation destination is not a directory: {root}")
     state = _state(root)
-    actions = {"install": [], "update": [], "adopt": [], "migrate": [], "preserved_legacy": []}
+    actions = {"install": [], "update": [], "adopt": [], "migrate": [], "preserved_legacy": [], "retire": [], "preserved_retired": []}
     for skill_id, payload in payloads.items():
         if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", skill_id) or not payload or "SKILL.md" not in payload:
             raise ValueError(f"invalid skill payload: {skill_id}")
@@ -141,6 +154,14 @@ def _preflight(root: Path, payloads: dict[str, dict[str, bytes]], legacy: dict[s
             # Preserve extra/custom legacy files in place, never silently remove them.
             action = "migrate" if folder.is_dir() and _files(folder) == hashes else "preserved_legacy"
             actions[action].append(skill_id)
+    for skill_id in sorted(retire or set()):
+        if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", skill_id) or skill_id in payloads:
+            raise ValueError(f"invalid retirement target: {skill_id}")
+        folder = root / skill_id
+        if folder.exists():
+            recorded = state["skills"].get(skill_id, {}).get("files")
+            action = "retire" if recorded and folder.is_dir() and _files(folder) == recorded else "preserved_retired"
+            actions[action].append(skill_id)
     return state, actions
 
 
@@ -164,7 +185,8 @@ def _writer_lock(root: Path):
 
 
 def install_skills(root: Path, payloads: dict[str, dict[str, bytes]], *, version: str,
-                   dry_run: bool = False, legacy: dict[str, dict[str, bytes]] | None = None) -> dict:
+                   dry_run: bool = False, legacy: dict[str, dict[str, bytes]] | None = None,
+                   retire: set[str] | None = None) -> dict:
     """Preflight every destination, stage a full tree, then switch with backup.
 
     Modified managed files stop the whole install; unrelated files are copied
@@ -172,7 +194,7 @@ def install_skills(root: Path, payloads: dict[str, dict[str, bytes]], *, version
     """
     root = root.expanduser().absolute()
     legacy = legacy or {}
-    state, actions = _preflight(root, payloads, legacy)
+    state, actions = _preflight(root, payloads, legacy, retire)
     result = {"directory": str(root), "dry_run": dry_run, **actions}
     if dry_run:
         return result
@@ -184,7 +206,7 @@ def install_skills(root: Path, payloads: dict[str, dict[str, bytes]], *, version
                 raise ValueError(f"unfinished installation; recover before retrying: {journal}")
     root.parent.mkdir(parents=True, exist_ok=True)
     with _writer_lock(root):
-        state, actions = _preflight(root, payloads, legacy)
+        state, actions = _preflight(root, payloads, legacy, retire)
         transaction = base / uuid4().hex
         transaction.mkdir(parents=True)
         stage, backup = transaction / "staged", transaction / "backup"
@@ -197,7 +219,7 @@ def install_skills(root: Path, payloads: dict[str, dict[str, bytes]], *, version
                 shutil.copytree(root, stage)
             else:
                 stage.mkdir()
-            for skill_id in actions["migrate"]:
+            for skill_id in actions["migrate"] + actions["retire"]:
                 target = stage / skill_id
                 if not target.resolve().is_relative_to(stage.resolve()):
                     raise ValueError("migration escaped staged installation")
@@ -223,8 +245,8 @@ def install_skills(root: Path, payloads: dict[str, dict[str, bytes]], *, version
             record["status"] = "switching"
             _write_json(journal, record)
             if root.exists():
-                root.rename(backup)
-            stage.rename(root)
+                _rename(root, backup)
+            _rename(stage, root)
             record["status"] = "committed"
             _write_json(journal, record)
         except BaseException:
@@ -242,10 +264,10 @@ def _restore(root: Path, transaction: Path, record: dict) -> None:
     backup, stage = transaction / "backup", transaction / "staged"
     if backup.exists():
         if root.exists():
-            root.rename(transaction / "failed-install")
-        backup.rename(root)
+            _rename(root, transaction / "failed-install")
+        _rename(backup, root)
     elif not record["had_root"] and root.exists() and not stage.exists():
-        root.rename(transaction / "failed-install")
+        _rename(root, transaction / "failed-install")
     elif record["had_root"] and record["status"] in {"switching", "recovery-required"} and not stage.exists():
         raise OSError("original installation backup is missing; preserve the transaction for manual recovery")
 

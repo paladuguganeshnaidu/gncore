@@ -1,117 +1,13 @@
 {
   "category": "release-engineering",
   "entrypoint_author": "GNCore / Ganesh Naidu",
-  "entrypoint_original_text_license": "MIT",
+  "original_guidance_license": "MIT",
   "aggregate_licenses": [
     "MIT"
   ],
-  "research": [
-    {
-      "category": "release-engineering",
-      "repository": "magnus919/agent-skills",
-      "name": "release-engineering",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "86ba31bea9976a1da79c8eafe59a54cec63eaa94",
-      "source_url": "https://github.com/magnus919/agent-skills/blob/86ba31bea9976a1da79c8eafe59a54cec63eaa94/release-engineering/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 39
-    },
-    {
-      "category": "release-engineering",
-      "repository": "jorgerosal/wordpress-skills",
-      "name": "wp-ci-cd-and-release-engineering",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "8c964424d05ba34b3ea5641f7181d4c13829e06f",
-      "source_url": "https://github.com/jorgerosal/wordpress-skills/blob/8c964424d05ba34b3ea5641f7181d4c13829e06f/claude-skills/wp-ci-cd-and-release-engineering/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 4
-    },
-    {
-      "category": "release-engineering",
-      "repository": "samber/developer-relations-skills",
-      "name": "engineering-blog-post",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "a12240a5a8a15a460ab17aa870df37f14814bf7d",
-      "source_url": "https://github.com/samber/developer-relations-skills/blob/a12240a5a8a15a460ab17aa870df37f14814bf7d/skills/engineering-blog-post/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 6
-    },
-    {
-      "category": "release-engineering",
-      "repository": "wondelai/skills",
-      "name": "release-it",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "c172996495bed0fcd26896a9416b2093fd7073f0",
-      "source_url": "https://github.com/wondelai/skills/blob/c172996495bed0fcd26896a9416b2093fd7073f0/release-it/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 7
-    },
-    {
-      "category": "release-engineering",
-      "repository": "callstackincubator/agent-skills",
-      "name": "writing-user-docs",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "59e9d17446a248b21d86f078fcd0bd2d36db1ca4",
-      "source_url": "https://github.com/callstackincubator/agent-skills/blob/59e9d17446a248b21d86f078fcd0bd2d36db1ca4/skills/writing-user-docs/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "release-engineering",
-      "repository": "thananon/9arm-skills",
-      "name": "management-talk",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "a1fc303b274ed06c32d405ba5a6db00ded6e5663",
-      "source_url": "https://github.com/thananon/9arm-skills/blob/a1fc303b274ed06c32d405ba5a6db00ded6e5663/skills/productivity/management-talk/SKILL.md",
-      "review_status": "research-only: redistribution license not verified",
-      "licenses": [],
-      "file_count": 1
-    },
-    {
-      "category": "release-engineering",
-      "repository": "alirezarezvani/claude-skills",
-      "name": "engineering-advanced-skills",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "5434623a788ec3105d238328cfe554e1e2242ff7",
-      "source_url": "https://github.com/alirezarezvani/claude-skills/blob/5434623a788ec3105d238328cfe554e1e2242ff7/engineering/skills/engineering-advanced-skills/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "release-engineering",
-      "repository": "everyinc/compound-engineering-plugin",
-      "name": "ce-release-notes",
-      "download_status": "not-found-in-source-tree",
-      "snapshot_hash": null,
-      "revision": "00d0a5bbf1300b2138b65ce724b325dd4dff77ba",
-      "source_url": "https://github.com/everyinc/compound-engineering-plugin",
-      "review_status": "not-redistributed: download unavailable"
-    }
+  "original_categories": [
+    "release-engineering"
   ],
-  "legacy_reference_ids": []
+  "legacy_reference_ids": [],
+  "review_scope": "Original workflow reference paths preserved; heuristic-only supplemental research retired in phase two. Helper syntax checked separately; installation never executes helpers."
 }

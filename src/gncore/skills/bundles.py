@@ -3,6 +3,7 @@
 from functools import lru_cache
 from importlib.resources import files
 import json
+import hashlib
 from pathlib import PurePosixPath
 
 from gncore.skills.models import SkillDefinition, SkillMetadata
@@ -19,7 +20,10 @@ def bundle_skills(directory: str, category: str) -> tuple[SkillDefinition, ...]:
     definitions = []
     for entry in bundle_manifest(directory):
         entrypoint = "GUIDE.md" if directory in {"frontend_data", "backend_data"} else "SKILL.md"
-        document = files("gncore.skills").joinpath(directory, entry["id"], entrypoint).read_text(encoding="utf-8")
+        raw = files("gncore.skills").joinpath(directory, entry["id"], entrypoint).read_bytes()
+        if entry.get("entrypoint_sha256") and hashlib.sha256(raw).hexdigest() != entry["entrypoint_sha256"]:
+            raise ValueError(f"skill entrypoint digest mismatch: {entry['id']}")
+        document = raw.decode("utf-8")
         body = document.split("---", 2)[2].strip()
         if body.startswith("# "):
             body = body.partition("\n")[2].strip()
@@ -45,7 +49,11 @@ def bundle_resources(directory: str, skill_id: str) -> dict[str, bytes]:
         path = PurePosixPath(name)
         if not name or path.is_absolute() or ".." in path.parts or "\\" in name or ":" in name:
             raise ValueError(f"unsafe skill resource path: {name}")
-        result[name] = root.joinpath(*path.parts).read_bytes()
+        content = root.joinpath(*path.parts).read_bytes()
+        expected = entry.get("resource_sha256", {}).get(name)
+        if directory == "unified_data" and (not expected or hashlib.sha256(content).hexdigest() != expected):
+            raise ValueError(f"skill resource digest mismatch: {skill_id}/{name}")
+        result[name] = content
     return result
 
 

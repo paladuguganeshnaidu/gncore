@@ -1,5 +1,7 @@
 # GNCore next upgrade plan
 
+> Historical phase-one record. The developer-focused phase-two scope and current publication state are in [the phase-two release plan](PHASE2_RELEASE.md). This record does not describe the current active catalog.
+
 Prepared on 2026-10-28 against commit `6321d72`. This roadmap now tracks a completed first implementation batch and the remaining upgrades. The detailed requirements below remain the targets; a pilot or partial implementation does not satisfy an entire later round.
 
 ## Implementation status

@@ -1,120 +1,14 @@
 {
   "category": "machine-learning",
   "entrypoint_author": "GNCore / Ganesh Naidu",
-  "entrypoint_original_text_license": "MIT",
+  "original_guidance_license": "MIT",
   "aggregate_licenses": [
-    "Apache-2.0",
     "MIT"
   ],
-  "research": [
-    {
-      "category": "machine-learning",
-      "repository": "mindrally/skills",
-      "name": "machine-learning",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "7682ca77710e0971eab4e0ae5dddfa281aea0ba5",
-      "source_url": "https://github.com/mindrally/skills/blob/7682ca77710e0971eab4e0ae5dddfa281aea0ba5/machine-learning/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "Apache-2.0"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "machine-learning",
-      "repository": "404kidwiz/claude-supercode-skills",
-      "name": "machine-learning-engineer",
-      "download_status": "source-unavailable",
-      "snapshot_hash": null,
-      "revision": null,
-      "source_url": "https://github.com/404kidwiz/claude-supercode-skills",
-      "review_status": "not-redistributed: download unavailable"
-    },
-    {
-      "category": "machine-learning",
-      "repository": "sickn33/agentic-awesome-skills",
-      "name": "machine-learning-ops-ml-pipeline",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "e9809578fd426a284af017c5db99f8eb6628e6ca",
-      "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/e9809578fd426a284af017c5db99f8eb6628e6ca/skills/machine-learning-ops-ml-pipeline/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "machine-learning",
-      "repository": "microsoft/azure-skills",
-      "name": "azure-compute",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "6e889d5603fed6b741308a184d0b72b8fbe3bdb7",
-      "source_url": "https://github.com/microsoft/azure-skills/blob/6e889d5603fed6b741308a184d0b72b8fbe3bdb7/skills/azure-compute/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 41
-    },
-    {
-      "category": "machine-learning",
-      "repository": "huggingface/skills",
-      "name": "transformers-js",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "fabc634a893f62ad5c2039830397efa35fa62715",
-      "source_url": "https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/transformers-js/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "Apache-2.0"
-      ],
-      "file_count": 8
-    },
-    {
-      "category": "machine-learning",
-      "repository": "ljagiello/ctf-skills",
-      "name": "ctf-ai-ml",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "0df66f2ab2c4a5fd6a8fe746daed010b3685eea3f12b0aaac45f94f557050447",
-      "revision": null,
-      "source_url": "https://github.com/ljagiello/ctf-skills",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 4
-    },
-    {
-      "category": "machine-learning",
-      "repository": "affaan-m/ecc",
-      "name": "mle-workflow",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
-      "source_url": "https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/mle-workflow/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "machine-learning",
-      "repository": "affaan-m/ecc",
-      "name": "ml-adoption-playbook",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "c7d33efdf096e31117cfd9f9f9bc751e4e68579127ccbaf61924c675f2837d36",
-      "revision": null,
-      "source_url": "https://github.com/affaan-m/ecc",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    }
+  "original_categories": [
+    "ai-machine-learning",
+    "machine-learning"
   ],
-  "legacy_reference_ids": []
+  "legacy_reference_ids": [],
+  "review_scope": "Original workflow reference paths preserved; heuristic-only supplemental research retired in phase two. Helper syntax checked separately; installation never executes helpers."
 }

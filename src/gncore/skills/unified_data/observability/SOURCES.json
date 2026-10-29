@@ -1,0 +1,18 @@
+{
+  "category": "observability",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "original_guidance_license": "MIT",
+  "aggregate_licenses": [
+    "Apache-2.0",
+    "CC-BY-SA-4.0",
+    "MIT"
+  ],
+  "original_categories": [
+    "web-backend"
+  ],
+  "legacy_reference_ids": [
+    "web-backend-sentry-instrument",
+    "web-backend-sentry-debug-issue"
+  ],
+  "review_scope": "Original workflow reference paths preserved; heuristic-only supplemental research retired in phase two. Helper syntax checked separately; installation never executes helpers."
+}

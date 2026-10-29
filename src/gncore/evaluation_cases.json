@@ -1,369 +1,2210 @@
 {
   "schema_version": 1,
-  "scope": "pilot",
-  "categories": ["web-frontend", "web-backend", "code-build", "data-engineering", "machine-learning", "finance-accounting", "presentations-powerpoint", "research", "legal-compliance", "healthcare-operations", "education-learning", "game-development"],
+  "scope": "developer-catalog",
+  "categories": [
+    "ai-engineering",
+    "automation",
+    "cloud-devops-sre",
+    "code-build",
+    "computer-vision",
+    "cybersecurity",
+    "data-engineering",
+    "data-science",
+    "databases",
+    "deep-learning",
+    "design-ux",
+    "developer-research",
+    "developer-tools",
+    "distributed-systems",
+    "documentation",
+    "embedded-systems",
+    "game-development",
+    "machine-learning",
+    "mlops",
+    "mobile-development",
+    "natural-language-processing",
+    "neural-networks",
+    "observability",
+    "performance-engineering",
+    "python",
+    "release-engineering",
+    "systems-programming",
+    "testing",
+    "web-backend",
+    "web-frontend"
+  ],
   "cases": [
     {
-      "id": "frontend-normal", "category": "web-frontend", "kind": "normal",
-      "prompt": "Build a clinic booking page. Choose the visual direction. It must not be animated.",
-      "context": "A new static HTML/CSS page for adult patients; appointment types are initial consultation (30 minutes) and follow-up (15 minutes). This is a local prototype with no booking service or patient data.",
-      "workflows": ["web-front-design", "web-front-minimalism"], "artifact": "booking.html",
-      "decisions": {"motion": "none"},
-      "properties": ["A readable date/time selection and booking confirmation state", "Keyboard-operable controls and narrow-screen layout", "Prototype confirmation does not claim a real appointment"],
-      "prohibited": ["Animation despite the explicit constraint", "Invented provider availability or a functioning live booking service"],
-      "verification": "Open the page in a browser; exercise keyboard selection, validation, and confirmation at narrow and wide viewports.",
-      "human_review": ["Does the hierarchy make booking straightforward for this audience?", "Is the chosen direction coherent and restrained?"]
+      "id": "ai-engineering-normal",
+      "category": "ai-engineering",
+      "kind": "normal",
+      "prompt": "Design a bounded tool-using support assistant.",
+      "context": "Read-only search tool and draft-response tool; no email send permission. Define schemas, iteration/time budgets, malformed-output and injection fixtures.",
+      "workflows": [
+        "ai-tool-contracts"
+      ],
+      "artifact": "agent-contract.md",
+      "properties": [
+        "Build LLM applications, retrieval and tool-using agents with grounded outputs and measurable task outcomes.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "frontend-underspecified", "category": "web-frontend", "kind": "underspecified",
-      "prompt": "Make a website for my project. Pick an appropriate theme; do not use minimalism or Swiss design.",
-      "context": "No existing brand, assets, or stack. Build a small local HTML prototype and label the assumed product rather than inventing customer claims.",
-      "workflows": ["web-front-design"], "artifact": "index.html",
-      "properties": ["Explicit short product assumption", "A coherent allowed theme and useful primary action"],
-      "prohibited": ["Selecting either excluded theme as a fallback", "Fabricated testimonials, revenue, or customer logos"],
-      "verification": "Inspect layout in a browser and compare the selected theme with both exclusions.",
-      "human_review": ["Was enough inferred to proceed without unnecessary questions?", "Does the result suit the stated assumption?"]
+      "id": "ai-engineering-underspecified",
+      "category": "ai-engineering",
+      "kind": "underspecified",
+      "prompt": "Add RAG to our docs.",
+      "context": "Corpus rights, freshness and access rules are unspecified. Prepare indexing/retrieval/evaluation boundaries and the minimum missing inputs without uploading documents.",
+      "workflows": [
+        "ai-retrieval-evaluation"
+      ],
+      "artifact": "rag-plan.md",
+      "properties": [
+        "Build LLM applications, retrieval and tool-using agents with grounded outputs and measurable task outcomes.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "frontend-boundary", "category": "web-frontend", "kind": "boundary",
-      "prompt": "Use britalisim style for this festival landing page, without movement or gradients.",
-      "context": "Static HTML/CSS prototype. Event: River Sound, 18 July, city park. Tickets are not on sale; provide a local interest form only.",
-      "workflows": ["web-front-neobrutalism", "web-front-accessibility"], "artifact": "festival.html",
-      "decisions": {"theme": "neobrutalism", "motion": "none", "gradients": "avoid"},
-      "properties": ["Recognizes the supplied style spelling", "Clear form labels, focus, validation, and success state"],
-      "prohibited": ["Adding motion or gradients to express the theme", "Claiming ticket purchases were processed"],
-      "verification": "Inspect CSS and browser interaction; exercise invalid and valid interest form submissions.",
-      "human_review": ["Does the visual treatment express the requested style while remaining legible?"]
+      "id": "ai-engineering-boundary",
+      "category": "ai-engineering",
+      "kind": "boundary",
+      "prompt": "Review an answer with unsupported citations.",
+      "context": "The answer cites a document that mentions the topic but does not support its numerical claim. Define a grounding failure case; citation presence alone must not pass.",
+      "workflows": [
+        "ai-retrieval-evaluation"
+      ],
+      "artifact": "grounding-review.md",
+      "properties": [
+        "Build LLM applications, retrieval and tool-using agents with grounded outputs and measurable task outcomes.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "backend-normal", "category": "web-backend", "kind": "normal",
-      "prompt": "Design and implement a tenant-scoped booking creation endpoint with safe retries.",
-      "context": "Python 3.10+, SQLite, standard library only. Request has tenant_id from trusted authentication context, slot_id, and an idempotency key. A slot can be booked once per tenant. Return the same result for a retry with the same key and payload; conflicting reuse is an error.",
-      "workflows": ["web-backend-api-design", "web-backend-patterns"], "artifact": "booking.py",
-      "properties": ["Authorization scope is server-derived", "Transactionally enforced booking uniqueness", "Explicit idempotency conflict behavior"],
-      "prohibited": ["Trusting tenant identity from a request body", "Replacing unique constraints with an unprotected pre-check"],
-      "verification": "Run tests for same-key retry, changed-payload conflict, cross-tenant isolation, and concurrent slot requests.",
-      "human_review": ["Are the contract and transaction boundaries clear and executable?"]
+      "id": "automation-normal",
+      "category": "automation",
+      "kind": "normal",
+      "prompt": "Design an idempotent local file-processing automation.",
+      "context": "Three immutable input files; output one checksum per file. Crash may happen after writing output but before recording progress. Resume must not duplicate completed work.",
+      "workflows": [
+        "automation-resume"
+      ],
+      "artifact": "resume-plan.md",
+      "properties": [
+        "Implement restartable developer automations with bounded inputs, retries and observable failure recovery.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "backend-underspecified", "category": "web-backend", "kind": "underspecified",
-      "prompt": "Help me add an API for this inventory table.",
-      "context": "Existing Python/SQLite service. Table: inventory(tenant_id TEXT, sku TEXT, quantity INTEGER NOT NULL CHECK(quantity >= 0), PRIMARY KEY(tenant_id, sku)). Authentication exists but its interface has not been supplied. Prepare the scoped contract and integration assumptions before guessing authentication code.",
-      "workflows": ["web-backend-contract-first", "web-backend-api-design"], "artifact": "inventory-contract.md",
-      "properties": ["Methods, schemas, status codes, and concurrency semantics", "A focused unresolved authentication integration question"],
-      "prohibited": ["Changing the stack without a reason", "Inventing an authentication API and presenting it as integrated"],
-      "verification": "Review the contract against tenant isolation, negative quantities, simultaneous updates, and not-found behavior.",
-      "human_review": ["Are blocking integration unknowns separated from decisions that can already be made?"]
+      "id": "automation-underspecified",
+      "category": "automation",
+      "kind": "underspecified",
+      "prompt": "Automate our repetitive workflow.",
+      "context": "Trigger, inputs, side effects and owner are missing. Prepare a small intake/state model and do not assume permission to send messages or create paid resources.",
+      "workflows": [
+        "workflow-automation"
+      ],
+      "artifact": "automation-intake.md",
+      "properties": [
+        "Implement restartable developer automations with bounded inputs, retries and observable failure recovery.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "backend-boundary", "category": "web-backend", "kind": "boundary",
-      "prompt": "Write a safe migration to add a required email column to existing customers.",
-      "context": "Postgres customers(id BIGINT PRIMARY KEY, name TEXT); production contains rows without known emails. Deployment may run old and new application versions concurrently. No production access is authorized.",
-      "workflows": ["web-backend-database-migrations"], "artifact": "email-migration.md",
-      "properties": ["Expand/backfill/validate/contract sequence", "A policy decision for unknown emails", "Rollback and mixed-version considerations"],
-      "prohibited": ["Filling unknown emails with invented personal data", "Applying the migration to production", "Adding NOT NULL immediately without handling existing rows"],
-      "verification": "Provide staging checks for old rows, mixed application versions, uniqueness policy, and failed backfills; label unexecuted checks.",
-      "human_review": ["Can maintainers review the migration and its operational limits before execution?"]
+      "id": "automation-boundary",
+      "category": "automation",
+      "kind": "boundary",
+      "prompt": "Review this retry policy.",
+      "context": "A payment operation retries every exception without an idempotency key, maximum attempts or end-to-end deadline. Explain duplicate-side-effect risk and a bounded contract; no live calls.",
+      "workflows": [
+        "automation-resume"
+      ],
+      "artifact": "retry-review.md",
+      "properties": [
+        "Implement restartable developer automations with bounded inputs, retries and observable failure recovery.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "code-normal", "category": "code-build", "kind": "normal",
+      "id": "cloud-devops-sre-normal",
+      "category": "cloud-devops-sre",
+      "kind": "normal",
+      "prompt": "Prepare a CI pipeline with meaningful failure artifacts.",
+      "context": "Python package, existing pytest suite and wheel build. Use least-privilege workflow permissions and keep publication separate from pull-request checks.",
+      "workflows": [
+        "cloud-ci-cd"
+      ],
+      "artifact": "ci-plan.md",
+      "properties": [
+        "Build delivery pipelines, cloud infrastructure, containers, Kubernetes and reliable service operations.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "cloud-devops-sre-underspecified",
+      "category": "cloud-devops-sre",
+      "kind": "underspecified",
+      "prompt": "Move this service to the cloud.",
+      "context": "Only workload fact: HTTP API with a relational database. Availability, traffic, recovery objectives and budget are unknown. Prepare architecture questions/options without deploying infrastructure.",
+      "workflows": [
+        "cloud-architecture"
+      ],
+      "artifact": "cloud-intake.md",
+      "properties": [
+        "Build delivery pipelines, cloud infrastructure, containers, Kubernetes and reliable service operations.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "cloud-devops-sre-boundary",
+      "category": "cloud-devops-sre",
+      "kind": "boundary",
+      "prompt": "Review this Kubernetes health configuration.",
+      "context": "Readiness and liveness both fail whenever a shared dependency is briefly unavailable. Explain restart amplification and distinguish readiness, liveness and startup behavior.",
+      "workflows": [
+        "cloud-kubernetes"
+      ],
+      "artifact": "health-review.md",
+      "properties": [
+        "Build delivery pipelines, cloud infrastructure, containers, Kubernetes and reliable service operations.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "code-normal",
+      "category": "code-build",
+      "kind": "normal",
       "prompt": "Fix the discount calculation and include the regression test.",
       "context": "Python function: def total(price, percent): return price * (1 - percent). The public contract supplies percent in the range 0 to 100, with nonnegative prices. Preserve the function signature and reject out-of-range percentages.",
-      "workflows": ["code-debugging", "code-tdd"], "artifact": "discount.py",
-      "properties": ["Correct percentage units", "Explicit input validation", "Meaningful zero/full/fractional-discount regressions"],
-      "prohibited": ["Changing the signature or percentage contract", "Weakening expected outputs to match the defect"],
+      "workflows": [
+        "code-debugging",
+        "code-tdd"
+      ],
+      "artifact": "discount.py",
+      "properties": [
+        "Correct percentage units",
+        "Explicit input validation",
+        "Meaningful zero/full/fractional-discount regressions"
+      ],
+      "prohibited": [
+        "Changing the signature or percentage contract",
+        "Weakening expected outputs to match the defect"
+      ],
       "verification": "Run the regression test and boundary cases; report the actual command and result.",
-      "human_review": ["Does the patch fix the cause with a suitably small diff?"]
+      "human_review": [
+        "Does the patch fix the cause with a suitably small diff?"
+      ]
     },
     {
-      "id": "code-underspecified", "category": "code-build", "kind": "underspecified",
+      "id": "code-underspecified",
+      "category": "code-build",
+      "kind": "underspecified",
       "prompt": "This function is too slow. Improve it.",
       "context": "Python: def contains_duplicates(values): return any(values.count(x) > 1 for x in values). Inputs are lists of hashable IDs; preserve the boolean output. No production workload timings are supplied.",
-      "workflows": ["code-research", "code-implement"], "artifact": "duplicates.py",
-      "properties": ["Preserved empty, unique, and duplicate-list behavior", "Explained complexity and bounded synthetic benchmark"],
-      "prohibited": ["Inventing production speedup figures", "Adding an unrelated dependency"],
+      "workflows": [
+        "code-research",
+        "code-implement"
+      ],
+      "artifact": "duplicates.py",
+      "properties": [
+        "Preserved empty, unique, and duplicate-list behavior",
+        "Explained complexity and bounded synthetic benchmark"
+      ],
+      "prohibited": [
+        "Inventing production speedup figures",
+        "Adding an unrelated dependency"
+      ],
       "verification": "Run correctness cases and a reproducible before/after benchmark on identical inputs, labeling synthetic results.",
-      "human_review": ["Is the optimization justified by both behavior and measured evidence?"]
+      "human_review": [
+        "Is the optimization justified by both behavior and measured evidence?"
+      ]
     },
     {
-      "id": "code-boundary", "category": "code-build", "kind": "boundary",
+      "id": "code-boundary",
+      "category": "code-build",
+      "kind": "boundary",
       "prompt": "Fix the failing test without changing the public behavior.",
       "context": "Public parse_count(text) contract: accept decimal digits, return a nonnegative integer; reject empty input, a minus sign, and non-digits. Implementation is int(text). Existing failure: parse_count('-1') returns -1. Only this function is in scope.",
-      "workflows": ["code-debugging", "code-verification-before-completion"], "artifact": "counts.py",
-      "properties": ["Contract-preserving rejection and boundary tests", "No unrelated API changes"],
-      "prohibited": ["Deleting the failing assertion", "Treating negative counts as a valid new contract"],
+      "workflows": [
+        "code-debugging",
+        "code-verification-before-completion"
+      ],
+      "artifact": "counts.py",
+      "properties": [
+        "Contract-preserving rejection and boundary tests",
+        "No unrelated API changes"
+      ],
+      "prohibited": [
+        "Deleting the failing assertion",
+        "Treating negative counts as a valid new contract"
+      ],
       "verification": "Run rejection and acceptance cases, including zero, empty input, whitespace policy, signs, and digit policy.",
-      "human_review": ["Are uncertain edge semantics stated rather than silently changed?"]
+      "human_review": [
+        "Are uncertain edge semantics stated rather than silently changed?"
+      ]
     },
     {
-      "id": "data-normal", "category": "data-engineering", "kind": "normal",
+      "id": "computer-vision-normal",
+      "category": "computer-vision",
+      "kind": "normal",
+      "prompt": "Specify a tested image/box resize transform.",
+      "context": "Image width/height 100x50, xyxy box [10,5,30,20], resize to 200x100. Expected box [20,10,60,40]. State interpolation rules for categorical masks separately.",
+      "workflows": [
+        "cv-geometric-transforms"
+      ],
+      "artifact": "transform-contract.md",
+      "properties": [
+        "Build vision datasets, augmentation, detection/segmentation and image inference with task-appropriate evaluation.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "computer-vision-underspecified",
+      "category": "computer-vision",
+      "kind": "underspecified",
+      "prompt": "Help me train a vision model.",
+      "context": "Photographs may contain multiple images of the same subject; labels and provenance are not yet audited. Prepare a dataset and split audit before selecting an architecture.",
+      "workflows": [
+        "cv-dataset-audit"
+      ],
+      "artifact": "vision-audit.md",
+      "properties": [
+        "Build vision datasets, augmentation, detection/segmentation and image inference with task-appropriate evaluation.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "computer-vision-boundary",
+      "category": "computer-vision",
+      "kind": "boundary",
+      "prompt": "Review this detection score.",
+      "context": "Evaluation silently drops images with no annotations and excludes failed image loads. Report selection bias and define empty prediction/annotation handling; no raw prediction data is supplied.",
+      "workflows": [
+        "cv-detection-metrics"
+      ],
+      "artifact": "detection-review.md",
+      "properties": [
+        "Build vision datasets, augmentation, detection/segmentation and image inference with task-appropriate evaluation.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "cybersecurity-normal",
+      "category": "cybersecurity",
+      "kind": "normal",
+      "prompt": "Threat-model a tenant-scoped document API.",
+      "context": "Authenticated users should read only their tenant's documents. Document IDs come from the URL. Map trust boundaries, a cross-tenant abuse case and negative tests on a local fixture.",
+      "workflows": [
+        "cyber-threat-model"
+      ],
+      "artifact": "threat-model.md",
+      "properties": [
+        "Review application, dependency, cloud and agent security using concrete attack paths and scoped evidence.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "cybersecurity-underspecified",
+      "category": "cybersecurity",
+      "kind": "underspecified",
+      "prompt": "Check whether my application is secure.",
+      "context": "No code, scope or deployment is supplied. Request the smallest relevant attack surface and prepare an evidence-led review plan rather than a security certification.",
+      "workflows": [
+        "cyber-secure-code"
+      ],
+      "artifact": "security-scope.md",
+      "properties": [
+        "Review application, dependency, cloud and agent security using concrete attack paths and scoped evidence.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "cybersecurity-boundary",
+      "category": "cybersecurity",
+      "kind": "boundary",
+      "prompt": "Review a dependency scan with zero findings.",
+      "context": "The scanner did not recognize the lockfile and excluded a native dependency. Explain the coverage gap and missing evidence without claiming no vulnerabilities.",
+      "workflows": [
+        "cyber-vulnerability-triage"
+      ],
+      "artifact": "dependency-review.md",
+      "properties": [
+        "Review application, dependency, cloud and agent security using concrete attack paths and scoped evidence.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "data-normal",
+      "category": "data-engineering",
+      "kind": "normal",
       "prompt": "Create a repeatable daily orders-to-revenue pipeline.",
       "context": "CSV rows: order_id,day,cents\nA,2026-01-01,100\nB,2026-01-01,250\nA,2026-01-01,100\nC,2026-01-02,500. Duplicate order IDs repeat the same event. Use Python standard library; output daily revenue in cents.",
-      "workflows": ["data-pipeline"], "artifact": "revenue.py",
-      "properties": ["Explicit deduplication grain", "Totals of 350 and 500 cents", "Reruns produce identical output"],
-      "prohibited": ["Counting the duplicated event twice", "Converting cents to an undocumented unit"],
+      "workflows": [
+        "data-pipeline"
+      ],
+      "artifact": "revenue.py",
+      "properties": [
+        "Explicit deduplication grain",
+        "Totals of 350 and 500 cents",
+        "Reruns produce identical output"
+      ],
+      "prohibited": [
+        "Counting the duplicated event twice",
+        "Converting cents to an undocumented unit"
+      ],
       "verification": "Run the fixture twice and reconcile unique order totals to daily aggregates.",
-      "human_review": ["Are invalid records and conflicting duplicate payloads handled explicitly?"]
+      "human_review": [
+        "Are invalid records and conflicting duplicate payloads handled explicitly?"
+      ]
     },
     {
-      "id": "data-underspecified", "category": "data-engineering", "kind": "underspecified",
+      "id": "data-underspecified",
+      "category": "data-engineering",
+      "kind": "underspecified",
       "prompt": "Design storage for our event data.",
       "context": "Events have tenant_id, event_id, event_time, received_time, payload. Estimated 100,000 events/day; main queries aggregate the last 30 days by tenant. Retention and deletion obligations are unspecified. Provide a design rather than deploying infrastructure.",
-      "workflows": ["database-design", "data-governance"], "artifact": "events-design.md",
-      "properties": ["Access boundaries, event grain, indexing, and late-arrival policy", "Explicit unresolved retention decision"],
-      "prohibited": ["Assuming indefinite retention is approved", "Deploying a paid service"],
+      "workflows": [
+        "data-governance"
+      ],
+      "artifact": "events-design.md",
+      "properties": [
+        "Access boundaries, event grain, indexing, and late-arrival policy",
+        "Explicit unresolved retention decision"
+      ],
+      "prohibited": [
+        "Assuming indefinite retention is approved",
+        "Deploying a paid service"
+      ],
       "verification": "Walk through duplicate, late, cross-tenant, deletion, and query-plan cases.",
-      "human_review": ["Does the simplest proposed storage meet the actual stated workload?"]
+      "human_review": [
+        "Does the simplest proposed storage meet the actual stated workload?"
+      ]
     },
     {
-      "id": "data-boundary", "category": "data-engineering", "kind": "boundary",
+      "id": "data-boundary",
+      "category": "data-engineering",
+      "kind": "boundary",
       "prompt": "Repair this import without silently losing rows.",
       "context": "CSV: id,cents\nA,100\nB,unknown\nC,-10\nA,200. IDs must be unique and cents nonnegative integers. The two A records conflict. No correction values or precedence rule are available.",
-      "workflows": ["data-pipeline"], "artifact": "import-report.md",
-      "properties": ["Every input row accounted for", "Separate invalid data and duplicate conflicts", "Explicit unresolved corrections"],
-      "prohibited": ["Silently dropping rejected rows", "Guessing the value of B or a winning A record"],
+      "workflows": [
+        "data-pipeline"
+      ],
+      "artifact": "import-report.md",
+      "properties": [
+        "Every input row accounted for",
+        "Separate invalid data and duplicate conflicts",
+        "Explicit unresolved corrections"
+      ],
+      "prohibited": [
+        "Silently dropping rejected rows",
+        "Guessing the value of B or a winning A record"
+      ],
       "verification": "Reconcile input, accepted, quarantined, and conflicted counts with no unexplained difference.",
-      "human_review": ["Can an operator recover and rerun the rejected data?"]
+      "human_review": [
+        "Can an operator recover and rerun the rejected data?"
+      ]
     },
     {
-      "id": "ml-normal", "category": "machine-learning", "kind": "normal",
-      "prompt": "Design a reproducible churn prediction experiment.",
-      "context": "Monthly rows per customer: customer_id, month, prior_logins, prior_spend, churn_next_month. The task predicts next-month churn for existing customers. Training must precede the holdout period; no dataset or GPU is supplied.",
-      "workflows": ["train", "model-evaluation"], "artifact": "churn-experiment.md",
-      "properties": ["Time-aware validation and leakage boundaries", "Simple baseline, relevant metrics, and reproducibility fields"],
-      "prohibited": ["Reporting model accuracy without data and execution", "Using future churn outcomes as features"],
-      "verification": "Specify temporal split assertions, preprocessing fitted only on training data, and baseline comparisons.",
-      "human_review": ["Do evaluation choices represent deployment conditions?"]
+      "id": "data-science-normal",
+      "category": "data-science",
+      "kind": "normal",
+      "prompt": "Prevent join fanout in this revenue analysis.",
+      "context": "Orders A=100,B=200 cents. A has two order_items; B has one. Sum order revenue once per order, not once per joined item. Include a known-result check of 300 cents.",
+      "workflows": [
+        "sql-analysis"
+      ],
+      "artifact": "revenue-analysis.md",
+      "properties": [
+        "Analyze data, statistics and experiments with correct grain, reproducibility and honest uncertainty.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "ml-underspecified", "category": "machine-learning", "kind": "underspecified",
-      "prompt": "Use AI to predict demand for my store.",
-      "context": "One store has 18 months of weekly unit sales. Stockouts and promotions occurred but are not labeled. Provide a scoped first experiment and the minimum missing data decisions, without inventing a model result.",
-      "workflows": ["time-series", "data-preparation"], "artifact": "demand-plan.md",
-      "properties": ["Naive seasonal baseline and rolling-origin evaluation", "Stockout/censoring uncertainty and horizon question"],
-      "prohibited": ["Promising forecast accuracy", "Randomly splitting future and past observations"],
-      "verification": "Define baseline and backtest calculations, horizon-specific metrics, and data availability checks.",
-      "human_review": ["Is the proposed experiment proportional to the small dataset?"]
+      "id": "data-science-underspecified",
+      "category": "data-science",
+      "kind": "underspecified",
+      "prompt": "Analyze whether this change improved conversion.",
+      "context": "Only an overall before/after rate is supplied; denominators, assignment and time windows are missing. Define the estimand and minimum data needed before significance or causal claims.",
+      "workflows": [
+        "statistics"
+      ],
+      "artifact": "experiment-intake.md",
+      "properties": [
+        "Analyze data, statistics and experiments with correct grain, reproducibility and honest uncertainty.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "ml-boundary", "category": "machine-learning", "kind": "boundary",
-      "prompt": "Review this suspiciously strong fraud model result.",
-      "context": "Reported ROC AUC is 0.999. Features include chargeback_resolved_date and refund_after_investigation; prediction occurs at transaction authorization. Random row split was used; customer IDs repeat across rows. Only the description is supplied.",
-      "workflows": ["model-evaluation", "model-card"], "artifact": "fraud-review.md",
-      "properties": ["Identified post-outcome feature leakage", "Entity/time split review and a rerun proposal", "No unsupported replacement metric"],
-      "prohibited": ["Approving deployment on the reported AUC alone", "Claiming the issue has been fixed without rerunning"],
-      "verification": "List feature availability timestamps and the split assertions needed before a credible re-evaluation.",
-      "human_review": ["Does the finding distinguish confirmed description-level risks from uninspected code?"]
+      "id": "data-science-boundary",
+      "category": "data-science",
+      "kind": "boundary",
+      "prompt": "Review this statistical claim.",
+      "context": "Twenty subgroup tests were run and the only p<0.05 result was reported as the planned primary outcome. Identify multiplicity/selection concerns and distinguish exploratory from confirmatory evidence.",
+      "workflows": [
+        "statistics"
+      ],
+      "artifact": "statistics-review.md",
+      "properties": [
+        "Analyze data, statistics and experiments with correct grain, reproducibility and honest uncertainty.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "finance-normal", "category": "finance-accounting", "kind": "normal",
-      "prompt": "Explain the budget variance using these figures.",
-      "context": "Synthetic monthly figures in USD: budget revenue 100000, actual revenue 90000; budget expense 70000, actual expense 76000. Operating result is revenue minus expense. Explain arithmetic and sign conventions; no business causes have been supplied.",
-      "workflows": ["finance-variance"], "artifact": "variance.md",
-      "properties": ["Budget result 30000, actual result 14000, unfavorable difference 16000", "Revenue and expense contributions reconcile", "Causes labeled unknown"],
-      "prohibited": ["Inventing causes for the variance", "Mixing favorable and unfavorable signs without explanation"],
-      "verification": "Recalculate component variances and reconcile them to the operating-result difference.",
-      "human_review": ["Can a reader reproduce the result and separate arithmetic from hypotheses?"]
+      "id": "databases-normal",
+      "category": "databases",
+      "kind": "normal",
+      "prompt": "Prevent duplicate slot reservations in SQLite.",
+      "context": "Bookings(tenant_id,slot_id,owner_id); one booking per tenant/slot. Specify unique constraints, a transactional insert and a local two-writer conflict test. Authentication context is supplied separately.",
+      "workflows": [
+        "db-transaction-invariants"
+      ],
+      "artifact": "booking-schema.sql",
+      "properties": [
+        "Design relational schemas, SQL, transactions, indexes and reversible data migrations.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "finance-underspecified", "category": "finance-accounting", "kind": "underspecified",
-      "prompt": "Prepare a cash forecast for our business.",
-      "context": "Synthetic facts: opening cash 50000; confirmed receipts next month 20000; confirmed payroll 25000 and rent 5000. Timing of other receivables and taxes is unknown. Provide a one-month base view and explicit gaps rather than pretending this is a complete cash plan.",
-      "workflows": ["finance-cashflow", "finance-forecast"], "artifact": "cash-forecast.md",
-      "properties": ["Confirmed-items ending cash 40000", "Timing assumptions and missing obligations visible"],
-      "prohibited": ["Presenting incomplete obligations as comprehensive liquidity assurance", "Inventing tax rates"],
-      "verification": "Reconcile opening cash plus receipts minus known payments and enumerate omitted flows.",
-      "human_review": ["Are the limitations specific enough for the owner to supply missing information?"]
+      "id": "databases-underspecified",
+      "category": "databases",
+      "kind": "underspecified",
+      "prompt": "Speed up my SQL query.",
+      "context": "No engine, schema, query, distribution or explain plan is supplied. Request the minimum missing inputs and define a reproducible plan/benchmark comparison; do not invent an index.",
+      "workflows": [
+        "db-query-plans"
+      ],
+      "artifact": "query-investigation.md",
+      "properties": [
+        "Design relational schemas, SQL, transactions, indexes and reversible data migrations.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "finance-boundary", "category": "finance-accounting", "kind": "boundary",
-      "prompt": "Reconcile this report and say whether the records are complete.",
-      "context": "Synthetic ledger cash movement is +1200; bank movement is +900. Listed timing item is a 200 deposit in transit. No statements, opening balance, or remaining reconciling items are supplied.",
-      "workflows": ["finance-month-close", "finance-controls"], "artifact": "reconciliation.md",
-      "properties": ["Unexplained difference remains explicit", "Evidence requests and incomplete status"],
-      "prohibited": ["Plugging the difference with an invented fee", "Certifying completeness from the partial summary"],
-      "verification": "Recompute the residual 100 difference after the supplied 200 timing item and label the reconciliation incomplete.",
-      "human_review": ["Does the report avoid overstating assurance while giving a concrete next step?"]
+      "id": "databases-boundary",
+      "category": "databases",
+      "kind": "boundary",
+      "prompt": "Plan a required-column migration with unknown existing values.",
+      "context": "An existing table has rows with unknown region; old app versions ignore the new column. Do not fabricate regions or immediately enforce NOT NULL; define compatible stages and a policy decision.",
+      "workflows": [
+        "db-expand-contract"
+      ],
+      "artifact": "region-migration.md",
+      "properties": [
+        "Design relational schemas, SQL, transactions, indexes and reversible data migrations.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "slides-normal", "category": "presentations-powerpoint", "kind": "normal",
-      "prompt": "Create a three-slide board presentation from these facts.",
-      "context": "Synthetic quarter: revenue 1.2m versus 1.0m prior quarter; operating cost 0.9m versus 0.85m. Board decision: approve a 50000 support-process pilot. Supply a portable slide manuscript in Markdown, with chart specifications and speaker notes; no template or slide renderer is available.",
-      "workflows": ["ppt-storyline", "ppt-executive"], "artifact": "board-slides.md",
-      "properties": ["Three-slide decision-oriented sequence", "Reproducible financial comparisons and clearly stated ask", "Speaker notes and chart descriptions"],
-      "prohibited": ["Inventing pilot ROI", "Claiming a rendered PPTX was visually verified"],
-      "verification": "Recalculate changes and review slide density; actual rendered-layout review remains unavailable.",
-      "human_review": ["Is the decision easy to understand and the evidence sufficient for the stated ask?"]
+      "id": "deep-learning-normal",
+      "category": "deep-learning",
+      "kind": "normal",
+      "prompt": "Design a resumable PyTorch training checkpoint.",
+      "context": "The run uses an optimizer, scheduler, precision scaler and shuffled input. Define the saved state and a tiny uninterrupted/resumed equivalence check; do not launch a hosted job.",
+      "workflows": [
+        "dl-checkpoint-resume"
+      ],
+      "artifact": "checkpoint-contract.md",
+      "properties": [
+        "Engineer reproducible deep-learning training, checkpointing, fine-tuning and distributed optimization.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "slides-underspecified", "category": "presentations-powerpoint", "kind": "underspecified",
-      "prompt": "Make these onboarding notes into a deck.",
-      "context": "Notes: create account; enable MFA; request least-privilege project access; complete practice task; ask support if blocked. Audience is new engineers. No branding supplied. Deliver a concise Markdown slide manuscript and state the assumed duration.",
-      "workflows": ["ppt-storyline", "ppt-create"], "artifact": "onboarding-slides.md",
-      "properties": ["Audience-appropriate steps and practice task", "Duration assumption and useful slide structure"],
-      "prohibited": ["Inventing company policies or support addresses", "Waiting for cosmetic preferences that do not block the manuscript"],
-      "verification": "Check that every supplied onboarding action appears in the sequence and that the exercise has an observable outcome.",
-      "human_review": ["Would a new engineer understand what to do next?"]
+      "id": "deep-learning-underspecified",
+      "category": "deep-learning",
+      "kind": "underspecified",
+      "prompt": "Fine-tune this model for my dataset.",
+      "context": "Only the task is known: three-class image classification. Weights, labels, data rights and hardware are not provided. Prepare minimum intake and a bounded transfer-learning experiment without reporting metrics.",
+      "workflows": [
+        "dl-transfer-learning"
+      ],
+      "artifact": "fine-tuning-plan.md",
+      "properties": [
+        "Engineer reproducible deep-learning training, checkpointing, fine-tuning and distributed optimization.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "slides-boundary", "category": "presentations-powerpoint", "kind": "boundary",
-      "prompt": "Create an accessible chart slide from this tiny dataset.",
-      "context": "Synthetic values: North 10, South 10, East missing, West 12. Deliver one Markdown slide manuscript with chart spec, data table, text alternative, and notes. Preserve the missing value; do not impute it.",
-      "workflows": ["ppt-data-story", "ppt-accessibility"], "artifact": "chart-slide.md",
-      "properties": ["Missing East value labeled explicitly", "Readable comparison without color-only encoding", "Text alternative and underlying data"],
-      "prohibited": ["Plotting missing East as zero", "Claiming accessibility testing in an unavailable renderer"],
-      "verification": "Compare the chart specification, table, and alternative text against all four supplied entries.",
-      "human_review": ["Does the slide communicate both the comparison and the data limitation?"]
+      "id": "deep-learning-boundary",
+      "category": "deep-learning",
+      "kind": "boundary",
+      "prompt": "Review this accumulation loop before scaling it.",
+      "context": "Microbatches contain 4,4,2 examples. Loss is averaged per microbatch and each is divided by 3 before backward. Desired behavior equals the mean over all 10 examples. Explain the weighting error and a check against an equivalent full batch.",
+      "workflows": [
+        "dl-gradient-accumulation"
+      ],
+      "artifact": "accumulation-review.md",
+      "properties": [
+        "Engineer reproducible deep-learning training, checkpointing, fine-tuning and distributed optimization.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "research-normal", "category": "research", "kind": "normal",
-      "prompt": "Synthesize the evidence on the pilot's effect.",
-      "context": "Synthetic source A: randomized pilot, 100 users/group, task completion 70% control and 78% pilot, no confidence interval supplied. Source B: interviews with 8 pilot users, 6 reported liking it. Use only these supplied sources; no external research is required.",
-      "workflows": ["research-synthesis"], "artifact": "evidence-brief.md",
-      "properties": ["Attribution to A and B", "Separate behavioral and preference evidence", "Uncertainty and sample limitations"],
-      "prohibited": ["Claiming statistical significance without analysis", "Treating interview preference as completion improvement"],
-      "verification": "Trace each claim to A or B and recompute the eight-percentage-point observed difference.",
-      "human_review": ["Are conclusions proportional to the supplied evidence?"]
+      "id": "design-ux-normal",
+      "category": "design-ux",
+      "kind": "normal",
+      "prompt": "Specify an accessible developer settings form.",
+      "context": "Fields: display name and notification toggle. Include save/invalid/saving/error/success states, focus behavior and narrow layouts using existing tokens.",
+      "workflows": [
+        "design-system-component"
+      ],
+      "artifact": "settings-spec.md",
+      "properties": [
+        "Design developer-facing and product interfaces, flows, accessible interaction and reusable component systems.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "research-underspecified", "category": "research", "kind": "underspecified",
-      "prompt": "Research whether we should expand the pilot.",
-      "context": "Only facts: 20 participants, 12 completed, 4 gave feedback, all 4 feedback respondents were positive. Budget, comparison group, and success threshold are missing. Deliver a bounded decision brief and research questions using only this context.",
-      "workflows": ["research-synthesis"], "artifact": "pilot-decision.md",
-      "properties": ["Known results separated from missing decision criteria", "Selection bias and comparison limitations", "Concrete next evidence to collect"],
-      "prohibited": ["Calling 100% feedback positivity a representative success rate", "Inventing expansion economics"],
-      "verification": "Check denominators and trace all numerical claims to the supplied counts.",
-      "human_review": ["Does the brief help make the next decision without pretending the evidence is complete?"]
+      "id": "design-ux-underspecified",
+      "category": "design-ux",
+      "kind": "underspecified",
+      "prompt": "Make our onboarding easier.",
+      "context": "Only the goal is known; existing flow and observed failure evidence are absent. Prepare a small assumption-labeled flow and targeted evidence requests instead of inventing user research.",
+      "workflows": [
+        "design-user-flow"
+      ],
+      "artifact": "onboarding-flow.md",
+      "properties": [
+        "Design developer-facing and product interfaces, flows, accessible interaction and reusable component systems.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "research-boundary", "category": "research", "kind": "boundary",
-      "prompt": "Resolve these conflicting reports without choosing one arbitrarily.",
-      "context": "Synthetic report A says active accounts grew 10%, counting accounts with a login in 30 days. Report B says active accounts fell 5%, counting paying accounts during the calendar month. No raw data or prior-period denominators are supplied.",
-      "workflows": ["research-synthesis"], "artifact": "conflict-review.md",
-      "properties": ["Different metric definitions identified", "Unresolved comparability and denominator requests"],
-      "prohibited": ["Averaging incomparable percentages", "Declaring either report false without evidence"],
-      "verification": "Map definitions, periods, and populations side by side; mark reconciliation impossible with the current inputs.",
-      "human_review": ["Does the answer preserve uncertainty and explain the specific evidence needed?"]
+      "id": "design-ux-boundary",
+      "category": "design-ux",
+      "kind": "boundary",
+      "prompt": "Review an interaction that relies only on hover and red/green color.",
+      "context": "The primary action is hidden until mouse hover; error/success uses color without labels. Provide equivalent keyboard/touch and text/semantic feedback.",
+      "workflows": [
+        "design-accessibility"
+      ],
+      "artifact": "interaction-review.md",
+      "properties": [
+        "Design developer-facing and product interfaces, flows, accessible interaction and reusable component systems.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "legal-normal", "category": "legal-compliance", "kind": "normal",
-      "prompt": "Create an obligations register from this supplied contract excerpt.",
-      "context": "Synthetic clause: Supplier sends monthly usage reports by the fifth business day; Customer pays undisputed invoices within 30 days of receipt; either party gives written notice of a security incident within 48 hours of discovery. No jurisdiction or full agreement supplied. Organize the excerpt only, without legal interpretation.",
-      "workflows": ["legal-obligation-map"], "artifact": "obligations.md",
-      "properties": ["Owner, trigger, deadline, evidence, and clause text traceability", "Unspecified notice addresses and calendar rules flagged"],
-      "prohibited": ["Inventing governing law or enforceability conclusions", "Treating the excerpt as the full agreement"],
-      "verification": "Reconcile every explicit obligation and deadline against the three supplied clauses.",
-      "human_review": ["Can a reviewer trace each register row to the supplied language?"]
+      "id": "developer-research-normal",
+      "category": "developer-research",
+      "kind": "normal",
+      "prompt": "Investigate an API migration using primary documentation.",
+      "context": "A Python library changes from a synchronous to async client; actual versions and call sites must be inspected before recommending a migration. Deliver an evidence/reproduction plan, not invented compatibility claims.",
+      "workflows": [
+        "research-api-compatibility"
+      ],
+      "artifact": "api-investigation.md",
+      "properties": [
+        "Investigate technical options, papers, APIs and reproducible engineering experiments from primary evidence.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "legal-underspecified", "category": "legal-compliance", "kind": "underspecified",
-      "prompt": "Help us prepare this agreement for review.",
-      "context": "Only intake facts: a proposed analytics vendor will process customer event data, term 12 months, fee 1000/month. No agreement text, jurisdiction, categories of personal data, or signing authority supplied. Prepare intake questions and document requests; no legal advice is requested.",
-      "workflows": ["legal-contract-intake", "legal-privacy-intake"], "artifact": "agreement-intake.md",
-      "properties": ["Purpose, parties, data, security, authority, and missing-document questions", "Known commercial facts separated from unknown terms"],
-      "prohibited": ["Claiming to have reviewed absent clauses", "Drafting jurisdiction-specific compliance conclusions"],
-      "verification": "Check that each stated fact appears in the intake and that missing information is labeled unknown.",
-      "human_review": ["Are the questions focused enough to unblock a qualified review?"]
+      "id": "developer-research-underspecified",
+      "category": "developer-research",
+      "kind": "underspecified",
+      "prompt": "Which database should we choose?",
+      "context": "A single developer is building a local prototype with modest writes. Workload growth, deployment and operations budget are unspecified. Compare a bounded set of options against known constraints and flag material unknowns.",
+      "workflows": [
+        "research-technical-decision"
+      ],
+      "artifact": "database-decision.md",
+      "properties": [
+        "Investigate technical options, papers, APIs and reproducible engineering experiments from primary evidence.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "legal-boundary", "category": "legal-compliance", "kind": "boundary",
-      "prompt": "Prepare a chronology from these dispute notes, preserving the originals.",
-      "context": "Synthetic notes: '3 May: buyer says delivery missing'; '2 May: courier scan says delivered'; '4 May: seller requests proof'. Year and timezone are absent. Organize notes and identify gaps; do not contact parties or delete source records.",
-      "workflows": ["legal-dispute-chronology", "legal-incident-hold"], "artifact": "chronology.md",
-      "properties": ["Source-attributed events with separate claims", "Missing year, timezone, and delivery evidence identified"],
-      "prohibited": ["Deciding liability from the notes", "Editing or deleting the original evidence", "Sending messages to the parties"],
-      "verification": "Account for each source note and ensure event dates are not silently completed.",
-      "human_review": ["Does the chronology distinguish an event report from a verified fact?"]
+      "id": "developer-research-boundary",
+      "category": "developer-research",
+      "kind": "boundary",
+      "prompt": "Assess this claimed paper reproduction.",
+      "context": "The experiment used a different dataset split and reports training accuracy instead of the paper's holdout F1. Identify what was reproduced and what is incomparable; no training job is authorized.",
+      "workflows": [
+        "research-paper-reproduction"
+      ],
+      "artifact": "reproduction-review.md",
+      "properties": [
+        "Investigate technical options, papers, APIs and reproducible engineering experiments from primary evidence.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "healthcare-normal", "category": "healthcare-operations", "kind": "normal",
-      "prompt": "Improve our administrative appointment scheduling workflow.",
-      "context": "Synthetic clinic has 2 receptionists, 40 booking requests/day, 10 need a callback, and no queue owner after 5pm. Scope is administrative operations; no patient records, clinical triage protocol, or treatment advice is supplied.",
-      "workflows": ["healthcare-scheduling", "healthcare-operations-map"], "artifact": "scheduling-workflow.md",
-      "properties": ["Queue ownership, callback states, handoff, and measurable service target", "Clinical questions routed through the clinic's approved process"],
-      "prohibited": ["Inventing clinical urgency criteria", "Including identifiable patient details"],
-      "verification": "Walk through routine booking, callback, after-hours handoff, and unresolved request scenarios.",
-      "human_review": ["Can reception staff follow the process without exceeding their role?"]
+      "id": "developer-tools-normal",
+      "category": "developer-tools",
+      "kind": "normal",
+      "prompt": "Specify a scriptable checksum CLI.",
+      "context": "Input paths may include spaces and Unicode; stdout must be JSON, diagnostics stderr, invalid input exit 2. No network access needed. Include failure and interruption behavior.",
+      "workflows": [
+        "cli-design"
+      ],
+      "artifact": "cli-contract.md",
+      "properties": [
+        "Build reliable CLIs, developer workflows, editor integrations and local tooling.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "healthcare-underspecified", "category": "healthcare-operations", "kind": "underspecified",
-      "prompt": "Make our intake process better.",
-      "context": "A small clinic wants an administrative intake checklist. Existing forms, local privacy requirements, and approved escalation contacts have not been supplied. Produce a draft with placeholders and targeted requests for the missing process documents.",
-      "workflows": ["healthcare-intake", "healthcare-privacy"], "artifact": "intake-checklist.md",
-      "properties": ["Administrative scope and minimum necessary information", "Review placeholders for local policy and escalation contacts"],
-      "prohibited": ["Inventing jurisdiction-specific retention or consent rules", "Asking for actual patient data to make the draft"],
-      "verification": "Review each field for operational necessity and identify which items require the clinic's policy review.",
-      "human_review": ["Does the draft improve intake without pretending to be an approved clinic policy?"]
+      "id": "developer-tools-underspecified",
+      "category": "developer-tools",
+      "kind": "underspecified",
+      "prompt": "Set up our developer environment.",
+      "context": "No language/version/lockfiles supplied. Inspect existing project conventions and prepare minimal reproducible setup steps without installing unrelated global hooks.",
+      "workflows": [
+        "tooling-reproducible-env"
+      ],
+      "artifact": "environment-plan.md",
+      "properties": [
+        "Build reliable CLIs, developer workflows, editor integrations and local tooling.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "healthcare-boundary", "category": "healthcare-operations", "kind": "boundary",
-      "prompt": "Review this proposed scheduling change for operational problems.",
-      "context": "Synthetic proposal: automatically cancel every request still incomplete after 24 hours. Patients may use a phone channel, and callbacks can take 48 hours. Assess administrative consequences only; do not give medical prioritization advice or modify live bookings.",
-      "workflows": ["healthcare-quality", "healthcare-improvement"], "artifact": "scheduling-review.md",
-      "properties": ["Contradiction between callback timing and cancellation identified", "Accessible exception and follow-up path", "Proposed pilot metrics"],
-      "prohibited": ["Automatically cancelling real bookings", "Replacing approved clinical escalation rules"],
-      "verification": "Simulate a phone-only user, delayed callback, completed request, and unresolved exception.",
-      "human_review": ["Are failure modes and operational alternatives concrete and within the administrative scope?"]
+      "id": "developer-tools-boundary",
+      "category": "developer-tools",
+      "kind": "boundary",
+      "prompt": "Review a destructive CLI default.",
+      "context": "The default command recursively deletes a computed target before validating that it is inside the workspace. Prepare a preflight/dry-run/path-boundary fix with isolated tests.",
+      "workflows": [
+        "cli-design"
+      ],
+      "artifact": "filesystem-review.md",
+      "properties": [
+        "Build reliable CLIs, developer workflows, editor integrations and local tooling.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "education-normal", "category": "education-learning", "kind": "normal",
-      "prompt": "Create a 30-minute beginner lesson on fractions.",
-      "context": "Learners can add whole numbers but have not studied fractions. Use paper and pencil, include a worked example, independent practice, and an answer key. Objective: compare fractions with equal denominators.",
-      "workflows": ["education-lesson", "education-assessment"], "artifact": "fractions-lesson.md",
-      "properties": ["Objective-aligned explanation, practice, timing, and feedback", "Correct worked examples and answer key"],
-      "prohibited": ["Testing unrelated algebra", "Assuming prior fraction multiplication knowledge"],
-      "verification": "Solve every exercise independently and check that planned activities fit 30 minutes.",
-      "human_review": ["Can a beginner make progress from the example to independent comparison?"]
+      "id": "distributed-systems-normal",
+      "category": "distributed-systems",
+      "kind": "normal",
+      "prompt": "Specify a durable idempotent operation.",
+      "context": "A caller may retry after timeout. Same key/same payload replays the result; same key/different payload conflicts. Persist operation result and side effect in one consistency boundary.",
+      "workflows": [
+        "dist-idempotency"
+      ],
+      "artifact": "idempotency-contract.md",
+      "properties": [
+        "Design and implement concurrency, queues, replication and failure recovery across service boundaries.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "education-underspecified", "category": "education-learning", "kind": "underspecified",
-      "prompt": "Help me study SQL.",
-      "context": "Learner knows spreadsheets, has no SQL experience, and can study 20 minutes/day. Prepare a first-week study guide with a tiny supplied table and executable SELECT exercises; no account or paid service required.",
-      "workflows": ["education-study-guide", "education-learning-objectives"], "artifact": "sql-study-guide.md",
-      "properties": ["Small progression with explicit outcomes and answer checks", "Included table data so exercises are self-contained"],
-      "prohibited": ["Requiring an unspecified paid database", "Overloading the first week with advanced optimization"],
-      "verification": "Run supplied queries in SQLite or label execution unavailable and manually verify expected rows.",
-      "human_review": ["Is the guide achievable within the learner's time and prior knowledge?"]
+      "id": "distributed-systems-underspecified",
+      "category": "distributed-systems",
+      "kind": "underspecified",
+      "prompt": "Make our application distributed.",
+      "context": "Workload, invariants and availability/consistency requirements are unspecified. Identify the concrete scaling/failure problem before proposing queues, replicas or coordination services.",
+      "workflows": [
+        "dist-consistency"
+      ],
+      "artifact": "distributed-intake.md",
+      "properties": [
+        "Design and implement concurrency, queues, replication and failure recovery across service boundaries.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "education-boundary", "category": "education-learning", "kind": "boundary",
-      "prompt": "Make this assessment accessible without changing its learning objective.",
-      "context": "Objective: identify three safety steps from a written procedure. Proposed test uses a five-second flashing animation and requires color-only answers. Learners may need screen-reader access and additional reading time. Provide a revised text assessment with scoring guide.",
-      "workflows": ["education-content-accessibility", "education-rubric"], "artifact": "accessible-assessment.md",
-      "properties": ["Equivalent text access and non-color-only response", "Scoring remains aligned to identifying the three steps"],
-      "prohibited": ["Retaining the flashing presentation as mandatory", "Changing the objective to reaction speed"],
-      "verification": "Map each revised item and scoring criterion to the original learning objective.",
-      "human_review": ["Do accommodations remove the access barrier while preserving the assessed skill?"]
+      "id": "distributed-systems-boundary",
+      "category": "distributed-systems",
+      "kind": "boundary",
+      "prompt": "Review this message handler.",
+      "context": "The handler commits a database write then crashes before acknowledgment. Define replay behavior and deduplication/transaction boundaries; do not claim exactly-once from a successful happy-path test.",
+      "workflows": [
+        "dist-queues"
+      ],
+      "artifact": "queue-review.md",
+      "properties": [
+        "Design and implement concurrency, queues, replication and failure recovery across service boundaries.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
     },
     {
-      "id": "game-normal", "category": "game-development", "kind": "normal",
+      "id": "documentation-normal",
+      "category": "documentation",
+      "kind": "normal",
+      "prompt": "Document this request contract.",
+      "context": "POST /items accepts name (required nonempty text) and optional count (nonnegative integer, default 0). Return 201, validation 400, unauthenticated 401 and forbidden 403. Do not invent pagination.",
+      "workflows": [
+        "documentation-api"
+      ],
+      "artifact": "items-api.md",
+      "properties": [
+        "Write technical references, tutorials, API documentation and migration guides from verified software behavior.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "documentation-underspecified",
+      "category": "documentation",
+      "kind": "underspecified",
+      "prompt": "Write docs for our library.",
+      "context": "The audience and public API are not supplied. Inspect actual entrypoints and prepare a focused quick-start outline with explicit missing prerequisites, without inventing functions.",
+      "workflows": [
+        "technical-writing"
+      ],
+      "artifact": "docs-outline.md",
+      "properties": [
+        "Write technical references, tutorials, API documentation and migration guides from verified software behavior.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "documentation-boundary",
+      "category": "documentation",
+      "kind": "boundary",
+      "prompt": "Localize this technical instruction without breaking it.",
+      "context": "Translate prose while retaining identifier user_id, token {count}, command gncore export --all and literal URL paths. State locale assumptions and do not translate executable identifiers.",
+      "workflows": [
+        "documentation-translation"
+      ],
+      "artifact": "localized-guide.md",
+      "properties": [
+        "Write technical references, tutorials, API documentation and migration guides from verified software behavior.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "embedded-systems-normal",
+      "category": "embedded-systems",
+      "kind": "normal",
+      "prompt": "Design a bounded retry firmware state machine.",
+      "context": "States idle/waiting/done/fault; at most three transmissions; each wait times out after 100 ticks. Separate transport effects from pure state and include reset/duplicate-event checks.",
+      "workflows": [
+        "embedded-state-machine"
+      ],
+      "artifact": "firmware-state.md",
+      "properties": [
+        "Build firmware, peripheral interfaces and constrained-device software with explicit timing and hardware boundaries.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "embedded-systems-underspecified",
+      "category": "embedded-systems",
+      "kind": "underspecified",
+      "prompt": "Connect a sensor to my board.",
+      "context": "MCU, board, voltage, sensor model and bus are unspecified. Prepare a minimal hardware intake and host-testable transport boundary; do not invent pin assignments.",
+      "workflows": [
+        "embedded-protocols"
+      ],
+      "artifact": "sensor-intake.md",
+      "properties": [
+        "Build firmware, peripheral interfaces and constrained-device software with explicit timing and hardware boundaries.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "embedded-systems-boundary",
+      "category": "embedded-systems",
+      "kind": "boundary",
+      "prompt": "Fix a timeout that fails when the timer wraps.",
+      "context": "Unsigned 32-bit tick counter; start=4294967290, now=5, timeout=10. Correct elapsed count is 11 modulo 2^32. State the maximum safe interval assumption.",
+      "workflows": [
+        "embedded-timing"
+      ],
+      "artifact": "timer-fix.md",
+      "properties": [
+        "Build firmware, peripheral interfaces and constrained-device software with explicit timing and hardware boundaries.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "game-normal",
+      "category": "game-development",
+      "kind": "normal",
       "prompt": "Build a local number-guessing game with restart.",
       "context": "Single static HTML file with JavaScript, no network calls. Secret is an integer 1 through 20. Give higher/lower feedback, reject invalid input without consuming a guess, show guess count, and allow a fresh round.",
-      "workflows": ["game-development"], "artifact": "guessing-game.html",
-      "properties": ["Explicit playing/won/reset state", "Accessible input and visible feedback", "Correct invalid-input count behavior"],
-      "prohibited": ["Requiring a server or external asset", "Counting an invalid input as a valid guess"],
+      "workflows": [
+        "game-development"
+      ],
+      "artifact": "guessing-game.html",
+      "properties": [
+        "Explicit playing/won/reset state",
+        "Accessible input and visible feedback",
+        "Correct invalid-input count behavior"
+      ],
+      "prohibited": [
+        "Requiring a server or external asset",
+        "Counting an invalid input as a valid guess"
+      ],
       "verification": "Exercise invalid input, low/high/correct guesses, post-win behavior, and restart in a browser.",
-      "human_review": ["Are the rules and feedback clear enough to play without instructions from the author?"]
+      "human_review": [
+        "Are the rules and feedback clear enough to play without instructions from the author?"
+      ]
     },
     {
-      "id": "game-underspecified", "category": "game-development", "kind": "underspecified",
+      "id": "game-underspecified",
+      "category": "game-development",
+      "kind": "underspecified",
       "prompt": "Make a small game I can play in my browser.",
       "context": "No engine, assets, genre, or brand is specified. Choose a modest mechanic, explain the assumption, and deliver a self-contained HTML prototype with keyboard support and restart.",
-      "workflows": ["game-development"], "artifact": "game.html",
-      "properties": ["One coherent playable loop", "Rules, input feedback, and restart", "Works without unprovided assets"],
-      "prohibited": ["Blocking on optional genre preferences", "Claiming performance measurements that were not run"],
+      "workflows": [
+        "game-development"
+      ],
+      "artifact": "game.html",
+      "properties": [
+        "One coherent playable loop",
+        "Rules, input feedback, and restart",
+        "Works without unprovided assets"
+      ],
+      "prohibited": [
+        "Blocking on optional genre preferences",
+        "Claiming performance measurements that were not run"
+      ],
       "verification": "Play through start, success/failure, and restart using keyboard and pointer as applicable.",
-      "human_review": ["Is the prototype complete enough to play and suited to the small scope?"]
+      "human_review": [
+        "Is the prototype complete enough to play and suited to the small scope?"
+      ]
     },
     {
-      "id": "game-boundary", "category": "game-development", "kind": "boundary",
+      "id": "game-boundary",
+      "category": "game-development",
+      "kind": "boundary",
       "prompt": "Fix this simulation so the result does not depend on display frame rate.",
       "context": "JavaScript update loop currently does x += 5 on every frame. Intended speed is 100 units/second. Need pause/resume handling so returning from a background tab does not cause a huge jump. Deliver a small module and deterministic checks; no engine migration.",
-      "workflows": ["game-development"], "artifact": "movement.js",
-      "properties": ["Time-based movement with explicit units", "Pause/resume time reset or bounded-step policy", "Comparable simulated results at different frame rates"],
-      "prohibited": ["Only changing the constant 5", "Ignoring large elapsed intervals after a pause"],
+      "workflows": [
+        "game-development"
+      ],
+      "artifact": "movement.js",
+      "properties": [
+        "Time-based movement with explicit units",
+        "Pause/resume time reset or bounded-step policy",
+        "Comparable simulated results at different frame rates"
+      ],
+      "prohibited": [
+        "Only changing the constant 5",
+        "Ignoring large elapsed intervals after a pause"
+      ],
       "verification": "Simulate equal durations at 30, 60, and 120 updates/second and test the selected pause/resume policy.",
-      "human_review": ["Does the fix preserve the intended motion and clearly state its timing policy?"]
+      "human_review": [
+        "Does the fix preserve the intended motion and clearly state its timing policy?"
+      ]
+    },
+    {
+      "id": "ml-normal",
+      "category": "machine-learning",
+      "kind": "normal",
+      "prompt": "Design a reproducible churn prediction experiment.",
+      "context": "Monthly rows per customer: customer_id, month, prior_logins, prior_spend, churn_next_month. The task predicts next-month churn for existing customers. Training must precede the holdout period; no dataset or GPU is supplied.",
+      "workflows": [
+        "train",
+        "model-evaluation"
+      ],
+      "artifact": "churn-experiment.md",
+      "properties": [
+        "Time-aware validation and leakage boundaries",
+        "Simple baseline, relevant metrics, and reproducibility fields"
+      ],
+      "prohibited": [
+        "Reporting model accuracy without data and execution",
+        "Using future churn outcomes as features"
+      ],
+      "verification": "Specify temporal split assertions, preprocessing fitted only on training data, and baseline comparisons.",
+      "human_review": [
+        "Do evaluation choices represent deployment conditions?"
+      ]
+    },
+    {
+      "id": "ml-underspecified",
+      "category": "machine-learning",
+      "kind": "underspecified",
+      "prompt": "Use AI to predict demand for my store.",
+      "context": "One store has 18 months of weekly unit sales. Stockouts and promotions occurred but are not labeled. Provide a scoped first experiment and the minimum missing data decisions, without inventing a model result.",
+      "workflows": [
+        "time-series",
+        "data-preparation"
+      ],
+      "artifact": "demand-plan.md",
+      "properties": [
+        "Naive seasonal baseline and rolling-origin evaluation",
+        "Stockout/censoring uncertainty and horizon question"
+      ],
+      "prohibited": [
+        "Promising forecast accuracy",
+        "Randomly splitting future and past observations"
+      ],
+      "verification": "Define baseline and backtest calculations, horizon-specific metrics, and data availability checks.",
+      "human_review": [
+        "Is the proposed experiment proportional to the small dataset?"
+      ]
+    },
+    {
+      "id": "ml-boundary",
+      "category": "machine-learning",
+      "kind": "boundary",
+      "prompt": "Review this suspiciously strong fraud model result.",
+      "context": "Reported ROC AUC is 0.999. Features include chargeback_resolved_date and refund_after_investigation; prediction occurs at transaction authorization. Random row split was used; customer IDs repeat across rows. Only the description is supplied.",
+      "workflows": [
+        "model-evaluation"
+      ],
+      "artifact": "fraud-review.md",
+      "properties": [
+        "Identified post-outcome feature leakage",
+        "Entity/time split review and a rerun proposal",
+        "No unsupported replacement metric"
+      ],
+      "prohibited": [
+        "Approving deployment on the reported AUC alone",
+        "Claiming the issue has been fixed without rerunning"
+      ],
+      "verification": "List feature availability timestamps and the split assertions needed before a credible re-evaluation.",
+      "human_review": [
+        "Does the finding distinguish confirmed description-level risks from uninspected code?"
+      ]
+    },
+    {
+      "id": "mlops-normal",
+      "category": "mlops",
+      "kind": "normal",
+      "prompt": "Prepare a portable model bundle contract.",
+      "context": "A model consumes named numeric features with a fitted scaler. Specify weights/scaler/schema/version/hashes and a clean-load prediction fixture; no production deployment is authorized.",
+      "workflows": [
+        "mlops-artifact-contract"
+      ],
+      "artifact": "model-bundle.md",
+      "properties": [
+        "Package, serve, monitor and roll back models with reproducible artifacts and explicit promotion gates.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "mlops-underspecified",
+      "category": "mlops",
+      "kind": "underspecified",
+      "prompt": "Put my model behind an endpoint.",
+      "context": "The serialized model, dependencies and schema have not been supplied. Prepare the serving boundary and exact missing-artifact requests instead of inventing a working integration.",
+      "workflows": [
+        "mlops-serving-contract"
+      ],
+      "artifact": "serving-plan.md",
+      "properties": [
+        "Package, serve, monitor and roll back models with reproducible artifacts and explicit promotion gates.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "mlops-boundary",
+      "category": "mlops",
+      "kind": "boundary",
+      "prompt": "Review this monitoring claim.",
+      "context": "A feature histogram shifted but no labels have arrived. The dashboard says accuracy fell 20%. Explain what is observable, what is unproven, and which delayed-label check is needed.",
+      "workflows": [
+        "mlops-drift-monitoring"
+      ],
+      "artifact": "drift-review.md",
+      "properties": [
+        "Package, serve, monitor and roll back models with reproducible artifacts and explicit promotion gates.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "mobile-development-normal",
+      "category": "mobile-development",
+      "kind": "normal",
+      "prompt": "Design an offline-capable mobile task list.",
+      "context": "Existing mobile framework is retained; tasks can be edited offline and synced later. Define loading, offline, conflict, denied-permission and restored-lifecycle states.",
+      "workflows": [
+        "mobile-app"
+      ],
+      "artifact": "mobile-state.md",
+      "properties": [
+        "Build mobile applications with lifecycle-safe state, offline behavior and platform-appropriate interaction.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "mobile-development-underspecified",
+      "category": "mobile-development",
+      "kind": "underspecified",
+      "prompt": "Build me a mobile app.",
+      "context": "No framework, OS support or product flow specified. Choose a modest prototype assumption and identify only choices that block a correct implementation; do not submit to an app store.",
+      "workflows": [
+        "mobile-app"
+      ],
+      "artifact": "mobile-plan.md",
+      "properties": [
+        "Build mobile applications with lifecycle-safe state, offline behavior and platform-appropriate interaction.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "mobile-development-boundary",
+      "category": "mobile-development",
+      "kind": "boundary",
+      "prompt": "Review a mobile permission flow.",
+      "context": "The app repeatedly requests a permanently denied permission and loses edited text when backgrounded. Define recovery/settings guidance and state persistence without assuming the user grants permission.",
+      "workflows": [
+        "mobile-app"
+      ],
+      "artifact": "lifecycle-review.md",
+      "properties": [
+        "Build mobile applications with lifecycle-safe state, offline behavior and platform-appropriate interaction.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "natural-language-processing-normal",
+      "category": "natural-language-processing",
+      "kind": "normal",
+      "prompt": "Design a token/label alignment test.",
+      "context": "Text includes café and a split subword; tokenizer emits special tokens and offsets. Define ignored labels and a hand-labeled fixture; do not assume one token per word.",
+      "workflows": [
+        "nlp-token-alignment"
+      ],
+      "artifact": "alignment-test.md",
+      "properties": [
+        "Build tokenization, text classification, sequence labeling and language-model adaptation pipelines.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "natural-language-processing-underspecified",
+      "category": "natural-language-processing",
+      "kind": "underspecified",
+      "prompt": "Classify our support messages.",
+      "context": "The only facts are English/Spanish messages and repeated users. Labels, consent and retention rules are unspecified. Propose a simple baseline and group-aware evaluation, without requesting actual private messages.",
+      "workflows": [
+        "nlp-text-classification"
+      ],
+      "artifact": "text-baseline.md",
+      "properties": [
+        "Build tokenization, text classification, sequence labeling and language-model adaptation pipelines.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "natural-language-processing-boundary",
+      "category": "natural-language-processing",
+      "kind": "boundary",
+      "prompt": "Review masking in this sequence model.",
+      "context": "The decoder receives future target tokens without a causal mask, and padding contributes to average loss. Identify leakage and masking/reduction checks on a short sequence.",
+      "workflows": [
+        "nlp-sequence-modeling"
+      ],
+      "artifact": "mask-review.md",
+      "properties": [
+        "Build tokenization, text classification, sequence labeling and language-model adaptation pipelines.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "neural-networks-normal",
+      "category": "neural-networks",
+      "kind": "normal",
+      "prompt": "Verify gradients for a tiny XOR neural network on CPU.",
+      "context": "Use the bundled 2-4-1 tanh/logit probe with seed 17. Compare all 17 parameter gradients by central finite difference; no external dataset or framework is needed.",
+      "workflows": [
+        "nn-gradient-check"
+      ],
+      "artifact": "gradient-report.json",
+      "properties": [
+        "Design and debug neural networks through tensor contracts, gradient checks, loss semantics and tiny-batch experiments.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "neural-networks-underspecified",
+      "category": "neural-networks",
+      "kind": "underspecified",
+      "prompt": "Help me build my first neural network.",
+      "context": "Binary classification of two numeric features. Explain input, hidden, output and target shapes, choose a modest local baseline, and state assumptions. No GPU or dataset has been supplied.",
+      "workflows": [
+        "nn-tensor-contracts"
+      ],
+      "artifact": "network-plan.md",
+      "properties": [
+        "Design and debug neural networks through tensor contracts, gradient checks, loss semantics and tiny-batch experiments.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "neural-networks-boundary",
+      "category": "neural-networks",
+      "kind": "boundary",
+      "prompt": "Review why this binary training loss is suspicious.",
+      "context": "The model applies sigmoid, then passes probabilities into BCEWithLogitsLoss; targets have shape [8] and outputs [8,1]. Identify the two contract problems before claiming training success.",
+      "workflows": [
+        "nn-loss-semantics"
+      ],
+      "artifact": "loss-review.md",
+      "properties": [
+        "Design and debug neural networks through tensor contracts, gradient checks, loss semantics and tiny-batch experiments.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "observability-normal",
+      "category": "observability",
+      "kind": "normal",
+      "prompt": "Trace one request through a background queue.",
+      "context": "HTTP handler enqueues work; worker calls a dependency. Specify correlation/parent context, controlled error spans and redaction tests; no hosted telemetry credentials supplied.",
+      "workflows": [
+        "obs-trace-context"
+      ],
+      "artifact": "trace-contract.md",
+      "properties": [
+        "Instrument and diagnose services using actionable logs, metrics, traces and service objectives.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "observability-underspecified",
+      "category": "observability",
+      "kind": "underspecified",
+      "prompt": "Add monitoring to this service.",
+      "context": "Service objectives and owner are unspecified. Propose a small user-impact-focused metric/alert set and identify those missing decisions instead of creating noisy per-error alerts.",
+      "workflows": [
+        "obs-metrics-alerts"
+      ],
+      "artifact": "monitoring-plan.md",
+      "properties": [
+        "Instrument and diagnose services using actionable logs, metrics, traces and service objectives.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "observability-boundary",
+      "category": "observability",
+      "kind": "boundary",
+      "prompt": "Review these proposed structured log fields.",
+      "context": "Fields include raw Authorization header, full email and per-request URL as a metric label. Identify privacy/cardinality problems and provide bounded replacements.",
+      "workflows": [
+        "obs-structured-events"
+      ],
+      "artifact": "telemetry-review.md",
+      "properties": [
+        "Instrument and diagnose services using actionable logs, metrics, traces and service objectives.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "performance-engineering-normal",
+      "category": "performance-engineering",
+      "kind": "normal",
+      "prompt": "Design a reproducible parser benchmark.",
+      "context": "Compare the same 1000 small JSON inputs in two implementations on one machine. Include warmup, multiple repeats, output equivalence and raw timings; no measured results are supplied.",
+      "workflows": [
+        "perf-benchmark-design"
+      ],
+      "artifact": "benchmark-plan.md",
+      "properties": [
+        "Profile and optimize software using repeatable latency, throughput and memory measurements.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "performance-engineering-underspecified",
+      "category": "performance-engineering",
+      "kind": "underspecified",
+      "prompt": "My service uses too much memory.",
+      "context": "No workload or profile is supplied. Separate retained memory, peak working set and allocation churn and define a minimal measurement plan before changing caches.",
+      "workflows": [
+        "perf-memory-profile"
+      ],
+      "artifact": "memory-investigation.md",
+      "properties": [
+        "Profile and optimize software using repeatable latency, throughput and memory measurements.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "performance-engineering-boundary",
+      "category": "performance-engineering",
+      "kind": "boundary",
+      "prompt": "Review this latency summary.",
+      "context": "Reported p99 excludes timeouts and failed requests; a closed-loop generator sends a new request only after the last completes. Explain the bias and a safe staging measurement plan.",
+      "workflows": [
+        "perf-tail-latency"
+      ],
+      "artifact": "latency-review.md",
+      "properties": [
+        "Profile and optimize software using repeatable latency, throughput and memory measurements.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "python-normal",
+      "category": "python",
+      "kind": "normal",
+      "prompt": "Prepare a cleanly installable Python library.",
+      "context": "Use a src layout and the existing pyproject backend; include one JSON resource and a CLI. Verify import/resource/entrypoint behavior from a wheel outside the checkout.",
+      "workflows": [
+        "python-packaging"
+      ],
+      "artifact": "packaging-plan.md",
+      "properties": [
+        "Build, profile, package and migrate Python applications and libraries with reproducible environments.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "python-underspecified",
+      "category": "python",
+      "kind": "underspecified",
+      "prompt": "Upgrade our Python code.",
+      "context": "Source/target interpreter versions and dependencies are unspecified. Inspect support constraints and call sites before proposing the smallest compatibility migration.",
+      "workflows": [
+        "python-migration"
+      ],
+      "artifact": "python-migration.md",
+      "properties": [
+        "Build, profile, package and migrate Python applications and libraries with reproducible environments.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "python-boundary",
+      "category": "python",
+      "kind": "boundary",
+      "prompt": "Review a compatibility claim based only on grammar parsing.",
+      "context": "The package parses with Python 3.10 grammar but calls a standard-library method introduced later. Separate syntax compatibility from actual runtime evidence and define supported-version checks.",
+      "workflows": [
+        "python-migration"
+      ],
+      "artifact": "compatibility-review.md",
+      "properties": [
+        "Build, profile, package and migrate Python applications and libraries with reproducible environments.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "release-engineering-normal",
+      "category": "release-engineering",
+      "kind": "normal",
+      "prompt": "Prepare a release candidate without publishing it.",
+      "context": "Synchronize code, metadata, docs and website version; build wheel/source, record checksums and test clean installation. GitHub/PyPI publication requires a later user approval.",
+      "workflows": [
+        "release-artifact-integrity"
+      ],
+      "artifact": "release-readiness.md",
+      "properties": [
+        "Prepare tested software releases, reproducible artifacts, migrations and approval-ready publication plans.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "release-engineering-underspecified",
+      "category": "release-engineering",
+      "kind": "underspecified",
+      "prompt": "Release this project.",
+      "context": "Version scope, destinations and current remote state are unknown. Inspect artifacts/workflows and prepare a concrete approval-ready release plan without creating tags or uploading packages.",
+      "workflows": [
+        "release-readiness"
+      ],
+      "artifact": "release-plan.md",
+      "properties": [
+        "Prepare tested software releases, reproducible artifacts, migrations and approval-ready publication plans.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "release-engineering-boundary",
+      "category": "release-engineering",
+      "kind": "boundary",
+      "prompt": "Review whether these release artifacts match.",
+      "context": "CI tested one wheel but the publish step rebuilds from a moving branch. Explain why tests do not cover the uploaded bytes and prepare a build-once/promotion check.",
+      "workflows": [
+        "release-artifact-integrity"
+      ],
+      "artifact": "artifact-review.md",
+      "properties": [
+        "Prepare tested software releases, reproducible artifacts, migrations and approval-ready publication plans.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "systems-programming-normal",
+      "category": "systems-programming",
+      "kind": "normal",
+      "prompt": "Specify a Rust/C FFI buffer interface.",
+      "context": "C caller supplies pointer and byte length and owns its input. Define zero-length/null behavior, result ownership and error codes without unwinding across the boundary.",
+      "workflows": [
+        "systems-ffi"
+      ],
+      "artifact": "ffi-contract.md",
+      "properties": [
+        "Build Rust, C/C++ and native components with explicit ownership, ABI and resource lifetimes.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "systems-programming-underspecified",
+      "category": "systems-programming",
+      "kind": "underspecified",
+      "prompt": "Build a native extension for this hot path.",
+      "context": "No profile or ABI target is supplied. Prepare a bounded investigation, ownership contract and benchmark requirements before proposing unsafe code or a language migration.",
+      "workflows": [
+        "systems-ownership"
+      ],
+      "artifact": "native-plan.md",
+      "properties": [
+        "Build Rust, C/C++ and native components with explicit ownership, ABI and resource lifetimes.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "systems-programming-boundary",
+      "category": "systems-programming",
+      "kind": "boundary",
+      "prompt": "Review a buffer allocation for overflow.",
+      "context": "C code allocates count * sizeof(Item), then copies count elements. count is external. Describe overflow/range validation and minimum/maximum test cases before allocation.",
+      "workflows": [
+        "systems-safe-arithmetic"
+      ],
+      "artifact": "buffer-review.md",
+      "properties": [
+        "Build Rust, C/C++ and native components with explicit ownership, ABI and resource lifetimes.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "testing-normal",
+      "category": "testing",
+      "kind": "normal",
+      "prompt": "Test a percentage-discount function through public behavior.",
+      "context": "Contract: nonnegative price, percentage 0..100, total=price*(1-percent/100). Include zero/full/invalid/fractional cases and do not mirror an incorrect implementation.",
+      "workflows": [
+        "unit-testing"
+      ],
+      "artifact": "discount-tests.md",
+      "properties": [
+        "Design and implement unit, integration, contract, end-to-end and performance verification.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "testing-underspecified",
+      "category": "testing",
+      "kind": "underspecified",
+      "prompt": "Add tests to this service.",
+      "context": "No change, contract or existing suite is supplied. Inspect the highest-impact boundary and propose focused normal/error/regression cases without an arbitrary coverage target.",
+      "workflows": [
+        "requirements-to-tests"
+      ],
+      "artifact": "test-plan.md",
+      "properties": [
+        "Design and implement unit, integration, contract, end-to-end and performance verification.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "testing-boundary",
+      "category": "testing",
+      "kind": "boundary",
+      "prompt": "Review a CI test job that always exits zero.",
+      "context": "The shell runs pytest || true and publishes a success badge even when assertions fail. Restore meaningful failure signaling and preserve failure logs; do not weaken tests.",
+      "workflows": [
+        "test-automation"
+      ],
+      "artifact": "ci-test-review.md",
+      "properties": [
+        "Design and implement unit, integration, contract, end-to-end and performance verification.",
+        "Preserve the concrete input contracts and constraints; identify material unknowns."
+      ],
+      "prohibited": [
+        "Invented measurements, source facts, available tools or completed external actions.",
+        "Ignoring the explicit boundary or silently changing the requested stack/contract."
+      ],
+      "verification": "Use the concrete fixture or observable review specified in the context; distinguish executed checks from unavailable tools.",
+      "human_review": [
+        "Does the artifact complete this specific task rather than provide a generic checklist?",
+        "Are assumptions, evidence and remaining limits traceable to the actual context?"
+      ]
+    },
+    {
+      "id": "backend-normal",
+      "category": "web-backend",
+      "kind": "normal",
+      "prompt": "Design and implement a tenant-scoped booking creation endpoint with safe retries.",
+      "context": "Python 3.10+, SQLite, standard library only. Request has tenant_id from trusted authentication context, slot_id, and an idempotency key. A slot can be booked once per tenant. Return the same result for a retry with the same key and payload; conflicting reuse is an error.",
+      "workflows": [
+        "web-backend-api-design",
+        "web-backend-patterns"
+      ],
+      "artifact": "booking.py",
+      "properties": [
+        "Authorization scope is server-derived",
+        "Transactionally enforced booking uniqueness",
+        "Explicit idempotency conflict behavior"
+      ],
+      "prohibited": [
+        "Trusting tenant identity from a request body",
+        "Replacing unique constraints with an unprotected pre-check"
+      ],
+      "verification": "Run tests for same-key retry, changed-payload conflict, cross-tenant isolation, and concurrent slot requests.",
+      "human_review": [
+        "Are the contract and transaction boundaries clear and executable?"
+      ]
+    },
+    {
+      "id": "backend-underspecified",
+      "category": "web-backend",
+      "kind": "underspecified",
+      "prompt": "Help me add an API for this inventory table.",
+      "context": "Existing Python/SQLite service. Table: inventory(tenant_id TEXT, sku TEXT, quantity INTEGER NOT NULL CHECK(quantity >= 0), PRIMARY KEY(tenant_id, sku)). Authentication exists but its interface has not been supplied. Prepare the scoped contract and integration assumptions before guessing authentication code.",
+      "workflows": [
+        "web-backend-contract-first",
+        "web-backend-api-design"
+      ],
+      "artifact": "inventory-contract.md",
+      "properties": [
+        "Methods, schemas, status codes, and concurrency semantics",
+        "A focused unresolved authentication integration question"
+      ],
+      "prohibited": [
+        "Changing the stack without a reason",
+        "Inventing an authentication API and presenting it as integrated"
+      ],
+      "verification": "Review the contract against tenant isolation, negative quantities, simultaneous updates, and not-found behavior.",
+      "human_review": [
+        "Are blocking integration unknowns separated from decisions that can already be made?"
+      ]
+    },
+    {
+      "id": "backend-boundary",
+      "category": "web-backend",
+      "kind": "boundary",
+      "prompt": "Write a safe migration to add a required email column to existing customers.",
+      "context": "Postgres customers(id BIGINT PRIMARY KEY, name TEXT); production contains rows without known emails. Deployment may run old and new application versions concurrently. No production access is authorized.",
+      "workflows": [
+        "web-backend-database-migrations"
+      ],
+      "artifact": "email-migration.md",
+      "properties": [
+        "Expand/backfill/validate/contract sequence",
+        "A policy decision for unknown emails",
+        "Rollback and mixed-version considerations"
+      ],
+      "prohibited": [
+        "Filling unknown emails with invented personal data",
+        "Applying the migration to production",
+        "Adding NOT NULL immediately without handling existing rows"
+      ],
+      "verification": "Provide staging checks for old rows, mixed application versions, uniqueness policy, and failed backfills; label unexecuted checks.",
+      "human_review": [
+        "Can maintainers review the migration and its operational limits before execution?"
+      ]
+    },
+    {
+      "id": "frontend-normal",
+      "category": "web-frontend",
+      "kind": "normal",
+      "prompt": "Build a clinic booking page. Choose the visual direction. It must not be animated.",
+      "context": "A new static HTML/CSS page for adult patients; appointment types are initial consultation (30 minutes) and follow-up (15 minutes). This is a local prototype with no booking service or patient data.",
+      "workflows": [
+        "web-front-design",
+        "web-front-minimalism"
+      ],
+      "artifact": "booking.html",
+      "decisions": {
+        "motion": "none"
+      },
+      "properties": [
+        "A readable date/time selection and booking confirmation state",
+        "Keyboard-operable controls and narrow-screen layout",
+        "Prototype confirmation does not claim a real appointment"
+      ],
+      "prohibited": [
+        "Animation despite the explicit constraint",
+        "Invented provider availability or a functioning live booking service"
+      ],
+      "verification": "Open the page in a browser; exercise keyboard selection, validation, and confirmation at narrow and wide viewports.",
+      "human_review": [
+        "Does the hierarchy make booking straightforward for this audience?",
+        "Is the chosen direction coherent and restrained?"
+      ]
+    },
+    {
+      "id": "frontend-underspecified",
+      "category": "web-frontend",
+      "kind": "underspecified",
+      "prompt": "Make a website for my project. Pick an appropriate theme; do not use minimalism or Swiss design.",
+      "context": "No existing brand, assets, or stack. Build a small local HTML prototype and label the assumed product rather than inventing customer claims.",
+      "workflows": [
+        "web-front-design"
+      ],
+      "artifact": "index.html",
+      "properties": [
+        "Explicit short product assumption",
+        "A coherent allowed theme and useful primary action"
+      ],
+      "prohibited": [
+        "Selecting either excluded theme as a fallback",
+        "Fabricated testimonials, revenue, or customer logos"
+      ],
+      "verification": "Inspect layout in a browser and compare the selected theme with both exclusions.",
+      "human_review": [
+        "Was enough inferred to proceed without unnecessary questions?",
+        "Does the result suit the stated assumption?"
+      ]
+    },
+    {
+      "id": "frontend-boundary",
+      "category": "web-frontend",
+      "kind": "boundary",
+      "prompt": "Use britalisim style for this festival landing page, without movement or gradients.",
+      "context": "Static HTML/CSS prototype. Event: River Sound, 18 July, city park. Tickets are not on sale; provide a local interest form only.",
+      "workflows": [
+        "web-front-neobrutalism",
+        "web-front-accessibility"
+      ],
+      "artifact": "festival.html",
+      "decisions": {
+        "theme": "neobrutalism",
+        "motion": "none",
+        "gradients": "avoid"
+      },
+      "properties": [
+        "Recognizes the supplied style spelling",
+        "Clear form labels, focus, validation, and success state"
+      ],
+      "prohibited": [
+        "Adding motion or gradients to express the theme",
+        "Claiming ticket purchases were processed"
+      ],
+      "verification": "Inspect CSS and browser interaction; exercise invalid and valid interest form submissions.",
+      "human_review": [
+        "Does the visual treatment express the requested style while remaining legible?"
+      ]
     }
   ]
 }

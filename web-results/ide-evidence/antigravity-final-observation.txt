@@ -1,0 +1,30 @@
+Window: "GNCore - Antigravity IDE - SKILL.md", App: Antigravity IDE.exe.
+	0 window GNCore - Antigravity IDE - SKILL.md Secondary Actions: Raise
+		2 region GNCore - Antigravity IDE - SKILL.md
+									265 document GNCore - Antigravity IDE - SKILL.md Value: vscode-file://vscode-app/c:/Users/ganes/AppData/Local/Programs/Antigravity%20IDE/resources/app/out/vs/code/electron-browser/workbench/workbench.html ID: RootWebArea
+												401 text GNCore - Antigravity IDE - SKILL.md
+													414 list item SKILL.md, .agents\skills\neural-networks ID: list_id_2_0
+														417 group <REPO>\.agents\skills\neural-networks\SKILL.md
+															715 text SKILL.md
+															333 tab item (selectable) SKILL.md
+																334 group <REPO>\.agents\skills\neural-networks\SKILL.md
+																346 group <REPO>\.agents
+																349 group <REPO>\.agents\skills
+																352 group <REPO>\.agents\skills\neural-networks
+															354 list item SKILL.md
+																355 group <REPO>\.agents\skills\neural-networks\SKILL.md
+																	458 text SKILL.md
+															722 list item # GNCore Neural Networks
+																724 group # GNCore Neural Networks (string)
+																	725 text # GNCore Neural Networks
+													358 group SKILL.md
+													816 group GNCore (Git) - codex/phase2-developer-skills*+, Checkout Branch/Tag... ID: status.scm.0
+														817 button GNCore (Git) - codex/phase2-developer-skills*+, Checkout Branch/Tag...
+													818 group GNCore (Git) - Publish Branch ID: status.scm.1
+														819 button GNCore (Git) - Publish Branch
+															385 text GNCore
+															386 combo box (settable, string) Message input Value: 
+															392 button (disabled) Send message
+# GNCore Neural Networks
+Original phase-two guidance is MIT-licensed GNCore writing. Retained source guides and helpers keep their original authorship, notices and applicable licenses, including share-alike obligations. Renaming or combining them does not transfer exclusive ownership.
+See [SOURCES.json](SOURCES.json) and source-specific notices. GNCore exports preserve declared files and verify their content hashes. Imported helpers remain inert unless deliberately selected for an authorized task.

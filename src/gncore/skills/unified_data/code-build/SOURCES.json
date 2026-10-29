@@ -1,121 +1,17 @@
 {
-  "category": "code-engineering",
+  "category": "code-build",
   "entrypoint_author": "GNCore / Ganesh Naidu",
-  "entrypoint_original_text_license": "MIT",
+  "original_guidance_license": "MIT",
   "aggregate_licenses": [
     "Apache-2.0",
     "CC-BY-SA-4.0",
     "MIT"
   ],
-  "research": [
-    {
-      "category": "code-engineering",
-      "repository": "mattpocock/skills",
-      "name": "codebase-design",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
-      "source_url": "https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/codebase-design/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 4
-    },
-    {
-      "category": "code-engineering",
-      "repository": "mattpocock/skills",
-      "name": "code-review",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
-      "source_url": "https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/code-review/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 2
-    },
-    {
-      "category": "code-engineering",
-      "repository": "affaan-m/ecc",
-      "name": "coding-standards",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
-      "source_url": "https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/coding-standards/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "code-engineering",
-      "repository": "affaan-m/ecc",
-      "name": "java-coding-standards",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
-      "source_url": "https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/java-coding-standards/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "code-engineering",
-      "repository": "affaan-m/ecc",
-      "name": "cpp-coding-standards",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
-      "source_url": "https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/cpp-coding-standards/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "code-engineering",
-      "repository": "github/awesome-copilot",
-      "name": "write-coding-standards-from-file",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "0fe6545b950671641b2b14b44eb56678fea6c6b4",
-      "source_url": "https://github.com/github/awesome-copilot/blob/0fe6545b950671641b2b14b44eb56678fea6c6b4/skills/write-coding-standards-from-file/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "code-engineering",
-      "repository": "aaronontheweb/dotnet-skills",
-      "name": "modern-csharp-coding-standards",
-      "download_status": "not-found-in-source-tree",
-      "snapshot_hash": null,
-      "revision": "ac0deb2f531ff5090718cb0069c73ba3f9f95f69",
-      "source_url": "https://github.com/aaronontheweb/dotnet-skills",
-      "review_status": "not-redistributed: download unavailable"
-    },
-    {
-      "category": "code-engineering",
-      "repository": "sickn33/agentic-awesome-skills",
-      "name": "cc-skill-coding-standards",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "e9809578fd426a284af017c5db99f8eb6628e6ca",
-      "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/e9809578fd426a284af017c5db99f8eb6628e6ca/skills/cc-skill-coding-standards/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 2
-    }
+  "original_categories": [
+    "code-build",
+    "general",
+    "product",
+    "software-engineering"
   ],
   "legacy_reference_ids": [
     "code-grill-me",
@@ -182,7 +78,7 @@
     "code-using-git-worktrees",
     "code-subagent-driven-development",
     "code-finishing-a-development-branch",
-    "code-workflow-setup",
-    "code-build"
-  ]
+    "code-workflow-setup"
+  ],
+  "review_scope": "Original workflow reference paths preserved; heuristic-only supplemental research retired in phase two. Helper syntax checked separately; installation never executes helpers."
 }

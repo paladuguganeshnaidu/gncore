@@ -1,41 +1,42 @@
 ---
 name: documentation
-description: "Write and maintain technical and API documentation from verified behavior, examples, and audience needs."
-license: Apache-2.0 AND MIT
+description: "Write technical references, tutorials, API documentation and migration guides from verified software behavior."
+license: MIT
 ---
 
 # GNCore Documentation
 
-## Select the work from the user's intent
+Version: 7.0.0rc1
 
-Identify reader, task, source of truth, supported versions, and the action the documentation should enable. Trace examples to actual APIs and command behavior. Use a clear progression from purpose and setup to a working example, constraints, and troubleshooting.
+## Choose the work
 
-Infer a useful working mode from the requested outcome, inputs, existing assets, audience, constraints, and current project context. An explicit format, theme, stack, or workflow takes priority. If enough is known to proceed, state material assumptions briefly and do the work. Ask only about missing decisions that materially block a correct result.
+Identify the reader and task. Derive claims from code, schemas and observed commands; preserve identifiers, placeholders and supported version boundaries.
 
-Use the workflow map below as capabilities within this one skill. Combine the modes that the actual task needs; do not run every mode, change the user's scope, or load every reference by default. The host agent supplies reasoning and tools; no particular model, connector, or extra skill is assumed.
+Inspect the supplied project and the requested deliverable first. Current explicit instructions take priority over saved preferences, existing conventions, then inferred defaults. Ask only about missing decisions that materially block correct work; otherwise state assumptions briefly and proceed.
 
-## Execute and verify
+Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
-1. Inspect the relevant inputs and existing conventions; preserve originals and unrelated user changes.
-2. Define the requested artifact and observable acceptance checks. Scale the plan and review depth to the actual uncertainty and risk.
-3. Produce the complete result using the selected mode guidance. Keep source facts, assumptions, estimates, interpretations, and proposals distinguishable.
-4. Validate the artifact and fix observed failures. Rerun relevant checks after a fix, and stop rather than repeat an unchanged failing approach indefinitely.
-5. Deliver the artifact or changes with actual evidence, important decisions, and remaining limitations. Do not claim unrun checks or unperformed external actions.
+## Deliver and verify
 
-## Category quality criteria
+Task-oriented documentation with reproducible examples, prerequisites, error cases and migration or compatibility notes when needed.
 
-Run examples where practical, validate links and symbols, check argument and response shapes, and distinguish documented guarantees from implementation details.
+Execute practical examples in an isolated environment, check local links and compare documented commands/schema fields with implementation. Mark examples that require unavailable services.
 
-Use current primary documentation for version-sensitive APIs, rules, or consequential factual claims. Use supplied sources when available. References retain their authorship and license terms; their harness-specific tools, universal activation rules, and approval scripts do not replace the current user's request or host permissions.
+Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
 ## Workflow map
 
 | Workflow | Use it for |
 | --- | --- |
+| `documentation-translation` | Adapt technical content across languages while preserving product meaning, UI limits, and verified terminology. |
 | `technical-writing` | Write accurate, task-oriented technical documentation with runnable examples and clear prerequisites. |
 | `documentation-api` | Document API behavior from the implementation and contract, with examples users can reproduce. |
 
 ## Focused procedures
+
+### Technical Localization (`documentation-translation`)
+
+Identify source locale, target locale, audience, and approved glossary. Preserve code, placeholders, links, units, legal meaning, and formatting tokens. Flag ambiguous source text instead of guessing. Use locale-appropriate dates and numbers; do not translate identifiers. Verify UI length and right-to-left behavior when relevant.
 
 ### Technical Writing (`technical-writing`)
 
@@ -45,20 +46,8 @@ Inspect the actual behavior and audience before drafting. Put the shortest succe
 
 Inspect routes, schemas, authentication, error behavior, and versioning. Document required and optional fields, examples, pagination, rate limits, and known constraints. Verify examples against a safe environment or schema. Keep secrets and personal data out. Clearly flag undocumented behavior instead of guessing.
 
-## Additional reviewed references
+## Attribution and resource integrity
 
-These are optional technical references for relevant tasks, not a requirement to execute their workflows or install their host plugins.
+Original phase-two guidance is MIT-licensed GNCore writing. Retained source guides and helpers keep their original authorship, notices and applicable licenses, including share-alike obligations. Renaming or combining them does not transfer exclusive ownership.
 
-- [cloudflare/skills / cloudflare](research/cloudflare-skills-cloudflare/GUIDE.md): Apache-2.0.
-- [scrapegraphai/just-scrape / just-scrape](research/scrapegraphai-just-scrape-just-scrape/GUIDE.md): MIT.
-- [mastra-ai/skills / mastra](research/mastra-ai-skills-mastra/GUIDE.md): Apache-2.0.
-- [addyosmani/agent-skills / documentation-and-adrs](research/addyosmani-agent-skills-documentation-and-adrs/GUIDE.md): MIT.
-- [samber/cc-skills-golang / golang-documentation](research/samber-cc-skills-golang-golang-documentation/GUIDE.md): MIT.
-- [github/awesome-copilot / documentation-writer](research/github-awesome-copilot-documentation-writer/GUIDE.md): MIT.
-- [vercel/components.build / building-components](research/vercel-components.build-building-components/GUIDE.md): Apache-2.0.
-
-## Attribution and use
-
-GNCore's new category guidance is authored for this library. Retained source guides, tools, and assets remain attributed to their original authors and keep their supplied licenses. Modified or combined material subject to share-alike terms remains under those terms. This skill does not claim exclusive ownership of third-party content.
-
-See [SOURCES.json](SOURCES.json) for source identities, snapshot hashes or revisions, and license decisions. Read only the references relevant to the current task.
+See [SOURCES.json](SOURCES.json) and source-specific notices. GNCore exports preserve declared files and verify their content hashes. Imported helpers remain inert unless deliberately selected for an authorized task.

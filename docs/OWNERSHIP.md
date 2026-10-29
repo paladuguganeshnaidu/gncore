@@ -1,11 +1,9 @@
-# Ownership and attribution
+# Ownership and source obligations
 
-GNCore's independently authored Python code, category-selection writing, frontend playbook, and original workflows are authored for GNCore and licensed under the repository's MIT license.
+GNCore's independently authored runtime, phase-two category guidance, task-specific rewrites and original examples are MIT-licensed under the project LICENSE. Combining a guide into one skill does not transfer exclusive ownership of its source material.
 
-Downloaded third-party material remains authored by its original contributors. Combining it with GNCore writing, renaming a skill, or changing instructions does not transfer exclusive ownership or remove its license obligations. GNCore does not claim that all bundled material is solely its own.
+Retained attributed workflow guides, helper scripts and assets preserve their source-specific notices and license texts. Aggregate skill expressions are conservative combinations of inherited obligations; inspect each source notice for its scope. Modified/combined material subject to share-alike terms remains subject to those terms.
 
-Each distributed category declares aggregate licenses and includes `SOURCES.json`, source identities, snapshot hashes or pinned revisions, and supplied notices. Retained source guides, tools, and assets preserve their applicable terms. Trail of Bits material and adaptations subject to CC BY-SA 4.0 retain attribution, modification disclosure, and share-alike obligations.
+Phase two removes heuristic-only supplemental research bundles and redundant raw collections from the active distribution. This is a relevance/maintenance decision, not a relicensing operation. Historical inputs remain in Git history at `b9877fd` and the phase-one source-research reports. No missing upstream permission is created by renaming content.
 
-The research process separates downloading from redistribution. Proprietary, unclear-license, or otherwise uncleared material is kept in ignored local research storage and is not included as an approved source reference. A popularity count is not a quality or license certification.
-
-See [Source Research](SOURCE_RESEARCH.md) for review outcomes. Review source-specific notices when reusing or modifying bundled material; the root MIT license covers GNCore-owned contributions rather than relicensing every dependency and asset.
+Each active skill contains `SOURCES.json`, `GNCORE-LICENSE` and its applicable attributed references. Generated manifests hash every declared resource, and package/export checks compare original retained bytes. Source identity and syntax checks are distinct from executing, security-auditing or endorsing every helper.

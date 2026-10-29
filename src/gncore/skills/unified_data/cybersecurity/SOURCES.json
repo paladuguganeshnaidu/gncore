@@ -1,122 +1,14 @@
 {
   "category": "cybersecurity",
   "entrypoint_author": "GNCore / Ganesh Naidu",
-  "entrypoint_original_text_license": "MIT",
+  "original_guidance_license": "MIT",
   "aggregate_licenses": [
-    "Apache-2.0",
     "MIT"
   ],
-  "research": [
-    {
-      "category": "cybersecurity",
-      "repository": "rysweet/amplihack",
-      "name": "cybersecurity-analyst",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "84424457d588fce4e492abfebfd03432ec647a56",
-      "source_url": "https://github.com/rysweet/amplihack/blob/84424457d588fce4e492abfebfd03432ec647a56/.claude/skills/cybersecurity-analyst/SKILL.md",
-      "review_status": "research-only: redistribution license not verified",
-      "licenses": [],
-      "file_count": 4
-    },
-    {
-      "category": "cybersecurity",
-      "repository": "sickn33/agentic-awesome-skills",
-      "name": "security-auditor",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "e9809578fd426a284af017c5db99f8eb6628e6ca",
-      "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/e9809578fd426a284af017c5db99f8eb6628e6ca/skills/security-auditor/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "cybersecurity",
-      "repository": "mindrally/skills",
-      "name": "python-cybersecurity-tool-development",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "7682ca77710e0971eab4e0ae5dddfa281aea0ba5",
-      "source_url": "https://github.com/mindrally/skills/blob/7682ca77710e0971eab4e0ae5dddfa281aea0ba5/python-cybersecurity-tool-development/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "Apache-2.0"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "cybersecurity",
-      "repository": "mukul975/anthropic-cybersecurity-skills",
-      "name": "testing-api-security-with-owasp-top-10",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "54a798831d2266a3ca61ce68a7acb80b81160d57",
-      "source_url": "https://github.com/mukul975/anthropic-cybersecurity-skills/blob/54a798831d2266a3ca61ce68a7acb80b81160d57/skills/testing-api-security-with-owasp-top-10/SKILL.md",
-      "review_status": "research-only: category relevance not established",
-      "licenses": [
-        "Apache-2.0"
-      ],
-      "file_count": 4
-    },
-    {
-      "category": "cybersecurity",
-      "repository": "mukul975/anthropic-cybersecurity-skills",
-      "name": "analyzing-api-gateway-access-logs",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "54a798831d2266a3ca61ce68a7acb80b81160d57",
-      "source_url": "https://github.com/mukul975/anthropic-cybersecurity-skills/blob/54a798831d2266a3ca61ce68a7acb80b81160d57/skills/analyzing-api-gateway-access-logs/SKILL.md",
-      "review_status": "research-only: category relevance not established",
-      "licenses": [
-        "Apache-2.0"
-      ],
-      "file_count": 4
-    },
-    {
-      "category": "cybersecurity",
-      "repository": "microsoft/azure-skills",
-      "name": "azure-kusto-irql",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "6e889d5603fed6b741308a184d0b72b8fbe3bdb7",
-      "source_url": "https://github.com/microsoft/azure-skills/blob/6e889d5603fed6b741308a184d0b72b8fbe3bdb7/.github/plugins/azure-kusto-graph-skills/skills/azure-kusto-irql/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 3
-    },
-    {
-      "category": "cybersecurity",
-      "repository": "mukul975/anthropic-cybersecurity-skills",
-      "name": "analyzing-android-malware-with-apktool",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "54a798831d2266a3ca61ce68a7acb80b81160d57",
-      "source_url": "https://github.com/mukul975/anthropic-cybersecurity-skills/blob/54a798831d2266a3ca61ce68a7acb80b81160d57/skills/analyzing-android-malware-with-apktool/SKILL.md",
-      "review_status": "research-only: category relevance not established",
-      "licenses": [
-        "Apache-2.0"
-      ],
-      "file_count": 4
-    },
-    {
-      "category": "cybersecurity",
-      "repository": "mukul975/anthropic-cybersecurity-skills",
-      "name": "acquiring-disk-image-with-dd-and-dcfldd",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "54a798831d2266a3ca61ce68a7acb80b81160d57",
-      "source_url": "https://github.com/mukul975/anthropic-cybersecurity-skills/blob/54a798831d2266a3ca61ce68a7acb80b81160d57/skills/acquiring-disk-image-with-dd-and-dcfldd/SKILL.md",
-      "review_status": "research-only: category relevance not established",
-      "licenses": [
-        "Apache-2.0"
-      ],
-      "file_count": 4
-    }
+  "original_categories": [
+    "cybersecurity",
+    "security"
   ],
-  "legacy_reference_ids": []
+  "legacy_reference_ids": [],
+  "review_scope": "Original workflow reference paths preserved; heuristic-only supplemental research retired in phase two. Helper syntax checked separately; installation never executes helpers."
 }

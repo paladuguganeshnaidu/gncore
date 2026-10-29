@@ -1,32 +1,28 @@
 ---
 name: code-build
-description: "Build, investigate, review, test, refactor, and verify software across languages using task-appropriate workflows."
+description: "Implement, diagnose, review and refactor software across languages while preserving public behavior."
 license: Apache-2.0 AND CC-BY-SA-4.0 AND MIT
 ---
 
-# GNCore Code Engineering
+# GNCore Software Engineering
 
-## Select the work from the user's intent
+Version: 7.0.0rc1
 
-Choose a workflow from the requested outcome and uncertainty. Reuse the repository's conventions, inspect relevant call paths, and preserve public contracts and user changes. Use diagnosis before speculative fixes, contracts before cross-service changes, and meaningful tests for behavior that can regress.
+## Choose the work
 
-Infer a useful working mode from the requested outcome, inputs, existing assets, audience, constraints, and current project context. An explicit format, theme, stack, or workflow takes priority. If enough is known to proceed, state material assumptions briefly and do the work. Ask only about missing decisions that materially block a correct result.
+Choose investigation, implementation, review or refactoring from the requested outcome. Inspect call sites and repository conventions. Separate a confirmed cause from a hypothesis and avoid speculative broad rewrites.
 
-Use the workflow map below as capabilities within this one skill. Combine the modes that the actual task needs; do not run every mode, change the user's scope, or load every reference by default. The host agent supplies reasoning and tools; no particular model, connector, or extra skill is assumed.
+Inspect the supplied project and the requested deliverable first. Current explicit instructions take priority over saved preferences, existing conventions, then inferred defaults. Ask only about missing decisions that materially block correct work; otherwise state assumptions briefly and proceed.
 
-## Execute and verify
+Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
-1. Inspect the relevant inputs and existing conventions; preserve originals and unrelated user changes.
-2. Define the requested artifact and observable acceptance checks. Scale the plan and review depth to the actual uncertainty and risk.
-3. Produce the complete result using the selected mode guidance. Keep source facts, assumptions, estimates, interpretations, and proposals distinguishable.
-4. Validate the artifact and fix observed failures. Rerun relevant checks after a fix, and stop rather than repeat an unchanged failing approach indefinitely.
-5. Deliver the artifact or changes with actual evidence, important decisions, and remaining limitations. Do not claim unrun checks or unperformed external actions.
+## Deliver and verify
 
-## Category quality criteria
+A scoped patch or requested engineering artifact, a clear acceptance contract, and reproducible evidence for changed behavior.
 
-Run the relevant build, type, test, lint, analysis, or reproduction checks. Keep review findings evidence-based and fix causes without weakening assertions. Additional agents are optional and require support and authorization.
+Run the relevant reproduction, unit/integration checks, build or type checks. Cover the observed failure and an important boundary without copying implementation details into assertions.
 
-Use current primary documentation for version-sensitive APIs, rules, or consequential factual claims. Use supplied sources when available. References retain their authorship and license terms; their harness-specific tools, universal activation rules, and approval scripts do not replace the current user's request or host permissions.
+Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
 ## Workflow map
 
@@ -98,32 +94,51 @@ Use current primary documentation for version-sensitive APIs, rules, or conseque
 | `code-finishing-a-development-branch` | Prepare a completed development branch for review, integration, or cleanup according to the user's chosen workflow. |
 | `code-workflow-setup` | Configure the requested coding workflow's repository context, issue-tracker references, and local skill conventions. |
 | `code-build` | Plan, implement, debug, and verify a software task in its existing language and stack. |
+| `requirements` | Collects scope, constraints, acceptance criteria, and open questions before implementation starts. |
+| `architecture` | Defines system boundaries, interfaces, and implementation constraints. |
+| `implementation` | Writes production-grade code with minimal duplication and explicit types. |
+| `review` | Finds defects, regressions, and missing coverage before release. |
+| `testing` | Designs and validates tests for the changed slice. |
+| `security` | Assesses secrets handling, unsafe file access, and privilege boundaries. |
+| `documentation` | Produces concise user and developer documentation that matches the implementation. |
+| `release` | Coordinates versioning, packaging, and verification for shipping. |
+| `product-discovery` | Turn a product idea into a testable problem statement, user evidence plan, and scoped first release. |
+| `software-feature` | Deliver a scoped software feature using local conventions and verifiable acceptance criteria. |
+| `software-architecture` | Compare architecture options against constraints, operations, reversibility, and lifecycle cost. |
+| `software-code-review` | Review a code change for correctness, security, maintainability, and missing regression coverage. |
+| `software-debugging` | Diagnose a software failure from reproducible evidence and verify the smallest safe fix. |
+| `software-refactor` | Refactor a bounded code area while preserving its documented behavior and public contracts. |
+| `software-api-contract` | Define and verify an API contract across request, response, errors, versioning, and consumers. |
+| `software-dependency` | Assess and implement a dependency change with compatibility, security, and rollback evidence. |
+| `software-performance` | Find a measured software bottleneck and optimize it without regressing correctness. |
+| `software-migration` | Plan a staged migration with compatibility gates, data safety, and rollback criteria. |
+| `software-release` | Prepare a software release with reproducible artifacts, verified changes, and rollback readiness. |
 
 ## Focused procedures
 
 ### GNCore Grill Me (`code-grill-me`)
 
-Establish the requested outcome, current behavior, constraints, acceptance criteria, and unresolved architectural choices. Use repository evidence before proposing changes; produce the brief or decision artifact requested rather than automatically moving into implementation.
+Identify decisions that materially change scope, contracts or feasibility and ask a short prioritized set of questions. Use repository evidence to answer routine choices yourself. Record settled decisions, assumptions and actual blockers without turning the task into an unbounded interview.
 
-For task-specific technical depth, read [the attributed source guide](references/code-grill-me/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-grill-me/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Research (`code-research`)
 
-Establish the requested outcome, current behavior, constraints, acceptance criteria, and unresolved architectural choices. Use repository evidence before proposing changes; produce the brief or decision artifact requested rather than automatically moving into implementation.
+Search code, call sites, installed versions and primary documentation for the concrete technical question. Reproduce the uncertain behavior in a small fixture when possible and separate observations from inference. Deliver a cited recommendation with compatibility limits rather than a generic technology list.
 
-For task-specific technical depth, read [the attributed source guide](references/code-research/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-research/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Prototype (`code-prototype`)
 
-Establish the requested outcome, current behavior, constraints, acceptance criteria, and unresolved architectural choices. Use repository evidence before proposing changes; produce the brief or decision artifact requested rather than automatically moving into implementation.
+Choose the single assumption the prototype should test and define an observable result. Build the smallest executable vertical slice with clearly marked simulated boundaries. Record what the experiment establishes, what remains untested and which prototype shortcuts must change before production use.
 
-For task-specific technical depth, read [the attributed source guide](references/code-prototype/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-prototype/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Domain Modeling (`code-domain-modeling`)
 
-Establish the requested outcome, current behavior, constraints, acceptance criteria, and unresolved architectural choices. Use repository evidence before proposing changes; produce the brief or decision artifact requested rather than automatically moving into implementation.
+Extract entities, values, invariants, lifecycle transitions and ownership from actual examples. Test shared vocabulary against awkward cases and identify bounded contexts before assigning service boundaries. Produce a model that clarifies code decisions, not a diagram detached from behavior.
 
-For task-specific technical depth, read [the attributed source guide](references/code-domain-modeling/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-domain-modeling/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Decision Mapping (`code-decision-mapping`)
 
@@ -131,63 +146,63 @@ List decisions that materially affect the requested outcome. For each, record op
 
 ### GNCore Search First (`code-search-first`)
 
-Establish the requested outcome, current behavior, constraints, acceptance criteria, and unresolved architectural choices. Use repository evidence before proposing changes; produce the brief or decision artifact requested rather than automatically moving into implementation.
+Inspect repository symbols, dependencies and existing utilities before adding a new implementation. Compare the closest existing path against the needed contract and reuse or extend it when it fits. Record the concrete gap if new code or a dependency is justified.
 
-For task-specific technical depth, read [the attributed source guide](references/code-search-first/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-search-first/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Product Lens (`code-product-lens`)
 
-Establish the requested outcome, current behavior, constraints, acceptance criteria, and unresolved architectural choices. Use repository evidence before proposing changes; produce the brief or decision artifact requested rather than automatically moving into implementation.
+Connect the proposed feature to a specific user problem, current workaround and measurable outcome. Use supplied evidence and identify the cheapest useful uncertainty test. Keep product assumptions explicit without replacing the user's authorized implementation task with an unsolicited strategy exercise.
 
-For task-specific technical depth, read [the attributed source guide](references/code-product-lens/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-product-lens/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Architecture Decision Records (`code-architecture-decision-records`)
 
-Establish the requested outcome, current behavior, constraints, acceptance criteria, and unresolved architectural choices. Use repository evidence before proposing changes; produce the brief or decision artifact requested rather than automatically moving into implementation.
+Capture the concrete decision, constraints, viable alternatives and consequences with links to code or evidence. State the chosen boundary and reversal/migration cost. Follow the repository's ADR numbering/index conventions and avoid recording routine implementation trivia as architecture policy.
 
-For task-specific technical depth, read [the attributed source guide](references/code-architecture-decision-records/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-architecture-decision-records/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Blueprint (`code-blueprint`)
 
-Establish the requested outcome, current behavior, constraints, acceptance criteria, and unresolved architectural choices. Use repository evidence before proposing changes; produce the brief or decision artifact requested rather than automatically moving into implementation.
+Split a substantial change into reviewable outcomes with dependencies, acceptance evidence and enough call-path/context information to resume later. Sequence uncertain boundaries early and keep the plan mutable as evidence changes. Do not assume delegation, universal approval gates or a new project structure.
 
-For task-specific technical depth, read [the attributed source guide](references/code-blueprint/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-blueprint/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Architecture (`code-architecture`)
 
-Trace request boundaries, domain rules, persistence, dependencies, and failure modes in the current system. Choose interfaces and ownership boundaries appropriate to the actual service and explain concrete tradeoffs before changing architecture.
+Map public behavior, module boundaries and the information each module hides. Propose a smaller stable interface for a concrete change and compare call-site complexity before/after. Document the tradeoff and verify contracts rather than adding abstract layers for their own sake.
 
-For task-specific technical depth, read [the attributed source guide](references/code-architecture/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-architecture/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Improve Architecture (`code-improve-architecture`)
 
-Trace request boundaries, domain rules, persistence, dependencies, and failure modes in the current system. Choose interfaces and ownership boundaries appropriate to the actual service and explain concrete tradeoffs before changing architecture.
+Find a specific coupling or shallow-module problem in current call paths. Choose a bounded deepening/refactor, preserve behavior with representative regressions and migrate callers in a reviewable sequence. Explain the reduced change surface with concrete before/after examples.
 
-For task-specific technical depth, read [the attributed source guide](references/code-improve-architecture/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-improve-architecture/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Quality (`code-quality`)
 
-Understand local conventions and the behavior that must survive the change. Identify concrete correctness, maintainability, or complexity problems, make a scoped improvement, and verify observable behavior; avoid cosmetic churn and speculative abstractions.
+Review the changed code against local naming, error handling, API clarity and maintainability conventions. Prioritize defects or complexity with concrete consequences and preserve behavior while improving it. Run the relevant formatter/type/lint/tests without weakening their rules to make the diff pass.
 
-For task-specific technical depth, read [the attributed source guide](references/code-quality/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-quality/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Codebase Onboarding (`code-codebase-onboarding`)
 
-Understand local conventions and the behavior that must survive the change. Identify concrete correctness, maintainability, or complexity problems, make a scoped improvement, and verify observable behavior; avoid cosmetic churn and speculative abstractions.
+Trace entrypoints, important data/control paths, build/test commands and extension boundaries in the current revision. Produce a concise evidence-linked map and a verified starter task. Do not silently install hooks or rewrite the host agent's configuration as part of learning the codebase.
 
-For task-specific technical depth, read [the attributed source guide](references/code-codebase-onboarding/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-codebase-onboarding/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Plankton Code Quality (`code-plankton-code-quality`)
 
-Understand local conventions and the behavior that must survive the change. Identify concrete correctness, maintainability, or complexity problems, make a scoped improvement, and verify observable behavior; avoid cosmetic churn and speculative abstractions.
+Use Plankton only if the project requests or already configures it; inspect its actual executable and supported settings. Diagnose formatter/linter or hook failures at the configured boundary and verify their effect on a fixture. Do not assume a Claude-specific hook exists in another host.
 
-For task-specific technical depth, read [the attributed source guide](references/code-plankton-code-quality/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-plankton-code-quality/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Code Review (`code-code-review`)
 
-Understand local conventions and the behavior that must survive the change. Identify concrete correctness, maintainability, or complexity problems, make a scoped improvement, and verify observable behavior; avoid cosmetic churn and speculative abstractions.
+Inspect the complete changed behavior and relevant callers/specification. Report actionable correctness, compatibility, security or performance findings with file/line evidence and a failure scenario. Separate definite defects from questions and style preferences; do not invent findings to fill a quota.
 
-For task-specific technical depth, read [the attributed source guide](references/code-code-review/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-code-review/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Request Refactor Plan (`code-request-refactor-plan`)
 
@@ -195,75 +210,75 @@ Inspect the current implementation, callers, and regression coverage. State the 
 
 ### GNCore Code Improver (`code-code-improver`)
 
-Understand local conventions and the behavior that must survive the change. Identify concrete correctness, maintainability, or complexity problems, make a scoped improvement, and verify observable behavior; avoid cosmetic churn and speculative abstractions.
+Bound the review target and define which checks establish correct behavior. Fix the highest-impact observed issue, rerun relevant checks and inspect the resulting diff. Stop when acceptance is met or unchanged failures need new evidence; do not repeatedly rewrite clean code for cosmetic variety.
 
-For task-specific technical depth, read [the attributed source guide](references/code-code-improver/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-code-improver/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Code Maturity Assessor (`code-code-maturity-assessor`)
 
-Understand local conventions and the behavior that must survive the change. Identify concrete correctness, maintainability, or complexity problems, make a scoped improvement, and verify observable behavior; avoid cosmetic churn and speculative abstractions.
+Evaluate the supplied repository against explicit dimensions such as correctness evidence, operational ownership, dependency hygiene and maintainability. Cite observable evidence and missing evidence for each assessment. Do not equate a numerical rubric score with certification or compare incompatible project scopes.
 
-For task-specific technical depth, read [the attributed source guide](references/code-code-maturity-assessor/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-code-maturity-assessor/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Tdd (`code-tdd`)
 
-Select tests from the requested behavior and relevant failure risks. Reproduce a bug or demonstrate a meaningful failing case where appropriate, implement the change, and run focused regressions without weakening assertions or claiming unrun tests passed.
+Write a behavioral regression that fails for the intended reason, implement the smallest contract-correct change and refactor after green. Cover an important boundary beyond the initial happy path. Use TDD where it clarifies behavior rather than adding mirror tests for trivial reversible edits.
 
-For task-specific technical depth, read [the attributed source guide](references/code-tdd/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-tdd/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Tdd Workflow (`code-tdd-workflow`)
 
-Select tests from the requested behavior and relevant failure risks. Reproduce a bug or demonstrate a meaningful failing case where appropriate, implement the change, and run focused regressions without weakening assertions or claiming unrun tests passed.
+Plan the test boundary and fixtures before changing behavior. Keep a red/green/refactor loop around user-visible contracts and integration risks, with deterministic cleanup. Choose coverage based on meaningful failure paths rather than enforcing an arbitrary percentage as proof of quality.
 
-For task-specific technical depth, read [the attributed source guide](references/code-tdd-workflow/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-tdd-workflow/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore E2E Testing (`code-e2e-testing`)
 
-Select tests from the requested behavior and relevant failure risks. Reproduce a bug or demonstrate a meaningful failing case where appropriate, implement the change, and run focused regressions without weakening assertions or claiming unrun tests passed.
+Select a critical user journey, deterministic setup and isolated test identity. Assert visible state through accessible selectors, wait for conditions and clean up side effects. Capture browser/environment evidence and error paths; avoid fixed sleeps and assertions coupled only to CSS classes.
 
-For task-specific technical depth, read [the attributed source guide](references/code-e2e-testing/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-e2e-testing/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Ai Regression Testing (`code-ai-regression-testing`)
 
-Select tests from the requested behavior and relevant failure risks. Reproduce a bug or demonstrate a meaningful failing case where appropriate, implement the change, and run focused regressions without weakening assertions or claiming unrun tests passed.
+Version representative prompts, tool fixtures and expected observable outcomes before changing model-assisted behavior. Compare constraint compliance and task completion on the same inputs, preserving failure traces. Separate nondeterministic semantic review from deterministic schema/tool checks.
 
-For task-specific technical depth, read [the attributed source guide](references/code-ai-regression-testing/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-ai-regression-testing/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Module Regression (`code-module-regression`)
 
-Select tests from the requested behavior and relevant failure risks. Reproduce a bug or demonstrate a meaningful failing case where appropriate, implement the change, and run focused regressions without weakening assertions or claiming unrun tests passed.
+Map the changed module's downstream consumers and public contracts. Add targeted regressions at the affected boundary and run representative consumer checks; retain an acceptance-command ledger only when it helps the repository. Do not assume every module needs the same end-to-end suite.
 
-For task-specific technical depth, read [the attributed source guide](references/code-module-regression/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-module-regression/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Property Based Testing (`code-property-based-testing`)
 
-Select tests from the requested behavior and relevant failure risks. Reproduce a bug or demonstrate a meaningful failing case where appropriate, implement the change, and run focused regressions without weakening assertions or claiming unrun tests passed.
+State an invariant independent of the implementation and define valid generators plus invalid boundaries. Compare against a simple oracle or metamorphic relation and retain minimized counterexamples. Avoid generators that exclude the failure class or properties that merely restate the code.
 
-For task-specific technical depth, read [the attributed source guide](references/code-property-based-testing/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-property-based-testing/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Coverage Analysis (`code-coverage-analysis`)
 
-Select tests from the requested behavior and relevant failure risks. Reproduce a bug or demonstrate a meaningful failing case where appropriate, implement the change, and run focused regressions without weakening assertions or claiming unrun tests passed.
+Use coverage to find unexercised branches relevant to the change, then inspect their failure impact. Add meaningful inputs/assertions for important gaps and explain remaining exclusions. A high line percentage is not evidence that assertions detect defects.
 
-For task-specific technical depth, read [the attributed source guide](references/code-coverage-analysis/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-coverage-analysis/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Debugging (`code-debugging`)
 
-Reproduce the reported behavior with the smallest useful case, collect evidence, and distinguish hypotheses from causes. Trace the failure through the actual system, make a focused fix, and verify the reproduction plus relevant regressions before reporting completion.
+Reproduce the failure and trace the responsible state/data transition before editing. Form a specific hypothesis, use the smallest discriminating probe and fix the confirmed cause. Keep the original reproduction and a boundary regression to demonstrate the problem is resolved.
 
-For task-specific technical depth, read [the attributed source guide](references/code-debugging/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-debugging/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Verification Before Completion (`code-verification-before-completion`)
 
-Reproduce the reported behavior with the smallest useful case, collect evidence, and distinguish hypotheses from causes. Trace the failure through the actual system, make a focused fix, and verify the reproduction plus relevant regressions before reporting completion.
+Match each completion claim to an actually run command, observed artifact or explicit unavailable check. Re-run affected checks after a fix and inspect the final diff. Keep local success, remote CI, deployment and published availability as distinct evidence states.
 
-For task-specific technical depth, read [the attributed source guide](references/code-verification-before-completion/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-verification-before-completion/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Diagnosing Bugs (`code-diagnosing-bugs`)
 
-Reproduce the reported behavior with the smallest useful case, collect evidence, and distinguish hypotheses from causes. Trace the failure through the actual system, make a focused fix, and verify the reproduction plus relevant regressions before reporting completion.
+Gather the failing input, expected contract, environment/revision and full error context. Narrow the issue by testing competing explanations and relevant callers. Deliver a reproducible diagnosis or a clearly bounded unresolved hypothesis instead of claiming a speculative patch fixed it.
 
-For task-specific technical depth, read [the attributed source guide](references/code-diagnosing-bugs/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-diagnosing-bugs/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Qa (`code-qa`)
 
@@ -271,27 +286,27 @@ Translate the feature brief or bug report into observable acceptance cases. Exer
 
 ### GNCore Verification Loop (`code-verification-loop`)
 
-Reproduce the reported behavior with the smallest useful case, collect evidence, and distinguish hypotheses from causes. Trace the failure through the actual system, make a focused fix, and verify the reproduction plus relevant regressions before reporting completion.
+Select checks that expose the changed contract, run them, inspect failure causes and make a focused correction. Repeat only when the new change or evidence justifies it. Preserve useful logs and stop an unchanged failing cycle to investigate the missing dependency or assumption.
 
-For task-specific technical depth, read [the attributed source guide](references/code-verification-loop/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-verification-loop/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Security Review (`code-security-review`)
 
-Map relevant trust boundaries and attacker-controlled input in the requested code. Tie findings to reachable paths and impact, preserve authorization and secret handling, and verify mitigations locally without expanding into unauthorized live-target testing.
+Trace attacker-controlled input through trust and authorization boundaries to concrete sinks. Reproduce reachable abuse paths safely and prioritize findings by impact and prerequisites. Verify the fix with negative authorization/input cases without scanning unrelated live systems.
 
-For task-specific technical depth, read [the attributed source guide](references/code-security-review/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-security-review/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Agent Security Hardening (`code-agent-security-hardening`)
 
-Map relevant trust boundaries and attacker-controlled input in the requested code. Tie findings to reachable paths and impact, preserve authorization and secret handling, and verify mitigations locally without expanding into unauthorized live-target testing.
+Map model input, retrieved content, tool authority, secrets and side-effect boundaries. Treat untrusted instructions as data, validate tool contracts and bound execution. Test injection, unauthorized tool arguments, secret leakage and retry/budget exhaustion with local fixtures.
 
-For task-specific technical depth, read [the attributed source guide](references/code-agent-security-hardening/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-agent-security-hardening/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Sharp Edges (`code-sharp-edges`)
 
-Map relevant trust boundaries and attacker-controlled input in the requested code. Tie findings to reachable paths and impact, preserve authorization and secret handling, and verify mitigations locally without expanding into unauthorized live-target testing.
+Inspect public APIs and configuration for defaults or combinations that invite a dangerous mistake. Demonstrate a plausible caller error and propose a safer interface, invariant or diagnostic. Distinguish misuse resistance from a confirmed exploitable vulnerability.
 
-For task-specific technical depth, read [the attributed source guide](references/code-sharp-edges/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-sharp-edges/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Insecure Defaults (`code-insecure-defaults`)
 
@@ -299,81 +314,81 @@ Trace configuration values from defaults and environment parsing into sensitive 
 
 ### GNCore Differential Review (`code-differential-review`)
 
-Map relevant trust boundaries and attacker-controlled input in the requested code. Tie findings to reachable paths and impact, preserve authorization and secret handling, and verify mitigations locally without expanding into unauthorized live-target testing.
+Compare baseline and changed revisions around trust boundaries, validation, state transitions and changed dependencies. Trace security consequences through callers and tests; report only findings supported by a concrete changed behavior and attack or failure scenario.
 
-For task-specific technical depth, read [the attributed source guide](references/code-differential-review/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-differential-review/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Semgrep (`code-semgrep`)
 
-Check available tool versions and project language support, scope the scan, and inspect the rules or query pack before execution. Triage results against reachable code and report commands, evidence, false positives, and analysis limits rather than treating every alert as a confirmed vulnerability.
+Check the installed Semgrep version, language support and relevant rules before a bounded local scan. Validate representative matches and false positives against code paths, record command/rule versions and preserve machine-readable findings. Do not treat scanner silence as proof of security.
 
-For task-specific technical depth, read [the attributed source guide](references/code-semgrep/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-semgrep/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Codeql (`code-codeql`)
 
-Check available tool versions and project language support, scope the scan, and inspect the rules or query pack before execution. Triage results against reachable code and report commands, evidence, false positives, and analysis limits rather than treating every alert as a confirmed vulnerability.
+Confirm CodeQL support, compiler/database build requirements and query scope for the target language. Build or inspect an authorized local database and run appropriate queries; triage results against actual source/sinks and record limitations when extraction or a language/toolchain is unavailable.
 
-For task-specific technical depth, read [the attributed source guide](references/code-codeql/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-codeql/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Sarif Parsing (`code-sarif-parsing`)
 
-Check available tool versions and project language support, scope the scan, and inspect the rules or query pack before execution. Triage results against reachable code and report commands, evidence, false positives, and analysis limits rather than treating every alert as a confirmed vulnerability.
+Parse SARIF with schema/version awareness, preserving rule IDs, severity, artifact URIs and physical locations. Resolve paths within the intended workspace and handle missing locations/duplicate results explicitly. Test a small known SARIF fixture rather than trusting a tool-specific field layout.
 
-For task-specific technical depth, read [the attributed source guide](references/code-sarif-parsing/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-sarif-parsing/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Supply Chain Risk Auditor (`code-supply-chain-risk-auditor`)
 
-Check available tool versions and project language support, scope the scan, and inspect the rules or query pack before execution. Triage results against reachable code and report commands, evidence, false positives, and analysis limits rather than treating every alert as a confirmed vulnerability.
+Inventory direct/transitive dependencies and their exact lockfile identities, sources and install-time behavior. Prioritize provenance, maintenance and reachable security risks with evidence. Keep license and vulnerability review distinct and do not run unknown dependency scripts to assess them.
 
-For task-specific technical depth, read [the attributed source guide](references/code-supply-chain-risk-auditor/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-supply-chain-risk-auditor/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Git Workflow (`code-git-workflow`)
 
-Inspect the build, runtime, configuration, dependency pinning, and current delivery workflow. Prepare reproducible changes and validate a local or staging path; preserve secret boundaries and distinguish a prepared rollout from an actual authorized deployment.
+Inspect branch and working-tree state, stage only the intended files and prepare a reviewable commit history. Preserve unrelated edits and verify the diff and relevant checks. Distinguish a local commit from a pushed branch or merged change; do not rewrite shared history implicitly.
 
-For task-specific technical depth, read [the attributed source guide](references/code-git-workflow/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-git-workflow/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Delivery Gate (`code-delivery-gate`)
 
-Evaluate the requested change against concrete acceptance checks, regression evidence, operating costs, and recovery plans. Report passed checks separately from unknowns; prepare a reviewable result without implying authorization to publish, deploy, or merge.
+Gather the actual acceptance, compatibility, security, artifact and rollback evidence for this change. Report passed, failed, skipped and missing checks and identify a concrete go/no-go reason. A green test suite alone does not authorize publishing or production rollout.
 
-For task-specific technical depth, read [the attributed source guide](references/code-delivery-gate/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-delivery-gate/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Cost Tracking (`code-cost-tracking`)
 
-Evaluate the requested change against concrete acceptance checks, regression evidence, operating costs, and recovery plans. Report passed checks separately from unknowns; prepare a reviewable result without implying authorization to publish, deploy, or merge.
+Define the cost unit and record measured resource/provider usage with runtime/version and workload. Separate known charges, estimates and allocations, and compare like-for-like runs. Do not upload private billing data or introduce a paid tracking service without scope authorization.
 
-For task-specific technical depth, read [the attributed source guide](references/code-cost-tracking/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-cost-tracking/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Post Patch Validation (`code-post-patch-validation`)
 
-Evaluate the requested change against concrete acceptance checks, regression evidence, operating costs, and recovery plans. Report passed checks separately from unknowns; prepare a reviewable result without implying authorization to publish, deploy, or merge.
+Re-run the original reproduction and tests at boundaries the patch affects, then inspect the final diff for unintended changes. Verify the patch did not weaken assertions or move the failure downstream. Preserve baseline/candidate evidence and label checks that could not be executed.
 
-For task-specific technical depth, read [the attributed source guide](references/code-post-patch-validation/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-post-patch-validation/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Mutation Testing (`code-mutation-testing`)
 
-Evaluate the requested change against concrete acceptance checks, regression evidence, operating costs, and recovery plans. Report passed checks separately from unknowns; prepare a reviewable result without implying authorization to publish, deploy, or merge.
+Choose important behavior and a bounded mutation scope, verify the baseline suite, then inspect surviving meaningful mutants. Improve assertions or fixtures for real gaps; classify equivalent/unsupported mutants instead of gaming a percentage. Keep expensive or environment-mutating runs explicitly scoped.
 
-For task-specific technical depth, read [the attributed source guide](references/code-mutation-testing/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-mutation-testing/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Deep Research (`code-deep-research`)
 
-Turn the actual question into a bounded investigation with primary sources and repository evidence. Separate findings, hypotheses, decisions, and proposed experiments; produce the requested product brief, specification, or actionable tickets without expanding the product scope.
+Frame the engineering uncertainty and identify primary sources, relevant code and a reproducible experiment. Compare contradictory evidence by version/method and retain citations. Deliver a decision with limits and next evidence, not an exhaustive uncited survey.
 
-For task-specific technical depth, read [the attributed source guide](references/code-deep-research/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-deep-research/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Research Ops (`code-research-ops`)
 
-Turn the actual question into a bounded investigation with primary sources and repository evidence. Separate findings, hypotheses, decisions, and proposed experiments; produce the requested product brief, specification, or actionable tickets without expanding the product scope.
+Record the research question, source/version provenance, retrieval date, reproduction inputs and unresolved claims so another maintainer can repeat the work. Separate a cached source observation from a fresh review and do not silently overwrite accepted evidence.
 
-For task-specific technical depth, read [the attributed source guide](references/code-research-ops/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-research-ops/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Product Capability (`code-product-capability`)
 
-Turn the actual question into a bounded investigation with primary sources and repository evidence. Separate findings, hypotheses, decisions, and proposed experiments; produce the requested product brief, specification, or actionable tickets without expanding the product scope.
+Trace a requested capability through actual user flows, code, data, integrations and operational dependencies. Mark implemented, partial and missing behavior with evidence. Propose a bounded completion path without describing documentation or a mocked screen as a working backend feature.
 
-For task-specific technical depth, read [the attributed source guide](references/code-product-capability/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-product-capability/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore To Prd (`code-to-prd`)
 
@@ -381,124 +396,198 @@ Describe the target users, current problem, desired outcome, scope, and explicit
 
 ### GNCore To Spec (`code-to-spec`)
 
-Turn the actual question into a bounded investigation with primary sources and repository evidence. Separate findings, hypotheses, decisions, and proposed experiments; produce the requested product brief, specification, or actionable tickets without expanding the product scope.
+Convert agreed requirements into explicit actors, inputs, state transitions, public contracts and acceptance examples. Surface contradictions and material unresolved decisions before implementation. Preserve user choices and distinguish normative behavior from illustrative implementation suggestions.
 
-For task-specific technical depth, read [the attributed source guide](references/code-to-spec/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-to-spec/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore To Tickets (`code-to-tickets`)
 
-Turn the actual question into a bounded investigation with primary sources and repository evidence. Separate findings, hypotheses, decisions, and proposed experiments; produce the requested product brief, specification, or actionable tickets without expanding the product scope.
+Split an accepted specification into coherent deliverables with dependencies, scope exclusions and observable acceptance. Keep each ticket independently understandable and connect it to the parent requirement. Avoid arbitrary task fragmentation or creating external issues unless requested.
 
-For task-specific technical depth, read [the attributed source guide](references/code-to-tickets/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-to-tickets/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Writing Plans (`code-writing-plans`)
 
-Use the requested plan or specification as the acceptance boundary, inspect the relevant code, and implement reviewable increments. Keep plans proportional to complexity, preserve user changes, and use additional agents only when supported and authorized for the current task.
+Inspect the relevant code paths and risks, then sequence reviewable implementation outcomes with concrete validation. Resolve routine choices from repository context and keep actual blockers explicit. Do not substitute a long plan for authorized implementation work.
 
-For task-specific technical depth, read [the attributed source guide](references/code-writing-plans/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-writing-plans/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Executing Plans (`code-executing-plans`)
 
-Use the requested plan or specification as the acceptance boundary, inspect the relevant code, and implement reviewable increments. Keep plans proportional to complexity, preserve user changes, and use additional agents only when supported and authorized for the current task.
+Reconcile the supplied plan with the current working tree, execute the next dependency-ready outcome and verify it. Update the plan when evidence invalidates an assumption, preserving the intended goal. Report concrete results rather than ticking steps whose artifacts do not exist.
 
-For task-specific technical depth, read [the attributed source guide](references/code-executing-plans/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-executing-plans/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Requesting Code Review (`code-requesting-code-review`)
 
-Use the requested plan or specification as the acceptance boundary, inspect the relevant code, and implement reviewable increments. Keep plans proportional to complexity, preserve user changes, and use additional agents only when supported and authorized for the current task.
+Prepare the actual diff, behavior/specification context and validation evidence for a reviewer. State the decisions or risks that need attention and provide a reproducible example when helpful. Do not send external review requests or messages unless the user authorized them.
 
-For task-specific technical depth, read [the attributed source guide](references/code-requesting-code-review/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-requesting-code-review/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Receiving Code Review (`code-receiving-code-review`)
 
-Use the requested plan or specification as the acceptance boundary, inspect the relevant code, and implement reviewable increments. Keep plans proportional to complexity, preserve user changes, and use additional agents only when supported and authorized for the current task.
+Reproduce or inspect each review claim against the contract and current code. Fix substantiated issues with focused regressions, explain disagreements with evidence and rerun affected checks. Do not accept an incorrect change merely because it was requested by another reviewer.
 
-For task-specific technical depth, read [the attributed source guide](references/code-receiving-code-review/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-receiving-code-review/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Implement (`code-implement`)
 
-Use the requested plan or specification as the acceptance boundary, inspect the relevant code, and implement reviewable increments. Keep plans proportional to complexity, preserve user changes, and use additional agents only when supported and authorized for the current task.
+Trace the requested behavior through callers and existing conventions, implement the complete scoped change and validate meaningful success/failure cases. Preserve public contracts and unrelated user work; state unavailable integration evidence instead of replacing real behavior with an undisclosed mock.
 
-For task-specific technical depth, read [the attributed source guide](references/code-implement/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-implement/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Implement Spec (`code-implement-spec`)
 
-Use the requested plan or specification as the acceptance boundary, inspect the relevant code, and implement reviewable increments. Keep plans proportional to complexity, preserve user changes, and use additional agents only when supported and authorized for the current task.
+Map specification requirements to code paths and acceptance cases, implement the dependency-ready slice and verify contract/error behavior. Track unmet or contradictory requirements explicitly. Do not broaden the feature or change specified semantics just to fit an easier implementation.
 
-For task-specific technical depth, read [the attributed source guide](references/code-implement-spec/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-implement-spec/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Python (`code-python`)
 
-Inspect Python, framework, validation, database, and test versions before choosing APIs. Implement typed boundaries and explicit error handling using the current project conventions; verify the requested behavior with framework-appropriate tests.
+Inspect the supported Python versions and public contract, implement idiomatic modules with explicit error/data boundaries and avoid unnecessary dependencies. Verify relevant behavior and clean imports under the declared runtime rather than relying on the developer's editable environment.
 
-For task-specific technical depth, read [the attributed source guide](references/code-python/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-python/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Python Testing (`code-python-testing`)
 
-Inspect Python, framework, validation, database, and test versions before choosing APIs. Implement typed boundaries and explicit error handling using the current project conventions; verify the requested behavior with framework-appropriate tests.
+Choose unit or integration boundaries around the actual Python contract, use isolated temporary state and test normal, invalid and regression cases. Parameterize meaningful variations and verify cleanup. Mock external boundaries without replacing the behavior the test is supposed to establish.
 
-For task-specific technical depth, read [the attributed source guide](references/code-python-testing/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-python-testing/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Webapp Testing (`code-webapp-testing`)
 
-Exercise the relevant user journey or changed boundary, compare expected and actual behavior, and isolate any regression to a reproducible case. Prefer deterministic fixtures and observable outcomes over timing sleeps or implementation-mirroring assertions.
+Run the actual web application with isolated data, exercise a representative journey and assert user-visible outcomes. Check console/network errors, invalid input and relevant states; retain browser/environment evidence. Do not claim visual or interaction validation from a successful server start alone.
 
-For task-specific technical depth, read [the attributed source guide](references/code-webapp-testing/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-webapp-testing/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Regression Hunt (`code-regression-hunt`)
 
-Exercise the relevant user journey or changed boundary, compare expected and actual behavior, and isolate any regression to a reproducible case. Prefer deterministic fixtures and observable outcomes over timing sleeps or implementation-mirroring assertions.
+Use baseline/candidate behavior, failing inputs and change history to narrow a regression, employing bisection only when revisions are reproducible. Preserve a minimal reproduction and identify the first meaningful behavioral change before proposing the fix.
 
-For task-specific technical depth, read [the attributed source guide](references/code-regression-hunt/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-regression-hunt/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Brainstorming (`code-brainstorming`)
 
-Choose a workflow proportional to the requested change. Explore unresolved product decisions when needed, isolate parallel changes safely, and finish with a concrete reviewable result. Repository setup changes and external branch actions must remain within the user's actual request.
+Explore a small set of viable approaches against the user's constraints and current repository. Identify the uncertain tradeoff and choose a useful next experiment or implementation direction. Keep explicit user decisions intact and avoid an approval ritual for ordinary reversible work.
 
-For task-specific technical depth, read [the attributed source guide](references/code-brainstorming/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-brainstorming/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Using Git Worktrees (`code-using-git-worktrees`)
 
-Choose a workflow proportional to the requested change. Explore unresolved product decisions when needed, isolate parallel changes safely, and finish with a concrete reviewable result. Repository setup changes and external branch actions must remain within the user's actual request.
+Inspect branch/worktree state and create an isolated checkout only when it helps protect existing work or separate concurrent changes. Use a nonconflicting branch and verify the worktree path. Do not delete user worktrees, rewrite history or assume multiple agents are authorized.
 
-For task-specific technical depth, read [the attributed source guide](references/code-using-git-worktrees/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-using-git-worktrees/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Subagent Driven Development (`code-subagent-driven-development`)
 
-Choose a workflow proportional to the requested change. Explore unresolved product decisions when needed, isolate parallel changes safely, and finish with a concrete reviewable result. Repository setup changes and external branch actions must remain within the user's actual request.
+Delegate only when the host supports it and the task authorizes delegation. Give independent work a bounded contract and minimal context, integrate results through actual diff/test review and keep shared mutations coordinated. Complete the work directly when delegation is unavailable or unauthorized.
 
-For task-specific technical depth, read [the attributed source guide](references/code-subagent-driven-development/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-subagent-driven-development/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Finishing A Development Branch (`code-finishing-a-development-branch`)
 
-Choose a workflow proportional to the requested change. Explore unresolved product decisions when needed, isolate parallel changes safely, and finish with a concrete reviewable result. Repository setup changes and external branch actions must remain within the user's actual request.
+Inspect the final diff, working tree and validation evidence, then prepare the requested commit/review/release material. Keep push, merge, tag and publication states explicit and honor existing authorization. Do not discard uncommitted work as part of cleanup.
 
-For task-specific technical depth, read [the attributed source guide](references/code-finishing-a-development-branch/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-finishing-a-development-branch/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore Workflow Setup (`code-workflow-setup`)
 
-Choose a workflow proportional to the requested change. Explore unresolved product decisions when needed, isolate parallel changes safely, and finish with a concrete reviewable result. Repository setup changes and external branch actions must remain within the user's actual request.
+Inspect which workflow tools and conventions the project actually requests and preserve existing settings. Prepare a minimal reviewable configuration and verify its commands on a fixture. Do not install unrelated hooks, global agents or mandatory approvals from a source author's personal setup.
 
-For task-specific technical depth, read [the attributed source guide](references/code-workflow-setup/UPSTREAM.md) and only the supporting references needed. Resolve its paths from that reference folder. Check tool/runtime availability before using source commands.
+For relevant technical detail, read [the attributed source guide](references/code-workflow-setup/UPSTREAM.md). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically.
 
 ### GNCore General Coding Workflow (`code-build`)
 
 Inspect the relevant source, current behavior, user request, and repository instructions. Choose the smallest useful set of coding skills for the task: requirements or architecture for unresolved design, the actual stack for implementation, and a suitable testing or debugging workflow for verification. Build the complete requested result, preserve unrelated work, and report concrete evidence. Do not load all installed skills for every task.
 
-## Additional reviewed references
+### Requirements Clarifier (`requirements`)
 
-These are optional technical references for relevant tasks, not a requirement to execute their workflows or install their host plugins.
+Your job is to turn a rough request into a precise implementation brief.
+Ask for missing constraints, surface risks early, capture acceptance criteria, and refuse to guess on critical decisions.
+Prefer short, direct questions and summarize the result as a checklist the next skill can execute.
 
-- [mattpocock/skills / codebase-design](research/mattpocock-skills-codebase-design/GUIDE.md): MIT.
-- [mattpocock/skills / code-review](research/mattpocock-skills-code-review/GUIDE.md): MIT.
-- [affaan-m/ecc / coding-standards](research/affaan-m-ecc-coding-standards/GUIDE.md): MIT.
-- [affaan-m/ecc / java-coding-standards](research/affaan-m-ecc-java-coding-standards/GUIDE.md): MIT.
-- [affaan-m/ecc / cpp-coding-standards](research/affaan-m-ecc-cpp-coding-standards/GUIDE.md): MIT.
-- [github/awesome-copilot / write-coding-standards-from-file](research/github-awesome-copilot-write-coding-standards-from-file/GUIDE.md): MIT.
-- [sickn33/agentic-awesome-skills / cc-skill-coding-standards](research/sickn33-agentic-awesome-skills-cc-skill-coding-standards/GUIDE.md): MIT.
+### Architecture Designer (`architecture`)
 
-## Attribution and use
+Convert requirements into a clean, typed architecture.
+Define modules, ownership boundaries, data flow, invariants, and failure handling.
+Choose the simplest design that can be extended without duplicating logic.
 
-GNCore's new category guidance is authored for this library. Retained source guides, tools, and assets remain attributed to their original authors and keep their supplied licenses. Modified or combined material subject to share-alike terms remains under those terms. This skill does not claim exclusive ownership of third-party content.
+### Implementation Builder (`implementation`)
 
-See [SOURCES.json](SOURCES.json) for source identities, snapshot hashes or revisions, and license decisions. Read only the references relevant to the current task.
+Implement the agreed design directly, keep code explicit and typed, and avoid speculative abstractions.
+Make the smallest change that satisfies the contract, then verify it with targeted tests or checks.
+
+### Code Reviewer (`review`)
+
+Look for correctness issues, API mismatches, risky assumptions, and missing tests.
+State concrete findings first, then give a short summary of residual risk.
+
+### Testing Specialist (`testing`)
+
+Create targeted unit and integration tests that fail before the fix and pass after it.
+Prefer clear fixture setup and assertions that verify the observable behavior, not implementation details.
+
+### Security Reviewer (`security`)
+
+Check for unsafe writes, path traversal, secret leakage, and privilege escalation.
+Treat file-system code as hostile-input code and require explicit validation.
+
+### Documentation Writer (`documentation`)
+
+Document the actual command surface, file layout, and operational behavior.
+Avoid marketing language and keep examples runnable.
+
+### Release Manager (`release`)
+
+Ensure packaging metadata is correct, the distribution is reproducible, and release notes reflect the shipped behavior.
+Confirm that the repository is publishable before marking the release complete.
+
+### Product Discovery (`product-discovery`)
+
+Separate user problem, evidence, assumptions, and proposed solution. Identify target users, current alternatives, constraints, and measurable outcome. Rank unknowns by risk and propose the cheapest test that can resolve them. Define a narrow first release with explicit exclusions and acceptance criteria. Do not present guesses as user research.
+
+### Software Feature Delivery (`software-feature`)
+
+Trace the feature through interfaces and data flow, define observable behavior, make the smallest coherent change, add boundary tests, and run targeted regressions. Preserve unrelated user work and report exact checks.
+
+### Software Architecture Decision (`software-architecture`)
+
+Capture context, quality attributes, constraints, alternatives, trade-offs, failure modes, and a decision owner. Prefer incremental reversible choices and validate assumptions with a small implementation where useful.
+
+### Software Code Review (`software-code-review`)
+
+Inspect the full diff and relevant callers, identify concrete reproducible findings with severity and file locations, and separate defects from preferences. Confirm fixes with targeted regression checks.
+
+### Software Debugging (`software-debugging`)
+
+Reproduce or isolate the failing condition, inspect logs and state, form testable hypotheses, and narrow the cause before editing. Add a regression test, fix the root cause, and rerun the failure and impacted checks.
+
+### Safe Refactoring (`software-refactor`)
+
+Capture behavior with tests or characterization, identify callers, make small mechanical steps, and run tests after each risky step. Avoid unrelated redesign and compare externally observable behavior before and after.
+
+### Software API Contract (`software-api-contract`)
+
+Inspect actual consumers, validate schemas and authorization boundaries, specify error semantics and compatibility, and test contract fixtures. Flag breaking behavior and provide a migration path.
+
+### Dependency Change Review (`software-dependency`)
+
+Check supported versions, changelog, transitive effects, license policy, lockfile behavior, and known vulnerabilities. Change only needed packages, run affected tests, and record rollback and compatibility results.
+
+### Software Performance Optimization (`software-performance`)
+
+Establish repeatable workload and baseline, profile the critical path, estimate impact and resource trade-offs, then change one bottleneck. Rerun correctness tests and comparable benchmarks; report uncertainty.
+
+### Software Migration Plan (`software-migration`)
+
+Inventory dependencies and consumers, define target and interim states, map changes and data movement, and stage by reversible boundaries. Test backward compatibility and rollback before production cutover.
+
+### Software Release Candidate (`software-release`)
+
+Check version, diff, changelog, build provenance, tests, dependency locks, supported platforms, migrations, and known issues. Separate passed, skipped, and blocked gates; do not publish without authorization.
+
+## Attribution and resource integrity
+
+Original phase-two guidance is MIT-licensed GNCore writing. Retained source guides and helpers keep their original authorship, notices and applicable licenses, including share-alike obligations. Renaming or combining them does not transfer exclusive ownership.
+
+See [SOURCES.json](SOURCES.json) and source-specific notices. GNCore exports preserve declared files and verify their content hashes. Imported helpers remain inert unless deliberately selected for an authorized task.

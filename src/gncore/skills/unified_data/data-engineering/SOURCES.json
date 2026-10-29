@@ -1,120 +1,14 @@
 {
   "category": "data-engineering",
   "entrypoint_author": "GNCore / Ganesh Naidu",
-  "entrypoint_original_text_license": "MIT",
+  "original_guidance_license": "MIT",
   "aggregate_licenses": [
-    "Apache-2.0",
     "MIT"
   ],
-  "research": [
-    {
-      "category": "data-engineering",
-      "repository": "vercel-labs/agent-skills",
-      "name": "vercel-react-best-practices",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "ca7b0c0c6e5f2750043f7f0cd72d16ac4e2abc48f9b5500d047a4b77a2506212",
-      "revision": null,
-      "source_url": "https://github.com/vercel-labs/agent-skills",
-      "review_status": "research-only: redistribution license not verified",
-      "licenses": [],
-      "file_count": 76
-    },
-    {
-      "category": "data-engineering",
-      "repository": "riekelt/principal-engineer",
-      "name": "principal-engineering",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "e67b7af9ac741945246012023ade5c2fee1222fa",
-      "source_url": "https://github.com/riekelt/principal-engineer/blob/e67b7af9ac741945246012023ade5c2fee1222fa/plugins/principal-engineer/skills/principal-engineering/SKILL.md",
-      "review_status": "research-only: redistribution license not verified",
-      "licenses": [],
-      "file_count": 1
-    },
-    {
-      "category": "data-engineering",
-      "repository": "wshobson/agents",
-      "name": "dbt-transformation-patterns",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "0874a27b17a22e2b7c2e2bcd725768e0803cad06",
-      "source_url": "https://github.com/wshobson/agents/blob/0874a27b17a22e2b7c2e2bcd725768e0803cad06/plugins/data-engineering/skills/dbt-transformation-patterns/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 2
-    },
-    {
-      "category": "data-engineering",
-      "repository": "affaan-m/ecc",
-      "name": "clickhouse-io",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
-      "source_url": "https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/clickhouse-io/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "data-engineering",
-      "repository": "affaan-m/ecc",
-      "name": "mle-workflow",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
-      "source_url": "https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/mle-workflow/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 1
-    },
-    {
-      "category": "data-engineering",
-      "repository": "langchain-ai/langchain-skills",
-      "name": "eval-engineering",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "9e621bf22fd53a60c908ee504778ba192ce90cca8cc5d4fa6d08861c63b399c0",
-      "revision": null,
-      "source_url": "https://github.com/langchain-ai/langchain-skills",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 21
-    },
-    {
-      "category": "data-engineering",
-      "repository": "wondelai/skills",
-      "name": "release-it",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": null,
-      "revision": "c172996495bed0fcd26896a9416b2093fd7073f0",
-      "source_url": "https://github.com/wondelai/skills/blob/c172996495bed0fcd26896a9416b2093fd7073f0/release-it/SKILL.md",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "MIT"
-      ],
-      "file_count": 7
-    },
-    {
-      "category": "data-engineering",
-      "repository": "mastra-ai/mastra",
-      "name": "react-best-practices",
-      "download_status": "downloaded-for-review",
-      "snapshot_hash": "79f8d3c229633e7ee493aaff8fd7e3edbe80fb081c89f2dd687623270140a781",
-      "revision": null,
-      "source_url": "https://github.com/mastra-ai/mastra",
-      "review_status": "licensed-reference",
-      "licenses": [
-        "Apache-2.0"
-      ],
-      "file_count": 29
-    }
+  "original_categories": [
+    "data",
+    "data-engineering"
   ],
-  "legacy_reference_ids": []
+  "legacy_reference_ids": [],
+  "review_scope": "Original workflow reference paths preserved; heuristic-only supplemental research retired in phase two. Helper syntax checked separately; installation never executes helpers."
 }

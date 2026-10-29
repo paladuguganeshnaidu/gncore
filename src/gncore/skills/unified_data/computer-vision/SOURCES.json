@@ -1,0 +1,13 @@
+{
+  "category": "computer-vision",
+  "entrypoint_author": "GNCore / Ganesh Naidu",
+  "original_guidance_license": "MIT",
+  "aggregate_licenses": [
+    "MIT"
+  ],
+  "original_categories": [
+    "machine-learning"
+  ],
+  "legacy_reference_ids": [],
+  "review_scope": "Original workflow reference paths preserved; heuristic-only supplemental research retired in phase two. Helper syntax checked separately; installation never executes helpers."
+}

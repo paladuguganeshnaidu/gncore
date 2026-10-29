@@ -1,108 +1,81 @@
 # GNCore
 
-GNCore 6 organizes **553 workflows into 60 adaptive category skills**. Install a category once, describe the result you want, and a compatible AI agent uses that skill to select the relevant workflows, constraints, and verification steps.
+GNCore **7.0.0rc1** is a developer-focused release candidate: **30 adaptive skills, 374 workflows, and six capability groups**. One skill guides the host AI through relevant modes, existing project constraints, implementation and verification.
 
-For example, invoke `$web-frontend` with an idea for a site. It can choose a suitable visual direction when no theme is named, honor an explicit theme, preserve an existing brand, and guide implementation through responsive behavior, accessibility, interaction states, and verification. The same category-first pattern covers backend services, coding, business work, research, documents, data, and the other categories.
+This is an explicit prerelease. Use a source checkout during development; published versions are listed in the [PyPI release history](https://pypi.org/project/gncore/#history). Building an artifact and publishing it are separate operations. Stable installations do not automatically opt into prereleases.
 
-## Install this source version
+## Developer coverage
 
-From a checkout of this branch:
+Web frontend/backend, software engineering, UX/design systems, Python, developer tools, documentation, testing, cybersecurity, cloud/DevOps/SRE, release engineering, automation, mobile, games, data engineering/science, databases, machine learning, neural networks, deep learning, computer vision, NLP, MLOps, AI applications, systems programming, embedded systems, performance, observability, technical research and distributed systems.
+
+Phase two retires business/professional packs and consolidates overlapping technical categories. It preserves 319 technical workflows, rewrites 116 formerly shared procedures, adds 55 original procedures and records all 234 retired workflow outcomes. See [the migration guide](https://github.com/paladuguganeshnaidu/gncore/blob/v7.0.0rc1/MIGRATION.md), [full catalog](https://github.com/paladuguganeshnaidu/gncore/blob/v7.0.0rc1/docs/ALL_SKILLS.md) and [merge audit](https://github.com/paladuguganeshnaidu/gncore/blob/v7.0.0rc1/docs/PHASE2_MERGE_AUDIT.json).
+
+## Install
+
+For an available published release candidate:
+
+```bash
+python -m pip install --pre gncore==7.0.0rc1
+```
+
+Or install a source checkout:
 
 ```bash
 python -m pip install .
-gncore export --specific web-frontend
+gncore list skills
+gncore route "Check neural network gradients"
+gncore export --specific neural-networks
+gncore verify
 ```
 
-Or install directly from the pushed development branch:
-
-```bash
-python -m pip install "git+https://github.com/paladuguganeshnaidu/gncore.git@codex/adaptive-category-skills"
-```
-
-Export writes standard `.agents/skills/<category>/SKILL.md` folders in your project, including the supporting references, tools, assets, and license notices declared by the category. Compatible agents discover the entrypoints according to their own skill settings; GNCore does not launch a model or bypass host settings.
-
-## Use an adaptive category
+Then use a compatible host agent:
 
 ```text
-$web-frontend Build a booking website for a small clinic.
-$web-frontend Build a maximalist music festival landing page.
-$web-backend Implement an authenticated booking API using this project's stack.
-$code-build Diagnose and fix the failing checkout tests.
-$finance-accounting Reconcile these figures and explain the variance.
-$presentations-powerpoint Create a board presentation from this report.
+$neural-networks Diagnose gradient flow before scaling training.
+$web-frontend Build a clinic booking page using the existing stack, no animation.
+$web-backend Add a tenant-scoped idempotent endpoint.
+$embedded-systems Verify timer wraparound with host fixtures.
 ```
 
-The skill selects relevant work instead of requiring a separate skill invocation for each subtask. Its core selection and workflow procedures are merged into one `SKILL.md`; substantial technical references and executable helpers remain supporting files, loaded only when relevant.
+Exports contain a standard `.agents/skills/<id>/SKILL.md` and its declared resources/notices. Host discovery and invocation syntax depend on that agent's settings. GNCore does not run a model, install frameworks or grant tool permissions.
 
-## Discover, inspect, and export
+## Inspect, migrate and check
 
 ```bash
-gncore list skills
-gncore list categories
-gncore list domains
-gncore list workflows
-gncore search "machine learning training"
+gncore search "neural network"
 gncore show web-frontend
-gncore export --skills web-frontend web-backend code-build
-gncore export --all
-gncore export --all --dry-run
-gncore verify
-gncore export --all --output gncore-categories.zip
-```
-
-`gncore list skills` lists 60 primary entrypoints. `list workflows` lists all 553 retained workflow IDs and their category destinations. The 30 professional domain packs each retain their ten workflows inside one category skill. Existing workflow IDs remain CLI/API lookup aliases; exporting aliases from one category produces one merged folder.
-
-The optional planning aid gives a deterministic frontend starting direction without calling a model:
-
-```bash
-gncore plan "A premium hotel website, no animation"
-gncore plan "An analytics dashboard" --theme minimalism
-```
-
-The host AI makes the contextual design decisions and performs the work. The planning aid is a useful local check, not a guarantee of aesthetic quality.
-
-Directory exports now preflight the whole selection, stage and verify content, and retain a recoverable backup. Customized and unmanaged files are preserved. `gncore verify` compares installed files with their recorded hashes. For exact known older exports, `python scripts/install_categories.py --migrate-managed` retires only byte-identical legacy folders. See [installation and recovery](docs/INSTALLATION.md).
-
-The [offline evaluation pilot](docs/EVALUATION.md) includes 36 scenarios across 12 categories:
-
-```bash
+gncore list workflows
+gncore list domains
+gncore export --all --prune-retired --dry-run
+gncore export --all --prune-retired
+gncore audit
 gncore evaluate --validate
-gncore evaluate --list
+gncore export --all --output gncore-developer-skills.zip
 ```
 
-Its runner separates structural artifact checks from pending human review and unexecuted tool checks; it does not certify the quality of an AI output.
+Directory installation preflights the entire selection, checks recorded digests, stages and verifies content, and retains a recovery backup. Retirement removes only unchanged inventory-managed folders; custom/untracked content is preserved. See [installation and recovery](https://github.com/paladuguganeshnaidu/gncore/blob/v7.0.0rc1/docs/INSTALLATION.md).
 
-## Python API
+Routing supplies explainable English keyword hints and abstains on ambiguous/unsupported requests. The host AI makes contextual decisions. Frontend-specific `gncore plan` remains available for explicit themes, inferred visual direction and negative constraints.
 
-```python
-from gncore import get_skill, list_categories, list_workflows, search_skills
+The [evaluation corpus](https://github.com/paladuguganeshnaidu/gncore/blob/v7.0.0rc1/docs/EVALUATION.md) has 90 concrete scenarios across all 30 categories. Structural checks, human review and unexecuted external checks remain separate. The bundled neural-network probe verifies analytic gradients and tiny synthetic XOR learning on CPU; it does not establish production model quality.
 
-frontend = get_skill("web-frontend")
-same_category = get_skill("web-front-minimalism")
-assert frontend == same_category
-print(len(list_categories()))   # 60
-print(len(list_workflows()))    # 553
-print([s.metadata.skill_id for s in search_skills("fastapi")])
-```
-
-Browse the [complete catalog](docs/ALL_SKILLS.md), [source research](docs/SOURCE_RESEARCH.md), [frontend guide](docs/FRONTEND_SKILLS.md), [backend guide](docs/BACKEND_SKILLS.md), [migration notes](MIGRATION.md), and [API documentation](docs/API.md).
-
-The [upgrade plan](docs/UPGRADE_PLAN.md) tracks the implemented reliability foundation and the remaining category, routing, and source-maintenance work.
-
-## Quality and development
+## Develop and prepare release artifacts
 
 ```bash
 python -m pip install -e ".[test,skills]" build twine
+python scripts/build_catalog.py --check
+python scripts/build_evaluations.py --check
 python -m pytest -q
 python scripts/generate_skill_catalog.py
-python -m build
-python -m twine check dist/*
+python scripts/build_website.py
+python -m build --sdist --wheel --outdir .work/phase2/release
+python -m twine check .work/phase2/release/*.whl .work/phase2/release/*.tar.gz
 ```
 
-Tests cover workflow preservation, aliases, category selection, explicit themes and constraints, portable resources, licensing metadata, and exports. Source compilation and package smoke tests cover GNCore's own runtime; supporting upstream tools can have independent runtime requirements. Automated checks do not certify every possible AI output. See [verification scope](VERIFIED_MODE.md).
+Versioned authoring inputs in `catalog/` and retained source files support offline rebuilds; no `.work` cache or fresh source download is required. The generated website uses the same catalog and stays a labeled, noindex preview until an approved release is publicly verified.
 
-## Ownership and licenses
+## Ownership
 
-GNCore's independently authored code and guidance are MIT-licensed under [LICENSE](LICENSE). Third-party guides, helpers, assets, and adaptations retain their original authorship and supplied terms, including Apache, Creative Commons attribution, and share-alike obligations. They are not relicensed as exclusively GNCore-owned. Each category declares its aggregate licenses and includes source provenance and notices. See [ownership and attribution](docs/OWNERSHIP.md).
+Original GNCore code and guidance are MIT-licensed under [LICENSE](https://github.com/paladuguganeshnaidu/gncore/blob/v7.0.0rc1/LICENSE). Retained third-party guides, helpers and adaptations keep their supplied notices, authorship and applicable licenses, including share-alike obligations. They are not exclusively GNCore-owned. Aggregate skill expressions and per-source notices travel with exports; see [ownership](https://github.com/paladuguganeshnaidu/gncore/blob/v7.0.0rc1/docs/OWNERSHIP.md).
 
-Version 6.0.0 is prepared in this source branch. Pushing the branch does not publish a PyPI release; publishing requires a reviewed release tag and successful publishing workflow.
+See [phase-two release preparation](https://github.com/paladuguganeshnaidu/gncore/blob/v7.0.0rc1/docs/PHASE2_RELEASE.md) and [verification evidence](https://github.com/paladuguganeshnaidu/gncore/blob/v7.0.0rc1/docs/PHASE2_VERIFICATION.md) for exact scope and publication state.

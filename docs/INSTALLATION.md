@@ -19,11 +19,11 @@ This inventory detects change relative to an installation; it is not a signed pu
 ## Legacy migration
 
 ```bash
-python scripts/install_categories.py --migrate-managed --dry-run
-python scripts/install_categories.py --migrate-managed
+python scripts/install_categories.py --dry-run
+python scripts/install_categories.py
 ```
 
-Only exact known legacy exports are retired. Older versions with different bytes, extra files, or custom edits stay in place and appear under `preserved_legacy`. All collisions are checked before migration. GNCore does not rewrite the separate third-party `skills-lock.json`; its own inventory tracks its writes.
+Phase two uses `gncore export --all --prune-retired` (or `python scripts/install_categories.py`). Only byte-identical inventory-managed old folders are retired. Different bytes, extra files or custom edits stay in place and appear under `preserved_retired`. All collisions are checked before migration. GNCore does not rewrite the separate third-party `skills-lock.json`; its own inventory tracks its writes.
 
 ## Verify and recover
 

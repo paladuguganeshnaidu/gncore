@@ -1,5 +1,7 @@
 # Category source research
 
+> Historical phase-one record. The developer-focused phase-two scope and current publication state are in [the phase-two release plan](PHASE2_RELEASE.md). This record does not describe the current active catalog.
+
 Search and download outcomes are recorded separately from license and relevance decisions. A downloaded candidate is not automatically incorporated. Restricted or unclear-license material stays in ignored local research storage.
 
 Categories searched: **60**. Distinct candidates: **426**. Downloaded candidates: **369**.

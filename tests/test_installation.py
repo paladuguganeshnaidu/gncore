@@ -262,3 +262,40 @@ def test_linked_resource_is_rejected_without_modifying_external_file(tmp_path):
     with pytest.raises(ValueError, match="linked"):
         install_skills(root, OLD, version="1")
     assert external.read_bytes() == b"do not modify"
+
+
+def test_transient_windows_rename_lock_is_retried_without_losing_content(tmp_path, monkeypatch):
+    source, destination = tmp_path / "before", tmp_path / "after"
+    source.mkdir()
+    (source / "data").write_bytes(b"original")
+    original = Path.rename
+    attempts, delays = [], []
+    def locked_then_available(path, target):
+        attempts.append(1)
+        if len(attempts) < 3:
+            error = PermissionError("temporary sharing lock")
+            error.winerror = 32
+            raise error
+        return original(path, target)
+    monkeypatch.setattr(Path, "rename", locked_then_available)
+    monkeypatch.setattr(installer.time, "sleep", delays.append)
+    installer._rename(source, destination)
+    assert len(attempts) == 3 and delays == [0.025, 0.05]
+    assert (destination / "data").read_bytes() == b"original"
+
+
+def test_permanent_windows_rename_denial_stops_after_bounded_attempts(tmp_path, monkeypatch):
+    source, destination = tmp_path / "before", tmp_path / "after"
+    source.mkdir()
+    attempts, delays = [], []
+    def denied(path, target):
+        attempts.append(1)
+        error = PermissionError("persistent access denial")
+        error.winerror = 5
+        raise error
+    monkeypatch.setattr(Path, "rename", denied)
+    monkeypatch.setattr(installer.time, "sleep", delays.append)
+    with pytest.raises(PermissionError, match="persistent"):
+        installer._rename(source, destination)
+    assert len(attempts) == 8 and sum(delays) < 1.1
+    assert source.is_dir() and not destination.exists()

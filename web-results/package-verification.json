@@ -1,0 +1,31 @@
+{
+  "version": "7.0.0rc1",
+  "categories": 30,
+  "workflows": 374,
+  "baseline_workflows_accounted": 553,
+  "original_workflows_retained": 319,
+  "new_workflows": 55,
+  "rewritten_procedures": 116,
+  "retired_workflows": 234,
+  "resources_compared": 1630,
+  "original_reference_files_unchanged": 1569,
+  "python_helpers_parsed": 73,
+  "cases_defined": 90,
+  "wheel_import_isolated": true,
+  "installed_inventory_files": 1660,
+  "artifacts": {
+    "gncore-7.0.0rc1-py3-none-any.whl": {
+      "bytes": 7401540,
+      "sha256": "c69ad4833634f220241a8d42128ee6ab0262e26a40fd77b6604ef5deee77b947"
+    },
+    "gncore-7.0.0rc1.tar.gz": {
+      "bytes": 6736119,
+      "sha256": "a58d581e5656bca19d03304c256ce97583f8b7db6247c8e8933b2ef36a44f2f8"
+    },
+    "gncore-7.0.0rc1-skills.zip": {
+      "bytes": 7005928,
+      "sha256": "0b62c10ea61e718325369ee30f5b32b51af03703a9364b94c8c111826579e0d2"
+    }
+  },
+  "source_archive_current_files_verified": 1740
+}

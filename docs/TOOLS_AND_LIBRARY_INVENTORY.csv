@@ -1,0 +1,64 @@
+group,name,source_url,purpose,adoption_status,checked_date
+Already used in GNCore's preparation,Python standard library,,"CLI/catalog, hashing, export archives, transaction journals and fixtures",Used; core runtime dependencies=[],2026-10-29
+Already used in GNCore's preparation,pytest,https://github.com/pytest-dev/pytest,Package regression suite and comparison-harness tests,"Used; latest full Python 3.12 suite 148 passed,1 Windows symlink skip",2026-10-29
+Already used in GNCore's preparation,PyYAML,https://github.com/yaml/pyyaml,Optional skill-format tooling,Declared optional dependency; not required for core runtime,2026-10-29
+Already used in GNCore's preparation,uv,https://github.com/astral-sh/uv,Isolated environment dependency installation and artifact builds,Used during preparation,2026-10-29
+Already used in GNCore's preparation,Hatch/Hatchling,https://github.com/pypa/hatch,Declared package build backend,Used for wheel/sdist builds,2026-10-29
+Already used in GNCore's preparation,Twine,https://github.com/pypa/twine,Package metadata validation,Used; accepted wheel and sdist passed,2026-10-29
+Already used in GNCore's preparation,NumPy,https://numpy.org/,Plot data arrays,Used in report generation,2026-10-29
+Already used in GNCore's preparation,Matplotlib,https://matplotlib.org/,"Four landscape sheets, each with six metric panels and a 30-category heatmap",Used; PNG/SVG/PDF outputs saved,2026-10-29
+Already used in GNCore's preparation,ReportLab,https://www.reportlab.com/,Plain-language and technical PDF reports,Used,2026-10-29
+Already used in GNCore's preparation,PyMuPDF,https://pymupdf.readthedocs.io/,Render PDF pages for visual inspection,Used,2026-10-29
+Already used in GNCore's preparation,Git,,"Source history, candidate preservation and local website commits",Used; local commits are not publication,2026-10-29
+Already used in GNCore's preparation,GitHub Actions,,Configured cross-platform Python matrix and release workflow,Configured; hosted CI on the latest accepted commit has not been claimed as run,2026-10-29
+Already used in GNCore's preparation,Original VS Code/Copilot,,Saved synthetic development/holdout/follow-up answers,Used; Auto model selection is not a fixed model guarantee,2026-10-29
+Already used in GNCore's preparation,Antigravity IDE,,Separate saved synthetic answer block,Used; not pooled with VS Code as one model,2026-10-29
+Already used in GNCore's preparation,In-app browser,,Four actual development UI journeys,Used; remaining held-out and follow-up rendering unavailable,2026-10-29
+"Evaluation, routing and observability candidates",Promptfoo,https://github.com/promptfoo/promptfoo,Prompt/agent evaluation and adversarial evaluation workflows,Proposed first orchestration option; provider costs and credentials remain separate,2026-10-29
+"Evaluation, routing and observability candidates",DeepEval,https://github.com/confident-ai/deepeval,LLM application evaluation framework,Proposed alternative/complement where its metrics fit; do not duplicate every evaluation platform,2026-10-29
+"Evaluation, routing and observability candidates",Ragas,https://github.com/vibrantlabsai/ragas,LLM application evaluation,Proposed focused retrieval/grounding evaluation; not a substitute for executable coding checks,2026-10-29
+"Evaluation, routing and observability candidates",Langfuse,https://github.com/langfuse/langfuse,LLM traces and evaluation workflows,Proposed optional trace store; redact payloads and keep local export,2026-10-29
+"Evaluation, routing and observability candidates",OpenTelemetry Python,https://github.com/open-telemetry/opentelemetry-python,Telemetry API/SDK,Proposed interoperable traces and service metrics,2026-10-29
+"Evaluation, routing and observability candidates",Sentence Transformers,https://github.com/huggingface/sentence-transformers,"Embeddings, retrieval and reranking","Proposed experiment for optional semantic category/reference selection, compared with lightweight lexical routing",2026-10-29
+"Evaluation, routing and observability candidates",pgvector,https://github.com/pgvector/pgvector,Vector similarity search in PostgreSQL,Optional hosted catalog/search extension only if scale warrants it; unnecessary for the current local 30-category router,2026-10-29
+Testing and code-quality candidates,Hypothesis,https://github.com/HypothesisWorks/hypothesis,Property-based testing,"Proposed exact-total, sorting, parser, numeric and recovery-boundary counterexamples",2026-10-29
+Testing and code-quality candidates,mutmut,https://github.com/boxed/mutmut,Mutation testing,"Proposed test-strength checks, with equivalent mutants and valid baseline behavior reviewed",2026-10-29
+Testing and code-quality candidates,Schemathesis,https://github.com/schemathesis/schemathesis,Schema-driven API testing,Proposed backend contract fixtures,2026-10-29
+Testing and code-quality candidates,Testcontainers Python,https://github.com/testcontainers/testcontainers-python,Container-backed test environments,Proposed real PostgreSQL/service integration tests; requires compatible container runtime,2026-10-29
+Testing and code-quality candidates,Ruff,https://github.com/astral-sh/ruff,Python linting and formatting,Proposed focused checks on authored code; do not silently reformat retained third-party resources,2026-10-29
+Testing and code-quality candidates,ty,https://github.com/astral-sh/ty,Python type checking,Proposed compatibility trial before selecting it as a required check; type results are not runtime correctness,2026-10-29
+Frontend and design candidates,Playwright,https://github.com/microsoft/playwright,Chromium/Firefox/WebKit web testing,Proposed repeatable frontend test profile; current in-app checks are a distinct recorded environment,2026-10-29
+Frontend and design candidates,axe-core,https://github.com/dequelabs/axe-core,Automated accessibility checks,Proposed alongside manual keyboard/focus checks; automatic checks cannot prove complete accessibility,2026-10-29
+Frontend and design candidates,Lighthouse,https://github.com/GoogleChrome/lighthouse,Web audits and performance measurements,Proposed repeatable workload/device configuration; its score is not a visual-design score,2026-10-29
+Frontend and design candidates,Storybook,https://github.com/storybookjs/storybook,Component development/documentation/testing in isolation,Project choice and proposed component-state fixtures,2026-10-29
+Frontend and design candidates,React,https://github.com/react/react,Web/native interface library,Project choice; preserve an existing stack,2026-10-29
+Frontend and design candidates,Next.js,https://github.com/vercel/next.js,React application framework,Project choice when routing/rendering/server needs justify it,2026-10-29
+Frontend and design candidates,Tailwind CSS,https://github.com/tailwindlabs/tailwindcss,Utility-first CSS,Project choice; not a requirement for good visual design,2026-10-29
+Frontend and design candidates,shadcn/ui,https://github.com/shadcn-ui/ui,Customizable component source,Project choice; reused components still need project-specific validation,2026-10-29
+Frontend and design candidates,Radix Primitives,https://github.com/radix-ui/primitives,Accessible UI primitives,Project choice; integration can still introduce focus/label defects,2026-10-29
+Security and provenance candidates,Semgrep,https://github.com/semgrep/semgrep,Static analysis and pattern rules,Proposed on suitable languages and authored/generated projects,2026-10-29
+Security and provenance candidates,CodeQL,https://github.com/github/codeql,Code analysis queries/libraries,Proposed deeper supported-language analysis; check CLI/license/CI eligibility separately,2026-10-29
+Security and provenance candidates,Trivy,https://github.com/aquasecurity/trivy,"Vulnerability, configuration, secret and artifact scanning",Proposed container/dependency/configuration profile,2026-10-29
+Security and provenance candidates,Gitleaks,https://github.com/gitleaks/gitleaks,Secret detection,Proposed source/evidence leak checks; synthetic test values require reviewed handling,2026-10-29
+Security and provenance candidates,Sigstore Python,https://github.com/sigstore/sigstore-python,Python artifact signing/verification,Proposed provenance layer after CI/identity design; no artifact signing claimed today,2026-10-29
+"Backend, data and performance project choices",FastAPI,https://github.com/fastapi/fastapi,Python API framework,Project choice and API acceptance-track candidate,2026-10-29
+"Backend, data and performance project choices",Django,https://github.com/django/django,Python web framework,Project choice when its integrated application facilities fit,2026-10-29
+"Backend, data and performance project choices",NestJS,https://github.com/nestjs/nest,TypeScript/JavaScript server framework,Project choice for an existing or justified Node stack,2026-10-29
+"Backend, data and performance project choices",Pydantic,https://github.com/pydantic/pydantic,Typed data validation,Project choice for API/result contracts; proposed evidence-schema experiment,2026-10-29
+"Backend, data and performance project choices",SQLAlchemy,https://github.com/sqlalchemy/sqlalchemy,Python database toolkit,Project choice; transaction correctness requires real storage tests,2026-10-29
+"Backend, data and performance project choices",Alembic,https://github.com/sqlalchemy/alembic,SQLAlchemy migration tooling,Project choice; online migration/recovery still needs engine-aware planning,2026-10-29
+"Backend, data and performance project choices",Polars,https://github.com/pola-rs/polars,DataFrame query engine,Project choice for schema/revision/reconciliation acceptance tasks,2026-10-29
+"Backend, data and performance project choices",DuckDB,https://github.com/duckdb/duckdb,Analytical database,Project choice for local reproducible analytics,2026-10-29
+"Backend, data and performance project choices",Pandera,https://github.com/unionai-oss/pandera,Statistical/tabular data validation,Proposed data-contract checks where the selected backend is supported,2026-10-29
+"Backend, data and performance project choices",Temporal Python SDK,https://github.com/temporalio/sdk-python,Durable workflow SDK,"Project choice for durable workflow acceptance tasks, not a mandatory service for every automation",2026-10-29
+"Backend, data and performance project choices",k6,https://github.com/grafana/k6,Load testing,Proposed matched throughput/latency/error/memory-adjacent acceptance runs; memory needs separate instrumentation,2026-10-29
+"ML, neural-network and deployment choices",scikit-learn,https://github.com/scikit-learn/scikit-learn,Classical ML tools,Project choice for leakage-safe CPU baseline tasks,2026-10-29
+"ML, neural-network and deployment choices",PyTorch,https://github.com/pytorch/pytorch,Tensor/neural-network framework,"Project choice for gradient, numerical stability and checkpoint-resume tasks",2026-10-29
+"ML, neural-network and deployment choices",Transformers,https://github.com/huggingface/transformers,Model definitions and training/inference tooling,Project choice for NLP/vision/multimodal tasks; model/data terms remain separate,2026-10-29
+"ML, neural-network and deployment choices",MLflow,https://github.com/mlflow/mlflow,"AI/ML experiment, evaluation and model workflows",Proposed experiment/artifact tracking option; choose intentionally against Langfuse overlap,2026-10-29
+"ML, neural-network and deployment choices",Optuna,https://github.com/optuna/optuna,Hyperparameter optimization,Project choice with fixed validation protocol and bounded budget,2026-10-29
+"ML, neural-network and deployment choices",DVC,https://github.com/treeverse/dvc,Data versioning and ML experiments,Proposed dataset/artifact lineage option; no hosted storage requirement implied,2026-10-29
+"Mobile, games and native/embedded choices",React Native,https://github.com/react/react-native,Native application framework,Project choice for lifecycle/offline/list acceptance tasks; desktop reasoning is not device testing,2026-10-29
+"Mobile, games and native/embedded choices",Godot,https://github.com/godotengine/godot,2D/3D game engine,Project choice for deterministic movement/pause/input fixtures,2026-10-29
+"Mobile, games and native/embedded choices",Zephyr,https://github.com/zephyrproject-rtos/zephyr,Embedded RTOS,Project choice for ISR/ring/timer tests; physical timing requires target hardware,2026-10-29
+"Mobile, games and native/embedded choices",Miri,https://github.com/rust-lang/miri,Rust interpreter for detecting certain undefined behavior,Proposed supported Rust-boundary checks; not proof of all native/FFI safety,2026-10-29

@@ -6,7 +6,7 @@ license: MIT
 
 # GNCore Cloud, DevOps and SRE
 
-Version: 7.0.0rc1
+Version: 7.0.0
 
 ## Choose the work
 

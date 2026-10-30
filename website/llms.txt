@@ -1,4 +1,4 @@
-# GNCore 7.0.0rc1
+# GNCore 7.0.0
 
 Developer-focused skill catalog: 30 categories, 374 workflows.
 Status: candidate-preview.

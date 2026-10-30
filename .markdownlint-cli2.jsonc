@@ -1,6 +1,14 @@
 {
   "globs": ["**/*.md"],
   "ignores": [
+    "**/node_modules/**",
+    "output/**",
+    "archive/**",
+    // Immutable experimental inputs and original model answers are evidence,
+    // not authored documentation. Keep their original bytes unchanged.
+    "web-results/**/first-candidate-guides/**",
+    "web-results/**/runs/**",
+    "web-results/ide-evidence/*-response.md",
     ".venv/**",
     ".work/**",
     ".agents/**",

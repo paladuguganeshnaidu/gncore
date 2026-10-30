@@ -1,0 +1,18 @@
+{
+  "scope": "Observed local preview UI, not an end-to-end production audit",
+  "desktop_viewport": [1440, 1000],
+  "mobile_viewport": [390, 844],
+  "observations": {
+    "benchmark_page_loaded": true,
+    "all_evidence_shows_seven_figures": true,
+    "local_filter_shows_three_figures": true,
+    "historical_cards_hidden_in_local_filter": true,
+    "category_table_expands": true,
+    "category_table_includes_web_frontend_and_unmeasured_cells": true,
+    "mobile_navigation_opens": true,
+    "mobile_navigation_includes_benchmarks": true,
+    "escape_closes_mobile_navigation": true,
+    "homepage_benchmark_highlight_rendered": true
+  },
+  "limits": "No full accessibility audit, cross-browser matrix or fresh model-inference comparison was performed."
+}

@@ -92,62 +92,62 @@ The references are task-relevant examples rather than every publisher's best pos
 
 ## Source map
 
-ai-engineering: anthropics/skills / skills/mcp-builder/SKILL.md / ca45fc496a3436251f191354091d557da31c15b5 / https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/SKILL.md
+ai-engineering: anthropics/skills / skills/mcp-builder/SKILL.md / ca45fc496a3436251f191354091d557da31c15b5 / <https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/SKILL.md>
 
-automation: temporalio/skill-temporal-developer / SKILL.md / 5f5a94d448d53e0d535a7369bf9cb7248620a0bf / https://github.com/temporalio/skill-temporal-developer/blob/5f5a94d448d53e0d535a7369bf9cb7248620a0bf/SKILL.md
+automation: temporalio/skill-temporal-developer / SKILL.md / 5f5a94d448d53e0d535a7369bf9cb7248620a0bf / <https://github.com/temporalio/skill-temporal-developer/blob/5f5a94d448d53e0d535a7369bf9cb7248620a0bf/SKILL.md>
 
-cloud-devops-sre: google/skills / skills/cloud/gke-reliability/SKILL.md / 81b0e8f8f40513c31b3388e600506e8b48a85bc2 / https://github.com/google/skills/blob/81b0e8f8f40513c31b3388e600506e8b48a85bc2/skills/cloud/gke-reliability/SKILL.md
+cloud-devops-sre: google/skills / skills/cloud/gke-reliability/SKILL.md / 81b0e8f8f40513c31b3388e600506e8b48a85bc2 / <https://github.com/google/skills/blob/81b0e8f8f40513c31b3388e600506e8b48a85bc2/skills/cloud/gke-reliability/SKILL.md>
 
-code-build: obra/superpowers / skills/systematic-debugging/SKILL.md / 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b / https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/systematic-debugging/SKILL.md
+code-build: obra/superpowers / skills/systematic-debugging/SKILL.md / 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b / <https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/systematic-debugging/SKILL.md>
 
-computer-vision: huggingface/skills / skills/huggingface-vision-trainer/SKILL.md / fabc634a893f62ad5c2039830397efa35fa62715 / https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-vision-trainer/SKILL.md
+computer-vision: huggingface/skills / skills/huggingface-vision-trainer/SKILL.md / fabc634a893f62ad5c2039830397efa35fa62715 / <https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-vision-trainer/SKILL.md>
 
-cybersecurity: affaan-m/ecc / skills/security-review/SKILL.md / 25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b / https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/security-review/SKILL.md
+cybersecurity: affaan-m/ecc / skills/security-review/SKILL.md / 25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b / <https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/security-review/SKILL.md>
 
-data-engineering: K-Dense-AI/scientific-agent-skills / skills/polars/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/polars/SKILL.md
+data-engineering: K-Dense-AI/scientific-agent-skills / skills/polars/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / <https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/polars/SKILL.md>
 
-data-science: K-Dense-AI/scientific-agent-skills / skills/statistical-analysis/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/statistical-analysis/SKILL.md
+data-science: K-Dense-AI/scientific-agent-skills / skills/statistical-analysis/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / <https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/statistical-analysis/SKILL.md>
 
-databases: supabase/agent-skills / skills/supabase-postgres-best-practices/SKILL.md / c9be0e931b7930f7d02126d04774d904c381e7d7 / https://github.com/supabase/agent-skills/blob/c9be0e931b7930f7d02126d04774d904c381e7d7/skills/supabase-postgres-best-practices/SKILL.md
+databases: supabase/agent-skills / skills/supabase-postgres-best-practices/SKILL.md / c9be0e931b7930f7d02126d04774d904c381e7d7 / <https://github.com/supabase/agent-skills/blob/c9be0e931b7930f7d02126d04774d904c381e7d7/skills/supabase-postgres-best-practices/SKILL.md>
 
-deep-learning: K-Dense-AI/scientific-agent-skills / skills/pytorch-lightning/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/pytorch-lightning/SKILL.md
+deep-learning: K-Dense-AI/scientific-agent-skills / skills/pytorch-lightning/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / <https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/pytorch-lightning/SKILL.md>
 
-design-ux: microsoft/skills / .github/skills/frontend-design-review/SKILL.md / 00d66a64919edca5bca2c673373444e36a4b5461 / https://github.com/microsoft/skills/blob/00d66a64919edca5bca2c673373444e36a4b5461/.github/skills/frontend-design-review/SKILL.md
+design-ux: microsoft/skills / .github/skills/frontend-design-review/SKILL.md / 00d66a64919edca5bca2c673373444e36a4b5461 / <https://github.com/microsoft/skills/blob/00d66a64919edca5bca2c673373444e36a4b5461/.github/skills/frontend-design-review/SKILL.md>
 
-developer-research: K-Dense-AI/scientific-agent-skills / skills/scientific-critical-thinking/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/scientific-critical-thinking/SKILL.md
+developer-research: K-Dense-AI/scientific-agent-skills / skills/scientific-critical-thinking/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / <https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/scientific-critical-thinking/SKILL.md>
 
-developer-tools: affaan-m/ecc / skills/git-workflow/SKILL.md / 25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b / https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/git-workflow/SKILL.md
+developer-tools: affaan-m/ecc / skills/git-workflow/SKILL.md / 25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b / <https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/git-workflow/SKILL.md>
 
-distributed-systems: cloudflare/skills / skills/durable-objects/SKILL.md / 49a31e0b3229ccdffe4944be9c61bc7481d1d432 / https://github.com/cloudflare/skills/blob/49a31e0b3229ccdffe4944be9c61bc7481d1d432/skills/durable-objects/SKILL.md
+distributed-systems: cloudflare/skills / skills/durable-objects/SKILL.md / 49a31e0b3229ccdffe4944be9c61bc7481d1d432 / <https://github.com/cloudflare/skills/blob/49a31e0b3229ccdffe4944be9c61bc7481d1d432/skills/durable-objects/SKILL.md>
 
-documentation: anthropics/skills / skills/doc-coauthoring/SKILL.md / ca45fc496a3436251f191354091d557da31c15b5 / https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/doc-coauthoring/SKILL.md
+documentation: anthropics/skills / skills/doc-coauthoring/SKILL.md / ca45fc496a3436251f191354091d557da31c15b5 / <https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/doc-coauthoring/SKILL.md>
 
-embedded-systems: beriberikix/zephyr-agent-skills / skills/zephyr-foundations/SKILL.md / ed63cdfb8cdfbeb5946ea39c33f4aa6bcf3a5cce / https://github.com/beriberikix/zephyr-agent-skills/blob/ed63cdfb8cdfbeb5946ea39c33f4aa6bcf3a5cce/skills/zephyr-foundations/SKILL.md
+embedded-systems: beriberikix/zephyr-agent-skills / skills/zephyr-foundations/SKILL.md / ed63cdfb8cdfbeb5946ea39c33f4aa6bcf3a5cce / <https://github.com/beriberikix/zephyr-agent-skills/blob/ed63cdfb8cdfbeb5946ea39c33f4aa6bcf3a5cce/skills/zephyr-foundations/SKILL.md>
 
-game-development: minhhoit/gamedev-agent-skills / skills/godot/godot-2d-movement/SKILL.md / b105e1cf617adf0b68ed98790a716bbb60993179 / https://github.com/minhhoit/gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-2d-movement/SKILL.md
+game-development: minhhoit/gamedev-agent-skills / skills/godot/godot-2d-movement/SKILL.md / b105e1cf617adf0b68ed98790a716bbb60993179 / <https://github.com/minhhoit/gamedev-agent-skills/blob/b105e1cf617adf0b68ed98790a716bbb60993179/skills/godot/godot-2d-movement/SKILL.md>
 
-machine-learning: K-Dense-AI/scientific-agent-skills / skills/scikit-learn/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/scikit-learn/SKILL.md
+machine-learning: K-Dense-AI/scientific-agent-skills / skills/scikit-learn/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / <https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/scikit-learn/SKILL.md>
 
-mlops: huggingface/skills / skills/hf-cloud-sagemaker-production-defaults/SKILL.md / fabc634a893f62ad5c2039830397efa35fa62715 / https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/hf-cloud-sagemaker-production-defaults/SKILL.md
+mlops: huggingface/skills / skills/hf-cloud-sagemaker-production-defaults/SKILL.md / fabc634a893f62ad5c2039830397efa35fa62715 / <https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/hf-cloud-sagemaker-production-defaults/SKILL.md>
 
-mobile-development: vercel-labs/agent-skills / skills/react-native-skills/SKILL.md / 1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62 / https://github.com/vercel-labs/agent-skills/blob/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/react-native-skills/SKILL.md
+mobile-development: vercel-labs/agent-skills / skills/react-native-skills/SKILL.md / 1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62 / <https://github.com/vercel-labs/agent-skills/blob/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/react-native-skills/SKILL.md>
 
-natural-language-processing: K-Dense-AI/scientific-agent-skills / skills/transformers/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/transformers/SKILL.md
+natural-language-processing: K-Dense-AI/scientific-agent-skills / skills/transformers/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / <https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/transformers/SKILL.md>
 
-neural-networks: K-Dense-AI/scientific-agent-skills / skills/pytorch-lightning/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/pytorch-lightning/SKILL.md
+neural-networks: K-Dense-AI/scientific-agent-skills / skills/pytorch-lightning/SKILL.md / 5f2bc0341354fd5590aef76a533ada1e1e5b4e62 / <https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/pytorch-lightning/SKILL.md>
 
-observability: microsoft/skills / .github/plugins/azure-sdk-python/skills/azure-monitor-opentelemetry-py/SKILL.md / 00d66a64919edca5bca2c673373444e36a4b5461 / https://github.com/microsoft/skills/blob/00d66a64919edca5bca2c673373444e36a4b5461/.github/plugins/azure-sdk-python/skills/azure-monitor-opentelemetry-py/SKILL.md
+observability: microsoft/skills / .github/plugins/azure-sdk-python/skills/azure-monitor-opentelemetry-py/SKILL.md / 00d66a64919edca5bca2c673373444e36a4b5461 / <https://github.com/microsoft/skills/blob/00d66a64919edca5bca2c673373444e36a4b5461/.github/plugins/azure-sdk-python/skills/azure-monitor-opentelemetry-py/SKILL.md>
 
-performance-engineering: affaan-m/ecc / skills/benchmark/SKILL.md / 25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b / https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/benchmark/SKILL.md
+performance-engineering: affaan-m/ecc / skills/benchmark/SKILL.md / 25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b / <https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/benchmark/SKILL.md>
 
-python: trailofbits/skills / plugins/modern-python/skills/modern-python/SKILL.md / 2be6433b39e009cd2b6fd3be1895f6b1faa5af9a / https://github.com/trailofbits/skills/blob/2be6433b39e009cd2b6fd3be1895f6b1faa5af9a/plugins/modern-python/skills/modern-python/SKILL.md
+python: trailofbits/skills / plugins/modern-python/skills/modern-python/SKILL.md / 2be6433b39e009cd2b6fd3be1895f6b1faa5af9a / <https://github.com/trailofbits/skills/blob/2be6433b39e009cd2b6fd3be1895f6b1faa5af9a/plugins/modern-python/skills/modern-python/SKILL.md>
 
-release-engineering: obra/superpowers / skills/finishing-a-development-branch/SKILL.md / 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b / https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/finishing-a-development-branch/SKILL.md
+release-engineering: obra/superpowers / skills/finishing-a-development-branch/SKILL.md / 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b / <https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/finishing-a-development-branch/SKILL.md>
 
-systems-programming: trailofbits/skills / plugins/rust-review/skills/rust-review/SKILL.md / 2be6433b39e009cd2b6fd3be1895f6b1faa5af9a / https://github.com/trailofbits/skills/blob/2be6433b39e009cd2b6fd3be1895f6b1faa5af9a/plugins/rust-review/skills/rust-review/SKILL.md
+systems-programming: trailofbits/skills / plugins/rust-review/skills/rust-review/SKILL.md / 2be6433b39e009cd2b6fd3be1895f6b1faa5af9a / <https://github.com/trailofbits/skills/blob/2be6433b39e009cd2b6fd3be1895f6b1faa5af9a/plugins/rust-review/skills/rust-review/SKILL.md>
 
-testing: obra/superpowers / skills/test-driven-development/SKILL.md / 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b / https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/test-driven-development/SKILL.md
+testing: obra/superpowers / skills/test-driven-development/SKILL.md / 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b / <https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/test-driven-development/SKILL.md>
 
-web-backend: affaan-m/ecc / skills/api-design/SKILL.md / 25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b / https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/api-design/SKILL.md
+web-backend: affaan-m/ecc / skills/api-design/SKILL.md / 25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b / <https://github.com/affaan-m/ecc/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/skills/api-design/SKILL.md>
 
-web-frontend: anthropics/skills / skills/frontend-design/SKILL.md / ca45fc496a3436251f191354091d557da31c15b5 / https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/frontend-design/SKILL.md
+web-frontend: anthropics/skills / skills/frontend-design/SKILL.md / ca45fc496a3436251f191354091d557da31c15b5 / <https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/frontend-design/SKILL.md>

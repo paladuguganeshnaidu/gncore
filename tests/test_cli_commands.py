@@ -82,7 +82,7 @@ def test_plan_command_infers_theme_and_honors_constraints(capsys):
 def test_cli_version_and_no_application_orchestration_commands(capsys):
     cli = GncoreCli()
     assert cli.run(["version"]) == 0
-    assert capsys.readouterr().out.strip() == "7.0.0rc1"
+    assert capsys.readouterr().out.strip() == "7.0.0"
     for removed in ("activate", "install", "uninstall", "backup", "restore", "doctor"):
         assert cli.run([removed]) == 2
         capsys.readouterr()

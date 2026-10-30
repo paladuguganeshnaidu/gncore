@@ -5,7 +5,7 @@ from gncore import SkillDefinition, SkillDomain, get_skill, list_domains
 
 
 def test_public_api_is_skill_catalog_only() -> None:
-    assert gncore.__version__ == "7.0.0rc1"
+    assert gncore.__version__ == "7.0.0"
     assert isinstance(get_skill("train"), SkillDefinition)
     assert all(isinstance(domain, SkillDomain) for domain in list_domains())
     forbidden_exports = {

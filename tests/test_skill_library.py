@@ -14,7 +14,7 @@ def test_active_catalog_is_developer_focused_and_each_category_is_discoverable()
     assert len(primary) == len(list_categories()) == 30
     assert len({s.metadata.skill_id for s in primary}) == 30
     assert all(not validate_skill_definition(s) for s in primary)
-    assert {s.metadata.version for s in primary} == {"7.0.0rc1"}
+    assert {s.metadata.version for s in primary} == {"7.0.0"}
     ids = {s.metadata.skill_id for s in primary}
     assert {"neural-networks", "deep-learning", "mlops", "embedded-systems", "systems-programming"} <= ids
     assert not {"finance-accounting", "word-documents", "company-leadership", "sales-revenue"} & ids

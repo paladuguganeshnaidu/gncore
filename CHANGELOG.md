@@ -1,5 +1,12 @@
 # Changelog
 
+## 7.0.0 — production release
+
+- Publish the developer catalog with 30 domain guides, 374 workflows and source-specific attribution.
+- Add a themed homepage benchmark section and a detailed, accessible evidence page with seven original-data chart families, CSV/JSON downloads and PDF reports.
+- Separate historical IDE observations, code fixtures, router diagnostics and local operation timings. Preserve missing measurements, withdrawn comparisons and exploratory failures.
+- Synchronize package metadata, installation commands, migration paths and the production website.
+
 ## 7.0.0rc1 — prepared locally, publication pending approval
 
 - Add completion boundaries across all 30 domains and route detailed procedures through declared, hashed `WORKFLOWS.md` resources.

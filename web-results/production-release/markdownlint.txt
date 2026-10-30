@@ -1,0 +1,4 @@
+markdownlint-cli2 v0.24.0 (markdownlint v0.42.0)
+Finding: **/*.md !**/node_modules/** !output/** !archive/** !web-results/**/first-candidate-guides/** !web-results/**/runs/** !web-results/ide-evidence/*-response.md !.venv/** !.work/** !.agents/** !dist/** !src/gncore/skills/frontend_data/** !src/gncore/skills/backend_data/** !src/gncore/skills/unified_data/**
+Linting: 45 files
+Summary: 0 issues in 0 files

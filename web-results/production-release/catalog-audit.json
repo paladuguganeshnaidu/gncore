@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "categories": 30,
+  "workflows": 374,
+  "resources_verified": 1660,
+  "python_helpers_parsed": 73,
+  "baseline_workflows_accounted": 553,
+  "retired_workflows": 234,
+  "issues": [],
+  "limits": "Hash/link/procedure and syntax checks; imported helpers were not executed, and arbitrary AI output quality is not certified."
+}

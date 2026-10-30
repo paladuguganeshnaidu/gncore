@@ -1,10 +1,10 @@
-GNCore 7.0.0rc1 developer command reference
+GNCore 7.0.0 developer command reference
 
-Candidate publication is pending owner approval. Install this checkout with:
+Install a source checkout with:
 python -m pip install .
 
-After approved PyPI prerelease publication:
-python -m pip install --pre gncore==7.0.0rc1
+For the verified PyPI release:
+python -m pip install gncore==7.0.0
 
 Discover and inspect:
 gncore list skills

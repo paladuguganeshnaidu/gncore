@@ -1,0 +1,52 @@
+.............F........................................................F. [ 46%]
+..........................s............................................. [ 93%]
+..F.......                                                               [100%]
+================================== FAILURES ===================================
+_________ test_cli_version_and_no_application_orchestration_commands __________
+
+capsys = <_pytest.capture.CaptureFixture object at 0x0000025753D33CE0>
+
+    def test_cli_version_and_no_application_orchestration_commands(capsys):
+        cli = GncoreCli()
+        assert cli.run(["version"]) == 0
+>       assert capsys.readouterr().out.strip() == "7.0.0rc1"
+E       AssertionError: assert '7.0.0' == '7.0.0rc1'
+E         
+E         - 7.0.0rc1
+E         ?      ---
+E         + 7.0.0
+
+tests\test_cli_commands.py:85: AssertionError
+____________________ test_public_api_is_skill_catalog_only ____________________
+
+    def test_public_api_is_skill_catalog_only() -> None:
+>       assert gncore.__version__ == "7.0.0rc1"
+E       AssertionError: assert '7.0.0' == '7.0.0rc1'
+E         
+E         - 7.0.0rc1
+E         ?      ---
+E         + 7.0.0
+
+tests\test_import.py:8: AssertionError
+_ test_active_catalog_is_developer_focused_and_each_category_is_discoverable __
+
+    def test_active_catalog_is_developer_focused_and_each_category_is_discoverable():
+        primary = builtin_skills()
+        assert len(primary) == len(list_categories()) == 30
+        assert len({s.metadata.skill_id for s in primary}) == 30
+        assert all(not validate_skill_definition(s) for s in primary)
+>       assert {s.metadata.version for s in primary} == {"7.0.0rc1"}
+E       AssertionError: assert {'7.0.0'} == {'7.0.0rc1'}
+E         
+E         Extra items in the left set:
+E         '7.0.0'
+E         Extra items in the right set:
+E         '7.0.0rc1'
+E         Use -v to get more diff
+
+tests\test_skill_library.py:17: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_cli_commands.py::test_cli_version_and_no_application_orchestration_commands
+FAILED tests/test_import.py::test_public_api_is_skill_catalog_only - Assertio...
+FAILED tests/test_skill_library.py::test_active_catalog_is_developer_focused_and_each_category_is_discoverable
+3 failed, 150 passed, 1 skipped in 123.05s (0:02:03)

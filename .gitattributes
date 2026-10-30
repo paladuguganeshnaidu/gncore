@@ -10,6 +10,9 @@ src/gncore/skills/unified_data/*/references/** -whitespace
 src/gncore/skills/unified_data/*/research/** -whitespace
 # Keep generated Matplotlib paths and raw test evidence byte-for-byte.
 web-results/charts/*.svg -whitespace
+web-results/public-benchmarks/*.svg -whitespace
+web/benchmarks/*.svg -whitespace
+website/assets/benchmarks/*.svg -whitespace
 web-results/logs/*.log -whitespace
 web-results/ide-evidence/*.txt -whitespace
 web-results/ide-evidence/*-response.md -whitespace

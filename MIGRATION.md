@@ -24,4 +24,4 @@ Preflight happens before changes. Pruning requires an inventory-managed, byte-id
 
 Legacy technical lookups remain where their target is active. Canonical category names and historical category aliases take precedence over generic workflow IDs: `security` resolves to `cybersecurity`, while its former generic procedure is also retained inside `code-build`. `list_workflows()` describes procedure ownership; a lookup collision can therefore resolve to a broader category. Removed business IDs raise a retirement error.
 
-The public candidate version is `7.0.0rc1` only after publication approval and verification. Prepared local files are not evidence of a PyPI release.
+The production release targets `7.0.0`. Check the published registry metadata and release asset hashes before treating a local build as publicly available.

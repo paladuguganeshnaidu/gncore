@@ -39,9 +39,10 @@ def measure(operation, repeats):
             "p95_ms": ordered[max(0, int(.95 * len(values) + .999999) - 1)]}
 
 
-def benchmark(output, repeats):
+def benchmark(output, repeats, installed_directory=None):
     from gncore.installation import verify_installation
     corpus = load_corpus()
+    installed_directory = Path(installed_directory or ROOT / '.agents/skills').resolve()
     output.mkdir(parents=True, exist_ok=True)
     rows, routes = [], []
     for entry in unified_manifest():
@@ -52,7 +53,7 @@ def benchmark(output, repeats):
                         for path, content in resources.items())
         packaged_document = files("gncore.skills").joinpath("unified_data", name, "SKILL.md").read_bytes()
         entrypoint_ok = hashlib.sha256(packaged_document).hexdigest() == entry["entrypoint_sha256"]
-        installed_document = (ROOT / ".agents/skills" / name / "SKILL.md").read_bytes()
+        installed_document = (installed_directory / name / "SKILL.md").read_bytes()
         cases = [c for c in corpus["cases"] if c["category"] == name]
         for case in cases:
             result = route_task(case["prompt"])
@@ -98,7 +99,7 @@ def benchmark(output, repeats):
                               "quality_scope": "Integrity and deterministic routing only. No complete agent-generated artifact quality scores or creator comparisons."},
               "categories": rows, "scenario_routes": routes, "neural_probe": neural,
               "neural_learning_curve": curve,
-              "installed_inventory": verify_installation(ROOT / ".agents/skills")}
+              "installed_inventory": verify_installation(installed_directory)}
     (output / "benchmarks.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     fields = ["category", "workflows", "resources", "entrypoint_bytes", "resource_bytes", "hashes_ok", "entrypoint_ok", "cases_defined", "render_median_ms", "route_median_ms", "resource_read_median_ms"]
     with (output / "categories.csv").open("w", newline="", encoding="utf-8") as stream:
@@ -211,10 +212,11 @@ def main():
     parser.add_argument("--output", type=Path, default=ROOT / "web-results")
     parser.add_argument("--repeats", type=int, default=30)
     parser.add_argument("--plot-only", action="store_true")
+    parser.add_argument("--installed-directory", type=Path, help="Explicit verified installation; defaults to this project's .agents/skills")
     args = parser.parse_args()
     if not 5 <= args.repeats <= 1000:
         parser.error("repeats must be between 5 and 1000")
-    report = json.loads((args.output / "benchmarks.json").read_text(encoding="utf-8")) if args.plot_only else benchmark(args.output, args.repeats)
+    report = json.loads((args.output / "benchmarks.json").read_text(encoding="utf-8")) if args.plot_only else benchmark(args.output, args.repeats, args.installed_directory)
     charts(report, args.output)
     print(f"Saved measured results and charts to {args.output}")
 

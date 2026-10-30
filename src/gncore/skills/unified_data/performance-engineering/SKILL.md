@@ -6,7 +6,7 @@ license: MIT
 
 # GNCore Performance Engineering
 
-Version: 7.0.0rc1
+Version: 7.0.0
 
 ## Choose the work
 

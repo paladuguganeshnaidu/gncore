@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import re
 from pathlib import Path
 from xml.sax.saxutils import escape
 
@@ -185,6 +186,7 @@ def main():
             ("Source map","\n\n".join(f"{x['category']}: {x['repo']} / {x['entrypoint']} / {x.get('revision','see source-snapshots.json')} / {x['url']}" for x in json.loads((OUT/"source-snapshots.json").read_text(encoding="utf-8"))))]
     for name,title,paras in [("EXECUTIVE-REPORT","GNCore: practical results explained",intro),("TECHNICAL-REPORT","GNCore: experiment, evidence and limits",technical)]:
         text="# "+title+"\n\n"+"\n\n".join("## "+h+"\n\n"+t for h,t in paras)+"\n"
+        text=re.sub(r'(?<![<(])https://[^\s<>]+',lambda m:'<'+m[0]+'>',text)
         (OUT/f"{name}.md").write_text(text,encoding="utf-8",newline="\n")
         doc_pdf(OUT/f"{name}.pdf",title,paras,images=sheets if name.startswith("EXEC") else (),technical=name.startswith("TECH"))
     index={"generated_from":hashlib.sha256((OUT/"review-results.json").read_bytes()).hexdigest(),"scorecards":sheets,"plotted_values":"category-scores.csv and review-results.json","claims":"pilot task-check percentages only"}

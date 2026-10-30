@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "gncore"
-version = "7.0.0rc1"
+version = "7.0.0"
 description = "Developer-focused AI skills for software, machine learning, neural networks and systems engineering."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -21,7 +21,7 @@ keywords = [
     "agent-skills",
 ]
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Build Tools",
     "Topic :: Software Development :: Libraries",
@@ -43,7 +43,7 @@ skills = ["PyYAML>=6"]
 [project.urls]
 Homepage = "https://gncore.pages.dev"
 Repository = "https://github.com/paladuguganeshnaidu/gncore"
-Documentation = "https://github.com/paladuguganeshnaidu/gncore/tree/v7.0.0rc1/docs"
+Documentation = "https://github.com/paladuguganeshnaidu/gncore/tree/v7.0.0/docs"
 "Bug Tracker" = "https://github.com/paladuguganeshnaidu/gncore/issues"
 
 [tool.hatch.build.targets.wheel]

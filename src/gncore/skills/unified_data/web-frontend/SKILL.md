@@ -6,7 +6,7 @@ license: Apache-2.0 AND MIT
 
 # GNCore Web Frontend
 
-Version: 7.0.0rc1
+Version: 7.0.0
 
 ## Choose the work
 

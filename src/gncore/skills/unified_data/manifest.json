@@ -4,7 +4,7 @@
     "category": "ai-engineering",
     "title": "GNCore AI Engineering",
     "description": "Build LLM applications, retrieval and tool-using agents with grounded outputs and measurable task outcomes.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "ai-engineering",
@@ -100,7 +100,7 @@
       "SOURCES.json": "a81b01cd37d37c7ff1cc4da0e1f8efc880b7dceb4169edfa902f2da6b95ea293",
       "WORKFLOWS.md": "f6562ef4451272132a2b4fe6bb3178575eebb4379d335589cf692b53be11575d"
     },
-    "entrypoint_sha256": "03f4e5d639fb9d6aa031ea135349d5415676577db40abf92b59a10e4652f9b5b",
+    "entrypoint_sha256": "95ac2efdd7c7f42549efd0fa1c7c8fab7e6a9bb50b8598036a15acaed3e3e472",
     "research_references": []
   },
   {
@@ -108,7 +108,7 @@
     "category": "automation",
     "title": "GNCore Automation",
     "description": "Implement restartable developer automations with bounded inputs, retries and observable failure recovery.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "automation",
@@ -160,7 +160,7 @@
       "SOURCES.json": "0eec523fd6259b928c6fb02bdf161083c1984f72f2a3548bc71407236e954792",
       "WORKFLOWS.md": "85d317ca53a7fd2c802f6970315d5dec0a340363247d62fdd0097e16476fb211"
     },
-    "entrypoint_sha256": "9f6b78f85adfb42f7601285c0af8f75625d2cb1a999b46063b6ddee0fe144a2d",
+    "entrypoint_sha256": "30cc55b8e28ad0fb04986b9a4063e0110f579366649ce507666f1490cb9ff87b",
     "research_references": []
   },
   {
@@ -168,7 +168,7 @@
     "category": "cloud-devops-sre",
     "title": "GNCore Cloud, DevOps and SRE",
     "description": "Build delivery pipelines, cloud infrastructure, containers, Kubernetes and reliable service operations.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "cloud-devops-sre",
@@ -375,7 +375,7 @@
       "SOURCES.json": "4e1f84c4ee60620196f5b451aca1b999c6740d339d06b5484cc3db062c98da16",
       "WORKFLOWS.md": "3786c453711bf5a0ab08931bc418e8bc076377aae7f1b61faf7a05adb0ea2556"
     },
-    "entrypoint_sha256": "cf3c22668a1d30245ca8164b21bfa00e5789009e8d5212fa5ef9f94f5c9e2d07",
+    "entrypoint_sha256": "c6cd6b4327c625d8034ec550df1ae5652239b01f357abd0d109f8f4b155b8385",
     "research_references": []
   },
   {
@@ -383,7 +383,7 @@
     "category": "code-build",
     "title": "GNCore Software Engineering",
     "description": "Implement, diagnose, review and refactor software across languages while preserving public behavior.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "Apache-2.0 AND CC-BY-SA-4.0 AND MIT",
     "tags": [
       "code-build",
@@ -2164,7 +2164,7 @@
       "references/code-writing-plans/UPSTREAM.md": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a",
       "references/code-writing-plans/notices/1-LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
     },
-    "entrypoint_sha256": "dec1e26dee51bc1b57da9ffe7667fd2f0487fcd90342dbc18abe09a5fdcd3962",
+    "entrypoint_sha256": "76cde21105385c35717958bb3fd833da36c4833deefca0588a33bd32a8d83f4e",
     "research_references": []
   },
   {
@@ -2172,7 +2172,7 @@
     "category": "computer-vision",
     "title": "GNCore Computer Vision",
     "description": "Build vision datasets, augmentation, detection/segmentation and image inference with task-appropriate evaluation.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "computer-vision",
@@ -2253,7 +2253,7 @@
       "SOURCES.json": "fbcdd50d0d94b2c63d5739894d2f16773992a5b95824abf46cf5163177dafed8",
       "WORKFLOWS.md": "174bba9431b72ef56585251c1fb034f8d50c8ebd06d0083ce8ad6236bd4877d4"
     },
-    "entrypoint_sha256": "31e3fd36a0ed6306759f00e35e3964dc6d993322f0ca5efaa31b7233ca19ad56",
+    "entrypoint_sha256": "8a77ba56606253a1773b9ca3d4cf9556d875b9da70e84e11e394e25f11bd1631",
     "research_references": []
   },
   {
@@ -2261,7 +2261,7 @@
     "category": "cybersecurity",
     "title": "GNCore Cybersecurity",
     "description": "Review application, dependency, cloud and agent security using concrete attack paths and scoped evidence.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "cybersecurity",
@@ -2431,7 +2431,7 @@
       "SOURCES.json": "958325f37204631a6f18e95bf1fbba749afec4b49c725fb2685677bcbbaaf4a3",
       "WORKFLOWS.md": "050cfd887a6a4529af5b9eff5482db297efeb94cf209f23dab8317f5057a4019"
     },
-    "entrypoint_sha256": "e32f16a8480f62d0fa67c8312221b12d0d991e14f9f5307248ba55342fe67b6e",
+    "entrypoint_sha256": "c4a3d16d8624dc3b88fcb823f6e81ef2d27fc962db5830db672429b095f67b13",
     "research_references": []
   },
   {
@@ -2439,7 +2439,7 @@
     "category": "data-engineering",
     "title": "GNCore Data Engineering",
     "description": "Build schema-aware, observable batch/streaming pipelines with restart, reconciliation and lineage.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "data-engineering",
@@ -2513,7 +2513,7 @@
       "SOURCES.json": "1fa2a08189a2afe18d914a0afc961a06ca5ec28a5e5a5aab1bf7ca9c34727c87",
       "WORKFLOWS.md": "ab0a3913cb025aff4b894ea32c1ba295e885c6fe33855b80cc8ff045f7df1ef3"
     },
-    "entrypoint_sha256": "0232caa30e1250dae5781a81d6bd75143b7a28e56d440e591dd91cd94493b491",
+    "entrypoint_sha256": "0ff5b6dc6302bcbd98e554f059e5844357a8994000806cfbee0e272eadbe8b7a",
     "research_references": []
   },
   {
@@ -2521,7 +2521,7 @@
     "category": "data-science",
     "title": "GNCore Data Science",
     "description": "Analyze data, statistics and experiments with correct grain, reproducibility and honest uncertainty.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "data-science",
@@ -2769,7 +2769,7 @@
       "SOURCES.json": "08fdaab609e159ee4fc60f54af333af0dbb14697ca79c82b0b5ae3fff3d88d04",
       "WORKFLOWS.md": "f032bfe5677c003f41a933157f0c0f0a828325a6b8f225a61064f1cc9cb3b01a"
     },
-    "entrypoint_sha256": "3c03269fa26ca87036a26920eff86d951834c9400220be5778fb69c7e8fded9a",
+    "entrypoint_sha256": "5e74262bf35cbf599f4258aa2270a97759a0214aa6de6f7ea3bb1bf8cbe79b8f",
     "research_references": []
   },
   {
@@ -2777,7 +2777,7 @@
     "category": "databases",
     "title": "GNCore Databases and SQL",
     "description": "Design relational schemas, SQL, transactions, indexes and reversible data migrations.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "databases",
@@ -2865,7 +2865,7 @@
       "SOURCES.json": "daa9666eb4ad316c04bf970d9722dca48caf064c005256e73c32ea70f90140ed",
       "WORKFLOWS.md": "4d9b6f01be854bfc8f52af8813fcaa192ada04d4cd21c5e03e00298d5222de9d"
     },
-    "entrypoint_sha256": "4f5eaf6cec6fe601236cb72ed81bf4fc15db33ed890bf0b657931730fe08cfd5",
+    "entrypoint_sha256": "4895bb4f3b2270a85d29293626945b7a1eca8cfd78be038c81b55ae9c6bbe913",
     "research_references": []
   },
   {
@@ -2873,7 +2873,7 @@
     "category": "deep-learning",
     "title": "GNCore Deep Learning",
     "description": "Engineer reproducible deep-learning training, checkpointing, fine-tuning and distributed optimization.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "deep-learning",
@@ -3002,7 +3002,7 @@
       "SOURCES.json": "87bc86062a81dc2bf3b474cf33e291d4661624075ec704032fac17eee518928b",
       "WORKFLOWS.md": "677d96ff96e30b1eae4acbf0ead28bcfe8958eb050c870145f3ec6fe6a645f60"
     },
-    "entrypoint_sha256": "37d2183580e4d51e286a54be3f77968dcda50f8887e6b11ee6e65f3a04e5df2b",
+    "entrypoint_sha256": "17c9df1d17ebc2055fbc04c2b365122b7b093aaa2b8d817e6321dea828f650df",
     "research_references": []
   },
   {
@@ -3010,7 +3010,7 @@
     "category": "design-ux",
     "title": "GNCore UX and Design Systems",
     "description": "Design developer-facing and product interfaces, flows, accessible interaction and reusable component systems.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "design-ux",
@@ -3185,7 +3185,7 @@
       "SOURCES.json": "40f8b10e6a3e3ef1b0a5a13c2a0f7817b4f564de37d7b05fb4e25105f6fff430",
       "WORKFLOWS.md": "3861c95ba6240503abf470aa49389621834281b4fdca297dd541dea884a6d85c"
     },
-    "entrypoint_sha256": "9c2b32a38466288832b803dbbff721637078e2f29eeb59c4d352f75f07fab836",
+    "entrypoint_sha256": "ae959a67b103077b668c35ae1fb90d6a1a58fe2eed2a74b5ef62c9bc2a7f8c55",
     "research_references": []
   },
   {
@@ -3193,7 +3193,7 @@
     "category": "developer-research",
     "title": "GNCore Technical Research",
     "description": "Investigate technical options, papers, APIs and reproducible engineering experiments from primary evidence.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "developer-research",
@@ -3262,7 +3262,7 @@
       "SOURCES.json": "767e990e695f2acc6391e89a8665b79dd3facc9ce8645b4dd129612f79b07ccb",
       "WORKFLOWS.md": "452410ddf68664a3316fb81b0c09e5dec92fa80bfd6796bb18fa25a599182df1"
     },
-    "entrypoint_sha256": "fac461145af2d4b49607183c63b11939440099b63fba516ae7b364da88053cc3",
+    "entrypoint_sha256": "1d61e7b29ca153044957ccaf8b7325866fce8583ed7572581b1e921b5a14e112",
     "research_references": []
   },
   {
@@ -3270,7 +3270,7 @@
     "category": "developer-tools",
     "title": "GNCore Developer Tools",
     "description": "Build reliable CLIs, developer workflows, editor integrations and local tooling.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "developer-tools",
@@ -3317,7 +3317,7 @@
       "SOURCES.json": "a82d51ab4a4338d7a0eff3447a2b3545263b6a52d7b5c0660d1848305393b094",
       "WORKFLOWS.md": "969085219088ab068d3436975cbeec4615cab14434a3dc405764c598e12dd4d7"
     },
-    "entrypoint_sha256": "9505c3169f00d79f177baac7ae393687787d1b159f4e0fcc5e8e836f84b70bff",
+    "entrypoint_sha256": "a6145c17c9d667807c422e0211075df9eeaf5a5d0d0e67b2f83ff0b47329013c",
     "research_references": []
   },
   {
@@ -3325,7 +3325,7 @@
     "category": "distributed-systems",
     "title": "GNCore Distributed Systems",
     "description": "Design and implement concurrency, queues, replication and failure recovery across service boundaries.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "distributed-systems",
@@ -3395,7 +3395,7 @@
       "SOURCES.json": "9d863e3780c3f0f4e6ce502208a22c6618f786b508f7eccbc387ce8ff3fa1325",
       "WORKFLOWS.md": "ec866044dab210fa68aa86f152fbeccaee60d8344a2f1f38c7e192e0fd57d2e8"
     },
-    "entrypoint_sha256": "7eecd4eb57a9d6bb95e7fb7e8ede4990246479e6a59a50cd3b50bc732acb1ff9",
+    "entrypoint_sha256": "0fb02efee6638b468ab221e11571a3eb4ab8b7c9e0870e0a8866eb6254096ce4",
     "research_references": []
   },
   {
@@ -3403,7 +3403,7 @@
     "category": "documentation",
     "title": "GNCore Documentation",
     "description": "Write technical references, tutorials, API documentation and migration guides from verified software behavior.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "documentation",
@@ -3462,7 +3462,7 @@
       "SOURCES.json": "67d18cc9ac4e434faccda03508d6dbd28b2e92fa7b881ac3f62d3d3ff42cd350",
       "WORKFLOWS.md": "69895bef819115ef67671a391cc3e9f692bf3ca3e0aa90e639d18e6a9a01249a"
     },
-    "entrypoint_sha256": "f26d502a2fdfc3a95aca82d47a834d284ec5f4e1d64d4f4d30fd989fb28a8cd7",
+    "entrypoint_sha256": "738bedb7e0651a49ae6d5d5232086c9baf6cba2e3395a0ea23736d2fbaead9fa",
     "research_references": []
   },
   {
@@ -3470,7 +3470,7 @@
     "category": "embedded-systems",
     "title": "GNCore Embedded Systems",
     "description": "Build firmware, peripheral interfaces and constrained-device software with explicit timing and hardware boundaries.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "embedded-systems",
@@ -3541,7 +3541,7 @@
       "SOURCES.json": "555c00e5d5de5fe7059236c5b4f25461eaa91a7538f562e4ae74c66ab07dd33c",
       "WORKFLOWS.md": "344ba7d9cf744e94afd19ca14638139cd73729e6649aa68177833d3f4f7edcc9"
     },
-    "entrypoint_sha256": "a2fd03e6a2fa0f9c665f2fb42cf4610e57e0025a53c2aaa07e519d94b9b74242",
+    "entrypoint_sha256": "99a356ff473d6251488317353118ba594388e17e4f8efb92248d617d8b1ee111",
     "research_references": []
   },
   {
@@ -3549,7 +3549,7 @@
     "category": "game-development",
     "title": "GNCore Game Development",
     "description": "Build playable game mechanics, simulation state, assets and measured runtime performance.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "game-development",
@@ -3586,7 +3586,7 @@
       "SOURCES.json": "5a893382ff23d0c95d0281916b942c257388b87e6d9592124872d5cea121590d",
       "WORKFLOWS.md": "82107b137dbe0d57239d0edf5238ed90fbf4d93acce6b3f682aa67bed6607d7e"
     },
-    "entrypoint_sha256": "53739ac3b101026534c88ef0aa0f571b19be4f19ec941225dc00f332a6283097",
+    "entrypoint_sha256": "d4fae64357894ce356999fa1d41a860da125e36da3b7580c2ee30a4d4d095886",
     "research_references": []
   },
   {
@@ -3594,7 +3594,7 @@
     "category": "machine-learning",
     "title": "GNCore Machine Learning",
     "description": "Develop classical ML and time-series experiments with leakage-safe splits, baselines and deployment-relevant evaluation.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "machine-learning",
@@ -3873,7 +3873,7 @@
       "SOURCES.json": "bae9ff90cc48fc99d2fcd8d600f0242191b9a0bc25640fe14d2f91378f3c9029",
       "WORKFLOWS.md": "01240ba40a3c9a5aedfc49f88916c594096a318c39dd94bea9e41c0e8ff744de"
     },
-    "entrypoint_sha256": "66ea20d0c643836e085d9678c8aa428d4ef3d270952f680ef1b7501d36fcf27f",
+    "entrypoint_sha256": "63c569a01d88d4ebfe8384da32450c8cc89a46a84a77b6b5263cd2eb59d1165c",
     "research_references": []
   },
   {
@@ -3881,7 +3881,7 @@
     "category": "mlops",
     "title": "GNCore MLOps",
     "description": "Package, serve, monitor and roll back models with reproducible artifacts and explicit promotion gates.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "mlops",
@@ -4021,7 +4021,7 @@
       "SOURCES.json": "058503231c9e38652732ebab443dc68a799828a50f61b60f63f54f66da6c4daf",
       "WORKFLOWS.md": "5a49ecda35d15ff7cf753cce68e429a806f7491b523f4bbab496f7b7c3f1454b"
     },
-    "entrypoint_sha256": "2ec2fd1618e60d9eafe82712796d2ea9508b62b1593ca09b77c75acdd5a9fc21",
+    "entrypoint_sha256": "b5de1b0d4f6538ba409c1193ca877ea65a5efd492e34ab8c14f39dd204369ccb",
     "research_references": []
   },
   {
@@ -4029,7 +4029,7 @@
     "category": "mobile-development",
     "title": "GNCore Mobile Development",
     "description": "Build mobile applications with lifecycle-safe state, offline behavior and platform-appropriate interaction.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "mobile-development",
@@ -4066,7 +4066,7 @@
       "SOURCES.json": "2fffb91c95448402b8af35f59d69a52b329861415e8ac2e8609610bf8dd516e4",
       "WORKFLOWS.md": "1ff438e3c90bbec2bc5d81b76b911fcdf422c3edb7c28319f515c12df8a0c955"
     },
-    "entrypoint_sha256": "d32918913a2fff689967a0df8a9d5f7a5086ffd3eaae006c2ff8d08ccd2ae5ef",
+    "entrypoint_sha256": "f91f3f02aba8595788f1dbfbecb1ae5bcd47240efaed8482e102ce03813acf84",
     "research_references": []
   },
   {
@@ -4074,7 +4074,7 @@
     "category": "natural-language-processing",
     "title": "GNCore NLP and Language Pipelines",
     "description": "Build tokenization, text classification, sequence labeling and language-model adaptation pipelines.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "natural-language-processing",
@@ -4155,7 +4155,7 @@
       "SOURCES.json": "a5c01918053320ee3628d98168593eb19de857d7d1dfc64330fca1bcb58b32a2",
       "WORKFLOWS.md": "06b594f1b253de9e40909fcbbdebb51a9288136676272b8e27c544a1bca13ef7"
     },
-    "entrypoint_sha256": "86f929c9363144569731b93ed27db2be5d71b72256129d3c865196b6109d6ed6",
+    "entrypoint_sha256": "4dc47dda64eda87a96a5ecaf5066b37c6e9893f614c778f64cbe5ba20822215e",
     "research_references": []
   },
   {
@@ -4163,7 +4163,7 @@
     "category": "neural-networks",
     "title": "GNCore Neural Networks",
     "description": "Design and debug neural networks through tensor contracts, gradient checks, loss semantics and tiny-batch experiments.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "neural-networks",
@@ -4262,7 +4262,7 @@
       "WORKFLOWS.md": "90047aa650e2baea698c0e5e02e5929751b31d9b5d70716e8e0da927dfd97cdf",
       "scripts/gradient_probe.py": "7184adffaa6b4120443c35e17c14fe4ae5c909de9447559b249fbacf3946f775"
     },
-    "entrypoint_sha256": "2bc72ed00a88b50f881d9394cd63427e4c7610e6cc43e95fb9e3b8611958827b",
+    "entrypoint_sha256": "1bad145d191d81365334c19f0c4fe47462e617adf792fb380ec0a75aafd6b07f",
     "research_references": []
   },
   {
@@ -4270,7 +4270,7 @@
     "category": "observability",
     "title": "GNCore Observability",
     "description": "Instrument and diagnose services using actionable logs, metrics, traces and service objectives.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "Apache-2.0 AND CC-BY-SA-4.0 AND MIT",
     "tags": [
       "observability",
@@ -4603,7 +4603,7 @@
       "references/web-backend-sentry-instrument/references/semantics/vercel.md": "77ea1d2d41b645524c22a8fc14ac687e899f8f073748157c33c970a4abca0a96",
       "references/web-backend-sentry-instrument/references/setup-verification.md": "1eabba5b0c28afe5fb806bf736e4d7f7c851d55fdb0bd9126434e4b95c8373e4"
     },
-    "entrypoint_sha256": "31c0ee7622e6d88577ac0829d644d0162e49392e1e80359a93f4ce9e7c84529b",
+    "entrypoint_sha256": "ad28ad4e37f0ed09ba67b136952a0b34840744b32377cfbf7ad9ba4f5e25ab63",
     "research_references": []
   },
   {
@@ -4611,7 +4611,7 @@
     "category": "performance-engineering",
     "title": "GNCore Performance Engineering",
     "description": "Profile and optimize software using repeatable latency, throughput and memory measurements.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "performance-engineering",
@@ -4692,7 +4692,7 @@
       "SOURCES.json": "2cdfe07e1f3c324dac4360eecc3b4140f430e8a4dc33020cc4b9c4d93a6b9f25",
       "WORKFLOWS.md": "345bf5a2de68324953dffce71f66943f2c9df2b84c3481096e66836dbc5e1b6c"
     },
-    "entrypoint_sha256": "7510c59579a0435aae12ab3abfa8884e73017ea3da401002f5e97066a9d0aecd",
+    "entrypoint_sha256": "2daec5d4086aaaccb2064d90c725c4150e73f957393cc152bf424567ddfa5bc4",
     "research_references": []
   },
   {
@@ -4700,7 +4700,7 @@
     "category": "python",
     "title": "GNCore Python",
     "description": "Build, profile, package and migrate Python applications and libraries with reproducible environments.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "python",
@@ -4766,7 +4766,7 @@
       "SOURCES.json": "b8878b9ae2046f3a2188a98a2a712cc3ce77788867118e6bf8bd506c618878b2",
       "WORKFLOWS.md": "84e460e64efe0ad320d0232faffa91d16851bc7487bb0c4f5a200838f57def81"
     },
-    "entrypoint_sha256": "2985eff9297a3a7559da7e9e370fd41dec2007fe207cd769eda96328df9c8889",
+    "entrypoint_sha256": "69506d706195158db36551e5f06eff3ee843518fe5e66427b57ad6628893c857",
     "research_references": []
   },
   {
@@ -4774,7 +4774,7 @@
     "category": "release-engineering",
     "title": "GNCore Release Engineering",
     "description": "Prepare tested software releases, reproducible artifacts, migrations and approval-ready publication plans.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "release-engineering",
@@ -4827,7 +4827,7 @@
       "SOURCES.json": "5056b80e263841c9047524fd160f8945cbb99ff8ef46d8943327d273ab2e7c89",
       "WORKFLOWS.md": "87ee9be94b4cc085a9956471b63a64a1948c397041fe7eb6f7a71fdfebe35431"
     },
-    "entrypoint_sha256": "8ae78ec1eccaca6d2011ff516fab51deece8cad40920d9ff48df264a25f3f774",
+    "entrypoint_sha256": "6215197d38a9cf02713b4614ed1a5d501e292ea79e8085c213eb684a7d25be31",
     "research_references": []
   },
   {
@@ -4835,7 +4835,7 @@
     "category": "systems-programming",
     "title": "GNCore Systems Programming",
     "description": "Build Rust, C/C++ and native components with explicit ownership, ABI and resource lifetimes.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "systems-programming",
@@ -4911,7 +4911,7 @@
       "SOURCES.json": "c54e705cf8af97413681f0a37a2580b5f427cbc4c7f0c7ff70beaf56b98cc42f",
       "WORKFLOWS.md": "3b687b78adf94b5540bcb6681feb5b1229126f03f7b5001fc61e577735f80beb"
     },
-    "entrypoint_sha256": "db2e8a6ff3314dfc39cf8bb89eb63594ea6c1086475f171f920bb732dfcac49c",
+    "entrypoint_sha256": "986744a6ef4106b7596a5e863bf95a2e1333f5dba88a8dc73b91ddd0c67030b4",
     "research_references": []
   },
   {
@@ -4919,7 +4919,7 @@
     "category": "testing",
     "title": "GNCore Testing",
     "description": "Design and implement unit, integration, contract, end-to-end and performance verification.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "MIT",
     "tags": [
       "testing",
@@ -5173,7 +5173,7 @@
       "SOURCES.json": "80bc997c426e119279f1d3cab6b31bdeac487026e2f849f098acfaafc9b82cf7",
       "WORKFLOWS.md": "c34d1bcee0cc212eb0980545e15fcf252d1d2f1c56dfb5f65acab101dbfb8dc1"
     },
-    "entrypoint_sha256": "6320c7769b6bd697bd5a57187f18e062ab2a6d472d234a8724eef287852d79d8",
+    "entrypoint_sha256": "c8135f5fbb062faca8227dad16de0e7c984f650b3510dbb26e6cd4622ad0156a",
     "research_references": []
   },
   {
@@ -5181,7 +5181,7 @@
     "category": "web-backend",
     "title": "GNCore Web Backend",
     "description": "Implement backend services, APIs, integrations and framework features with explicit contracts and failure behavior.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "Apache-2.0 AND CC-BY-SA-4.0 AND MIT",
     "tags": [
       "web-backend",
@@ -7126,7 +7126,7 @@
       "references/web-backend-wrangler/notices/1-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "references/web-backend-wrangler/references/skill-feedback.md": "f24d02c8beebbc7484c7c9d42e957e7b58c92bcf80798e8b86111b850913a57a"
     },
-    "entrypoint_sha256": "275e70058563e0e00fb4d6a54d017f4b0f9a23ee01c51a921d41f216e6129fc4",
+    "entrypoint_sha256": "0bd3bbca6cf2e6860db292ecd6e0e595352605b8a8eac318bd69ebcc7dfbbfc4",
     "research_references": []
   },
   {
@@ -7134,7 +7134,7 @@
     "category": "web-frontend",
     "title": "GNCore Web Frontend",
     "description": "Build complete responsive web interfaces and choose an appropriate visual direction from the product brief.",
-    "version": "7.0.0rc1",
+    "version": "7.0.0",
     "license": "Apache-2.0 AND MIT",
     "tags": [
       "web-frontend",
@@ -8628,7 +8628,7 @@
       "references/web-front-ui-ux/scripts/tests/test_web_stack_freshness.py": "cba3dd79b3bd7ed9479e8cd0e7efb0594d998160bc712f9865fb0ab6e29dda5a",
       "references/web-front-ui-ux/scripts/validate_data.py": "a599aa256049cf30954d1f164721b99e453eb7e4cb8241bcab2d5573e6cf58b8"
     },
-    "entrypoint_sha256": "724a2fb81dbc7e6af06e6debbfe4aa58b66912edcbad10c049119d76866a7eed",
+    "entrypoint_sha256": "256f47dfbf8886e7f7313b0c926cac486b82e8b12b7e635346796dd3785b4fd4",
     "research_references": []
   }
 ]

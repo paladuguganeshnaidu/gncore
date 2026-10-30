@@ -1,0 +1,55 @@
+..........................................F...                           [100%]
+================================== FAILURES ===================================
+_________ test_offline_catalog_and_evaluation_builds_are_reproducible _________
+
+    def test_offline_catalog_and_evaluation_builds_are_reproducible():
+        root = Path(__file__).resolve().parents[1]
+        for script in ("build_catalog.py", "build_evaluations.py"):
+            result = subprocess.run([sys.executable, str(root / "scripts" / script), "--check"], cwd=root, capture_output=True, text=True, encoding="utf-8", timeout=60)
+>           assert result.returncode == 0, result.stdout + result.stderr
+E           AssertionError: {
+E               "categories": 30,
+E               "workflows": 374,
+E               "mode": "check",
+E               "changed": [
+E                 "src/gncore/skills/unified_data/ai-engineering/SKILL.md",
+E                 "src/gncore/skills/unified_data/automation/SKILL.md",
+E                 "src/gncore/skills/unified_data/cloud-devops-sre/SKILL.md",
+E                 "src/gncore/skills/unified_data/code-build/SKILL.md",
+E                 "src/gncore/skills/unified_data/computer-vision/SKILL.md",
+E                 "src/gncore/skills/unified_data/cybersecurity/SKILL.md",
+E                 "src/gncore/skills/unified_data/data-engineering/SKILL.md",
+E                 "src/gncore/skills/unified_data/data-science/SKILL.md",
+E                 "src/gncore/skills/unified_data/databases/SKILL.md",
+E                 "src/gncore/skills/unified_data/deep-learning/SKILL.md",
+E                 "src/gncore/skills/unified_data/design-ux/SKILL.md",
+E                 "src/gncore/skills/unified_data/developer-research/SKILL.md",
+E                 "src/gncore/skills/unified_data/developer-tools/SKILL.md",
+E                 "src/gncore/skills/unified_data/distributed-systems/SKILL.md",
+E                 "src/gncore/skills/unified_data/documentation/SKILL.md",
+E                 "src/gncore/skills/unified_data/embedded-systems/SKILL.md",
+E                 "src/gncore/skills/unified_data/game-development/SKILL.md",
+E                 "src/gncore/skills/unified_data/machine-learning/SKILL.md",
+E                 "src/gncore/skills/unified_data/mlops/SKILL.md",
+E                 "src/gncore/skills/unified_data/mobile-development/SKILL.md",
+E                 "src/gncore/skills/unified_data/natural-language-processing/SKILL.md",
+E                 "src/gncore/skills/unified_data/neural-networks/SKILL.md",
+E                 "src/gncore/skills/unified_data/observability/SKILL.md",
+E                 "src/gncore/skills/unified_data/performance-engineering/SKILL.md",
+E                 "src/gncore/skills/unified_data/python/SKILL.md",
+E                 "src/gncore/skills/unified_data/release-engineering/SKILL.md",
+E                 "src/gncore/skills/unified_data/systems-programming/SKILL.md",
+E                 "src/gncore/skills/unified_data/testing/SKILL.md",
+E                 "src/gncore/skills/unified_data/web-backend/SKILL.md",
+E                 "src/gncore/skills/unified_data/web-frontend/SKILL.md",
+E                 "src/gncore/skills/unified_data/manifest.json"
+E               ]
+E             }
+E             
+E           assert 1 == 0
+E            +  where 1 = CompletedProcess(args=['C:\\Users\\ganes\\OneDrive\\Documents\\ChatGPT\\GNCore\\.work\\phase2\\venv312\\Scripts\\pytho.../skills/unified_data/web-frontend/SKILL.md",\n    "src/gncore/skills/unified_data/manifest.json"\n  ]\n}\n', stderr='').returncode
+
+tests\test_phase2.py:122: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_phase2.py::test_offline_catalog_and_evaluation_builds_are_reproducible
+1 failed, 45 passed in 6.06s

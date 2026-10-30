@@ -16,17 +16,26 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
-A shape-checked model and training step, gradient/overfit probes, configuration and finite-loss evidence; retain the simplest useful baseline.
+Shape/label/reduction-aware model or numerical code with task-relevant forward/backward evidence and configuration; retain the simplest useful baseline.
 
-Compare analytic gradients with finite differences on a tiny case, check finite values and nonzero parameter updates, and overfit a tiny batch. Validate activation/loss compatibility and evaluation-mode behavior.
+Check loss/activation compatibility and evaluation behavior. For custom derivatives or suspected gradient bugs, compare controlled central differences. For training changes, verify finite values, parameter updates and a tiny-batch diagnostic; label unexecuted accelerator checks.
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
 ## Anticipate failure and verify the boundary
 
-Specify shapes, axes, label semantics, reductions and dtype before choosing a loss or layer. Use numerically stable logit-space operations and verify that gradient scale matches the reported reduction. Reject invalid/nonfinite inputs according to the API. Check a tiny hand-calculated case, central differences away from nonsmooth points, extreme finite values and a tiny-batch learning diagnostic when training is available. Separate mathematical checks from accelerator or convergence claims.
+Choose shapes, label semantics, reductions and dtype from the mathematical contract. Use stable logit-space losses and task-relevant invalid-input checks. Numerical derivatives are useful for custom operations or suspected gradient bugs; control stochastic and stateful behavior. For training changes, test parameter updates and a tiny-batch learning diagnostic before scaling.
+
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Match tensor axes, label semantics, dtype and reduction; compute losses in stable logit space rather than taking a log of probabilities that can underflow.
+- For custom derivatives or suspected gradient errors, freeze stochastic/stateful behavior and check central differences away from kinks; reject malformed/nonfinite inputs and verify tiny-batch parameter updates when training changes.
 
 ## Workflow map
 
@@ -39,31 +48,9 @@ Specify shapes, axes, label semantics, reductions and dtype before choosing a lo
 | `nn-initialization` | Initialization and signal flow. |
 | `nn-evaluation-modes` | Evaluation and validation isolation. |
 
-## Focused procedures
+## Selected procedure
 
-### Tensor and target contracts (`nn-tensor-contracts`)
-
-Write a table of each layer's input/output axes, dtype, device and target encoding. Test batch size one and non-square shapes to expose accidental broadcasting. Make reductions explicit and reject an incompatible target before the optimizer step.
-
-### Gradient verification (`nn-gradient-check`)
-
-Choose a tiny float64 differentiable model away from activation kinks. Perturb one parameter by plus/minus epsilon and compare the central finite difference with the analytic gradient using absolute and relative tolerances. Restore parameters after each probe; explain the epsilon/error tradeoff.
-
-### Diagnose a stalled training step (`nn-training-debug`)
-
-Freeze randomness and overfit a tiny labeled batch. Inspect finite inputs/logits/loss, gradient norms, learning rate and before/after weights. Verify zero_grad/backward/step order and whether parameters are registered and require gradients before changing architecture.
-
-### Loss and activation semantics (`nn-loss-semantics`)
-
-Match binary, multiclass or multilabel targets to the selected loss API. Determine whether it expects logits or probabilities, target dtype, class dimension, masking and reduction. Test a hand-computed example; avoid applying softmax twice or averaging padding as real targets.
-
-### Initialization and signal flow (`nn-initialization`)
-
-Inspect layer fan-in/fan-out and activation distributions on a fixed batch. Compare saturation, activation variance and gradient norms across depth. Change initialization or normalization only with a diagnosed signal-flow problem and retain a measured baseline.
-
-### Evaluation and validation isolation (`nn-evaluation-modes`)
-
-Switch training-dependent layers to evaluation behavior and disable gradient recording for inference. Verify validation does not update parameters or running statistics and restore training mode afterward. Test repeated predictions and stateful layers explicitly.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Primary technical references
 

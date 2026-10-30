@@ -1,0 +1,182 @@
+[
+  {
+    "category": "ai-engineering",
+    "before_bytes": 5921,
+    "after_bytes": 4417,
+    "conditional_workflow_bytes": 2750
+  },
+  {
+    "category": "automation",
+    "before_bytes": 3624,
+    "after_bytes": 3860,
+    "conditional_workflow_bytes": 1074
+  },
+  {
+    "category": "cloud-devops-sre",
+    "before_bytes": 9290,
+    "after_bytes": 5610,
+    "conditional_workflow_bytes": 4946
+  },
+  {
+    "category": "code-build",
+    "before_bytes": 58658,
+    "after_bytes": 15680,
+    "conditional_workflow_bytes": 34256
+  },
+  {
+    "category": "computer-vision",
+    "before_bytes": 5277,
+    "after_bytes": 4626,
+    "conditional_workflow_bytes": 1895
+  },
+  {
+    "category": "cybersecurity",
+    "before_bytes": 7655,
+    "after_bytes": 5227,
+    "conditional_workflow_bytes": 3668
+  },
+  {
+    "category": "data-engineering",
+    "before_bytes": 4714,
+    "after_bytes": 4211,
+    "conditional_workflow_bytes": 1758
+  },
+  {
+    "category": "data-science",
+    "before_bytes": 10930,
+    "after_bytes": 5983,
+    "conditional_workflow_bytes": 6240
+  },
+  {
+    "category": "databases",
+    "before_bytes": 4893,
+    "after_bytes": 4207,
+    "conditional_workflow_bytes": 2298
+  },
+  {
+    "category": "deep-learning",
+    "before_bytes": 7478,
+    "after_bytes": 5217,
+    "conditional_workflow_bytes": 3570
+  },
+  {
+    "category": "design-ux",
+    "before_bytes": 7374,
+    "after_bytes": 5252,
+    "conditional_workflow_bytes": 3600
+  },
+  {
+    "category": "developer-research",
+    "before_bytes": 4443,
+    "after_bytes": 4159,
+    "conditional_workflow_bytes": 1569
+  },
+  {
+    "category": "developer-tools",
+    "before_bytes": 3613,
+    "after_bytes": 3943,
+    "conditional_workflow_bytes": 952
+  },
+  {
+    "category": "distributed-systems",
+    "before_bytes": 4173,
+    "after_bytes": 4020,
+    "conditional_workflow_bytes": 1436
+  },
+  {
+    "category": "documentation",
+    "before_bytes": 4215,
+    "after_bytes": 4108,
+    "conditional_workflow_bytes": 1382
+  },
+  {
+    "category": "embedded-systems",
+    "before_bytes": 4222,
+    "after_bytes": 4036,
+    "conditional_workflow_bytes": 1478
+  },
+  {
+    "category": "game-development",
+    "before_bytes": 3253,
+    "after_bytes": 3974,
+    "conditional_workflow_bytes": 638
+  },
+  {
+    "category": "machine-learning",
+    "before_bytes": 13897,
+    "after_bytes": 7072,
+    "conditional_workflow_bytes": 8212
+  },
+  {
+    "category": "mlops",
+    "before_bytes": 7955,
+    "after_bytes": 5283,
+    "conditional_workflow_bytes": 3973
+  },
+  {
+    "category": "mobile-development",
+    "before_bytes": 3361,
+    "after_bytes": 3902,
+    "conditional_workflow_bytes": 662
+  },
+  {
+    "category": "natural-language-processing",
+    "before_bytes": 5357,
+    "after_bytes": 4672,
+    "conditional_workflow_bytes": 1986
+  },
+  {
+    "category": "neural-networks",
+    "before_bytes": 5823,
+    "after_bytes": 4912,
+    "conditional_workflow_bytes": 2407
+  },
+  {
+    "category": "observability",
+    "before_bytes": 6832,
+    "after_bytes": 4884,
+    "conditional_workflow_bytes": 2945
+  },
+  {
+    "category": "performance-engineering",
+    "before_bytes": 4811,
+    "after_bytes": 4266,
+    "conditional_workflow_bytes": 1880
+  },
+  {
+    "category": "python",
+    "before_bytes": 4347,
+    "after_bytes": 4069,
+    "conditional_workflow_bytes": 1623
+  },
+  {
+    "category": "release-engineering",
+    "before_bytes": 3806,
+    "after_bytes": 4147,
+    "conditional_workflow_bytes": 1194
+  },
+  {
+    "category": "systems-programming",
+    "before_bytes": 4235,
+    "after_bytes": 4106,
+    "conditional_workflow_bytes": 1689
+  },
+  {
+    "category": "testing",
+    "before_bytes": 10718,
+    "after_bytes": 5982,
+    "conditional_workflow_bytes": 6025
+  },
+  {
+    "category": "web-backend",
+    "before_bytes": 52058,
+    "after_bytes": 15466,
+    "conditional_workflow_bytes": 29608
+  },
+  {
+    "category": "web-frontend",
+    "before_bytes": 36965,
+    "after_bytes": 17642,
+    "conditional_workflow_bytes": 15664
+  }
+]

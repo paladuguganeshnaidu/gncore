@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 Training/evaluation loops, resumable checkpoints, resource/precision configuration and an experiment record linking data, code and metrics.
@@ -27,6 +29,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 ## Anticipate failure and verify the boundary
 
 Checkpoint a compatible training state, not just parameters: optimizer, schedule, precision scaler, RNG, sampler/data position, progress and environment/data identity. For gradient accumulation, save partial gradient state deliberately or checkpoint at a completed optimizer-step boundary. Compare an uninterrupted and resumed short trajectory with the same batches and configuration; use justified numerical tolerances and report device/distributed nondeterminism rather than promising bitwise equality without evidence.
+
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Tie model/data/config/environment identity to optimizer, scheduler, RNG, sampler, AMP and accumulation state; use a completed-update restart boundary when partial state is absent.
+- Normalize by actual valid-example/token counts across microbatches/ranks and advance schedules only on completed optimizer updates; compare controlled interrupted and uninterrupted trajectories.
 
 ## Workflow map
 
@@ -42,43 +51,9 @@ Checkpoint a compatible training state, not just parameters: optimizer, schedule
 | `dl-distributed-training` | Distributed training correctness. |
 | `dl-transfer-learning` | Transfer learning and freezing. |
 
-## Focused procedures
+## Selected procedure
 
-### Model Fine-Tuning (`fine-tuning`)
-
-Confirm the base model, license constraints, data rights, objective, validation method, hardware, and budget. Inspect existing training code and use the least costly method that can answer the goal. Keep validation data separate, record model and tokenizer revisions, and save to a new checkpoint path. Do not launch paid or long-running jobs without explicit approval.
-
-### PyTorch Training (`pytorch-training`)
-
-Inspect the installed PyTorch version and existing dataset/model interfaces. Set train/eval modes correctly, move batches and model to the same device, clear gradients, and use inference mode for evaluation. Save checkpoints atomically to a new path and include enough state to resume when requested. Start with a tiny smoke run before a full run.
-
-### TensorFlow and Keras Training (`tensorflow-training`)
-
-Inspect TensorFlow/Keras version and data pipeline semantics. Keep preprocessing consistent, avoid validation leakage, configure callbacks explicitly, and save to a new artifact path. Check output shapes and a small batch first. Do not assume GPU availability or start a long training run without user approval.
-
-### Deep Learning Engineering (`deep-learning`)
-
-Inspect framework versions, model inputs/outputs, tensor shapes, precision, memory limits, and baseline. Verify loss/activation compatibility, masking, gradient flow, and train/eval modes. Keep validation data out of gradient updates and log checkpoints with configuration. Do not launch GPU-intensive jobs or replace checkpoints without approval. Diagnose with a tiny batch before scaling.
-
-### Checkpoint and resume equivalence (`dl-checkpoint-resume`)
-
-Save model, optimizer, scheduler, precision scaler, step and relevant RNG/data-loader state together. Load with device/version awareness. Compare a short uninterrupted run with a stopped/resumed run under stated determinism limits; avoid treating weights alone as a resumable training state.
-
-### Mixed precision correctness (`dl-mixed-precision`)
-
-Establish a float32 reference and identify numerically sensitive operations. Use the framework's current autocast/scaling APIs, unscale before clipping, and check skipped/nonfinite steps. Compare validation quality and peak memory on the target device rather than assuming a speedup.
-
-### Gradient accumulation (`dl-gradient-accumulation`)
-
-Define the desired effective batch and loss normalization, including a short final microbatch. Zero gradients at the correct accumulation boundary, and step the optimizer/scheduler only when an update occurs. Compare gradients with a single equivalent batch where layer behavior permits.
-
-### Distributed training correctness (`dl-distributed-training`)
-
-Define rank ownership, sampler sharding, collective order and globally reduced metrics. Check duplicate/dropped examples, uneven last batches and checkpoint ownership. Prove a tiny multi-process run before scaling and retain logs for rank-specific hangs; do not silently launch a costly cluster.
-
-### Transfer learning and freezing (`dl-transfer-learning`)
-
-Verify checkpoint provenance and architecture compatibility. Explicitly select frozen/trainable parameters, normalization behavior and optimizer groups. Compare a frozen baseline with bounded fine-tuning on the same split; verify frozen weights remain unchanged.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Primary technical references
 

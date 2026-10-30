@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 Versioned wheel/source or platform artifacts, checksums, release notes, migration evidence and a destination-specific publication/rollback plan.
@@ -28,6 +30,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 Link the accepted source revision, version, CI evidence and exact artifact hashes in one release record. Build once and promote those verified bytes to each destination; do not rebuild separately and assume equivalence. Inspect metadata/contents and install outside the checkout. Keep website/download claims pending until destination availability is verified. Plan partial-publication recovery and registry-specific yank/supersede behavior, retaining explicit preparation-only boundaries until publication is authorized.
 
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- For each intended target artifact, link accepted source/version, CI evidence, metadata and hashes; promote those same verified bytes to destinations covered by authorization.
+- Verify clean installs and actual destination availability before updating in-scope claims. Preserve recovery for partial publication; do not overwrite immutable registry files or imply unperformed publication.
+
 ## Workflow map
 
 | Workflow | Use it for |
@@ -35,15 +44,9 @@ Link the accepted source revision, version, CI evidence and exact artifact hashe
 | `release-readiness` | Check a release candidate against explicit acceptance, compatibility, security, rollback, and communication gates. |
 | `release-artifact-integrity` | Artifact integrity and promotion. |
 
-## Focused procedures
+## Selected procedure
 
-### Release Readiness Review (`release-readiness`)
-
-Inspect the release scope, version, changelog, artifacts, compatibility matrix, known issues, and rollback plan. Verify required checks and distinguish passed from skipped. Check migrations and external dependencies for rollout sequencing. Do not publish or deploy without authorization. End with a go/no-go recommendation tied to evidence and unresolved risks.
-
-### Artifact integrity and promotion (`release-artifact-integrity`)
-
-Build wheel/source/platform artifacts from a clean accepted tree, record checksums and install them outside the checkout. Verify declared resources, executable entrypoints and version agreement. Promote these bytes only after destination-specific publication approval.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

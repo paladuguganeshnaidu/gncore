@@ -1,0 +1,17 @@
+{
+  "pack_sha256": "0af8e63f2ec97a4762bd6736e507e1d53b13649e603d74926b30c73b1631ec54",
+  "cases": [
+    {
+      "id": "H03",
+      "guidance_sha256": "cf3c22668a1d30245ca8164b21bfa00e5789009e8d5212fa5ef9f94f5c9e2d07"
+    },
+    {
+      "id": "H15",
+      "guidance_sha256": "f26d502a2fdfc3a95aca82d47a834d284ec5f4e1d64d4f4d30fd989fb28a8cd7"
+    },
+    {
+      "id": "H27",
+      "guidance_sha256": "db2e8a6ff3314dfc39cf8bb89eb63594ea6c1086475f171f920bb732dfcac49c"
+    }
+  ]
+}

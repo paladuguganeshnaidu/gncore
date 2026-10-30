@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\scripts\grade_comparison_artifacts.py", line 252, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\scripts\grade_comparison_artifacts.py", line 233, in main
+    inspect_source(args.source.read_text(encoding="utf-8"))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\OneDrive\Documents\ChatGPT\GNCore\scripts\grade_comparison_artifacts.py", line 48, in inspect_source
+    raise ValueError("unsupported attribute")
+ValueError: unsupported attribute

@@ -1,0 +1,125 @@
+{
+  "ai-engineering": [
+    "Bind each factual claim to authorized evidence; keep tenant/user scope across retrieval, caches, memory and citations, including access changes.",
+    "Give tools finite call/time/output budgets and typed empty/error fallbacks; a lost reply to a side effect requires operation identity or reconciliation before retry."
+  ],
+  "automation": [
+    "Scope operation identity to the owner and payload; reject conflicting reuse and make overlapping triggers acquire atomic ownership.",
+    "Fence stale owners at the effect's storage boundary; retain a bounded retry/quarantine record and verify crash/replay across the durable commit."
+  ],
+  "cloud-devops-sre": [
+    "Check reader/writer compatibility, least-privilege identity and secret handling before exposure; promote the same tested artifact digest for each intended target.",
+    "Use workload-specific error, latency, lag and resource gates; distinguish startup/readiness/liveness and preserve a compatible recovery path before contraction.",
+    "Before delivering a rollout plan, state the credential delivery boundary: a managed identity or authorized runtime secret store, no embedded credentials in artifacts, and redaction from logs. Naming least privilege alone does not cover credential exposure."
+  ],
+  "code-build": [
+    "Match the supplied API, exception semantics, units and mutation behavior; use an independent counterexample for the actual failure mode.",
+    "For exact allocation/ranking, test ordering as well as conservation, mixed exact/fractional shares, stable ties and invalid inputs; do not infer general correctness from a small fixture."
+  ],
+  "computer-vision": [
+    "Check annotation dimensions, legal labels, empty/degenerate cases and geometric alignment; transform predictions back to the declared original coordinate frame.",
+    "Keep deployment-relevant groups disjoint, tune only on validation, retain a simple baseline and report task/per-class metrics with sample support."
+  ],
+  "cybersecurity": [
+    "Separate demonstrated exploits, statically established paths and unresolved hypotheses; record attacker control, impact, repair and safe neighboring behavior.",
+    "Measure false alarms and repaired behavior separately from finding recall; secret removal does not revoke exposed credentials or derived sessions."
+  ],
+  "data-engineering": [
+    "Declare record grain, business time, constraints, revision ordering and tombstones; an older late update must not overwrite newer accepted state.",
+    "Define watermark/finality and correction/retraction policy; publish idempotently and reconcile raw, duplicate, rejected, accepted and emitted counts/amounts after restart."
+  ],
+  "data-science": [
+    "Reconcile the observational unit, assigned population, denominators and join cardinality before estimating effects; inspect attrition and post-treatment selection.",
+    "Check quoted arithmetic and uncertainty at the independent unit; choose suitable projected or geodesic calculations for spatial quantities and distinguish inference from causal evidence."
+  ],
+  "databases": [
+    "Coordinate old/new writers before and throughout resumable backfill, reconciliation and contraction; state the unknown-value policy and last reversible boundary.",
+    "Verify engine/version lock and constraint semantics; EXPLAIN ANALYZE executes the statement. Retry the whole transaction when required without duplicating external effects."
+  ],
+  "deep-learning": [
+    "Tie model/data/config/environment identity to optimizer, scheduler, RNG, sampler, AMP and accumulation state; use a completed-update restart boundary when partial state is absent.",
+    "Normalize by actual valid-example/token counts across microbatches/ranks and advance schedules only on completed optimizer updates; compare controlled interrupted and uninterrupted trajectories."
+  ],
+  "design-ux": [
+    "Specify narrow-screen content/action order, semantic names, keyboard path, visible/restored focus and persistent linked errors; include consequential secret/destructive states when relevant.",
+    "Announce async status without surprising focus moves; define focus after dialogs, removals and validation. Separate the proposed interaction specification from tested behavior."
+  ],
+  "developer-research": [
+    "Separate primary version-matched evidence, secondary examples and inference; identify the smallest discriminating experiment, expected observations and stopping bounds.",
+    "Record assumptions and what would change the recommendation; a failed reproduction is limited to its configuration, and observed behavior does not establish documented support."
+  ],
+  "developer-tools": [
+    "For repository/workspace changes, preflight ownership, dirty paths and collisions; journal only owned partial state and preserve intervening user work during recovery.",
+    "Use explicit paths and argument arrays; handle option-like values at the invoked program's boundary. Define actionable exit behavior and verify spaces, Unicode and interruption."
+  ],
+  "distributed-systems": [
+    "Write the actual interleaving and transaction boundaries; enforce monotonically increasing ownership generations at the protected write, not only in the lease record.",
+    "Scope deduplication to operation/payload identity and a replay-compatible retention policy; reconcile unknown outcomes and test expiry, stale owners, overlap and lost replies."
+  ],
+  "documentation": [
+    "Use only the supplied or verified API/help contract; label illustrative schema, status codes and assumptions instead of presenting invented fields as requirements.",
+    "For procedural/migration guides, include compatible shell/platform examples and a recoverable failure path; preserve scope for narrow edits and distinguish unexecuted examples.",
+    "Give a self-contained example a reader can copy. If the wire schema is incomplete, clearly label every assumption or supply a runnable offline mock/client example that preserves the known contract; do not imply unverified wire compatibility or leave the only example as non-runnable placeholder prose."
+  ],
+  "embedded-systems": [
+    "Define bounded nonblocking ISR/task ownership and synchronization; volatile alone does not guarantee atomicity or ordering. Make overrun/drop/timeout state observable.",
+    "State timer width, wrap comparison and observation/interval bounds; distinguish modular elapsed subtraction from signed deadline ordering and host fixtures from measured hardware timing."
+  ],
+  "game-development": [
+    "Preserve the requested mechanic and movement feel; respect engine units/time integration, input edges and physics ownership without expanding a small fix into a new game.",
+    "Bound pause/hitch behavior and compare multiple schedules. Render-rate independence alone does not prove deterministic replay, which also depends on input/random/physics state."
+  ],
+  "machine-learning": [
+    "Choose deployment-time and entity boundaries from the prediction moment; fit preprocessing, feature selection, calibration and thresholds only within training/validation scope.",
+    "Retain an untouched final test and task-appropriate baseline/metrics: classification imbalance and alert budgets when relevant, regression/forecast metrics otherwise; report group support and uncertainty."
+  ],
+  "mlops": [
+    "Promote a compatible immutable model/preprocessor/schema/data/code/runtime bundle and verify missing, reordered or malformed serving inputs against training behavior.",
+    "Check artifact trust before executable deserialization; hashes establish identity, not safety. Gate on quality and operations, align delayed labels by maturity/cohort and retain a compatible rollback target."
+  ],
+  "mobile-development": [
+    "Preserve versioned drafts/pending state across process death as well as background/resume; cancel or reject stale results across navigation, logout and account changes.",
+    "Where relevant, use stable virtualized rows and measured optimization; give offline/error/conflict state and durable mutation identity a real recovery path, then test relaunch/retry on the target platform."
+  ],
+  "natural-language-processing": [
+    "Define label units, special/padding masks and whether offsets address original or normalized text; retain mappings through normalization and truncation.",
+    "Group correlated conversations/documents, preserve label-bearing long content and reconstruct/deduplicate overlapping windows before task-level evaluation; test short, padded and truncated boundaries."
+  ],
+  "neural-networks": [
+    "Match tensor axes, label semantics, dtype and reduction; compute losses in stable logit space rather than taking a log of probabilities that can underflow.",
+    "For custom derivatives or suspected gradient errors, freeze stochastic/stateful behavior and check central differences away from kinks; reject malformed/nonfinite inputs and verify tiny-batch parameter updates when training changes."
+  ],
+  "observability": [
+    "Propagate or link queue context using the installed API; use bounded metric dimensions, redacted correlation and meaningful latency/error/throughput/queue signals.",
+    "Define sustained SLO alerts with owner/recovery/runbook and exercise controlled failures. Bound exporter buffers and verify collector outages cannot block requests, exhaust memory or recurse into logging."
+  ],
+  "performance-engineering": [
+    "Verify equivalent outputs and time actual completion, including async/accelerator synchronization where needed; preserve every outcome and recompute quoted statistics from raw samples.",
+    "Match environment, workload, concurrency, warmup and cold/warm conditions; report relevant tails, throughput and memory against the user's objective, including errors/timeouts and small-sample limitations."
+  ],
+  "python": [
+    "For ordinary fixes, preserve API/runtime behavior and run relevant regressions without imposing a package release workflow.",
+    "For packaging/resources/distribution changes, build the wheel from the produced sdist, inspect metadata/resources/entrypoints and clean-install outside the checkout across supported interpreters and working directories."
+  ],
+  "release-engineering": [
+    "For each intended target artifact, link accepted source/version, CI evidence, metadata and hashes; promote those same verified bytes to destinations covered by authorization.",
+    "Verify clean installs and actual destination availability before updating in-scope claims. Preserve recovery for partial publication; do not overwrite immutable registry files or imply unperformed publication."
+  ],
+  "systems-programming": [
+    "Specify stable storage, ownership, retention, matching allocation/deallocation and destruction after foreign callbacks become quiescent; define permitted concurrency.",
+    "Distinguish enforceable null/length/alignment/handle/overflow checks from caller lifetime/provenance obligations; specify error/unwind behavior and use appropriate native/sanitizer/stress evidence without claiming pointer inspection proves safety.",
+    "Write the actual ABI rules rather than saying to document them: whether null is permitted at zero length, required alignment and checked length arithmetic, who owns each allocation, caller lifetime obligations, and a specific failure/status convention that prevents unwinding across the boundary. Mark unspecified foreign guarantees as assumptions."
+  ],
+  "testing": [
+    "Derive observable assertions from an independent contract and meaningful failure transitions; a corrected oracle needs contract evidence, not a desire for green CI.",
+    "For mutation evaluation, first accept a known-correct implementation, then count caught mutants and false rejections separately. Record actual failures/skips and unavailable integration coverage."
+  ],
+  "web-backend": [
+    "For retryable state-changing work, bind durable keys to authenticated tenant and canonical payload; reject changed reuse and choose one consistent ownership/commit protocol.",
+    "Commit command/job, outbox and replay outcome at the required atomic boundary; explain duplicate blocking, rollback and lost-commit replies, or lease takeover/fencing for separately committed claims. Scope unrelated backend changes to their own contracts."
+  ],
+  "web-frontend": [
+    "Infer a coherent direction from audience/content/action while preserving explicit brand/stack constraints; implement named controls and actual loading/error/empty/success transitions.",
+    "Verify selected-value confirmation, keyboard-visible custom controls, a deliberately focusable status target and narrow layouts; stale async responses/optimistic rollbacks must not overwrite newer state. Local feedback must not claim external actions occurred."
+  ]
+}

@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 Task flow, semantic tokens, component/state specifications or prototype with concrete content and accessibility behavior.
@@ -27,6 +29,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 ## Anticipate failure and verify the boundary
 
 Translate aesthetic intent into concrete task hierarchy and behavior. Specify the narrow-screen ordering, reflow, control names, keyboard path, visible and restored focus, persistent error/success feedback and destructive-action recovery. Infer consequential omissions from the primary journey without adding unrelated features. A proposed specification is not a tested interface: verify the implemented flow with keyboard, zoom and representative assistive technology when available.
+
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Specify narrow-screen content/action order, semantic names, keyboard path, visible/restored focus and persistent linked errors; include consequential secret/destructive states when relevant.
+- Announce async status without surprising focus moves; define focus after dialogs, removals and validation. Separate the proposed interaction specification from tested behavior.
 
 ## Workflow map
 
@@ -45,55 +54,9 @@ Translate aesthetic intent into concrete task hierarchy and behavior. Specify th
 | `design-accessibility` | Design keyboard, screen-reader, motion, contrast, and touch behavior into an interaction. |
 | `design-handoff` | Prepare a design handoff with behavior, states, assets, responsive rules, and unresolved questions. |
 
-## Focused procedures
+## Selected procedure
 
-### UX Research (`ux-research`)
-
-Define the decision and research question before selecting a method. Recruit representative participants, use neutral prompts, obtain consent, and minimize personal data. Distinguish direct observation from interpretation; preserve contradictory evidence. Summarize themes with confidence and limitations, then map findings to testable design changes. Never invent participant quotes or counts.
-
-### Design System Engineering (`design-system`)
-
-Inspect existing tokens, components, naming, accessibility states, and consumers. Reuse established primitives; add the smallest composable API. Define default, hover, focus, disabled, error, and responsive behavior as relevant. Validate contrast and interaction semantics. Document migration or deprecation when a public component contract changes.
-
-### UX Usability Audit (`design-ux-audit`)
-
-Perform the stated task using the current interface, record friction with steps and evidence, distinguish observation from inference, and rank fixes by task impact and confidence.
-
-### User Flow Design (`design-user-flow`)
-
-Identify user goal, preconditions, system responses, branches, recovery, and accessibility needs. Validate the flow against product constraints and test the highest-risk transition.
-
-### Wireframe Specification (`design-wireframe`)
-
-Define page purpose, content priority, primary action, supporting controls, loading/empty/error states, and breakpoints. Keep behavior and content clear before visual polish.
-
-### Minimalist UI Direction (`design-minimal`)
-
-Use a compact type/color system and strong alignment; retain status and essential actions, maintain contrast and visible focus, and remove ornament that does not help the task.
-
-### Expressive UI Direction (`design-expressive`)
-
-Choose a small set of expressive elements with clear hierarchy, test readable text and controls, preserve responsive behavior, and ensure each visual detail supports brand or content.
-
-### Design System Component (`design-system-component`)
-
-Inspect existing tokens and components, define component purpose and composition, document interaction and state behavior, check accessibility, and include migration or deprecation notes for changed contracts.
-
-### UX Content Design (`design-content`)
-
-Use the user's vocabulary, state the consequence before action, keep labels specific, explain errors with a next step, and verify length and localization constraints.
-
-### Prototype Test Plan (`design-prototype`)
-
-Define a single learning goal, representative participant criteria, realistic tasks, neutral prompts, observation rubric, and decision threshold. Avoid presenting a prototype preference as validated demand.
-
-### Accessible Interaction Design (`design-accessibility`)
-
-Specify semantic role, name, focus order, keyboard model, announcements, target size, contrast, and reduced-motion behavior. Validate with manual interaction in addition to automated scanning.
-
-### Design to Engineering Handoff (`design-handoff`)
-
-Annotate component reuse, tokens, breakpoints, interaction states, content, asset sources, and acceptance criteria. Review implementation with the designer and log deviations for resolution.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

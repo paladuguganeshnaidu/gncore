@@ -21,19 +21,37 @@ def document(entry, version):
              f"Version: {version}", "", "## Choose the work", "", entry["decisions"], "",
              "Inspect the supplied project and the requested deliverable first. Current explicit instructions take priority over saved preferences, existing conventions, then inferred defaults. Ask only about missing decisions that materially block correct work; otherwise state assumptions briefly and proceed.", "",
              "Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.", "",
+             "Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.", "",
              "## Deliver and verify", "", entry["deliverable"], "", entry["verification"], "",
              "Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful."]
     if entry.get("extra"):
         lines.extend(["", entry["extra"].strip()])
+    if entry.get("completion_checks"):
+        lines.extend(["", "## Critical completion checks", "", "Apply the checks relevant to this task; do not introduce unrelated work.", ""])
+        lines.extend("- " + check for check in entry["completion_checks"])
     lines.extend(["", "## Workflow map", "", "| Workflow | Use it for |", "| --- | --- |"])
     for workflow in entry["workflows"]:
         lines.append(f"| `{workflow['id']}` | {workflow['description'].replace('|', chr(92)+'|')} |")
-    lines.extend(["", "## Focused procedures"])
+    lines.extend(["", "## Selected procedure", "", "Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default."])
+    lines.extend(primary_references(entry))
+    lines.extend(["", "## Attribution and resource integrity", "",
+                  "Original phase-two guidance is MIT-licensed GNCore writing. Retained source guides and helpers keep their original authorship, notices and applicable licenses, including share-alike obligations. Renaming or combining them does not transfer exclusive ownership.", "",
+                  "See [SOURCES.json](SOURCES.json) and source-specific notices. GNCore exports preserve declared files and verify their content hashes. Imported helpers remain inert unless deliberately selected for an authorized task."])
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def procedures(entry):
+    lines = [f"# {entry['title']}: focused procedures", "", "Read the selected section and relevant linked source only. These are workflows within this skill; imported scripts remain inert until deliberately selected for an authorized task."]
     for workflow in entry["workflows"]:
         lines.extend(["", f"### {workflow['title']} (`{workflow['id']}`)", "", workflow["procedure"].strip()])
         guide = f"references/{workflow['id']}/UPSTREAM.md"
         if guide in entry["resources"]:
-            lines.extend(["", f"For relevant technical detail, read [the attributed source guide]({guide}). Resolve its paths from that folder, check tool availability, and retain its license terms. Do not run imported scripts automatically."])
+            lines.extend(["", f"Technical reference: [attributed source guide]({guide})."])
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def primary_references(entry):
+    lines = []
     if entry["id"] in {"neural-networks", "deep-learning", "computer-vision", "natural-language-processing", "machine-learning", "mlops"}:
         lines.extend(["", "## Primary technical references", "",
                       "Use the documentation matching the installed framework. These are external reference links, not copied source or a promise that the framework is installed.", "",
@@ -42,10 +60,7 @@ def document(entry, version):
                       "- [scikit-learn leakage and preprocessing](https://scikit-learn.org/stable/common_pitfalls.html)"])
     if entry["id"] == "neural-networks":
         lines.extend(["", "For a tiny CPU-only gradient and learning probe, run `python scripts/gradient_probe.py` from this skill folder. It checks a synthetic XOR fixture; it does not establish production model quality."])
-    lines.extend(["", "## Attribution and resource integrity", "",
-                  "Original phase-two guidance is MIT-licensed GNCore writing. Retained source guides and helpers keep their original authorship, notices and applicable licenses, including share-alike obligations. Renaming or combining them does not transfer exclusive ownership.", "",
-                  "See [SOURCES.json](SOURCES.json) and source-specific notices. GNCore exports preserve declared files and verify their content hashes. Imported helpers remain inert unless deliberately selected for an authorized task."])
-    return "\n".join(lines).rstrip() + "\n"
+    return lines
 
 
 def generated():
@@ -57,7 +72,7 @@ def generated():
             if workflow["id"] in workflow_ids or not workflow["procedure"].strip():
                 raise ValueError(f"duplicate or empty workflow: {workflow['id']}")
             workflow_ids.add(workflow["id"])
-        resources = set(entry["resources"]) | {"SOURCES.json", "GNCORE-LICENSE"}
+        resources = set(entry["resources"]) | {"SOURCES.json", "GNCORE-LICENSE", "WORKFLOWS.md"}
         skill_root = DATA / skill_id
         for helper in skill_root.glob("scripts/*.py"):
             if "references" not in helper.parts:
@@ -67,6 +82,7 @@ def generated():
                    "legacy_reference_ids": [w["id"] for w in entry["workflows"] if any(r.startswith(f"references/{w['id']}/") for r in resources)],
                    "review_scope": "Original workflow reference paths preserved; heuristic-only supplemental research retired in phase two. Helper syntax checked separately; installation never executes helpers."}
         local_output = {"SKILL.md": document(entry, authored["version"]).encode("utf-8"),
+                        "WORKFLOWS.md": procedures(entry).encode("utf-8"),
                         "SOURCES.json": (json.dumps(sources, indent=2, ensure_ascii=False) + "\n").encode("utf-8"),
                         "GNCORE-LICENSE": (ROOT / "LICENSE").read_bytes()}
         hashes = {}

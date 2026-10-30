@@ -362,13 +362,19 @@
           "id": "web-front-organic",
           "title": "GNCore Organic",
           "description": "Create warm organic web interfaces using earth tones, natural rhythm, and tactile accents.",
-          "procedure": "Use warm neutral surfaces, a terracotta accent, and a readable display/body type relationship. Let natural shapes support content without obscuring text, hit areas, or predictable navigation.",
+          "procedure": "Use a product-appropriate natural palette and readable type hierarchy, preserving explicit brand colors. Warm neutrals or earth tones are options, not a mandatory terracotta accent. Let natural shapes support content without obscuring text, hit areas or predictable navigation.",
           "origin": {
             "category": "web-frontend",
             "version": "6.0.0",
             "procedure_sha256": "2e663182c7c8c01fc46d0fb600a5cdc141260697f5f28e9179f62e8728cf53c6"
           },
-          "revision": "preserved procedure"
+          "revision": "preserved procedure",
+          "quality_revision": {
+            "previous_procedure_sha256": "2e663182c7c8c01fc46d0fb600a5cdc141260697f5f28e9179f62e8728cf53c6",
+            "procedure_sha256": "b175d4b00071085b2c715a096136a3069a3613bf4b35654d6f6fd68873964112",
+            "reason": "Remove a fixed palette that overrides brand constraints.",
+            "cycle": "improvement-cycle-1"
+          }
         },
         {
           "id": "web-front-design-system",
@@ -470,13 +476,19 @@
           "id": "web-front-find-skills",
           "title": "GNCore Find Skills",
           "description": "Find frontend skills and compare candidates by scope, source, compatibility, and license.",
-          "procedure": "Search for the actual missing capability, inspect source entrypoints and maintenance signals, and compare relevant candidates. Distinguish discovery from installation; install only within the user's requested scope and preserve attribution when adapting.",
+          "procedure": "Inspect the product, existing stack, requested deliverable and available workflow map. Choose the smallest useful set: usually one visual direction and the engineering/testing workflow the task needs. Read the selected section in WORKFLOWS.md and its relevant attributed reference. These entries are workflows in this skill, not separate installed SKILL.md files. Implement the requested feature and verify its observable result without loading every style or changing the chosen stack.",
           "origin": {
             "category": "web-frontend",
             "version": "6.0.0",
             "procedure_sha256": "f3172986a1ad02fb188002fe14d3c4a483c72d71501c1a71111d9b4a89a919c7"
           },
-          "revision": "preserved procedure"
+          "revision": "preserved procedure",
+          "quality_revision": {
+            "previous_procedure_sha256": "f3172986a1ad02fb188002fe14d3c4a483c72d71501c1a71111d9b4a89a919c7",
+            "procedure_sha256": "191bd727f96b2879bde5750d86bafdb7d3255d92ebfee1779da8a565484b9911",
+            "reason": "Correct the router to point to actual exported workflow resources.",
+            "cycle": "improvement-cycle-1"
+          }
         },
         {
           "id": "web-front-accessibility",
@@ -1000,7 +1012,11 @@
         "references/web-front-find-skills/UPSTREAM-LICENSE",
         "references/web-front-find-skills/UPSTREAM.md"
       ],
-      "extra": "## Visual direction from an idea\n\nTreat the brief as a product brief, not a request to name a theme. Identify the audience, primary task, content volume, brand constraints, device context, and intended emotion. If the user supplied enough to build, state a short design rationale and proceed. Ask only when an unknown materially changes the product, integration, or acceptance criteria.\n\nAn explicit style or reference image takes priority over defaults. Preserve the current brand and design system for a focused feature unless the user requests a redesign. Recognize common spellings such as minimal/minimalist/minimalism, maximalism/maximalizm, and brutalism/brutalisim. Interpret constraints such as “no gradients” or “no animation” as constraints, not requests for those styles.\n\nWhen no style is named, choose one primary direction using the table. Select type, palette, spacing, geometry, imagery, density, and motion as a coherent system. A layout pattern such as bento can support an editorial or minimalist direction; it does not require mixing every aesthetic.\n\n| Product evidence | Useful starting direction | Implementation consequence |\n| --- | --- | --- |\n| Dense work, analytics, settings, administration | Minimalist or Swiss | Strong alignment, compact but legible density, clear state and action hierarchy |\n| Articles, journalism, publishing, long-form stories | Editorial | Readable measure, strong headline/body contrast, captions, deliberate reading rhythm |\n| Premium hospitality, jewelry, craftsmanship, luxury goods | Luxury/editorial | Art-directed imagery, restrained palette, purposeful type contrast, calm pacing |\n| Children's products or a playful learning experience | Clay or doodle accents | Expressive shapes around a stable layout, readable body text, clear touch targets |\n| Creative studio, festival, music, expressive portfolio | Maximalist or neo-brutalist | A strong motif and focal point, controlled overlap, readable navigation |\n| Technical tools, industrial products, utilitarian control panels | Industrial or Swiss | Structured grids, clear labels, useful numerals, direct controls |\n| AI task delegation or agent workspaces | Agentic | Editable intent, progress, results, cancellation and recovery, clear action boundaries |\n| Futuristic or gaming identity | Futuristic/cyberpunk when justified | Controlled luminous accents, sharp text, predictable ordinary controls |\n| Natural materials, sustainability, wellness identity | Organic | Warm surfaces, natural rhythm, tactile accents, verified contrast |\n| No strong visual cues | Restrained product-specific direction | Let actual content, a deliberate type choice, and one characteristic motif establish identity |\n\nFor a new project, define a small token system before broad styling: semantic surfaces and text, primary/secondary actions, status colors, a readable type scale, spacing, radius, border, shadow, and motion. Use existing tokens when the project already has them. Choose licensed assets and avoid fabricated customers, ratings, awards, or product claims.\n\n## Available visual modes\n\n- Minimalism: remove competing emphasis; preserve necessary controls and feedback. Use whitespace and alignment instead of hiding functionality.\n- Swiss: use a disciplined column/baseline system, clear grotesk typography, and deliberate asymmetry. Preserve reading order when stacking.\n- Editorial: compose real text and imagery around a reading experience, with useful captions, a stable measure, and intentional section rhythm.\n- Luxury: emphasize material, imagery, typography, and small consistent details. Keep prices, navigation, and purchase actions easy to find.\n- Agentic: make intent, tools, running state, proposals, completed actions, evidence, and recovery distinguishable.\n- Maximalism: use a coherent motif, rich layers, and deliberate focal points. Keep body text and ordinary actions readable.\n- Neo-brutalism: use flat color, strong borders, offset shadows, and direct controls consistently. Maintain explicit focus and error states.\n- Industrial brutalism: use ruled structure, utility typography, restrained material tones, and functional density. Keep decoration out of control semantics.\n- Futuristic/Y2K: select a specific visual vocabulary; keep ordinary text and interaction accessible beneath spatial or metallic effects.\n- Retro: choose a coherent era through typography, palette, and graphics while preserving modern interaction behavior.\n- Collage/paper: layer tactile surfaces and cutouts without breaking reading order, text selection, pointer access, or keyboard access.\n- Doodle: use irregular marks as accents around a stable layout. Preserve labels, hit areas, and discoverable state.\n- Bento: size and group modules by content priority. Allow translated text, changing data, and narrow-screen stacking without clipping.\n- Glass: use controlled backgrounds, explicit borders and contrast, an opaque fallback, and a limited blur budget.\n- Neumorphism: add visible affordances and focus beyond subtle shadows; raised and inset effects must not be the only state signal.\n- Claymorphism: use a restrained radius/depth system and a calm text-bearing surface beneath playful dimensional accents.\n- Aurora/gradient: control stop colors and text-bearing surfaces; verify contrast across stops and keep animated gradients optional.\n- Neon/cyberpunk: use glow as emphasis, keep text sharp, avoid flashing, and distinguish state beyond hue.\n- Immersive 3D: justify the scene as part of the experience; provide loading, fallback, resize, resource disposal, and a device budget.\n- Scrollytelling: make the story readable in ordinary document flow, then add scoped pinning or scrubbing with cleanup and reduced motion.\n- Kinetic typography: preserve semantic text when splitting glyphs; handle font loading, line wrapping, interruption, and reduced motion.\n- Organic: use warm or natural surfaces and rhythms without obscuring text, controls, or predictable navigation.\n\n## Build a complete product slice\n\n1. Inspect the existing framework, runtime versions, component primitives, design tokens, routes, state ownership, and relevant APIs. Reuse the actual project structure.\n2. Build the requested user journey with real content and data contracts. Include loading, empty, error, success, validation, and permission states where applicable.\n3. Use semantic HTML and established accessible primitives. Define keyboard interaction and focus ownership for dialogs, menus, forms, and other composite controls.\n4. Design narrow and wide layouts intentionally. Check long labels, changed data, translated text, zoom, touch, and overflow rather than relying on a single screenshot size.\n5. Choose motion for purpose, frequency, and context. Support interruption and cleanup; prefer reduced movement when requested or indicated by user preferences.\n6. Profile an actual bottleneck before optimizing. Bound image weight, render work, animation cost, data waterfalls, and third-party code according to the project.\n7. Verify the main journey through the available browser or test setup. Review screenshots, console output, network failures, accessibility behavior, and responsive states when those tools are available.\n\n## Completion evidence\n\nDeliver the implemented artifact, the chosen direction and why it fits, and the checks actually run. A successful build does not prove visual quality; a screenshot does not prove behavior. Fix observed issues and rerun the relevant checks. If browser or rendering tools are unavailable, state the limit and complete the checks that are available instead of inventing visual verification.\n\n## Representative requests\n\n- “Build a dashboard for a small clinic.” Infer a clear, restrained information hierarchy with readable scheduling and task states; do not ask the user to choose a style name before building.\n- “Make a maximalist landing page for a music festival.” Follow the explicit expressive direction, use real event content, and preserve ticket and navigation usability.\n- “A premium hotel site, no animation.” Use an appropriate luxury/editorial direction with art-directed images and calm typography; keep the no-animation constraint.\n- “Add settings to this existing app.” Preserve its existing theme, component system, and navigation; implement the complete settings behavior.\n\n## Anticipate failure and verify the boundary\n\nInfer one coherent visual direction from audience, content and primary action when the user omits a style; preserve explicit brand choices. Implement the full journey before polish: named controls, validation, loading/error/empty/success states and selected-value confirmation. Hidden custom controls still need a visible focus indicator on their visible wrapper. Use a focusable status target deliberately if moving focus. Render and exercise keyboard and narrow layouts; CSS inspection or a proposed checklist is not browser evidence, and visual taste has no objective percentage score. Prototype feedback must describe only the action actually implemented: do not say an email, calendar invite or external booking was sent when the page only updates local state."
+      "extra": "## Visual direction from an idea\n\nTreat the brief as a product brief, not a request to name a theme. Identify the audience, primary task, content volume, brand constraints, device context, and intended emotion. If the user supplied enough to build, state a short design rationale and proceed. Ask only when an unknown materially changes the product, integration, or acceptance criteria.\n\nAn explicit style or reference image takes priority over defaults. Preserve the current brand and design system for a focused feature unless the user requests a redesign. Recognize common spellings such as minimal/minimalist/minimalism, maximalism/maximalizm, and brutalism/brutalisim. Interpret constraints such as “no gradients” or “no animation” as constraints, not requests for those styles.\n\nWhen no style is named, choose one primary direction using the table. Select type, palette, spacing, geometry, imagery, density, and motion as a coherent system. A layout pattern such as bento can support an editorial or minimalist direction; it does not require mixing every aesthetic.\n\n| Product evidence | Useful starting direction | Implementation consequence |\n| --- | --- | --- |\n| Dense work, analytics, settings, administration | Minimalist or Swiss | Strong alignment, compact but legible density, clear state and action hierarchy |\n| Articles, journalism, publishing, long-form stories | Editorial | Readable measure, strong headline/body contrast, captions, deliberate reading rhythm |\n| Premium hospitality, jewelry, craftsmanship, luxury goods | Luxury/editorial | Art-directed imagery, restrained palette, purposeful type contrast, calm pacing |\n| Children's products or a playful learning experience | Clay or doodle accents | Expressive shapes around a stable layout, readable body text, clear touch targets |\n| Creative studio, festival, music, expressive portfolio | Maximalist or neo-brutalist | A strong motif and focal point, controlled overlap, readable navigation |\n| Technical tools, industrial products, utilitarian control panels | Industrial or Swiss | Structured grids, clear labels, useful numerals, direct controls |\n| AI task delegation or agent workspaces | Agentic | Editable intent, progress, results, cancellation and recovery, clear action boundaries |\n| Futuristic or gaming identity | Futuristic/cyberpunk when justified | Controlled luminous accents, sharp text, predictable ordinary controls |\n| Natural materials, sustainability, wellness identity | Organic | Warm surfaces, natural rhythm, tactile accents, verified contrast |\n| No strong visual cues | Restrained product-specific direction | Let actual content, a deliberate type choice, and one characteristic motif establish identity |\n\nFor a new project, define a small token system before broad styling: semantic surfaces and text, primary/secondary actions, status colors, a readable type scale, spacing, radius, border, shadow, and motion. Use existing tokens when the project already has them. Choose licensed assets and avoid fabricated customers, ratings, awards, or product claims.\n\n## Available visual modes\n\n- Minimalism: remove competing emphasis; preserve necessary controls and feedback. Use whitespace and alignment instead of hiding functionality.\n- Swiss: use a disciplined column/baseline system, clear grotesk typography, and deliberate asymmetry. Preserve reading order when stacking.\n- Editorial: compose real text and imagery around a reading experience, with useful captions, a stable measure, and intentional section rhythm.\n- Luxury: emphasize material, imagery, typography, and small consistent details. Keep prices, navigation, and purchase actions easy to find.\n- Agentic: make intent, tools, running state, proposals, completed actions, evidence, and recovery distinguishable.\n- Maximalism: use a coherent motif, rich layers, and deliberate focal points. Keep body text and ordinary actions readable.\n- Neo-brutalism: use flat color, strong borders, offset shadows, and direct controls consistently. Maintain explicit focus and error states.\n- Industrial brutalism: use ruled structure, utility typography, restrained material tones, and functional density. Keep decoration out of control semantics.\n- Futuristic/Y2K: select a specific visual vocabulary; keep ordinary text and interaction accessible beneath spatial or metallic effects.\n- Retro: choose a coherent era through typography, palette, and graphics while preserving modern interaction behavior.\n- Collage/paper: layer tactile surfaces and cutouts without breaking reading order, text selection, pointer access, or keyboard access.\n- Doodle: use irregular marks as accents around a stable layout. Preserve labels, hit areas, and discoverable state.\n- Bento: size and group modules by content priority. Allow translated text, changing data, and narrow-screen stacking without clipping.\n- Glass: use controlled backgrounds, explicit borders and contrast, an opaque fallback, and a limited blur budget.\n- Neumorphism: add visible affordances and focus beyond subtle shadows; raised and inset effects must not be the only state signal.\n- Claymorphism: use a restrained radius/depth system and a calm text-bearing surface beneath playful dimensional accents.\n- Aurora/gradient: control stop colors and text-bearing surfaces; verify contrast across stops and keep animated gradients optional.\n- Neon/cyberpunk: use glow as emphasis, keep text sharp, avoid flashing, and distinguish state beyond hue.\n- Immersive 3D: justify the scene as part of the experience; provide loading, fallback, resize, resource disposal, and a device budget.\n- Scrollytelling: make the story readable in ordinary document flow, then add scoped pinning or scrubbing with cleanup and reduced motion.\n- Kinetic typography: preserve semantic text when splitting glyphs; handle font loading, line wrapping, interruption, and reduced motion.\n- Organic: use warm or natural surfaces and rhythms without obscuring text, controls, or predictable navigation.\n\n## Build a complete product slice\n\n1. Inspect the existing framework, runtime versions, component primitives, design tokens, routes, state ownership, and relevant APIs. Reuse the actual project structure.\n2. Build the requested user journey with real content and data contracts. Include loading, empty, error, success, validation, and permission states where applicable.\n3. Use semantic HTML and established accessible primitives. Define keyboard interaction and focus ownership for dialogs, menus, forms, and other composite controls.\n4. Design narrow and wide layouts intentionally. Check long labels, changed data, translated text, zoom, touch, and overflow rather than relying on a single screenshot size.\n5. Choose motion for purpose, frequency, and context. Support interruption and cleanup; prefer reduced movement when requested or indicated by user preferences.\n6. Profile an actual bottleneck before optimizing. Bound image weight, render work, animation cost, data waterfalls, and third-party code according to the project.\n7. Verify the main journey through the available browser or test setup. Review screenshots, console output, network failures, accessibility behavior, and responsive states when those tools are available.\n\n## Completion evidence\n\nDeliver the implemented artifact, the chosen direction and why it fits, and the checks actually run. A successful build does not prove visual quality; a screenshot does not prove behavior. Fix observed issues and rerun the relevant checks. If browser or rendering tools are unavailable, state the limit and complete the checks that are available instead of inventing visual verification.\n\n## Representative requests\n\n- “Build a dashboard for a small clinic.” Infer a clear, restrained information hierarchy with readable scheduling and task states; do not ask the user to choose a style name before building.\n- “Make a maximalist landing page for a music festival.” Follow the explicit expressive direction, use real event content, and preserve ticket and navigation usability.\n- “A premium hotel site, no animation.” Use an appropriate luxury/editorial direction with art-directed images and calm typography; keep the no-animation constraint.\n- “Add settings to this existing app.” Preserve its existing theme, component system, and navigation; implement the complete settings behavior.\n\n## Anticipate failure and verify the boundary\n\nInfer one coherent visual direction from audience, content and primary action when the user omits a style; preserve explicit brand choices. Implement the full journey before polish: named controls, validation, loading/error/empty/success states and selected-value confirmation. Hidden custom controls still need a visible focus indicator on their visible wrapper. Use a focusable status target deliberately if moving focus. Render and exercise keyboard and narrow layouts; CSS inspection or a proposed checklist is not browser evidence, and visual taste has no objective percentage score. Prototype feedback must describe only the action actually implemented: do not say an email, calendar invite or external booking was sent when the page only updates local state.",
+      "completion_checks": [
+        "Infer a coherent direction from audience/content/action while preserving explicit brand/stack constraints; implement named controls and actual loading/error/empty/success transitions.",
+        "Verify selected-value confirmation, keyboard-visible custom controls, a deliberately focusable status target and narrow layouts; stale async responses/optimistic rollbacks must not overwrite newer state. Local feedback must not claim external actions occurred."
+      ]
     },
     {
       "id": "web-backend",
@@ -1008,7 +1024,7 @@
       "description": "Implement backend services, APIs, integrations and framework features with explicit contracts and failure behavior.",
       "decisions": "Read the selected stack, authentication boundary and data ownership before implementing. Choose transactions, retries and background work from the operation's consistency requirements, rather than framework defaults.",
       "deliverable": "Reviewable service code, request/response and error contracts, persistence changes, authorization boundaries and operational notes for changed behavior.",
-      "verification": "Test invalid input, tenant/owner isolation, duplicate requests, transaction rollback and relevant concurrent access. Use local fixtures; label unexecuted external integrations.",
+      "verification": "Test the changed API contract, invalid inputs and relevant authorization/data ownership. For state-changing retry/concurrency work, exercise duplicate requests, transaction rollback and overlap. Use local fixtures and label unexecuted integrations.",
       "tags": [
         "web-backend",
         "developer",
@@ -2354,7 +2370,11 @@
         "references/web-backend-workers-profiling/notices/1-LICENSE",
         "references/web-backend-workers-profiling/references/skill-feedback.md"
       ],
-      "extra": "## Anticipate failure and verify the boundary\n\nChoose one internally consistent idempotency protocol. Scope durable keys to the authenticated tenant and canonical request identity. In one-transaction designs, a competing unique insert may block; uncommitted status is not externally visible and rollback removes its FAILED update. In separately committed claim designs, define leases/generations, takeover and stale-owner fencing. Commit job/command, outbox and replay outcome at the required atomic boundary. Reconcile unknown commits and remote outcomes with stable keys; test overlap, payload mismatch, abandoned claims and lost replies before claiming recovery guarantees."
+      "extra": "## Anticipate failure and verify the boundary\n\nFor retryable state-changing work, choose one consistent idempotency protocol. Scope keys to authenticated tenant and canonical payload. A competing unique insert in a single transaction may block; rollback removes uncommitted status. Separately committed claims need takeover generations and stale-owner fencing. Commit command/job, outbox and replay at the relevant atomic boundary and test unknown-commit recovery; do not impose this protocol on unrelated endpoint work.",
+      "completion_checks": [
+        "For retryable state-changing work, bind durable keys to authenticated tenant and canonical payload; reject changed reuse and choose one consistent ownership/commit protocol.",
+        "Commit command/job, outbox and replay outcome at the required atomic boundary; explain duplicate blocking, rollback and lost-commit replies, or lease takeover/fencing for separately committed claims. Scope unrelated backend changes to their own contracts."
+      ]
     },
     {
       "id": "code-build",
@@ -2474,7 +2494,7 @@
         {
           "id": "code-blueprint",
           "title": "GNCore Blueprint",
-          "description": "Turn a one-line objective into a step-by-step construction plan for multi-session, multi-agent engineering projects: one-PR-sized steps with self-contained context briefs, dependency graph with parallel-step detection, adversarial review gate, and plan mutation protocol.",
+          "description": "Plan a substantial engineering change as reviewable steps with dependencies and acceptance evidence.",
           "procedure": "Split a substantial change into reviewable outcomes with dependencies, acceptance evidence and enough call-path/context information to resume later. Sequence uncertain boundaries early and keep the plan mutable as evidence changes. Do not assume delegation, universal approval gates or a new project structure.",
           "origin": {
             "category": "code-build",
@@ -2606,7 +2626,7 @@
         {
           "id": "code-tdd-workflow",
           "title": "GNCore Tdd Workflow",
-          "description": "Test-driven development workflow: write a failing test first, watch it fail, implement the smallest change to green, then refactor with 80%+ coverage across unit, integration, and E2E tests.",
+          "description": "Use a focused red/green/refactor loop around an observable behavior contract.",
           "procedure": "Plan the test boundary and fixtures before changing behavior. Keep a red/green/refactor loop around user-visible contracts and integration risks, with deterministic cleanup. Choose coverage based on meaningful failure paths rather than enforcing an arbitrary percentage as proof of quality.",
           "origin": {
             "category": "code-build",
@@ -2726,7 +2746,7 @@
         {
           "id": "code-verification-loop",
           "title": "GNCore Verification Loop",
-          "description": "Run a six-phase verification of a Claude Code session's work — build, type check, lint, tests with coverage, security grep, and diff review — then produce a PASS/FAIL verification report.",
+          "description": "Select and run checks that expose the changed contract; investigate failures and retain evidence.",
           "procedure": "Select checks that expose the changed contract, run them, inspect failure causes and make a focused correction. Repeat only when the new change or evidence justifies it. Preserve useful logs and stop an unchanged failing cycle to investigate the missing dependency or assumption.",
           "origin": {
             "category": "code-build",
@@ -2798,7 +2818,7 @@
         {
           "id": "code-semgrep",
           "title": "GNCore Semgrep",
-          "description": "Runs a Semgrep security scan over a codebase: detects languages, selects rulesets, presents the plan for explicit approval, then runs every approved ruleset through scripts/run-scans.sh, which batches the semgrep processes and writes scans.json, and merges the output to SARIF.",
+          "description": "Run and interpret a bounded, relevant Semgrep analysis using the available installation.",
           "procedure": "Check the installed Semgrep version, language support and relevant rules before a bounded local scan. Validate representative matches and false positives against code paths, record command/rule versions and preserve machine-readable findings. Do not treat scanner silence as proof of security.",
           "origin": {
             "category": "code-build",
@@ -2858,7 +2878,7 @@
         {
           "id": "code-delivery-gate",
           "title": "GNCore Delivery Gate",
-          "description": "Stop hook that blocks Claude from finishing until quality checks pass.",
+          "description": "Review acceptance and release evidence, including failures and unresolved risks.",
           "procedure": "Gather the actual acceptance, compatibility, security, artifact and rollback evidence for this change. Report passed, failed, skipped and missing checks and identify a concrete go/no-go reason. A green test suite alone does not authorize publishing or production rollout.",
           "origin": {
             "category": "code-build",
@@ -2954,7 +2974,7 @@
         {
           "id": "code-to-spec",
           "title": "GNCore To Spec",
-          "description": "Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed.",
+          "description": "Turn agreed requirements into a local, reviewable technical specification.",
           "procedure": "Convert agreed requirements into explicit actors, inputs, state transitions, public contracts and acceptance examples. Surface contradictions and material unresolved decisions before implementation. Preserve user choices and distinguish normative behavior from illustrative implementation suggestions.",
           "origin": {
             "category": "code-build",
@@ -2966,7 +2986,7 @@
         {
           "id": "code-to-tickets",
           "title": "GNCore To Tickets",
-          "description": "Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker).",
+          "description": "Split an accepted specification into coherent deliverables with dependencies and acceptance criteria.",
           "procedure": "Split an accepted specification into coherent deliverables with dependencies, scope exclusions and observable acceptance. Keep each ticket independently understandable and connect it to the parent requirement. Avoid arbitrary task fragmentation or creating external issues unless requested.",
           "origin": {
             "category": "code-build",
@@ -3062,7 +3082,7 @@
         {
           "id": "code-python-testing",
           "title": "GNCore Python Testing",
-          "description": "Python testing strategies using pytest, TDD methodology, fixtures, mocking, parametrization, and coverage requirements.",
+          "description": "Design Python tests around observable contracts, meaningful boundaries and isolated state.",
           "procedure": "Choose unit or integration boundaries around the actual Python contract, use isolated temporary state and test normal, invalid and regression cases. Parameterize meaningful variations and verify cleanup. Mock external boundaries without replacing the behavior the test is supposed to establish.",
           "origin": {
             "category": "code-build",
@@ -3777,7 +3797,11 @@
         "references/code-workflow-setup/notices/1-LICENSE",
         "references/code-workflow-setup/triage-labels.md"
       ],
-      "extra": "## Anticipate failure and verify the boundary\n\nTurn the behavior contract into a small counterexample before patching. Preserve API, exception types, units and mutation behavior; check language-specific type traps and exact arithmetic where totals matter. Keep the change local, then verify ordinary, zero, extreme and invalid inputs with an independent oracle. A passing example or explanation is insufficient evidence for general correctness. When a repair allocates or ranks quantities, test mixed exact and fractional shares as well as ties; conservation or a passing happy path alone does not prove the ordering rule."
+      "extra": "## Anticipate failure and verify the boundary\n\nTurn the behavior contract into a small counterexample before patching. Preserve API, exception types, units and mutation behavior; check language-specific type traps and exact arithmetic where totals matter. Keep the change local, then verify ordinary, zero, extreme and invalid inputs with an independent oracle. A passing example or explanation is insufficient evidence for general correctness. When a repair allocates or ranks quantities, test mixed exact and fractional shares as well as ties; conservation or a passing happy path alone does not prove the ordering rule.",
+      "completion_checks": [
+        "Match the supplied API, exception semantics, units and mutation behavior; use an independent counterexample for the actual failure mode.",
+        "For exact allocation/ranking, test ordering as well as conservation, mixed exact/fractional shares, stable ties and invalid inputs; do not infer general correctness from a small fixture."
+      ]
     },
     {
       "id": "design-ux",
@@ -3934,13 +3958,19 @@
           "id": "design-handoff",
           "title": "Design to Engineering Handoff",
           "description": "Prepare a design handoff with behavior, states, assets, responsive rules, and unresolved questions.",
-          "procedure": "Annotate component reuse, tokens, breakpoints, interaction states, content, asset sources, and acceptance criteria. Review implementation with the designer and log deviations for resolution.",
+          "procedure": "Annotate component reuse, tokens, breakpoints, interaction states, content, asset sources and acceptance criteria. Compare the implementation with this specification and record concrete deviations. When a designer is available and review is in scope, resolve differences together; absence of a collaborator must not prevent delivery of a reviewable artifact.",
           "origin": {
             "category": "design-ux",
             "version": "6.0.0",
             "procedure_sha256": "daa887b43912ef207bc837a3481cadf49dc812861b8bac98a8eeef81ba8a30c1"
           },
-          "revision": "preserved procedure"
+          "revision": "preserved procedure",
+          "quality_revision": {
+            "previous_procedure_sha256": "daa887b43912ef207bc837a3481cadf49dc812861b8bac98a8eeef81ba8a30c1",
+            "procedure_sha256": "cd64505935a8ef155dd91c5e617c4b2178029933de85e0e08c96620527e28496",
+            "reason": "Make collaborator review conditional while preserving implementation acceptance.",
+            "cycle": "improvement-cycle-1"
+          }
         }
       ],
       "original_categories": [
@@ -3951,7 +3981,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nTranslate aesthetic intent into concrete task hierarchy and behavior. Specify the narrow-screen ordering, reflow, control names, keyboard path, visible and restored focus, persistent error/success feedback and destructive-action recovery. Infer consequential omissions from the primary journey without adding unrelated features. A proposed specification is not a tested interface: verify the implemented flow with keyboard, zoom and representative assistive technology when available."
+      "extra": "## Anticipate failure and verify the boundary\n\nTranslate aesthetic intent into concrete task hierarchy and behavior. Specify the narrow-screen ordering, reflow, control names, keyboard path, visible and restored focus, persistent error/success feedback and destructive-action recovery. Infer consequential omissions from the primary journey without adding unrelated features. A proposed specification is not a tested interface: verify the implemented flow with keyboard, zoom and representative assistive technology when available.",
+      "completion_checks": [
+        "Specify narrow-screen content/action order, semantic names, keyboard path, visible/restored focus and persistent linked errors; include consequential secret/destructive states when relevant.",
+        "Announce async status without surprising focus moves; define focus after dialogs, removals and validation. Separate the proposed interaction specification from tested behavior."
+      ]
     },
     {
       "id": "python",
@@ -3959,7 +3993,7 @@
       "description": "Build, profile, package and migrate Python applications and libraries with reproducible environments.",
       "decisions": "Inspect supported interpreters, public APIs, build backend and dependency conventions. Use async for actual asynchronous I/O, and profile before choosing optimization or native extensions.",
       "deliverable": "Typed maintainable modules, a stable public contract, appropriate packaging metadata and an environment/reproduction command.",
-      "verification": "Run meaningful tests, clean imports and relevant interpreter checks. Verify the built wheel instead of relying on an editable checkout.",
+      "verification": "Run regressions, clean imports and interpreter checks relevant to the changed behavior. For packaging/resources/distribution work, verify the built sdist and its wheel outside the checkout; ordinary Python fixes do not require release work.",
       "tags": [
         "python",
         "developer",
@@ -3987,13 +4021,19 @@
           "id": "python-packaging",
           "title": "Python Packaging",
           "description": "Package a Python library with clear APIs, reproducible builds, supported versions, and clean installation behavior.",
-          "procedure": "Inspect the current build backend, Python support matrix, dependencies, and public API. Keep imports predictable and package data explicit; pin policy should match project conventions. Build and install the artifact in an isolated environment, verify metadata and entry points, and test a clean import. Do not publish a release or change compatibility promises without approval.",
+          "procedure": "For packaging changes, inspect the build backend, supported interpreters, dependencies, resources and public entrypoints. Produce the sdist, build a wheel from that archive and inspect both inventories. Clean-install outside the source checkout and invoke imports/commands from unrelated working directories on the supported interpreter range. Honor existing release authorization and keep build/compatibility evidence distinct from publication; ordinary Python fixes need only checks relevant to their behavior.",
           "origin": {
             "category": "python",
             "version": "6.0.0",
             "procedure_sha256": "a988183221b3b2c28bce2f44dfa789811f5a264fbfbd8b60ed06647bc94473e6"
           },
-          "revision": "preserved procedure"
+          "revision": "preserved procedure",
+          "quality_revision": {
+            "previous_procedure_sha256": "a988183221b3b2c28bce2f44dfa789811f5a264fbfbd8b60ed06647bc94473e6",
+            "procedure_sha256": "2f545d3e934a51b1eb49ab66f5d374f87abd38cda4f5df89a24a405eef7a47b2",
+            "reason": "Verify source-archive completeness and scope packaging checks to packaging work.",
+            "cycle": "improvement-cycle-1"
+          }
         },
         {
           "id": "python-migration",
@@ -4015,7 +4055,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nVerify the built wheel/sdist in clean environments outside the source checkout, including resources and entrypoints from unrelated working directories. Declare runtime/dependency and interpreter constraints, and check syntax/APIs on the oldest supported interpreter. Use package-resource lookup and explicit build-backend inclusion rules; a source-archive include rule alone may not include a wheel resource. Retain archive contents, install logs and compatibility evidence before release."
+      "extra": "## Anticipate failure and verify the boundary\n\nMatch the verification boundary to the change: ordinary Python behavior, concurrency and performance work do not automatically require a distribution build. When packaging or resources change, test the produced sdist and wheel in clean environments outside the checkout, including entrypoints and working-directory behavior.",
+      "completion_checks": [
+        "For ordinary fixes, preserve API/runtime behavior and run relevant regressions without imposing a package release workflow.",
+        "For packaging/resources/distribution changes, build the wheel from the produced sdist, inspect metadata/resources/entrypoints and clean-install outside the checkout across supported interpreters and working directories."
+      ]
     },
     {
       "id": "developer-tools",
@@ -4066,7 +4110,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nPreflight repository ownership, dirty state, path/branch collisions and the intended base before creating workspaces or files. Use argument arrays or correctly quoted explicit paths rather than generated shell strings. Make partial creation and interruption recoverable: detect owned incomplete state, preserve unrelated edits, and explain safe retry/cleanup. Define exit codes and diagnostics that distinguish invalid input, conflicts and environmental failure; verify paths containing spaces and concurrent invocations."
+      "extra": "## Anticipate failure and verify the boundary\n\nPreflight repository ownership, dirty state, path/branch collisions and the intended base before creating workspaces or files. Use argument arrays or correctly quoted explicit paths rather than generated shell strings. Make partial creation and interruption recoverable: detect owned incomplete state, preserve unrelated edits, and explain safe retry/cleanup. Define exit codes and diagnostics that distinguish invalid input, conflicts and environmental failure; verify paths containing spaces and concurrent invocations.",
+      "completion_checks": [
+        "For repository/workspace changes, preflight ownership, dirty paths and collisions; journal only owned partial state and preserve intervening user work during recovery.",
+        "Use explicit paths and argument arrays; handle option-like values at the invoked program's boundary. Define actionable exit behavior and verify spaces, Unicode and interruption."
+      ]
     },
     {
       "id": "documentation",
@@ -4130,7 +4178,12 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nDerive examples from the real help/API contract, including prerequisites, changed defaults and compatibility boundaries. Make examples copyable without inventing flags or endpoints. Include a realistic failure and safe recovery route, such as an existing output collision, while preserving user data. Label untested examples explicitly and verify commands, links and migration behavior when execution is available."
+      "extra": "## Anticipate failure and verify the boundary\n\nDerive examples from the real help/API contract, including prerequisites, changed defaults and compatibility boundaries. Make examples copyable without inventing flags or endpoints. Include a realistic failure and safe recovery route, such as an existing output collision, while preserving user data. Label untested examples explicitly and verify commands, links and migration behavior when execution is available.",
+      "completion_checks": [
+        "Use only the supplied or verified API/help contract; label illustrative schema, status codes and assumptions instead of presenting invented fields as requirements.",
+        "For procedural/migration guides, include compatible shell/platform examples and a recoverable failure path; preserve scope for narrow edits and distinguish unexecuted examples.",
+        "Give a self-contained example a reader can copy. If the wire schema is incomplete, clearly label every assumption or supply a runnable offline mock/client example that preserves the known contract; do not imply unverified wire compatibility or leave the only example as non-runnable placeholder prose."
+      ]
     },
     {
       "id": "testing",
@@ -4390,7 +4443,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nDerive assertions from independent observable contracts rather than the implementation's wording. Check that the suite accepts a known-correct implementation before measuring deliberate mutants, and distinguish caught defects from false rejections. Cover meaningful boundaries, exception semantics and state transitions with deterministic setup/cleanup. Report actual passed/failed/skipped cases and unexecuted integration coverage; do not turn an always-failing test into a high bug-catching score."
+      "extra": "## Anticipate failure and verify the boundary\n\nDerive assertions from independent observable contracts rather than the implementation's wording. Check that the suite accepts a known-correct implementation before measuring deliberate mutants, and distinguish caught defects from false rejections. Cover meaningful boundaries, exception semantics and state transitions with deterministic setup/cleanup. Report actual passed/failed/skipped cases and unexecuted integration coverage; do not turn an always-failing test into a high bug-catching score.",
+      "completion_checks": [
+        "Derive observable assertions from an independent contract and meaningful failure transitions; a corrected oracle needs contract evidence, not a desire for green CI.",
+        "For mutation evaluation, first accept a known-correct implementation, then count caught mutants and false rejections separately. Record actual failures/skips and unavailable integration coverage."
+      ]
     },
     {
       "id": "cybersecurity",
@@ -4565,7 +4622,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nFor each finding, trace attacker-controlled input through the relevant boundary to an observable impact, then propose a repair that preserves authorized behavior. Distinguish finding recall, false alarms and repair correctness. Path containment requires canonical component-aware checks and a symlink/race policy, not a string prefix or filename sanitizer alone. Retest the exploit path and safe neighboring cases; do not call an entire application secure from a small fixture."
+      "extra": "## Anticipate failure and verify the boundary\n\nFor each finding, trace attacker-controlled input through the relevant boundary to an observable impact, then propose a repair that preserves authorized behavior. Distinguish finding recall, false alarms and repair correctness. Path containment requires canonical component-aware checks and a symlink/race policy, not a string prefix or filename sanitizer alone. Retest the exploit path and safe neighboring cases; do not call an entire application secure from a small fixture.",
+      "completion_checks": [
+        "Separate demonstrated exploits, statically established paths and unresolved hypotheses; record attacker control, impact, repair and safe neighboring behavior.",
+        "Measure false alarms and repaired behavior separately from finding recall; secret removal does not revoke exposed credentials or derived sessions."
+      ]
     },
     {
       "id": "cloud-devops-sre",
@@ -4779,7 +4840,12 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nInfer compatibility, secret handling and recovery needs even when the brief mentions only deployment. Stage additive schema/config changes before switching consumers; bound backfill and exposure, and gate promotion on workload-specific errors, latency, lag and resource limits over a defined window. Use least-privilege identities and keep credentials out of images and logs. Application rollback does not reverse changed data; retain a compatible path and rehearse recovery before destructive contraction."
+      "extra": "## Anticipate failure and verify the boundary\n\nInfer compatibility, secret handling and recovery needs even when the brief mentions only deployment. Stage additive schema/config changes before switching consumers; bound backfill and exposure, and gate promotion on workload-specific errors, latency, lag and resource limits over a defined window. Use least-privilege identities and keep credentials out of images and logs. Application rollback does not reverse changed data; retain a compatible path and rehearse recovery before destructive contraction.",
+      "completion_checks": [
+        "Check reader/writer compatibility, least-privilege identity and secret handling before exposure; promote the same tested artifact digest for each intended target.",
+        "Use workload-specific error, latency, lag and resource gates; distinguish startup/readiness/liveness and preserve a compatible recovery path before contraction.",
+        "Before delivering a rollout plan, state the credential delivery boundary: a managed identity or authorized runtime secret store, no embedded credentials in artifacts, and redaction from logs. Naming least privilege alone does not cover credential exposure."
+      ]
     },
     {
       "id": "release-engineering",
@@ -4815,12 +4881,18 @@
           "id": "release-artifact-integrity",
           "title": "Artifact integrity and promotion",
           "description": "Artifact integrity and promotion.",
-          "procedure": "Build wheel/source/platform artifacts from a clean accepted tree, record checksums and install them outside the checkout. Verify declared resources, executable entrypoints and version agreement. Promote these bytes only after destination-specific publication approval.",
+          "procedure": "For each intended wheel/source/platform target, build from the accepted tree, inspect metadata/resources/entrypoints, record hashes and install outside the checkout. For Python distributions, verify the wheel built from the produced source archive. Promote the same verified bytes to authorized destinations; distinct platform artifacts may legitimately differ. Retain source/CI/artifact identity and report unavailable destination verification rather than implying publication.",
           "origin": {
             "author": "GNCore / Ganesh Naidu",
             "license": "MIT"
           },
-          "revision": "new original procedure"
+          "revision": "new original procedure",
+          "quality_revision": {
+            "previous_procedure_sha256": "bddd5e446dd5ee9dae9460b9cf756535d686cfb58595c2310ff1b4aba2e28cd8",
+            "procedure_sha256": "5618e2b54bfc5deec83cccc68e90a9501f966556e49b954656a9b0852e3968a8",
+            "reason": "Qualify build-once per target and honor existing destination authorization.",
+            "cycle": "improvement-cycle-1"
+          }
         }
       ],
       "original_categories": [
@@ -4830,7 +4902,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nLink the accepted source revision, version, CI evidence and exact artifact hashes in one release record. Build once and promote those verified bytes to each destination; do not rebuild separately and assume equivalence. Inspect metadata/contents and install outside the checkout. Keep website/download claims pending until destination availability is verified. Plan partial-publication recovery and registry-specific yank/supersede behavior, retaining explicit preparation-only boundaries until publication is authorized."
+      "extra": "## Anticipate failure and verify the boundary\n\nLink the accepted source revision, version, CI evidence and exact artifact hashes in one release record. Build once and promote those verified bytes to each destination; do not rebuild separately and assume equivalence. Inspect metadata/contents and install outside the checkout. Keep website/download claims pending until destination availability is verified. Plan partial-publication recovery and registry-specific yank/supersede behavior, retaining explicit preparation-only boundaries until publication is authorized.",
+      "completion_checks": [
+        "For each intended target artifact, link accepted source/version, CI evidence, metadata and hashes; promote those same verified bytes to destinations covered by authorization.",
+        "Verify clean installs and actual destination availability before updating in-scope claims. Preserve recovery for partial publication; do not overwrite immutable registry files or imply unperformed publication."
+      ]
     },
     {
       "id": "automation",
@@ -4853,13 +4929,19 @@
           "id": "workflow-automation",
           "title": "Workflow Automation",
           "description": "Automate a repetitive workflow with bounded inputs, safe retries, idempotency, and clear human checkpoints.",
-          "procedure": "Map triggers, inputs, side effects, failure modes, and owners before automating. Validate inputs, use least-privilege credentials, make retries idempotent, and log useful non-sensitive events. Add human review before irreversible or externally visible actions. Test on fixtures or a sandbox first; do not send messages, spend money, or mutate production data without authorization.",
+          "procedure": "Map triggers, inputs, side effects, failure modes and ownership before automating. Validate inputs, use least-privilege credentials, durable operation/payload identity and bounded idempotent retries. Preserve recoverable state and useful non-sensitive logs. Honor existing authorization; request review at an actual consequential boundary rather than repeatedly asking for already-authorized routine work. Test crash/replay on fixtures before claiming recovery or external execution.",
           "origin": {
             "category": "automation",
             "version": "6.0.0",
             "procedure_sha256": "a8cba137ee3be28d21e5b641ae273df4ea117082682d3d8014c7024269968518"
           },
-          "revision": "preserved procedure"
+          "revision": "preserved procedure",
+          "quality_revision": {
+            "previous_procedure_sha256": "a8cba137ee3be28d21e5b641ae273df4ea117082682d3d8014c7024269968518",
+            "procedure_sha256": "9418db310b7dd608b81f38ca8d8926edee638675b028e99569f05e4edb6c5a2d",
+            "reason": "Use actual authorization boundaries and durable overlap/retry behavior.",
+            "cycle": "improvement-cycle-1"
+          }
         },
         {
           "id": "automation-resume",
@@ -4880,7 +4962,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nDefine durable operation identity before adding retries. Commit progress with the effect when one transactional boundary permits it; otherwise use an idempotent remote contract, ledger and reconciliation for unknown outcomes. Separate malformed/permanent failures from transient errors, cap retries with backoff and jitter, and leave a recoverable record. Test interruption immediately before and after the durable boundary, including replay of already accepted work."
+      "extra": "## Anticipate failure and verify the boundary\n\nDefine durable operation identity before adding retries. Commit progress with the effect when one transactional boundary permits it; otherwise use an idempotent remote contract, ledger and reconciliation for unknown outcomes. Separate malformed/permanent failures from transient errors, cap retries with backoff and jitter, and leave a recoverable record. Test interruption immediately before and after the durable boundary, including replay of already accepted work.",
+      "completion_checks": [
+        "Scope operation identity to the owner and payload; reject conflicting reuse and make overlapping triggers acquire atomic ownership.",
+        "Fence stale owners at the effect's storage boundary; retain a bounded retry/quarantine record and verify crash/replay across the durable commit."
+      ]
     },
     {
       "id": "mobile-development",
@@ -4921,13 +5007,17 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nUse stable identities and virtualization for long collections, then measure expensive row work and rerenders before tuning. Own subscriptions and async tasks across navigation, background/resume and unmount; cancel or ignore stale results. Preserve versioned offline state with loading/stale/error/retry behavior. For mutations, use durable operation identity and a conflict policy; read-only caches should not invent write workflows. Test lifecycle transitions and representative devices separately from desktop reasoning."
+      "extra": "## Anticipate failure and verify the boundary\n\nPreserve platform lifecycle and account boundaries. Persist versioned drafts and pending operations for process death, not only backgrounding, and reject stale results after navigation or account changes. Optimize long collections with stable identities and virtualization only when relevant, then measure. Keep mutation identity/conflict recovery explicit and distinguish device evidence from desktop reasoning.",
+      "completion_checks": [
+        "Preserve versioned drafts/pending state across process death as well as background/resume; cancel or reject stale results across navigation, logout and account changes.",
+        "Where relevant, use stable virtualized rows and measured optimization; give offline/error/conflict state and durable mutation identity a real recovery path, then test relaunch/retry on the target platform."
+      ]
     },
     {
       "id": "game-development",
       "title": "GNCore Game Development",
       "description": "Build playable game mechanics, simulation state, assets and measured runtime performance.",
-      "decisions": "Choose a complete playable loop within the existing engine. Separate simulation time from rendering, make inputs/state transitions explicit and keep pause/restart behavior coherent.",
+      "decisions": "Preserve the requested mechanic within the existing engine and its enclosing gameplay loop. Separate simulation from rendering, make input/state transitions explicit and keep pause/restart behavior coherent without expanding a focused fix into a new game.",
       "deliverable": "Playable mechanics with clear rules, input feedback, success/failure and restart states, plus asset/runtime assumptions.",
       "verification": "Play through complete rounds, invalid input and reset. Test fixed-duration simulation at different frame rates and profile representative scenes before optimization claims.",
       "tags": [
@@ -4962,7 +5052,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nConfirm the engine's movement API and units before introducing delta: some velocity APIs already integrate time. Separate action edges/input state from physics updates, validate direction/normalization and preserve intended mechanics. Bound pause/resume and large-timestep behavior instead of applying an uncontrolled jump. Compare displacement, collisions and action counts under different render and physics schedules; proposed engine tests are not measured gameplay results."
+      "extra": "## Anticipate failure and verify the boundary\n\nConfirm the engine's movement API and units before introducing delta: some velocity APIs already integrate time. Separate action edges/input state from physics updates, validate direction/normalization and preserve intended mechanics. Bound pause/resume and large-timestep behavior instead of applying an uncontrolled jump. Compare displacement, collisions and action counts under different render and physics schedules; proposed engine tests are not measured gameplay results.",
+      "completion_checks": [
+        "Preserve the requested mechanic and movement feel; respect engine units/time integration, input edges and physics ownership without expanding a small fix into a new game.",
+        "Bound pause/hitch behavior and compare multiple schedules. Render-rate independence alone does not prove deterministic replay, which also depends on input/random/physics state."
+      ]
     },
     {
       "id": "data-engineering",
@@ -5041,7 +5135,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nState record grain, event identity, business timezone and value constraints before aggregation. Identical replays, conflicting payloads and legitimate revisions need separate policies; keep-first deduplication must not silently hide corrections. Quarantine invalid rows with lineage, publish atomically/idempotently, and reconcile accepted, duplicate, rejected and emitted counts and amounts. Test late events, changed revisions and restart at publication boundaries."
+      "extra": "## Anticipate failure and verify the boundary\n\nState record grain, event identity, business timezone and value constraints before aggregation. Identical replays, conflicting payloads and legitimate revisions need separate policies; keep-first deduplication must not silently hide corrections. Quarantine invalid rows with lineage, publish atomically/idempotently, and reconcile accepted, duplicate, rejected and emitted counts and amounts. Test late events, changed revisions and restart at publication boundaries.",
+      "completion_checks": [
+        "Declare record grain, business time, constraints, revision ordering and tombstones; an older late update must not overwrite newer accepted state.",
+        "Define watermark/finality and correction/retraction policy; publish idempotently and reconcile raw, duplicate, rejected, accepted and emitted counts/amounts after restart."
+      ]
     },
     {
       "id": "data-science",
@@ -5271,13 +5369,19 @@
           "id": "geospatial-analysis",
           "title": "Geospatial Analysis",
           "description": "Analyze spatial data with explicit coordinate systems, units, geometry validity, and privacy controls.",
-          "procedure": "Inspect coordinate reference systems, units, geometry validity, spatial grain, and boundary versions. Reproject before distance/area calculations and validate joins for duplicates and boundary effects. Use an appropriate map scale and disclose aggregation. Protect sensitive locations and avoid implying precise location where uncertainty or privacy requires aggregation.",
+          "procedure": "Inspect coordinate reference systems, units, geometry validity, spatial grain and boundary versions. For distance or area, choose a suitable projected CRS or a justified geodesic calculation for the extent and distortion; reprojection alone does not ensure accuracy. Validate spatial joins for duplicates and boundary effects, disclose aggregation and protect sensitive locations.",
           "origin": {
             "category": "data-science",
             "version": "6.0.0",
             "procedure_sha256": "4e37d7373964da2b74ed65388b445903ae9fb308b1c0ce33a824abe1cc06b963"
           },
-          "revision": "preserved procedure"
+          "revision": "preserved procedure",
+          "quality_revision": {
+            "previous_procedure_sha256": "4e37d7373964da2b74ed65388b445903ae9fb308b1c0ce33a824abe1cc06b963",
+            "procedure_sha256": "ec04abc3abb165b7ff1a66257f1afabb0c35e5594e41dfd7d998667a3cf66cee",
+            "reason": "Allow correct geodesic analysis instead of universally requiring reprojection.",
+            "cycle": "improvement-cycle-1"
+          }
         }
       ],
       "original_categories": [
@@ -5289,7 +5393,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nDefine the estimand, population, observational unit and denominator before calculating a percentage. Reconcile joins and counts; unequal weighting alone is not Simpson's paradox. Inspect missingness, selection and plausible confounding, and separate descriptive association from a supported causal conclusion. Quantify uncertainty at the right independent unit. Do not quote a p-value or significance result that was not calculated and checked; preserve the exact calculation and its assumptions."
+      "extra": "## Anticipate failure and verify the boundary\n\nDefine the estimand, population, observational unit and denominator before calculating a percentage. Reconcile joins and counts; unequal weighting alone is not Simpson's paradox. Inspect missingness, selection and plausible confounding, and separate descriptive association from a supported causal conclusion. Quantify uncertainty at the right independent unit. Do not quote a p-value or significance result that was not calculated and checked; preserve the exact calculation and its assumptions.",
+      "completion_checks": [
+        "Reconcile the observational unit, assigned population, denominators and join cardinality before estimating effects; inspect attrition and post-treatment selection.",
+        "Check quoted arithmetic and uncertainty at the independent unit; choose suitable projected or geodesic calculations for spatial quantities and distinguish inference from causal evidence."
+      ]
     },
     {
       "id": "machine-learning",
@@ -5573,7 +5681,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nStart from the prediction moment, horizon and deployment population. Audit every feature for point-in-time availability, then choose entity/time split boundaries that match that population. Fit preprocessing and selection within training folds, tune on validation and leave final evaluation sealed. Compare a simple baseline and report imbalance-aware, calibrated operating-point metrics with sample/group counts; avoid inferring generalization from a leaky split or one favorable score."
+      "extra": "## Anticipate failure and verify the boundary\n\nStart from the prediction moment, horizon and deployment population. Audit every feature for point-in-time availability, then choose entity/time split boundaries that match that population. Fit preprocessing and selection within training folds, tune on validation and leave final evaluation sealed. Compare a simple baseline and report task-appropriate metrics: imbalance-aware operating points for classification, or suitable regression/forecast measures with sample/group counts; avoid inferring generalization from a leaky split or one favorable score.",
+      "completion_checks": [
+        "Choose deployment-time and entity boundaries from the prediction moment; fit preprocessing, feature selection, calibration and thresholds only within training/validation scope.",
+        "Retain an untouched final test and task-appropriate baseline/metrics: classification imbalance and alert budgets when relevant, regression/forecast metrics otherwise; report group support and uncertainty."
+      ]
     },
     {
       "id": "ai-engineering",
@@ -5673,15 +5785,19 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nTreat retrieved text and tool output as untrusted evidence, even when it contains instructions. Give each tool a validated input/output contract, a minimal capability set, time/iteration/output limits and an explicit empty, malformed or conflicting-evidence fallback. Keep claim-to-source links and redact sensitive traces. Evaluate grounded correctness and unauthorized-action resistance separately; a valid JSON response is not proof of either."
+      "extra": "## Anticipate failure and verify the boundary\n\nTreat retrieved text and tool output as untrusted evidence, even when it contains instructions. Give each tool a validated input/output contract, a minimal capability set, time/iteration/output limits and an explicit empty, malformed or conflicting-evidence fallback. Keep claim-to-source links and redact sensitive traces. Evaluate grounded correctness and unauthorized-action resistance separately; a valid JSON response is not proof of either.",
+      "completion_checks": [
+        "Bind each factual claim to authorized evidence; keep tenant/user scope across retrieval, caches, memory and citations, including access changes.",
+        "Give tools finite call/time/output budgets and typed empty/error fallbacks; a lost reply to a side effect requires operation identity or reconciliation before retry."
+      ]
     },
     {
       "id": "neural-networks",
       "title": "GNCore Neural Networks",
       "description": "Design and debug neural networks through tensor contracts, gradient checks, loss semantics and tiny-batch experiments.",
       "decisions": "Write shapes, dtypes, target encoding and loss reduction explicitly. Check forward and backward numerical behavior on a tiny deterministic batch before increasing architecture or compute.",
-      "deliverable": "A shape-checked model and training step, gradient/overfit probes, configuration and finite-loss evidence; retain the simplest useful baseline.",
-      "verification": "Compare analytic gradients with finite differences on a tiny case, check finite values and nonzero parameter updates, and overfit a tiny batch. Validate activation/loss compatibility and evaluation-mode behavior.",
+      "deliverable": "Shape/label/reduction-aware model or numerical code with task-relevant forward/backward evidence and configuration; retain the simplest useful baseline.",
+      "verification": "Check loss/activation compatibility and evaluation behavior. For custom derivatives or suspected gradient bugs, compare controlled central differences. For training changes, verify finite values, parameter updates and a tiny-batch diagnostic; label unexecuted accelerator checks.",
       "tags": [
         "neural-networks",
         "developer",
@@ -5709,12 +5825,18 @@
           "id": "nn-gradient-check",
           "title": "Gradient verification",
           "description": "Gradient verification.",
-          "procedure": "Choose a tiny float64 differentiable model away from activation kinks. Perturb one parameter by plus/minus epsilon and compare the central finite difference with the analytic gradient using absolute and relative tolerances. Restore parameters after each probe; explain the epsilon/error tradeoff.",
+          "procedure": "Use numerical gradients for custom mathematical operations or suspected derivative errors. Compare analytic and central-difference derivatives on a tiny float64 smooth case, restoring parameters after each perturbation. Freeze random/stateful behavior and use identical reduction/data for both evaluations; avoid nonsmooth activation boundaries. Check extreme-logit stability separately. Standard-layer changes may need forward/backward or tiny-batch update tests instead of a full numerical-gradient sweep.",
           "origin": {
             "author": "GNCore / Ganesh Naidu",
             "license": "MIT"
           },
-          "revision": "new original procedure"
+          "revision": "new original procedure",
+          "quality_revision": {
+            "previous_procedure_sha256": "13418907c84c83c309bd926dfffa1536caf07e19a812ef14e8f59eca316cb9da",
+            "procedure_sha256": "29f23a0bf8b672b563337af2ccd6ee9a5e4d883d9b00fb194a474440376b46e0",
+            "reason": "Condition numerical checks and control stochastic/stateful comparisons.",
+            "cycle": "improvement-cycle-1"
+          }
         },
         {
           "id": "nn-training-debug",
@@ -5766,7 +5888,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nSpecify shapes, axes, label semantics, reductions and dtype before choosing a loss or layer. Use numerically stable logit-space operations and verify that gradient scale matches the reported reduction. Reject invalid/nonfinite inputs according to the API. Check a tiny hand-calculated case, central differences away from nonsmooth points, extreme finite values and a tiny-batch learning diagnostic when training is available. Separate mathematical checks from accelerator or convergence claims."
+      "extra": "## Anticipate failure and verify the boundary\n\nChoose shapes, label semantics, reductions and dtype from the mathematical contract. Use stable logit-space losses and task-relevant invalid-input checks. Numerical derivatives are useful for custom operations or suspected gradient bugs; control stochastic and stateful behavior. For training changes, test parameter updates and a tiny-batch learning diagnostic before scaling.",
+      "completion_checks": [
+        "Match tensor axes, label semantics, dtype and reduction; compute losses in stable logit space rather than taking a log of probabilities that can underflow.",
+        "For custom derivatives or suspected gradient errors, freeze stochastic/stateful behavior and check central differences away from kinks; reject malformed/nonfinite inputs and verify tiny-batch parameter updates when training changes."
+      ]
     },
     {
       "id": "deep-learning",
@@ -5899,7 +6025,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nCheckpoint a compatible training state, not just parameters: optimizer, schedule, precision scaler, RNG, sampler/data position, progress and environment/data identity. For gradient accumulation, save partial gradient state deliberately or checkpoint at a completed optimizer-step boundary. Compare an uninterrupted and resumed short trajectory with the same batches and configuration; use justified numerical tolerances and report device/distributed nondeterminism rather than promising bitwise equality without evidence."
+      "extra": "## Anticipate failure and verify the boundary\n\nCheckpoint a compatible training state, not just parameters: optimizer, schedule, precision scaler, RNG, sampler/data position, progress and environment/data identity. For gradient accumulation, save partial gradient state deliberately or checkpoint at a completed optimizer-step boundary. Compare an uninterrupted and resumed short trajectory with the same batches and configuration; use justified numerical tolerances and report device/distributed nondeterminism rather than promising bitwise equality without evidence.",
+      "completion_checks": [
+        "Tie model/data/config/environment identity to optimizer, scheduler, RNG, sampler, AMP and accumulation state; use a completed-update restart boundary when partial state is absent.",
+        "Normalize by actual valid-example/token counts across microbatches/ranks and advance schedules only on completed optimizer updates; compare controlled interrupted and uninterrupted trajectories."
+      ]
     },
     {
       "id": "computer-vision",
@@ -5984,7 +6114,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nChoose split groups from the deployment population: adjacent frames or multiple views of the same object cannot be independent test evidence. Transform images and annotations together, audit coordinate conventions and overlay representative boxes/masks after each geometric stage. Check dimensions, bounds, degenerate/empty labels and corrupt inputs. Keep a simple baseline, tune on validation only and report task-specific metrics and group counts on the untouched evaluation set."
+      "extra": "## Anticipate failure and verify the boundary\n\nChoose split groups from the deployment population: adjacent frames or multiple views of the same object cannot be independent test evidence. Transform images and annotations together, audit coordinate conventions and overlay representative boxes/masks after each geometric stage. Check dimensions, bounds, degenerate/empty labels and corrupt inputs. Keep a simple baseline, tune on validation only and report task-specific metrics and group counts on the untouched evaluation set.",
+      "completion_checks": [
+        "Check annotation dimensions, legal labels, empty/degenerate cases and geometric alignment; transform predictions back to the declared original coordinate frame.",
+        "Keep deployment-relevant groups disjoint, tune only on validation, retain a simple baseline and report task/per-class metrics with sample support."
+      ]
     },
     {
       "id": "natural-language-processing",
@@ -6069,7 +6203,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nMake the supervision unit explicit before tokenization: document word/subtoken alignment, special-token and padding masks, and reconstruction for task-level metrics. Define truncation and long-input behavior so labels/spans do not silently shift or disappear. When fitting/evaluating a model, group correlated documents, authors or conversations appropriately. Check short, empty, Unicode, padded and truncated examples; token accuracy dominated by padding is not entity or conversation quality."
+      "extra": "## Anticipate failure and verify the boundary\n\nMake the supervision unit explicit before tokenization: document word/subtoken alignment, special-token and padding masks, and reconstruction for task-level metrics. Define truncation and long-input behavior so labels/spans do not silently shift or disappear. When fitting/evaluating a model, group correlated documents, authors or conversations appropriately. Check short, empty, Unicode, padded and truncated examples; token accuracy dominated by padding is not entity or conversation quality.",
+      "completion_checks": [
+        "Define label units, special/padding masks and whether offsets address original or normalized text; retain mappings through normalization and truncation.",
+        "Group correlated conversations/documents, preserve label-bearing long content and reconstruct/deduplicate overlapping windows before task-level evaluation; test short, padded and truncated boundaries."
+      ]
     },
     {
       "id": "mlops",
@@ -6213,7 +6351,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nPromote an immutable compatible bundle of model, preprocessor, feature contract, data/code identity and runtime. Verify serving parity and wrong/missing/reordered-input behavior before exposure. Gate promotion on both labeled quality and operational constraints, then stage rollout with a compatible rollback target. Feature or prediction drift is a diagnostic signal, not measured accuracy loss; track delayed labels and quality slices separately and define action thresholds for each."
+      "extra": "## Anticipate failure and verify the boundary\n\nPromote an immutable compatible bundle of model, preprocessor, feature contract, data/code identity and runtime. Verify serving parity and wrong/missing/reordered-input behavior before exposure. Gate promotion on both labeled quality and operational constraints, then stage rollout with a compatible rollback target. Feature or prediction drift is a diagnostic signal, not measured accuracy loss; track delayed labels and quality slices separately and define action thresholds for each.",
+      "completion_checks": [
+        "Promote a compatible immutable model/preprocessor/schema/data/code/runtime bundle and verify missing, reordered or malformed serving inputs against training behavior.",
+        "Check artifact trust before executable deserialization; hashes establish identity, not safety. Gate on quality and operations, align delayed labels by maturity/cohort and retain a compatible rollback target."
+      ]
     },
     {
       "id": "databases",
@@ -6273,12 +6415,18 @@
           "id": "db-expand-contract",
           "title": "Expand/backfill/contract migration",
           "description": "Expand/backfill/contract migration.",
-          "procedure": "Add compatible schema first, backfill in restartable bounded batches, verify integrity, then tighten constraints after old application versions are retired. State unknown-value policy and rollback limits; rehearse failure and lock behavior locally.",
+          "procedure": "Inventory existing values and define explicit handling of unknown or colliding data. Add a compatible representation and coordinate old/new writers before and throughout a resumable bounded backfill; use reconciliation or a final catch-up to close concurrent-write gaps. Check the actual engine/version constraint and lock semantics, validate integrity, then switch readers and contract only after overlap is over. State the last reversible step, mapping/backup needs and forward recovery after destructive contraction; rehearse interruption and recovery without claiming unexecuted SQL.",
           "origin": {
             "author": "GNCore / Ganesh Naidu",
             "license": "MIT"
           },
-          "revision": "new original procedure"
+          "revision": "new original procedure",
+          "quality_revision": {
+            "previous_procedure_sha256": "e748b07ab79fb02103b826900f3b28609d435057ee729e3cfd3f7b5950f8e085",
+            "procedure_sha256": "4d0329b3b332fab969d767a15fba5a731bb3e98d215163c2154220ff5803e6ac",
+            "reason": "Close dual-writer backfill races and define realistic recovery boundaries.",
+            "cycle": "improvement-cycle-1"
+          }
         },
         {
           "id": "db-backup-restore",
@@ -6299,7 +6447,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nPlan migration behavior for old and new writers as well as readers. Use additive expansion, explicit null/collision resolution, resumable bounded backfill and validated contraction. Check the actual engine/version rules for concurrent indexes, constraints, transaction restrictions and locks; concurrent does not mean lock-free. A populated column cannot be dropped as a harmless rollback. Identify the last reversible step, backup/mapping needs and forward-recovery plan before removing data or compatibility."
+      "extra": "## Anticipate failure and verify the boundary\n\nPlan migration behavior for old and new writers as well as readers. Use additive expansion, explicit null/collision resolution, resumable bounded backfill and validated contraction. Check the actual engine/version rules for concurrent indexes, constraints, transaction restrictions and locks; concurrent does not mean lock-free. A populated column cannot be dropped as a harmless rollback. Identify the last reversible step, backup/mapping needs and forward-recovery plan before removing data or compatibility.",
+      "completion_checks": [
+        "Coordinate old/new writers before and throughout resumable backfill, reconciliation and contraction; state the unknown-value policy and last reversible boundary.",
+        "Verify engine/version lock and constraint semantics; EXPLAIN ANALYZE executes the statement. Retry the whole transaction when required without duplicating external effects."
+      ]
     },
     {
       "id": "systems-programming",
@@ -6336,12 +6488,18 @@
           "id": "systems-ffi",
           "title": "FFI and ABI boundaries",
           "description": "FFI and ABI boundaries.",
-          "procedure": "Specify ABI, fixed-width types, layout/alignment, string length/encoding and ownership on both sides. Validate pointers/lengths and translate errors without unwinding across an incompatible boundary. Test zero-length buffers, invalid handles and cleanup from the caller's language.",
+          "procedure": "Specify ABI, fixed-width types, layout/alignment, lengths, encoding, ownership and matching destruction on both sides. Enforce checkable null, handle, length, alignment and overflow contracts, and document caller obligations for pointer provenance, lifetime and readable extent that cannot be established by superficial pointer inspection. Translate errors without unwinding across an incompatible boundary; test caller-language cleanup, invalid handles and in-flight callback teardown.",
           "origin": {
             "author": "GNCore / Ganesh Naidu",
             "license": "MIT"
           },
-          "revision": "new original procedure"
+          "revision": "new original procedure",
+          "quality_revision": {
+            "previous_procedure_sha256": "0c7562481b081162912ac33b2783564fa13f18f48ad3a682618018d4796c1bc5",
+            "procedure_sha256": "bb1b5dfe0459dd00bae956b5793e98cf3e165ee1cf48f316880b36f5098982b4",
+            "reason": "Replace ambiguous pointer validation with enforceable checks and lifetime obligations.",
+            "cycle": "improvement-cycle-1"
+          }
         },
         {
           "id": "systems-safe-arithmetic",
@@ -6371,7 +6529,12 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nMake the owner, storage stability, borrow/retention interval and destruction order explicit at every native/FFI boundary. Pair allocation and deallocation through a documented compatible ABI and enforce exactly-once destruction after the foreign user has finished. Specify null/length/NUL, error/unwind and allowed concurrency behavior. Inspect small unsafe boundaries and use appropriate native/sanitizer/stress checks; a plausible ownership sketch is not runtime memory-safety proof."
+      "extra": "## Anticipate failure and verify the boundary\n\nMake the owner, storage stability, borrow/retention interval and destruction order explicit at every native/FFI boundary. Pair allocation and deallocation through a documented compatible ABI and enforce exactly-once destruction after the foreign user has finished. Specify null/length/NUL, error/unwind and allowed concurrency behavior. Inspect small unsafe boundaries and use appropriate native/sanitizer/stress checks; a plausible ownership sketch is not runtime memory-safety proof.",
+      "completion_checks": [
+        "Specify stable storage, ownership, retention, matching allocation/deallocation and destruction after foreign callbacks become quiescent; define permitted concurrency.",
+        "Distinguish enforceable null/length/alignment/handle/overflow checks from caller lifetime/provenance obligations; specify error/unwind behavior and use appropriate native/sanitizer/stress evidence without claiming pointer inspection proves safety.",
+        "Write the actual ABI rules rather than saying to document them: whether null is permitted at zero length, required alignment and checked length arithmetic, who owns each allocation, caller lifetime obligations, and a specific failure/status convention that prevents unwinding across the boundary. Mark unspecified foreign guarantees as assumptions."
+      ]
     },
     {
       "id": "embedded-systems",
@@ -6444,7 +6607,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nKeep interrupt work bounded and nonblocking; use preallocated storage with an explicit ISR/task ownership and synchronization protocol. Define queue-full behavior, dropped-event visibility, timeout and watchdog recovery rather than only testing for overflow. Document timer width, modular elapsed-time assumptions and the maximum observation interval. Separate host arithmetic/concurrency simulations from measured target latency, memory and peripheral evidence."
+      "extra": "## Anticipate failure and verify the boundary\n\nKeep interrupt work bounded and nonblocking; use preallocated storage with an explicit ISR/task ownership and synchronization protocol. Define queue-full behavior, dropped-event visibility, timeout and watchdog recovery rather than only testing for overflow. Document timer width, modular elapsed-time assumptions and the maximum observation interval. Separate host arithmetic/concurrency simulations from measured target latency, memory and peripheral evidence.",
+      "completion_checks": [
+        "Define bounded nonblocking ISR/task ownership and synchronization; volatile alone does not guarantee atomicity or ordering. Make overrun/drop/timeout state observable.",
+        "State timer width, wrap comparison and observation/interval bounds; distinguish modular elapsed subtraction from signed deadline ordering and host fixtures from measured hardware timing."
+      ]
     },
     {
       "id": "performance-engineering",
@@ -6529,7 +6696,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nVerify equivalent outputs before timing. Keep raw distributions, errors and timeouts; compare matched inputs, environment, warmup, load and cold/warm conditions with repeated or interleaved trials. Report median and tails as well as mean, throughput and memory against a user-relevant operating objective. A tiny sample or warm function timing cannot support a universal speedup. State which measurements were actually collected and which follow-up experiments remain proposed. Recompute quoted statistics from the retained raw values with trusted arithmetic, and postpone rounding until after comparisons."
+      "extra": "## Anticipate failure and verify the boundary\n\nVerify equivalent outputs before timing. Keep raw distributions, errors and timeouts; compare matched inputs, environment, warmup, load and cold/warm conditions with repeated or interleaved trials. Report median and tails as well as mean, throughput and memory against a user-relevant operating objective. A tiny sample or warm function timing cannot support a universal speedup. State which measurements were actually collected and which follow-up experiments remain proposed. Recompute quoted statistics from the retained raw values with trusted arithmetic, and postpone rounding until after comparisons.",
+      "completion_checks": [
+        "Verify equivalent outputs and time actual completion, including async/accelerator synchronization where needed; preserve every outcome and recompute quoted statistics from raw samples.",
+        "Match environment, workload, concurrency, warmup and cold/warm conditions; report relevant tails, throughput and memory against the user's objective, including errors/timeouts and small-sample limitations."
+      ]
     },
     {
       "id": "observability",
@@ -6755,7 +6926,11 @@
         "references/web-backend-sentry-debug-issue/references/concepts/user-feedback.md",
         "references/web-backend-sentry-debug-issue/references/search-query-language.md"
       ],
-      "extra": "## Anticipate failure and verify the boundary\n\nCarry or link trace context across queues, retries and asynchronous jobs. Bound metric cardinality with stable dimensions; put correlation IDs in redacted logs/traces instead of metric labels. Measure service outcomes, latency, throughput, queue age and failure/retry signals. Define sustained user-impact/SLO alerts with an owner, recovery condition and runbook. Exercise a controlled failure and inspect emitted telemetry; instrumented code alone does not prove an alert works."
+      "extra": "## Anticipate failure and verify the boundary\n\nCarry or link trace context across queues, retries and asynchronous jobs. Bound metric cardinality with stable dimensions; put correlation IDs in redacted logs/traces instead of metric labels. Measure service outcomes, latency, throughput, queue age and failure/retry signals. Define sustained user-impact/SLO alerts with an owner, recovery condition and runbook. Exercise a controlled failure and inspect emitted telemetry; instrumented code alone does not prove an alert works.",
+      "completion_checks": [
+        "Propagate or link queue context using the installed API; use bounded metric dimensions, redacted correlation and meaningful latency/error/throughput/queue signals.",
+        "Define sustained SLO alerts with owner/recovery/runbook and exercise controlled failures. Bound exporter buffers and verify collector outages cannot block requests, exhaust memory or recurse into logging."
+      ]
     },
     {
       "id": "developer-research",
@@ -6828,7 +7003,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nRank supplied evidence by provenance, version and direct relevance; keep primary evidence separate from secondary assertions and inference. Check units, defaults and compatibility contracts, not merely renamed symbols. Design the smallest experiment that distinguishes competing explanations, with bounded deadlines and realistic tolerances. Record assumptions, unavailable evidence and observations that would change the recommendation. Never describe a planned reproduction as completed."
+      "extra": "## Anticipate failure and verify the boundary\n\nRank supplied evidence by provenance, version and direct relevance; keep primary evidence separate from secondary assertions and inference. Check units, defaults and compatibility contracts, not merely renamed symbols. Design the smallest experiment that distinguishes competing explanations, with bounded deadlines and realistic tolerances. Record assumptions, unavailable evidence and observations that would change the recommendation. Never describe a planned reproduction as completed.",
+      "completion_checks": [
+        "Separate primary version-matched evidence, secondary examples and inference; identify the smallest discriminating experiment, expected observations and stopping bounds.",
+        "Record assumptions and what would change the recommendation; a failed reproduction is limited to its configuration, and observed behavior does not establish documented support."
+      ]
     },
     {
       "id": "distributed-systems",
@@ -6900,7 +7079,11 @@
         "MIT"
       ],
       "resources": [],
-      "extra": "## Anticipate failure and verify the boundary\n\nWrite down the interleaving and commit boundaries before claiming serialization or exactly-once behavior. Use durable operation/payload identity and atomic state transitions; external lost replies require idempotency/status lookup or reconciliation. An expiring claim needs an ownership generation or fencing/CAS so an old worker cannot complete after takeover. Specify retry/retention limits and test crash, overlap, expiry and stale-owner schedules against the actual storage semantics."
+      "extra": "## Anticipate failure and verify the boundary\n\nWrite down the interleaving and commit boundaries before claiming serialization or exactly-once behavior. Use durable operation/payload identity and atomic state transitions; external lost replies require idempotency/status lookup or reconciliation. An expiring claim needs an ownership generation or fencing/CAS so an old worker cannot complete after takeover. Specify retry/retention limits and test crash, overlap, expiry and stale-owner schedules against the actual storage semantics.",
+      "completion_checks": [
+        "Write the actual interleaving and transaction boundaries; enforce monotonically increasing ownership generations at the protected write, not only in the lease record.",
+        "Scope deduplication to operation/payload identity and a replay-compatible retention policy; reconcile unknown outcomes and test expiry, stale owners, overlap and lost replies."
+      ]
     }
   ]
 }

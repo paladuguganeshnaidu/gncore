@@ -1,0 +1,66 @@
+{
+  "category": "testing",
+  "split": "holdout",
+  "passed": 7,
+  "total": 7,
+  "tests": [
+    {
+      "test": "accepts_correct_implementation",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "detects_constant",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "detects_identity",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "detects_lower",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "detects_upper",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "detects_boolean",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    },
+    {
+      "test": "detects_floating",
+      "passed": true,
+      "expected": "True",
+      "actual": "True",
+      "error": null
+    }
+  ],
+  "inspection": {
+    "imports": [],
+    "functions": [
+      "check_contract"
+    ]
+  },
+  "compute_seconds": 0.006646099966019392,
+  "scope": "Actual generated pure-function/test code executed in an isolated child; no IDE execution or production claim.",
+  "child_wall_seconds": 1.3071273998357356
+}

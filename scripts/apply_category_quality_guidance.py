@@ -8,11 +8,14 @@ def main():
     path = ROOT / "catalog/categories.json"
     catalog = json.loads(path.read_text(encoding="utf-8"))
     guidance = json.loads((ROOT / "catalog/category-quality-guidance.json").read_text(encoding="utf-8"))
+    checks = json.loads((ROOT / "catalog/category-completion-checks.json").read_text(encoding="utf-8"))
     assert set(guidance) == {entry["id"] for entry in catalog["categories"]}
+    assert set(checks) == set(guidance)
     for entry in catalog["categories"]:
         previous = entry.get("extra", "").split("## Anticipate failure and verify the boundary")[0].strip()
         addition = "## Anticipate failure and verify the boundary\n\n" + guidance[entry["id"]]
         entry["extra"] = (previous + "\n\n" if previous else "") + addition
+        entry["completion_checks"] = checks[entry["id"]]
     path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps({"categories_updated": len(guidance), "workflow_procedures_changed": 0}))
 

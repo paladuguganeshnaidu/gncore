@@ -1,0 +1,39 @@
+{
+  "profile": "control",
+  "checks": [
+    {
+      "name": "initially_disabled",
+      "passed": true,
+      "evidence": "Blank form disabled."
+    },
+    {
+      "name": "invalid_email_disabled",
+      "passed": true,
+      "evidence": "Malformed email with selections keeps button disabled."
+    },
+    {
+      "name": "valid_inputs_enable",
+      "passed": true,
+      "evidence": "Valid form enables booking."
+    },
+    {
+      "name": "selected_values_confirmation",
+      "passed": true,
+      "evidence": "Selection confirmed: Secure APIs at 16:00. This offline preview has not reserved a seat."
+    },
+    {
+      "name": "radio_focus_visible",
+      "passed": true,
+      "evidence": "Keyboard Tab focuses radio with solid2.4px outline on input and label."
+    },
+    {
+      "name": "narrow_no_overflow",
+      "passed": null,
+      "evidence": "390px viewport override not applied by browser; observed1280px."
+    }
+  ],
+  "observedViewport": {
+    "width": 1280
+  },
+  "scope": "Five observed browser checks; narrow viewport unmeasured."
+}

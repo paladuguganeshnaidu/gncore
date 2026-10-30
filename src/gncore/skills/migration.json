@@ -5127,5 +5127,67 @@
     "web-application-security": "web-backend",
     "e2e-testing": "code-build",
     "observability": "observability"
+  },
+  "quality_revisions": {
+    "web-front-organic": {
+      "previous_procedure_sha256": "2e663182c7c8c01fc46d0fb600a5cdc141260697f5f28e9179f62e8728cf53c6",
+      "procedure_sha256": "b175d4b00071085b2c715a096136a3069a3613bf4b35654d6f6fd68873964112",
+      "reason": "Remove a fixed palette that overrides brand constraints.",
+      "cycle": "improvement-cycle-1"
+    },
+    "web-front-find-skills": {
+      "previous_procedure_sha256": "f3172986a1ad02fb188002fe14d3c4a483c72d71501c1a71111d9b4a89a919c7",
+      "procedure_sha256": "191bd727f96b2879bde5750d86bafdb7d3255d92ebfee1779da8a565484b9911",
+      "reason": "Correct the router to point to actual exported workflow resources.",
+      "cycle": "improvement-cycle-1"
+    },
+    "design-handoff": {
+      "previous_procedure_sha256": "daa887b43912ef207bc837a3481cadf49dc812861b8bac98a8eeef81ba8a30c1",
+      "procedure_sha256": "cd64505935a8ef155dd91c5e617c4b2178029933de85e0e08c96620527e28496",
+      "reason": "Make collaborator review conditional while preserving implementation acceptance.",
+      "cycle": "improvement-cycle-1"
+    },
+    "python-packaging": {
+      "previous_procedure_sha256": "a988183221b3b2c28bce2f44dfa789811f5a264fbfbd8b60ed06647bc94473e6",
+      "procedure_sha256": "2f545d3e934a51b1eb49ab66f5d374f87abd38cda4f5df89a24a405eef7a47b2",
+      "reason": "Verify source-archive completeness and scope packaging checks to packaging work.",
+      "cycle": "improvement-cycle-1"
+    },
+    "release-artifact-integrity": {
+      "previous_procedure_sha256": "bddd5e446dd5ee9dae9460b9cf756535d686cfb58595c2310ff1b4aba2e28cd8",
+      "procedure_sha256": "5618e2b54bfc5deec83cccc68e90a9501f966556e49b954656a9b0852e3968a8",
+      "reason": "Qualify build-once per target and honor existing destination authorization.",
+      "cycle": "improvement-cycle-1"
+    },
+    "workflow-automation": {
+      "previous_procedure_sha256": "a8cba137ee3be28d21e5b641ae273df4ea117082682d3d8014c7024269968518",
+      "procedure_sha256": "9418db310b7dd608b81f38ca8d8926edee638675b028e99569f05e4edb6c5a2d",
+      "reason": "Use actual authorization boundaries and durable overlap/retry behavior.",
+      "cycle": "improvement-cycle-1"
+    },
+    "geospatial-analysis": {
+      "previous_procedure_sha256": "4e37d7373964da2b74ed65388b445903ae9fb308b1c0ce33a824abe1cc06b963",
+      "procedure_sha256": "ec04abc3abb165b7ff1a66257f1afabb0c35e5594e41dfd7d998667a3cf66cee",
+      "reason": "Allow correct geodesic analysis instead of universally requiring reprojection.",
+      "cycle": "improvement-cycle-1"
+    },
+    "nn-gradient-check": {
+      "previous_procedure_sha256": "13418907c84c83c309bd926dfffa1536caf07e19a812ef14e8f59eca316cb9da",
+      "procedure_sha256": "29f23a0bf8b672b563337af2ccd6ee9a5e4d883d9b00fb194a474440376b46e0",
+      "reason": "Condition numerical checks and control stochastic/stateful comparisons.",
+      "cycle": "improvement-cycle-1"
+    },
+    "db-expand-contract": {
+      "previous_procedure_sha256": "e748b07ab79fb02103b826900f3b28609d435057ee729e3cfd3f7b5950f8e085",
+      "procedure_sha256": "4d0329b3b332fab969d767a15fba5a731bb3e98d215163c2154220ff5803e6ac",
+      "reason": "Close dual-writer backfill races and define realistic recovery boundaries.",
+      "cycle": "improvement-cycle-1"
+    },
+    "systems-ffi": {
+      "previous_procedure_sha256": "0c7562481b081162912ac33b2783564fa13f18f48ad3a682618018d4796c1bc5",
+      "procedure_sha256": "bb1b5dfe0459dd00bae956b5793e98cf3e165ee1cf48f316880b36f5098982b4",
+      "reason": "Replace ambiguous pointer validation with enforceable checks and lifetime obligations.",
+      "cycle": "improvement-cycle-1"
+    }
   }
 }

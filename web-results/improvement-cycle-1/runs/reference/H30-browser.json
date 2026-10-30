@@ -1,0 +1,43 @@
+{
+  "profile": "reference",
+  "checks": [
+    {
+      "name": "initially_disabled",
+      "passed": true,
+      "evidence": "Blank form button disabled."
+    },
+    {
+      "name": "invalid_email_disabled",
+      "passed": true,
+      "evidence": "Malformed email with selections leaves booking disabled."
+    },
+    {
+      "name": "valid_inputs_enable",
+      "passed": true,
+      "evidence": "Valid selected fields enable booking."
+    },
+    {
+      "name": "selected_values_confirmation",
+      "passed": true,
+      "evidence": "Selection confirmed: Secure APIs at 16:00. This confirmation is saved only on this page; no reservation has been sent."
+    },
+    {
+      "name": "radio_focus_visible",
+      "passed": true,
+      "evidence": "Tab focuses native radio with :focus-visible true and solid2.4px outline."
+    },
+    {
+      "name": "narrow_no_overflow",
+      "passed": null,
+      "evidence": "Viewport API did not apply390px; observed1280px. Narrow viewport unmeasured."
+    }
+  ],
+  "requestedViewport": {
+    "width": 390,
+    "height": 844
+  },
+  "observedViewport": {
+    "width": 1280
+  },
+  "scope": "Five real browser checks;390px viewport and full accessibility audit not measured."
+}

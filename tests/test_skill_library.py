@@ -6,6 +6,7 @@ import pytest
 from gncore import builtin_skills, get_skill, list_categories, list_domains, list_workflows, search_skills, validate_skill_definition
 from gncore.skills.library import migration_manifest
 from gncore.skills.unified import unified_manifest, workflow_aliases
+from gncore.skills.bundles import packaged_resources
 
 
 def test_active_catalog_is_developer_focused_and_each_category_is_discoverable():
@@ -22,7 +23,8 @@ def test_active_catalog_is_developer_focused_and_each_category_is_discoverable()
 
 
 def test_every_phase_one_workflow_has_an_explicit_migration_outcome_and_exact_procedure_accounting():
-    ledger = migration_manifest()["workflows"]
+    migration = migration_manifest()
+    ledger = migration["workflows"]
     assert len(ledger) == len({w["id"] for w in ledger}) == 553
     assert Counter(w["status"] for w in ledger) == {"preserved": 203, "rewritten": 116, "retired": 234}
     actual = {w["id"]: (entry["id"], w) for entry in unified_manifest() for w in entry["workflows"]}
@@ -33,8 +35,12 @@ def test_every_phase_one_workflow_has_an_explicit_migration_outcome_and_exact_pr
         target, workflow = actual[old["id"]]
         assert target == old["target"]
         digest = hashlib.sha256(workflow["procedure"].encode()).hexdigest()
-        assert digest == old["procedure_sha256"]
-        assert (digest == old["previous_procedure_sha256"]) == (old["status"] == "preserved")
+        revision = migration.get("quality_revisions", {}).get(old["id"])
+        assert digest == (revision["procedure_sha256"] if revision else old["procedure_sha256"])
+        if revision:
+            assert revision["previous_procedure_sha256"] == old["procedure_sha256"]
+            assert revision["reason"]
+        assert (old["procedure_sha256"] == old["previous_procedure_sha256"]) == (old["status"] == "preserved")
     assert sum(w.get("revision") == "new original procedure" for e in unified_manifest() for w in e["workflows"]) == 55
 
 
@@ -69,8 +75,9 @@ def test_every_merged_procedure_is_present_and_distinct():
     procedures = []
     for entry in unified_manifest():
         prompt = get_skill(entry["id"]).prompt
+        selected = packaged_resources(entry["id"])["WORKFLOWS.md"].decode("utf-8")
         for workflow in entry["workflows"]:
             assert workflow["id"] in prompt
-            assert workflow["procedure"].strip() in prompt
+            assert workflow["procedure"].strip() in selected
             procedures.append(workflow["procedure"].strip())
     assert len(procedures) == len(set(procedures))

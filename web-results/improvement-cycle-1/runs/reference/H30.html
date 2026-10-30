@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Security Engineering Summit | Workshop booking</title>
+<style>
+:root{--navy:#17213d;--iris:#3b46b4;--mist:#e8edf4;--paper:#fff;--slate:#526078;--line:#bdc8d8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--mist);color:var(--navy);font:1rem/1.55 "Segoe UI",Arial,sans-serif}
+main{max-width:1200px;margin:auto;padding:44px 42px 64px}
+header{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:56px}
+.brand{font-weight:700;font-size:1.1rem;max-width:23ch;line-height:1.3}
+.mark{width:38px;height:38px;background:var(--navy);border-radius:50%;display:inline-grid;place-items:center;color:white;margin-right:12px}
+.edition{color:var(--slate);font-size:.9rem}
+.layout{display:grid;grid-template-columns:1.12fr 1fr;gap:72px;align-items:start}
+h1,h2,p{margin-top:0}
+h1{font:600 clamp(3.2rem,6vw,5.3rem)/1.03 Bahnschrift,"Arial Narrow",Arial,sans-serif;letter-spacing:-.055em;margin-bottom:25px;max-width:11ch}
+.lead{font-size:1.16rem;max-width:40ch;color:var(--slate);margin-bottom:30px}
+.diagram{background:var(--navy);color:var(--paper);border-radius:100px 12px 100px 12px;padding:38px 28px;margin:32px 0;max-width:460px}
+.boundary{border:2px solid #99a5ed;border-radius:70px 8px 70px 8px;padding:28px 24px;text-align:center}
+.boundary strong{display:block;font-size:1.45rem;line-height:1.25;margin-bottom:8px}
+.boundary span{color:#d3dafa;font-size:.95rem}
+.topics{max-width:45ch;padding:0;list-style:none;margin:0}
+.topics li{padding:12px 0;border-bottom:1px solid var(--line)}
+.topics strong{display:block}
+.topics span{color:var(--slate)}
+.booking{background:var(--paper);padding:34px;border-radius:12px 12px 38px 12px;box-shadow:0 18px 45px #17213d12}
+h2{font:600 2rem/1.15 Bahnschrift,Arial,sans-serif;letter-spacing:-.025em;margin-bottom:12px}
+.intro{color:var(--slate);margin-bottom:28px}
+label,legend{font-weight:650}
+.field{margin-bottom:24px}
+select,input[type=email]{display:block;width:100%;min-height:50px;border:1px solid #8391a8;border-radius:6px;background:white;color:var(--navy);font:inherit;padding:11px 12px;margin-top:8px}
+fieldset{border:0;padding:0;margin:0 0 24px;min-width:0}
+legend{margin-bottom:9px}
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.slot{display:flex;align-items:center;gap:11px;min-height:54px;border:1px solid #8391a8;border-radius:6px;padding:12px;cursor:pointer}
+.slot:has(input:checked){background:#eef0ff;border-color:var(--iris);box-shadow:inset 0 0 0 1px var(--iris)}
+input[type=radio]{width:20px;height:20px;accent-color:var(--iris);margin:0;flex:none}
+.hint{color:var(--slate);font-size:.9rem;margin:8px 0 0}
+button{width:100%;min-height:54px;border:0;border-radius:6px;background:var(--iris);color:white;font:650 1rem "Segoe UI",Arial,sans-serif;padding:14px;cursor:pointer}
+button:disabled{background:#d5dbe6;color:#46546c;cursor:not-allowed}
+:focus-visible{outline:3px solid #8b3d99;outline-offset:4px}
+#confirmation{margin:24px 0 0;padding:18px;border-left:4px solid var(--iris);background:#eef0ff;overflow-wrap:anywhere}
+#confirmation:empty{display:none}
+footer{color:var(--slate);font-size:.88rem;margin-top:34px;max-width:66ch}
+@media(max-width:800px){main{padding:26px 24px 44px}header{margin-bottom:36px}.layout{grid-template-columns:1fr;gap:32px}h1{max-width:13ch}.diagram{max-width:none}.booking{max-width:600px}}
+@media(max-width:430px){main{padding:22px 18px 36px}header{align-items:flex-start}.edition{max-width:10ch;text-align:right;font-size:.8rem}.brand{font-size:1rem}.mark{margin-right:5px;width:28px;height:28px}h1{font-size:3.3rem}.booking{padding:25px 20px}.diagram{padding:28px 20px}.boundary{padding:25px 16px}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="brand"><span class="mark" aria-hidden="true">⊂</span>Security Engineering Summit</div>
+<div class="edition">Practitioner workshops</div>
+</header>
+<div class="layout">
+<section aria-labelledby="title">
+<h1 id="title">Boundaries.<br>Built with intent.</h1>
+<p class="lead">Work through the decisions that make enterprise systems safer. Choose a focused workshop and bring your engineering judgment.</p>
+<div class="diagram" aria-hidden="true"><div class="boundary"><strong>Define the boundary.<br>Challenge the assumptions.</strong><span>Model threats. Design controls. Review tradeoffs.</span></div></div>
+<ul class="topics">
+<li><strong>Threat Modeling</strong><span>Map trust boundaries and prioritize credible attack paths.</span></li>
+<li><strong>Secure APIs</strong><span>Reason about identity, authorization and resilient interfaces.</span></li>
+</ul>
+</section>
+<section class="booking" aria-labelledby="booking-title">
+<h2 id="booking-title">Reserve your workshop</h2>
+<p class="intro">Choose a workshop, a session time and your email.</p>
+<form id="booking-form">
+<div class="field">
+<label for="workshop">Workshop</label>
+<select id="workshop" name="workshop" required>
+<option value="">Choose a workshop</option>
+<option value="Threat Modeling">Threat Modeling</option>
+<option value="Secure APIs">Secure APIs</option>
+</select>
+</div>
+<fieldset aria-describedby="time-note">
+<legend>Time</legend>
+<div class="slots">
+<label class="slot"><input type="radio" name="slot" value="10:30" required><span>10:30</span></label>
+<label class="slot"><input type="radio" name="slot" value="16:00" required><span>16:00</span></label>
+</div>
+<p class="hint" id="time-note">Times are shown in summit local time.</p>
+</fieldset>
+<div class="field">
+<label for="email">Email</label>
+<input id="email" name="email" type="email" required autocomplete="email" aria-describedby="email-note">
+<p class="hint" id="email-note">Enter a valid email to complete your selection.</p>
+</div>
+<p class="hint" id="booking-note">This offline page confirms your selection on this device. It does not send a reservation.</p>
+<button id="book" type="submit" disabled aria-describedby="booking-note">Book Workshop</button>
+</form>
+<p id="confirmation" role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+</div>
+<footer>Engineering conversations with a practical focus: explicit assumptions, clear boundaries and decisions you can defend.</footer>
+</main>
+<script>
+const form = document.getElementById('booking-form');
+const workshop = document.getElementById('workshop');
+const email = document.getElementById('email');
+const button = document.getElementById('book');
+const confirmation = document.getElementById('confirmation');
+function ready() {
+  return Boolean(workshop.value && form.querySelector('input[name="slot"]:checked') &&
+    email.value && email.validity.valid);
+}
+function update() {
+  button.disabled = !ready();
+  confirmation.textContent = '';
+}
+form.addEventListener('input', update);
+form.addEventListener('change', update);
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  if (!ready() || !form.checkValidity()) {
+    button.disabled = !ready();
+    form.reportValidity();
+    return;
+  }
+  const time = form.querySelector('input[name="slot"]:checked').value;
+  confirmation.textContent = 'Selection confirmed: ' + workshop.value +
+    ' at ' + time + '. This confirmation is saved only on this page; no reservation has been sent.';
+});
+update();
+</script>
+</body>
+</html>

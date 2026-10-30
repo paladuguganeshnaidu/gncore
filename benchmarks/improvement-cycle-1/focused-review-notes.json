@@ -1,0 +1,8 @@
+{
+  "scope": "Adaptive follow-up after three known omissions. Same frozen rubric, same single unblinded reviewer; not a new independent holdout or a repeatability estimate.",
+  "reviews": {
+    "H03": {"fail": {}, "basis": "Explicit managed workload identity/runtime secret delivery, no credentials in images/manifests and log redaction now complement compatible additive events, bounded canary, gates and recovery."},
+    "H15": {"fail": {}, "basis": "Complete copyable offline Python mock preserves the supplied acceptance/polling/retry lifecycle and labels its own representation as non-wire schema. Its pending, duplicate-identity and completed assertions executed successfully; real API compatibility remains untested."},
+    "H27": {"fail": {}, "basis": "Assumed ABI rules explicitly require nonnull context, null data only at zero length without null slice construction, aligned/live storage and checked arithmetic. Caller provenance/lifetime obligations, allocation pairing, negative-status errors and quiescent teardown are explicit; native execution remains unmeasured."}
+  }
+}

@@ -1,6 +1,8 @@
 # Preserve supplied skill-resource bytes and the repository's existing line endings.
 * -text
 * whitespace=blank-at-eol,blank-at-eof,cr-at-eol
+# ReportLab can emit ASCII-only PDFs; keep them binary in reviews and merges.
+*.pdf binary
 # Preserve third-party Markdown hard breaks and source formatting verbatim.
 src/gncore/skills/frontend_data/** -whitespace
 src/gncore/skills/backend_data/** -whitespace
@@ -11,3 +13,5 @@ web-results/charts/*.svg -whitespace
 web-results/logs/*.log -whitespace
 web-results/ide-evidence/*.txt -whitespace
 web-results/ide-evidence/*-response.md -whitespace
+# Preserve original diagnostics, including pytest's intentional indentation.
+web-results/improvement-cycle-1/*.txt -whitespace

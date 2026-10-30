@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 Working screens and state transitions with offline, denied-permission, loading and recovery paths, plus platform integration notes.
@@ -26,7 +28,14 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 ## Anticipate failure and verify the boundary
 
-Use stable identities and virtualization for long collections, then measure expensive row work and rerenders before tuning. Own subscriptions and async tasks across navigation, background/resume and unmount; cancel or ignore stale results. Preserve versioned offline state with loading/stale/error/retry behavior. For mutations, use durable operation identity and a conflict policy; read-only caches should not invent write workflows. Test lifecycle transitions and representative devices separately from desktop reasoning.
+Preserve platform lifecycle and account boundaries. Persist versioned drafts and pending operations for process death, not only backgrounding, and reject stale results after navigation or account changes. Optimize long collections with stable identities and virtualization only when relevant, then measure. Keep mutation identity/conflict recovery explicit and distinguish device evidence from desktop reasoning.
+
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Preserve versioned drafts/pending state across process death as well as background/resume; cancel or reject stale results across navigation, logout and account changes.
+- Where relevant, use stable virtualized rows and measured optimization; give offline/error/conflict state and durable mutation identity a real recovery path, then test relaunch/retry on the target platform.
 
 ## Workflow map
 
@@ -34,11 +43,9 @@ Use stable identities and virtualization for long collections, then measure expe
 | --- | --- |
 | `mobile-app` | Implement mobile features with reliable navigation, offline behavior, accessibility, and platform conventions. |
 
-## Focused procedures
+## Selected procedure
 
-### Mobile App Engineering (`mobile-app`)
-
-Identify the framework, supported OS versions, navigation, persistence, and permission model first. Follow existing platform conventions and handle loading, empty, error, offline, and denied-permission states. Keep secrets out of the client, minimize collected data, and test small/large screens and accessibility settings. Avoid platform migrations or store submissions unless requested.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

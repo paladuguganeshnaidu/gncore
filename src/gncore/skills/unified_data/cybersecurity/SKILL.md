@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 Evidence-linked findings or a scoped security patch, abuse cases, severity rationale and practical mitigation/verification steps.
@@ -27,6 +29,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 ## Anticipate failure and verify the boundary
 
 For each finding, trace attacker-controlled input through the relevant boundary to an observable impact, then propose a repair that preserves authorized behavior. Distinguish finding recall, false alarms and repair correctness. Path containment requires canonical component-aware checks and a symlink/race policy, not a string prefix or filename sanitizer alone. Retest the exploit path and safe neighboring cases; do not call an entire application secure from a small fixture.
+
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Separate demonstrated exploits, statically established paths and unresolved hypotheses; record attacker control, impact, repair and safe neighboring behavior.
+- Measure false alarms and repaired behavior separately from finding recall; secret removal does not revoke exposed credentials or derived sessions.
 
 ## Workflow map
 
@@ -45,55 +54,9 @@ For each finding, trace attacker-controlled input through the relevant boundary 
 | `web-security` | Review web features for input, session, authorization, and output-handling vulnerabilities. |
 | `privacy-review` | Reduce privacy risk by tracing personal data, purpose, access, retention, and user control. |
 
-## Focused procedures
+## Selected procedure
 
-### Threat Model (`cyber-threat-model`)
-
-Use an explicit scope and attacker model, diagram data flows and entry points, rank plausible threats, tie mitigations to owners, and record residual risk. Do not probe systems outside authorized scope.
-
-### Secure Code Review (`cyber-secure-code`)
-
-Trace attacker-controlled inputs to sensitive operations, verify server-side authorization and safe encoding, identify reproducible findings, and recommend minimal fixes with regression tests. Avoid unapproved live exploitation.
-
-### Vulnerability Triage (`cyber-vulnerability-triage`)
-
-Verify affected versions and reachable paths, validate evidence in a safe environment, assess exposure and compensating controls, assign severity using policy, and coordinate fix/mitigation and retest.
-
-### Cyber Incident Response (`cyber-incident-response`)
-
-Establish scope and confidence, preserve logs and chain of custody, select reversible containment with owner approval, coordinate communications, eradicate safely, and verify recovery. Keep hypotheses separate from confirmed facts.
-
-### Identity and Access Review (`cyber-identity-access`)
-
-Inventory human and service identities, roles, privilege, owner, last use, and authentication controls. Validate exceptions and break-glass paths; recommend revocation only through authorized change control.
-
-### Cloud Security Review (`cyber-cloud-review`)
-
-Check identity boundaries, public exposure, encryption, network paths, logging, backups, and configuration drift. Cite exact resources and evidence; do not change production settings without authorization.
-
-### Security Control Evidence (`cyber-security-controls`)
-
-Use the named control version, identify evidence period and system scope, note sample and gaps, and distinguish designed from operating effectiveness. Do not claim certification or compliance from incomplete evidence.
-
-### Phishing Response Triage (`cyber-phishing`)
-
-Preserve message headers and indicators, verify links without opening them, identify affected users and credential exposure, and route containment through authorized tooling. Do not forward malicious content broadly.
-
-### Exposed Secret Response (`cyber-secret-response`)
-
-Identify credential type and exposure window without printing its value, notify the owner, revoke or rotate using approved procedure, audit use, and remove exposure from accessible history where possible.
-
-### Authorized Security Test Plan (`cyber-security-test-plan`)
-
-Record asset owner approval, exact scope, allowed techniques, dates, rate limits, data handling, contacts, and stop rules. Keep testing non-destructive and report only verified findings to authorized recipients.
-
-### Web Security Engineering (`web-security`)
-
-Trace attacker-controlled values from entry to storage and rendering. Check authentication and object-level authorization on every sensitive operation, output encoding, CSRF protections where relevant, secret handling, and safe error responses. Tie findings to code paths and exploit conditions; do not claim a vulnerability without evidence.
-
-### Privacy Review (`privacy-review`)
-
-Map data collected, source, purpose, recipients, storage, access, retention, deletion, and user controls. Identify data minimization and security improvements. Flag jurisdiction-specific legal questions rather than asserting compliance. Do not expose raw personal data in logs, examples, or reports; use synthetic or redacted samples.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

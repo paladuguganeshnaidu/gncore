@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 A bounded native component or patch with ownership/ABI documentation, failure behavior and reproducible build configuration.
@@ -28,6 +30,14 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 Make the owner, storage stability, borrow/retention interval and destruction order explicit at every native/FFI boundary. Pair allocation and deallocation through a documented compatible ABI and enforce exactly-once destruction after the foreign user has finished. Specify null/length/NUL, error/unwind and allowed concurrency behavior. Inspect small unsafe boundaries and use appropriate native/sanitizer/stress checks; a plausible ownership sketch is not runtime memory-safety proof.
 
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Specify stable storage, ownership, retention, matching allocation/deallocation and destruction after foreign callbacks become quiescent; define permitted concurrency.
+- Distinguish enforceable null/length/alignment/handle/overflow checks from caller lifetime/provenance obligations; specify error/unwind behavior and use appropriate native/sanitizer/stress evidence without claiming pointer inspection proves safety.
+- Write the actual ABI rules rather than saying to document them: whether null is permitted at zero length, required alignment and checked length arithmetic, who owns each allocation, caller lifetime obligations, and a specific failure/status convention that prevents unwinding across the boundary. Mark unspecified foreign guarantees as assumptions.
+
 ## Workflow map
 
 | Workflow | Use it for |
@@ -37,23 +47,9 @@ Make the owner, storage stability, borrow/retention interval and destruction ord
 | `systems-safe-arithmetic` | Integer and buffer boundaries. |
 | `systems-concurrency` | Native concurrency. |
 
-## Focused procedures
+## Selected procedure
 
-### Ownership and resource lifetime (`systems-ownership`)
-
-Map allocation, ownership transfer, borrowing and cleanup for each resource. Use RAII or language-native lifetime guarantees where possible; define cancellation/error cleanup and test repeated creation/destruction without leaks or use-after-free.
-
-### FFI and ABI boundaries (`systems-ffi`)
-
-Specify ABI, fixed-width types, layout/alignment, string length/encoding and ownership on both sides. Validate pointers/lengths and translate errors without unwinding across an incompatible boundary. Test zero-length buffers, invalid handles and cleanup from the caller's language.
-
-### Integer and buffer boundaries (`systems-safe-arithmetic`)
-
-State allowed numeric ranges and byte/element units. Check overflow before allocation/index arithmetic and validate buffer length before access. Exercise minimum/maximum values and malformed input with compiler/runtime checks enabled.
-
-### Native concurrency (`systems-concurrency`)
-
-Identify shared state, synchronization and the ownership of shutdown. Specify lock order and atomic memory-order requirements before choosing lock-free structures. Test cancellation, contention and race instrumentation where supported; explain the limits of stress tests.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

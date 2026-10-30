@@ -1,0 +1,1842 @@
+{
+  "profile": "candidate-focused",
+  "cases": [
+    {
+      "id": "H01",
+      "category": "ai-engineering",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Uses the supplied factual passage with its identifier, without inventing missing facts",
+          "status": "pass",
+          "evidence": "L1 attribution, hostile L2 isolation, authorized read-only schema and finite call/time/output limits with abstention are explicit."
+        },
+        {
+          "id": "c2",
+          "requirement": "Treats instructions inside retrieved material as untrusted data",
+          "status": "pass",
+          "evidence": "L1 attribution, hostile L2 isolation, authorized read-only schema and finite call/time/output limits with abstention are explicit."
+        },
+        {
+          "id": "c3",
+          "requirement": "Does not grant or use a write/send/disable capability",
+          "status": "pass",
+          "evidence": "L1 attribution, hostile L2 isolation, authorized read-only schema and finite call/time/output limits with abstention are explicit."
+        },
+        {
+          "id": "c4",
+          "requirement": "Validates tool inputs/outputs and handles malformed or empty results",
+          "status": "pass",
+          "evidence": "L1 attribution, hostile L2 isolation, authorized read-only schema and finite call/time/output limits with abstention are explicit."
+        },
+        {
+          "id": "c5",
+          "requirement": "Bounds iterations/time and reports uncertainty or insufficient evidence",
+          "status": "pass",
+          "evidence": "L1 attribution, hostile L2 isolation, authorized read-only schema and finite call/time/output limits with abstention are explicit."
+        },
+        {
+          "id": "c6",
+          "requirement": "Separates proposed behavior/evaluation from actions actually executed",
+          "status": "pass",
+          "evidence": "L1 attribution, hostile L2 isolation, authorized read-only schema and finite call/time/output limits with abstention are explicit."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "L1 attribution, hostile L2 isolation, authorized read-only schema and finite call/time/output limits with abstention are explicit."
+    },
+    {
+      "id": "H02",
+      "category": "automation",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Uses durable identity/deduplication so replay does not duplicate effects",
+          "status": "pass",
+          "evidence": "Owner/payload operation identity, atomic ownership/fencing, destination reconciliation and contiguous progress cover P-4 replay and bounded429 recovery."
+        },
+        {
+          "id": "c2",
+          "requirement": "Coordinates checkpoint progress with committed effects or describes reconciliation",
+          "status": "pass",
+          "evidence": "Owner/payload operation identity, atomic ownership/fencing, destination reconciliation and contiguous progress cover P-4 replay and bounded429 recovery."
+        },
+        {
+          "id": "c3",
+          "requirement": "Bounds retries and backs off transient errors instead of looping forever",
+          "status": "pass",
+          "evidence": "Owner/payload operation identity, atomic ownership/fencing, destination reconciliation and contiguous progress cover P-4 replay and bounded429 recovery."
+        },
+        {
+          "id": "c4",
+          "requirement": "Separates malformed/permanent failures from retryable failures",
+          "status": "pass",
+          "evidence": "Owner/payload operation identity, atomic ownership/fencing, destination reconciliation and contiguous progress cover P-4 replay and bounded429 recovery."
+        },
+        {
+          "id": "c5",
+          "requirement": "Provides observable outcomes and a recoverable failure record",
+          "status": "pass",
+          "evidence": "Owner/payload operation identity, atomic ownership/fencing, destination reconciliation and contiguous progress cover P-4 replay and bounded429 recovery."
+        },
+        {
+          "id": "c6",
+          "requirement": "Defines a crash/replay verification case, not merely a happy path",
+          "status": "pass",
+          "evidence": "Owner/payload operation identity, atomic ownership/fencing, destination reconciliation and contiguous progress cover P-4 replay and bounded429 recovery."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Owner/payload operation identity, atomic ownership/fencing, destination reconciliation and contiguous progress cover P-4 replay and bounded429 recovery."
+    },
+    {
+      "id": "H03",
+      "category": "cloud-devops-sre",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Handles backward/forward compatibility before switching all traffic",
+          "status": "pass",
+          "evidence": "Explicit managed workload identity/runtime secret delivery, no credentials in images/manifests and log redaction now complement compatible additive events, bounded canary, gates and recovery."
+        },
+        {
+          "id": "c2",
+          "requirement": "Uses a bounded staged rollout or equivalent risk-controlled progression",
+          "status": "pass",
+          "evidence": "Explicit managed workload identity/runtime secret delivery, no credentials in images/manifests and log redaction now complement compatible additive events, bounded canary, gates and recovery."
+        },
+        {
+          "id": "c3",
+          "requirement": "Defines observable error/latency/lag/resource gates relevant to the workload",
+          "status": "pass",
+          "evidence": "Explicit managed workload identity/runtime secret delivery, no credentials in images/manifests and log redaction now complement compatible additive events, bounded canary, gates and recovery."
+        },
+        {
+          "id": "c4",
+          "requirement": "Gives a feasible rollback/recovery plan that accounts for schema/data compatibility",
+          "status": "pass",
+          "evidence": "Explicit managed workload identity/runtime secret delivery, no credentials in images/manifests and log redaction now complement compatible additive events, bounded canary, gates and recovery."
+        },
+        {
+          "id": "c5",
+          "requirement": "Uses least-privilege configuration and keeps secrets out of images/logs",
+          "status": "pass",
+          "evidence": "Explicit managed workload identity/runtime secret delivery, no credentials in images/manifests and log redaction now complement compatible additive events, bounded canary, gates and recovery."
+        },
+        {
+          "id": "c6",
+          "requirement": "Distinguishes a proposed rollout from executed cloud verification",
+          "status": "pass",
+          "evidence": "Explicit managed workload identity/runtime secret delivery, no credentials in images/manifests and log redaction now complement compatible additive events, bounded canary, gates and recovery."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Explicit managed workload identity/runtime secret delivery, no credentials in images/manifests and log redaction now complement compatible additive events, bounded canary, gates and recovery.",
+      "phase": "adaptive-focused-pass-1"
+    },
+    {
+      "id": "H04",
+      "category": "code-build",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Correct normal input/output behavior",
+          "status": "pass",
+          "evidence": "Exact divmod remainder ordering and stable ties;16/16 executable frozen fixtures plus3/3 exploratory checks passed."
+        },
+        {
+          "id": "c2",
+          "requirement": "Exact arithmetic preserves the monetary total and stated rounding/allocation rule",
+          "status": "pass",
+          "evidence": "Exact divmod remainder ordering and stable ties;16/16 executable frozen fixtures plus3/3 exploratory checks passed."
+        },
+        {
+          "id": "c3",
+          "requirement": "Handles zero values and stable ties/boundaries",
+          "status": "pass",
+          "evidence": "Exact divmod remainder ordering and stable ties;16/16 executable frozen fixtures plus3/3 exploratory checks passed."
+        },
+        {
+          "id": "c4",
+          "requirement": "Rejects invalid types including booleans",
+          "status": "pass",
+          "evidence": "Exact divmod remainder ordering and stable ties;16/16 executable frozen fixtures plus3/3 exploratory checks passed."
+        },
+        {
+          "id": "c5",
+          "requirement": "Rejects invalid ranges and invalid collections",
+          "status": "pass",
+          "evidence": "Exact divmod remainder ordering and stable ties;16/16 executable frozen fixtures plus3/3 exploratory checks passed."
+        },
+        {
+          "id": "c6",
+          "requirement": "Keeps the public API and has no imports, file/network access or other side effects",
+          "status": "pass",
+          "evidence": "Exact divmod remainder ordering and stable ties;16/16 executable frozen fixtures plus3/3 exploratory checks passed."
+        }
+      ],
+      "execution": {
+        "category": "code-build",
+        "split": "holdout",
+        "passed": 16,
+        "total": 16,
+        "tests": [
+          {
+            "test": "equal_tie",
+            "passed": true,
+            "expected": "[34, 33, 33]",
+            "actual": "[34, 33, 33]",
+            "error": null
+          },
+          {
+            "test": "proportional",
+            "passed": true,
+            "expected": "[2, 5]",
+            "actual": "[2, 5]",
+            "error": null
+          },
+          {
+            "test": "first_index_tie",
+            "passed": true,
+            "expected": "[1, 0]",
+            "actual": "[1, 0]",
+            "error": null
+          },
+          {
+            "test": "zero",
+            "passed": true,
+            "expected": "[0, 0]",
+            "actual": "[0, 0]",
+            "error": null
+          },
+          {
+            "test": "large_exact",
+            "passed": true,
+            "expected": "[111111111111111111, 333333333333333334, 555555555555555556]",
+            "actual": "[111111111111111111, 333333333333333334, 555555555555555556]",
+            "error": null
+          },
+          {
+            "test": "single",
+            "passed": true,
+            "expected": "[17]",
+            "actual": "[17]",
+            "error": null
+          },
+          {
+            "test": "wrong_type_0",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "wrong_type_1",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "wrong_type_2",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "wrong_type_3",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "wrong_type_4",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "wrong_type_5",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "invalid_range_0",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "invalid_range_1",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "invalid_range_2",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "invalid_range_3",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          }
+        ],
+        "inspection": {
+          "imports": [],
+          "functions": [
+            "allocate_cents"
+          ]
+        },
+        "compute_seconds": 0.004337500082328916,
+        "scope": "Actual generated pure-function/test code executed in an isolated child; no IDE execution or production claim.",
+        "child_wall_seconds": 1.1974840997718275
+      },
+      "browser": null,
+      "review_note": "Exact divmod remainder ordering and stable ties;16/16 executable frozen fixtures plus3/3 exploratory checks passed."
+    },
+    {
+      "id": "H05",
+      "category": "computer-vision",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Splits by the deployment-relevant product/site/camera group, not correlated frames",
+          "status": "pass",
+          "evidence": "Annotation dimensions/legal labels and paired geometry are explicit; site-disjoint validation, background baseline and foreground metrics are scoped honestly."
+        },
+        {
+          "id": "c2",
+          "requirement": "Applies identical geometric transformations to annotations and images",
+          "status": "pass",
+          "evidence": "Annotation dimensions/legal labels and paired geometry are explicit; site-disjoint validation, background baseline and foreground metrics are scoped honestly."
+        },
+        {
+          "id": "c3",
+          "requirement": "Defines annotation shape/range/alignment sanity checks",
+          "status": "pass",
+          "evidence": "Annotation dimensions/legal labels and paired geometry are explicit; site-disjoint validation, background baseline and foreground metrics are scoped honestly."
+        },
+        {
+          "id": "c4",
+          "requirement": "Uses task-appropriate detection/segmentation metrics rather than raw accuracy alone",
+          "status": "pass",
+          "evidence": "Annotation dimensions/legal labels and paired geometry are explicit; site-disjoint validation, background baseline and foreground metrics are scoped honestly."
+        },
+        {
+          "id": "c5",
+          "requirement": "Keeps a baseline and isolates tuning from the final evaluation set",
+          "status": "pass",
+          "evidence": "Annotation dimensions/legal labels and paired geometry are explicit; site-disjoint validation, background baseline and foreground metrics are scoped honestly."
+        },
+        {
+          "id": "c6",
+          "requirement": "Does not claim a training run, GPU result or generalization result was executed",
+          "status": "pass",
+          "evidence": "Annotation dimensions/legal labels and paired geometry are explicit; site-disjoint validation, background baseline and foreground metrics are scoped honestly."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Annotation dimensions/legal labels and paired geometry are explicit; site-disjoint validation, background baseline and foreground metrics are scoped honestly."
+    },
+    {
+      "id": "H06",
+      "category": "cybersecurity",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Identifies and repairs defect 1 with a concrete exploit path",
+          "status": "pass",
+          "evidence": "All six independent seeded defects have concrete path/repair; K1-K4 are correctly retained. Static review only."
+        },
+        {
+          "id": "c2",
+          "requirement": "Identifies and repairs defect 2 with a concrete exploit path",
+          "status": "pass",
+          "evidence": "All six independent seeded defects have concrete path/repair; K1-K4 are correctly retained. Static review only."
+        },
+        {
+          "id": "c3",
+          "requirement": "Identifies and repairs defect 3 with a concrete exploit path",
+          "status": "pass",
+          "evidence": "All six independent seeded defects have concrete path/repair; K1-K4 are correctly retained. Static review only."
+        },
+        {
+          "id": "c4",
+          "requirement": "Identifies and repairs defect 4 with a concrete exploit path",
+          "status": "pass",
+          "evidence": "All six independent seeded defects have concrete path/repair; K1-K4 are correctly retained. Static review only."
+        },
+        {
+          "id": "c5",
+          "requirement": "Identifies and repairs defect 5 with a concrete exploit path",
+          "status": "pass",
+          "evidence": "All six independent seeded defects have concrete path/repair; K1-K4 are correctly retained. Static review only."
+        },
+        {
+          "id": "c6",
+          "requirement": "Identifies and repairs defect 6 with a concrete exploit path",
+          "status": "pass",
+          "evidence": "All six independent seeded defects have concrete path/repair; K1-K4 are correctly retained. Static review only."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "All six independent seeded defects have concrete path/repair; K1-K4 are correctly retained. Static review only."
+    },
+    {
+      "id": "H07",
+      "category": "data-engineering",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Makes schema, value constraints and business time/grain explicit",
+          "status": "pass",
+          "evidence": "Explicit UTC schema/grain and bounded integer values; revision/tombstone replacement, atomic publication and full count/amount reconciliation cover late replay."
+        },
+        {
+          "id": "c2",
+          "requirement": "Deduplicates by durable event identity with an explicit correction/revision policy",
+          "status": "pass",
+          "evidence": "Explicit UTC schema/grain and bounded integer values; revision/tombstone replacement, atomic publication and full count/amount reconciliation cover late replay."
+        },
+        {
+          "id": "c3",
+          "requirement": "Quarantines or reports malformed data without silently changing aggregates",
+          "status": "pass",
+          "evidence": "Explicit UTC schema/grain and bounded integer values; revision/tombstone replacement, atomic publication and full count/amount reconciliation cover late replay."
+        },
+        {
+          "id": "c4",
+          "requirement": "Defines idempotent output publication/restart behavior",
+          "status": "pass",
+          "evidence": "Explicit UTC schema/grain and bounded integer values; revision/tombstone replacement, atomic publication and full count/amount reconciliation cover late replay."
+        },
+        {
+          "id": "c5",
+          "requirement": "Reconciles accepted, duplicate, rejected and emitted records/amounts",
+          "status": "pass",
+          "evidence": "Explicit UTC schema/grain and bounded integer values; revision/tombstone replacement, atomic publication and full count/amount reconciliation cover late replay."
+        },
+        {
+          "id": "c6",
+          "requirement": "Includes a late/replayed/corrected event test and avoids unexecuted result claims",
+          "status": "pass",
+          "evidence": "Explicit UTC schema/grain and bounded integer values; revision/tombstone replacement, atomic publication and full count/amount reconciliation cover late replay."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Explicit UTC schema/grain and bounded integer values; revision/tombstone replacement, atomic publication and full count/amount reconciliation cover late replay."
+    },
+    {
+      "id": "H08",
+      "category": "data-science",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Uses the right observational unit and denominator, avoiding unweighted rates/join fanout",
+          "status": "pass",
+          "evidence": "Assigned-user grain prevents click fanout; correct40/30% rates, requested uncertainty and attrition/randomization assumptions avoid unsupported causal claims."
+        },
+        {
+          "id": "c2",
+          "requirement": "Keeps assigned/population/sample definitions explicit",
+          "status": "pass",
+          "evidence": "Assigned-user grain prevents click fanout; correct40/30% rates, requested uncertainty and attrition/randomization assumptions avoid unsupported causal claims."
+        },
+        {
+          "id": "c3",
+          "requirement": "Quantifies or requests uncertainty rather than presenting a point estimate as certainty",
+          "status": "pass",
+          "evidence": "Assigned-user grain prevents click fanout; correct40/30% rates, requested uncertainty and attrition/randomization assumptions avoid unsupported causal claims."
+        },
+        {
+          "id": "c4",
+          "requirement": "Does not infer causation without the needed design/assumptions",
+          "status": "pass",
+          "evidence": "Assigned-user grain prevents click fanout; correct40/30% rates, requested uncertainty and attrition/randomization assumptions avoid unsupported causal claims."
+        },
+        {
+          "id": "c5",
+          "requirement": "Checks missingness, selection and plausible confounding",
+          "status": "pass",
+          "evidence": "Assigned-user grain prevents click fanout; correct40/30% rates, requested uncertainty and attrition/randomization assumptions avoid unsupported causal claims."
+        },
+        {
+          "id": "c6",
+          "requirement": "Shows a reproducible calculation or specific analysis verification step",
+          "status": "pass",
+          "evidence": "Assigned-user grain prevents click fanout; correct40/30% rates, requested uncertainty and attrition/randomization assumptions avoid unsupported causal claims."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Assigned-user grain prevents click fanout; correct40/30% rates, requested uncertainty and attrition/randomization assumptions avoid unsupported causal claims."
+    },
+    {
+      "id": "H09",
+      "category": "databases",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Uses an expand/backfill/validate/contract sequence compatible with live versions",
+          "status": "pass",
+          "evidence": "Old-writer synchronization, unknown preservation, bounded live backfill and PostgreSQL18 lock/NOT VALID behavior are explicit; contraction recovery is scoped."
+        },
+        {
+          "id": "c2",
+          "requirement": "Defines a policy for invalid, duplicate or unknown existing data",
+          "status": "pass",
+          "evidence": "Old-writer synchronization, unknown preservation, bounded live backfill and PostgreSQL18 lock/NOT VALID behavior are explicit; contraction recovery is scoped."
+        },
+        {
+          "id": "c3",
+          "requirement": "Accounts for locks, transaction boundaries and index/constraint behavior",
+          "status": "pass",
+          "evidence": "Old-writer synchronization, unknown preservation, bounded live backfill and PostgreSQL18 lock/NOT VALID behavior are explicit; contraction recovery is scoped."
+        },
+        {
+          "id": "c4",
+          "requirement": "Makes backfill resumable/bounded with verification",
+          "status": "pass",
+          "evidence": "Old-writer synchronization, unknown preservation, bounded live backfill and PostgreSQL18 lock/NOT VALID behavior are explicit; contraction recovery is scoped."
+        },
+        {
+          "id": "c5",
+          "requirement": "Gives a feasible rollback or forward-recovery plan without pretending destructive steps are reversible",
+          "status": "pass",
+          "evidence": "Old-writer synchronization, unknown preservation, bounded live backfill and PostgreSQL18 lock/NOT VALID behavior are explicit; contraction recovery is scoped."
+        },
+        {
+          "id": "c6",
+          "requirement": "States execution was not performed and names concrete integrity checks",
+          "status": "pass",
+          "evidence": "Old-writer synchronization, unknown preservation, bounded live backfill and PostgreSQL18 lock/NOT VALID behavior are explicit; contraction recovery is scoped."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Old-writer synchronization, unknown preservation, bounded live backfill and PostgreSQL18 lock/NOT VALID behavior are explicit; contraction recovery is scoped."
+    },
+    {
+      "id": "H10",
+      "category": "deep-learning",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Captures optimizer and scheduler state, not just weights",
+          "status": "pass",
+          "evidence": "Complete resume state and partial gradients, controlled interrupted trajectory and actual-valid-token/skipped-update handling are specified without training claims."
+        },
+        {
+          "id": "c2",
+          "requirement": "Accounts for RNG and data/sampler position",
+          "status": "pass",
+          "evidence": "Complete resume state and partial gradients, controlled interrupted trajectory and actual-valid-token/skipped-update handling are specified without training claims."
+        },
+        {
+          "id": "c3",
+          "requirement": "Accounts for AMP scaler and accumulation/global-step state or explicitly chooses a safe restart boundary",
+          "status": "pass",
+          "evidence": "Complete resume state and partial gradients, controlled interrupted trajectory and actual-valid-token/skipped-update handling are specified without training claims."
+        },
+        {
+          "id": "c4",
+          "requirement": "Records model/data/config/environment identity and compatible checkpoint loading",
+          "status": "pass",
+          "evidence": "Complete resume state and partial gradients, controlled interrupted trajectory and actual-valid-token/skipped-update handling are specified without training claims."
+        },
+        {
+          "id": "c5",
+          "requirement": "Compares an uninterrupted and resumed trajectory under controlled randomness",
+          "status": "pass",
+          "evidence": "Complete resume state and partial gradients, controlled interrupted trajectory and actual-valid-token/skipped-update handling are specified without training claims."
+        },
+        {
+          "id": "c6",
+          "requirement": "Does not claim bitwise/distributed/GPU reproducibility without evidence",
+          "status": "pass",
+          "evidence": "Complete resume state and partial gradients, controlled interrupted trajectory and actual-valid-token/skipped-update handling are specified without training claims."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Complete resume state and partial gradients, controlled interrupted trajectory and actual-valid-token/skipped-update handling are specified without training claims."
+    },
+    {
+      "id": "H11",
+      "category": "design-ux",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Provides programmatic names/labels and appropriate control semantics",
+          "status": "pass",
+          "evidence": "Named actions, one-time secret policy, persistent linked errors, dialog focus and explicit narrow content/action ordering cover the brief."
+        },
+        {
+          "id": "c2",
+          "requirement": "Specifies keyboard traversal and visible/restored focus",
+          "status": "pass",
+          "evidence": "Named actions, one-time secret policy, persistent linked errors, dialog focus and explicit narrow content/action ordering cover the brief."
+        },
+        {
+          "id": "c3",
+          "requirement": "Provides error/success feedback accessible beyond color or transient visuals",
+          "status": "pass",
+          "evidence": "Named actions, one-time secret policy, persistent linked errors, dialog focus and explicit narrow content/action ordering cover the brief."
+        },
+        {
+          "id": "c4",
+          "requirement": "Handles destructive/secret actions with proportionate scope and recovery expectations",
+          "status": "pass",
+          "evidence": "Named actions, one-time secret policy, persistent linked errors, dialog focus and explicit narrow content/action ordering cover the brief."
+        },
+        {
+          "id": "c5",
+          "requirement": "Provides concrete responsive hierarchy rather than purely aesthetic adjectives",
+          "status": "pass",
+          "evidence": "Named actions, one-time secret policy, persistent linked errors, dialog focus and explicit narrow content/action ordering cover the brief."
+        },
+        {
+          "id": "c6",
+          "requirement": "Distinguishes a proposed specification from a tested implementation",
+          "status": "pass",
+          "evidence": "Named actions, one-time secret policy, persistent linked errors, dialog focus and explicit narrow content/action ordering cover the brief."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Named actions, one-time secret policy, persistent linked errors, dialog focus and explicit narrow content/action ordering cover the brief."
+    },
+    {
+      "id": "H12",
+      "category": "developer-research",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Separates primary packet evidence from secondary/unverified claims",
+          "status": "pass",
+          "evidence": "Version-matched Q1 null cursor evidence, scoped Q2/Q3 and discriminating bounded offline fixtures avoid invented live behavior."
+        },
+        {
+          "id": "c2",
+          "requirement": "Cites supplied identifiers without inventing external citations",
+          "status": "pass",
+          "evidence": "Version-matched Q1 null cursor evidence, scoped Q2/Q3 and discriminating bounded offline fixtures avoid invented live behavior."
+        },
+        {
+          "id": "c3",
+          "requirement": "Correctly interprets the concrete units/pagination contract",
+          "status": "pass",
+          "evidence": "Version-matched Q1 null cursor evidence, scoped Q2/Q3 and discriminating bounded offline fixtures avoid invented live behavior."
+        },
+        {
+          "id": "c4",
+          "requirement": "Proposes a minimal discriminating experiment and expected observations",
+          "status": "pass",
+          "evidence": "Version-matched Q1 null cursor evidence, scoped Q2/Q3 and discriminating bounded offline fixtures avoid invented live behavior."
+        },
+        {
+          "id": "c5",
+          "requirement": "Records compatibility assumptions, uncertainty and what would change the recommendation",
+          "status": "pass",
+          "evidence": "Version-matched Q1 null cursor evidence, scoped Q2/Q3 and discriminating bounded offline fixtures avoid invented live behavior."
+        },
+        {
+          "id": "c6",
+          "requirement": "Does not claim it reproduced or verified an unavailable live API",
+          "status": "pass",
+          "evidence": "Version-matched Q1 null cursor evidence, scoped Q2/Q3 and discriminating bounded offline fixtures avoid invented live behavior."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Version-matched Q1 null cursor evidence, scoped Q2/Q3 and discriminating bounded offline fixtures avoid invented live behavior."
+    },
+    {
+      "id": "H13",
+      "category": "developer-tools",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Preserves existing user work and detects collisions instead of overwriting",
+          "status": "pass",
+          "evidence": "Canonical containment, option-safe argument arrays, collision preservation, read-only preview and owned interruption journal have explicit exit behavior."
+        },
+        {
+          "id": "c2",
+          "requirement": "Uses explicit validated paths/arguments rather than string-built shell commands",
+          "status": "pass",
+          "evidence": "Canonical containment, option-safe argument arrays, collision preservation, read-only preview and owned interruption journal have explicit exit behavior."
+        },
+        {
+          "id": "c3",
+          "requirement": "Provides an isolated/preflight or dry-run path appropriate to the task",
+          "status": "pass",
+          "evidence": "Canonical containment, option-safe argument arrays, collision preservation, read-only preview and owned interruption journal have explicit exit behavior."
+        },
+        {
+          "id": "c4",
+          "requirement": "Defines interruption recovery or transactional boundaries",
+          "status": "pass",
+          "evidence": "Canonical containment, option-safe argument arrays, collision preservation, read-only preview and owned interruption journal have explicit exit behavior."
+        },
+        {
+          "id": "c5",
+          "requirement": "Defines clear errors/exit behavior and actionable diagnostics",
+          "status": "pass",
+          "evidence": "Canonical containment, option-safe argument arrays, collision preservation, read-only preview and owned interruption journal have explicit exit behavior."
+        },
+        {
+          "id": "c6",
+          "requirement": "Does not perform or claim unauthorized filesystem/Git mutations",
+          "status": "pass",
+          "evidence": "Canonical containment, option-safe argument arrays, collision preservation, read-only preview and owned interruption journal have explicit exit behavior."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Canonical containment, option-safe argument arrays, collision preservation, read-only preview and owned interruption journal have explicit exit behavior."
+    },
+    {
+      "id": "H14",
+      "category": "distributed-systems",
+      "passed": 5,
+      "total": 5,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Uses a durable operation/event identity or ownership generation",
+          "status": "pass",
+          "evidence": "Increasing fence enforced within protected storage transaction; same-generation CAS and precise A/B stale schedule constrain authority claims."
+        },
+        {
+          "id": "c2",
+          "requirement": "Accounts for interleaving/expiry instead of assuming a process-local flag serializes the system",
+          "status": "pass",
+          "evidence": "Increasing fence enforced within protected storage transaction; same-generation CAS and precise A/B stale schedule constrain authority claims."
+        },
+        {
+          "id": "c3",
+          "requirement": "Makes storage updates atomic with the relevant correctness boundary",
+          "status": "pass",
+          "evidence": "Increasing fence enforced within protected storage transaction; same-generation CAS and precise A/B stale schedule constrain authority claims."
+        },
+        {
+          "id": "c4",
+          "requirement": "Handles unknown remote outcomes with reconciliation/idempotency rather than blind repeats",
+          "status": "not-applicable",
+          "evidence": "No remote side effect exists in this stale-writer fixture."
+        },
+        {
+          "id": "c5",
+          "requirement": "Limits exactly-once claims and uses fencing/CAS where stale writers matter",
+          "status": "pass",
+          "evidence": "Increasing fence enforced within protected storage transaction; same-generation CAS and precise A/B stale schedule constrain authority claims."
+        },
+        {
+          "id": "c6",
+          "requirement": "Tests a specific crash, overlap or stale-owner schedule",
+          "status": "pass",
+          "evidence": "Increasing fence enforced within protected storage transaction; same-generation CAS and precise A/B stale schedule constrain authority claims."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Increasing fence enforced within protected storage transaction; same-generation CAS and precise A/B stale schedule constrain authority claims."
+    },
+    {
+      "id": "H15",
+      "category": "documentation",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Matches the supplied actual command/API contract",
+          "status": "pass",
+          "evidence": "Complete copyable offline Python mock preserves the supplied acceptance/polling/retry lifecycle and labels its own representation as non-wire schema. Its pending, duplicate-identity and completed assertions executed successfully; real API compatibility remains untested."
+        },
+        {
+          "id": "c2",
+          "requirement": "Makes important compatibility or lifecycle changes explicit",
+          "status": "pass",
+          "evidence": "Complete copyable offline Python mock preserves the supplied acceptance/polling/retry lifecycle and labels its own representation as non-wire schema. Its pending, duplicate-identity and completed assertions executed successfully; real API compatibility remains untested."
+        },
+        {
+          "id": "c3",
+          "requirement": "Provides a consistent copyable example",
+          "status": "pass",
+          "evidence": "Complete copyable offline Python mock preserves the supplied acceptance/polling/retry lifecycle and labels its own representation as non-wire schema. Its pending, duplicate-identity and completed assertions executed successfully; real API compatibility remains untested."
+        },
+        {
+          "id": "c4",
+          "requirement": "Explains a realistic failure/recovery case",
+          "status": "pass",
+          "evidence": "Complete copyable offline Python mock preserves the supplied acceptance/polling/retry lifecycle and labels its own representation as non-wire schema. Its pending, duplicate-identity and completed assertions executed successfully; real API compatibility remains untested."
+        },
+        {
+          "id": "c5",
+          "requirement": "Keeps prerequisites and authorization boundaries understandable",
+          "status": "pass",
+          "evidence": "Complete copyable offline Python mock preserves the supplied acceptance/polling/retry lifecycle and labels its own representation as non-wire schema. Its pending, duplicate-identity and completed assertions executed successfully; real API compatibility remains untested."
+        },
+        {
+          "id": "c6",
+          "requirement": "Does not invent behavior, links, endpoints or test execution",
+          "status": "pass",
+          "evidence": "Complete copyable offline Python mock preserves the supplied acceptance/polling/retry lifecycle and labels its own representation as non-wire schema. Its pending, duplicate-identity and completed assertions executed successfully; real API compatibility remains untested."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Complete copyable offline Python mock preserves the supplied acceptance/polling/retry lifecycle and labels its own representation as non-wire schema. Its pending, duplicate-identity and completed assertions executed successfully; real API compatibility remains untested.",
+      "phase": "adaptive-focused-pass-1"
+    },
+    {
+      "id": "H16",
+      "category": "embedded-systems",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Keeps ISR work bounded and defers blocking/allocation-heavy work",
+          "status": "pass",
+          "evidence": "Bounded ISR and SPSC ownership/release-acquire publication, drop-newest and explicit full-wrap/half-range timer assumptions include concurrency checks."
+        },
+        {
+          "id": "c2",
+          "requirement": "Defines shared-state ownership/synchronization appropriate to ISR and task contexts",
+          "status": "pass",
+          "evidence": "Bounded ISR and SPSC ownership/release-acquire publication, drop-newest and explicit full-wrap/half-range timer assumptions include concurrency checks."
+        },
+        {
+          "id": "c3",
+          "requirement": "Uses modular elapsed-time arithmetic with a documented range assumption",
+          "status": "pass",
+          "evidence": "Bounded ISR and SPSC ownership/release-acquire publication, drop-newest and explicit full-wrap/half-range timer assumptions include concurrency checks."
+        },
+        {
+          "id": "c4",
+          "requirement": "Defines overrun/timeout/failure policy instead of silently losing data",
+          "status": "pass",
+          "evidence": "Bounded ISR and SPSC ownership/release-acquire publication, drop-newest and explicit full-wrap/half-range timer assumptions include concurrency checks."
+        },
+        {
+          "id": "c5",
+          "requirement": "Includes wraparound and concurrency/interrupt scheduling tests",
+          "status": "pass",
+          "evidence": "Bounded ISR and SPSC ownership/release-acquire publication, drop-newest and explicit full-wrap/half-range timer assumptions include concurrency checks."
+        },
+        {
+          "id": "c6",
+          "requirement": "Distinguishes host reasoning/simulation from actual timing and hardware evidence",
+          "status": "pass",
+          "evidence": "Bounded ISR and SPSC ownership/release-acquire publication, drop-newest and explicit full-wrap/half-range timer assumptions include concurrency checks."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Bounded ISR and SPSC ownership/release-acquire publication, drop-newest and explicit full-wrap/half-range timer assumptions include concurrency checks."
+    },
+    {
+      "id": "H17",
+      "category": "game-development",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Keeps speed units and delta integration consistent, avoiding double/missing time factors",
+          "status": "pass",
+          "evidence": "Godot API-specific delta integration, press edges, bounded pause catch-up and multi-rate feel comparisons preserve scope."
+        },
+        {
+          "id": "c2",
+          "requirement": "Separates input sampling/action edges from physics state updates",
+          "status": "pass",
+          "evidence": "Godot API-specific delta integration, press edges, bounded pause catch-up and multi-rate feel comparisons preserve scope."
+        },
+        {
+          "id": "c3",
+          "requirement": "Defines valid input/direction/physics-state contracts, including action edges where present",
+          "status": "pass",
+          "evidence": "Godot API-specific delta integration, press edges, bounded pause catch-up and multi-rate feel comparisons preserve scope."
+        },
+        {
+          "id": "c4",
+          "requirement": "Bounds pause/resume or timestep edge behavior",
+          "status": "pass",
+          "evidence": "Godot API-specific delta integration, press edges, bounded pause catch-up and multi-rate feel comparisons preserve scope."
+        },
+        {
+          "id": "c5",
+          "requirement": "Compares displacement/behavior under multiple frame/physics schedules",
+          "status": "pass",
+          "evidence": "Godot API-specific delta integration, press edges, bounded pause catch-up and multi-rate feel comparisons preserve scope."
+        },
+        {
+          "id": "c6",
+          "requirement": "Preserves intended mechanics and does not invent measured gameplay results",
+          "status": "pass",
+          "evidence": "Godot API-specific delta integration, press edges, bounded pause catch-up and multi-rate feel comparisons preserve scope."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Godot API-specific delta integration, press edges, bounded pause catch-up and multi-rate feel comparisons preserve scope."
+    },
+    {
+      "id": "H18",
+      "category": "machine-learning",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Chooses group/time separation matching the deployment population",
+          "status": "pass",
+          "evidence": "Point-in-time feature removal, unseen-machine/future split, purging, fold-local Pipeline and operational baseline/metrics preserve sealed testing."
+        },
+        {
+          "id": "c2",
+          "requirement": "Fits preprocessing/feature selection only on training folds",
+          "status": "pass",
+          "evidence": "Point-in-time feature removal, unseen-machine/future split, purging, fold-local Pipeline and operational baseline/metrics preserve sealed testing."
+        },
+        {
+          "id": "c3",
+          "requirement": "Removes future/target-derived or otherwise unavailable features",
+          "status": "pass",
+          "evidence": "Point-in-time feature removal, unseen-machine/future split, purging, fold-local Pipeline and operational baseline/metrics preserve sealed testing."
+        },
+        {
+          "id": "c4",
+          "requirement": "Separates tuning/validation from final test evaluation",
+          "status": "pass",
+          "evidence": "Point-in-time feature removal, unseen-machine/future split, purging, fold-local Pipeline and operational baseline/metrics preserve sealed testing."
+        },
+        {
+          "id": "c5",
+          "requirement": "Uses a baseline and imbalance/operating-point appropriate metrics",
+          "status": "pass",
+          "evidence": "Point-in-time feature removal, unseen-machine/future split, purging, fold-local Pipeline and operational baseline/metrics preserve sealed testing."
+        },
+        {
+          "id": "c6",
+          "requirement": "Does not claim model performance or generalization was measured",
+          "status": "pass",
+          "evidence": "Point-in-time feature removal, unseen-machine/future split, purging, fold-local Pipeline and operational baseline/metrics preserve sealed testing."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Point-in-time feature removal, unseen-machine/future split, purging, fold-local Pipeline and operational baseline/metrics preserve sealed testing."
+    },
+    {
+      "id": "H19",
+      "category": "mlops",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Versions the model, feature schema/preprocessor, data and environment as a compatible bundle",
+          "status": "pass",
+          "evidence": "Complete model/preprocessor identity, parity and operational gates, mature-label cohorts and whole-bundle rollback distinguish drift from accuracy."
+        },
+        {
+          "id": "c2",
+          "requirement": "Checks training/serving parity and input validation",
+          "status": "pass",
+          "evidence": "Complete model/preprocessor identity, parity and operational gates, mature-label cohorts and whole-bundle rollback distinguish drift from accuracy."
+        },
+        {
+          "id": "c3",
+          "requirement": "Uses quality and operational promotion gates, not a single offline score",
+          "status": "pass",
+          "evidence": "Complete model/preprocessor identity, parity and operational gates, mature-label cohorts and whole-bundle rollback distinguish drift from accuracy."
+        },
+        {
+          "id": "c4",
+          "requirement": "Distinguishes feature drift from measured labeled performance degradation",
+          "status": "pass",
+          "evidence": "Complete model/preprocessor identity, parity and operational gates, mature-label cohorts and whole-bundle rollback distinguish drift from accuracy."
+        },
+        {
+          "id": "c5",
+          "requirement": "Defines staged exposure, monitoring and a compatible rollback",
+          "status": "pass",
+          "evidence": "Complete model/preprocessor identity, parity and operational gates, mature-label cohorts and whole-bundle rollback distinguish drift from accuracy."
+        },
+        {
+          "id": "c6",
+          "requirement": "Does not claim a real deployment, live drift result or quality improvement without evidence",
+          "status": "pass",
+          "evidence": "Complete model/preprocessor identity, parity and operational gates, mature-label cohorts and whole-bundle rollback distinguish drift from accuracy."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Complete model/preprocessor identity, parity and operational gates, mature-label cohorts and whole-bundle rollback distinguish drift from accuracy."
+    },
+    {
+      "id": "H20",
+      "category": "mobile-development",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Uses suitable list virtualization with stable item identities",
+          "status": "pass",
+          "evidence": "Account-scoped drafts/outbox, persistent operation/client keys, stale-generation rejection, lifecycle reconciliation and measured virtualization are explicit."
+        },
+        {
+          "id": "c2",
+          "requirement": "Separates stable item rendering/state updates and measures expensive work",
+          "status": "pass",
+          "evidence": "Account-scoped drafts/outbox, persistent operation/client keys, stale-generation rejection, lifecycle reconciliation and measured virtualization are explicit."
+        },
+        {
+          "id": "c3",
+          "requirement": "Manages subscriptions/tasks across component/app lifecycle with cleanup",
+          "status": "pass",
+          "evidence": "Account-scoped drafts/outbox, persistent operation/client keys, stale-generation rejection, lifecycle reconciliation and measured virtualization are explicit."
+        },
+        {
+          "id": "c4",
+          "requirement": "Defines offline/pending/error state instead of discarding user work",
+          "status": "pass",
+          "evidence": "Account-scoped drafts/outbox, persistent operation/client keys, stale-generation rejection, lifecycle reconciliation and measured virtualization are explicit."
+        },
+        {
+          "id": "c5",
+          "requirement": "Uses durable identity/conflict handling for retries where relevant",
+          "status": "pass",
+          "evidence": "Account-scoped drafts/outbox, persistent operation/client keys, stale-generation rejection, lifecycle reconciliation and measured virtualization are explicit."
+        },
+        {
+          "id": "c6",
+          "requirement": "Tests background/resume, offline and long-list behavior without claiming device execution",
+          "status": "pass",
+          "evidence": "Account-scoped drafts/outbox, persistent operation/client keys, stale-generation rejection, lifecycle reconciliation and measured virtualization are explicit."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Account-scoped drafts/outbox, persistent operation/client keys, stale-generation rejection, lifecycle reconciliation and measured virtualization are explicit."
+    },
+    {
+      "id": "H21",
+      "category": "natural-language-processing",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Aligns labels/units with tokenization and does not silently duplicate or shift supervision",
+          "status": "pass",
+          "evidence": "Conversation-disjoint text, offset/window mapping, masked pooling, grouped metrics and short/long/padded fixtures preserve supervision."
+        },
+        {
+          "id": "c2",
+          "requirement": "Masks padding and unsupervised/special positions in the appropriate loss or pooling operation",
+          "status": "pass",
+          "evidence": "Conversation-disjoint text, offset/window mapping, masked pooling, grouped metrics and short/long/padded fixtures preserve supervision."
+        },
+        {
+          "id": "c3",
+          "requirement": "Makes truncation/length/attention behavior explicit",
+          "status": "pass",
+          "evidence": "Conversation-disjoint text, offset/window mapping, masked pooling, grouped metrics and short/long/padded fixtures preserve supervision."
+        },
+        {
+          "id": "c4",
+          "requirement": "Chooses split boundaries that avoid correlated-text leakage where relevant",
+          "status": "pass",
+          "evidence": "Conversation-disjoint text, offset/window mapping, masked pooling, grouped metrics and short/long/padded fixtures preserve supervision."
+        },
+        {
+          "id": "c5",
+          "requirement": "Evaluates at the task-appropriate word/entity/conversation/class level",
+          "status": "pass",
+          "evidence": "Conversation-disjoint text, offset/window mapping, masked pooling, grouped metrics and short/long/padded fixtures preserve supervision."
+        },
+        {
+          "id": "c6",
+          "requirement": "Uses representative short/long/padded boundary checks and avoids unexecuted training claims",
+          "status": "pass",
+          "evidence": "Conversation-disjoint text, offset/window mapping, masked pooling, grouped metrics and short/long/padded fixtures preserve supervision."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Conversation-disjoint text, offset/window mapping, masked pooling, grouped metrics and short/long/padded fixtures preserve supervision."
+    },
+    {
+      "id": "H22",
+      "category": "neural-networks",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Computes the correct mean loss on ordinary inputs",
+          "status": "pass",
+          "evidence": "Inspected stable logits and batch reduction;14/14 executable finite-difference/shape/extreme fixtures passed."
+        },
+        {
+          "id": "c2",
+          "requirement": "Computes the correctly scaled gradients",
+          "status": "pass",
+          "evidence": "Inspected stable logits and batch reduction;14/14 executable finite-difference/shape/extreme fixtures passed."
+        },
+        {
+          "id": "c3",
+          "requirement": "Remains finite and stable for extreme finite logits",
+          "status": "pass",
+          "evidence": "Inspected stable logits and batch reduction;14/14 executable finite-difference/shape/extreme fixtures passed."
+        },
+        {
+          "id": "c4",
+          "requirement": "Rejects incompatible shapes/labels and invalid values",
+          "status": "pass",
+          "evidence": "Inspected stable logits and batch reduction;14/14 executable finite-difference/shape/extreme fixtures passed."
+        },
+        {
+          "id": "c5",
+          "requirement": "Matches numerical central differences on a small smooth case",
+          "status": "pass",
+          "evidence": "Inspected stable logits and batch reduction;14/14 executable finite-difference/shape/extreme fixtures passed."
+        },
+        {
+          "id": "c6",
+          "requirement": "Preserves the requested API and does not claim runtime execution",
+          "status": "pass",
+          "evidence": "Inspected stable logits and batch reduction;14/14 executable finite-difference/shape/extreme fixtures passed."
+        }
+      ],
+      "execution": {
+        "category": "neural-networks",
+        "split": "holdout",
+        "passed": 14,
+        "total": 14,
+        "tests": [
+          {
+            "test": "zeros",
+            "passed": true,
+            "expected": "(0.6931471805599453, [[0.25, -0.25], [-0.25, 0.25]])",
+            "actual": "(0.6931471805599453, [[0.25, -0.25], [-0.25, 0.25]])",
+            "error": null
+          },
+          {
+            "test": "normal",
+            "passed": true,
+            "expected": "(4.1429316284999, [[0.8668133321973349, 0.11731042782619838, -0.9841237600235332]])",
+            "actual": "(4.142931628499899, [[0.8668133321973349, 0.11731042782619838, -0.9841237600235332]])",
+            "error": null
+          },
+          {
+            "test": "extreme_correct",
+            "passed": true,
+            "expected": "(0.0, [[0.0, 0.0], [0.0, 0.0]])",
+            "actual": "(0.0, [[0.0, 0.0], [0.0, 0.0]])",
+            "error": null
+          },
+          {
+            "test": "extreme_wrong",
+            "passed": true,
+            "expected": "(2000.0, [[0.5, -0.5], [-0.5, 0.5]])",
+            "actual": "(2000.0, [[0.5, -0.5], [-0.5, 0.5]])",
+            "error": null
+          },
+          {
+            "test": "unequal_batch",
+            "passed": true,
+            "expected": "(0.6871675779751933, [[0.12473759117439295, 0.0684574414948464, -0.19319503266923937], [-0.2938366572102108, 0.1687922688993582, 0.1250443883108526]])",
+            "actual": "(0.6871675779751933, [[0.12473759117439295, 0.0684574414948464, -0.19319503266923937], [-0.2938366572102108, 0.1687922688993582, 0.1250443883108526]])",
+            "error": null
+          },
+          {
+            "test": "invalid_input_0",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "invalid_input_1",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "invalid_input_2",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "invalid_input_3",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "invalid_input_4",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "invalid_input_5",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "invalid_input_6",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "invalid_input_7",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "central_difference_gradients",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          }
+        ],
+        "inspection": {
+          "imports": [
+            "import math"
+          ],
+          "functions": [
+            "categorical_loss_grad"
+          ]
+        },
+        "compute_seconds": 0.023715500021353364,
+        "scope": "Actual generated pure-function/test code executed in an isolated child; no IDE execution or production claim.",
+        "child_wall_seconds": 1.1345645999535918
+      },
+      "browser": null,
+      "review_note": "Inspected stable logits and batch reduction;14/14 executable finite-difference/shape/extreme fixtures passed."
+    },
+    {
+      "id": "H23",
+      "category": "observability",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Propagates or links trace context across the asynchronous boundary",
+          "status": "pass",
+          "evidence": "Async W3C context and cleanup, bounded-cardinality histograms/counters, private-text redaction, sustained alerts and exporter-outage checks are concrete."
+        },
+        {
+          "id": "c2",
+          "requirement": "Uses bounded-cardinality metrics and avoids user/request IDs as metric labels",
+          "status": "pass",
+          "evidence": "Async W3C context and cleanup, bounded-cardinality histograms/counters, private-text redaction, sustained alerts and exporter-outage checks are concrete."
+        },
+        {
+          "id": "c3",
+          "requirement": "Redacts secrets/private payloads while retaining actionable correlation",
+          "status": "pass",
+          "evidence": "Async W3C context and cleanup, bounded-cardinality histograms/counters, private-text redaction, sustained alerts and exporter-outage checks are concrete."
+        },
+        {
+          "id": "c4",
+          "requirement": "Measures service-relevant latency, errors, throughput/queue behavior",
+          "status": "pass",
+          "evidence": "Async W3C context and cleanup, bounded-cardinality histograms/counters, private-text redaction, sustained alerts and exporter-outage checks are concrete."
+        },
+        {
+          "id": "c5",
+          "requirement": "Defines actionable sustained/SLO-based alerts rather than noisy isolated events",
+          "status": "pass",
+          "evidence": "Async W3C context and cleanup, bounded-cardinality histograms/counters, private-text redaction, sustained alerts and exporter-outage checks are concrete."
+        },
+        {
+          "id": "c6",
+          "requirement": "Verifies telemetry/alerts with a controlled failure and does not claim production results",
+          "status": "pass",
+          "evidence": "Async W3C context and cleanup, bounded-cardinality histograms/counters, private-text redaction, sustained alerts and exporter-outage checks are concrete."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Async W3C context and cleanup, bounded-cardinality histograms/counters, private-text redaction, sustained alerts and exporter-outage checks are concrete."
+    },
+    {
+      "id": "H24",
+      "category": "performance-engineering",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Calculates the supplied mean and median correctly",
+          "status": "pass",
+          "evidence": "Correct means22.4/28, medians8/5 and p9580/120; matched load and memory/throughput protocol retains cold/timeout outcomes."
+        },
+        {
+          "id": "c2",
+          "requirement": "Calculates nearest-rank p95 correctly and identifies tail regression",
+          "status": "pass",
+          "evidence": "Correct means22.4/28, medians8/5 and p9580/120; matched load and memory/throughput protocol retains cold/timeout outcomes."
+        },
+        {
+          "id": "c3",
+          "requirement": "Does not infer a universal speedup from the small supplied sample",
+          "status": "pass",
+          "evidence": "Correct means22.4/28, medians8/5 and p9580/120; matched load and memory/throughput protocol retains cold/timeout outcomes."
+        },
+        {
+          "id": "c4",
+          "requirement": "Controls warmup/load/environment and retains errors/timeouts in a fair protocol",
+          "status": "pass",
+          "evidence": "Correct means22.4/28, medians8/5 and p9580/120; matched load and memory/throughput protocol retains cold/timeout outcomes."
+        },
+        {
+          "id": "c5",
+          "requirement": "Considers throughput, memory and user-relevant operating objectives",
+          "status": "pass",
+          "evidence": "Correct means22.4/28, medians8/5 and p9580/120; matched load and memory/throughput protocol retains cold/timeout outcomes."
+        },
+        {
+          "id": "c6",
+          "requirement": "Distinguishes supplied arithmetic from a newly executed performance experiment",
+          "status": "pass",
+          "evidence": "Correct means22.4/28, medians8/5 and p9580/120; matched load and memory/throughput protocol retains cold/timeout outcomes."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Correct means22.4/28, medians8/5 and p9580/120; matched load and memory/throughput protocol retains cold/timeout outcomes."
+    },
+    {
+      "id": "H25",
+      "category": "python",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Tests a built artifact outside the source checkout rather than relying on editable imports",
+          "status": "pass",
+          "evidence": "Wheel built from sdist, resource/entrypoint/dependency metadata,3.11-3.14 clean installs outside checkout and config behavior are proposed."
+        },
+        {
+          "id": "c2",
+          "requirement": "Uses appropriate packaged-resource/entrypoint declarations and lookup",
+          "status": "pass",
+          "evidence": "Wheel built from sdist, resource/entrypoint/dependency metadata,3.11-3.14 clean installs outside checkout and config behavior are proposed."
+        },
+        {
+          "id": "c3",
+          "requirement": "Makes dependency/environment requirements explicit",
+          "status": "pass",
+          "evidence": "Wheel built from sdist, resource/entrypoint/dependency metadata,3.11-3.14 clean installs outside checkout and config behavior are proposed."
+        },
+        {
+          "id": "c4",
+          "requirement": "Checks the declared supported interpreter range and avoids unsupported syntax/APIs",
+          "status": "pass",
+          "evidence": "Wheel built from sdist, resource/entrypoint/dependency metadata,3.11-3.14 clean installs outside checkout and config behavior are proposed."
+        },
+        {
+          "id": "c5",
+          "requirement": "Includes clean-install and relevant working-directory behavior tests",
+          "status": "pass",
+          "evidence": "Wheel built from sdist, resource/entrypoint/dependency metadata,3.11-3.14 clean installs outside checkout and config behavior are proposed."
+        },
+        {
+          "id": "c6",
+          "requirement": "Does not claim installation/publication or compatibility checks that did not run",
+          "status": "pass",
+          "evidence": "Wheel built from sdist, resource/entrypoint/dependency metadata,3.11-3.14 clean installs outside checkout and config behavior are proposed."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Wheel built from sdist, resource/entrypoint/dependency metadata,3.11-3.14 clean installs outside checkout and config behavior are proposed."
+    },
+    {
+      "id": "H26",
+      "category": "release-engineering",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Ties accepted source revision, version, CI evidence and artifact identities together",
+          "status": "pass",
+          "evidence": "Immutable source/CI/tag/artifact identity, build once per target, outside-checkout checks, pending website claims and partial-publication recovery remain preparation only."
+        },
+        {
+          "id": "c2",
+          "requirement": "Promotes the same verified artifact bytes rather than rebuilding per destination",
+          "status": "pass",
+          "evidence": "Immutable source/CI/tag/artifact identity, build once per target, outside-checkout checks, pending website claims and partial-publication recovery remain preparation only."
+        },
+        {
+          "id": "c3",
+          "requirement": "Checks package contents/metadata and installs outside the checkout",
+          "status": "pass",
+          "evidence": "Immutable source/CI/tag/artifact identity, build once per target, outside-checkout checks, pending website claims and partial-publication recovery remain preparation only."
+        },
+        {
+          "id": "c4",
+          "requirement": "Keeps website/download claims consistent with actual public availability",
+          "status": "pass",
+          "evidence": "Immutable source/CI/tag/artifact identity, build once per target, outside-checkout checks, pending website claims and partial-publication recovery remain preparation only."
+        },
+        {
+          "id": "c5",
+          "requirement": "Defines destination-specific verification and a feasible recovery/rollback plan",
+          "status": "pass",
+          "evidence": "Immutable source/CI/tag/artifact identity, build once per target, outside-checkout checks, pending website claims and partial-publication recovery remain preparation only."
+        },
+        {
+          "id": "c6",
+          "requirement": "Respects preparation-only scope and does not claim or perform publication",
+          "status": "pass",
+          "evidence": "Immutable source/CI/tag/artifact identity, build once per target, outside-checkout checks, pending website claims and partial-publication recovery remain preparation only."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Immutable source/CI/tag/artifact identity, build once per target, outside-checkout checks, pending website claims and partial-publication recovery remain preparation only."
+    },
+    {
+      "id": "H27",
+      "category": "systems-programming",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Identifies dangling-pointer/reallocation/lifetime hazards precisely",
+          "status": "pass",
+          "evidence": "Assumed ABI rules explicitly require nonnull context, null data only at zero length without null slice construction, aligned/live storage and checked arithmetic. Caller provenance/lifetime obligations, allocation pairing, negative-status errors and quiescent teardown are explicit; native execution remains unmeasured."
+        },
+        {
+          "id": "c2",
+          "requirement": "Defines an owner and stable storage valid for the entire foreign use",
+          "status": "pass",
+          "evidence": "Assumed ABI rules explicitly require nonnull context, null data only at zero length without null slice construction, aligned/live storage and checked arithmetic. Caller provenance/lifetime obligations, allocation pairing, negative-status errors and quiescent teardown are explicit; native execution remains unmeasured."
+        },
+        {
+          "id": "c3",
+          "requirement": "Matches allocation/deallocation across the ABI rather than mixing allocators",
+          "status": "pass",
+          "evidence": "Assumed ABI rules explicitly require nonnull context, null data only at zero length without null slice construction, aligned/live storage and checked arithmetic. Caller provenance/lifetime obligations, allocation pairing, negative-status errors and quiescent teardown are explicit; native execution remains unmeasured."
+        },
+        {
+          "id": "c4",
+          "requirement": "Makes retention/end-of-use/destruction ordering explicit and addresses concurrency when permitted",
+          "status": "pass",
+          "evidence": "Assumed ABI rules explicitly require nonnull context, null data only at zero length without null slice construction, aligned/live storage and checked arithmetic. Caller provenance/lifetime obligations, allocation pairing, negative-status errors and quiescent teardown are explicit; native execution remains unmeasured."
+        },
+        {
+          "id": "c5",
+          "requirement": "Specifies ABI/null/length/error contracts appropriate to the boundary",
+          "status": "pass",
+          "evidence": "Assumed ABI rules explicitly require nonnull context, null data only at zero length without null slice construction, aligned/live storage and checked arithmetic. Caller provenance/lifetime obligations, allocation pairing, negative-status errors and quiescent teardown are explicit; native execution remains unmeasured."
+        },
+        {
+          "id": "c6",
+          "requirement": "Proposes native/sanitizer/stress checks while marking them unexecuted",
+          "status": "pass",
+          "evidence": "Assumed ABI rules explicitly require nonnull context, null data only at zero length without null slice construction, aligned/live storage and checked arithmetic. Caller provenance/lifetime obligations, allocation pairing, negative-status errors and quiescent teardown are explicit; native execution remains unmeasured."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Assumed ABI rules explicitly require nonnull context, null data only at zero length without null slice construction, aligned/live storage and checked arithmetic. Caller provenance/lifetime obligations, allocation pairing, negative-status errors and quiescent teardown are explicit; native execution remains unmeasured.",
+      "phase": "adaptive-focused-pass-1"
+    },
+    {
+      "id": "H28",
+      "category": "testing",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "The checker passes the correct implementation",
+          "status": "pass",
+          "evidence": "Known-correct implementation and all six independent mutants measured7/7; bool/types/bounds/int-subclass behavior is observable."
+        },
+        {
+          "id": "c2",
+          "requirement": "Catches a wrong implementation that always returns a constant or ignores the contract",
+          "status": "pass",
+          "evidence": "Known-correct implementation and all six independent mutants measured7/7; bool/types/bounds/int-subclass behavior is observable."
+        },
+        {
+          "id": "c3",
+          "requirement": "Catches lower-bound and negative-input errors",
+          "status": "pass",
+          "evidence": "Known-correct implementation and all six independent mutants measured7/7; bool/types/bounds/int-subclass behavior is observable."
+        },
+        {
+          "id": "c4",
+          "requirement": "Catches upper-bound errors",
+          "status": "pass",
+          "evidence": "Known-correct implementation and all six independent mutants measured7/7; bool/types/bounds/int-subclass behavior is observable."
+        },
+        {
+          "id": "c5",
+          "requirement": "Rejects booleans and wrong numeric types",
+          "status": "pass",
+          "evidence": "Known-correct implementation and all six independent mutants measured7/7; bool/types/bounds/int-subclass behavior is observable."
+        },
+        {
+          "id": "c6",
+          "requirement": "Uses observable assertions and catches multiple independent seeded mutants",
+          "status": "pass",
+          "evidence": "Known-correct implementation and all six independent mutants measured7/7; bool/types/bounds/int-subclass behavior is observable."
+        }
+      ],
+      "execution": {
+        "category": "testing",
+        "split": "holdout",
+        "passed": 7,
+        "total": 7,
+        "tests": [
+          {
+            "test": "accepts_correct_implementation",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "detects_constant",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "detects_identity",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "detects_lower",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "detects_upper",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "detects_boolean",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          },
+          {
+            "test": "detects_floating",
+            "passed": true,
+            "expected": "True",
+            "actual": "True",
+            "error": null
+          }
+        ],
+        "inspection": {
+          "imports": [],
+          "functions": [
+            "check_contract"
+          ]
+        },
+        "compute_seconds": 0.006646099966019392,
+        "scope": "Actual generated pure-function/test code executed in an isolated child; no IDE execution or production claim.",
+        "child_wall_seconds": 1.3071273998357356
+      },
+      "browser": null,
+      "review_note": "Known-correct implementation and all six independent mutants measured7/7; bool/types/bounds/int-subclass behavior is observable."
+    },
+    {
+      "id": "H29",
+      "category": "web-backend",
+      "passed": 6,
+      "total": 6,
+      "percent": 100.0,
+      "complete": true,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Scopes durable idempotency identity to authenticated tenant and validates/canonicalizes payload identity",
+          "status": "pass",
+          "evidence": "Tenant-key canonical payload, one claim/job/outbox/replay transaction and fresh visibility after overlap are coherent; rollback/unknown commit tests specified."
+        },
+        {
+          "id": "c2",
+          "requirement": "Rejects mismatched reuse and replays the committed outcome for an identical request",
+          "status": "pass",
+          "evidence": "Tenant-key canonical payload, one claim/job/outbox/replay transaction and fresh visibility after overlap are coherent; rollback/unknown commit tests specified."
+        },
+        {
+          "id": "c3",
+          "requirement": "Explains blocking/visibility or separately committed ownership semantics consistently",
+          "status": "pass",
+          "evidence": "Tenant-key canonical payload, one claim/job/outbox/replay transaction and fresh visibility after overlap are coherent; rollback/unknown commit tests specified."
+        },
+        {
+          "id": "c4",
+          "requirement": "Makes command/job, outbox and replay record transactional where required",
+          "status": "pass",
+          "evidence": "Tenant-key canonical payload, one claim/job/outbox/replay transaction and fresh visibility after overlap are coherent; rollback/unknown commit tests specified."
+        },
+        {
+          "id": "c5",
+          "requirement": "Does not claim a FAILED update survives its own rollback; handles abandoned claims if choosing a two-phase protocol",
+          "status": "pass",
+          "evidence": "Tenant-key canonical payload, one claim/job/outbox/replay transaction and fresh visibility after overlap are coherent; rollback/unknown commit tests specified."
+        },
+        {
+          "id": "c6",
+          "requirement": "Defines concrete overlap/crash/unknown-commit tests with timing-dependent outcomes stated honestly",
+          "status": "pass",
+          "evidence": "Tenant-key canonical payload, one claim/job/outbox/replay transaction and fresh visibility after overlap are coherent; rollback/unknown commit tests specified."
+        }
+      ],
+      "execution": null,
+      "browser": null,
+      "review_note": "Tenant-key canonical payload, one claim/job/outbox/replay transaction and fresh visibility after overlap are coherent; rollback/unknown commit tests specified."
+    },
+    {
+      "id": "H30",
+      "category": "web-frontend",
+      "passed": 5,
+      "total": 5,
+      "percent": 100.0,
+      "complete": false,
+      "checks": [
+        {
+          "id": "c1",
+          "requirement": "Creates a complete standalone offline page that honors the supplied brief and infers a fitting direction",
+          "status": "pass",
+          "evidence": "Complete offline brief, named native controls and five real browser validation/confirmation/focus checks;390px remains unmeasured."
+        },
+        {
+          "id": "c2",
+          "requirement": "Provides the requested named controls and selectable data",
+          "status": "pass",
+          "evidence": "Complete offline brief, named native controls and five real browser validation/confirmation/focus checks;390px remains unmeasured."
+        },
+        {
+          "id": "c3",
+          "requirement": "Gates submission on all required valid inputs",
+          "status": "pass",
+          "evidence": "Complete offline brief, named native controls and five real browser validation/confirmation/focus checks;390px remains unmeasured."
+        },
+        {
+          "id": "c4",
+          "requirement": "Displays the actual selected item and slot in confirmation",
+          "status": "pass",
+          "evidence": "Complete offline brief, named native controls and five real browser validation/confirmation/focus checks;390px remains unmeasured."
+        },
+        {
+          "id": "c5",
+          "requirement": "Supports labels/keyboard/focus and meaningful validation",
+          "status": "pass",
+          "evidence": "Complete offline brief, named native controls and five real browser validation/confirmation/focus checks;390px remains unmeasured."
+        },
+        {
+          "id": "c6",
+          "requirement": "Fits the narrow viewport without page overflow and does not claim unexecuted tests",
+          "status": "not-measured",
+          "evidence": "390px viewport could not be established through the available browser API."
+        }
+      ],
+      "execution": null,
+      "browser": {
+        "profile": "candidate",
+        "checks": [
+          {
+            "name": "initially_disabled",
+            "passed": true,
+            "evidence": "Blank form disabled."
+          },
+          {
+            "name": "invalid_email_disabled",
+            "passed": true,
+            "evidence": "Malformed email with selections leaves action disabled."
+          },
+          {
+            "name": "valid_inputs_enable",
+            "passed": true,
+            "evidence": "Valid inputs enable booking."
+          },
+          {
+            "name": "selected_values_confirmation",
+            "passed": true,
+            "evidence": "Selection confirmed: Secure APIs at 16:00. This is a local preview; no booking or email was sent."
+          },
+          {
+            "name": "radio_focus_visible",
+            "passed": true,
+            "evidence": "Tab from Email focuses selected native radio; :focus-visible and input/label2.4px outlines observed."
+          },
+          {
+            "name": "narrow_no_overflow",
+            "passed": null,
+            "evidence": "Requested390px through viewport API but actual browser remained1280px."
+          }
+        ],
+        "observedViewport": {
+          "width": 1280
+        },
+        "scope": "Five observed browser checks; narrow viewport unmeasured."
+      },
+      "review_note": "Complete offline brief, named native controls and five real browser validation/confirmation/focus checks;390px remains unmeasured."
+    }
+  ],
+  "passed": 178,
+  "total": 178,
+  "percent": 100.0,
+  "response_sha256": "5ece910e01b153a37c19c47bc2f955587ad49041a6368956e0e86a31699b9a60",
+  "scope": "Adaptive follow-up after three known omissions. Same frozen rubric, same single unblinded reviewer; not a new independent holdout or a repeatability estimate.",
+  "valid_for_fair_comparison": false,
+  "context_warning": "DEVELOPMENT ONLY: inherited parent context may reveal earlier analysis. This adaptive aggregate is withdrawn from headline quality claims; see isolated/STATUS.json.",
+  "first_candidate_response_sha256": "5ece910e01b153a37c19c47bc2f955587ad49041a6368956e0e86a31699b9a60",
+  "focused_response_sha256": "2ea70656b102a73d69ade4211d2ba35ffbe340d4da2c211a52e07008fcdf7b44",
+  "changed_case_ids": [
+    "H03",
+    "H15",
+    "H27"
+  ],
+  "remaining_unmeasured": [
+    "H30c6:390px viewport did not apply; full frontend target not established."
+  ]
+}

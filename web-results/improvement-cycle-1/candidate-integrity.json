@@ -1,0 +1,32 @@
+{
+  "baseline_commit": "62c4c99ef08b83cff415c01d6841a8e8b4a9e2da",
+  "categories": 30,
+  "workflow_ids_preserved": 374,
+  "procedures_unchanged": 364,
+  "reviewed_procedure_refinements": [
+    "web-front-organic",
+    "web-front-find-skills",
+    "design-handoff",
+    "python-packaging",
+    "release-artifact-integrity",
+    "workflow-automation",
+    "geospatial-analysis",
+    "nn-gradient-check",
+    "db-expand-contract",
+    "systems-ffi"
+  ],
+  "discovery_summaries_refined": [
+    "code-blueprint",
+    "code-tdd-workflow",
+    "code-verification-loop",
+    "code-semgrep",
+    "code-delivery-gate",
+    "code-to-spec",
+    "code-to-tickets",
+    "code-python-testing"
+  ],
+  "existing_resource_declarations_preserved": 1569,
+  "existing_licenses_preserved": true,
+  "generated_workflow_resources_added": 30,
+  "scope": "Current quality revisions are explicit; historical phase-one migration accounting remains separate."
+}

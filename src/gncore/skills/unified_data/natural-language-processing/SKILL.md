@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 A reproducible text/token contract, baseline, evaluation by relevant label/language and explicit handling of long/empty/unknown input.
@@ -28,6 +30,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 Make the supervision unit explicit before tokenization: document word/subtoken alignment, special-token and padding masks, and reconstruction for task-level metrics. Define truncation and long-input behavior so labels/spans do not silently shift or disappear. When fitting/evaluating a model, group correlated documents, authors or conversations appropriately. Check short, empty, Unicode, padded and truncated examples; token accuracy dominated by padding is not entity or conversation quality.
 
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Define label units, special/padding masks and whether offsets address original or normalized text; retain mappings through normalization and truncation.
+- Group correlated conversations/documents, preserve label-bearing long content and reconstruct/deduplicate overlapping windows before task-level evaluation; test short, padded and truncated boundaries.
+
 ## Workflow map
 
 | Workflow | Use it for |
@@ -38,27 +47,9 @@ Make the supervision unit explicit before tokenization: document word/subtoken a
 | `nlp-sequence-modeling` | Sequence masks and generation. |
 | `nlp-evaluation` | Language and task evaluation. |
 
-## Focused procedures
+## Selected procedure
 
-### Natural Language Processing (`nlp`)
-
-Inspect languages, tokenization, labels, privacy constraints, and intended use. Establish a simple baseline and split by user/document when duplicates could leak. Evaluate per-class and per-language behavior, not only one aggregate metric. Minimize retention of raw text and redact sensitive examples. Treat generated labels as noisy; document model and data provenance. Do not claim factuality or safety from benchmark scores alone.
-
-### Token and label alignment (`nlp-token-alignment`)
-
-Preserve original text and tokenizer offsets. Define labels for special tokens and subwords, mask ignored positions from loss/metrics and test Unicode plus truncation boundaries. Inspect a hand-labeled example end to end instead of assuming token counts align.
-
-### Text classification baseline (`nlp-text-classification`)
-
-Split related documents/users before fitting vocabulary or learning preprocessing. Establish a simple lexical baseline, inspect label imbalance and tune thresholds on validation data. Report per-class support/errors and test empty, long and out-of-language input.
-
-### Sequence masks and generation (`nlp-sequence-modeling`)
-
-Specify padding side, attention masks, causal visibility, target shifting and stop tokens. Check a short hand-computed sequence for future-token leakage and ignored padding. Bound generation length and verify batch versus single-input behavior.
-
-### Language and task evaluation (`nlp-evaluation`)
-
-Choose metrics that correspond to classification, retrieval, extraction or generation, and retain dataset/language provenance. Examine errors by language/length and independent source groups. Separate semantic accuracy from surface similarity and reviewer preference.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Primary technical references
 

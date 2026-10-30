@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 A firmware/state-machine change, pin/protocol/configuration contract, memory/timing budget and a host/device test plan.
@@ -28,6 +30,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 Keep interrupt work bounded and nonblocking; use preallocated storage with an explicit ISR/task ownership and synchronization protocol. Define queue-full behavior, dropped-event visibility, timeout and watchdog recovery rather than only testing for overflow. Document timer width, modular elapsed-time assumptions and the maximum observation interval. Separate host arithmetic/concurrency simulations from measured target latency, memory and peripheral evidence.
 
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Define bounded nonblocking ISR/task ownership and synchronization; volatile alone does not guarantee atomicity or ordering. Make overrun/drop/timeout state observable.
+- State timer width, wrap comparison and observation/interval bounds; distinguish modular elapsed subtraction from signed deadline ordering and host fixtures from measured hardware timing.
+
 ## Workflow map
 
 | Workflow | Use it for |
@@ -37,23 +46,9 @@ Keep interrupt work bounded and nonblocking; use preallocated storage with an ex
 | `embedded-timing` | Timers and interrupt boundaries. |
 | `embedded-memory` | Constrained memory and firmware builds. |
 
-## Focused procedures
+## Selected procedure
 
-### Firmware state machines (`embedded-state-machine`)
-
-Separate pure state transitions from peripheral effects. Define events, deadlines and valid states; make retries bounded and recovery explicit. Simulate event sequences, repeated inputs and reset without requiring a device.
-
-### Peripheral protocol integration (`embedded-protocols`)
-
-Verify board pins, voltage assumptions, bus configuration, frame format and timeout behavior against the actual hardware documentation. Isolate the transport behind a testable boundary and inject truncated, delayed and corrupt frames in host tests.
-
-### Timers and interrupt boundaries (`embedded-timing`)
-
-Define tick units, counter width, wraparound and interrupt/main-loop ownership. Keep interrupt work bounded and use wrap-safe elapsed-time comparisons. Test deadlines across counter rollover and report which timing claims still require hardware measurement.
-
-### Constrained memory and firmware builds (`embedded-memory`)
-
-Record flash/RAM limits, stack/heap use and linker configuration for the target. Prefer bounded buffers and deterministic allocation where required. Inspect map/build output and exercise maximum frames and reset paths; desktop simulation does not certify device memory headroom.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

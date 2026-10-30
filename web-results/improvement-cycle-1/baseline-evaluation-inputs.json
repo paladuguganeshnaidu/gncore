@@ -1,0 +1,50 @@
+[
+  {
+    "input": ".work/improvement-cycle-1/baseline-batch-1.json",
+    "sha256": "f8020f190f06f578dee32e0c74525fa3bd80312151d6791a3a9d8225ef1c2073",
+    "cases": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08",
+      "H09",
+      "H10"
+    ]
+  },
+  {
+    "input": ".work/improvement-cycle-1/baseline-batch-2.json",
+    "sha256": "ba460f7dbb85bb2ae62cf5227c765a86805ad82f3bd1a8f0a3cf83fd9e5511c0",
+    "cases": [
+      "H11",
+      "H12",
+      "H13",
+      "H14",
+      "H15",
+      "H16",
+      "H17",
+      "H18",
+      "H19",
+      "H20"
+    ]
+  },
+  {
+    "input": ".work/improvement-cycle-1/baseline-batch-3.json",
+    "sha256": "82bd597809ba4bbb58c4b797720be7ff98877ec2fdb26f311e6e751f1ecca0d3",
+    "cases": [
+      "H21",
+      "H22",
+      "H23",
+      "H24",
+      "H25",
+      "H26",
+      "H27",
+      "H28",
+      "H29",
+      "H30"
+    ]
+  }
+]

@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 A restartable pipeline or data design, schemas, quality contracts, lineage and a reconciled accepted/rejected-record report.
@@ -28,6 +30,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 State record grain, event identity, business timezone and value constraints before aggregation. Identical replays, conflicting payloads and legitimate revisions need separate policies; keep-first deduplication must not silently hide corrections. Quarantine invalid rows with lineage, publish atomically/idempotently, and reconcile accepted, duplicate, rejected and emitted counts and amounts. Test late events, changed revisions and restart at publication boundaries.
 
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Declare record grain, business time, constraints, revision ordering and tombstones; an older late update must not overwrite newer accepted state.
+- Define watermark/finality and correction/retraction policy; publish idempotently and reconcile raw, duplicate, rejected, accepted and emitted counts/amounts after restart.
+
 ## Workflow map
 
 | Workflow | Use it for |
@@ -37,23 +46,9 @@ State record grain, event identity, business timezone and value constraints befo
 | `data-pipeline` | Build observable, restartable pipelines with explicit schemas, idempotency, and data-quality checks. |
 | `data-governance` | Define practical ownership, quality, access, lineage, and retention controls for a data asset. |
 
-## Focused procedures
+## Selected procedure
 
-### Data Analysis (`data-analysis`)
-
-Translate the question into a measurable quantity and inspect the relevant columns and missingness. Show the denominator, filters, time window, and aggregation. Check duplicates and outliers where they affect the answer. Label estimates and caveats; never fabricate values or imply causation from correlation.
-
-### Data Pipeline Engineering (`data-pipelines`)
-
-Trace source-to-sink data flow and failure semantics. Define schema and validation at boundaries, make retries idempotent, handle late or duplicate records, and emit actionable logs without secrets or sensitive payloads. Preserve existing schedules and production destinations unless the request explicitly changes them.
-
-### Data Pipeline Engineering (`data-pipeline`)
-
-Trace source, ownership, freshness, volume, schema evolution, and retry semantics. Make stages idempotent, checkpoint safely, validate schemas and key quality invariants, and expose useful failure context. Protect credentials and sensitive data. Keep backfills bounded and never trigger production backfills or mutate source systems without authorization.
-
-### Data Governance (`data-governance`)
-
-Identify asset owner, purpose, source, sensitivity, consumers, transformations, quality expectations, and retention. Propose least-privilege access, lineage, quality checks, and deletion handling. Separate policy facts from recommendations and flag legal or regulatory interpretations for experts. Avoid copying sensitive datasets into examples or test fixtures.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

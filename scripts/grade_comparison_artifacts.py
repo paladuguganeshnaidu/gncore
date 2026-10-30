@@ -10,6 +10,7 @@ import json
 import math
 from pathlib import Path
 import subprocess
+import string
 import sys
 import time
 
@@ -23,20 +24,35 @@ FORBIDDEN_NAMES = {"open","eval","exec","compile","globals","locals","getattr","
 def inspect_source(source):
     tree = ast.parse(source)
     definitions = {n.name for n in ast.walk(tree) if isinstance(n,ast.FunctionDef)}
+    # An empty local int subclass is a useful numeric-contract fixture, not a
+    # general permission to execute class bodies, decorators or metaclasses.
+    safe_classes=set()
+    for node in ast.walk(tree):
+        if isinstance(node,ast.ClassDef):
+            if len(node.bases)!=1 or not isinstance(node.bases[0],ast.Name) or node.bases[0].id!='int' or node.keywords or node.decorator_list or not all(isinstance(item,ast.Pass) for item in node.body):
+                raise ValueError("unsupported class fixture")
+            safe_classes.add(node.name)
     public_imports={"math":{"exp","log","log1p","isfinite","isnan","isinf","fsum","sqrt"},"decimal":{"Decimal","ROUND_HALF_UP","ROUND_HALF_EVEN"},"fractions":{"Fraction"}}
     imported_calls=set()
     for node in tree.body:
         if not isinstance(node,(ast.FunctionDef,ast.Import,ast.ImportFrom,ast.Assign,ast.AnnAssign)) and not (isinstance(node,ast.Expr) and isinstance(node.value,ast.Constant) and isinstance(node.value.value,str)):
             raise ValueError("unexpected top-level executable statement")
     for node in ast.walk(tree):
-        if isinstance(node,(ast.ClassDef,ast.AsyncFunctionDef,ast.Global,ast.Nonlocal,ast.With,ast.AsyncWith)):
+        if isinstance(node,(ast.AsyncFunctionDef,ast.Global,ast.Nonlocal,ast.With,ast.AsyncWith)):
             raise ValueError("unsupported construct for this pure function fixture")
         if isinstance(node,ast.Name) and node.id in FORBIDDEN_NAMES:
             raise ValueError("forbidden name")
         if isinstance(node,ast.Attribute):
             error_type_name=(node.attr=="__name__" and isinstance(node.value,ast.Call) and isinstance(node.value.func,ast.Name) and node.value.func.id=="type" and len(node.value.args)==1)
-            error_type_name = error_type_name or (node.attr=="__name__" and isinstance(node.value,ast.Name) and node.value.id in {"expected_exc", "exception_type"})
-            if not error_type_name and (node.attr.startswith("_") or node.attr not in SAFE_ATTRIBUTES):
+            error_type_name = error_type_name or (node.attr=="__name__" and isinstance(node.value,ast.Name) and node.value.id in {"expected_exc", "exception_type", "expected"})
+            literal_format = False
+            if node.attr == 'format' and isinstance(node.value, ast.Constant) and isinstance(node.value.value, str):
+                try:
+                    parts = list(string.Formatter().parse(node.value.value))
+                    literal_format = all(field is None or ((field == '' or field.isdecimal()) and '{' not in spec and '}' not in spec) for _, field, spec, _ in parts)
+                except ValueError:
+                    pass
+            if not error_type_name and not literal_format and (node.attr.startswith("_") or node.attr not in SAFE_ATTRIBUTES):
                 raise ValueError("unsupported attribute")
         if isinstance(node,ast.Import):
             if any(a.name not in ALLOWED_MODULES for a in node.names):
@@ -47,7 +63,7 @@ def inspect_source(source):
             if any(a.name not in public_imports[node.module] for a in node.names):
                 raise ValueError("unsupported imported symbol")
             imported_calls.update(a.asname or a.name for a in node.names)
-        if isinstance(node,ast.Call) and isinstance(node.func,ast.Name) and node.func.id not in SAFE_CALLS | definitions | imported_calls:
+        if isinstance(node,ast.Call) and isinstance(node.func,ast.Name) and node.func.id not in SAFE_CALLS | definitions | imported_calls | safe_classes:
             raise ValueError(f"unsupported call: {node.func.id}")
         if isinstance(node,ast.Call) and not isinstance(node.func,(ast.Name,ast.Attribute)):
             raise ValueError("unsupported callable expression")
@@ -168,7 +184,7 @@ def run_tests(category, split, source):
                 return correct(value)
         else:
             def correct(value):
-                if type(value) is not int:raise TypeError()
+                if isinstance(value,bool) or not isinstance(value,int):raise TypeError()
                 if not 1<=value<=65535:raise ValueError()
                 return value
             def constant(value):correct(value);return 80

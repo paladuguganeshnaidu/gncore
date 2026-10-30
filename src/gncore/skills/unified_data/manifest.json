@@ -92,13 +92,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "a81b01cd37d37c7ff1cc4da0e1f8efc880b7dceb4169edfa902f2da6b95ea293"
+      "SOURCES.json": "a81b01cd37d37c7ff1cc4da0e1f8efc880b7dceb4169edfa902f2da6b95ea293",
+      "WORKFLOWS.md": "f6562ef4451272132a2b4fe6bb3178575eebb4379d335589cf692b53be11575d"
     },
-    "entrypoint_sha256": "083aa617d3c42a76bbb5f212013e812b4ce6fbc245cb2c61ac083529b18051d8",
+    "entrypoint_sha256": "03f4e5d639fb9d6aa031ea135349d5415676577db40abf92b59a10e4652f9b5b",
     "research_references": []
   },
   {
@@ -122,13 +124,19 @@
         "id": "workflow-automation",
         "title": "Workflow Automation",
         "description": "Automate a repetitive workflow with bounded inputs, safe retries, idempotency, and clear human checkpoints.",
-        "procedure": "Map triggers, inputs, side effects, failure modes, and owners before automating. Validate inputs, use least-privilege credentials, make retries idempotent, and log useful non-sensitive events. Add human review before irreversible or externally visible actions. Test on fixtures or a sandbox first; do not send messages, spend money, or mutate production data without authorization.",
+        "procedure": "Map triggers, inputs, side effects, failure modes and ownership before automating. Validate inputs, use least-privilege credentials, durable operation/payload identity and bounded idempotent retries. Preserve recoverable state and useful non-sensitive logs. Honor existing authorization; request review at an actual consequential boundary rather than repeatedly asking for already-authorized routine work. Test crash/replay on fixtures before claiming recovery or external execution.",
         "origin": {
           "category": "automation",
           "version": "6.0.0",
           "procedure_sha256": "a8cba137ee3be28d21e5b641ae273df4ea117082682d3d8014c7024269968518"
         },
-        "revision": "preserved procedure"
+        "revision": "preserved procedure",
+        "quality_revision": {
+          "previous_procedure_sha256": "a8cba137ee3be28d21e5b641ae273df4ea117082682d3d8014c7024269968518",
+          "procedure_sha256": "9418db310b7dd608b81f38ca8d8926edee638675b028e99569f05e4edb6c5a2d",
+          "reason": "Use actual authorization boundaries and durable overlap/retry behavior.",
+          "cycle": "improvement-cycle-1"
+        }
       },
       {
         "id": "automation-resume",
@@ -144,13 +152,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "0eec523fd6259b928c6fb02bdf161083c1984f72f2a3548bc71407236e954792"
+      "SOURCES.json": "0eec523fd6259b928c6fb02bdf161083c1984f72f2a3548bc71407236e954792",
+      "WORKFLOWS.md": "85d317ca53a7fd2c802f6970315d5dec0a340363247d62fdd0097e16476fb211"
     },
-    "entrypoint_sha256": "a7a8a926f32407357b46351e1fe1d237ad85bf80ff0b0c79110dc59d5aad3013",
+    "entrypoint_sha256": "9f6b78f85adfb42f7601285c0af8f75625d2cb1a999b46063b6ddee0fe144a2d",
     "research_references": []
   },
   {
@@ -357,13 +367,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "4e1f84c4ee60620196f5b451aca1b999c6740d339d06b5484cc3db062c98da16"
+      "SOURCES.json": "4e1f84c4ee60620196f5b451aca1b999c6740d339d06b5484cc3db062c98da16",
+      "WORKFLOWS.md": "3786c453711bf5a0ab08931bc418e8bc076377aae7f1b61faf7a05adb0ea2556"
     },
-    "entrypoint_sha256": "fba32c5a4794a0b03fce0b3f4afcc8a367fe3dc9e3f12aa05a3dbb43be630207",
+    "entrypoint_sha256": "cf3c22668a1d30245ca8164b21bfa00e5789009e8d5212fa5ef9f94f5c9e2d07",
     "research_references": []
   },
   {
@@ -484,7 +496,7 @@
       {
         "id": "code-blueprint",
         "title": "GNCore Blueprint",
-        "description": "Turn a one-line objective into a step-by-step construction plan for multi-session, multi-agent engineering projects: one-PR-sized steps with self-contained context briefs, dependency graph with parallel-step detection, adversarial review gate, and plan mutation protocol.",
+        "description": "Plan a substantial engineering change as reviewable steps with dependencies and acceptance evidence.",
         "procedure": "Split a substantial change into reviewable outcomes with dependencies, acceptance evidence and enough call-path/context information to resume later. Sequence uncertain boundaries early and keep the plan mutable as evidence changes. Do not assume delegation, universal approval gates or a new project structure.",
         "origin": {
           "category": "code-build",
@@ -616,7 +628,7 @@
       {
         "id": "code-tdd-workflow",
         "title": "GNCore Tdd Workflow",
-        "description": "Test-driven development workflow: write a failing test first, watch it fail, implement the smallest change to green, then refactor with 80%+ coverage across unit, integration, and E2E tests.",
+        "description": "Use a focused red/green/refactor loop around an observable behavior contract.",
         "procedure": "Plan the test boundary and fixtures before changing behavior. Keep a red/green/refactor loop around user-visible contracts and integration risks, with deterministic cleanup. Choose coverage based on meaningful failure paths rather than enforcing an arbitrary percentage as proof of quality.",
         "origin": {
           "category": "code-build",
@@ -736,7 +748,7 @@
       {
         "id": "code-verification-loop",
         "title": "GNCore Verification Loop",
-        "description": "Run a six-phase verification of a Claude Code session's work — build, type check, lint, tests with coverage, security grep, and diff review — then produce a PASS/FAIL verification report.",
+        "description": "Select and run checks that expose the changed contract; investigate failures and retain evidence.",
         "procedure": "Select checks that expose the changed contract, run them, inspect failure causes and make a focused correction. Repeat only when the new change or evidence justifies it. Preserve useful logs and stop an unchanged failing cycle to investigate the missing dependency or assumption.",
         "origin": {
           "category": "code-build",
@@ -808,7 +820,7 @@
       {
         "id": "code-semgrep",
         "title": "GNCore Semgrep",
-        "description": "Runs a Semgrep security scan over a codebase: detects languages, selects rulesets, presents the plan for explicit approval, then runs every approved ruleset through scripts/run-scans.sh, which batches the semgrep processes and writes scans.json, and merges the output to SARIF.",
+        "description": "Run and interpret a bounded, relevant Semgrep analysis using the available installation.",
         "procedure": "Check the installed Semgrep version, language support and relevant rules before a bounded local scan. Validate representative matches and false positives against code paths, record command/rule versions and preserve machine-readable findings. Do not treat scanner silence as proof of security.",
         "origin": {
           "category": "code-build",
@@ -868,7 +880,7 @@
       {
         "id": "code-delivery-gate",
         "title": "GNCore Delivery Gate",
-        "description": "Stop hook that blocks Claude from finishing until quality checks pass.",
+        "description": "Review acceptance and release evidence, including failures and unresolved risks.",
         "procedure": "Gather the actual acceptance, compatibility, security, artifact and rollback evidence for this change. Report passed, failed, skipped and missing checks and identify a concrete go/no-go reason. A green test suite alone does not authorize publishing or production rollout.",
         "origin": {
           "category": "code-build",
@@ -964,7 +976,7 @@
       {
         "id": "code-to-spec",
         "title": "GNCore To Spec",
-        "description": "Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed.",
+        "description": "Turn agreed requirements into a local, reviewable technical specification.",
         "procedure": "Convert agreed requirements into explicit actors, inputs, state transitions, public contracts and acceptance examples. Surface contradictions and material unresolved decisions before implementation. Preserve user choices and distinguish normative behavior from illustrative implementation suggestions.",
         "origin": {
           "category": "code-build",
@@ -976,7 +988,7 @@
       {
         "id": "code-to-tickets",
         "title": "GNCore To Tickets",
-        "description": "Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker).",
+        "description": "Split an accepted specification into coherent deliverables with dependencies and acceptance criteria.",
         "procedure": "Split an accepted specification into coherent deliverables with dependencies, scope exclusions and observable acceptance. Keep each ticket independently understandable and connect it to the parent requirement. Avoid arbitrary task fragmentation or creating external issues unless requested.",
         "origin": {
           "category": "code-build",
@@ -1072,7 +1084,7 @@
       {
         "id": "code-python-testing",
         "title": "GNCore Python Testing",
-        "description": "Python testing strategies using pytest, TDD methodology, fixtures, mocking, parametrization, and coverage requirements.",
+        "description": "Design Python tests around observable contracts, meaningful boundaries and isolated state.",
         "procedure": "Choose unit or integration boundaries around the actual Python contract, use isolated temporary state and test normal, invalid and regression cases. Parameterize meaningful variations and verify cleanup. Mock external boundaries without replacing the behavior the test is supposed to establish.",
         "origin": {
           "category": "code-build",
@@ -1409,6 +1421,7 @@
     "resources": [
       "GNCORE-LICENSE",
       "SOURCES.json",
+      "WORKFLOWS.md",
       "references/code-agent-security-hardening/SOURCE.md",
       "references/code-agent-security-hardening/UPSTREAM.md",
       "references/code-agent-security-hardening/notices/1-LICENSE",
@@ -1781,6 +1794,7 @@
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "41765f55425e1276c11ed05b5ea2a1c150f5dfd006faddff6a20eb56da95eb34",
+      "WORKFLOWS.md": "ea7147c4d33c971879eb47aadc23bfc120561cbf4259f3e938702b36dacfd015",
       "references/code-agent-security-hardening/SOURCE.md": "6eb9dc7aa531b579bf9388404737916064a93fab36bfe45735525eaa19b26bb0",
       "references/code-agent-security-hardening/UPSTREAM.md": "0e0895ada90aa8fa085e4257961ebe15f2dff43b843785b1533d4c731186ad81",
       "references/code-agent-security-hardening/notices/1-LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
@@ -2150,7 +2164,7 @@
       "references/code-writing-plans/UPSTREAM.md": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a",
       "references/code-writing-plans/notices/1-LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
     },
-    "entrypoint_sha256": "50c9ac95efd6e854ea538d2eba29cf253c22769ca74b5141e15f9decbdb50745",
+    "entrypoint_sha256": "dec1e26dee51bc1b57da9ffe7667fd2f0487fcd90342dbc18abe09a5fdcd3962",
     "research_references": []
   },
   {
@@ -2231,13 +2245,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "fbcdd50d0d94b2c63d5739894d2f16773992a5b95824abf46cf5163177dafed8"
+      "SOURCES.json": "fbcdd50d0d94b2c63d5739894d2f16773992a5b95824abf46cf5163177dafed8",
+      "WORKFLOWS.md": "174bba9431b72ef56585251c1fb034f8d50c8ebd06d0083ce8ad6236bd4877d4"
     },
-    "entrypoint_sha256": "dc4da06ec08120b6287b21685c7155b5885fba826f24d0c17477116970ba4160",
+    "entrypoint_sha256": "31e3fd36a0ed6306759f00e35e3964dc6d993322f0ca5efaa31b7233ca19ad56",
     "research_references": []
   },
   {
@@ -2407,13 +2423,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "958325f37204631a6f18e95bf1fbba749afec4b49c725fb2685677bcbbaaf4a3"
+      "SOURCES.json": "958325f37204631a6f18e95bf1fbba749afec4b49c725fb2685677bcbbaaf4a3",
+      "WORKFLOWS.md": "050cfd887a6a4529af5b9eff5482db297efeb94cf209f23dab8317f5057a4019"
     },
-    "entrypoint_sha256": "abb51665cda94e9a0fd082af32a59cedc5f3552169a88299a9c7e762dc7bf60a",
+    "entrypoint_sha256": "e32f16a8480f62d0fa67c8312221b12d0d991e14f9f5307248ba55342fe67b6e",
     "research_references": []
   },
   {
@@ -2487,13 +2505,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "1fa2a08189a2afe18d914a0afc961a06ca5ec28a5e5a5aab1bf7ca9c34727c87"
+      "SOURCES.json": "1fa2a08189a2afe18d914a0afc961a06ca5ec28a5e5a5aab1bf7ca9c34727c87",
+      "WORKFLOWS.md": "ab0a3913cb025aff4b894ea32c1ba295e885c6fe33855b80cc8ff045f7df1ef3"
     },
-    "entrypoint_sha256": "fcc49369388a207a1ca8641307aa471612bb083b1d302dca9a74b25fdf081ef8",
+    "entrypoint_sha256": "0232caa30e1250dae5781a81d6bd75143b7a28e56d440e591dd91cd94493b491",
     "research_references": []
   },
   {
@@ -2724,24 +2744,32 @@
         "id": "geospatial-analysis",
         "title": "Geospatial Analysis",
         "description": "Analyze spatial data with explicit coordinate systems, units, geometry validity, and privacy controls.",
-        "procedure": "Inspect coordinate reference systems, units, geometry validity, spatial grain, and boundary versions. Reproject before distance/area calculations and validate joins for duplicates and boundary effects. Use an appropriate map scale and disclose aggregation. Protect sensitive locations and avoid implying precise location where uncertainty or privacy requires aggregation.",
+        "procedure": "Inspect coordinate reference systems, units, geometry validity, spatial grain and boundary versions. For distance or area, choose a suitable projected CRS or a justified geodesic calculation for the extent and distortion; reprojection alone does not ensure accuracy. Validate spatial joins for duplicates and boundary effects, disclose aggregation and protect sensitive locations.",
         "origin": {
           "category": "data-science",
           "version": "6.0.0",
           "procedure_sha256": "4e37d7373964da2b74ed65388b445903ae9fb308b1c0ce33a824abe1cc06b963"
         },
-        "revision": "preserved procedure"
+        "revision": "preserved procedure",
+        "quality_revision": {
+          "previous_procedure_sha256": "4e37d7373964da2b74ed65388b445903ae9fb308b1c0ce33a824abe1cc06b963",
+          "procedure_sha256": "ec04abc3abb165b7ff1a66257f1afabb0c35e5594e41dfd7d998667a3cf66cee",
+          "reason": "Allow correct geodesic analysis instead of universally requiring reprojection.",
+          "cycle": "improvement-cycle-1"
+        }
       }
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "08fdaab609e159ee4fc60f54af333af0dbb14697ca79c82b0b5ae3fff3d88d04"
+      "SOURCES.json": "08fdaab609e159ee4fc60f54af333af0dbb14697ca79c82b0b5ae3fff3d88d04",
+      "WORKFLOWS.md": "f032bfe5677c003f41a933157f0c0f0a828325a6b8f225a61064f1cc9cb3b01a"
     },
-    "entrypoint_sha256": "0260af87c93e87af54f50b78810986a865a21c0982f3577bafc717c3756d71f1",
+    "entrypoint_sha256": "3c03269fa26ca87036a26920eff86d951834c9400220be5778fb69c7e8fded9a",
     "research_references": []
   },
   {
@@ -2802,12 +2830,18 @@
         "id": "db-expand-contract",
         "title": "Expand/backfill/contract migration",
         "description": "Expand/backfill/contract migration.",
-        "procedure": "Add compatible schema first, backfill in restartable bounded batches, verify integrity, then tighten constraints after old application versions are retired. State unknown-value policy and rollback limits; rehearse failure and lock behavior locally.",
+        "procedure": "Inventory existing values and define explicit handling of unknown or colliding data. Add a compatible representation and coordinate old/new writers before and throughout a resumable bounded backfill; use reconciliation or a final catch-up to close concurrent-write gaps. Check the actual engine/version constraint and lock semantics, validate integrity, then switch readers and contract only after overlap is over. State the last reversible step, mapping/backup needs and forward recovery after destructive contraction; rehearse interruption and recovery without claiming unexecuted SQL.",
         "origin": {
           "author": "GNCore / Ganesh Naidu",
           "license": "MIT"
         },
-        "revision": "new original procedure"
+        "revision": "new original procedure",
+        "quality_revision": {
+          "previous_procedure_sha256": "e748b07ab79fb02103b826900f3b28609d435057ee729e3cfd3f7b5950f8e085",
+          "procedure_sha256": "4d0329b3b332fab969d767a15fba5a731bb3e98d215163c2154220ff5803e6ac",
+          "reason": "Close dual-writer backfill races and define realistic recovery boundaries.",
+          "cycle": "improvement-cycle-1"
+        }
       },
       {
         "id": "db-backup-restore",
@@ -2823,13 +2857,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "daa9666eb4ad316c04bf970d9722dca48caf064c005256e73c32ea70f90140ed"
+      "SOURCES.json": "daa9666eb4ad316c04bf970d9722dca48caf064c005256e73c32ea70f90140ed",
+      "WORKFLOWS.md": "4d9b6f01be854bfc8f52af8813fcaa192ada04d4cd21c5e03e00298d5222de9d"
     },
-    "entrypoint_sha256": "0e1660586c134f2a183e8afbdc9d8f093faa33ff1d0f1129ac0c7537e8e15a5e",
+    "entrypoint_sha256": "4f5eaf6cec6fe601236cb72ed81bf4fc15db33ed890bf0b657931730fe08cfd5",
     "research_references": []
   },
   {
@@ -2958,13 +2994,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "87bc86062a81dc2bf3b474cf33e291d4661624075ec704032fac17eee518928b"
+      "SOURCES.json": "87bc86062a81dc2bf3b474cf33e291d4661624075ec704032fac17eee518928b",
+      "WORKFLOWS.md": "677d96ff96e30b1eae4acbf0ead28bcfe8958eb050c870145f3ec6fe6a645f60"
     },
-    "entrypoint_sha256": "99cfc50eb9901649ac2a1bbff1a92afc7431170843b55bf8c4b04e3829062a40",
+    "entrypoint_sha256": "37d2183580e4d51e286a54be3f77968dcda50f8887e6b11ee6e65f3a04e5df2b",
     "research_references": []
   },
   {
@@ -3122,24 +3160,32 @@
         "id": "design-handoff",
         "title": "Design to Engineering Handoff",
         "description": "Prepare a design handoff with behavior, states, assets, responsive rules, and unresolved questions.",
-        "procedure": "Annotate component reuse, tokens, breakpoints, interaction states, content, asset sources, and acceptance criteria. Review implementation with the designer and log deviations for resolution.",
+        "procedure": "Annotate component reuse, tokens, breakpoints, interaction states, content, asset sources and acceptance criteria. Compare the implementation with this specification and record concrete deviations. When a designer is available and review is in scope, resolve differences together; absence of a collaborator must not prevent delivery of a reviewable artifact.",
         "origin": {
           "category": "design-ux",
           "version": "6.0.0",
           "procedure_sha256": "daa887b43912ef207bc837a3481cadf49dc812861b8bac98a8eeef81ba8a30c1"
         },
-        "revision": "preserved procedure"
+        "revision": "preserved procedure",
+        "quality_revision": {
+          "previous_procedure_sha256": "daa887b43912ef207bc837a3481cadf49dc812861b8bac98a8eeef81ba8a30c1",
+          "procedure_sha256": "cd64505935a8ef155dd91c5e617c4b2178029933de85e0e08c96620527e28496",
+          "reason": "Make collaborator review conditional while preserving implementation acceptance.",
+          "cycle": "improvement-cycle-1"
+        }
       }
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "40f8b10e6a3e3ef1b0a5a13c2a0f7817b4f564de37d7b05fb4e25105f6fff430"
+      "SOURCES.json": "40f8b10e6a3e3ef1b0a5a13c2a0f7817b4f564de37d7b05fb4e25105f6fff430",
+      "WORKFLOWS.md": "3861c95ba6240503abf470aa49389621834281b4fdca297dd541dea884a6d85c"
     },
-    "entrypoint_sha256": "b8625bcb7bb4a49220fe04b667dfebafcfe9fa068939dc904c6dcc3d665b659b",
+    "entrypoint_sha256": "9c2b32a38466288832b803dbbff721637078e2f29eeb59c4d352f75f07fab836",
     "research_references": []
   },
   {
@@ -3208,13 +3254,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "767e990e695f2acc6391e89a8665b79dd3facc9ce8645b4dd129612f79b07ccb"
+      "SOURCES.json": "767e990e695f2acc6391e89a8665b79dd3facc9ce8645b4dd129612f79b07ccb",
+      "WORKFLOWS.md": "452410ddf68664a3316fb81b0c09e5dec92fa80bfd6796bb18fa25a599182df1"
     },
-    "entrypoint_sha256": "00261f1eafe64be3ec042bc21b672584f06537833e989c5c89983fd1ce1810aa",
+    "entrypoint_sha256": "fac461145af2d4b49607183c63b11939440099b63fba516ae7b364da88053cc3",
     "research_references": []
   },
   {
@@ -3261,13 +3309,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "a82d51ab4a4338d7a0eff3447a2b3545263b6a52d7b5c0660d1848305393b094"
+      "SOURCES.json": "a82d51ab4a4338d7a0eff3447a2b3545263b6a52d7b5c0660d1848305393b094",
+      "WORKFLOWS.md": "969085219088ab068d3436975cbeec4615cab14434a3dc405764c598e12dd4d7"
     },
-    "entrypoint_sha256": "fbda518997c5ab02f014ddd82c03b819b9bd2bfbc3283256f1ad1f4da6d82dbb",
+    "entrypoint_sha256": "9505c3169f00d79f177baac7ae393687787d1b159f4e0fcc5e8e836f84b70bff",
     "research_references": []
   },
   {
@@ -3337,13 +3387,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "9d863e3780c3f0f4e6ce502208a22c6618f786b508f7eccbc387ce8ff3fa1325"
+      "SOURCES.json": "9d863e3780c3f0f4e6ce502208a22c6618f786b508f7eccbc387ce8ff3fa1325",
+      "WORKFLOWS.md": "ec866044dab210fa68aa86f152fbeccaee60d8344a2f1f38c7e192e0fd57d2e8"
     },
-    "entrypoint_sha256": "1832b70a5bcd88fb750db478d796a4b43e09ad2cfc87e333cb46e675a1e6dd54",
+    "entrypoint_sha256": "7eecd4eb57a9d6bb95e7fb7e8ede4990246479e6a59a50cd3b50bc732acb1ff9",
     "research_references": []
   },
   {
@@ -3402,13 +3454,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "67d18cc9ac4e434faccda03508d6dbd28b2e92fa7b881ac3f62d3d3ff42cd350"
+      "SOURCES.json": "67d18cc9ac4e434faccda03508d6dbd28b2e92fa7b881ac3f62d3d3ff42cd350",
+      "WORKFLOWS.md": "69895bef819115ef67671a391cc3e9f692bf3ca3e0aa90e639d18e6a9a01249a"
     },
-    "entrypoint_sha256": "fd4a37e0ea9e211725fe8801cfbae25ab30bac852a90cebd52f871d854b1eb38",
+    "entrypoint_sha256": "f26d502a2fdfc3a95aca82d47a834d284ec5f4e1d64d4f4d30fd989fb28a8cd7",
     "research_references": []
   },
   {
@@ -3479,13 +3533,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "555c00e5d5de5fe7059236c5b4f25461eaa91a7538f562e4ae74c66ab07dd33c"
+      "SOURCES.json": "555c00e5d5de5fe7059236c5b4f25461eaa91a7538f562e4ae74c66ab07dd33c",
+      "WORKFLOWS.md": "344ba7d9cf744e94afd19ca14638139cd73729e6649aa68177833d3f4f7edcc9"
     },
-    "entrypoint_sha256": "e00ac885285efb18948d4c4be81b2fc197189c60d6d303fe6ecb6165340a5571",
+    "entrypoint_sha256": "a2fd03e6a2fa0f9c665f2fb42cf4610e57e0025a53c2aaa07e519d94b9b74242",
     "research_references": []
   },
   {
@@ -3522,13 +3578,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "5a893382ff23d0c95d0281916b942c257388b87e6d9592124872d5cea121590d"
+      "SOURCES.json": "5a893382ff23d0c95d0281916b942c257388b87e6d9592124872d5cea121590d",
+      "WORKFLOWS.md": "82107b137dbe0d57239d0edf5238ed90fbf4d93acce6b3f682aa67bed6607d7e"
     },
-    "entrypoint_sha256": "fae9080f87fa5b3d3de6d58a25c4726a01b6e25dfe0c53c43e70005cde1f6ee0",
+    "entrypoint_sha256": "53739ac3b101026534c88ef0aa0f571b19be4f19ec941225dc00f332a6283097",
     "research_references": []
   },
   {
@@ -3807,13 +3865,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "bae9ff90cc48fc99d2fcd8d600f0242191b9a0bc25640fe14d2f91378f3c9029"
+      "SOURCES.json": "bae9ff90cc48fc99d2fcd8d600f0242191b9a0bc25640fe14d2f91378f3c9029",
+      "WORKFLOWS.md": "01240ba40a3c9a5aedfc49f88916c594096a318c39dd94bea9e41c0e8ff744de"
     },
-    "entrypoint_sha256": "3fb1a5073fb96f3da5d13933acb07456437ff4a69b5dbdac0141b4abbbb48475",
+    "entrypoint_sha256": "66ea20d0c643836e085d9678c8aa428d4ef3d270952f680ef1b7501d36fcf27f",
     "research_references": []
   },
   {
@@ -3953,13 +4013,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "058503231c9e38652732ebab443dc68a799828a50f61b60f63f54f66da6c4daf"
+      "SOURCES.json": "058503231c9e38652732ebab443dc68a799828a50f61b60f63f54f66da6c4daf",
+      "WORKFLOWS.md": "5a49ecda35d15ff7cf753cce68e429a806f7491b523f4bbab496f7b7c3f1454b"
     },
-    "entrypoint_sha256": "76290906a50b1d87b9057a61987a6be094d0225e8511e824fca562b2ce9e42eb",
+    "entrypoint_sha256": "2ec2fd1618e60d9eafe82712796d2ea9508b62b1593ca09b77c75acdd5a9fc21",
     "research_references": []
   },
   {
@@ -3996,13 +4058,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "2fffb91c95448402b8af35f59d69a52b329861415e8ac2e8609610bf8dd516e4"
+      "SOURCES.json": "2fffb91c95448402b8af35f59d69a52b329861415e8ac2e8609610bf8dd516e4",
+      "WORKFLOWS.md": "1ff438e3c90bbec2bc5d81b76b911fcdf422c3edb7c28319f515c12df8a0c955"
     },
-    "entrypoint_sha256": "0467cc4812ae8abfd77a0883fb8ac56354c4907cc07914769862a8d3b8cf2d93",
+    "entrypoint_sha256": "d32918913a2fff689967a0df8a9d5f7a5086ffd3eaae006c2ff8d08ccd2ae5ef",
     "research_references": []
   },
   {
@@ -4083,13 +4147,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "a5c01918053320ee3628d98168593eb19de857d7d1dfc64330fca1bcb58b32a2"
+      "SOURCES.json": "a5c01918053320ee3628d98168593eb19de857d7d1dfc64330fca1bcb58b32a2",
+      "WORKFLOWS.md": "06b594f1b253de9e40909fcbbdebb51a9288136676272b8e27c544a1bca13ef7"
     },
-    "entrypoint_sha256": "b41e747a6d46037adfcff0dc22e810a7e0fb53f9b06cd001b4380fcda59d8659",
+    "entrypoint_sha256": "86f929c9363144569731b93ed27db2be5d71b72256129d3c865196b6109d6ed6",
     "research_references": []
   },
   {
@@ -4126,12 +4192,18 @@
         "id": "nn-gradient-check",
         "title": "Gradient verification",
         "description": "Gradient verification.",
-        "procedure": "Choose a tiny float64 differentiable model away from activation kinks. Perturb one parameter by plus/minus epsilon and compare the central finite difference with the analytic gradient using absolute and relative tolerances. Restore parameters after each probe; explain the epsilon/error tradeoff.",
+        "procedure": "Use numerical gradients for custom mathematical operations or suspected derivative errors. Compare analytic and central-difference derivatives on a tiny float64 smooth case, restoring parameters after each perturbation. Freeze random/stateful behavior and use identical reduction/data for both evaluations; avoid nonsmooth activation boundaries. Check extreme-logit stability separately. Standard-layer changes may need forward/backward or tiny-batch update tests instead of a full numerical-gradient sweep.",
         "origin": {
           "author": "GNCore / Ganesh Naidu",
           "license": "MIT"
         },
-        "revision": "new original procedure"
+        "revision": "new original procedure",
+        "quality_revision": {
+          "previous_procedure_sha256": "13418907c84c83c309bd926dfffa1536caf07e19a812ef14e8f59eca316cb9da",
+          "procedure_sha256": "29f23a0bf8b672b563337af2ccd6ee9a5e4d883d9b00fb194a474440376b46e0",
+          "reason": "Condition numerical checks and control stochastic/stateful comparisons.",
+          "cycle": "improvement-cycle-1"
+        }
       },
       {
         "id": "nn-training-debug",
@@ -4181,14 +4253,16 @@
     "resources": [
       "GNCORE-LICENSE",
       "SOURCES.json",
+      "WORKFLOWS.md",
       "scripts/gradient_probe.py"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "759faac1724f4a9149d74d8b1262f51797c0c8cf99c19483d681e5277997722b",
+      "WORKFLOWS.md": "90047aa650e2baea698c0e5e02e5929751b31d9b5d70716e8e0da927dfd97cdf",
       "scripts/gradient_probe.py": "7184adffaa6b4120443c35e17c14fe4ae5c909de9447559b249fbacf3946f775"
     },
-    "entrypoint_sha256": "e8aae3030f3f52a1aad07efc4468220ad1a987b3220a99f4f26355e4e3297a5a",
+    "entrypoint_sha256": "2bc72ed00a88b50f881d9394cd63427e4c7610e6cc43e95fb9e3b8611958827b",
     "research_references": []
   },
   {
@@ -4294,6 +4368,7 @@
     "resources": [
       "GNCORE-LICENSE",
       "SOURCES.json",
+      "WORKFLOWS.md",
       "references/web-backend-sentry-debug-issue/SOURCE.md",
       "references/web-backend-sentry-debug-issue/UPSTREAM.md",
       "references/web-backend-sentry-debug-issue/notices/1-LICENSE",
@@ -4412,6 +4487,7 @@
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "731f4639dbcaa6c3410e6bd744a4ddfbbefffe61c7618b9cb206883744b870fd",
+      "WORKFLOWS.md": "d1191e4abf518bbe81c614b73ea6e08fa05e9b61dea9daf825b2a3141ab6d1aa",
       "references/web-backend-sentry-debug-issue/SOURCE.md": "a0936f0e069f2c89019719885b4b0cd12ec3097a07f28d946e4100c2d019f712",
       "references/web-backend-sentry-debug-issue/UPSTREAM.md": "7fd7a690060fa09178ae92daabe96a61b6957d66ab40e21e93ddf8c906f3ec78",
       "references/web-backend-sentry-debug-issue/notices/1-LICENSE": "d4a59a34056a3a4943d7b5fff9c4125432692069c811fcbabd5385d890ccfcbd",
@@ -4527,7 +4603,7 @@
       "references/web-backend-sentry-instrument/references/semantics/vercel.md": "77ea1d2d41b645524c22a8fc14ac687e899f8f073748157c33c970a4abca0a96",
       "references/web-backend-sentry-instrument/references/setup-verification.md": "1eabba5b0c28afe5fb806bf736e4d7f7c851d55fdb0bd9126434e4b95c8373e4"
     },
-    "entrypoint_sha256": "d63a7463b72653089d0f4e090bf60d650d8163ef2f3f3cecae2dd771da778841",
+    "entrypoint_sha256": "31c0ee7622e6d88577ac0829d644d0162e49392e1e80359a93f4ce9e7c84529b",
     "research_references": []
   },
   {
@@ -4608,13 +4684,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "2cdfe07e1f3c324dac4360eecc3b4140f430e8a4dc33020cc4b9c4d93a6b9f25"
+      "SOURCES.json": "2cdfe07e1f3c324dac4360eecc3b4140f430e8a4dc33020cc4b9c4d93a6b9f25",
+      "WORKFLOWS.md": "345bf5a2de68324953dffce71f66943f2c9df2b84c3481096e66836dbc5e1b6c"
     },
-    "entrypoint_sha256": "f2d4fdae30153b7b5545e7ff70b7c77ba2b50829f78299e94b73f377a77d3332",
+    "entrypoint_sha256": "7510c59579a0435aae12ab3abfa8884e73017ea3da401002f5e97066a9d0aecd",
     "research_references": []
   },
   {
@@ -4651,13 +4729,19 @@
         "id": "python-packaging",
         "title": "Python Packaging",
         "description": "Package a Python library with clear APIs, reproducible builds, supported versions, and clean installation behavior.",
-        "procedure": "Inspect the current build backend, Python support matrix, dependencies, and public API. Keep imports predictable and package data explicit; pin policy should match project conventions. Build and install the artifact in an isolated environment, verify metadata and entry points, and test a clean import. Do not publish a release or change compatibility promises without approval.",
+        "procedure": "For packaging changes, inspect the build backend, supported interpreters, dependencies, resources and public entrypoints. Produce the sdist, build a wheel from that archive and inspect both inventories. Clean-install outside the source checkout and invoke imports/commands from unrelated working directories on the supported interpreter range. Honor existing release authorization and keep build/compatibility evidence distinct from publication; ordinary Python fixes need only checks relevant to their behavior.",
         "origin": {
           "category": "python",
           "version": "6.0.0",
           "procedure_sha256": "a988183221b3b2c28bce2f44dfa789811f5a264fbfbd8b60ed06647bc94473e6"
         },
-        "revision": "preserved procedure"
+        "revision": "preserved procedure",
+        "quality_revision": {
+          "previous_procedure_sha256": "a988183221b3b2c28bce2f44dfa789811f5a264fbfbd8b60ed06647bc94473e6",
+          "procedure_sha256": "2f545d3e934a51b1eb49ab66f5d374f87abd38cda4f5df89a24a405eef7a47b2",
+          "reason": "Verify source-archive completeness and scope packaging checks to packaging work.",
+          "cycle": "improvement-cycle-1"
+        }
       },
       {
         "id": "python-migration",
@@ -4674,13 +4758,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "b8878b9ae2046f3a2188a98a2a712cc3ce77788867118e6bf8bd506c618878b2"
+      "SOURCES.json": "b8878b9ae2046f3a2188a98a2a712cc3ce77788867118e6bf8bd506c618878b2",
+      "WORKFLOWS.md": "84e460e64efe0ad320d0232faffa91d16851bc7487bb0c4f5a200838f57def81"
     },
-    "entrypoint_sha256": "1aa95e94a837f4e26a673a1e2f9a418279432430bcb7249548c2b51aa83243da",
+    "entrypoint_sha256": "2985eff9297a3a7559da7e9e370fd41dec2007fe207cd769eda96328df9c8889",
     "research_references": []
   },
   {
@@ -4717,23 +4803,31 @@
         "id": "release-artifact-integrity",
         "title": "Artifact integrity and promotion",
         "description": "Artifact integrity and promotion.",
-        "procedure": "Build wheel/source/platform artifacts from a clean accepted tree, record checksums and install them outside the checkout. Verify declared resources, executable entrypoints and version agreement. Promote these bytes only after destination-specific publication approval.",
+        "procedure": "For each intended wheel/source/platform target, build from the accepted tree, inspect metadata/resources/entrypoints, record hashes and install outside the checkout. For Python distributions, verify the wheel built from the produced source archive. Promote the same verified bytes to authorized destinations; distinct platform artifacts may legitimately differ. Retain source/CI/artifact identity and report unavailable destination verification rather than implying publication.",
         "origin": {
           "author": "GNCore / Ganesh Naidu",
           "license": "MIT"
         },
-        "revision": "new original procedure"
+        "revision": "new original procedure",
+        "quality_revision": {
+          "previous_procedure_sha256": "bddd5e446dd5ee9dae9460b9cf756535d686cfb58595c2310ff1b4aba2e28cd8",
+          "procedure_sha256": "5618e2b54bfc5deec83cccc68e90a9501f966556e49b954656a9b0852e3968a8",
+          "reason": "Qualify build-once per target and honor existing destination authorization.",
+          "cycle": "improvement-cycle-1"
+        }
       }
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "5056b80e263841c9047524fd160f8945cbb99ff8ef46d8943327d273ab2e7c89"
+      "SOURCES.json": "5056b80e263841c9047524fd160f8945cbb99ff8ef46d8943327d273ab2e7c89",
+      "WORKFLOWS.md": "87ee9be94b4cc085a9956471b63a64a1948c397041fe7eb6f7a71fdfebe35431"
     },
-    "entrypoint_sha256": "fb6989535b82792b4e4ec2c12bcb810ae88453bbbd298227c9e6a3ca70ff3c6b",
+    "entrypoint_sha256": "8ae78ec1eccaca6d2011ff516fab51deece8cad40920d9ff48df264a25f3f774",
     "research_references": []
   },
   {
@@ -4771,12 +4865,18 @@
         "id": "systems-ffi",
         "title": "FFI and ABI boundaries",
         "description": "FFI and ABI boundaries.",
-        "procedure": "Specify ABI, fixed-width types, layout/alignment, string length/encoding and ownership on both sides. Validate pointers/lengths and translate errors without unwinding across an incompatible boundary. Test zero-length buffers, invalid handles and cleanup from the caller's language.",
+        "procedure": "Specify ABI, fixed-width types, layout/alignment, lengths, encoding, ownership and matching destruction on both sides. Enforce checkable null, handle, length, alignment and overflow contracts, and document caller obligations for pointer provenance, lifetime and readable extent that cannot be established by superficial pointer inspection. Translate errors without unwinding across an incompatible boundary; test caller-language cleanup, invalid handles and in-flight callback teardown.",
         "origin": {
           "author": "GNCore / Ganesh Naidu",
           "license": "MIT"
         },
-        "revision": "new original procedure"
+        "revision": "new original procedure",
+        "quality_revision": {
+          "previous_procedure_sha256": "0c7562481b081162912ac33b2783564fa13f18f48ad3a682618018d4796c1bc5",
+          "procedure_sha256": "bb1b5dfe0459dd00bae956b5793e98cf3e165ee1cf48f316880b36f5098982b4",
+          "reason": "Replace ambiguous pointer validation with enforceable checks and lifetime obligations.",
+          "cycle": "improvement-cycle-1"
+        }
       },
       {
         "id": "systems-safe-arithmetic",
@@ -4803,13 +4903,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "c54e705cf8af97413681f0a37a2580b5f427cbc4c7f0c7ff70beaf56b98cc42f"
+      "SOURCES.json": "c54e705cf8af97413681f0a37a2580b5f427cbc4c7f0c7ff70beaf56b98cc42f",
+      "WORKFLOWS.md": "3b687b78adf94b5540bcb6681feb5b1229126f03f7b5001fc61e577735f80beb"
     },
-    "entrypoint_sha256": "db8d701f2a5a0918c6fbfa57a322e56a4c50041775f535162f94c4bf5f78cc17",
+    "entrypoint_sha256": "db2e8a6ff3314dfc39cf8bb89eb63594ea6c1086475f171f920bb732dfcac49c",
     "research_references": []
   },
   {
@@ -5063,13 +5165,15 @@
     ],
     "resources": [
       "GNCORE-LICENSE",
-      "SOURCES.json"
+      "SOURCES.json",
+      "WORKFLOWS.md"
     ],
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
-      "SOURCES.json": "80bc997c426e119279f1d3cab6b31bdeac487026e2f849f098acfaafc9b82cf7"
+      "SOURCES.json": "80bc997c426e119279f1d3cab6b31bdeac487026e2f849f098acfaafc9b82cf7",
+      "WORKFLOWS.md": "c34d1bcee0cc212eb0980545e15fcf252d1d2f1c56dfb5f65acab101dbfb8dc1"
     },
-    "entrypoint_sha256": "4147bb344782c7aa65776629e695bf692645840b38f1581016ef0de8c4862b0f",
+    "entrypoint_sha256": "6320c7769b6bd697bd5a57187f18e062ab2a6d472d234a8724eef287852d79d8",
     "research_references": []
   },
   {
@@ -5817,6 +5921,7 @@
     "resources": [
       "GNCORE-LICENSE",
       "SOURCES.json",
+      "WORKFLOWS.md",
       "references/web-backend-agent-eval/SOURCE.md",
       "references/web-backend-agent-eval/UPSTREAM.md",
       "references/web-backend-agent-eval/notices/1-LICENSE",
@@ -6420,6 +6525,7 @@
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "3f54b401b2a94679d738f1359b1b73f343b4f045781f487c398e7922c3d72b9c",
+      "WORKFLOWS.md": "b6ca82ca5da7b3ad1c53363cee6f38271c53c842e73cdc9cc48da2961bf7be8d",
       "references/web-backend-agent-eval/SOURCE.md": "e542da9af83b788f71077ec3fa08cadac21cf54d489160baccb171c7a49eae83",
       "references/web-backend-agent-eval/UPSTREAM.md": "57fa683e356b6f5612bc6d7dc101ae39c126e6edf9a48f4ec53afea3e80d7e5d",
       "references/web-backend-agent-eval/notices/1-LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
@@ -7020,7 +7126,7 @@
       "references/web-backend-wrangler/notices/1-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "references/web-backend-wrangler/references/skill-feedback.md": "f24d02c8beebbc7484c7c9d42e957e7b58c92bcf80798e8b86111b850913a57a"
     },
-    "entrypoint_sha256": "dded1055ec21a656f379833ea88066a5f94af6e453ecc99887614ff4462ead2e",
+    "entrypoint_sha256": "275e70058563e0e00fb4d6a54d017f4b0f9a23ee01c51a921d41f216e6129fc4",
     "research_references": []
   },
   {
@@ -7383,13 +7489,19 @@
         "id": "web-front-organic",
         "title": "GNCore Organic",
         "description": "Create warm organic web interfaces using earth tones, natural rhythm, and tactile accents.",
-        "procedure": "Use warm neutral surfaces, a terracotta accent, and a readable display/body type relationship. Let natural shapes support content without obscuring text, hit areas, or predictable navigation.",
+        "procedure": "Use a product-appropriate natural palette and readable type hierarchy, preserving explicit brand colors. Warm neutrals or earth tones are options, not a mandatory terracotta accent. Let natural shapes support content without obscuring text, hit areas or predictable navigation.",
         "origin": {
           "category": "web-frontend",
           "version": "6.0.0",
           "procedure_sha256": "2e663182c7c8c01fc46d0fb600a5cdc141260697f5f28e9179f62e8728cf53c6"
         },
-        "revision": "preserved procedure"
+        "revision": "preserved procedure",
+        "quality_revision": {
+          "previous_procedure_sha256": "2e663182c7c8c01fc46d0fb600a5cdc141260697f5f28e9179f62e8728cf53c6",
+          "procedure_sha256": "b175d4b00071085b2c715a096136a3069a3613bf4b35654d6f6fd68873964112",
+          "reason": "Remove a fixed palette that overrides brand constraints.",
+          "cycle": "improvement-cycle-1"
+        }
       },
       {
         "id": "web-front-design-system",
@@ -7491,13 +7603,19 @@
         "id": "web-front-find-skills",
         "title": "GNCore Find Skills",
         "description": "Find frontend skills and compare candidates by scope, source, compatibility, and license.",
-        "procedure": "Search for the actual missing capability, inspect source entrypoints and maintenance signals, and compare relevant candidates. Distinguish discovery from installation; install only within the user's requested scope and preserve attribution when adapting.",
+        "procedure": "Inspect the product, existing stack, requested deliverable and available workflow map. Choose the smallest useful set: usually one visual direction and the engineering/testing workflow the task needs. Read the selected section in WORKFLOWS.md and its relevant attributed reference. These entries are workflows in this skill, not separate installed SKILL.md files. Implement the requested feature and verify its observable result without loading every style or changing the chosen stack.",
         "origin": {
           "category": "web-frontend",
           "version": "6.0.0",
           "procedure_sha256": "f3172986a1ad02fb188002fe14d3c4a483c72d71501c1a71111d9b4a89a919c7"
         },
-        "revision": "preserved procedure"
+        "revision": "preserved procedure",
+        "quality_revision": {
+          "previous_procedure_sha256": "f3172986a1ad02fb188002fe14d3c4a483c72d71501c1a71111d9b4a89a919c7",
+          "procedure_sha256": "191bd727f96b2879bde5750d86bafdb7d3255d92ebfee1779da8a565484b9911",
+          "reason": "Correct the router to point to actual exported workflow resources.",
+          "cycle": "improvement-cycle-1"
+        }
       },
       {
         "id": "web-front-accessibility",
@@ -7527,6 +7645,7 @@
     "resources": [
       "GNCORE-LICENSE",
       "SOURCES.json",
+      "WORKFLOWS.md",
       "references/web-front-agentic/DESIGN.md",
       "references/web-front-agentic/SOURCE.md",
       "references/web-front-agentic/UPSTREAM-LICENSE",
@@ -8019,6 +8138,7 @@
     "resource_sha256": {
       "GNCORE-LICENSE": "159c6a15565e53c01aafbcc0c90fa0df9b903c87642a842501d4058e5637ab94",
       "SOURCES.json": "90abf2e7d0ac250688a46c6576c5264ec54114fd3e0f15a1806f0efbf7813824",
+      "WORKFLOWS.md": "504e5e5aaa3abc0ff1c391103b3d085b887266c3f68edb09015dc3d319f1f7c4",
       "references/web-front-agentic/DESIGN.md": "2f9d2d55bdb8426c40e8fcbcaad80ba0878647b0d1a4bab7c29def77449ef773",
       "references/web-front-agentic/SOURCE.md": "0fafe29da877e143f11bc0fc67189aeaa524534cf0e20cecefa8dd390990aa87",
       "references/web-front-agentic/UPSTREAM-LICENSE": "56e2dc0100744b958d87e5fc790f4e5ed2b5f483d6f2cbade4b6f7a0f5a03862",
@@ -8508,7 +8628,7 @@
       "references/web-front-ui-ux/scripts/tests/test_web_stack_freshness.py": "cba3dd79b3bd7ed9479e8cd0e7efb0594d998160bc712f9865fb0ab6e29dda5a",
       "references/web-front-ui-ux/scripts/validate_data.py": "a599aa256049cf30954d1f164721b99e453eb7e4cb8241bcab2d5573e6cf58b8"
     },
-    "entrypoint_sha256": "22c79330d4dbeb2cc6559f7120c2944e8e648054dade3c604bc5dc264ba7b76b",
+    "entrypoint_sha256": "724a2fb81dbc7e6af06e6debbfe4aa58b66912edcbad10c049119d76866a7eed",
     "research_references": []
   }
 ]

@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 Schema/query/migration changes with explicit keys, invariants, locking assumptions, backfill policy and rollback limits.
@@ -28,6 +30,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 Plan migration behavior for old and new writers as well as readers. Use additive expansion, explicit null/collision resolution, resumable bounded backfill and validated contraction. Check the actual engine/version rules for concurrent indexes, constraints, transaction restrictions and locks; concurrent does not mean lock-free. A populated column cannot be dropped as a harmless rollback. Identify the last reversible step, backup/mapping needs and forward-recovery plan before removing data or compatibility.
 
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Coordinate old/new writers before and throughout resumable backfill, reconciliation and contraction; state the unknown-value policy and last reversible boundary.
+- Verify engine/version lock and constraint semantics; EXPLAIN ANALYZE executes the statement. Retry the whole transaction when required without duplicating external effects.
+
 ## Workflow map
 
 | Workflow | Use it for |
@@ -38,27 +47,9 @@ Plan migration behavior for old and new writers as well as readers. Use additive
 | `db-expand-contract` | Expand/backfill/contract migration. |
 | `db-backup-restore` | Backup restoration evidence. |
 
-## Focused procedures
+## Selected procedure
 
-### Database Design (`database-design`)
-
-Inspect the database engine, schema, constraints, data volume, and access patterns. Encode invariants with appropriate constraints and indexes; parameterize input. Make migrations reversible and consider locking, backfill, and compatibility. Never run destructive SQL or apply a migration to production without explicit authorization. Verify query plans or migration behavior with a safe local fixture when possible.
-
-### Transaction and concurrency invariants (`db-transaction-invariants`)
-
-Express the business invariant with keys/checks and the chosen isolation/locking strategy. Reproduce a two-writer conflict using an isolated database and show which operation retries or fails. Keep the transaction boundary around the complete invariant.
-
-### Query plan and index analysis (`db-query-plans`)
-
-Record schema, distribution, query parameters and an explain plan on representative fixtures. Identify scan/join/order costs and compare a targeted index using the same workload. Account for write amplification and avoid declaring an index useful from syntax alone.
-
-### Expand/backfill/contract migration (`db-expand-contract`)
-
-Add compatible schema first, backfill in restartable bounded batches, verify integrity, then tighten constraints after old application versions are retired. State unknown-value policy and rollback limits; rehearse failure and lock behavior locally.
-
-### Backup restoration evidence (`db-backup-restore`)
-
-Define recovery-point/time requirements and the backup's consistency boundary. Restore into an isolated instance and verify schema, row counts, critical queries and recovery steps. A successful backup command alone is not evidence of a working restore.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

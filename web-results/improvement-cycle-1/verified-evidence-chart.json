@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Package tests passed",
+    "completed_or_passed": 151,
+    "planned": 152,
+    "percent": 99.34210526315789
+  },
+  {
+    "label": "Declared resources verified",
+    "completed_or_passed": 1660,
+    "planned": 1660,
+    "percent": 100.0
+  },
+  {
+    "label": "Installed files verified",
+    "completed_or_passed": 1690,
+    "planned": 1690,
+    "percent": 100.0
+  },
+  {
+    "label": "Generated-code fixtures passed",
+    "completed_or_passed": 160,
+    "planned": 160,
+    "percent": 100.0
+  },
+  {
+    "label": "Browser checks passed",
+    "completed_or_passed": 20,
+    "planned": 24,
+    "percent": 83.33333333333333
+  },
+  {
+    "label": "Isolated answers captured*",
+    "completed_or_passed": 20,
+    "planned": 120,
+    "percent": 16.666666666666668
+  }
+]

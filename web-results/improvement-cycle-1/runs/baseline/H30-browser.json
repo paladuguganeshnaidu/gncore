@@ -1,0 +1,43 @@
+{
+  "profile": "baseline",
+  "checks": [
+    {
+      "name": "initially_disabled",
+      "passed": true,
+      "evidence": "Blank form has disabled Book Workshop in browser."
+    },
+    {
+      "name": "invalid_email_disabled",
+      "passed": true,
+      "evidence": "Selected workshop/time and malformed email leave button disabled."
+    },
+    {
+      "name": "valid_inputs_enable",
+      "passed": true,
+      "evidence": "Secure APIs,16:00 and reader@example.test enable button."
+    },
+    {
+      "name": "selected_values_confirmation",
+      "passed": true,
+      "evidence": "Selection confirmed: Secure APIs at 16:00. Recorded on this page only; no reservation or email was sent."
+    },
+    {
+      "name": "radio_focus_visible",
+      "passed": true,
+      "evidence": "Keyboard Tab focuses native radio; :focus-visible true; input and label have solid 2.4px outlines."
+    },
+    {
+      "name": "narrow_no_overflow",
+      "passed": null,
+      "evidence": "Requested390x844 through documented viewport API, but observed innerWidth1280. Narrow viewport remains unmeasured."
+    }
+  ],
+  "requestedViewport": {
+    "width": 390,
+    "height": 844
+  },
+  "observedViewport": {
+    "width": 1280
+  },
+  "scope": "Five real browser checks;390px viewport and full accessibility audit not measured."
+}

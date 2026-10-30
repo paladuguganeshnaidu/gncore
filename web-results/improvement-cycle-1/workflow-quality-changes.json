@@ -1,0 +1,146 @@
+[
+  {
+    "category": "web-frontend",
+    "workflow": "web-front-organic",
+    "field": "procedure",
+    "before": "Use warm neutral surfaces, a terracotta accent, and a readable display/body type relationship. Let natural shapes support content without obscuring text, hit areas, or predictable navigation.",
+    "after": "Use a product-appropriate natural palette and readable type hierarchy, preserving explicit brand colors. Warm neutrals or earth tones are options, not a mandatory terracotta accent. Let natural shapes support content without obscuring text, hit areas or predictable navigation.",
+    "reason": "Remove a fixed palette that overrides brand constraints."
+  },
+  {
+    "category": "web-frontend",
+    "workflow": "web-front-find-skills",
+    "field": "procedure",
+    "before": "Search for the actual missing capability, inspect source entrypoints and maintenance signals, and compare relevant candidates. Distinguish discovery from installation; install only within the user's requested scope and preserve attribution when adapting.",
+    "after": "Inspect the product, existing stack, requested deliverable and available workflow map. Choose the smallest useful set: usually one visual direction and the engineering/testing workflow the task needs. Read the selected section in WORKFLOWS.md and its relevant attributed reference. These entries are workflows in this skill, not separate installed SKILL.md files. Implement the requested feature and verify its observable result without loading every style or changing the chosen stack.",
+    "reason": "Correct the router to point to actual exported workflow resources."
+  },
+  {
+    "category": "code-build",
+    "workflow": "code-blueprint",
+    "field": "description",
+    "before": "Turn a one-line objective into a step-by-step construction plan for multi-session, multi-agent engineering projects: one-PR-sized steps with self-contained context briefs, dependency graph with parallel-step detection, adversarial review gate, and plan mutation protocol.",
+    "after": "Plan a substantial engineering change as reviewable steps with dependencies and acceptance evidence.",
+    "reason": "Remove contradictory fixed thresholds, implied external publication or blanket approval requirements from discovery text."
+  },
+  {
+    "category": "code-build",
+    "workflow": "code-tdd-workflow",
+    "field": "description",
+    "before": "Test-driven development workflow: write a failing test first, watch it fail, implement the smallest change to green, then refactor with 80%+ coverage across unit, integration, and E2E tests.",
+    "after": "Use a focused red/green/refactor loop around an observable behavior contract.",
+    "reason": "Remove contradictory fixed thresholds, implied external publication or blanket approval requirements from discovery text."
+  },
+  {
+    "category": "code-build",
+    "workflow": "code-verification-loop",
+    "field": "description",
+    "before": "Run a six-phase verification of a Claude Code session's work — build, type check, lint, tests with coverage, security grep, and diff review — then produce a PASS/FAIL verification report.",
+    "after": "Select and run checks that expose the changed contract; investigate failures and retain evidence.",
+    "reason": "Remove contradictory fixed thresholds, implied external publication or blanket approval requirements from discovery text."
+  },
+  {
+    "category": "code-build",
+    "workflow": "code-semgrep",
+    "field": "description",
+    "before": "Runs a Semgrep security scan over a codebase: detects languages, selects rulesets, presents the plan for explicit approval, then runs every approved ruleset through scripts/run-scans.sh, which batches the semgrep processes and writes scans.json, and merges the output to SARIF.",
+    "after": "Run and interpret a bounded, relevant Semgrep analysis using the available installation.",
+    "reason": "Remove contradictory fixed thresholds, implied external publication or blanket approval requirements from discovery text."
+  },
+  {
+    "category": "code-build",
+    "workflow": "code-delivery-gate",
+    "field": "description",
+    "before": "Stop hook that blocks Claude from finishing until quality checks pass.",
+    "after": "Review acceptance and release evidence, including failures and unresolved risks.",
+    "reason": "Remove contradictory fixed thresholds, implied external publication or blanket approval requirements from discovery text."
+  },
+  {
+    "category": "code-build",
+    "workflow": "code-to-spec",
+    "field": "description",
+    "before": "Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed.",
+    "after": "Turn agreed requirements into a local, reviewable technical specification.",
+    "reason": "Remove contradictory fixed thresholds, implied external publication or blanket approval requirements from discovery text."
+  },
+  {
+    "category": "code-build",
+    "workflow": "code-to-tickets",
+    "field": "description",
+    "before": "Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker).",
+    "after": "Split an accepted specification into coherent deliverables with dependencies and acceptance criteria.",
+    "reason": "Remove contradictory fixed thresholds, implied external publication or blanket approval requirements from discovery text."
+  },
+  {
+    "category": "code-build",
+    "workflow": "code-python-testing",
+    "field": "description",
+    "before": "Python testing strategies using pytest, TDD methodology, fixtures, mocking, parametrization, and coverage requirements.",
+    "after": "Design Python tests around observable contracts, meaningful boundaries and isolated state.",
+    "reason": "Remove contradictory fixed thresholds, implied external publication or blanket approval requirements from discovery text."
+  },
+  {
+    "category": "design-ux",
+    "workflow": "design-handoff",
+    "field": "procedure",
+    "before": "Annotate component reuse, tokens, breakpoints, interaction states, content, asset sources, and acceptance criteria. Review implementation with the designer and log deviations for resolution.",
+    "after": "Annotate component reuse, tokens, breakpoints, interaction states, content, asset sources and acceptance criteria. Compare the implementation with this specification and record concrete deviations. When a designer is available and review is in scope, resolve differences together; absence of a collaborator must not prevent delivery of a reviewable artifact.",
+    "reason": "Make collaborator review conditional while preserving implementation acceptance."
+  },
+  {
+    "category": "python",
+    "workflow": "python-packaging",
+    "field": "procedure",
+    "before": "Inspect the current build backend, Python support matrix, dependencies, and public API. Keep imports predictable and package data explicit; pin policy should match project conventions. Build and install the artifact in an isolated environment, verify metadata and entry points, and test a clean import. Do not publish a release or change compatibility promises without approval.",
+    "after": "For packaging changes, inspect the build backend, supported interpreters, dependencies, resources and public entrypoints. Produce the sdist, build a wheel from that archive and inspect both inventories. Clean-install outside the source checkout and invoke imports/commands from unrelated working directories on the supported interpreter range. Honor existing release authorization and keep build/compatibility evidence distinct from publication; ordinary Python fixes need only checks relevant to their behavior.",
+    "reason": "Verify source-archive completeness and scope packaging checks to packaging work."
+  },
+  {
+    "category": "release-engineering",
+    "workflow": "release-artifact-integrity",
+    "field": "procedure",
+    "before": "Build wheel/source/platform artifacts from a clean accepted tree, record checksums and install them outside the checkout. Verify declared resources, executable entrypoints and version agreement. Promote these bytes only after destination-specific publication approval.",
+    "after": "For each intended wheel/source/platform target, build from the accepted tree, inspect metadata/resources/entrypoints, record hashes and install outside the checkout. For Python distributions, verify the wheel built from the produced source archive. Promote the same verified bytes to authorized destinations; distinct platform artifacts may legitimately differ. Retain source/CI/artifact identity and report unavailable destination verification rather than implying publication.",
+    "reason": "Qualify build-once per target and honor existing destination authorization."
+  },
+  {
+    "category": "automation",
+    "workflow": "workflow-automation",
+    "field": "procedure",
+    "before": "Map triggers, inputs, side effects, failure modes, and owners before automating. Validate inputs, use least-privilege credentials, make retries idempotent, and log useful non-sensitive events. Add human review before irreversible or externally visible actions. Test on fixtures or a sandbox first; do not send messages, spend money, or mutate production data without authorization.",
+    "after": "Map triggers, inputs, side effects, failure modes and ownership before automating. Validate inputs, use least-privilege credentials, durable operation/payload identity and bounded idempotent retries. Preserve recoverable state and useful non-sensitive logs. Honor existing authorization; request review at an actual consequential boundary rather than repeatedly asking for already-authorized routine work. Test crash/replay on fixtures before claiming recovery or external execution.",
+    "reason": "Use actual authorization boundaries and durable overlap/retry behavior."
+  },
+  {
+    "category": "data-science",
+    "workflow": "geospatial-analysis",
+    "field": "procedure",
+    "before": "Inspect coordinate reference systems, units, geometry validity, spatial grain, and boundary versions. Reproject before distance/area calculations and validate joins for duplicates and boundary effects. Use an appropriate map scale and disclose aggregation. Protect sensitive locations and avoid implying precise location where uncertainty or privacy requires aggregation.",
+    "after": "Inspect coordinate reference systems, units, geometry validity, spatial grain and boundary versions. For distance or area, choose a suitable projected CRS or a justified geodesic calculation for the extent and distortion; reprojection alone does not ensure accuracy. Validate spatial joins for duplicates and boundary effects, disclose aggregation and protect sensitive locations.",
+    "reason": "Allow correct geodesic analysis instead of universally requiring reprojection."
+  },
+  {
+    "category": "neural-networks",
+    "workflow": "nn-gradient-check",
+    "field": "procedure",
+    "before": "Choose a tiny float64 differentiable model away from activation kinks. Perturb one parameter by plus/minus epsilon and compare the central finite difference with the analytic gradient using absolute and relative tolerances. Restore parameters after each probe; explain the epsilon/error tradeoff.",
+    "after": "Use numerical gradients for custom mathematical operations or suspected derivative errors. Compare analytic and central-difference derivatives on a tiny float64 smooth case, restoring parameters after each perturbation. Freeze random/stateful behavior and use identical reduction/data for both evaluations; avoid nonsmooth activation boundaries. Check extreme-logit stability separately. Standard-layer changes may need forward/backward or tiny-batch update tests instead of a full numerical-gradient sweep.",
+    "reason": "Condition numerical checks and control stochastic/stateful comparisons."
+  },
+  {
+    "category": "databases",
+    "workflow": "db-expand-contract",
+    "field": "procedure",
+    "before": "Add compatible schema first, backfill in restartable bounded batches, verify integrity, then tighten constraints after old application versions are retired. State unknown-value policy and rollback limits; rehearse failure and lock behavior locally.",
+    "after": "Inventory existing values and define explicit handling of unknown or colliding data. Add a compatible representation and coordinate old/new writers before and throughout a resumable bounded backfill; use reconciliation or a final catch-up to close concurrent-write gaps. Check the actual engine/version constraint and lock semantics, validate integrity, then switch readers and contract only after overlap is over. State the last reversible step, mapping/backup needs and forward recovery after destructive contraction; rehearse interruption and recovery without claiming unexecuted SQL.",
+    "reason": "Close dual-writer backfill races and define realistic recovery boundaries."
+  },
+  {
+    "category": "systems-programming",
+    "workflow": "systems-ffi",
+    "field": "procedure",
+    "before": "Specify ABI, fixed-width types, layout/alignment, string length/encoding and ownership on both sides. Validate pointers/lengths and translate errors without unwinding across an incompatible boundary. Test zero-length buffers, invalid handles and cleanup from the caller's language.",
+    "after": "Specify ABI, fixed-width types, layout/alignment, lengths, encoding, ownership and matching destruction on both sides. Enforce checkable null, handle, length, alignment and overflow contracts, and document caller obligations for pointer provenance, lifetime and readable extent that cannot be established by superficial pointer inspection. Translate errors without unwinding across an incompatible boundary; test caller-language cleanup, invalid handles and in-flight callback teardown.",
+    "reason": "Replace ambiguous pointer validation with enforceable checks and lifetime obligations."
+  }
+]

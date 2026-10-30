@@ -1,0 +1,37 @@
+{
+  "version": "7.0.0rc1",
+  "categories": 30,
+  "workflows": 374,
+  "resources_compared": 1660,
+  "python_source_files_matched": 88,
+  "installed_files": 1690,
+  "installed_import_verified": true,
+  "project_entrypoints_match_final_rendered_export": true,
+  "packaged_entrypoints_match_source_bytes": true,
+  "audit": {
+    "ok": true,
+    "categories": 30,
+    "workflows": 374,
+    "resources_verified": 1660,
+    "python_helpers_parsed": 73,
+    "baseline_workflows_accounted": 553,
+    "retired_workflows": 234,
+    "issues": [],
+    "limits": "Hash/link/procedure and syntax checks; imported helpers were not executed, and arbitrary AI output quality is not certified."
+  },
+  "artifacts": {
+    "gncore-7.0.0rc1-py3-none-any.whl": {
+      "sha256": "ea1dda54e80bea01ab9840fc570f81e657885604e2a959cc88d95716a8b7fbf2",
+      "bytes": 7443310
+    },
+    "gncore-7.0.0rc1.tar.gz": {
+      "sha256": "2d92081ad4cf377c5ae506e5aee10645a3003716e4c1f38df1ebba9719b001e3",
+      "bytes": 6826246
+    },
+    "gncore-7.0.0rc1-skills.zip": {
+      "sha256": "978bdc8c59d91c1622dc70c63ced9299fd7652f7b96ca311aff5a91cfd7fa8d7",
+      "bytes": 7040309
+    }
+  },
+  "publication": "held"
+}

@@ -1,0 +1,68 @@
+{
+  "category": "testing",
+  "split": "holdout",
+  "passed": 0,
+  "total": 7,
+  "tests": [
+    {
+      "test": "accepts_correct_implementation",
+      "passed": false,
+      "expected": "True",
+      "actual": "None",
+      "error": "TypeError: "
+    },
+    {
+      "test": "detects_constant",
+      "passed": false,
+      "expected": "True",
+      "actual": "False",
+      "error": null
+    },
+    {
+      "test": "detects_identity",
+      "passed": false,
+      "expected": "True",
+      "actual": "False",
+      "error": null
+    },
+    {
+      "test": "detects_lower",
+      "passed": false,
+      "expected": "True",
+      "actual": "False",
+      "error": null
+    },
+    {
+      "test": "detects_upper",
+      "passed": false,
+      "expected": "True",
+      "actual": "False",
+      "error": null
+    },
+    {
+      "test": "detects_boolean",
+      "passed": false,
+      "expected": "True",
+      "actual": "False",
+      "error": null
+    },
+    {
+      "test": "detects_floating",
+      "passed": false,
+      "expected": "True",
+      "actual": "False",
+      "error": null
+    }
+  ],
+  "inspection": {
+    "imports": [],
+    "functions": [
+      "check_contract",
+      "raises",
+      "valid"
+    ]
+  },
+  "compute_seconds": 0.0021075999829918146,
+  "scope": "Actual generated pure-function/test code executed in an isolated child; no IDE execution or production claim.",
+  "child_wall_seconds": 0.48400000017136335
+}

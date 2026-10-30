@@ -1,0 +1,39 @@
+{
+  "profile": "candidate",
+  "checks": [
+    {
+      "name": "initially_disabled",
+      "passed": true,
+      "evidence": "Blank form disabled."
+    },
+    {
+      "name": "invalid_email_disabled",
+      "passed": true,
+      "evidence": "Malformed email with selections leaves action disabled."
+    },
+    {
+      "name": "valid_inputs_enable",
+      "passed": true,
+      "evidence": "Valid inputs enable booking."
+    },
+    {
+      "name": "selected_values_confirmation",
+      "passed": true,
+      "evidence": "Selection confirmed: Secure APIs at 16:00. This is a local preview; no booking or email was sent."
+    },
+    {
+      "name": "radio_focus_visible",
+      "passed": true,
+      "evidence": "Tab from Email focuses selected native radio; :focus-visible and input/label2.4px outlines observed."
+    },
+    {
+      "name": "narrow_no_overflow",
+      "passed": null,
+      "evidence": "Requested390px through viewport API but actual browser remained1280px."
+    }
+  ],
+  "observedViewport": {
+    "width": 1280
+  },
+  "scope": "Five observed browser checks; narrow viewport unmeasured."
+}

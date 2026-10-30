@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 A runnable automation, configuration contract, state/retry policy, useful logs and recovery instructions.
@@ -28,6 +30,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 Define durable operation identity before adding retries. Commit progress with the effect when one transactional boundary permits it; otherwise use an idempotent remote contract, ledger and reconciliation for unknown outcomes. Separate malformed/permanent failures from transient errors, cap retries with backoff and jitter, and leave a recoverable record. Test interruption immediately before and after the durable boundary, including replay of already accepted work.
 
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Scope operation identity to the owner and payload; reject conflicting reuse and make overlapping triggers acquire atomic ownership.
+- Fence stale owners at the effect's storage boundary; retain a bounded retry/quarantine record and verify crash/replay across the durable commit.
+
 ## Workflow map
 
 | Workflow | Use it for |
@@ -35,15 +44,9 @@ Define durable operation identity before adding retries. Commit progress with th
 | `workflow-automation` | Automate a repetitive workflow with bounded inputs, safe retries, idempotency, and clear human checkpoints. |
 | `automation-resume` | Resume after partial execution. |
 
-## Focused procedures
+## Selected procedure
 
-### Workflow Automation (`workflow-automation`)
-
-Map triggers, inputs, side effects, failure modes, and owners before automating. Validate inputs, use least-privilege credentials, make retries idempotent, and log useful non-sensitive events. Add human review before irreversible or externally visible actions. Test on fixtures or a sandbox first; do not send messages, spend money, or mutate production data without authorization.
-
-### Resume after partial execution (`automation-resume`)
-
-Record progress only after the operation's durable boundary and keep idempotency keys stable across retries. Inject failure after each meaningful side effect, resume against the same fixture and verify that no completed work is duplicated or silently skipped.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

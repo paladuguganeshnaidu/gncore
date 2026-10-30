@@ -1,0 +1,206 @@
+[
+  {
+    "profile": "baseline",
+    "batch": 1,
+    "pack_sha256": "01181bcdb04d3ad206551e0a17ed23e271175d358e881a7c3ba136e9d1342758",
+    "cases": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08",
+      "H09",
+      "H10"
+    ]
+  },
+  {
+    "profile": "baseline",
+    "batch": 2,
+    "pack_sha256": "bdbfa343951827c3c79196edfb0f025b21d26e5e65c0d640781d97c2f2038309",
+    "cases": [
+      "H11",
+      "H12",
+      "H13",
+      "H14",
+      "H15",
+      "H16",
+      "H17",
+      "H18",
+      "H19",
+      "H20"
+    ]
+  },
+  {
+    "profile": "baseline",
+    "batch": 3,
+    "pack_sha256": "4bab55451d77e1001bf662abbf7a381cf5ec72f92a37cefcf2ce66b5c35aeb5d",
+    "cases": [
+      "H21",
+      "H22",
+      "H23",
+      "H24",
+      "H25",
+      "H26",
+      "H27",
+      "H28",
+      "H29",
+      "H30"
+    ]
+  },
+  {
+    "profile": "reference",
+    "batch": 1,
+    "pack_sha256": "aa2be3b8eae88fb2947e0be128f3f4beba9596355115d00831044e087dfd5589",
+    "cases": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08",
+      "H09",
+      "H10"
+    ]
+  },
+  {
+    "profile": "reference",
+    "batch": 2,
+    "pack_sha256": "19904bdda9c805df6d4a1368f9a4a923bcf4824d6c137780ffc1862ff563f354",
+    "cases": [
+      "H11",
+      "H12",
+      "H13",
+      "H14",
+      "H15",
+      "H16",
+      "H17",
+      "H18",
+      "H19",
+      "H20"
+    ]
+  },
+  {
+    "profile": "reference",
+    "batch": 3,
+    "pack_sha256": "798d2d1545d02ddcfb10e6f2b793192efa2a5306502c443baa29eda8ddecbaea",
+    "cases": [
+      "H21",
+      "H22",
+      "H23",
+      "H24",
+      "H25",
+      "H26",
+      "H27",
+      "H28",
+      "H29",
+      "H30"
+    ]
+  },
+  {
+    "profile": "candidate",
+    "batch": 1,
+    "pack_sha256": "fd0fbce0426931159b0c4934c3c73dfeb998dbbf21e4f4f04f6b1de75cae2207",
+    "cases": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08",
+      "H09",
+      "H10"
+    ]
+  },
+  {
+    "profile": "candidate",
+    "batch": 2,
+    "pack_sha256": "9e34e2a36d22638ea602802a6a97325ab3f62ea564c984fcc04cdfc21faf6074",
+    "cases": [
+      "H11",
+      "H12",
+      "H13",
+      "H14",
+      "H15",
+      "H16",
+      "H17",
+      "H18",
+      "H19",
+      "H20"
+    ]
+  },
+  {
+    "profile": "candidate",
+    "batch": 3,
+    "pack_sha256": "878bd5d6e6f82f137e0118609b8bfb307d6cc8ca57f1e2a50c4a1b0a8b462065",
+    "cases": [
+      "H21",
+      "H22",
+      "H23",
+      "H24",
+      "H25",
+      "H26",
+      "H27",
+      "H28",
+      "H29",
+      "H30"
+    ]
+  },
+  {
+    "profile": "control",
+    "batch": 1,
+    "pack_sha256": "51083bcb34ecb976b25370a7418910132791776755b93e7bc2214276b3369ae4",
+    "cases": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08",
+      "H09",
+      "H10"
+    ]
+  },
+  {
+    "profile": "control",
+    "batch": 2,
+    "pack_sha256": "a34725a373a4893720199ae5594494ba72c2879418fe19ab5599d98a67e4c5d7",
+    "cases": [
+      "H11",
+      "H12",
+      "H13",
+      "H14",
+      "H15",
+      "H16",
+      "H17",
+      "H18",
+      "H19",
+      "H20"
+    ]
+  },
+  {
+    "profile": "control",
+    "batch": 3,
+    "pack_sha256": "fa451d827afa2d02bf2e7b16b1f65d918e027d3d904e45ec9477ca8346f5ce67",
+    "cases": [
+      "H21",
+      "H22",
+      "H23",
+      "H24",
+      "H25",
+      "H26",
+      "H27",
+      "H28",
+      "H29",
+      "H30"
+    ]
+  }
+]

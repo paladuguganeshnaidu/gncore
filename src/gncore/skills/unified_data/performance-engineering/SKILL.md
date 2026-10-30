@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 A reproducible benchmark/profile, targeted change, correctness evidence and before/after distributions with limitations.
@@ -28,6 +30,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 Verify equivalent outputs before timing. Keep raw distributions, errors and timeouts; compare matched inputs, environment, warmup, load and cold/warm conditions with repeated or interleaved trials. Report median and tails as well as mean, throughput and memory against a user-relevant operating objective. A tiny sample or warm function timing cannot support a universal speedup. State which measurements were actually collected and which follow-up experiments remain proposed. Recompute quoted statistics from the retained raw values with trusted arithmetic, and postpone rounding until after comparisons.
 
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Verify equivalent outputs and time actual completion, including async/accelerator synchronization where needed; preserve every outcome and recompute quoted statistics from raw samples.
+- Match environment, workload, concurrency, warmup and cold/warm conditions; report relevant tails, throughput and memory against the user's objective, including errors/timeouts and small-sample limitations.
+
 ## Workflow map
 
 | Workflow | Use it for |
@@ -38,27 +47,9 @@ Verify equivalent outputs before timing. Keep raw distributions, errors and time
 | `perf-tail-latency` | Tail latency and saturation. |
 | `perf-regression` | Performance regression review. |
 
-## Focused procedures
+## Selected procedure
 
-### Python Performance (`python-performance`)
-
-Measure a representative baseline before optimizing. Profile CPU and memory with available tools, identify the dominant hotspot, and optimize that path while preserving outputs and errors. Avoid clever micro-optimizations without evidence. Re-run the same workload and report hardware, input scale, and before/after measurements.
-
-### Comparable benchmark design (`perf-benchmark-design`)
-
-Specify representative input, machine/runtime versions, warmup, repeats and measurement boundaries. Separate setup from the measured operation and retain raw timings, not just a best run. Compare equivalent outputs and report dispersion and measurement noise.
-
-### Memory and allocation diagnosis (`perf-memory-profile`)
-
-Distinguish retained state, allocation rate and peak working set on the same workload. Identify the allocation/retention path before optimizing and verify object lifetime after the change. Report tool limitations and workload-dependent tradeoffs.
-
-### Tail latency and saturation (`perf-tail-latency`)
-
-Record load generation, concurrency, timeouts and latency percentiles, including failed requests. Ramp only an authorized local/staging target and identify the saturation knee. Avoid coordinated-omission or success-only summaries that hide slow/failed work.
-
-### Performance regression review (`perf-regression`)
-
-Reproduce baseline and candidate under matching conditions, check correctness first and compare distributions with a practical change threshold. Trace regressions to a measured path and retain the raw evidence; avoid brittle single-run timing assertions in unit tests.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

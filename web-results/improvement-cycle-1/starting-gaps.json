@@ -1,0 +1,330 @@
+[
+  {
+    "host": "antigravity",
+    "category": "ai-engineering",
+    "criterion": "c5",
+    "status": "fail",
+    "requirement": "Bounds iterations/time and reports uncertainty or insufficient evidence",
+    "evidence": "Record limits and timeout handling are specified, but no finite iteration/time budget."
+  },
+  {
+    "host": "antigravity",
+    "category": "cloud-devops-sre",
+    "criterion": "c5",
+    "status": "fail",
+    "requirement": "Uses least-privilege configuration and keeps secrets out of images/logs",
+    "evidence": "Least privilege and secret handling still omitted."
+  },
+  {
+    "host": "antigravity",
+    "category": "computer-vision",
+    "criterion": "c3",
+    "status": "fail",
+    "requirement": "Defines annotation shape/range/alignment sanity checks",
+    "evidence": "Synthetic image/mask alignment tested but annotation label/range checks omitted."
+  },
+  {
+    "host": "antigravity",
+    "category": "computer-vision",
+    "criterion": "c5",
+    "status": "fail",
+    "requirement": "Keeps a baseline and isolates tuning from the final evaluation set",
+    "evidence": "Constant-background baseline acknowledged; tuning and final evaluation isolation not explicit."
+  },
+  {
+    "host": "antigravity",
+    "category": "databases",
+    "criterion": "c1",
+    "status": "fail",
+    "requirement": "Uses an expand/backfill/validate/contract sequence compatible with live versions",
+    "evidence": "Backfill precedes dual-writer deployment with no final catch-up rule, risking unsynchronized concurrent rows."
+  },
+  {
+    "host": "antigravity",
+    "category": "databases",
+    "criterion": "c3",
+    "status": "fail",
+    "requirement": "Accounts for locks, transaction boundaries and index/constraint behavior",
+    "evidence": "PostgreSQL does not escalate row locks into table locks; bounded batching rationale uses inaccurate lock-escalation wording."
+  },
+  {
+    "host": "antigravity",
+    "category": "deep-learning",
+    "criterion": "c4",
+    "status": "fail",
+    "requirement": "Records model/data/config/environment identity and compatible checkpoint loading",
+    "evidence": "No model/data/config/environment identity in recovered checkpoints."
+  },
+  {
+    "host": "antigravity",
+    "category": "design-ux",
+    "criterion": "c5",
+    "status": "fail",
+    "requirement": "Provides concrete responsive hierarchy rather than purely aesthetic adjectives",
+    "evidence": "No concrete responsive hierarchy."
+  },
+  {
+    "host": "antigravity",
+    "category": "developer-research",
+    "criterion": "c5",
+    "status": "fail",
+    "requirement": "Records compatibility assumptions, uncertainty and what would change the recommendation",
+    "evidence": "No bounded repeated-cursor/malformed-response uncertainty or recommendation-change conditions."
+  },
+  {
+    "host": "antigravity",
+    "category": "developer-tools",
+    "criterion": "c4",
+    "status": "fail",
+    "requirement": "Defines interruption recovery or transactional boundaries",
+    "evidence": "Unconditional orphan directory removal/prune on interruption lacks ownership proof and protection for work created after partial setup."
+  },
+  {
+    "host": "antigravity",
+    "category": "documentation",
+    "criterion": "c1",
+    "status": "fail",
+    "requirement": "Matches the supplied actual command/API contract",
+    "evidence": "Assumes request_id is a header and invents a request body and response fields not defined in the packet."
+  },
+  {
+    "host": "antigravity",
+    "category": "documentation",
+    "criterion": "c6",
+    "status": "fail",
+    "requirement": "Does not invent behavior, links, endpoints or test execution",
+    "evidence": "Invents exact HTTP error codes and error object contract without labeling assumptions."
+  },
+  {
+    "host": "antigravity",
+    "category": "machine-learning",
+    "criterion": "c2",
+    "status": "fail",
+    "requirement": "Fits preprocessing/feature selection only on training folds",
+    "evidence": "Train-fold-only preprocessing/selection omitted."
+  },
+  {
+    "host": "antigravity",
+    "category": "machine-learning",
+    "criterion": "c4",
+    "status": "fail",
+    "requirement": "Separates tuning/validation from final test evaluation",
+    "evidence": "No isolated tuning validation versus final holdout."
+  },
+  {
+    "host": "antigravity",
+    "category": "mlops",
+    "criterion": "c1",
+    "status": "fail",
+    "requirement": "Versions the model, feature schema/preprocessor, data and environment as a compatible bundle",
+    "evidence": "Model/preprocessor are versioned but data/environment bundle identity omitted."
+  },
+  {
+    "host": "antigravity",
+    "category": "mobile-development",
+    "criterion": "c3",
+    "status": "fail",
+    "requirement": "Manages subscriptions/tasks across component/app lifecycle with cleanup",
+    "evidence": "AppState persistence described but subscription cleanup/cancellation omitted."
+  },
+  {
+    "host": "antigravity",
+    "category": "mobile-development",
+    "criterion": "c4",
+    "status": "fail",
+    "requirement": "Defines offline/pending/error state instead of discarding user work",
+    "evidence": "Durable pending drafts described but user-visible offline/error/conflict recovery unspecified."
+  },
+  {
+    "host": "antigravity",
+    "category": "mobile-development",
+    "criterion": "c6",
+    "status": "fail",
+    "requirement": "Tests background/resume, offline and long-list behavior without claiming device execution",
+    "evidence": "Background and retry fixtures proposed, but no explicit resume/relaunch verification."
+  },
+  {
+    "host": "antigravity",
+    "category": "observability",
+    "criterion": "c2",
+    "status": "fail",
+    "requirement": "Uses bounded-cardinality metrics and avoids user/request IDs as metric labels",
+    "evidence": "Low-cardinality log metadata named, but metric-label cardinality contract omitted."
+  },
+  {
+    "host": "antigravity",
+    "category": "observability",
+    "criterion": "c4",
+    "status": "fail",
+    "requirement": "Measures service-relevant latency, errors, throughput/queue behavior",
+    "evidence": "Latency/errors tracked but no service throughput/queue behavior signals."
+  },
+  {
+    "host": "antigravity",
+    "category": "performance-engineering",
+    "criterion": "c4",
+    "status": "fail",
+    "requirement": "Controls warmup/load/environment and retains errors/timeouts in a fair protocol",
+    "evidence": "Timeout/cold-start retention present but matched environment/warmup not specified."
+  },
+  {
+    "host": "antigravity",
+    "category": "performance-engineering",
+    "criterion": "c5",
+    "status": "fail",
+    "requirement": "Considers throughput, memory and user-relevant operating objectives",
+    "evidence": "Memory and concurrency discussed without throughput or operating objective."
+  },
+  {
+    "host": "antigravity",
+    "category": "release-engineering",
+    "criterion": "c3",
+    "status": "fail",
+    "requirement": "Checks package contents/metadata and installs outside the checkout",
+    "evidence": "Isolated install and hashes supplied, but package contents/metadata checks absent."
+  },
+  {
+    "host": "antigravity",
+    "category": "release-engineering",
+    "criterion": "c5",
+    "status": "fail",
+    "requirement": "Defines destination-specific verification and a feasible recovery/rollback plan",
+    "evidence": "Destination failure/partial-publication recovery not specified."
+  },
+  {
+    "host": "antigravity",
+    "category": "systems-programming",
+    "criterion": "c5",
+    "status": "fail",
+    "requirement": "Specifies ABI/null/length/error contracts appropriate to the boundary",
+    "evidence": "No null/length/unwind/error contract; stable ownership sketch alone is incomplete."
+  },
+  {
+    "host": "antigravity",
+    "category": "web-backend",
+    "criterion": "c6",
+    "status": "fail",
+    "requirement": "Defines concrete overlap/crash/unknown-commit tests with timing-dependent outcomes stated honestly",
+    "evidence": "Tests overlap and rollback, but no concrete lost-commit-reply/unknown-outcome fixture."
+  },
+  {
+    "host": "antigravity",
+    "category": "web-frontend",
+    "criterion": "c2",
+    "status": "not-measured",
+    "requirement": "Provides the requested named controls and selectable data",
+    "evidence": "Initial revised pack omitted the existing frontend direction section; final entrypoint is restored. Offline artifact awaits actual browser checks; do not claim this as a final-entrypoint holdout."
+  },
+  {
+    "host": "antigravity",
+    "category": "web-frontend",
+    "criterion": "c3",
+    "status": "not-measured",
+    "requirement": "Gates submission on all required valid inputs",
+    "evidence": "Initial revised pack omitted the existing frontend direction section; final entrypoint is restored. Offline artifact awaits actual browser checks; do not claim this as a final-entrypoint holdout."
+  },
+  {
+    "host": "antigravity",
+    "category": "web-frontend",
+    "criterion": "c4",
+    "status": "not-measured",
+    "requirement": "Displays the actual selected item and slot in confirmation",
+    "evidence": "Initial revised pack omitted the existing frontend direction section; final entrypoint is restored. Offline artifact awaits actual browser checks; do not claim this as a final-entrypoint holdout."
+  },
+  {
+    "host": "antigravity",
+    "category": "web-frontend",
+    "criterion": "c5",
+    "status": "not-measured",
+    "requirement": "Supports labels/keyboard/focus and meaningful validation",
+    "evidence": "Initial revised pack omitted the existing frontend direction section; final entrypoint is restored. Offline artifact awaits actual browser checks; do not claim this as a final-entrypoint holdout."
+  },
+  {
+    "host": "antigravity",
+    "category": "web-frontend",
+    "criterion": "c6",
+    "status": "not-measured",
+    "requirement": "Fits the narrow viewport without page overflow and does not claim unexecuted tests",
+    "evidence": "Initial revised pack omitted the existing frontend direction section; final entrypoint is restored. Offline artifact awaits actual browser checks; do not claim this as a final-entrypoint holdout."
+  },
+  {
+    "host": "vscode",
+    "category": "cloud-devops-sre",
+    "criterion": "c5",
+    "status": "fail",
+    "requirement": "Uses least-privilege configuration and keeps secrets out of images/logs",
+    "evidence": "Least privilege and secrets omitted."
+  },
+  {
+    "host": "vscode",
+    "category": "code-build",
+    "criterion": "c2",
+    "status": "fail",
+    "requirement": "Exact arithmetic preserves the monetary total and stated rounding/allocation rule",
+    "evidence": "Exploratory mixed-remainder cases reveal allocation rule is violated: total2,weights[1,2,3] returns[0,0,2], expected[0,1,1]."
+  },
+  {
+    "host": "vscode",
+    "category": "code-build",
+    "criterion": "c3",
+    "status": "fail",
+    "requirement": "Handles zero values and stable ties/boundaries",
+    "evidence": "Zero remainders incorrectly sort before positive remainders, misallocating boundary cases."
+  },
+  {
+    "host": "vscode",
+    "category": "documentation",
+    "criterion": "c1",
+    "status": "fail",
+    "requirement": "Matches the supplied actual command/API contract",
+    "evidence": "States request_id is in the body although the supplied packet does not specify its location."
+  },
+  {
+    "host": "vscode",
+    "category": "performance-engineering",
+    "criterion": "c1",
+    "status": "fail",
+    "requirement": "Calculates the supplied mean and median correctly",
+    "evidence": "Baseline mean is22.4ms, not22ms; answer also claims mean difference6ms rather than5.6ms."
+  },
+  {
+    "host": "vscode",
+    "category": "web-frontend",
+    "criterion": "c2",
+    "status": "not-measured",
+    "requirement": "Provides the requested named controls and selectable data",
+    "evidence": "Initial revised frontend guide omitted existing visual modes; final guide restored. Artifact inspected, but browser access disabled before holdout interaction testing."
+  },
+  {
+    "host": "vscode",
+    "category": "web-frontend",
+    "criterion": "c3",
+    "status": "not-measured",
+    "requirement": "Gates submission on all required valid inputs",
+    "evidence": "Initial revised frontend guide omitted existing visual modes; final guide restored. Artifact inspected, but browser access disabled before holdout interaction testing."
+  },
+  {
+    "host": "vscode",
+    "category": "web-frontend",
+    "criterion": "c4",
+    "status": "not-measured",
+    "requirement": "Displays the actual selected item and slot in confirmation",
+    "evidence": "Initial revised frontend guide omitted existing visual modes; final guide restored. Artifact inspected, but browser access disabled before holdout interaction testing."
+  },
+  {
+    "host": "vscode",
+    "category": "web-frontend",
+    "criterion": "c5",
+    "status": "not-measured",
+    "requirement": "Supports labels/keyboard/focus and meaningful validation",
+    "evidence": "Initial revised frontend guide omitted existing visual modes; final guide restored. Artifact inspected, but browser access disabled before holdout interaction testing."
+  },
+  {
+    "host": "vscode",
+    "category": "web-frontend",
+    "criterion": "c6",
+    "status": "not-measured",
+    "requirement": "Fits the narrow viewport without page overflow and does not claim unexecuted tests",
+    "evidence": "Initial revised frontend guide omitted existing visual modes; final guide restored. Artifact inspected, but browser access disabled before holdout interaction testing."
+  }
+]

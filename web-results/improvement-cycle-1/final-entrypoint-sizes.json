@@ -1,0 +1,188 @@
+{
+  "before_bytes": 309898,
+  "after_bytes": 175877,
+  "reduction_percent": 43.2468102407889,
+  "categories": [
+    {
+      "category": "ai-engineering",
+      "before_bytes": 5921,
+      "final_bytes": 4418,
+      "final_sha256": "03f4e5d639fb9d6aa031ea135349d5415676577db40abf92b59a10e4652f9b5b"
+    },
+    {
+      "category": "automation",
+      "before_bytes": 3624,
+      "final_bytes": 3861,
+      "final_sha256": "9f6b78f85adfb42f7601285c0af8f75625d2cb1a999b46063b6ddee0fe144a2d"
+    },
+    {
+      "category": "cloud-devops-sre",
+      "before_bytes": 9290,
+      "final_bytes": 5870,
+      "final_sha256": "cf3c22668a1d30245ca8164b21bfa00e5789009e8d5212fa5ef9f94f5c9e2d07"
+    },
+    {
+      "category": "code-build",
+      "before_bytes": 58658,
+      "final_bytes": 15681,
+      "final_sha256": "dec1e26dee51bc1b57da9ffe7667fd2f0487fcd90342dbc18abe09a5fdcd3962"
+    },
+    {
+      "category": "computer-vision",
+      "before_bytes": 5277,
+      "final_bytes": 4627,
+      "final_sha256": "31e3fd36a0ed6306759f00e35e3964dc6d993322f0ca5efaa31b7233ca19ad56"
+    },
+    {
+      "category": "cybersecurity",
+      "before_bytes": 7655,
+      "final_bytes": 5228,
+      "final_sha256": "e32f16a8480f62d0fa67c8312221b12d0d991e14f9f5307248ba55342fe67b6e"
+    },
+    {
+      "category": "data-engineering",
+      "before_bytes": 4714,
+      "final_bytes": 4212,
+      "final_sha256": "0232caa30e1250dae5781a81d6bd75143b7a28e56d440e591dd91cd94493b491"
+    },
+    {
+      "category": "data-science",
+      "before_bytes": 10930,
+      "final_bytes": 5984,
+      "final_sha256": "3c03269fa26ca87036a26920eff86d951834c9400220be5778fb69c7e8fded9a"
+    },
+    {
+      "category": "databases",
+      "before_bytes": 4893,
+      "final_bytes": 4208,
+      "final_sha256": "4f5eaf6cec6fe601236cb72ed81bf4fc15db33ed890bf0b657931730fe08cfd5"
+    },
+    {
+      "category": "deep-learning",
+      "before_bytes": 7478,
+      "final_bytes": 5218,
+      "final_sha256": "37d2183580e4d51e286a54be3f77968dcda50f8887e6b11ee6e65f3a04e5df2b"
+    },
+    {
+      "category": "design-ux",
+      "before_bytes": 7374,
+      "final_bytes": 5253,
+      "final_sha256": "9c2b32a38466288832b803dbbff721637078e2f29eeb59c4d352f75f07fab836"
+    },
+    {
+      "category": "developer-research",
+      "before_bytes": 4443,
+      "final_bytes": 4160,
+      "final_sha256": "fac461145af2d4b49607183c63b11939440099b63fba516ae7b364da88053cc3"
+    },
+    {
+      "category": "developer-tools",
+      "before_bytes": 3613,
+      "final_bytes": 3944,
+      "final_sha256": "9505c3169f00d79f177baac7ae393687787d1b159f4e0fcc5e8e836f84b70bff"
+    },
+    {
+      "category": "distributed-systems",
+      "before_bytes": 4173,
+      "final_bytes": 4021,
+      "final_sha256": "7eecd4eb57a9d6bb95e7fb7e8ede4990246479e6a59a50cd3b50bc732acb1ff9"
+    },
+    {
+      "category": "documentation",
+      "before_bytes": 4215,
+      "final_bytes": 4413,
+      "final_sha256": "f26d502a2fdfc3a95aca82d47a834d284ec5f4e1d64d4f4d30fd989fb28a8cd7"
+    },
+    {
+      "category": "embedded-systems",
+      "before_bytes": 4222,
+      "final_bytes": 4037,
+      "final_sha256": "a2fd03e6a2fa0f9c665f2fb42cf4610e57e0025a53c2aaa07e519d94b9b74242"
+    },
+    {
+      "category": "game-development",
+      "before_bytes": 3253,
+      "final_bytes": 3975,
+      "final_sha256": "53739ac3b101026534c88ef0aa0f571b19be4f19ec941225dc00f332a6283097"
+    },
+    {
+      "category": "machine-learning",
+      "before_bytes": 13897,
+      "final_bytes": 7073,
+      "final_sha256": "66ea20d0c643836e085d9678c8aa428d4ef3d270952f680ef1b7501d36fcf27f"
+    },
+    {
+      "category": "mlops",
+      "before_bytes": 7955,
+      "final_bytes": 5284,
+      "final_sha256": "2ec2fd1618e60d9eafe82712796d2ea9508b62b1593ca09b77c75acdd5a9fc21"
+    },
+    {
+      "category": "mobile-development",
+      "before_bytes": 3361,
+      "final_bytes": 3903,
+      "final_sha256": "d32918913a2fff689967a0df8a9d5f7a5086ffd3eaae006c2ff8d08ccd2ae5ef"
+    },
+    {
+      "category": "natural-language-processing",
+      "before_bytes": 5357,
+      "final_bytes": 4673,
+      "final_sha256": "86f929c9363144569731b93ed27db2be5d71b72256129d3c865196b6109d6ed6"
+    },
+    {
+      "category": "neural-networks",
+      "before_bytes": 5823,
+      "final_bytes": 4913,
+      "final_sha256": "2bc72ed00a88b50f881d9394cd63427e4c7610e6cc43e95fb9e3b8611958827b"
+    },
+    {
+      "category": "observability",
+      "before_bytes": 6832,
+      "final_bytes": 4885,
+      "final_sha256": "31c0ee7622e6d88577ac0829d644d0162e49392e1e80359a93f4ce9e7c84529b"
+    },
+    {
+      "category": "performance-engineering",
+      "before_bytes": 4811,
+      "final_bytes": 4267,
+      "final_sha256": "7510c59579a0435aae12ab3abfa8884e73017ea3da401002f5e97066a9d0aecd"
+    },
+    {
+      "category": "python",
+      "before_bytes": 4347,
+      "final_bytes": 4070,
+      "final_sha256": "2985eff9297a3a7559da7e9e370fd41dec2007fe207cd769eda96328df9c8889"
+    },
+    {
+      "category": "release-engineering",
+      "before_bytes": 3806,
+      "final_bytes": 4148,
+      "final_sha256": "8ae78ec1eccaca6d2011ff516fab51deece8cad40920d9ff48df264a25f3f774"
+    },
+    {
+      "category": "systems-programming",
+      "before_bytes": 4235,
+      "final_bytes": 4458,
+      "final_sha256": "db2e8a6ff3314dfc39cf8bb89eb63594ea6c1086475f171f920bb732dfcac49c"
+    },
+    {
+      "category": "testing",
+      "before_bytes": 10718,
+      "final_bytes": 5983,
+      "final_sha256": "6320c7769b6bd697bd5a57187f18e062ab2a6d472d234a8724eef287852d79d8"
+    },
+    {
+      "category": "web-backend",
+      "before_bytes": 52058,
+      "final_bytes": 15467,
+      "final_sha256": "275e70058563e0e00fb4d6a54d017f4b0f9a23ee01c51a921d41f216e6129fc4"
+    },
+    {
+      "category": "web-frontend",
+      "before_bytes": 36965,
+      "final_bytes": 17643,
+      "final_sha256": "724a2fb81dbc7e6af06e6debbfe4aa58b66912edcbad10c049119d76866a7eed"
+    }
+  ],
+  "scope": "Unconditional source entrypoint bytes; supporting workflows are read conditionally. No token/cost/latency measurement."
+}

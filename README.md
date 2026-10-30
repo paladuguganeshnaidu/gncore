@@ -39,6 +39,8 @@ $embedded-systems Verify timer wraparound with host fixtures.
 
 Exports contain a standard `.agents/skills/<id>/SKILL.md` and its declared resources/notices. Host discovery and invocation syntax depend on that agent's settings. GNCore does not run a model, install frameworks or grant tool permissions.
 
+The entrypoint selects work and checks completion boundaries. Detailed procedures live in a declared `WORKFLOWS.md` resource; the host reads only the matching section and necessary references. All 374 workflow IDs remain available.
+
 ## Inspect, migrate and check
 
 ```bash
@@ -62,6 +64,8 @@ The [evaluation corpus](https://github.com/paladuguganeshnaidu/gncore/blob/v7.0.
 ## Develop and prepare release artifacts
 
 The [comparative pilot](web-results/comparison/EXECUTIVE-REPORT.md) records original VS Code and Antigravity answers across all 30 categories, alongside pinned published references. Landscape plots show passed checks and missing measurements; they do not certify universal efficiency or security. See the [technical report](web-results/comparison/TECHNICAL-REPORT.md) for raw evidence, scoring and limitations.
+
+The [subsequent improvement cycle](web-results/improvement-cycle-1/README.md) records all-domain completion rules, ten reviewed procedure refinements and three focused corrections. Initial shared-context answer scores are withdrawn from fair comparisons; the replacement fresh-context evaluation stopped at an account usage limit. The [landscape review](output/pdf/GNCore-skill-improvement-review.pdf) includes the complete domain table, verified-evidence graph, sources and remaining gaps. A greater-than-95% AI-quality result is not established.
 
 ```bash
 python -m pip install -e ".[test,skills]" build twine

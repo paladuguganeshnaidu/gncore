@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 A versioned model bundle, preprocessing/serving contract, release gate, monitoring thresholds and rollback plan.
@@ -27,6 +29,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 ## Anticipate failure and verify the boundary
 
 Promote an immutable compatible bundle of model, preprocessor, feature contract, data/code identity and runtime. Verify serving parity and wrong/missing/reordered-input behavior before exposure. Gate promotion on both labeled quality and operational constraints, then stage rollout with a compatible rollback target. Feature or prediction drift is a diagnostic signal, not measured accuracy loss; track delayed labels and quality slices separately and define action thresholds for each.
+
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Promote a compatible immutable model/preprocessor/schema/data/code/runtime bundle and verify missing, reordered or malformed serving inputs against training behavior.
+- Check artifact trust before executable deserialization; hashes establish identity, not safety. Gate on quality and operations, align delayed labels by maturity/cohort and retain a compatible rollback target.
 
 ## Workflow map
 
@@ -43,47 +52,9 @@ Promote an immutable compatible bundle of model, preprocessor, feature contract,
 | `mlops-drift-monitoring` | Drift and model monitoring. |
 | `mlops-promotion-rollback` | Model promotion and rollback. |
 
-## Focused procedures
+## Selected procedure
 
-### Reproducible ML Experiments (`experiment-tracking`)
-
-Capture the source revision, dataset/version, configuration, seed, dependencies, model identifier, metrics, and artifact location. Keep secrets out of logs. Make repeated runs distinguishable and avoid overwriting artifacts. Use the repository's existing tracker; add a new service only when requested.
-
-### Model Serving and Inference APIs (`model-serving`)
-
-Trace model loading and inference lifecycle, validate inputs and output shapes, set appropriate timeouts and resource limits, and preserve version identity. Handle cold starts and model errors explicitly. Do not deploy, expose endpoints, or change production configuration unless requested. Measure latency and memory before claiming capacity.
-
-### MLOps and Model Release (`mlops`)
-
-Trace training data, code, dependencies, model artifact, evaluation, and serving contract. Define reproducible build metadata, compatibility checks, rollback path, and monitoring for drift and failures. Keep credentials outside artifacts. Do not deploy, promote, or alter production traffic without explicit authorization. Separate offline evidence from live performance and define an owner for alerts.
-
-### Machine Learning Experiment Tracking (`ml-experiment-tracking`)
-
-Define the question and baseline before changing code. Record data version, split, code revision, config, seed, environment, metrics, and artifact path for every run. Compare like with like and account for randomness. Keep experiments isolated and avoid overwriting outputs. Do not introduce a tracking service or upload sensitive data without approval.
-
-### Model Documentation (`model-card`)
-
-Use only verified project evidence for training data, method, metrics, and provenance. State intended and excluded uses, evaluation setup, subgroup coverage, limitations, monitoring, and update cadence. Mark unknowns plainly. Do not infer consent, representativeness, fairness, or regulatory status without evidence.
-
-### Edge and Hardware-Constrained ML (`hardware-ml`)
-
-Identify target processor, runtime, memory, latency, power, and accuracy requirements. Measure an unoptimized baseline on representative inputs. Compare quantization or compression with task metrics and worst-case behavior; verify supported operators and numerical drift. Keep original artifacts and provide a rollback path. Do not claim deployment readiness from desktop measurements.
-
-### Model artifact and provenance (`mlops-artifact-contract`)
-
-Bundle model and preprocessing state with input schema, dependency versions, data/split identity and verified evaluation. Hash files and round-trip the bundle in a clean environment. Keep credentials and unnecessary training records outside the artifact.
-
-### Prediction service contract (`mlops-serving-contract`)
-
-Validate feature names/order, dtype, missingness and batch bounds before inference. Use the artifact's exact preprocessing and test predictions against an offline fixture. Define load failures, timeouts and incompatible model/schema errors without silently changing predictions.
-
-### Drift and model monitoring (`mlops-drift-monitoring`)
-
-Separate input drift, label/target changes, prediction drift and service reliability. Define reference windows, delayed-label availability, thresholds and an accountable response. Test a synthetic shifted fixture; do not label input drift alone as measured accuracy degradation.
-
-### Model promotion and rollback (`mlops-promotion-rollback`)
-
-Compare candidate and baseline on the same accepted evaluation set and compatibility checks. Prepare canary/shadow criteria, immutable model identities and a tested rollback path. Keep actual production promotion and traffic changes pending deployment authorization.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Primary technical references
 

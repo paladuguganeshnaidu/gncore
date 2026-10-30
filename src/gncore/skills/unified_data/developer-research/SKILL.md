@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 A cited technical comparison or bounded prototype with version assumptions, unresolved questions and a recommendation tied to the actual project.
@@ -28,6 +30,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 Rank supplied evidence by provenance, version and direct relevance; keep primary evidence separate from secondary assertions and inference. Check units, defaults and compatibility contracts, not merely renamed symbols. Design the smallest experiment that distinguishes competing explanations, with bounded deadlines and realistic tolerances. Record assumptions, unavailable evidence and observations that would change the recommendation. Never describe a planned reproduction as completed.
 
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Separate primary version-matched evidence, secondary examples and inference; identify the smallest discriminating experiment, expected observations and stopping bounds.
+- Record assumptions and what would change the recommendation; a failed reproduction is limited to its configuration, and observed behavior does not establish documented support.
+
 ## Workflow map
 
 | Workflow | Use it for |
@@ -37,23 +46,9 @@ Rank supplied evidence by provenance, version and direct relevance; keep primary
 | `research-paper-reproduction` | Research result reproduction. |
 | `research-technical-decision` | Evidence-backed technical decision. |
 
-## Focused procedures
+## Selected procedure
 
-### Research Synthesis (`research-synthesis`)
-
-Translate the question into scope, date range, and evidence standard. Prioritize primary sources; record citation details and distinguish source claims from your synthesis. Compare methods and note conflicting findings, limitations, and missing evidence. Do not invent citations, quotations, or consensus. State when evidence is insufficient or likely outdated.
-
-### API and dependency compatibility (`research-api-compatibility`)
-
-Inspect installed versions, call sites, official release notes and primary API documentation. Reproduce the needed behavior in a minimal fixture and record migration/compatibility constraints before recommending a dependency change.
-
-### Research result reproduction (`research-paper-reproduction`)
-
-Record the paper revision, dataset rights/splits, baseline, metric definitions and compute budget. Reproduce the smallest decisive experiment first, keep deviations visible and separate a partial implementation from replication of published results.
-
-### Evidence-backed technical decision (`research-technical-decision`)
-
-Compare options on the project's actual constraints, prototype the uncertain boundary and cite primary evidence with dates/versions. State what would change the recommendation; do not substitute general popularity for workload evidence.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

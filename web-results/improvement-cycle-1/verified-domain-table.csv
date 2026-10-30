@@ -1,0 +1,31 @@
+domain,workflows,bundle_checks,executed_task_evidence,ai_quality_gt95
+ai-engineering,6,passed,No domain runtime measurement,not-established
+automation,2,passed,No domain runtime measurement,not-established
+cloud-devops-sre,15,passed,No domain runtime measurement,not-established
+code-build,85,passed,19/19 allocation fixtures,not-established
+computer-vision,5,passed,No domain runtime measurement,not-established
+cybersecurity,12,passed,No domain runtime measurement,not-established
+data-engineering,4,passed,No domain runtime measurement,not-established
+data-science,18,passed,No domain runtime measurement,not-established
+databases,5,passed,No domain runtime measurement,not-established
+deep-learning,9,passed,No domain runtime measurement,not-established
+design-ux,12,passed,No domain runtime measurement,not-established
+developer-research,4,passed,No domain runtime measurement,not-established
+developer-tools,2,passed,No domain runtime measurement,not-established
+distributed-systems,4,passed,No domain runtime measurement,not-established
+documentation,3,passed,No domain runtime measurement,not-established
+embedded-systems,4,passed,No domain runtime measurement,not-established
+game-development,1,passed,No domain runtime measurement,not-established
+machine-learning,21,passed,No domain runtime measurement,not-established
+mlops,10,passed,No domain runtime measurement,not-established
+mobile-development,1,passed,No domain runtime measurement,not-established
+natural-language-processing,5,passed,No domain runtime measurement,not-established
+neural-networks,6,passed,14/14 math fixtures,not-established
+observability,7,passed,No domain runtime measurement,not-established
+performance-engineering,5,passed,No domain runtime measurement,not-established
+python,3,passed,No domain runtime measurement,not-established
+release-engineering,2,passed,No domain runtime measurement,not-established
+systems-programming,4,passed,No domain runtime measurement,not-established
+testing,19,passed,7/7 checker fixtures,not-established
+web-backend,60,passed,No domain runtime measurement,not-established
+web-frontend,40,passed,5 UI checks passed; 1 open,not-established

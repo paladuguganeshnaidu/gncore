@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 Versioned dataset/transform contract, baseline model or inference pipeline, task metrics and representative visual error analysis.
@@ -28,6 +30,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 Choose split groups from the deployment population: adjacent frames or multiple views of the same object cannot be independent test evidence. Transform images and annotations together, audit coordinate conventions and overlay representative boxes/masks after each geometric stage. Check dimensions, bounds, degenerate/empty labels and corrupt inputs. Keep a simple baseline, tune on validation only and report task-specific metrics and group counts on the untouched evaluation set.
 
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Check annotation dimensions, legal labels, empty/degenerate cases and geometric alignment; transform predictions back to the declared original coordinate frame.
+- Keep deployment-relevant groups disjoint, tune only on validation, retain a simple baseline and report task/per-class metrics with sample support.
+
 ## Workflow map
 
 | Workflow | Use it for |
@@ -38,27 +47,9 @@ Choose split groups from the deployment population: adjacent frames or multiple 
 | `cv-detection-metrics` | Detection and segmentation evaluation. |
 | `cv-inference-parity` | Image inference parity. |
 
-## Focused procedures
+## Selected procedure
 
-### Computer Vision (`computer-vision`)
-
-Inspect image formats, dimensions, labels, duplicate/near-duplicate groups, and provenance. Split by source, person, or scene where needed to prevent leakage. Normalize consistently and validate augmentations preserve labels. Use task-appropriate metrics and inspect representative errors. Protect biometric and personal imagery; do not download, retain, or expose images without authorization.
-
-### Vision dataset integrity (`cv-dataset-audit`)
-
-Inventory image encodings, shapes, corrupt files, annotation bounds and duplicate/subject groups. Split by the group that must generalize, then report per-split counts and excluded records without exposing private imagery.
-
-### Image and annotation transforms (`cv-geometric-transforms`)
-
-Apply resize/crop/flip consistently to images, boxes, masks and keypoints. Specify coordinate conventions and interpolation separately for images versus categorical masks. Use a synthetic checkerboard and known box to verify exact transformed bounds and clipping.
-
-### Detection and segmentation evaluation (`cv-detection-metrics`)
-
-State IoU thresholds, class matching and aggregation before evaluating. Handle empty predictions/annotations explicitly, retain per-class support, and inspect failure examples. Keep confidence-threshold tuning separate from final holdout reporting.
-
-### Image inference parity (`cv-inference-parity`)
-
-Record decoding, orientation, channel order, scaling and normalization with the artifact. Compare a known image through training-validation preprocessing and the serving path. Reject unsupported/corrupt input and bound decoded dimensions and batch memory.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Primary technical references
 

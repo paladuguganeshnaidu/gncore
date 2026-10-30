@@ -38,3 +38,22 @@ def test_fixture_inspection_rejects_unrelated_capabilities_before_execution(sour
 def test_common_pure_numeric_operations_remain_available():
     info=grader.inspect_source("from math import exp\ndef allocate_cents(total, weights):\n    if type(total) is not int: raise TypeError()\n    return [divmod(total, len(weights))[0]]\n")
     assert info['functions']==['allocate_cents']
+
+
+def test_empty_integer_subclass_fixture_is_allowed_but_executable_class_body_is_not():
+    grader.inspect_source("def check_contract(fn):\n    class Port(int):\n        pass\n    assert fn(Port(80)) == 80\n")
+    with pytest.raises(ValueError):
+        grader.inspect_source("def check_contract(fn):\n    class Port(int):\n        value = fn(80)\n")
+
+
+def test_holdout_oracle_accepts_integer_subclasses_excluding_bool_as_the_contract_states():
+    source="def check_contract(fn):\n    class Port(int):\n        pass\n    assert fn(Port(80)) == 80\n"
+    result=grader.run_tests('testing','holdout',source)
+    assert result['tests'][0]['test']=='accepts_correct_implementation'
+    assert result['tests'][0]['passed']
+
+
+def test_literal_error_formatting_does_not_allow_attribute_traversal():
+    grader.inspect_source("def check_contract(fn):\n    assert fn(80)==80, 'port {!r}'.format(80)\n")
+    with pytest.raises(ValueError):
+        grader.inspect_source("def check_contract(fn):\n    return '{0.__class__}'.format(fn)\n")

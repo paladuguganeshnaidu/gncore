@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security Engineering Summit | Workshops</title>
+<style>
+:root{--navy:#152c49;--blue:#1d55b5;--ink:#17283c;--muted:#4b6179;--paper:#f6f8fc;--line:#cbd5e1;--white:#fff;--focus:#bd5b06}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 "Segoe UI",Arial,sans-serif}header,main,footer{width:min(1160px,calc(100% - 64px));margin:auto}header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:30px 0;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font-weight:700}.mark{width:24px;height:30px;border:3px solid var(--blue);border-radius:12px 12px 5px 5px;position:relative}.mark:after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:var(--blue);left:6px;top:8px}header p{font-size:14px;margin:0;color:var(--muted)}main{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:60px;padding:64px 0}.intro{padding-top:16px}.intro h1{font-size:clamp(38px,5vw,66px);line-height:1.06;letter-spacing:-.045em;font-weight:650;max-width:10ch;margin:0 0 25px}.intro>p{max-width:42ch;color:var(--muted);font-size:19px}.principle{margin:40px 0 0;padding:22px 0;border-top:3px solid var(--blue);border-bottom:1px solid var(--line)}.principle strong{display:block;font-size:22px;margin-bottom:8px}.principle p{margin:0;max-width:42ch;color:var(--muted)}.booking{background:var(--white);border:1px solid var(--line);border-radius:5px;overflow:hidden;box-shadow:0 14px 35px #152c490a}.booking-title{background:var(--navy);color:white;padding:25px 28px}.booking-title h2{font-size:28px;line-height:1.2;margin:0 0 7px;letter-spacing:-.02em}.booking-title p{font-size:15px;color:#d5e3f6;margin:0}form{padding:28px}label,legend{display:block;font-weight:650;margin-bottom:8px;font-size:16px}select,input[type=email]{width:100%;min-height:50px;padding:11px 13px;font:inherit;color:var(--ink);background:white;border:1px solid #8395ac;border-radius:3px}select{margin-bottom:22px}fieldset{margin:22px 0;padding:0;border:0}legend{padding:0}.slots{display:flex;gap:12px}.slot{display:flex;align-items:center;gap:10px;flex:1;min-height:50px;border:1px solid #8395ac;border-radius:3px;padding:10px 13px;font-weight:500;cursor:pointer;margin:0}.slot input{width:18px;height:18px;margin:0;accent-color:var(--blue)}.slot:has(input:checked){background:#edf3fe;border-color:var(--blue)}.slot:focus-within{outline:3px solid var(--focus);outline-offset:3px}:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.hint{font-size:14px;color:var(--muted);margin:0 0 18px}button{width:100%;min-height:52px;background:var(--blue);color:white;border:0;border-radius:3px;font:650 17px "Segoe UI",Arial,sans-serif;cursor:pointer}button:hover:enabled{background:#123e8a}button:disabled{background:#d9e0e9;color:#42546b;cursor:not-allowed}.confirmation{margin-top:20px;font-size:16px;color:#163c2c}.confirmation:empty{display:none}.local{font-size:13px;color:var(--muted);margin:16px 0 0}footer{padding:22px 0 32px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+@media(max-width:760px){header,main,footer{width:calc(100% - 40px)}header{align-items:flex-start;padding:22px 0;flex-direction:column;gap:5px}main{grid-template-columns:minmax(0,1fr);gap:30px;padding:30px 0}.intro{padding:0}.intro h1{font-size:43px;max-width:12ch}.intro>p{font-size:17px}.principle{margin-top:24px;padding:16px 0}.booking-title,form{padding:22px}.slots{gap:10px}.slot{padding:10px;font-size:16px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="brand"><span class="mark" aria-hidden="true"></span>Security Engineering Summit</div><p>Practical workshops for engineering teams</p></header>
+<main>
+<section class="intro" aria-labelledby="heading"><h1 id="heading">Design the boundary.<br>Test the failure.</h1><p>Choose a focused workshop on the decisions that keep systems secure under pressure.</p><div class="principle"><strong>Bring a problem. Work through it.</strong><p>Explore trust boundaries in Threat Modeling, or strengthen request and authorization contracts in Secure APIs.</p></div></section>
+<section class="booking" aria-labelledby="book-heading"><div class="booking-title"><h2 id="book-heading">Choose your workshop</h2><p>One workshop. One time. A clear next step.</p></div>
+<form id="booking" novalidate>
+<label for="workshop">Workshop</label><select id="workshop" name="workshop" required><option value="">Choose a workshop</option><option value="Threat Modeling">Threat Modeling</option><option value="Secure APIs">Secure APIs</option></select>
+<label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="form-hint">
+<fieldset><legend>Workshop time</legend><div class="slots"><label class="slot"><input type="radio" name="slot" value="10:30" required>10:30</label><label class="slot"><input type="radio" name="slot" value="16:00" required>16:00</label></div></fieldset>
+<p class="hint" id="form-hint">Select a workshop and time, then enter a valid email to continue.</p>
+<button type="submit" id="book" disabled>Book Workshop</button>
+<div id="confirmation" class="confirmation" role="status" aria-live="polite" tabindex="-1"></div><p class="local">Offline preview: your selection stays on this page. No booking or email is sent.</p>
+</form></section>
+</main>
+<footer>Security Engineering Summit · Workshop selection</footer>
+<script>
+const form=document.getElementById('booking');
+const workshop=document.getElementById('workshop');
+const email=document.getElementById('email');
+const button=document.getElementById('book');
+const confirmation=document.getElementById('confirmation');
+function ready(){return workshop.value!=='' && email.validity.valid && email.value!=='' && form.querySelector('input[name="slot"]:checked')!==null;}
+function update(){button.disabled=!ready();confirmation.textContent='';}
+form.addEventListener('input',update);
+form.addEventListener('change',update);
+form.addEventListener('submit',function(event){event.preventDefault();if(!ready()){update();form.reportValidity();return;}const time=form.querySelector('input[name="slot"]:checked').value;confirmation.textContent='Selection confirmed: '+workshop.value+' at '+time+'. This is a local preview; no booking or email was sent.';confirmation.focus();});
+update();
+</script>
+</body></html>

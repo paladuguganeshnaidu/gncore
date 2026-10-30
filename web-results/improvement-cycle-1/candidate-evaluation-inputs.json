@@ -1,0 +1,50 @@
+[
+  {
+    "input": ".work/improvement-cycle-1/candidate-batch-1.json",
+    "sha256": "ad2136902e59d0d886b69149775292acf5038bde4de060ef747c191532db09a1",
+    "cases": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08",
+      "H09",
+      "H10"
+    ]
+  },
+  {
+    "input": ".work/improvement-cycle-1/candidate-batch-2.json",
+    "sha256": "949ffdbbaa8b5e4fa0b78ecc41c99ac4d2b8eb3e42e7fa6ef3cf25560d86f43e",
+    "cases": [
+      "H11",
+      "H12",
+      "H13",
+      "H14",
+      "H15",
+      "H16",
+      "H17",
+      "H18",
+      "H19",
+      "H20"
+    ]
+  },
+  {
+    "input": ".work/improvement-cycle-1/candidate-batch-3.json",
+    "sha256": "557a1ffcc96ead7cb040a093b22126e8610ecffea0ee0e8a11d75ac5765e09c1",
+    "cases": [
+      "H21",
+      "H22",
+      "H23",
+      "H24",
+      "H25",
+      "H26",
+      "H27",
+      "H28",
+      "H29",
+      "H30"
+    ]
+  }
+]

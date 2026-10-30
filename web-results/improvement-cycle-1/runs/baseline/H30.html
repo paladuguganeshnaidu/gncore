@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Security Engineering Summit — Workshop Booking</title>
+<style>
+:root{color-scheme:light;--ink:#172526;--paper:#f2efe7;--white:#fffdf7;--line:#9daba4;--accent:#a43b20;--muted:#435953;--focus:#005fcc}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,sans-serif}header{background:var(--ink);color:var(--paper);padding:24px max(24px,calc((100vw - 1160px)/2));display:flex;justify-content:space-between;gap:20px;align-items:center}.brand{font-weight:750;letter-spacing:.04em}.edition,.eyebrow,.number,legend{font:12px/1.5 ui-monospace,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase}.edition{color:#c5d2c8}main{max-width:1208px;margin:auto;padding:60px 24px 40px}.intro{display:grid;grid-template-columns:1.45fr 1fr;gap:64px;align-items:start}.eyebrow{color:var(--accent);font-weight:bold;margin:0 0 18px}h1{font-size:clamp(40px,5.6vw,74px);line-height:1.02;letter-spacing:-.055em;margin:0 0 28px;max-width:700px}h1 span{display:block;color:var(--muted)}.lead{max-width:48ch;font-size:18px;color:var(--muted);margin-bottom:36px}.topics{padding:0;list-style:none;border-top:1px solid var(--line)}.topics li{display:grid;grid-template-columns:44px 1fr;padding:20px 0;border-bottom:1px solid var(--line)}.number{color:var(--accent);padding-top:4px}.topics strong{display:block;font-size:18px}.topics p{margin:4px 0 0;color:var(--muted);max-width:43ch}.booking{background:var(--white);border:1px solid var(--ink);border-top:7px solid var(--accent);padding:28px;box-shadow:8px 8px 0 #d9ded4}h2{font-size:28px;line-height:1.2;margin:0 0 8px;letter-spacing:-.03em}.hint{font-size:14px;color:var(--muted);margin:0 0 24px}label.field{display:block;font-weight:650;margin:22px 0 8px}select,input[type=email]{font:inherit;width:100%;min-height:50px;border:1px solid #64776e;border-radius:0;background:#fff;color:var(--ink);padding:10px 12px}fieldset{border:0;padding:0;margin:24px 0}legend{padding:0;margin-bottom:10px;font-weight:bold}.slots{display:grid;grid-template-columns:1fr 1fr;gap:12px}.slot{display:flex;align-items:center;gap:10px;min-height:65px;padding:12px;border:1px solid #64776e;cursor:pointer}.slot input{width:20px;height:20px;accent-color:var(--ink);margin:0;flex-shrink:0}.slot .time{font:600 20px ui-monospace,Consolas,monospace}.selected{display:none;font-size:11px}.slot:has(input:checked){border:2px solid var(--ink);padding:11px;background:#e4eadf}.slot input:checked~span .selected{display:block}.slot:focus-within{outline:3px solid var(--focus);outline-offset:4px}button{font:650 16px system-ui,sans-serif;min-height:52px;width:100%;border:2px solid var(--ink);background:var(--ink);color:var(--white);padding:12px;cursor:pointer}button:hover:enabled{background:#2d4941}button:disabled{background:#e0e3da;border-color:#79877e;color:#4e5b54;cursor:not-allowed}:focus-visible{outline:3px solid var(--focus);outline-offset:4px}.footnote{font-size:12px;color:var(--muted);margin:14px 0 0}.confirmation{margin-top:20px;padding:16px;border-left:4px solid var(--accent);background:#e4eadf;overflow-wrap:anywhere}.confirmation:empty{display:none}footer{margin-top:60px;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;gap:20px;font:12px/1.5 ui-monospace,Consolas,monospace;color:var(--muted)}@media(max-width:760px){header{align-items:start;flex-direction:column;gap:6px}main{padding-top:36px}.intro{grid-template-columns:1fr;gap:30px}.booking{padding:24px;box-shadow:5px 5px 0 #d9ded4}footer{flex-direction:column;gap:6px;margin-top:38px}}@media(max-width:360px){.slots{grid-template-columns:1fr}.booking{padding:18px}}
+</style>
+</head>
+<body>
+<header><div class="brand">SECURITY / ENGINEERING</div><div class="edition">Summit · Workshop programme</div></header>
+<main>
+<div class="intro">
+<section aria-labelledby="summit-title">
+<p class="eyebrow">Applied security. Deliberate engineering.</p>
+<h1 id="summit-title">Build for the <span>adversarial case.</span></h1>
+<p class="lead">Security Engineering Summit workshops connect architectural decisions to practical defensive work. Choose a topic and a session time.</p>
+<ul class="topics">
+<li><span class="number">01 /</span><div><strong>Threat Modeling</strong><p>Map trust boundaries, examine attack paths, and turn risks into engineering decisions.</p></div></li>
+<li><span class="number">02 /</span><div><strong>Secure APIs</strong><p>Explore authorization boundaries, input contracts, and resilient service interactions.</p></div></li>
+</ul>
+</section>
+<section class="booking" aria-labelledby="book-title">
+<p class="eyebrow">Workshop selection / 01</p>
+<h2 id="book-title">Choose your session</h2>
+<p class="hint" id="requirements">All fields are required. Select one workshop and one time.</p>
+<form id="booking-form" aria-describedby="requirements offline-note">
+<label class="field" for="workshop">Workshop</label>
+<select id="workshop" name="workshop" required><option value="">Choose a workshop</option><option>Threat Modeling</option><option>Secure APIs</option></select>
+<fieldset><legend>Session time</legend><div class="slots">
+<label class="slot"><input type="radio" name="slot" value="10:30" required><span><span class="time">10:30</span><span class="selected" aria-hidden="true">Selected</span></span></label>
+<label class="slot"><input type="radio" name="slot" value="16:00" required><span><span class="time">16:00</span><span class="selected" aria-hidden="true">Selected</span></span></label>
+</div></fieldset>
+<label class="field" for="email">Email</label>
+<input type="email" id="email" name="email" autocomplete="email" placeholder="you@company.com" required aria-describedby="email-help">
+<p class="hint" id="email-help">Enter a valid email address to enable booking.</p>
+<button id="book" type="submit" disabled>Book Workshop</button>
+<p class="footnote" id="offline-note">Offline demonstration: selection stays on this page. No reservation or email is sent.</p>
+<noscript><p>JavaScript is required to validate and confirm your selection in this offline demonstration.</p></noscript>
+</form>
+<div class="confirmation" id="confirmation" role="status" aria-live="polite" aria-atomic="true"></div>
+</section>
+</div>
+<footer><span>SECURITY ENGINEERING SUMMIT</span><span>Architecture → boundaries → implementation</span></footer>
+</main>
+<script>
+'use strict';
+const form=document.getElementById('booking-form');
+const workshop=document.getElementById('workshop');
+const email=document.getElementById('email');
+const book=document.getElementById('book');
+const confirmation=document.getElementById('confirmation');
+function selectedSlot(){return form.querySelector('input[name="slot"]:checked');}
+function ready(){return Boolean(workshop.value && selectedSlot() && email.value && email.validity.valid);}
+function update(){book.disabled=!ready();confirmation.textContent='';}
+form.addEventListener('input',update);
+form.addEventListener('change',update);
+form.addEventListener('submit',event=>{
+ event.preventDefault();
+ if(!ready() || !form.checkValidity()){update();form.reportValidity();return;}
+ confirmation.textContent='Selection confirmed: '+workshop.value+' at '+selectedSlot().value+'. Recorded on this page only; no reservation or email was sent.';
+});
+window.addEventListener('pageshow',update);
+update();
+</script>
+</body>
+</html>

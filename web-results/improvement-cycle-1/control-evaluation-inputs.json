@@ -1,0 +1,50 @@
+[
+  {
+    "input": ".work/improvement-cycle-1/control-batch-1.json",
+    "sha256": "edf3061da701bca7f9b00f96d9d97e8245b42aaea5bacee3b3502d2191d8606f",
+    "cases": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08",
+      "H09",
+      "H10"
+    ]
+  },
+  {
+    "input": ".work/improvement-cycle-1/control-batch-2.json",
+    "sha256": "c316b6dc65722a8c089463f5f7b863661882f10d30e1abc260242cf4faf006b1",
+    "cases": [
+      "H11",
+      "H12",
+      "H13",
+      "H14",
+      "H15",
+      "H16",
+      "H17",
+      "H18",
+      "H19",
+      "H20"
+    ]
+  },
+  {
+    "input": ".work/improvement-cycle-1/control-batch-3.json",
+    "sha256": "d0c4aa86d547368f894a82bd89882fa9bfa5a6e431230c94f95e8041b04eb2a4",
+    "cases": [
+      "H21",
+      "H22",
+      "H23",
+      "H24",
+      "H25",
+      "H26",
+      "H27",
+      "H28",
+      "H29",
+      "H30"
+    ]
+  }
+]

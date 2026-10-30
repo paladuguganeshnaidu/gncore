@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boundary / Security Engineering Summit</title>
+<style>
+:root{color-scheme:dark;--bg:#101417;--panel:#1a2126;--ink:#f3f0e9;--muted:#b9c1c5;--line:#47535b;--accent:#efac80;--focus:#a9dfff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body:before{content:"";display:block;height:5px;background:var(--accent)}.shell{max-width:1120px;margin:auto;padding:32px 40px 48px}header{display:flex;justify-content:space-between;gap:20px;padding-bottom:25px;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:.16em}.edition{color:var(--muted);font-size:.82rem}main{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;padding-top:60px}.eyebrow{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:750}h1{font-size:clamp(2.7rem,5vw,4.3rem);line-height:1.04;letter-spacing:-.045em;margin:18px 0 25px;max-width:8em}p{margin:0 0 24px}.intro{color:var(--muted);max-width:36ch}.rule{height:1px;background:var(--line);margin:32px 0}.details{display:grid;gap:14px;font-size:.9rem}.details span{display:block;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em}.panel{background:var(--panel);border:1px solid var(--line);padding:30px;box-shadow:10px 10px 0 #080c0f}.index{font:12px/1.5 ui-monospace,monospace;color:var(--accent);letter-spacing:.08em}h2{font-size:1.65rem;line-height:1.2;margin:10px 0 12px}.note{font-size:.86rem;color:var(--muted)}label,legend{font-weight:650;font-size:.9rem}label.field-label{display:block;margin:25px 0 8px}select,input[type=email]{width:100%;min-height:50px;background:#10171b;border:1px solid #6c7a82;border-radius:3px;color:var(--ink);padding:11px 12px;font:inherit}fieldset{padding:0;border:0;margin:25px 0 0;min-width:0}legend{margin-bottom:9px}.slots{display:grid;grid-template-columns:1fr 1fr;gap:12px}.slot{display:flex;align-items:center;gap:10px;min-height:52px;border:1px solid #6c7a82;border-radius:3px;padding:12px;cursor:pointer}.slot:has(input:checked){border-color:var(--accent);background:#302820}.slot input{width:19px;height:19px;margin:0;accent-color:var(--accent)}button{width:100%;min-height:52px;margin-top:28px;border:1px solid var(--accent);border-radius:3px;background:var(--accent);color:#20170f;font:750 1rem system-ui;cursor:pointer}button:disabled{background:#313a40;color:#c0c7cb;border-color:#54616a;cursor:not-allowed}input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:4px}.slot:focus-within{outline:3px solid var(--focus);outline-offset:4px}.hint{font-size:.8rem;color:var(--muted);margin:9px 0 0}#confirmation{margin-top:20px;border-left:3px solid var(--accent);padding:12px 14px;background:#27342d;color:#e2f3e7}#confirmation:empty{display:none}footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);font-size:.75rem;letter-spacing:.08em;color:var(--muted)}@media(max-width:760px){.shell{padding:22px 22px 32px}header{align-items:start}.edition{max-width:13em;text-align:right}main{grid-template-columns:1fr;gap:30px;padding-top:34px}h1{font-size:3.15rem}.intro{max-width:none}.rule{margin:22px 0}.details{grid-template-columns:1fr 1fr;gap:16px}.panel{padding:23px;box-shadow:6px 6px 0 #080c0f}footer{margin-top:36px}}@media(prefers-reduced-motion:no-preference){button{transition:background .15s}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header><div class="brand">BOUNDARY /</div><div class="edition">SECURITY ENGINEERING SUMMIT<br>Workshop program</div></header>
+<main>
+<section aria-labelledby="summit-title">
+<div class="eyebrow">Engineering trust, in practice</div>
+<h1 id="summit-title">Build beyond assumptions.</h1>
+<p class="intro">Focused workshops for engineers protecting complex systems. Trace the threat. Challenge the interface. Leave with a clearer design.</p>
+<div class="rule"></div>
+<div class="details"><div><span>01 / Threat Modeling</span>Map trust boundaries and test the design.</div><div><span>02 / Secure APIs</span>Examine authorization and failure paths.</div></div>
+</section>
+<section class="panel" aria-labelledby="booking-title">
+<div class="index">PROGRAM ACCESS / 01</div>
+<h2 id="booking-title">Choose your workshop</h2>
+<p class="note" id="offline-note">Offline booking preview. Your selection stays on this page; no seat is reserved.</p>
+<form id="booking" aria-describedby="offline-note">
+<label class="field-label" for="workshop">Workshop</label>
+<select id="workshop" name="workshop" required><option value="" disabled selected>Select a workshop</option value="Threat Modeling">Threat Modeling</option><option value="Secure APIs">Secure APIs</option></select>
+<fieldset><legend>Time slot</legend><div class="slots"><label class="slot"><input type="radio" name="slot" value="10:30" required><span>10:30</span></label><label class="slot"><input type="radio" name="slot" value="16:00" required><span>16:00</span></label></div></fieldset>
+<label class="field-label" for="email">Email</label>
+<input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required aria-describedby="email-hint">
+<p class="hint" id="email-hint">Enter a valid email to complete this local selection.</p>
+<button id="book" type="submit" disabled>Book Workshop</button>
+<p class="hint">Choose a workshop, time, and valid email to continue.</p>
+</form>
+<div id="confirmation" role="status" aria-live="polite" aria-atomic="true"></div>
+</section>
+</main>
+<footer>BOUNDARY / SECURITY THROUGH ENGINEERING</footer>
+</div>
+<script>
+(function () {
+  'use strict';
+  const form = document.getElementById('booking');
+  const workshop = document.getElementById('workshop');
+  const email = document.getElementById('email');
+  const button = document.getElementById('book');
+  const confirmation = document.getElementById('confirmation');
+  function ready() {
+    return Boolean(workshop.value && form.querySelector('input[name="slot"]:checked') && email.value && email.validity.valid);
+  }
+  function update() {
+    button.disabled = !ready();
+    confirmation.textContent = '';
+  }
+  form.addEventListener('input', update);
+  form.addEventListener('change', update);
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (!ready() || !form.checkValidity()) {
+      button.disabled = true;
+      form.reportValidity();
+      return;
+    }
+    const slot = form.querySelector('input[name="slot"]:checked').value;
+    confirmation.textContent = 'Selection confirmed: ' + workshop.value + ' at ' + slot + '. This offline preview has not reserved a seat.';
+  });
+  window.addEventListener('pageshow', update);
+  update();
+}());
+</script>
+</body>
+</html>

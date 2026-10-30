@@ -1,0 +1,18 @@
+{
+  "status": "incomplete",
+  "reason": "Account usage limit stopped fresh-context evaluation agents. No further inference attempts were made after that limit.",
+  "planned_conditions": ["baseline", "reference", "candidate", "control"],
+  "planned_batches": 12,
+  "completed_batches": 2,
+  "completed_answers": 20,
+  "planned_answers": 120,
+  "completed_files": ["baseline-batch-1.json", "baseline-batch-2.json"],
+  "failed_before_capture": ["baseline-batch-3", "reference-batch-1"],
+  "terminal_errors": ["baseline-batch-1", "baseline-batch-3", "reference-batch-1"],
+  "capture_note": "baseline-batch-1 saved a complete valid10-answer JSON before its terminal usage error; the parent validated that saved artifact.",
+  "not_started_batches": 8,
+  "comparison_score": null,
+  "greater_than_95_percent_quality_established": false,
+  "development_scores": "Withdrawn from headline quality comparison: some development agents inherited parent context that could contain prior analysis or answers.",
+  "verified_work": "Revised guides, catalog lineage, package tests, inspected generated-code fixtures, observed browser interactions and distribution integrity remain valid within their stated scope."
+}

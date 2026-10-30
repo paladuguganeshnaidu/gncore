@@ -53,7 +53,7 @@ def test_active_catalog_audit_checks_all_procedures_hashes_links_and_helpers():
     report = audit_catalog()
     assert report["ok"], report["issues"]
     assert report["categories"] == 30 and report["workflows"] == 374
-    assert report["resources_verified"] == 1630
+    assert report["resources_verified"] == 1660
     assert report["python_helpers_parsed"] == 73
     assert report["baseline_workflows_accounted"] == 553
 

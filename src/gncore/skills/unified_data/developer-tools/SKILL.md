@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 A scriptable interface with actionable errors, documented inputs, stable output, and interruption/cleanup behavior.
@@ -28,6 +30,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 Preflight repository ownership, dirty state, path/branch collisions and the intended base before creating workspaces or files. Use argument arrays or correctly quoted explicit paths rather than generated shell strings. Make partial creation and interruption recoverable: detect owned incomplete state, preserve unrelated edits, and explain safe retry/cleanup. Define exit codes and diagnostics that distinguish invalid input, conflicts and environmental failure; verify paths containing spaces and concurrent invocations.
 
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- For repository/workspace changes, preflight ownership, dirty paths and collisions; journal only owned partial state and preserve intervening user work during recovery.
+- Use explicit paths and argument arrays; handle option-like values at the invoked program's boundary. Define actionable exit behavior and verify spaces, Unicode and interruption.
+
 ## Workflow map
 
 | Workflow | Use it for |
@@ -35,15 +44,9 @@ Preflight repository ownership, dirty state, path/branch collisions and the inte
 | `cli-design` | Design command-line tools with predictable arguments, clear errors, safe defaults, and scriptable output. |
 | `tooling-reproducible-env` | Reproducible developer environments. |
 
-## Focused procedures
+## Selected procedure
 
-### CLI Engineering (`cli-design`)
-
-Inspect established command patterns and automation needs. Use explicit options, stable exit codes, actionable errors, and non-interactive behavior for scripts. Make destructive actions opt-in and support dry-run when useful. Keep stdout machine-readable when promised and send diagnostics to stderr. Test help, invalid input, and representative success/failure cases.
-
-### Reproducible developer environments (`tooling-reproducible-env`)
-
-Inspect existing lockfiles, compiler/runtime versions and setup scripts. Pin the reproducibility boundary without adding an unrelated toolchain; verify a clean setup and document platform-specific requirements, cache assumptions and offline limits.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

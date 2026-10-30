@@ -1,0 +1,19 @@
+{
+  "profile": "baseline",
+  "answers": 30,
+  "raw_inputs": [
+    {
+      "file": "web-results/improvement-cycle-1/internal-baseline-batch-1.json",
+      "sha256": "86a966b44064f231b03bd5280e754d47588f1172377e9b3df1bf006fc7c1d190"
+    },
+    {
+      "file": "web-results/improvement-cycle-1/internal-baseline-batch-2.json",
+      "sha256": "92803c3dd5f7eea9e66e8afa6a6d8519bc23e9d6628091465a01c78c01910217"
+    },
+    {
+      "file": "web-results/improvement-cycle-1/internal-baseline-batch-3.json",
+      "sha256": "5b325c7e2623108c9b4327dd25005156d183d4c340d86d3846c19766a4bd6dd6"
+    }
+  ],
+  "scope": "Adaptive replay; separate internal agent block, not historical IDE inference."
+}

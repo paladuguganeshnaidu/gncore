@@ -1,0 +1,15 @@
+{
+  "pdf_pages": 10,
+  "all_pages_rendered_and_visually_reviewed": true,
+  "graph_pixels": [
+    1920,
+    1080
+  ],
+  "domain_rows": 30,
+  "workflows": 374,
+  "historical_migration_content_preserved": true,
+  "quality_target_gt95_established": false,
+  "fresh_context_comparison_status": "incomplete_account_usage_limit",
+  "pdf_sha256": "83212b8e887faf060562b31fd846bcd80cc6eff78218294bbf71346c40f656f5",
+  "graph_sha256": "0114f9b0f4e9f236e6e814967742e3632dbf3dd60dfb328799bebff429956714"
+}

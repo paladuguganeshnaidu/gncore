@@ -10,11 +10,13 @@ Version: 7.0.0rc1
 
 ## Choose the work
 
-Choose a complete playable loop within the existing engine. Separate simulation time from rendering, make inputs/state transitions explicit and keep pause/restart behavior coherent.
+Preserve the requested mechanic within the existing engine and its enclosing gameplay loop. Separate simulation from rendering, make input/state transitions explicit and keep pause/restart behavior coherent without expanding a focused fix into a new game.
 
 Inspect the supplied project and the requested deliverable first. Current explicit instructions take priority over saved preferences, existing conventions, then inferred defaults. Ask only about missing decisions that materially block correct work; otherwise state assumptions briefly and proceed.
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
+
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
 
 ## Deliver and verify
 
@@ -28,17 +30,22 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 Confirm the engine's movement API and units before introducing delta: some velocity APIs already integrate time. Separate action edges/input state from physics updates, validate direction/normalization and preserve intended mechanics. Bound pause/resume and large-timestep behavior instead of applying an uncontrolled jump. Compare displacement, collisions and action counts under different render and physics schedules; proposed engine tests are not measured gameplay results.
 
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Preserve the requested mechanic and movement feel; respect engine units/time integration, input edges and physics ownership without expanding a small fix into a new game.
+- Bound pause/hitch behavior and compare multiple schedules. Render-rate independence alone does not prove deterministic replay, which also depends on input/random/physics state.
+
 ## Workflow map
 
 | Workflow | Use it for |
 | --- | --- |
 | `game-development` | Implement game features with deterministic state transitions, responsive input, and measurable performance. |
 
-## Focused procedures
+## Selected procedure
 
-### Game Development (`game-development`)
-
-Inspect engine version, scene/entity patterns, update loop, save format, and target platforms. Keep game state transitions explicit and input responsive; handle pause, restart, and persistence as applicable. Profile before optimizing and validate on target hardware when possible. Avoid changing unrelated gameplay balance or publishing builds without authorization.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

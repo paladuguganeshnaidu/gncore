@@ -16,6 +16,8 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 A protocol/state-machine or implementation with invariants, failure scenarios, bounded retries and recovery/operational behavior.
@@ -28,6 +30,13 @@ Report actual checks and unresolved limits. Prepared code, a passing structural 
 
 Write down the interleaving and commit boundaries before claiming serialization or exactly-once behavior. Use durable operation/payload identity and atomic state transitions; external lost replies require idempotency/status lookup or reconciliation. An expiring claim needs an ownership generation or fencing/CAS so an old worker cannot complete after takeover. Specify retry/retention limits and test crash, overlap, expiry and stale-owner schedules against the actual storage semantics.
 
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- Write the actual interleaving and transaction boundaries; enforce monotonically increasing ownership generations at the protected write, not only in the lease record.
+- Scope deduplication to operation/payload identity and a replay-compatible retention policy; reconcile unknown outcomes and test expiry, stale owners, overlap and lost replies.
+
 ## Workflow map
 
 | Workflow | Use it for |
@@ -37,23 +46,9 @@ Write down the interleaving and commit boundaries before claiming serialization 
 | `dist-consistency` | Consistency and stale writers. |
 | `dist-timeouts` | Timeouts, backoff and retry budgets. |
 
-## Focused procedures
+## Selected procedure
 
-### Idempotent operations (`dist-idempotency`)
-
-Define the operation identity, key scope, retention and same-key/different-payload behavior. Persist result and side effect within the consistency boundary, and replay after simulated timeout/crash. Do not implement exactly-once claims with an in-memory duplicate set.
-
-### Queue delivery and recovery (`dist-queues`)
-
-State ordering, delivery guarantees, acknowledgment point and poison-message policy. Test duplicate/redelivered messages and a crash between side effect and acknowledgment. Bound retries and dead-letter handling without silently dropping work.
-
-### Consistency and stale writers (`dist-consistency`)
-
-Identify which reads/writes require linearizable, transactional or eventual behavior. Define version/fencing tokens and test a stale owner after lease expiry. Make unavailable versus stale responses explicit during partial failure.
-
-### Timeouts, backoff and retry budgets (`dist-timeouts`)
-
-Allocate an end-to-end deadline and propagate cancellation to dependencies. Retry only safe transient failures with bounded jitter/backoff and a shared budget. Simulate ambiguous timeout completion and prevent retry amplification across layers.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 

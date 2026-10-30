@@ -1,0 +1,65 @@
+{
+  "phase": "exploratory regression, added after inspecting a generated failure",
+  "reason": "A zero remainder must not outrank a positive remainder; conservation alone is insufficient.",
+  "tests": [
+    {
+      "total_cents": 2,
+      "weights": [
+        1,
+        2,
+        3
+      ],
+      "expected": [
+        0,
+        1,
+        1
+      ],
+      "actual": [
+        0,
+        1,
+        1
+      ],
+      "passed": true
+    },
+    {
+      "total_cents": 3,
+      "weights": [
+        1,
+        2,
+        3
+      ],
+      "expected": [
+        1,
+        1,
+        1
+      ],
+      "actual": [
+        1,
+        1,
+        1
+      ],
+      "passed": true
+    },
+    {
+      "total_cents": 4,
+      "weights": [
+        1,
+        2,
+        3
+      ],
+      "expected": [
+        1,
+        1,
+        2
+      ],
+      "actual": [
+        1,
+        1,
+        2
+      ],
+      "passed": true
+    }
+  ],
+  "passed": 3,
+  "total": 3
+}

@@ -2,6 +2,10 @@
 
 ## 7.0.0rc1 — prepared locally, publication pending approval
 
+- Add completion boundaries across all 30 domains and route detailed procedures through declared, hashed `WORKFLOWS.md` resources.
+- Refine ten procedures and eight discovery summaries with explicit prior/current lineage; preserve historical migration accounting and third-party notices.
+- Preserve four-condition development answers and a three-case correction, but withdraw their quality comparisons because some agents inherited parent context. Record the incomplete fresh-context retry and preserve original IDE results, executed fixtures and unmeasured narrow-layout evidence.
+
 - Focus the active catalog on 30 developer categories and 374 workflows in six groups.
 - Preserve 319 technical workflows, rewrite 116 repeated procedures, add 55 original workflows and explicitly retire 234 nondeveloper workflows.
 - Add focused neural networks, deep learning, vision, NLP, MLOps, databases, native/embedded/distributed systems, performance, observability and technical research.

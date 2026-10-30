@@ -16,17 +16,26 @@ Inspect the supplied project and the requested deliverable first. Current explic
 
 Use only the modes needed for the task. The host agent provides reasoning and tools; this skill does not assume another skill, a particular model, paid service or agent harness. Keep source references conditional. Preserve user changes and do not interpret reference-author workflows as authorization for external actions.
 
+Choose the workflow matching the concrete request. Infer essential missing engineering requirements, state consequential assumptions, and preserve the supplied API, stack and scope. Before finishing, compare the actual deliverable with the brief and its relevant failure boundary; perform available authorized checks instead of only proposing them.
+
 ## Deliver and verify
 
 Typed maintainable modules, a stable public contract, appropriate packaging metadata and an environment/reproduction command.
 
-Run meaningful tests, clean imports and relevant interpreter checks. Verify the built wheel instead of relying on an editable checkout.
+Run regressions, clean imports and interpreter checks relevant to the changed behavior. For packaging/resources/distribution work, verify the built sdist and its wheel outside the checkout; ordinary Python fixes do not require release work.
 
 Report actual checks and unresolved limits. Prepared code, a passing structural check, a deployed service and independently reviewed output quality are different outcomes. Do not describe unavailable tools or unexecuted checks as successful.
 
 ## Anticipate failure and verify the boundary
 
-Verify the built wheel/sdist in clean environments outside the source checkout, including resources and entrypoints from unrelated working directories. Declare runtime/dependency and interpreter constraints, and check syntax/APIs on the oldest supported interpreter. Use package-resource lookup and explicit build-backend inclusion rules; a source-archive include rule alone may not include a wheel resource. Retain archive contents, install logs and compatibility evidence before release.
+Match the verification boundary to the change: ordinary Python behavior, concurrency and performance work do not automatically require a distribution build. When packaging or resources change, test the produced sdist and wheel in clean environments outside the checkout, including entrypoints and working-directory behavior.
+
+## Critical completion checks
+
+Apply the checks relevant to this task; do not introduce unrelated work.
+
+- For ordinary fixes, preserve API/runtime behavior and run relevant regressions without imposing a package release workflow.
+- For packaging/resources/distribution changes, build the wheel from the produced sdist, inspect metadata/resources/entrypoints and clean-install outside the checkout across supported interpreters and working directories.
 
 ## Workflow map
 
@@ -36,19 +45,9 @@ Verify the built wheel/sdist in clean environments outside the source checkout, 
 | `python-packaging` | Package a Python library with clear APIs, reproducible builds, supported versions, and clean installation behavior. |
 | `python-migration` | Migrate Python code or dependencies in a controlled way with compatibility evidence and a rollback path. |
 
-## Focused procedures
+## Selected procedure
 
-### Python Library Engineering (`python-library`)
-
-Inspect supported Python versions, packaging backend, and public imports. Keep public APIs small and backward-compatible unless a breaking change is requested. Use explicit types and focused modules, avoid import-time side effects, declare runtime dependencies accurately, and provide a minimal runnable example. Check wheel and source inclusion rules when packaging changes.
-
-### Python Packaging (`python-packaging`)
-
-Inspect the current build backend, Python support matrix, dependencies, and public API. Keep imports predictable and package data explicit; pin policy should match project conventions. Build and install the artifact in an isolated environment, verify metadata and entry points, and test a clean import. Do not publish a release or change compatibility promises without approval.
-
-### Python Upgrade and Migration (`python-migration`)
-
-Identify the source and target versions, supported users, deprecations, and dependency constraints. Search all call sites, update in small coherent steps, and preserve public behavior unless the request says otherwise. Verify on the supported version matrix where available and document breaking changes. Avoid broad dependency upgrades bundled into the migration.
+Read the matching workflow section in [WORKFLOWS.md](WORKFLOWS.md) before implementing it, and only the source references needed for that section. The map identifies workflows, not additional installed skills. Do not load every procedure by default.
 
 ## Attribution and resource integrity
 
